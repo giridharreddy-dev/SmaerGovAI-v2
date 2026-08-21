@@ -1,0 +1,23 @@
+{
+  "name": "smartgov-health",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'No build required'",
+    "lint": "node -c server.js"
+  },
+  "dependencies": {
+    "@andresaya/edge-tts": "^1.8.0",
+    "@google/genai": "^2.18.0",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "multer": "^2.2.0",
+    "pdf-parse": "^2.4.5",
+    "qrcode": "^1.5.4",
+    "tesseract.js": "^7.0.0"
+  }
+}

@@ -1,0 +1,734 @@
+{
+  "Dr. YSR Aarogya Asara (Post-Operative Financial Allowance)": {
+    "level": "Andhra Pradesh",
+    "category": "Post-Operative Financial Support",
+    "icon": "hospital",
+    "telugu_name": "డా. వైఎస్ఆర్ ఆరోగ్య ఆసరా (చికిత్స తర్వాతి ఆర్థిక సాయం)",
+    "audio_file": "static/audio/aarogya_asara.mp3",
+    "source_name": "Dr. YSR Aarogyasri Health Care Trust, AP",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "keywords": [
+      "Aarogya Asara",
+      "post-operative wage",
+      "recuperation allowance",
+      "surgery financial aid",
+      "ఆరోగ్య ఆసరా",
+      "daily allowance"
+    ],
+    "original_complex_text": "Dr. YSR Aarogya Asara is a unique post-operative subsistence allowance scheme launched by the Government of Andhra Pradesh. Beneficiaries undergoing surgery under Aarogyasri receive financial assistance of up to Rs. 225 per day or a maximum of Rs. 5,000 per month during their post-operative recuperation period. The payment is directly credited to the patient's bank account within 48 hours of hospital discharge to ensure financial stability during rest.",
+    "simplified": {
+      "eligibility": "All patients undergoing designated surgeries and medical treatments under the Dr. YSR Aarogyasri / NTR Vaidya Seva scheme in empanelled hospitals.",
+      "benefits": "Financial aid of Rs. 225 per day (up to a maximum of Rs. 5,000 per month) for the designated rest/recuperation period credited directly to bank account.",
+      "documents": "Aarogyasri Card / BPL Rice Card, Discharge Summary with prescribed rest days, Aadhaar card, and Active Bank Account details.",
+      "steps": "Provided automatically upon hospital discharge by the hospital Aarogyamitra. Bank account verification is completed before discharge.",
+      "description": "Dr. YSR Aarogya Asara provides post-operative wage compensation of Rs. 225/day (up to Rs. 5,000/month) directly to patients treated under Aarogyasri during their recovery period."
+    },
+    "telugu": {
+      "eligibility": "ఆరోగ్యశ్రీ / ఎన్టీఆర్ వైద్య సేవ కింద నెట్‌వర్క్ ఆసుపత్రులలో శస్త్రచికిత్స లేదా చికిత్స చేయించుకున్న రోగులందరూ అర్హులు.",
+      "benefits": "విశ్రాంతి కాలంలో రోజుకు రూ. 225 చొప్పున నెలకు గరిష్టంగా రూ. 5,000 వరకు నేరుగా లబ్ధిదారుని బ్యాంక్ ఖాతాలో జమ చేస్తారు.",
+      "documents": "ఆరోగ్యశ్రీ కార్డు లేదా తెల్ల రేషన్ కార్డు, ఆసుపత్రి డిశ్చార్జ్ సమ్మరీ (వైద్యుల విశ్రాంతి ధృవీకరణ), ఆధార్ కార్డు, బ్యాంక్ పాస్‌బుక్ కాపీ.",
+      "steps": "ఆసుపత్రి నుండి డిశ్చార్జ్ అయ్యే సమయంలో అక్కడి ఆరోగ్యమిత్ర ద్వారా స్వయంచాలకంగా ప్రాసెస్ చేయబడుతుంది.",
+      "description": "డా. వైఎస్ఆర్ ఆరోగ్య ఆసరా పథకం ద్వారా ఆరోగ్యశ్రీ కింద శస్త్రచికిత్స పొందిన పేద రోగులకు విశ్రాంతి సమయంలో రోజుకు రూ. 225 (నెలకు గరిష్టంగా రూ. 5,000) నేరుగా బ్యాంక్ ఖాతాలో జీవనభృతిగా అందిస్తారు."
+    },
+    "last_updated": "2026-06-01",
+    "official_website": "https://aarogyasri.ap.gov.in/",
+    "contact_office": "Aarogyamitra at Empanelled Network Hospital / Grama Sachivalayam",
+    "eligibility_confirmation": "Hospital Aarogyamitra & Trust Medical Officer",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు ఆరోగ్యశ్రీ నెట్‌వర్క్ ఆసుపత్రిలో శస్త్రచికిత్స చేయించుకున్నారా?",
+        "question_en": "Did you undergo surgery in an Aarogyasri empanelled hospital?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "మీ వద్ద యాక్టివ్ బ్యాంక్ ఖాతా వివరాలు ఉన్నాయా?",
+        "question_en": "Do you have an active bank account linked with Aadhaar?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aarogyasri / Rice Card",
+        "name_te": "ఆరోగ్యశ్రీ / రేషన్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Discharge Summary with Rest Advice",
+        "name_te": "డిశ్చార్జ్ సమ్మరీ (విశ్రాంతి వివరాలు)",
+        "optional": false
+      },
+      {
+        "name": "Bank Account Passbook",
+        "name_te": "బ్యాంక్ పాస్‌బుక్ కాపీ",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Hospital": "Hospital Aarogyamitra Help Desk (24/7)",
+      "Village": "Village Secretariat ANM / Welfare Assistant"
+    },
+    "telugu_description": "డా. వైఎస్ఆర్ ఆరోగ్య ఆసరా పథకం ద్వారా ఆరోగ్యశ్రీ కింద శస్త్రచికిత్స పొందిన పేద రోగులకు విశ్రాంతి సమయంలో రోజుకు రూ. 225 (నెలకు గరిష్టంగా రూ. 5,000) నేరుగా బ్యాంక్ ఖాతాలో జీవనభృతిగా అందిస్తారు.",
+    "english_description": "Dr. YSR Aarogya Asara provides post-operative wage compensation of Rs. 225/day (up to Rs. 5,000/month) directly to patients treated under Aarogyasri during their recovery period.",
+    "coverage_type": "State Healthcare Welfare & Free Medical Services",
+    "coverage_type_te": "ఆంధ్రప్రదేశ్ ప్రభుత్వ ఉచిత వైద్య సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens & Families in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని అర్హులైన పౌరులు & కుటుంబాలు",
+    "application_mode": "Grama/Ward Sachivalayam, PHC or Empanelled Hospital",
+    "application_mode_te": "గ్రామ/వార్డు సచివాలయం లేదా సమీప ప్రభుత్వ ఆసుపత్రి",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  },
+  "Jagananna Aarogya Suraksha (Doorstep Health Screening & Specialist Camps)": {
+    "level": "Andhra Pradesh",
+    "category": "Doorstep Health Screening",
+    "icon": "mobile-clinic",
+    "telugu_name": "జగనన్న ఆరోగ్య సురక్ష (ఇంటింటి ఆరోగ్య పరీక్షలు & నిపుణుల వైద్య శిబిరాలు)",
+    "audio_file": "static/audio/aarogya_suraksha.mp3",
+    "source_name": "Health, Medical & Family Welfare Dept, AP",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "keywords": [
+      "Aarogya Suraksha",
+      "doorstep health checkup",
+      "village health camp",
+      "free specialist diagnosis",
+      "ఆరోగ్య సురక్ష",
+      "free medicines"
+    ],
+    "original_complex_text": "Jagananna Aarogya Suraksha is a massive statewide health outreach campaign conducted by the Government of Andhra Pradesh. Teams of ANMs, MLHPs, and ASHA workers visit every household to conduct preliminary screenings for BP, sugar, hemoglobin, and chronic conditions. Following the household survey, mega specialist health camps are held in every village with general physicians, gynecologists, and pediatricians offering free specialist checkups, lab diagnostic tests, and 100% free supply of prescribed medicines.",
+    "simplified": {
+      "eligibility": "All citizens and families residing in Andhra Pradesh (rural and urban).",
+      "benefits": "Free doorstep health screening, free diagnostic lab tests (BP, sugar, hemoglobin, malaria), free specialist doctor consultations, free medicine delivery, and fast-track referral to network hospitals.",
+      "documents": "Aadhaar Card, Aarogyasri Card (if available), Previous medical prescription records.",
+      "steps": "Attend the household health screening when ANMs/ASHAs visit your door, or visit the village health camp conducted in your Grama/Ward Sachivalayam.",
+      "description": "Jagananna Aarogya Suraksha provides doorstep health surveys, 14+ free diagnostic lab tests, free consultations with specialist doctors in village camps, and free lifelong medicines for chronic illnesses."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్ రాష్ట్రంలోని గ్రామీణ మరియు పట్టణ ప్రాంత ప్రజలందరూ అర్హులు.",
+      "benefits": "ఇంటి వద్దే ఉచిత ఆరోగ్య పరీక్షలు, 14 రకాల రక్త/ల్యాబ్ పరీక్షలు, నిపుణులైన వైద్యుల సలహాలు, ఉచితంగా పూర్తి కోర్సు మందుల పంపిణీ, తీవ్ర వ్యాధులకు ఉచిత ఆసుపత్రి రెఫరల్.",
+      "documents": "ఆధార్ కార్డు, ఆరోగ్యశ్రీ కార్డు (ఉంటే), పాత మందుల వివరాలు/ప్రిస్క్రిప్షన్.",
+      "steps": "ఆశా కార్యకర్తలు, ఏఎన్‌ఎంలు ఇంటికి వచ్చినప్పుడు వివరాలు నమోదు చేయించుకోండి లేదా గ్రామ సచివాలయంలో జరిగే వైద్య శిబిరానికి హాజరవ్వండి.",
+      "description": "జగనన్న ఆరోగ్య సురక్ష పథకం ద్వారా ఇంటింటికీ వెళ్లి ఆరోగ్య సర్వే చేయడం, గ్రామాల్లో స్పెషలిస్ట్ వైద్యులతో మెగా క్యాంపులు నిర్వహించి ఉచితంగా పరీక్షలు, మందులు మరియు ఆసుపత్రి రెఫరల్స్ అందిస్తారు."
+    },
+    "last_updated": "2026-05-15",
+    "official_website": "https://hmfw.ap.gov.in/",
+    "contact_office": "Grama/Ward Sachivalayam ANM / ASHA Worker",
+    "eligibility_confirmation": "Village Health Clinic Team / Sachivalayam Medical Officer",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు ఆంధ్రప్రదేశ్ రాష్ట్ర నివాసియా?",
+        "question_en": "Are you a resident of Andhra Pradesh?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Health Card / Rice Card",
+        "name_te": "ఆరోగ్యశ్రీ / బియ్యం కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Village Health Clinic / Grama Sachivalayam",
+      "Mandal": "Primary Health Centre (PHC)"
+    },
+    "telugu_description": "జగనన్న ఆరోగ్య సురక్ష పథకం ద్వారా ఇంటింటికీ వెళ్లి ఆరోగ్య సర్వే చేయడం, గ్రామాల్లో స్పెషలిస్ట్ వైద్యులతో మెగా క్యాంపులు నిర్వహించి ఉచితంగా పరీక్షలు, మందులు మరియు ఆసుపత్రి రెఫరల్స్ అందిస్తారు.",
+    "english_description": "Jagananna Aarogya Suraksha provides doorstep health surveys, 14+ free diagnostic lab tests, free consultations with specialist doctors in village camps, and free lifelong medicines for chronic illnesses.",
+    "coverage_type": "State Healthcare Welfare & Free Medical Services",
+    "coverage_type_te": "ఆంధ్రప్రదేశ్ ప్రభుత్వ ఉచిత వైద్య సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens & Families in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని అర్హులైన పౌరులు & కుటుంబాలు",
+    "application_mode": "Grama/Ward Sachivalayam, PHC or Empanelled Hospital",
+    "application_mode_te": "గ్రామ/వార్డు సచివాలయం లేదా సమీప ప్రభుత్వ ఆసుపత్రి",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  },
+  "Dr. YSR Kanti Velugu (Comprehensive Universal Eye Care)": {
+    "level": "Andhra Pradesh",
+    "category": "Eye Care & Vision Services",
+    "icon": "eye",
+    "telugu_name": "డా. వైఎస్ఆర్ కంటి వెలుగు (సమగ్ర ఉచిత నేత్ర సంరక్షణ)",
+    "audio_file": "static/audio/kanti_velugu.mp3",
+    "source_name": "Health & Family Welfare Department, AP",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "keywords": [
+      "Kanti Velugu",
+      "free spectacles",
+      "cataract surgery",
+      "eye testing",
+      "కంటి వెలుగు",
+      "free glasses"
+    ],
+    "original_complex_text": "Dr. YSR Kanti Velugu is a universal eye care initiative covering all citizens of Andhra Pradesh across multiple phases. It offers comprehensive primary eye screening in schools, villages, and community centers, free prescription eyeglasses for refractive errors, and 100% free cataract surgeries with high quality intraocular lens (IOL) implants in government and empanelled eye hospitals.",
+    "simplified": {
+      "eligibility": "All residents of Andhra Pradesh, including school children, senior citizens, and general public.",
+      "benefits": "Free eye examinations, free customized prescription spectacles delivered to doorstep, and free cataract surgeries with IOL lenses.",
+      "documents": "Aadhaar Card, Resident proof / Ration Card.",
+      "steps": "Visit your local Village Health Clinic, PHC, or government hospital eye screening camps.",
+      "description": "Dr. YSR Kanti Velugu is an eye care initiative providing free eye screenings, free custom spectacles, and free cataract surgeries to eliminate preventable blindness in AP."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్ రాష్ట్రంలోని విద్యార్థులు, వృద్ధులు మరియు ప్రజలందరూ అర్హులు.",
+      "benefits": "ఉచిత కంటి పరీక్షలు, అవసరమైన వారికి ఉచిత నాణ్యమైన కళ్లద్దాల పంపిణీ, ఉచిత శుక్లాల (కంటి క్యాటరాక్ట్) ఆపరేషన్లు మరియు లెన్స్ అమరిక.",
+      "documents": "ఆధార్ కార్డు లేదా రేషన్ కార్డు.",
+      "steps": "స్థానిక ప్రాథమిక ఆరోగ్య కేంద్రం (PHC), విలేజ్ క్లినిక్ లేదా కంటి పరీక్ష శిబిరాన్ని సంప్రదించండి.",
+      "description": "డా. వైఎస్ఆర్ కంటి వెలుగు పథకం ద్వారా రాష్ట్ర ప్రజలందరికీ ఉచితంగా కంటి పరీక్షలు నిర్వహించి, కళ్లద్దాలు మరియు అవసరమైన వారికి ఉచిత క్యాటరాక్ట్ శస్త్రచికిత్సలు చేస్తారు."
+    },
+    "last_updated": "2026-05-18",
+    "official_website": "https://hmfw.ap.gov.in/",
+    "contact_office": "PHC Ophthalmic Officer / Village Secretariat Health Assistant",
+    "eligibility_confirmation": "Ophthalmic Assistant / District Blindness Control Society",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు కంటి చూపు సమస్య లేదా శుక్లాలు ఉన్నాయా?",
+        "question_en": "Do you have vision difficulty or cataracts?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Mandal": "Primary Health Centre (PHC) / Community Health Centre",
+      "District": "District Eye Hospital / Blindness Control Society"
+    },
+    "telugu_description": "డా. వైఎస్ఆర్ కంటి వెలుగు పథకం ద్వారా రాష్ట్ర ప్రజలందరికీ ఉచితంగా కంటి పరీక్షలు నిర్వహించి, కళ్లద్దాలు మరియు అవసరమైన వారికి ఉచిత క్యాటరాక్ట్ శస్త్రచికిత్సలు చేస్తారు.",
+    "english_description": "Dr. YSR Kanti Velugu is an eye care initiative providing free eye screenings, free custom spectacles, and free cataract surgeries to eliminate preventable blindness in AP.",
+    "coverage_type": "State Healthcare Welfare & Free Medical Services",
+    "coverage_type_te": "ఆంధ్రప్రదేశ్ ప్రభుత్వ ఉచిత వైద్య సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens & Families in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని అర్హులైన పౌరులు & కుటుంబాలు",
+    "application_mode": "Grama/Ward Sachivalayam, PHC or Empanelled Hospital",
+    "application_mode_te": "గ్రామ/వార్డు సచివాలయం లేదా సమీప ప్రభుత్వ ఆసుపత్రి",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  },
+  "AP Free Dialysis and CKD Financial Aid Scheme": {
+    "level": "Andhra Pradesh",
+    "category": "Kidney Care & Chronic Disease",
+    "icon": "kidney",
+    "telugu_name": "ఆంధ్రప్రదేశ్ ఉచిత డయాలసిస్ & కిడ్నీ బాధితుల పింఛను పథకం",
+    "audio_file": "static/audio/ap_dialysis.mp3",
+    "source_name": "Dr. YSR Aarogyasri Trust & SERP AP",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "keywords": [
+      "Dialysis pension",
+      "Uddanam kidney",
+      "free dialysis",
+      "CKD pension 10000",
+      "డయాలసిస్",
+      "kidney patient aid"
+    ],
+    "original_complex_text": "The Government of Andhra Pradesh provides comprehensive support for Chronic Kidney Disease (CKD) patients. Under the scheme, end-stage renal disease patients receive 100% free haemodialysis and peritoneal dialysis across all government hospitals and empanelled private centers. Additionally, patients undergoing continuous dialysis receive a monthly financial pension of Rs. 10,000 under the YSR Pension Kanuka to cover dietary and transport expenses.",
+    "simplified": {
+      "eligibility": "Chronic Kidney Disease (CKD) patients on regular dialysis in Andhra Pradesh holding BPL/Aarogyasri eligibility.",
+      "benefits": "100% free hemodialysis sessions, free erythropoietin injections and iron supplements, plus Rs. 10,000 monthly financial pension transferred to bank account.",
+      "documents": "Aarogyasri Card, Medical certificate from Nephrologist confirming regular dialysis, Dialysis Logbook, Aadhaar, and Bank Account.",
+      "steps": "Register at the dialysis unit of your District/Area Hospital. Apply for the monthly pension at your Grama/Ward Sachivalayam with dialysis certificates.",
+      "description": "AP Free Dialysis and CKD Aid provides 100% free dialysis procedures, free medicines, and a monthly financial pension of Rs. 10,000 for kidney disease patients."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్‌లో క్రమం తప్పకుండా డయాలసిస్ చేయించుకుంటున్న కిడ్నీ వ్యాధిగ్రస్తులు (ఆరోగ్యశ్రీ/బియ్యం కార్డు లబ్ధిదారులు) అర్హులు.",
+      "benefits": "ప్రభుత్వ మరియు నెట్‌వర్క్ ఆసుపత్రులలో 100% ఉచిత డయాలసిస్, ఉచిత ఇంజెక్షన్లు & మందులు మరియు నెలకు రూ. 10,000 ఆర్థిక పింఛను.",
+      "documents": "డయాలసిస్ సర్టిఫికెట్ / రికార్డు బుక్, నెఫ్రాలజిస్ట్ ధృవీకరణ పత్రం, ఆరోగ్యశ్రీ కార్డు, ఆధార్ కార్డు, బ్యాంక్ పాస్‌బుక్.",
+      "steps": "సమీప ప్రభుత్వ డయాలసిస్ కేంద్రాన్ని సంప్రదించండి. పింఛను కొరకు గ్రామ/వార్డు సచివాలయంలో దరఖాస్తు చేసుకోండి.",
+      "description": "ఆంధ్రప్రదేశ్ ఉచిత డయాలసిస్ పథకం ద్వారా కిడ్నీ రోగులకు ఉచితంగా డయాలసిస్ సేవలు, ఉచిత మందులతో పాటు ప్రయాణ, ఆహార ఖర్చుల కోసం నెలకు రూ. 10,000 పింఛను అందిస్తారు."
+    },
+    "last_updated": "2026-05-20",
+    "official_website": "https://aarogyasri.ap.gov.in/",
+    "contact_office": "Dialysis Centre Medical Officer / Village Secretariat Welfare Assistant",
+    "eligibility_confirmation": "Government Hospital Nephrologist & District Medical Board",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు క్రమం తప్పకుండా డయాలసిస్ చేయించుకుంటున్నారా?",
+        "question_en": "Are you undergoing regular dialysis for kidney disease?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Dialysis Certificate from Nephrologist",
+        "name_te": "డయాలసిస్ వైద్య ధృవీకరణ పత్రం",
+        "optional": false
+      },
+      {
+        "name": "Aarogyasri / Rice Card",
+        "name_te": "ఆరోగ్యశ్రీ / రేషన్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Bank Account Details",
+        "name_te": "బ్యాంక్ ఖాతా వివరాలు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Hospital": "District Hospital Dialysis Unit / Area Hospital",
+      "Village": "Grama Sachivalayam Welfare Assistant"
+    },
+    "telugu_description": "ఆంధ్రప్రదేశ్ ఉచిత డయాలసిస్ పథకం ద్వారా కిడ్నీ రోగులకు ఉచితంగా డయాలసిస్ సేవలు, ఉచిత మందులతో పాటు ప్రయాణ, ఆహార ఖర్చుల కోసం నెలకు రూ. 10,000 పింఛను అందిస్తారు.",
+    "english_description": "AP Free Dialysis and CKD Aid provides 100% free dialysis procedures, free medicines, and a monthly financial pension of Rs. 10,000 for kidney disease patients.",
+    "coverage_type": "State Healthcare Welfare & Free Medical Services",
+    "coverage_type_te": "ఆంధ్రప్రదేశ్ ప్రభుత్వ ఉచిత వైద్య సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens & Families in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని అర్హులైన పౌరులు & కుటుంబాలు",
+    "application_mode": "Grama/Ward Sachivalayam, PHC or Empanelled Hospital",
+    "application_mode_te": "గ్రామ/వార్డు సచివాలయం లేదా సమీప ప్రభుత్వ ఆసుపత్రి",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  },
+  "AP Thalassaemia and Haemophilia Financial Aid Scheme": {
+    "level": "Andhra Pradesh",
+    "category": "Chronic Blood Disorders",
+    "icon": "shield",
+    "telugu_name": "ఆంధ్రప్రదేశ్ తలసేమియా & హీమోఫీలియా ఆర్థిక సాయం పథకం",
+    "audio_file": "static/audio/thalassaemia_scheme.mp3",
+    "source_name": "Department of Health & Family Welfare, AP",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "keywords": [
+      "Thalassaemia",
+      "Haemophilia",
+      "blood transfusion",
+      "chronic blood disorder",
+      "తలసేమియా",
+      "హీమోఫీలియా"
+    ],
+    "original_complex_text": "Andhra Pradesh offers comprehensive medical care and social security for patients suffering from hereditary chronic blood disorders like Thalassaemia, Haemophilia, and Sickle Cell Disease. Patients receive 100% free safe leukodepleted blood transfusions, free iron chelation therapy, factor infusions, and a dedicated monthly social pension of Rs. 10,000 under the YSR Pension Kanuka scheme.",
+    "simplified": {
+      "eligibility": "Patients medically diagnosed with Thalassaemia Major, Haemophilia, or Severe Sickle Cell Disease residing in AP.",
+      "benefits": "Free regular blood transfusions, free Factor VIII/IX injections, free iron chelation medicines, and Rs. 10,000 monthly financial pension.",
+      "documents": "Hematologist diagnosis certificate, Blood transfusion records, Aarogyasri Card, Aadhaar, and Bank Account.",
+      "steps": "Register at the District Blood Bank / Teaching Hospital Hematology OPD, and submit medical certificate at your local Sachivalayam for pension.",
+      "description": "AP Thalassaemia & Haemophilia Support guarantees free safe blood transfusions, free life-saving factor concentrates, and Rs. 10,000/month pension to support patient families."
+    },
+    "telugu": {
+      "eligibility": "తలసేమియా మేజర్, హీమోఫీలియా లేదా సికిల్ సెల్ ఎనీమియా వ్యాధితో బాధపడుతున్న ఆంధ్రప్రదేశ్ నివాసితులు అర్హులు.",
+      "benefits": "ఉచిత సురక్షిత రక్త మార్పిడి, ఉచిత ఫ్యాక్టర్ ఇంజెక్షన్లు, ఉచిత ఐరన్ మందులు మరియు ప్రతి నెలా రూ. 10,000 పింఛను సాయం.",
+      "documents": "హెమటాలజిస్ట్ వైద్య ధృవీకరణ పత్రం, రక్త మార్పిడి రికార్డులు, ఆరోగ్యశ్రీ కార్డు, ఆధార్ కార్డు, బ్యాంక్ ఖాతా.",
+      "steps": "జిల్లా బోధనాసుపత్రిలోని బ్లడ్ బ్యాంక్ / హెమటాలజీ విభాగాన్ని సంప్రదించండి మరియు గ్రామ సచివాలయంలో పింఛనుకు దరఖాస్తు చేయండి.",
+      "description": "తలసేమియా మరియు హీమోఫీలియా బాధితులకు ఆంధ్రప్రదేశ్ ప్రభుత్వం ఉచిత రక్తమార్పిడి, ఖరీదైన ఫ్యాక్టర్ మందులతో పాటు నెలకు రూ. 10,000 ఆర్థిక పింఛను అందిస్తుంది."
+    },
+    "last_updated": "2026-05-22",
+    "official_website": "https://aarogyasri.ap.gov.in/",
+    "contact_office": "District Blood Bank Officer / Teaching Hospital Superintendent",
+    "eligibility_confirmation": "District Medical Board / Government Hematologist",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు తలసేమియా లేదా హీమోఫీలియా వ్యాధి నిర్ధారణ అయిందా?",
+        "question_en": "Have you been medically diagnosed with Thalassaemia or Haemophilia?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Diagnostic Medical Certificate",
+        "name_te": "వ్యాధి నిర్ధారణ మెడికల్ సర్టిఫికెట్",
+        "optional": false
+      },
+      {
+        "name": "Aarogyasri / Rice Card",
+        "name_te": "ఆరోగ్యశ్రీ / రేషన్ కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Hospital": "District Government Hospital / Red Cross Blood Bank",
+      "Village": "Grama Sachivalayam ANM / Welfare Assistant"
+    },
+    "telugu_description": "తలసేమియా మరియు హీమోఫీలియా బాధితులకు ఆంధ్రప్రదేశ్ ప్రభుత్వం ఉచిత రక్తమార్పిడి, ఖరీదైన ఫ్యాక్టర్ మందులతో పాటు నెలకు రూ. 10,000 ఆర్థిక పింఛను అందిస్తుంది.",
+    "english_description": "AP Thalassaemia & Haemophilia Support guarantees free safe blood transfusions, free life-saving factor concentrates, and Rs. 10,000/month pension to support patient families.",
+    "coverage_type": "State Healthcare Welfare & Free Medical Services",
+    "coverage_type_te": "ఆంధ్రప్రదేశ్ ప్రభుత్వ ఉచిత వైద్య సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens & Families in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని అర్హులైన పౌరులు & కుటుంబాలు",
+    "application_mode": "Grama/Ward Sachivalayam, PHC or Empanelled Hospital",
+    "application_mode_te": "గ్రామ/వార్డు సచివాలయం లేదా సమీప ప్రభుత్వ ఆసుపత్రి",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  },
+  "AP Free Cochlear Implant Scheme (Child Hearing Restoration)": {
+    "level": "Andhra Pradesh",
+    "category": "Child Hearing Care",
+    "icon": "baby",
+    "telugu_name": "ఆంధ్రప్రదేశ్ ఉచిత కాక్లియర్ ఇంప్లాంట్ పథకం (పిల్లల వినికిడి పునరుద్ధరణ)",
+    "audio_file": "static/audio/cochlear_implant.mp3",
+    "source_name": "Dr. YSR Aarogyasri Health Care Trust, AP",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "keywords": [
+      "Cochlear Implant",
+      "deaf child surgery",
+      "hearing restoration",
+      "speech therapy",
+      "కాక్లియర్ ఇంప్లాంట్",
+      "hearing aid"
+    ],
+    "original_complex_text": "The Andhra Pradesh Cochlear Implant Scheme under Aarogyasri provides 100% free surgical implantation of advanced bionic cochlear devices for profoundly deaf children aged below 3 years (up to 5 years in select cases). The scheme covers the high-cost implant device (costing over Rs. 6 to 8 Lakhs), surgical hospitalization, speech processor fitting, and up to 2 years of post-surgical Auditory Verbal Therapy (AVT) to enable natural speech and hearing.",
+    "simplified": {
+      "eligibility": "Children under 3 to 5 years with bilateral severe-to-profound sensorineural hearing loss having an Aarogyasri / BPL card in AP.",
+      "benefits": "Free cochlear implant surgery worth Rs. 6,50,000+, free sound processor, and 2 years of free post-op speech & auditory verbal therapy.",
+      "documents": "Child Birth Certificate, BERA & Audiometry Test Reports, CT/MRI temporal bone scan, Aarogyasri card, and Parent Aadhaar.",
+      "steps": "Get hearing screening done at District Hospital ENT department, obtain pre-authorization via Aarogyamitra, and undergo surgery at empanelled super-speciality ENT centers.",
+      "description": "AP Cochlear Implant Scheme provides completely free Rs. 6.5 Lakh cochlear surgeries and 2 years of speech therapy for deaf toddlers to restore hearing."
+    },
+    "telugu": {
+      "eligibility": "3 నుండి 5 సంవత్సరాల లోపు వయస్సు ఉన్న రెండు చెవుల్లో వినికిడి లోపం గల చిన్నారులు (ఆరోగ్యశ్రీ కార్డుదారులు) అర్హులు.",
+      "benefits": "రూ. 6.5 లక్షల విలువైన కాక్లియర్ ఇంప్లాంట్ ఆపరేషన్ 100% ఉచితం, అధునాతన సౌండ్ ప్రాసెసర్ మరియు 2 సంవత్సరాల ఉచిత స్పీచ్ థెరపీ (మాటల శిక్షణ).",
+      "documents": "పిల్లల జనన ధృవీకరణ పత్రం, BERA వినికిడి పరీక్ష రిపోర్టులు, CT/MRI స్కాన్ రిపోర్టు, ఆరోగ్యశ్రీ కార్డు, తల్లిదండ్రుల ఆధార్.",
+      "steps": "జిల్లా ఆసుపత్రిలోని ఈఎన్‌టీ (ENT) విభాగాన్ని సంప్రదించి పరీక్షలు చేయించుకోండి. ఆమోదం పొందిన తర్వాత నెట్‌వర్క్ ఆసుపత్రిలో ఉచిత శస్త్రచికిత్స జరుగుతుంది.",
+      "description": "పుట్టుకతోనే వినికిడి లోపం ఉన్న చిన్నారులకు రూ. 6.5 లక్షల విలువైన కాక్లియర్ ఇంప్లాంట్ శస్త్రచికిత్సను మరియు 2 సంవత్సరాల పాటు స్పీచ్ థెరపీని ఏపీ ప్రభుత్వం ఉచితంగా అందిస్తుంది."
+    },
+    "last_updated": "2026-05-25",
+    "official_website": "https://aarogyasri.ap.gov.in/",
+    "contact_office": "Government ENT Hospital / District Hospital ENT Department",
+    "eligibility_confirmation": "State Level Cochlear Implant Scrutiny Committee",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ చిన్నారికి వినికిడి లోపం ఉందని వైద్యులు నిర్ధారించారా?",
+        "question_en": "Has your child been diagnosed with severe hearing loss?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "పాప లేదా బాబు వయస్సు 5 సంవత్సరాల లోపే ఉందా?",
+        "question_en": "Is the child under 5 years of age?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "BERA Hearing Test Report",
+        "name_te": "BERA వినికిడి పరీక్ష నివేదిక",
+        "optional": false
+      },
+      {
+        "name": "Aarogyasri / Rice Card",
+        "name_te": "ఆరోగ్యశ్రీ / రేషన్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Child Birth Certificate",
+        "name_te": "పిల్లల జనన ధృవీకరణ పత్రం",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "District": "District Hospital ENT OPD / Teaching Hospital",
+      "State": "Government ENT Hospital, Visakhapatnam / Vijayawada"
+    },
+    "telugu_description": "పుట్టుకతోనే వినికిడి లోపం ఉన్న చిన్నారులకు రూ. 6.5 లక్షల విలువైన కాక్లియర్ ఇంప్లాంట్ శస్త్రచికిత్సను మరియు 2 సంవత్సరాల పాటు స్పీచ్ థెరపీని ఏపీ ప్రభుత్వం ఉచితంగా అందిస్తుంది.",
+    "english_description": "AP Cochlear Implant Scheme provides completely free Rs. 6.5 Lakh cochlear surgeries and 2 years of speech therapy for deaf toddlers to restore hearing.",
+    "coverage_type": "State Healthcare Welfare & Free Medical Services",
+    "coverage_type_te": "ఆంధ్రప్రదేశ్ ప్రభుత్వ ఉచిత వైద్య సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens & Families in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని అర్హులైన పౌరులు & కుటుంబాలు",
+    "application_mode": "Grama/Ward Sachivalayam, PHC or Empanelled Hospital",
+    "application_mode_te": "గ్రామ/వార్డు సచివాలయం లేదా సమీప ప్రభుత్వ ఆసుపత్రి",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  },
+  "Tele-MANAS National Mental Health Helpline (14416)": {
+    "level": "National",
+    "category": "Mental Health & Counseling",
+    "icon": "phone-doctor",
+    "telugu_name": "టెలీ-మానస్ జాతీయ మానసిక ఆరోగ్య హెల్ప్‌లైన్ (14416)",
+    "audio_file": "static/audio/tele_manas.mp3",
+    "source_name": "Ministry of Health & Family Welfare / NIMHANS",
+    "source_url": "https://telemanas.mohfw.gov.in/",
+    "keywords": [
+      "Tele MANAS",
+      "14416",
+      "mental health",
+      "depression counseling",
+      "stress help",
+      "టెలీ మానస్"
+    ],
+    "original_complex_text": "Tele-MANAS (Tele Mental Health Assistance and Networking Across States) is the Government of India's flagship 24/7 round-the-clock digital mental health initiative. It offers free, confidential tele-counseling and psychiatric support through toll-free number 14416 (or 1800-891-4416). Callers can speak in Telugu or English with qualified clinical psychologists and psychiatrists for issues ranging from stress, anxiety, depression, exam fear, grief, and addiction.",
+    "simplified": {
+      "eligibility": "All citizens across India experiencing mental distress, anxiety, stress, depression, or seeking counseling.",
+      "benefits": "100% free, 24/7 confidential phone counseling in regional languages (Telugu/English), psychiatric consultation, and local hospital linkage.",
+      "documents": "None required (100% free and confidential toll-free phone service).",
+      "steps": "Dial toll-free 14416 or 1800-891-4416 from any mobile or landline phone to instantly speak with a certified counselor.",
+      "description": "Tele-MANAS is a 24/7 free mental health helpline (14416) offering instant, confidential psychological counseling and psychiatric support in Telugu and English."
+    },
+    "telugu": {
+      "eligibility": "మానసిక ఒత్తిడి, ఆందోళన, నిరాశ, పరీక్షల భయం లేదా కౌన్సిలింగ్ అవసరమైన పౌరులందరూ అర్హులు.",
+      "benefits": "24 గంటలూ ఉచిత, గోప్యమైన మానసిక కౌన్సిలింగ్, తెలుగు భాషలోనే సైకాలజిస్టులతో సంభాషణ, నిపుణులైన సైకియాట్రిస్ట్ వైద్య సలహాలు.",
+      "documents": "ఎలాంటి పత్రాలు అవసరం లేదు (పూర్తిగా ఉచిత ఫోన్ సర్వీస్).",
+      "steps": "మీ మొబైల్ లేదా సాధారణ ఫోన్ నుండి 14416 లేదా 1800-891-4416 టోల్-ఫ్రీ నంబర్‌కు కాల్ చేయండి.",
+      "description": "టెలీ-మానస్ (14416) అనేది 24 గంటలూ పనిచేసే ఉచిత మానసిక ఆరోగ్య హెల్ప్‌లైన్. ఒత్తిడి, డిప్రెషన్, ఆందోళన వంటి సమస్యలకు తెలుగులోనే అర్హులైన సైకాలజిస్టుల నుండి ఉచిత సలహాలు పొందవచ్చు."
+    },
+    "last_updated": "2026-05-28",
+    "official_website": "https://telemanas.mohfw.gov.in/",
+    "contact_office": "Tele-MANAS Cell, AP State Mental Health Authority",
+    "eligibility_confirmation": "Toll-Free Phone Intake (14416)",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు మానసిక ఒత్తిడి, నిరాశ లేదా నిద్రలేమి వంటి సమస్యలకు కౌన్సిలింగ్ అవసరమా?",
+        "question_en": "Do you need counseling for mental stress, depression, or sleep issues?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [],
+    "local_help_locations": {
+      "Helpline": "Dial 14416 (Toll-Free 24/7)",
+      "District": "District Mental Health Programme (DMHP) Clinic at District Hospital"
+    },
+    "telugu_description": "టెలీ-మానస్ (14416) అనేది 24 గంటలూ పనిచేసే ఉచిత మానసిక ఆరోగ్య హెల్ప్‌లైన్. ఒత్తిడి, డిప్రెషన్, ఆందోళన వంటి సమస్యలకు తెలుగులోనే అర్హులైన సైకాలజిస్టుల నుండి ఉచిత సలహాలు పొందవచ్చు.",
+    "english_description": "Tele-MANAS is a 24/7 free mental health helpline (14416) offering instant, confidential psychological counseling and psychiatric support in Telugu and English.",
+    "coverage_type": "National Health Programme & Free Services",
+    "coverage_type_te": "జాతీయ ఆరోగ్య పథకం & ఉచిత సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens across India",
+    "target_beneficiary_te": "భారతదేశంలోని అర్హులైన పౌరులు",
+    "application_mode": "Govt Health Facility / Dedicated Portal",
+    "application_mode_te": "ప్రభుత్వ ఆరోగ్య కేంద్రం లేదా అధికారిక పోర్టల్",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  },
+  "National Sickle Cell Anaemia Elimination Mission": {
+    "level": "National",
+    "category": "Genetic Blood Disorders",
+    "icon": "shield",
+    "telugu_name": "జాతీయ సికిల్ సెల్ అనీమియా నిర్మూలన మిషన్",
+    "audio_file": "static/audio/sickle_cell.mp3",
+    "source_name": "Ministry of Health & Family Welfare / Ministry of Tribal Affairs",
+    "source_url": "https://sickle.nhm.gov.in/",
+    "keywords": [
+      "Sickle Cell Mission",
+      "tribal health",
+      "genetic blood disorder",
+      "sickle cell status card",
+      "సికిల్ సెల్",
+      "ITDA AP"
+    ],
+    "original_complex_text": "The National Sickle Cell Anaemia Elimination Mission aims to eliminate Sickle Cell Disease (SCD) as a public health challenge by 2047. The mission focuses on universal screening of 7 Crore individuals (ages 0–40 years) in tribal and vulnerable rural districts, providing pre-marital and pre-conception genetic status cards, free hydroxyurea therapy, pneumococcal vaccines, and specialized pediatric care.",
+    "simplified": {
+      "eligibility": "All individuals aged 0 to 40 years, with primary emphasis on tribal and rural populations across AP (Alluri Sitharama Raju, Manyam, Parvathipuram, etc.).",
+      "benefits": "Free solubility and HPLC blood screening, color-coded Sickle Cell Genetic Status Card, free lifelong Hydroxyurea capsules, and free pain crisis management.",
+      "documents": "Aadhaar Card, Community Certificate (if applicable).",
+      "steps": "Attend screening camps at your local Primary Health Centre (PHC), Tribal Welfare School, or ITDA hospital.",
+      "description": "National Sickle Cell Mission provides free blood testing, color-coded genetic marriage counseling cards, and free lifelong medications for sickle cell disease."
+    },
+    "telugu": {
+      "eligibility": "0 నుండి 40 సంవత్సరాల వయస్సు గల పౌరులు, ముఖ్యంగా గిరిజన మరియు ఏజెన్సీ ప్రాంత నివాసితులు అర్హులు.",
+      "benefits": "ఉచిత రక్త స్క్రీనింగ్ మరియు HPLC పరీక్ష, సికిల్ సెల్ జెనెటిక్ స్టేటస్ కార్డు, ఉచిత హైడ్రాక్సీయూరియా మందులు మరియు నొప్పి నివారణ చికిత్సలు.",
+      "documents": "ఆధార్ కార్డు, కుల ధృవీకరణ పత్రం (వర్తిస్తే).",
+      "steps": "స్థానిక ప్రాథమిక ఆరోగ్య కేంద్రం (PHC) లేదా ఏజెన్సీ ప్రాంతాల్లోని ఐటీడీఏ ఆసుపత్రులలో ఉచిత పరీక్ష చేయించుకోండి.",
+      "description": "జాతీయ సికిల్ సెల్ అనీమియా నిర్మూలన మిషన్ ద్వారా గిరిజన ప్రాంతాల్లో ఉచిత రక్త పరీక్షలు చేసి, ప్రత్యేక జెనెటిక్ హెల్త్ కార్డులు మరియు జీవితాంతం ఉచిత మందులు అందిస్తారు."
+    },
+    "last_updated": "2026-06-05",
+    "official_website": "https://sickle.nhm.gov.in/",
+    "contact_office": "ITDA Medical Officer / Tribal PHC Medical Officer",
+    "eligibility_confirmation": "District Health Society / ITDA Project Officer",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు సికిల్ సెల్ లేదా రక్తహీనత వ్యాధి లక్షణాలు ఉన్నాయా?",
+        "question_en": "Do you have symptoms of sickle cell disease or recurrent joint pains?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Village Tribal Health Worker / ANM",
+      "ITDA": "ITDA Area Hospital / Community Health Centre"
+    },
+    "telugu_description": "జాతీయ సికిల్ సెల్ అనీమియా నిర్మూలన మిషన్ ద్వారా గిరిజన ప్రాంతాల్లో ఉచిత రక్త పరీక్షలు చేసి, ప్రత్యేక జెనెటిక్ హెల్త్ కార్డులు మరియు జీవితాంతం ఉచిత మందులు అందిస్తారు.",
+    "english_description": "National Sickle Cell Mission provides free blood testing, color-coded genetic marriage counseling cards, and free lifelong medications for sickle cell disease.",
+    "coverage_type": "National Health Programme & Free Services",
+    "coverage_type_te": "జాతీయ ఆరోగ్య పథకం & ఉచిత సేవలు",
+    "benefit_amount": "100% Free Service / Financial Support as per government guidelines",
+    "benefit_amount_te": "ప్రభుత్వ నిబంధనల ప్రకారం 100% ఉచిత సేవలు / ఆర్థిక సహాయం",
+    "target_beneficiary": "Eligible Citizens across India",
+    "target_beneficiary_te": "భారతదేశంలోని అర్హులైన పౌరులు",
+    "application_mode": "Govt Health Facility / Dedicated Portal",
+    "application_mode_te": "ప్రభుత్వ ఆరోగ్య కేంద్రం లేదా అధికారిక పోర్టల్",
+    "processing_time": "Standard government processing timeline (Immediate to 7 days)",
+    "processing_time_te": "ప్రభుత్వ మార్గదర్శకాల ప్రకారం తక్షణమే లేదా 7 పని దినాల్లో",
+    "facility_type": "Government Primary, Secondary and Tertiary Health Facilities",
+    "facility_type_te": "ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Continuous / As per program duration",
+    "validity_period_te": "నిరంతరం / పథకం మార్గదర్శకాల ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Grievance Helpline)"
+    ],
+    "key_treatments": [
+      "Free Diagnostic Consultation & Clinical Evaluation",
+      "Free Essential Generic Medicines & Consumables",
+      "Specialized Care Referral & Follow-up Support"
+    ],
+    "key_treatments_te": [
+      "ఉచిత వైద్య పరీక్షలు మరియు డాక్టర్ సంప్రదింపులు",
+      "ఉచిత నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+      "స్పెషలిస్ట్ వైద్యం కొరకు రిఫరల్ మరియు ఫాలో-అప్ సేవలు"
+    ],
+    "exclusions": "Non-empanelled private commercial setups without official authorization.",
+    "exclusions_te": "అధికారిక అనుమతి లేని ప్రైవేట్ వాణిజ్య కేంద్రాలు వర్తించవు."
+  }
+}

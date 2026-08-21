@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Dashboard - SmartGov Health Guide</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .admin-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        .admin-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .admin-header-left h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--ink);
+        }
+        .admin-header-left span {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .admin-header-actions {
+            display: flex;
+            gap: 12px;
+        }
+        .dashboard-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        .dashboard-section h2 {
+            margin-top: 0;
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        body.dark-mode .dashboard-section h2 {
+            color: var(--primary-light);
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .metric-card {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: 8px 0;
+        }
+        .metric-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .metric-subtitle {
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+        .scheme-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .scheme-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .scheme-item:last-child {
+            border-bottom: none;
+        }
+        .scheme-item-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .scheme-item-stats {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .stat-pill {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--ink);
+        }
+        .stat-pill.rating {
+            background: #fff8e1;
+            color: #b78103;
+            border-color: #ffe082;
+        }
+        body.dark-mode .stat-pill.rating {
+            background: #332600;
+            color: #ffd54f;
+            border-color: #ffd54f;
+        }
+        .feedback-table-wrap {
+            overflow-x: auto;
+        }
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .admin-table th, .admin-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .admin-table th {
+            background: var(--surface-soft);
+            font-weight: 800;
+            color: var(--muted);
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+        }
+        @media (max-width: 650px) {
+            .admin-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+            .scheme-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+    <div class="admin-wrap">
+        <header class="admin-header">
+            <div class="admin-header-left">
+                <img src="/static/icon.svg" alt="Logo" width="44" height="44">
+                <div>
+                    <h1>నిర్వాహక డాష్‌బోర్డ్ <small>(Admin Dashboard)</small></h1>
+                    <span>SmartGov Health Analytics & Community Feedback</span>
+                </div>
+            </div>
+            <div class="admin-header-actions">
+                <a href="/" class="btn secondary">← ప్రధాన పేజీ (Home)</a>
+                <a href="/admin/logout" class="btn primary-btn">లాగ్అవుట్ (Logout)</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard-section">
+                <h2>📈 ప్రభావం & వినియోగం (Portal Metrics)</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">📊 మొత్తం ప్రశ్నలు / సందర్శనలు</div>
+                        <div class="metric-value"><%= metrics.total_requests %></div>
+                        <div class="metric-subtitle">Total Views & Searches</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">💬 పౌరుల స్పందనలు</div>
+                        <div class="metric-value"><%= metrics.total_feedback %></div>
+                        <div class="metric-subtitle">Total Citizen Feedback</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">⭐ సగటు సంతృప్తి రేటింగ్</div>
+                        <div class="metric-value"><%= Number(metrics.avg_rating || 0).toFixed(1) %> <span style="font-size:1.1rem; color:var(--muted)">/ 5</span></div>
+                        <div class="metric-subtitle">Avg Rating</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">📤 వాట్సాప్ షేర్లు</div>
+                        <div class="metric-value"><%= metrics.total_shares || 0 %></div>
+                        <div class="metric-subtitle">WhatsApp Shares</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>🏆 అత్యధికంగా అభ్యర్థించిన పథకాలు (Popular Schemes)</h2>
+                <ul class="scheme-list">
+                    <% if (stats && stats.length > 0) { %>
+                        <% stats.forEach(function(item) { %>
+                        <li class="scheme-item">
+                            <div class="scheme-item-name"><%= item.name || item[0] %></div>
+                            <div class="scheme-item-stats">
+                                <span class="stat-pill">👁️ <%= item.count || item[1] %> సార్లు చూసారు</span>
+                                <% if (item.rating || item[2]) { %>
+                                <span class="stat-pill rating">⭐ <%= item.rating || item[2] %></span>
+                                <% } %>
+                            </div>
+                        </li>
+                        <% }); %>
+                    <% } else { %>
+                        <li class="scheme-item">
+                            <div class="scheme-item-name" style="color:var(--muted)">ఇప్పటివరకు డేటా లేదు (No scheme requests yet)</div>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
+
+            <% if (typeof recentFeedback !== 'undefined' && recentFeedback && recentFeedback.length > 0) { %>
+            <section class="dashboard-section">
+                <h2>💬 పౌరుల తాజా అభిప్రాయాలు (Recent Feedback)</h2>
+                <div class="feedback-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>సమయం (Timestamp)</th>
+                                <th>రేటింగ్ (Rating)</th>
+                                <th>వివరణ (Comment)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% recentFeedback.forEach(function(fb) { %>
+                            <tr>
+                                <td><%= new Date(fb.timestamp).toLocaleString('te-IN') %></td>
+                                <td><span class="stat-pill rating">⭐ <%= fb.rating %>/5</span></td>
+                                <td><%= fb.comment || 'రేటింగ్ మాత్రమే నమోదు చేయబడింది' %></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+        </main>
+    </div>
+</body>
+</html>

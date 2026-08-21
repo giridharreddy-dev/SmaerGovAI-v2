@@ -1,0 +1,1305 @@
+{
+  "Dr. NTR Vaidya Seva (AP Cashless Hospital Care)": {
+    "level": "Andhra Pradesh",
+    "category": "Hospital treatment",
+    "icon": "hospital",
+    "telugu_name": "డా. ఎన్.టి.ఆర్ వైద్య సేవ",
+    "audio_file": "static/audio/ntr_vaidya_seva_ap.mp3",
+    "source_name": "AP Finance Budget 2026-27",
+    "source_url": "https://apfinance.gov.in/",
+    "keywords": [
+      "ఆరోగ్యశ్రీ",
+      "వైద్య సేవ",
+      "ఎన్టీఆర్",
+      "హాస్పిటల్",
+      "ఆపరేషన్",
+      "సర్జరీ",
+      "cashless",
+      "hospital",
+      "arogyasri",
+      "ntr"
+    ],
+    "original_complex_text": "Dr. NTR Vaidya Seva is the Andhra Pradesh state health assurance scheme for below poverty line families. It gives financial protection up to Rs. 25 lakh per family per year for selected major illnesses that need hospitalization, surgery or therapy. Treatment is provided through identified network hospitals. Beneficiaries should carry Aadhaar, ration/health card and any previous medical records. The hospital Aarogya Mithra/help desk verifies eligibility and guides the patient for cashless treatment.",
+    "simplified": {
+      "eligibility": "Poor/BPL families in Andhra Pradesh. The hospital help desk checks the family details before treatment.",
+      "benefits": "Cashless treatment for selected major diseases, surgeries and therapies in network hospitals. The cover can be up to Rs. 25 lakh per family per year as per AP budget documents.",
+      "documents": "Aadhaar card, ration card or health card, phone number, old medical reports if available.",
+      "steps": "Go to a government or network hospital. Ask for the Aarogya Mithra/help desk. Show Aadhaar and ration/health card. The hospital checks eligibility and starts cashless treatment if the disease is covered.",
+      "description": "Dr. NTR Vaidya Seva is the flagship healthcare assurance scheme of the Government of Andhra Pradesh for below poverty line (BPL) families. It provides comprehensive cashless hospitalization, surgical interventions, and post-operative therapies up to Rs. 25 lakh per family per year for identified major illnesses through empanelled public and private network hospitals with on-site Aarogya Mithra assistance."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్ లోని పేద లేదా బీపీఎల్ కుటుంబాలు అర్హులు. ఆసుపత్రి హెల్ప్ డెస్క్ కుటుంబ వివరాలను చూసి అర్హతను చెక్ చేస్తుంది.",
+      "benefits": "ఎంపిక చేసిన పెద్ద వ్యాధులు, ఆపరేషన్లు, చికిత్సలకు నెట్ వర్క్ ఆసుపత్రుల్లో నగదు లేకుండా చికిత్స. ఏటా కుటుంబానికి 25 లక్షల రూపాయల వరకు రక్షణ ఉండవచ్చు.",
+      "documents": "ఆధార్ కార్డు, రేషన్ కార్డు లేదా ఆరోగ్య కార్డు, మొబైల్ నంబర్, ఉంటే పాత వైద్య రిపోర్టులు.",
+      "steps": "ప్రభుత్వ లేదా నెట్ వర్క్ ఆసుపత్రికి వెళ్లండి. ఆరోగ్య మిత్ర లేదా హెల్ప్ డెస్క్ ను అడగండి. ఆధార్, రేషన్ లేదా ఆరోగ్య కార్డు చూపండి. వ్యాధి కవర్ అయితే క్యాష్ లెస్ చికిత్స మొదలవుతుంది.",
+      "description": "డా. ఎన్.టి.ఆర్ వైద్య సేవ అనేది ఆంధ్రప్రదేశ్ రాష్ట్రంలో దారిద్య్రరేఖకు దిగువన ఉన్న (బీపీఎల్) పేద కుటుంబాలకు ఉచిత మరియు నగదు రహిత ఆసుపత్రి చికిత్స అందించే ప్రధాన ఆరోగ్య రక్షణ పథకం. ఎంపిక చేసిన పెద్ద వ్యాధులు, శస్త్రచికిత్సలు మరియు చికిత్సల కోసం కుటుంబానికి ఏటా రూ. 25 లక్షల వరకు ఆర్థిక రక్షణ లభిస్తుంది. నెట్‌వర్క్ ఆసుపత్రులలోని ఆరోగ్య మిత్ర సహాయంతో రోగులు నేరుగా నగదు రహిత సేవలు పొందవచ్చు."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://apfinance.gov.in/",
+    "contact_office": "District Health Office, Andhra Pradesh",
+    "eligibility_confirmation": "Hospital Aarogya Mithra / Help Desk",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు AP లో బీపీఎల్ కుటుంబానికి చెందుతున్నారా?",
+        "question_en": "Are you from a BPL family in AP?",
+        "weight": "high"
+      },
+      {
+        "question_te": "నెట్‌వర్క్ ఆసుపత్రిలో చికిత్స అవసరమైనదా?",
+        "question_en": "Do you need hospital treatment?",
+        "weight": "high"
+      },
+      {
+        "question_te": "ఆధార్ లేదా రేషన్ కార్డు ఉందా?",
+        "question_en": "Do you have Aadhaar or ration card?",
+        "weight": "medium"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Ration Card / Health Card",
+        "name_te": "రేషన్ కార్డు / ఆరోగ్య కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Phone Number",
+        "name_te": "ఫోన్ నంబర్",
+        "optional": false
+      },
+      {
+        "name": "Medical Reports",
+        "name_te": "వైద్య రిపోర్టులు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "phc": "Government PHC in your mandal",
+      "chc": "CHC (Community Health Centre) in your district",
+      "hospital": "Network hospital listed for Dr. NTR Vaidya Seva",
+      "office": "District Health Office",
+      "contact": "Aarogya Mithra at any network hospital"
+    },
+    "telugu_description": "డా. ఎన్.టి.ఆర్ వైద్య సేవ అనేది ఆంధ్రప్రదేశ్ రాష్ట్రంలో దారిద్య్రరేఖకు దిగువన ఉన్న (బీపీఎల్) పేద కుటుంబాలకు ఉచిత మరియు నగదు రహిత ఆసుపత్రి చికిత్స అందించే ప్రధాన ఆరోగ్య రక్షణ పథకం. ఎంపిక చేసిన పెద్ద వ్యాధులు, శస్త్రచికిత్సలు మరియు చికిత్సల కోసం కుటుంబానికి ఏటా రూ. 25 లక్షల వరకు ఆర్థిక రక్షణ లభిస్తుంది. నెట్‌వర్క్ ఆసుపత్రులలోని ఆరోగ్య మిత్ర సహాయంతో రోగులు నేరుగా నగదు రహిత సేవలు పొందవచ్చు.",
+    "english_description": "Dr. NTR Vaidya Seva is the flagship healthcare assurance scheme of the Government of Andhra Pradesh for below poverty line (BPL) families. It provides comprehensive cashless hospitalization, surgical interventions, and post-operative therapies up to Rs. 25 lakh per family per year for identified major illnesses through empanelled public and private network hospitals with on-site Aarogya Mithra assistance.",
+    "coverage_type": "Cashless Hospitalization & Surgical Care",
+    "coverage_type_te": "నగదు రహిత ఆసుపత్రి & శస్త్రచికిత్స సేవలు",
+    "benefit_amount": "Up to ₹25,00,000 per family per year",
+    "benefit_amount_te": "ఏటా కుటుంబానికి ₹25,00,000 వరకు ఉచిత చికిత్స",
+    "target_beneficiary": "BPL / Rice Card Holder Families in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని బీపీఎల్ మరియు బియ్యం కార్డు లబ్ధిదారుల కుటుంబాలు",
+    "application_mode": "Aarogyamithra Desk at Network Hospital on Admission",
+    "application_mode_te": "ఆసుపత్రిలోని ఆరోగ్యమిత్ర హెల్ప్ డెస్క్ వద్ద నేరుగా నమోదు",
+    "processing_time": "Instant pre-authorization & cashless admission",
+    "processing_time_te": "ఆసుపత్రిలో చేరిన వెంటనే తక్షణ ప్రీ-ఆథరైజేషన్",
+    "facility_type": "Empanelled Public & Private Super-Specialty Network Hospitals",
+    "facility_type_te": "గుర్తింపు పొందిన ప్రభుత్వ & ప్రైవేట్ సూపర్ స్పెషాలిటీ నెట్‌వర్క్ ఆసుపత్రులు",
+    "validity_period": "Continuous coverage linked with active Rice/Aadhaar card",
+    "validity_period_te": "బియ్యం/ఆధార్ కార్డు ఆధారంగా నిరంతర వార్షిక రక్షణ",
+    "helpline_numbers": [
+      "104 (Health Advice & Grievance)",
+      "1902 (AP CM Public Grievance Helpline)",
+      "1800-425-7778 (Trust Helpline)"
+    ],
+    "key_treatments": [
+      "Open Heart Surgery & Coronary Angioplasty / Stents",
+      "Medical, Surgical & Radiation Oncology (Cancer Care)",
+      "Polytrauma, Brain & Spine Neuro-Surgeries",
+      "Kidney & Liver Transplants and Post-Op Immunosuppressants",
+      "Joint Replacements (Knee & Hip)",
+      "Neonatal Intensive Care (NICU) & Paediatric Surgeries"
+    ],
+    "key_treatments_te": [
+      "గుండె శస్త్రచికిత్సలు, బైపాస్ & స్టెంట్ అమరిక",
+      "క్యాన్సర్ కీమోథెరపీ, రేడియేషన్ & సర్జరీ",
+      "తీవ్ర గాయాలు, మెదడు & వెన్నెముక న్యూరో సర్జరీలు",
+      "మూత్రపిండాలు & కాలేయ మార్పిడి చికిత్సలు",
+      "కీళ్ల మార్పిడి (మోకాలు & తుంటి ఆపరేషన్లు)",
+      "నవజాత శిశు సంరక్షణ (NICU) & పీడియాట్రిక్ సర్జరీలు"
+    ],
+    "exclusions": "Purely cosmetic procedures without trauma, non-prescribed outpatient checkups, un-empanelled non-network clinics.",
+    "exclusions_te": "వైద్యేతర సౌందర్య శస్త్రచికిత్సలు, అనవసరమైన అవుట్‌పేషెంట్ పరీక్షలు, గుర్తించబడని ప్రైవేట్ క్లినిక్‌లు వర్తించవు."
+  },
+  "AP 108 Emergency Ambulance Service": {
+    "level": "Andhra Pradesh",
+    "category": "Emergency ambulance",
+    "icon": "ambulance",
+    "telugu_name": "108 అత్యవసర అంబులెన్స్",
+    "audio_file": "static/audio/ap_108_ambulance.mp3",
+    "source_name": "AP Health, Medical and Family Welfare budget notes",
+    "source_url": "https://apfinance.gov.in/",
+    "keywords": [
+      "108",
+      "అంబులెన్స్",
+      "ఎమర్జెన్సీ",
+      "ప్రమాదం",
+      "గర్భిణి",
+      "ambulance",
+      "emergency",
+      "accident"
+    ],
+    "original_complex_text": "Andhra Pradesh 108 Emergency Response Services provide free emergency medical response through Advanced Life Support and Basic Life Support ambulances. The service is used for accidents, pregnancy emergencies, heart attack symptoms, stroke symptoms, severe injury and other urgent situations. Call 108 and give the village, landmark, patient condition and caller phone number. No application or documents are needed during emergency.",
+    "simplified": {
+      "eligibility": "Anyone in Andhra Pradesh who has a medical emergency can call.",
+      "benefits": "Free ambulance help in emergencies such as accidents, delivery pain, heart attack symptoms, stroke symptoms, serious injury or sudden severe illness.",
+      "documents": "No documents are needed to call. Keep Aadhaar or hospital card ready later if possible.",
+      "steps": "Call 108. Say the village name, nearby landmark and patient problem. Keep the phone nearby. Send one person to the road to guide the ambulance.",
+      "description": "The AP 108 Emergency Ambulance Service is a 24/7 toll-free emergency medical response service operating throughout Andhra Pradesh. Dialing 108 dispatches a GPS-equipped emergency ambulance with trained emergency medical technicians and essential life support equipment to provide pre-hospital care and rapid transit to the nearest hospital."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్ లో అత్యవసర వైద్య పరిస్థితి ఉన్న ఎవరికైనా ఈ సేవ అందుబాటులో ఉంటుంది.",
+      "benefits": "ప్రమాదం, ప్రసవ నొప్పులు, గుండెపోటు లక్షణాలు, స్ట్రోక్ లక్షణాలు, తీవ్రమైన గాయం లేదా అకస్మాత్తుగా తీవ్రమైన అనారోగ్యం వచ్చినప్పుడు ఉచిత అంబులెన్స్ సహాయం.",
+      "documents": "కాల్ చేయడానికి పత్రాలు అవసరం లేదు. తరువాత అవసరమైతే ఆధార్ లేదా ఆసుపత్రి కార్డు దగ్గర పెట్టుకోండి.",
+      "steps": "108 కు కాల్ చేయండి. గ్రామం పేరు, దగ్గరలో గుర్తు, రోగి సమస్య చెప్పండి. ఫోన్ దగ్గర పెట్టుకోండి. అంబులెన్స్ కు దారి చూపడానికి ఒకరిని రోడ్డుపై ఉంచండి.",
+      "description": "108 అత్యవసర అంబులెన్స్ సేవ అనేది ఆంధ్రప్రదేశ్ వ్యాప్తంగా 24 గంటలు ఉచితంగా లభించే అత్యవసర స్పందన వైద్య వాహన సేవ. ప్రమాదాలు, గుండెపోటు, తీవ్ర అనారోగ్యం మరియు గర్భిణీ స్త్రీల అత్యవసర సమయాల్లో 108 కి డయల్ చేయడం ద్వారా ప్రాథమిక చికిత్సతో కూడిన అంబులెన్స్ త్వరితగతిన చేరుకుని సమీప ప్రభుత్వ లేదా నెట్‌వర్క్ ఆసుపత్రికి చేరుస్తుంది."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://apfinance.gov.in/",
+    "contact_office": "108 Emergency Command Centre, AP",
+    "eligibility_confirmation": "Call 108 directly - no eligibility check needed",
+    "eligibility_questions": [
+      {
+        "question_te": "ఇది అత్యవసర పరిస్థితి?",
+        "question_en": "Is this an emergency?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "అంబులెన్స్ సేవ కావాలనుకుంటున్నారా?",
+        "question_en": "Do you need ambulance?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "None required",
+        "name_te": "ఏది అవసరం లేదు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "ambulance": "Call 108 from anywhere",
+      "hospital": "Nearest government hospital will receive patient",
+      "contact": "108 (24/7)"
+    },
+    "telugu_description": "108 అత్యవసర అంబులెన్స్ సేవ అనేది ఆంధ్రప్రదేశ్ వ్యాప్తంగా 24 గంటలు ఉచితంగా లభించే అత్యవసర స్పందన వైద్య వాహన సేవ. ప్రమాదాలు, గుండెపోటు, తీవ్ర అనారోగ్యం మరియు గర్భిణీ స్త్రీల అత్యవసర సమయాల్లో 108 కి డయల్ చేయడం ద్వారా ప్రాథమిక చికిత్సతో కూడిన అంబులెన్స్ త్వరితగతిన చేరుకుని సమీప ప్రభుత్వ లేదా నెట్‌వర్క్ ఆసుపత్రికి చేరుస్తుంది.",
+    "english_description": "The AP 108 Emergency Ambulance Service is a 24/7 toll-free emergency medical response service operating throughout Andhra Pradesh. Dialing 108 dispatches a GPS-equipped emergency ambulance with trained emergency medical technicians and essential life support equipment to provide pre-hospital care and rapid transit to the nearest hospital.",
+    "coverage_type": "24x7 Free Emergency Medical Response & Advanced Life Support",
+    "coverage_type_te": "24x7 ఉచిత అత్యవసర అంబులెన్స్ & లైఫ్ సపోర్ట్ సేవలు",
+    "benefit_amount": "100% Free Toll-Free Emergency Dispatch & Pre-Hospital Care",
+    "benefit_amount_te": "100% ఉచిత అత్యవసర తరలింపు & ప్రథమ చికిత్స",
+    "target_beneficiary": "All Citizens & Road Accident / Medical Emergency Victims in AP",
+    "target_beneficiary_te": "అత్యవసర వైద్య పరిస్థితి లేదా రోడ్డు ప్రమాదంలో ఉన్న ఆంధ్రప్రదేశ్ పౌరులందరూ",
+    "application_mode": "Dial 108 (Toll-Free 24x7 Dispatch)",
+    "application_mode_te": "108 టోల్-ఫ్రీ నంబర్‌కు నేరుగా కాల్ చేయడం ద్వారా",
+    "processing_time": "Immediate dispatch; average response time 15-20 minutes",
+    "processing_time_te": "కాల్ చేసిన వెంటనే బయలుదేరుతుంది; 15-20 నిమిషాల్లో చేరుకుంటుంది",
+    "facility_type": "GPS-Tracked Advanced Life Support (ALS) & Basic Life Support (BLS) Ambulances",
+    "facility_type_te": "జీపీఎస్ ట్రాకింగ్ కలిగిన అడ్వాన్స్‌డ్ & బేసిక్ లైఫ్ సపోర్ట్ అంబులెన్స్‌లు",
+    "validity_period": "Immediate transit from incident site to nearest receiving hospital",
+    "validity_period_te": "ప్రమాదం జరిగిన స్థలం నుండి సమీప ఆసుపత్రికి చేరేవరకు",
+    "helpline_numbers": [
+      "108 (Emergency Dispatch 24x7)",
+      "112 (National Unified Emergency)"
+    ],
+    "key_treatments": [
+      "Road Traffic Accidents & Major Trauma Triage",
+      "Acute Myocardial Infarction (Heart Attack) & ECG Transmission",
+      "Acute Stroke & Golden Hour Resuscitation",
+      "Labour & Pregnancy Complications Emergency Delivery",
+      "Snake Bite, Poisoning & Asphyxiation Pre-Hospital Care"
+    ],
+    "key_treatments_te": [
+      "రోడ్డు ప్రమాదాల అత్యవసర స్పందన & ప్రథమ చికిత్స",
+      "గుండెపోటు లక్షణాల్లో ఆక్సిజన్ & తక్షణ ఈసీజీ పర్యవేక్షణ",
+      "పక్షవాతం (స్ట్రోక్) గోల్డెన్ అవర్ అత్యవసర రవాణా",
+      "గర్భిణీ స్త్రీల ప్రసవ నొప్పులు & అత్యవసర కాన్పు సేవలు",
+      "పాముకాటు, విషప్రభావం & శ్వాస సంబంధిత అత్యవసర చికిత్స"
+    ],
+    "exclusions": "Non-emergency routine patient transfers (use 104 or local patient transport).",
+    "exclusions_te": "సాధారణ రోగుల సాధారణ ప్రయాణాలకు వర్తించదు (అత్యవసర కేసులకు మాత్రమే)."
+  },
+  "AP 104 Mobile Medical Units": {
+    "level": "Andhra Pradesh",
+    "category": "Village health service",
+    "icon": "mobile-clinic",
+    "telugu_name": "104 మొబైల్ మెడికల్ యూనిట్లు",
+    "audio_file": "static/audio/ap_104_mobile_medical_units.mp3",
+    "source_name": "AP Finance Budget 2025-26",
+    "source_url": "https://apfinance.gov.in/",
+    "keywords": [
+      "104",
+      "మొబైల్ మెడికల్",
+      "గ్రామం",
+      "పిహెచ్సి",
+      "డాక్టర్",
+      "టెస్టులు",
+      "mobile medical",
+      "village clinic"
+    ],
+    "original_complex_text": "The Government of Andhra Pradesh runs 104 Mobile Medical Units to take health services to rural and tribal habitations. The 104 vehicle visits villages with PHC medical staff and provides services such as antenatal care, communicable disease care, non-communicable disease screening, basic tests, ECG, postnatal care, medicines and support for bedridden or long-term illness patients. People can check the visit date with the ASHA, ANM, village secretariat or PHC.",
+    "simplified": {
+      "eligibility": "Rural and tribal residents in Andhra Pradesh, especially pregnant women, elderly people, bedridden patients and people with long-term diseases.",
+      "benefits": "Doctor/health staff visit near the village. Basic checkups, pregnancy care, BP/sugar-related screening, simple tests, medicines and follow-up help may be available.",
+      "documents": "Aadhaar card, old prescription, medical reports, pregnancy/MCP card if applicable.",
+      "steps": "Ask ASHA, ANM, village secretariat or PHC when the 104 vehicle comes. Visit the camp with old reports. Follow the advice and collect medicines if given.",
+      "description": "The AP 104 Mobile Medical Units deliver doorstep primary healthcare services to rural and remote habitations on fixed monthly schedules. Medical teams provide free consultations, diagnostic screening for chronic diseases like hypertension and diabetes, maternal and child health checks, and free essential medicines."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్ గ్రామీణ, గిరిజన ప్రాంతాల ప్రజలు, ముఖ్యంగా గర్భిణీలు, వృద్ధులు, మంచానికే పరిమితమైన రోగులు, దీర్ఘకాలిక వ్యాధులు ఉన్నవారు.",
+      "benefits": "డాక్టర్ లేదా ఆరోగ్య సిబ్బంది గ్రామానికి దగ్గరగా వస్తారు. సాధారణ పరీక్షలు, గర్భిణీ సేవలు, బీపీ/షుగర్ స్క్రీనింగ్, చిన్న టెస్టులు, మందులు, ఫాలోఅప్ సహాయం అందవచ్చు.",
+      "documents": "ఆధార్ కార్డు, పాత మందుల చీటి, వైద్య రిపోర్టులు, గర్భిణీ అయితే MCP కార్డు.",
+      "steps": "104 వాహనం ఎప్పుడు వస్తుందో ASHA, ANM, గ్రామ సచివాలయం లేదా PHC ను అడగండి. పాత రిపోర్టులతో క్యాంప్ కు వెళ్లండి. సలహా పాటించి మందులు తీసుకోండి.",
+      "description": "104 మొబైల్ మెడికల్ యూనిట్స్ (సంచార వైద్య వాహనాలు) గ్రామీణ మరియు మారుమూల ప్రాంతాల ప్రజల వద్దకే వెళ్లి ఉచిత ప్రాథమిక ఆరోగ్య సేవలు, దీర్ఘకాలిక వ్యాధుల పరీక్షలు (బీపీ, షుగర్), గర్భిణీల తనిఖీలు మరియు ఉచిత మందులను పంపిణీ చేసే సంచార వైద్య సేవా కార్యక్రమం."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://apfinance.gov.in/",
+    "contact_office": "PHC/ASHA Worker in your village",
+    "eligibility_confirmation": "ASHA / ANM / Village Secretariat",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు గ్రామీణ ప్రాంతంలో ఉన్నారా?",
+        "question_en": "Are you in a rural area?",
+        "weight": "high"
+      },
+      {
+        "question_te": "104 యూనిట్ సందర్శన తేదీ మీకు తెలుసా?",
+        "question_en": "Do you know the 104 visit date?",
+        "weight": "medium"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్",
+        "optional": true
+      },
+      {
+        "name": "Old Prescriptions",
+        "name_te": "పాత మందుల చీటి",
+        "optional": true
+      },
+      {
+        "name": "MCP Card (if pregnant)",
+        "name_te": "MCP కార్డు (గర్భిణీ అయితే)",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "phc": "PHC in your mandal",
+      "asha": "ASHA worker in your village",
+      "anm": "ANM / Health Worker",
+      "village_office": "Village Secretariat"
+    },
+    "telugu_description": "104 మొబైల్ మెడికల్ యూనిట్స్ (సంచార వైద్య వాహనాలు) గ్రామీణ మరియు మారుమూల ప్రాంతాల ప్రజల వద్దకే వెళ్లి ఉచిత ప్రాథమిక ఆరోగ్య సేవలు, దీర్ఘకాలిక వ్యాధుల పరీక్షలు (బీపీ, షుగర్), గర్భిణీల తనిఖీలు మరియు ఉచిత మందులను పంపిణీ చేసే సంచార వైద్య సేవా కార్యక్రమం.",
+    "english_description": "The AP 104 Mobile Medical Units deliver doorstep primary healthcare services to rural and remote habitations on fixed monthly schedules. Medical teams provide free consultations, diagnostic screening for chronic diseases like hypertension and diabetes, maternal and child health checks, and free essential medicines.",
+    "coverage_type": "Fixed-Day Mobile Primary Healthcare & Free Diagnostics in Villages",
+    "coverage_type_te": "గ్రామాల్లో నిర్ణీత తేదీలలో ఉచిత ప్రాథమిక వైద్యం & పరీక్షలు",
+    "benefit_amount": "100% Free Consultation, Diagnostic Tests & Generic Medicines",
+    "benefit_amount_te": "100% ఉచిత వైద్య పరీక్షలు, రక్త పరీక్షలు మరియు మందులు",
+    "target_beneficiary": "Rural, Tribal & Remote Village Residents in Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని గ్రామీణ, గిరిజన & మారుమూల ప్రాంతాల ప్రజలు",
+    "application_mode": "Walk-in at monthly scheduled 104 village campsite",
+    "application_mode_te": "గ్రామంలో 104 వాహనం వచ్చే నిర్ణీత రోజున నేరుగా హాజరుకావడం",
+    "processing_time": "Same-day on-site consultation and medicine dispensing",
+    "processing_time_te": "అదే రోజున ఉచిత వైద్య పరీక్షలు & మందుల పంపిణీ",
+    "facility_type": "Customized Mobile Medical Vans with Medical Officers & Lab Techs",
+    "facility_type_te": "డాక్టర్, ల్యాబ్ టెక్నీషియన్ మరియు మందులతో కూడిన సంచార వైద్య వాహనాలు",
+    "validity_period": "Recurring monthly village visits",
+    "validity_period_te": "ప్రతినెల నిర్ణీత షెడ్యూల్ ప్రకారం నిరంతరం",
+    "helpline_numbers": [
+      "104 (Health Advice Helpline)",
+      "1902 (Citizen Helpline)"
+    ],
+    "key_treatments": [
+      "Chronic Disease Management (Hypertension & Diabetes Mellitus Screening)",
+      "Antenatal & Postnatal Care (ANC/PNC) for Rural Mothers",
+      "Free 20+ Point-of-Care Diagnostic Lab Tests (Blood Glucose, Haemoglobin)",
+      "Free 30-day Supply of Essential Chronic Medicines",
+      "Referral linkage to PHC/CHC/NTR Vaidya Seva Hospitals"
+    ],
+    "key_treatments_te": [
+      "రక్తపోటు (బీపీ) మరియు మధుమేహం (షుగర్) వ్యాధుల నియంత్రణ",
+      "గర్భిణీ స్త్రీలు మరియు బాలింతల సాధారణ ఆరోగ్య పరీక్షలు",
+      "రక్తహీనత, రక్తంలో చక్కెర శాతం తదితర 20+ ఉచిత పరీక్షలు",
+      "దీర్ఘకాలిక వ్యాధులకు ఉచితంగా నెలవారీ మందుల అందజేత",
+      "అవసరమైన రోగులను పెద్దాసుపత్రులకు రిఫర్ చేసే విధానం"
+    ],
+    "exclusions": "Major inpatient surgeries and overnight hospitalizations (referred to CHC/District Hospital).",
+    "exclusions_te": "పెద్ద ఆపరేషన్లు మరియు ఇన్‌పేషెంట్ అడ్మిషన్లు (సీహెచ్‌సీ లేదా జిల్లా ఆసుపత్రులకు రిఫర్ చేస్తారు)."
+  },
+  "Ayushman Bharat PM-JAY (National Health Cover)": {
+    "level": "National",
+    "category": "Hospital treatment",
+    "icon": "shield",
+    "telugu_name": "ఆయుష్మాన్ భారత్ PM-JAY",
+    "audio_file": "static/audio/ayushman_bharat_pmjay.mp3",
+    "source_name": "National Health Authority",
+    "source_url": "https://nha.gov.in/PM-JAY",
+    "keywords": [
+      "ఆయుష్మాన్",
+      "pmjay",
+      "pm-jay",
+      "పీఎంజే",
+      "health cover",
+      "hospital",
+      "cashless"
+    ],
+    "original_complex_text": "Ayushman Bharat Pradhan Mantri Jan Arogya Yojana is a national health assurance scheme. It provides cashless health cover of Rs. 5 lakh per eligible family per year for listed secondary and tertiary hospitalization in public and private empanelled hospitals. Eligibility is based mainly on SECC deprivation and occupation criteria, and states can use their own beneficiary lists. Benefits are portable across India, with no cap on family size, age or gender. In Andhra Pradesh, state health assurance is implemented through the state trust/scheme.",
+    "simplified": {
+      "eligibility": "Poor and vulnerable families listed as eligible under PM-JAY/State health assurance records.",
+      "benefits": "Cashless hospital treatment up to Rs. 5 lakh per eligible family per year for listed serious illnesses across empanelled hospitals in India.",
+      "documents": "Aadhaar card, ration card or PM-JAY/health card, mobile number, medical reports.",
+      "steps": "Check eligibility at a PM-JAY counter, Common Service Centre, empanelled hospital or official PM-JAY portal. If eligible, get an Ayushman card/e-card and use it at an empanelled hospital.",
+      "description": "Ayushman Bharat PM-JAY is the world's largest government-funded health assurance initiative, providing cashless coverage of up to Rs. 5 lakh per eligible family per year for secondary and tertiary care hospitalization across empanelled public and private hospitals nationwide."
+    },
+    "telugu": {
+      "eligibility": "PM-JAY లేదా రాష్ట్ర ఆరోగ్య పథకం జాబితాలో అర్హులుగా ఉన్న పేద మరియు బలహీన కుటుంబాలు.",
+      "benefits": "దేశవ్యాప్తంగా ఎంపానెల్ ఆసుపత్రుల్లో ఎంపిక చేసిన తీవ్రమైన వ్యాధులకు ఏటా కుటుంబానికి 5 లక్షల రూపాయల వరకు క్యాష్ లెస్ చికిత్స.",
+      "documents": "ఆధార్ కార్డు, రేషన్ కార్డు లేదా PM-JAY/ఆరోగ్య కార్డు, మొబైల్ నంబర్, వైద్య రిపోర్టులు.",
+      "steps": "PM-JAY కౌంటర్, CSC, ఎంపానెల్ ఆసుపత్రి లేదా అధికారిక పోర్టల్ లో అర్హత చెక్ చేయండి. అర్హత ఉంటే ఆయుష్మాన్ కార్డు తీసుకుని ఎంపానెల్ ఆసుపత్రిలో ఉపయోగించండి.",
+      "description": "ఆయుష్మాన్ భారత్ ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన (PM-JAY) అనేది భారతదేశంలోని నిరుపేద కుటుంబాలకు ద్వితీయ మరియు తృతీయ స్థాయి ఆసుపత్రి చికిత్సల కోసం ఏటా కుటుంబానికి రూ. 5 లక్షల వరకు ఉచిత నగదు రహిత చికిత్స కల్పించే జాతీయ ఆరోగ్య రక్షణ పథకం."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://nha.gov.in/PM-JAY",
+    "contact_office": "PM-JAY Help Centre / Common Service Centre",
+    "eligibility_confirmation": "CSC / PM-JAY Counter / Hospital",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు పేద కుటుంబానికి చెందుతున్నారా?",
+        "question_en": "Are you from a poor family?",
+        "weight": "high"
+      },
+      {
+        "question_te": "SECC జాబితాలో ఉన్నారా?",
+        "question_en": "Are you listed in SECC data?",
+        "weight": "high"
+      },
+      {
+        "question_te": "రేషన్ కార్డు ఉందా?",
+        "question_en": "Do you have ration card?",
+        "weight": "medium"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Ration Card",
+        "name_te": "రేషన్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Mobile Number",
+        "name_te": "ఫోన్ నంబర్",
+        "optional": false
+      },
+      {
+        "name": "Medical Reports",
+        "name_te": "వైద్య రిపోర్టులు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "csc": "Common Service Centre (CSC)",
+      "hospital": "Empanelled hospital with PM-JAY counter",
+      "pm_jay_counter": "PM-JAY help desk at hospital",
+      "district_office": "District PM-JAY coordination office"
+    },
+    "telugu_description": "ఆయుష్మాన్ భారత్ ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన (PM-JAY) అనేది భారతదేశంలోని నిరుపేద కుటుంబాలకు ద్వితీయ మరియు తృతీయ స్థాయి ఆసుపత్రి చికిత్సల కోసం ఏటా కుటుంబానికి రూ. 5 లక్షల వరకు ఉచిత నగదు రహిత చికిత్స కల్పించే జాతీయ ఆరోగ్య రక్షణ పథకం.",
+    "english_description": "Ayushman Bharat PM-JAY is the world's largest government-funded health assurance initiative, providing cashless coverage of up to Rs. 5 lakh per eligible family per year for secondary and tertiary care hospitalization across empanelled public and private hospitals nationwide.",
+    "coverage_type": "National Cashless Health Assurance Scheme",
+    "coverage_type_te": "జాతీయ స్థాయి నగదు రహిత ఆరోగ్య రక్షణ పథకం",
+    "benefit_amount": "Up to ₹5,00,000 per family per year on floater basis",
+    "benefit_amount_te": "ఏటా కుటుంబానికి ₹5,00,000 వరకు ఉచిత చికిత్స రక్షణ",
+    "target_beneficiary": "Deprived Rural & Identified Occupational Urban Families (SECC 2011 / Ayushman Card Holders)",
+    "target_beneficiary_te": "SECC జాబితాలోని అర్హులైన గ్రామీణ మరియు పట్టణ పేద కుటుంబాలు",
+    "application_mode": "Ayushman Mitra desk at empanelled hospital / CSC Centre / PMJAY Portal",
+    "application_mode_te": "ఆసుపత్రిలోని ఆయుష్మాన్ మిత్ర డెస్క్ లేదా CSC కేంద్రంలో ఆయుష్మాన్ కార్డు ద్వారా",
+    "processing_time": "Instant pre-authorization using PMJAY BIS Portal",
+    "processing_time_te": "ఆయుష్మాన్ కార్డు లేదా ఆధార్ ద్వారా తక్షణ అనుమతి",
+    "facility_type": "Empanelled Public and Private Hospitals across India (National Portability)",
+    "facility_type_te": "భారతదేశం అంతటా విస్తరించిన ప్రభుత్వ మరియు ప్రైవేట్ నెట్‌వర్క్ ఆసుపత్రులు",
+    "validity_period": "Annual floater entitlement for the entire family",
+    "validity_period_te": "కుటుంబం మొత్తానికి వార్షిక ప్రాతిపదికన వర్తింపు",
+    "helpline_numbers": [
+      "14555 (National PM-JAY Helpline)",
+      "1800-111-565 (Toll-Free)"
+    ],
+    "key_treatments": [
+      "Cardiology & Cardio-thoracic Surgeries",
+      "Oncology (Medical, Surgical & Radiation)",
+      "Orthopaedics & Complex Trauma Surgeries",
+      "Urology & Nephrology Procedures",
+      "Paediatric Intensive Care & Neonatal Surgeries",
+      "Pre-hospitalization (3 days) & Post-hospitalization (15 days) medicine expenses"
+    ],
+    "key_treatments_te": [
+      "గుండె జబ్బుల ఆపరేషన్లు మరియు స్టెంట్లు",
+      "క్యాన్సర్ చికిత్సలు మరియు శస్త్రచికిత్సలు",
+      "ఎముకలు, కీళ్ల శస్త్రచికిత్సలు మరియు ట్రామా కేర్",
+      "యూరాలజీ మరియు కిడ్నీ సంబంధిత ప్రక్రియలు",
+      "పీడియాట్రిక్ సర్జరీలు మరియు నవజాత శిశు చికిత్స",
+      "చేరడానికి 3 రోజుల ముందు మరియు డిశ్చార్జ్ తర్వాత 15 రోజుల మందుల ఖర్చులు"
+    ],
+    "exclusions": "OPD consultation only, cosmetic procedures, non-empanelled hospitals without emergency portability.",
+    "exclusions_te": "ఓపీడీ వైద్యం మాత్రమే, కాస్మెటిక్ శస్త్రచికిత్సలు మరియు ఎంప్యానెల్ చేయని ఆసుపత్రులు వర్తించవు."
+  },
+  "Ayushman Arogya Mandir (Free Primary Health Care)": {
+    "level": "National",
+    "category": "PHC and village care",
+    "icon": "clinic",
+    "telugu_name": "ఆయుష్మాన్ ఆరోగ్య మందిర్",
+    "audio_file": "static/audio/ayushman_arogya_mandir.mp3",
+    "source_name": "Ayushman Arogya Mandir, MoHFW",
+    "source_url": "https://aam.mohfw.gov.in/",
+    "keywords": [
+      "ఆరోగ్య మందిర్",
+      "పిహెచ్సి",
+      "సబ్ సెంటర్",
+      "మందులు",
+      "బీపీ",
+      "షుగర్",
+      "primary care",
+      "free medicines"
+    ],
+    "original_complex_text": "Ayushman Arogya Mandirs are upgraded Sub Health Centres and Primary Health Centres that provide comprehensive primary health care free and close to the community. Services include maternal and child health, immunization, general OPD care, screening and management for diabetes, blood pressure, TB and leprosy, basic oral, eye and ENT care, elderly and palliative care, mental health screening, emergency first-level care, essential medicines, diagnostics and teleconsultation.",
+    "simplified": {
+      "eligibility": "Everyone can visit the nearest Ayushman Arogya Mandir, Sub Centre or PHC.",
+      "benefits": "Free nearby care for common illness, pregnancy and child care, vaccination, BP/sugar screening, TB/leprosy support, basic medicines, simple tests and teleconsultation.",
+      "documents": "Aadhaar is useful but not always required for basic care. Carry old prescriptions and reports.",
+      "steps": "Visit the nearest Ayushman Arogya Mandir/PHC. Tell the health worker your problem. Take tests or medicines as advised. If needed, they refer you to a bigger hospital.",
+      "description": "Ayushman Arogya Mandir (formerly Health and Wellness Centres) deliver Comprehensive Primary Health Care (CPHC) directly within local communities, providing free essential medicines, diagnostic tests, screening for non-communicable diseases, maternal and child healthcare, and tele-consultations with specialist doctors."
+    },
+    "telugu": {
+      "eligibility": "దగ్గరలోని ఆయుష్మాన్ ఆరోగ్య మందిర్, సబ్ సెంటర్ లేదా PHC కు ఎవరైనా వెళ్లవచ్చు.",
+      "benefits": "సాధారణ అనారోగ్యం, గర్భిణీ మరియు పిల్లల సేవలు, టీకాలు, బీపీ/షుగర్ స్క్రీనింగ్, TB/కుష్టు సహాయం, ప్రాథమిక మందులు, చిన్న టెస్టులు, టెలీ కన్సల్టేషన్ ఉచితంగా లేదా దగ్గరగా అందుతాయి.",
+      "documents": "ప్రాథమిక సేవలకు ఆధార్ ఎప్పుడూ తప్పనిసరి కాకపోవచ్చు, కానీ ఉంటే తీసుకెళ్లండి. పాత మందుల చీటి, రిపోర్టులు తీసుకెళ్లండి.",
+      "steps": "దగ్గరలోని ఆరోగ్య మందిర్ లేదా PHC కు వెళ్లండి. సమస్య చెప్పండి. సిబ్బంది చెప్పిన టెస్టులు/మందులు తీసుకోండి. అవసరమైతే పెద్ద ఆసుపత్రికి రిఫర్ చేస్తారు.",
+      "description": "ఆయుష్మాన్ ఆరోగ్య మందిర్ (గతంలో హెల్త్ అండ్ వెల్నెస్ సెంటర్లు) గ్రామీణ మరియు పట్టణ ప్రాంతాల్లో ప్రజలకు ఉచిత ప్రాథమిక ఆరోగ్య సేవలు, సమగ్ర వ్యాధి నిర్ధారణ పరీక్షలు, ఉచిత మందులు, యోగా మరియు టెలిమెడిసిన్ ద్వారా స్పెషలిస్ట్ వైద్యుల సలహాలను చేరువ చేసే సమగ్ర ఆరోగ్య కేంద్రాలు."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://aam.mohfw.gov.in/",
+    "contact_office": "Nearest Ayushman Arogya Mandir / PHC / Sub-centre",
+    "eligibility_confirmation": "Automatic - open to all",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు ప్రాథమిక ఆరోగ్య సేవ అవసరమైనదా?",
+        "question_en": "Do you need basic health care?",
+        "weight": "high"
+      },
+      {
+        "question_te": "మీ దగ్గరలో PHC లేదా సబ్‌సెంటర్ ఉందా?",
+        "question_en": "Is there a PHC/Sub-centre near you?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar (optional)",
+        "name_te": "ఆధార్ (ఐచ్ఛికం)",
+        "optional": true
+      },
+      {
+        "name": "Old Prescriptions",
+        "name_te": "పాత చీటులు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "aap_mandir": "Ayushman Arogya Mandir",
+      "phc": "PHC (Primary Health Centre)",
+      "sub_centre": "Sub-centre in your village",
+      "health_worker": "ASHA / ANM health worker"
+    },
+    "telugu_description": "ఆయుష్మాన్ ఆరోగ్య మందిర్ (గతంలో హెల్త్ అండ్ వెల్నెస్ సెంటర్లు) గ్రామీణ మరియు పట్టణ ప్రాంతాల్లో ప్రజలకు ఉచిత ప్రాథమిక ఆరోగ్య సేవలు, సమగ్ర వ్యాధి నిర్ధారణ పరీక్షలు, ఉచిత మందులు, యోగా మరియు టెలిమెడిసిన్ ద్వారా స్పెషలిస్ట్ వైద్యుల సలహాలను చేరువ చేసే సమగ్ర ఆరోగ్య కేంద్రాలు.",
+    "english_description": "Ayushman Arogya Mandir (formerly Health and Wellness Centres) deliver Comprehensive Primary Health Care (CPHC) directly within local communities, providing free essential medicines, diagnostic tests, screening for non-communicable diseases, maternal and child healthcare, and tele-consultations with specialist doctors.",
+    "coverage_type": "Comprehensive Primary Health Care (CPHC) & Wellness Services",
+    "coverage_type_te": "సమగ్ర ప్రాథమిక ఆరోగ్య సంరక్షణ & వెల్‌నెస్ సేవలు",
+    "benefit_amount": "100% Free Essential Drugs, Diagnostics & Preventive Care",
+    "benefit_amount_te": "100% ఉచిత అవసరమైన మందులు, ల్యాబ్ పరీక్షలు మరియు వెల్‌నెస్ సేవలు",
+    "target_beneficiary": "All Citizens residing in the local village or urban ward catchment area",
+    "target_beneficiary_te": "స్థానిక గ్రామ మరియు పట్టణ వార్డుల పరిధిలోని పౌరులందరూ",
+    "application_mode": "Walk-in at local Ayushman Arogya Mandir / Village Clinic",
+    "application_mode_te": "సమీప ఆయుష్మాన్ ఆరోగ్య మందిర్ / విలేజ్ క్లినిక్ వద్ద నేరుగా సంప్రదించడం",
+    "processing_time": "Immediate on-site care and tele-consultation linking",
+    "processing_time_te": "వెంటనే వైద్య పరీక్షలు మరియు అవసరమైతే టెలి-కన్సల్టేషన్",
+    "facility_type": "Upgraded Sub-Health Centres, PHCs and Urban PHCs with Community Health Officers (CHOs)",
+    "facility_type_te": "కమ్యూనిటీ హెల్త్ ఆఫీసర్లు (CHO) కలిగిన సబ్-సెంటర్లు, పీహెచ్‌సీలు",
+    "validity_period": "Continuous lifelong primary care access",
+    "validity_period_te": "నిరంతర సమగ్ర ప్రాథమిక ఆరోగ్య సేవలు",
+    "helpline_numbers": [
+      "104 (Health Information)",
+      "1075 (National Health Portal)"
+    ],
+    "key_treatments": [
+      "Care in Pregnancy and Child-birth",
+      "Neonatal and Infant Health Care Services",
+      "Childhood and Adolescent Health Care",
+      "Universal Immunization & Growth Monitoring",
+      "Management of Communicable Diseases (TB, Malaria, Dengue)",
+      "Screening and Basic Management of NCDs (Hypertension, Diabetes, 3 common cancers)",
+      "Yoga and Wellness Sessions"
+    ],
+    "key_treatments_te": [
+      "గర్భధారణ మరియు ప్రసవ సంబంధిత ప్రాథమిక సంరక్షణ",
+      "నవజాత శిశు మరియు పసిపిల్లల ఆరోగ్య పరీక్షలు",
+      "సార్వత్రిక టీకాలు మరియు పోషకాహార పర్యవేక్షణ",
+      "టీబీ, మలేరియా, డెంగ్యూ వ్యాధుల నిర్ధారణ & చికిత్స",
+      "బీపీ, షుగర్ మరియు క్యాన్సర్ స్క్రీనింగ్ పరీక్షలు",
+      "యోగా మరియు సంపూర్ణ ఆరోగ్య అవగాహన సదస్సులు"
+    ],
+    "exclusions": "Major surgeries requiring operation theatres (referred to CHC/District Hospital).",
+    "exclusions_te": "ఆపరేషన్ థియేటర్ అవసరమైన పెద్ద శస్త్రచికిత్సలు (సీహెచ్‌సీ లేదా జిల్లా ఆసుపత్రులకు రిఫర్ చేస్తారు)."
+  },
+  "eSanjeevani National Telemedicine Service": {
+    "level": "National",
+    "category": "Doctor by phone",
+    "icon": "phone-doctor",
+    "telugu_name": "ఈ-సంజీవని డాక్టర్ సేవ",
+    "audio_file": "static/audio/esanjeevani.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://esanjeevani.mohfw.gov.in/",
+    "keywords": [
+      "ఈ సంజీవని",
+      "సంజీవని",
+      "ఫోన్ డాక్టర్",
+      "ఆన్లైన్ డాక్టర్",
+      "telemedicine",
+      "doctor online",
+      "opd"
+    ],
+    "original_complex_text": "eSanjeevani is the Government of India's national telemedicine service. eSanjeevani OPD connects patients to doctors through phone or internet for outpatient consultation. eSanjeevani AB-HWC connects Health and Wellness Centres with doctors and specialists through health staff. Patients can receive an e-prescription after consultation and use it for medicines.",
+    "simplified": {
+      "eligibility": "Any citizen who needs non-emergency doctor advice can use eSanjeevani, if phone/internet service is available.",
+      "benefits": "Doctor consultation from home or through a health centre. Useful for common illness, follow-up advice and specialist advice through health staff.",
+      "documents": "Mobile number, Aadhaar if asked, old prescription, test reports.",
+      "steps": "For home consultation, use the eSanjeevani website/app and register with mobile OTP. For village help, visit the nearest Health and Wellness Centre/PHC and ask for teleconsultation.",
+      "description": "eSanjeevani is the national telemedicine platform of the Ministry of Health and Family Welfare, enabling citizens to connect with qualified doctors and medical specialists for free online video consultations, clinical advice, and digital prescriptions without traveling to distant hospitals."
+    },
+    "telugu": {
+      "eligibility": "అత్యవసరం కాని డాక్టర్ సలహా కావాలనుకునే ఎవరైనా ఫోన్ లేదా ఇంటర్నెట్ ఉంటే ఈ సేవను ఉపయోగించవచ్చు.",
+      "benefits": "ఇంటినుంచి లేదా ఆరోగ్య కేంద్రం ద్వారా డాక్టర్ సలహా. సాధారణ అనారోగ్యం, ఫాలోఅప్, స్పెషలిస్ట్ సలహాకు ఉపయోగపడుతుంది.",
+      "documents": "మొబైల్ నంబర్, అడిగితే ఆధార్, పాత మందుల చీటి, టెస్ట్ రిపోర్టులు.",
+      "steps": "ఇంటినుంచి అయితే eSanjeevani వెబ్ సైట్ లేదా యాప్ లో మొబైల్ OTP తో నమోదు చేయండి. గ్రామంలో సహాయం కావాలంటే దగ్గరలోని ఆరోగ్య కేంద్రం లేదా PHC లో టెలీ కన్సల్టేషన్ అడగండి.",
+      "description": "ఈ-సంజీవని అనేది కేంద్ర ప్రభుత్వ ఉచిత జాతీయ టెలిమెడిసిన్ పోర్టల్ మరియు యాప్. ప్రజలు తమ ఇంటి నుంచే లేదా సమీప హెల్త్ సెంటర్ ద్వారా వీడియో కాల్‌లో ప్రభుత్వ మరియు స్పెషలిస్ట్ వైద్యులను నేరుగా సంప్రదించి అధికారిక డిజిటల్ ప్రిస్క్రిప్షన్ పొందవచ్చు."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://esanjeevani.mohfw.gov.in/",
+    "contact_office": "PHC / Health Centre / Online Portal",
+    "eligibility_confirmation": "Automatic - for anyone with phone/internet",
+    "eligibility_questions": [
+      {
+        "question_te": "ఫోన్ లేదా ఇంటర్నెట్ కనెక్షన్ ఉందా?",
+        "question_en": "Do you have phone or internet?",
+        "weight": "high"
+      },
+      {
+        "question_te": "డాక్టర్ సలహా చाहते हैं?",
+        "question_en": "Do you want doctor advice?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Mobile Number",
+        "name_te": "ఫోన్ నంబర్",
+        "optional": false
+      },
+      {
+        "name": "Aadhaar (optional)",
+        "name_te": "ఆధార్ (ఐచ్ఛికం)",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "online_portal": "https://esanjeevani.mohfw.gov.in/",
+      "phc": "PHC for teleconsultation",
+      "health_centre": "Health and Wellness Centre"
+    },
+    "telugu_description": "ఈ-సంజీవని అనేది కేంద్ర ప్రభుత్వ ఉచిత జాతీయ టెలిమెడిసిన్ పోర్టల్ మరియు యాప్. ప్రజలు తమ ఇంటి నుంచే లేదా సమీప హెల్త్ సెంటర్ ద్వారా వీడియో కాల్‌లో ప్రభుత్వ మరియు స్పెషలిస్ట్ వైద్యులను నేరుగా సంప్రదించి అధికారిక డిజిటల్ ప్రిస్క్రిప్షన్ పొందవచ్చు.",
+    "english_description": "eSanjeevani is the national telemedicine platform of the Ministry of Health and Family Welfare, enabling citizens to connect with qualified doctors and medical specialists for free online video consultations, clinical advice, and digital prescriptions without traveling to distant hospitals.",
+    "coverage_type": "Free Doctor-to-Patient & Doctor-to-Doctor Tele-Consultations",
+    "coverage_type_te": "ఉచిత డాక్టర్-టు-పేషెంట్ & స్పెషలిస్ట్ టెలి-కన్సల్టేషన్",
+    "benefit_amount": "100% Free Video Consultation & Digital e-Prescriptions",
+    "benefit_amount_te": "100% ఉచిత వీడియో కన్సల్టేషన్ & డిజిటల్ ప్రిస్క్రిప్షన్",
+    "target_beneficiary": "All Citizens across India with smartphone/computer or at Ayushman Arogya Mandir",
+    "target_beneficiary_te": "స్మార్ట్‌ఫోన్ కలిగిన పౌరులందరూ లేదా సమీప హెల్త్ అండ్ వెల్‌నెస్ సెంటర్‌లో",
+    "application_mode": "eSanjeevani App (Android/iOS) or esanjeevani.mohfw.gov.in portal",
+    "application_mode_te": "eSanjeevani యాప్ లేదా esanjeevani.mohfw.gov.in వెబ్‌సైట్ ద్వారా",
+    "processing_time": "Queue-based video consultation within 5-15 minutes",
+    "processing_time_te": "లైవ్‌లో 5-15 నిమిషాల్లో స్పెషలిస్ట్ డాక్టర్‌తో వీడియో కాల్",
+    "facility_type": "National Tele-Consultation Hubs & State Medical Colleges",
+    "facility_type_te": "ప్రభుత్వ మెడికల్ కాలేజీలు మరియు జాతీయ టెలి-కన్సల్టేషన్ హబ్‌లు",
+    "validity_period": "Per consultation session with downloadable PDF prescription",
+    "validity_period_te": "ప్రతి సంప్రదింపు సెషన్‌కు వర్తిస్తుంది (పీడీఎఫ్ ప్రిస్క్రిప్షన్ లభిస్తుంది)",
+    "helpline_numbers": [
+      "104 (State Telehealth Helpline)",
+      "011-23978046 (Technical Support)"
+    ],
+    "key_treatments": [
+      "General Outpatient Consultation (Fever, Cough, Infection, Skin issues)",
+      "Specialist Consultations (Cardiology, Gynaecology, Paediatrics, Dermatology, Psychiatry)",
+      "Follow-up for Chronic Diseases (Hypertension, Diabetes, Thyroid)",
+      "Review of Lab Investigation Reports and Digital Prescription Generation",
+      "AYUSH (Ayurveda, Yoga, Unani, Siddha, Homeopathy) Tele-consultations"
+    ],
+    "key_treatments_te": [
+      "సాధారణ జ్వరం, దగ్గు, చర్మ సంబంధిత వ్యాధులకు వైద్య సలహా",
+      "గైనకాలజీ, పీడియాట్రిక్స్, కార్డియాలజీ స్పెషలిస్ట్ కన్సల్టేషన్",
+      "బీపీ, షుగర్, థైరాయిడ్ వ్యాధుల రెగ్యులర్ రివ్యూ",
+      "రక్త పరీక్షల రిపోర్టులను సమీక్షించి డిజిటల్ ప్రిస్క్రిప్షన్ జారీ",
+      "ఆయుష్ (ఆయుర్వేద, హోమియోపతి) నిపుణుల సలహాలు"
+    ],
+    "exclusions": "Critical acute emergencies requiring immediate physical intervention (call 108).",
+    "exclusions_te": "తక్షణ అత్యవసర శస్త్రచికిత్సలు లేదా తీవ్ర గాయాలు (108 కి కాల్ చేయాలి)."
+  },
+  "Janani Shishu Suraksha Karyakram (Free Delivery Care)": {
+    "level": "National",
+    "category": "Pregnancy and newborn",
+    "icon": "mother-child",
+    "telugu_name": "జనని శిశు సురక్షా కార్యక్రమం",
+    "audio_file": "static/audio/janani_shishu.mp3",
+    "source_name": "National Health Mission MCP card",
+    "source_url": "https://nhm.gov.in/",
+    "keywords": [
+      "గర్భిణి",
+      "డెలివరీ",
+      "ప్రసవం",
+      "బిడ్డ",
+      "జనని",
+      "శిశు",
+      "delivery",
+      "pregnancy",
+      "newborn"
+    ],
+    "original_complex_text": "Janani Shishu Suraksha Karyakram provides free and cashless services to pregnant women delivering in public health institutions and to sick newborns up to one year. Benefits include free normal delivery and caesarean section, drugs, consumables, diagnostics, blood, diet during stay, exemption from user charges, transport from home to facility, referral transport and drop-back home. Sick newborns receive free treatment, drugs, diagnostics, blood and transport.",
+    "simplified": {
+      "eligibility": "Pregnant women using government health facilities for delivery, and sick newborns up to one year.",
+      "benefits": "Free delivery or C-section in government hospitals, free medicines, tests, blood if needed, food during stay and transport support.",
+      "documents": "MCP/mother card, Aadhaar, phone number, old pregnancy reports if available.",
+      "steps": "Register pregnancy with ASHA/ANM/Anganwadi or PHC. Go for ANC checkups. For delivery, go to a government hospital or call 108 in emergency. Ask hospital staff for JSSK free services.",
+      "description": "Janani Shishu Suraksha Karyakram (JSSK) guarantees completely cashless and free delivery care (including C-sections) for all pregnant women delivering in public health institutions, along with free treatment for sick infants up to 30 days of life, covering diagnostics, medications, blood, hospital diet, and transport."
+    },
+    "telugu": {
+      "eligibility": "ప్రభుత్వ ఆరోగ్య కేంద్రాల్లో ప్రసవం చేసుకునే గర్భిణీలు, మరియు ఒక సంవత్సరం లోపు అనారోగ్యంతో ఉన్న శిశువులు.",
+      "benefits": "ప్రభుత్వ ఆసుపత్రుల్లో సాధారణ ప్రసవం లేదా సిజేరియన్, మందులు, టెస్టులు, అవసరమైతే రక్తం, ఆసుపత్రిలో ఆహారం, రవాణా సహాయం ఉచితం.",
+      "documents": "MCP లేదా మదర్ కార్డు, ఆధార్, మొబైల్ నంబర్, ఉంటే పాత గర్భధారణ రిపోర్టులు.",
+      "steps": "ASHA/ANM/అంగన్వాడి లేదా PHC లో గర్భధారణ నమోదు చేయండి. ANC చెకప్ లకు వెళ్లండి. ప్రసవానికి ప్రభుత్వ ఆసుపత్రికి వెళ్లండి లేదా అత్యవసరమైతే 108 కు కాల్ చేయండి. JSSK ఉచిత సేవలు అడగండి.",
+      "description": "జనని శిశు సురక్ష కార్యక్రమం (JSSK) ద్వారా ప్రభుత్వ ఆసుపత్రులలో ప్రసవించే గర్భిణీ స్త్రీలకు మరియు అనారోగ్యంతో ఉన్న నవజాత శిశువులకు (పుట్టిన 30 రోజుల వరకు) ఉచిత సాధారణ లేదా సిజేరియన్ డెలివరీ, ఉచిత మందులు, రక్త పరీక్షలు, ఆహారం మరియు ఉచిత అంబులెన్స్ ప్రయాణ సదుపాయం కల్పిస్తారు."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://nhm.gov.in/",
+    "contact_office": "Government Hospital / PHC",
+    "eligibility_confirmation": "Hospital / ANM / ASHA Worker",
+    "eligibility_questions": [
+      {
+        "question_te": "గర్భిణీ స్త్రీ లేదా నవజాత శిశువు?",
+        "question_en": "Pregnant woman or newborn baby?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "ప్రసవానికి సహాయం కావాలనుకుంటున్నారా?",
+        "question_en": "Need delivery support?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "MCP Card",
+        "name_te": "MCP కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్",
+        "optional": false
+      },
+      {
+        "name": "Hospital Records",
+        "name_te": "ఆసుపత్రి రిపోర్టులు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "hospital": "Government hospital / PHC with delivery unit",
+      "asha": "ASHA worker in your village",
+      "anm": "ANM (Auxiliary Nurse Midwife)",
+      "health_centre": "Nearest health centre"
+    },
+    "telugu_description": "జనని శిశు సురక్ష కార్యక్రమం (JSSK) ద్వారా ప్రభుత్వ ఆసుపత్రులలో ప్రసవించే గర్భిణీ స్త్రీలకు మరియు అనారోగ్యంతో ఉన్న నవజాత శిశువులకు (పుట్టిన 30 రోజుల వరకు) ఉచిత సాధారణ లేదా సిజేరియన్ డెలివరీ, ఉచిత మందులు, రక్త పరీక్షలు, ఆహారం మరియు ఉచిత అంబులెన్స్ ప్రయాణ సదుపాయం కల్పిస్తారు.",
+    "english_description": "Janani Shishu Suraksha Karyakram (JSSK) guarantees completely cashless and free delivery care (including C-sections) for all pregnant women delivering in public health institutions, along with free treatment for sick infants up to 30 days of life, covering diagnostics, medications, blood, hospital diet, and transport.",
+    "coverage_type": "Zero-Expense Cashless Institutional Delivery & Infant Care",
+    "coverage_type_te": "ప్రభుత్వ ఆసుపత్రుల్లో 100% ఉచిత ప్రసవం & శిశు సంరక్షణ",
+    "benefit_amount": "100% Free C-Section/Normal Delivery, Free Food, Drugs, Blood & Drop-back Transport",
+    "benefit_amount_te": "100% ఉచిత కాన్పు, సిజేరియన్, ఉచిత మందులు, భోజనం మరియు ఉచిత వాహన రవాణా",
+    "target_beneficiary": "All Pregnant Women delivering in public health institutions and Sick Infants up to 1 year",
+    "target_beneficiary_te": "ప్రభుత్వ ఆసుపత్రుల్లో ప్రసవించే గర్భిణులు మరియు 1 సంవత్సరం లోపు అనారోగ్య శిశువులు",
+    "application_mode": "Automatic on admission at any Government PHC, CHC, Area Hospital or Teaching Hospital",
+    "application_mode_te": "ప్రభుత్వ ఆసుపత్రిలో అడ్మిట్ అయిన వెంటనే స్వయంచాలకంగా వర్తింపు",
+    "processing_time": "Immediate on arrival at labour room",
+    "processing_time_te": "ఆసుపత్రికి చేరిన వెంటనే ఉచిత సేవలు ప్రారంభం",
+    "facility_type": "All Government Health Facilities (PHC, CHC, District Hospital, Medical College)",
+    "facility_type_te": "అన్ని ప్రభుత్వ ప్రాథమిక, సామాజిక మరియు జిల్లా ఆసుపత్రులు",
+    "validity_period": "Antenatal period, delivery, 48-hour postpartum stay, and sick infants up to 1 year",
+    "validity_period_te": "డెలివరీ సమయం, 48 గంటల ఆసుపత్రి బస మరియు 1 సంవత్సరం వరకు శిశువుకు",
+    "helpline_numbers": [
+      "102 (Janani Express / Drop-back Ambulance)",
+      "104 (Health Advice)",
+      "108 (Emergency)"
+    ],
+    "key_treatments": [
+      "Completely Free Normal Delivery & Caesarean Section (C-Section)",
+      "Free Essential Obstetric & Neonatal Medications",
+      "Free Diagnostics (USG Scans, Blood & Urine Investigations)",
+      "Free Blood Transfusions during delivery complications",
+      "Free Nutritional Diet during hospital stay (up to 3 days for normal, 7 days for C-section)",
+      "Free Transport from home to facility and drop-back to home (102 vehicle)"
+    ],
+    "key_treatments_te": [
+      "పూర్తిగా ఉచిత సాధారణ ప్రసవం మరియు సిజేరియన్ ఆపరేషన్",
+      "ఉచిత అత్యవసర మందులు మరియు ఇంజెక్షన్లు",
+      "ఉచిత స్కానింగ్ (USG) మరియు రక్త పరీక్షలు",
+      "డెలివరీ సమయంలో అవసరమైతే ఉచిత రక్త మార్పిడి",
+      "ఆసుపత్రి బస సమయంలో ఉచిత పౌష్టికాహారం",
+      "ఇంటి నుండి ఆసుపత్రికి మరియు తిరిగి ఇంటికి ఉచిత 102 వాహన సదుపాయం"
+    ],
+    "exclusions": "Deliveries in un-empanelled private nursing homes without government referral.",
+    "exclusions_te": "ప్రభుత్వ రిఫరల్ లేని ప్రైవేట్ నర్సింగ్ హోమ్‌లలో ప్రసవాలు వర్తించవు."
+  },
+  "Janani Suraksha Yojana (Safe Motherhood Cash Support)": {
+    "level": "National",
+    "category": "Pregnancy cash support",
+    "icon": "pregnancy",
+    "telugu_name": "జనని సురక్షా యోజన",
+    "audio_file": "static/audio/janani_suraksha_yojana.mp3",
+    "source_name": "National Health Mission",
+    "source_url": "https://www.nhm.gov.in/index1.php?lang=1&level=3&lid=309&sublinkid=841",
+    "keywords": [
+      "జనని సురక్ష",
+      "గర్భిణి డబ్బు",
+      "డెలివరీ సహాయం",
+      "asha",
+      "pregnancy cash",
+      "institutional delivery"
+    ],
+    "original_complex_text": "Janani Suraksha Yojana is a safe motherhood scheme under the National Health Mission. It promotes institutional delivery among poor pregnant women by linking cash assistance with delivery and post-delivery care. Eligibility differs by state category. In high performing states, BPL, SC and ST pregnant women delivering in government health centres or accredited private institutions are eligible. ASHA acts as the link between the government and pregnant women.",
+    "simplified": {
+      "eligibility": "Poor pregnant women as per JSY rules. In many high-performing states, BPL/SC/ST women delivering in government or accredited hospitals are eligible.",
+      "benefits": "Cash support for institutional delivery and help from ASHA for registration, checkups, delivery and newborn immunization.",
+      "documents": "MCP/mother card, Aadhaar, bank account details, caste/BPL proof if required, hospital delivery record.",
+      "steps": "Register pregnancy early with ASHA/ANM. Attend checkups. Deliver at a government or accredited hospital. Submit bank and required details through ASHA/health staff.",
+      "description": "Janani Suraksha Yojana (JSY) is a safe motherhood scheme under the National Health Mission that promotes institutional deliveries among low-income pregnant women by providing direct cash financial assistance (Rs. 1,400 for rural areas, Rs. 1,000 for urban areas) transferred directly into the mother's bank account."
+    },
+    "telugu": {
+      "eligibility": "JSY నియమాల ప్రకారం పేద గర్భిణీలు. చాలా హై పర్ఫార్మింగ్ రాష్ట్రాల్లో ప్రభుత్వ లేదా గుర్తింపు పొందిన ఆసుపత్రిలో ప్రసవం చేసుకునే BPL/SC/ST మహిళలు అర్హులు.",
+      "benefits": "ఆసుపత్రిలో ప్రసవానికి నగదు సహాయం, అలాగే నమోదు, చెకప్ లు, ప్రసవం, శిశువు టీకాలకు ASHA సహాయం.",
+      "documents": "MCP లేదా మదర్ కార్డు, ఆధార్, బ్యాంక్ ఖాతా వివరాలు, అవసరమైతే కులం/BPL రుజువు, ఆసుపత్రి ప్రసవ రికార్డు.",
+      "steps": "గర్భధారణను ASHA/ANM వద్ద ముందుగానే నమోదు చేయండి. చెకప్ లకు వెళ్లండి. ప్రభుత్వ లేదా గుర్తింపు పొందిన ఆసుపత్రిలో ప్రసవం చేయండి. బ్యాంక్ మరియు అవసరమైన వివరాలు ASHA/ఆరోగ్య సిబ్బందికి ఇవ్వండి.",
+      "description": "జనని సురక్ష యోజన (JSY) అనేది సురక్షిత ప్రసవాలను ప్రోత్సహించడానికి మరియు మాతా-శిశు మరణాలను తగ్గించడానికి ప్రభుత్వ ఆసుపత్రులలో ప్రసవించిన పేద/బీపీఎల్ గర్భిణీ స్త్రీలకు నేరుగా వారి బ్యాంక్ ఖాతాలో నగదు ప్రోత్సాహకం (గ్రామీణ ప్రాంతాల్లో రూ. 1400, పట్టణ ప్రాంతాల్లో రూ. 1000) అందించే పథకం."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://nhm.gov.in/",
+    "contact_office": "Government Hospital / District Hospital",
+    "eligibility_confirmation": "Hospital Finance Department",
+    "eligibility_questions": [
+      {
+        "question_te": "గర్భిణీ స్త్రీ?",
+        "question_en": "Are you pregnant?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "ఆధార్ / రేషన్ కార్డు ఉందా?",
+        "question_en": "Have Aadhaar or ration card?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Ration Card",
+        "name_te": "రేషన్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "MCP Card",
+        "name_te": "MCP కార్డు",
+        "optional": true
+      },
+      {
+        "name": "Bank Account",
+        "name_te": "బ్యాంక్ ఖాతా",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "hospital": "Government hospital",
+      "district_office": "District Hospital Finance",
+      "asha": "ASHA worker"
+    },
+    "telugu_description": "జనని సురక్ష యోజన (JSY) అనేది సురక్షిత ప్రసవాలను ప్రోత్సహించడానికి మరియు మాతా-శిశు మరణాలను తగ్గించడానికి ప్రభుత్వ ఆసుపత్రులలో ప్రసవించిన పేద/బీపీఎల్ గర్భిణీ స్త్రీలకు నేరుగా వారి బ్యాంక్ ఖాతాలో నగదు ప్రోత్సాహకం (గ్రామీణ ప్రాంతాల్లో రూ. 1400, పట్టణ ప్రాంతాల్లో రూ. 1000) అందించే పథకం.",
+    "english_description": "Janani Suraksha Yojana (JSY) is a safe motherhood scheme under the National Health Mission that promotes institutional deliveries among low-income pregnant women by providing direct cash financial assistance (Rs. 1,400 for rural areas, Rs. 1,000 for urban areas) transferred directly into the mother's bank account.",
+    "coverage_type": "Direct Benefit Transfer (DBT) Cash Incentive for Institutional Delivery",
+    "coverage_type_te": "ప్రభుత్వ ఆసుపత్రి ప్రసవాలకు డైరెక్ట్ బ్యాంక్ బదిలీ నగదు ప్రోత్సాహకం",
+    "benefit_amount": "₹1,000 to ₹1,400 Cash Incentive credited directly to bank account",
+    "benefit_amount_te": "తల్లి బ్యాంక్ ఖాతాలో నేరుగా ₹1,000 నుండి ₹1,400 వరకు నగదు జమ",
+    "target_beneficiary": "BPL / SC / ST Pregnant Mothers delivering in Government Health Facilities",
+    "target_beneficiary_te": "ప్రభుత్వ ఆసుపత్రులలో కాన్పు చేయించుకున్న బీపీఎల్, ఎస్సీ, ఎస్టీ గర్భిణీ తల్లులు",
+    "application_mode": "Registration through Village ANM / ASHA Worker on Mother & Child Tracking System (MCTS/RCH)",
+    "application_mode_te": "గ్రామ ఏఎన్ఎం / ఆశా కార్యకర్త ద్వారా ఆర్సీహెచ్ పోర్టల్‌లో నమోదు",
+    "processing_time": "Credited within 7 to 15 days of post-delivery verification",
+    "processing_time_te": "ప్రసవానంతరం 7 నుండి 15 రోజుల్లో నేరుగా బ్యాంక్ ఖాతాలో జమ",
+    "facility_type": "Government Health Institutions & Accredited Private Facilities",
+    "facility_type_te": "ప్రభుత్వ ఆరోగ్య కేంద్రాలు మరియు గుర్తింపు పొందిన ఆసుపత్రులు",
+    "validity_period": "Valid for institutional deliveries as per state eligibility norms",
+    "validity_period_te": "ఆసుపత్రి ప్రసవం జరిగిన వెంటనే లబ్ధి వర్తిస్తుంది",
+    "helpline_numbers": [
+      "104 (Maternal Health Helpline)",
+      "1800-180-1104 (JSY Helpline)"
+    ],
+    "key_treatments": [
+      "Cash Assistance for institutional delivery expenses",
+      "Incentive for Village ASHA Worker for escorting mother to health facility",
+      "Linkage with post-delivery immunization and nutrition counselling"
+    ],
+    "key_treatments_te": [
+      "ఆసుపత్రి ప్రసవ ఖర్చుల కోసం ప్రత్యక్ష నగదు ప్రోత్సాహకం",
+      "గర్భిణిని ఆసుపత్రికి తీసుకువచ్చినందుకు ఆశా కార్యకర్తకు ప్రోత్సాహకం",
+      "ప్రసవానంతర శిశు టీకాలు మరియు పోషకాహార సలహాలు"
+    ],
+    "exclusions": "Deliveries occurring at home without certified institutional supervision.",
+    "exclusions_te": "ఆసుపత్రిలో కాకుండా ఇంట్లో జరిగే ప్రసవాలకు వర్తించదు."
+  },
+  "Mission Indradhanush / Universal Immunization": {
+    "level": "National",
+    "category": "Vaccination",
+    "icon": "vaccine",
+    "telugu_name": "మిషన్ ఇంద్రధనుష్ టీకాలు",
+    "audio_file": "static/audio/mission_indradhanush.mp3",
+    "source_name": "National Health Mission",
+    "source_url": "https://nhm.gov.in/nhm_live/index1.php?lang=1&level=2&lid=220&sublinkid=824",
+    "keywords": [
+      "టీకా",
+      "వ్యాక్సిన్",
+      "పోలియో",
+      "పిల్లలు",
+      "గర్భిణి టీకా",
+      "vaccination",
+      "immunization"
+    ],
+    "original_complex_text": "Universal Immunization Programme provides free vaccines against vaccine-preventable diseases to children and pregnant women. Mission Indradhanush focuses on areas with low immunization coverage and reaches unvaccinated or partially vaccinated children and pregnant women. Vaccination is provided through government health centres, Anganwadi/health camps and outreach sessions.",
+    "simplified": {
+      "eligibility": "Children and pregnant women who need routine vaccines, especially missed or incomplete vaccines.",
+      "benefits": "Free vaccines to protect from serious diseases such as polio, measles-rubella, diphtheria, pertussis, tetanus, hepatitis B and others as per age schedule.",
+      "documents": "Child immunization card/MCP card, Aadhaar if available, birth record if available.",
+      "steps": "Ask ASHA/ANM or Anganwadi about the next vaccine day. Take the child or pregnant woman to the session. Keep the vaccine card safely and follow the next date.",
+      "description": "Mission Indradhanush and the Universal Immunization Programme provide universal, free vaccination coverage against 12 life-threatening vaccine-preventable diseases for all pregnant women, infants, and children according to the national immunization schedule, complete with tracked immunization cards."
+    },
+    "telugu": {
+      "eligibility": "రొటీన్ టీకాలు అవసరమైన పిల్లలు మరియు గర్భిణీలు, ముఖ్యంగా మిస్ అయిన లేదా పూర్తికాని టీకాలు ఉన్నవారు.",
+      "benefits": "పోలియో, మీజిల్స్-రుబెల్లా, డిఫ్తీరియా, పర్టుసిస్, టెటనస్, హెపటైటిస్ B వంటి తీవ్రమైన వ్యాధుల నుంచి రక్షణకు వయస్సు ప్రకారం ఉచిత టీకాలు.",
+      "documents": "పిల్లల టీకా కార్డు లేదా MCP కార్డు, ఉంటే ఆధార్, జనన రికార్డు.",
+      "steps": "తదుపరి టీకా రోజు ఎప్పుడు అని ASHA/ANM లేదా అంగన్వాడిని అడగండి. పిల్లవాడు లేదా గర్భిణీని టీకా కేంద్రానికి తీసుకెళ్లండి. టీకా కార్డును జాగ్రత్తగా ఉంచి తదుపరి తేదీ పాటించండి.",
+      "description": "మిషన్ ఇంద్రధనుష్ మరియు సార్వత్రిక టీకాల కార్యక్రమం ద్వారా పిల్లలు మరియు గర్భిణీ స్త్రీలకు పోలియో, ధనుర్వాతం, డిఫ్తీరియా, క్షయ, హెపటైటిస్ బి, మీజిల్స్-రుబెల్లా వంటి 12 ప్రాణాంతక వ్యాధుల నుండి రక్షణ కల్పించేందుకు వయస్సు ప్రకారం పూర్తి ఉచిత టీకాలు మరియు వ్యాక్సిన్ కార్డు అందించబడతాయి."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://mis.dghs.gov.in/",
+    "contact_office": "PHC / Sub-centre / ASHA Worker",
+    "eligibility_confirmation": "ASHA / ANM - free for all children",
+    "eligibility_questions": [
+      {
+        "question_te": "0-5 సంవత్సరాల పిల్లవారు ఉన్నారా?",
+        "question_en": "Do you have children aged 0-5 years?",
+        "weight": "high"
+      },
+      {
+        "question_te": "టీకాలు లేవటం అవసరమైనదా?",
+        "question_en": "Do vaccines need to be given?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Immunization Card",
+        "name_te": "టీకాकरण కార్డు",
+        "optional": true
+      },
+      {
+        "name": "Aadhaar (child)",
+        "name_te": "ఆధార్ (పిల్లవాడు)",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "phc": "PHC",
+      "sub_centre": "Sub-centre",
+      "asha": "ASHA worker",
+      "immunization_camp": "Village immunization camp"
+    },
+    "telugu_description": "మిషన్ ఇంద్రధనుష్ మరియు సార్వత్రిక టీకాల కార్యక్రమం ద్వారా పిల్లలు మరియు గర్భిణీ స్త్రీలకు పోలియో, ధనుర్వాతం, డిఫ్తీరియా, క్షయ, హెపటైటిస్ బి, మీజిల్స్-రుబెల్లా వంటి 12 ప్రాణాంతక వ్యాధుల నుండి రక్షణ కల్పించేందుకు వయస్సు ప్రకారం పూర్తి ఉచిత టీకాలు మరియు వ్యాక్సిన్ కార్డు అందించబడతాయి.",
+    "english_description": "Mission Indradhanush and the Universal Immunization Programme provide universal, free vaccination coverage against 12 life-threatening vaccine-preventable diseases for all pregnant women, infants, and children according to the national immunization schedule, complete with tracked immunization cards.",
+    "coverage_type": "Universal Free Childhood & Maternal Vaccine Coverage",
+    "coverage_type_te": "సార్వత్రిక ఉచిత టీకా పంపిణీ కార్యక్రమం",
+    "benefit_amount": "100% Free Vaccination protecting against 12 Vaccine-Preventable Diseases",
+    "benefit_amount_te": "12 ప్రాణాంతక వ్యాధుల నుండి రక్షణ కల్పించే 100% ఉచిత టీకాలు",
+    "target_beneficiary": "All Infants and Children aged 0-5 years, and Pregnant Women",
+    "target_beneficiary_te": "0-5 సంవత్సరాల లోపు పిల్లలు మరియు గర్భిణీ స్త్రీలందరూ",
+    "application_mode": "Walk-in at Village Village Health Sanitation & Nutrition Day (VHSND), Anganwadi, or PHC",
+    "application_mode_te": "గ్రామ అంగన్‌వాడీ కేంద్రం, విలేజ్ క్లినిక్ లేదా పీహెచ్‌సీ వద్ద నేరుగా టీకా వేయించుకోవడం",
+    "processing_time": "Immediate administration with entries in MCP Card / U-WIN Portal",
+    "processing_time_te": "హాజరైన వెంటనే టీకా వేసి, ఎంసీపీ కార్డు / U-WIN లో నమోదు చేస్తారు",
+    "facility_type": "All Anganwadi Centres, Sub-Centres, PHCs, CHCs and Area Hospitals",
+    "facility_type_te": "అన్ని అంగన్‌వాడీ కేంద్రాలు, సబ్-సెంటర్లు మరియు ప్రభుత్వ ఆసుపత్రులు",
+    "validity_period": "From birth up to 16 years of age as per National Immunization Schedule",
+    "validity_period_te": "పుట్టినప్పటి నుండి 16 సంవత్సరాల వయస్సు వరకు నిర్దేశిత షెడ్యూల్ ప్రకారం",
+    "helpline_numbers": [
+      "104 (Health Advice)",
+      "1075 (National Health Portal)"
+    ],
+    "key_treatments": [
+      "BCG (Tuberculosis) at birth",
+      "Hepatitis B birth dose & Pentavalent (DPT, Hep B, Hib)",
+      "Oral Polio Vaccine (OPV) & Inactivated Polio Vaccine (fIPV)",
+      "Rotavirus Vaccine (Severe Diarrhoea Prevention)",
+      "Pneumococcal Conjugate Vaccine (PCV for Pneumonia & Meningitis)",
+      "Measles-Rubella (MR) & Vitamin A Supplementation",
+      "Tetanus & Diphtheria (Td) for Pregnant Women and Adolescents"
+    ],
+    "key_treatments_te": [
+      "బీసీజీ (క్షయ వ్యాధి నిరోధక టీకా)",
+      "హెపటైటిస్ బి మరియు పెంటావాలెంట్ టీకా",
+      "పోలియో చుక్కలు (OPV) మరియు పోలియో ఇంజెక్షన్ (fIPV)",
+      "రోటావైరస్ (తీవ్ర విరేచనాల నివారణ టీకా)",
+      "న్యుమోనియా నివారణ టీకా (PCV)",
+      "తట్టు-రుబెల్లా (MR) టీకా మరియు విటమిన్-ఎ ద్రావణం",
+      "గర్భిణులకు ధనుర్వాతం నివారణ టీకా (Td)"
+    ],
+    "exclusions": "Non-mandatory optional travel vaccines (e.g., Yellow fever) not on standard national schedule.",
+    "exclusions_te": "జాతీయ షెడ్యూల్‌లో లేని ప్రత్యేక అంతర్జాతీయ ప్రయాణ వ్యాక్సిన్లు వర్తించవు."
+  },
+  "Rashtriya Bal Swasthya Karyakram (Child Health Screening)": {
+    "level": "National",
+    "category": "Child health",
+    "icon": "child",
+    "telugu_name": "రాష్ట్రీయ బాల స్వాస్థ్య కార్యక్రమం",
+    "audio_file": "static/audio/bal_swasthya.mp3",
+    "source_name": "National Health Mission",
+    "source_url": "https://nhm.gov.in/index1.php?lang=1&level=0&lid=773&linkid=499",
+    "keywords": [
+      "పిల్లల ఆరోగ్యం",
+      "స్కూల్ చెకప్",
+      "అంగన్వాడి",
+      "బాల స్వాస్థ్య",
+      "child screening",
+      "school health"
+    ],
+    "original_complex_text": "Rashtriya Bal Swasthya Karyakram screens children from birth to 18 years for defects at birth, diseases, deficiencies and developmental delays, covering 32 common health conditions. Screening happens at delivery points, Anganwadi centres and government schools through mobile health teams and ASHA/home-based care. Identified children are linked to District Early Intervention Centres and referred for free treatment, including surgeries at tertiary level where needed.",
+    "simplified": {
+      "eligibility": "Children from birth to 18 years, including children at Anganwadi centres and government schools.",
+      "benefits": "Free screening for birth defects, disease, deficiency and development delay. Free treatment or referral is arranged for identified problems.",
+      "documents": "Child Aadhaar if available, school/Anganwadi details, health card, old reports.",
+      "steps": "Send the child for school/Anganwadi health checkup. If the team finds a problem, follow the referral slip to the PHC, District Early Intervention Centre or hospital.",
+      "description": "Rashtriya Bal Swasthya Karyakram (RBSK) conducts systematic, free health screening for children from birth to 18 years in Anganwadi centres and government schools to detect the 4Ds (Defects at birth, Diseases, Deficiencies, and Development delays), arranging free surgical correction and early intervention."
+    },
+    "telugu": {
+      "eligibility": "పుట్టినప్పటి నుంచి 18 సంవత్సరాల వరకు పిల్లలు, అంగన్వాడి మరియు ప్రభుత్వ పాఠశాల పిల్లలు సహా.",
+      "benefits": "జన్యుపరమైన లోపాలు, వ్యాధులు, పోషక లోపాలు, అభివృద్ధి ఆలస్యం కోసం ఉచిత స్క్రీనింగ్. సమస్య కనిపిస్తే ఉచిత చికిత్స లేదా రిఫరల్ ఏర్పాటు చేస్తారు.",
+      "documents": "ఉంటే పిల్లల ఆధార్, పాఠశాల/అంగన్వాడి వివరాలు, ఆరోగ్య కార్డు, పాత రిపోర్టులు.",
+      "steps": "పాఠశాల లేదా అంగన్వాడి ఆరోగ్య చెకప్ కు పిల్లవాడిని పంపండి. సమస్య గుర్తిస్తే రిఫరల్ స్లిప్ తీసుకుని PHC, జిల్లా ఎర్లీ ఇంటర్వెన్షన్ సెంటర్ లేదా ఆసుపత్రికి వెళ్లండి.",
+      "description": "రాష్ట్రీయ బాల స్వాస్థ్య కార్యక్రమం (RBSK) అనేది పుట్టినప్పటి నుండి 18 సంవత్సరాల వయస్సు వరకు ఉన్న పిల్లలకు జన్యుపరమైన లోపాలు, తీవ్ర వ్యాధులు, పోషకాహార లోపాలు మరియు ఎదుగుదల లోపాలను (4Ds) గుర్తించడానికి మొబైల్ హెల్త్ టీమ్‌ల ద్వారా అంగన్‌వాడీలు మరియు ప్రభుత్వ పాఠశాలల్లో ఉచిత స్క్రీనింగ్ మరియు ఉచిత రిఫరల్ చికిత్స అందించే పథకం."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://nhm.gov.in/",
+    "contact_office": "School / PHC / Health Worker",
+    "eligibility_confirmation": "School screening / PHC automatic",
+    "eligibility_questions": [
+      {
+        "question_te": "పిల్లవాడు 6-18 సంవత్సరాలు?",
+        "question_en": "Is child aged 6-18 years?",
+        "weight": "high"
+      },
+      {
+        "question_te": "ఆరోగ్య పరీక్ష కావాలనుకుంటున్నారా?",
+        "question_en": "Want health screening?",
+        "weight": "medium"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "School ID (if student)",
+        "name_te": "పాఠశాల ID",
+        "optional": true
+      },
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "school": "School health program",
+      "phc": "PHC screening camp",
+      "health_worker": "ASHA / ANM"
+    },
+    "telugu_description": "రాష్ట్రీయ బాల స్వాస్థ్య కార్యక్రమం (RBSK) అనేది పుట్టినప్పటి నుండి 18 సంవత్సరాల వయస్సు వరకు ఉన్న పిల్లలకు జన్యుపరమైన లోపాలు, తీవ్ర వ్యాధులు, పోషకాహార లోపాలు మరియు ఎదుగుదల లోపాలను (4Ds) గుర్తించడానికి మొబైల్ హెల్త్ టీమ్‌ల ద్వారా అంగన్‌వాడీలు మరియు ప్రభుత్వ పాఠశాలల్లో ఉచిత స్క్రీనింగ్ మరియు ఉచిత రిఫరల్ చికిత్స అందించే పథకం.",
+    "english_description": "Rashtriya Bal Swasthya Karyakram (RBSK) conducts systematic, free health screening for children from birth to 18 years in Anganwadi centres and government schools to detect the 4Ds (Defects at birth, Diseases, Deficiencies, and Development delays), arranging free surgical correction and early intervention.",
+    "coverage_type": "Free Universal Child Health Screening & Early Intervention Treatment",
+    "coverage_type_te": "పిల్లల ఉచిత ఆరోగ్య పరీక్షలు & ముందస్తు చికిత్స పథకం",
+    "benefit_amount": "100% Free Screening for 4Ds (Defects, Diseases, Deficiencies, Delays) & Free Surgeries",
+    "benefit_amount_te": "4D లోపాలకు (పుట్టుక లోపాలు, వ్యాధులు, లోపాలు, ఎదుగుదల లోపాలు) 100% ఉచిత చికిత్స",
+    "target_beneficiary": "All Children from birth up to 18 years enrolled in Anganwadis and Government/Aided Schools",
+    "target_beneficiary_te": "అంగన్‌వాడీలు, ప్రభుత్వ మరియు ఎయిడెడ్ పాఠశాలల్లోని 0 నుండి 18 సంవత్సరాల పిల్లలందరూ",
+    "application_mode": "Dedicated Mobile Health Teams visiting Schools/Anganwadis & District Early Intervention Centres (DEIC)",
+    "application_mode_te": "పాఠశాలలు/అంగన్‌వాడీలను సందర్శించే మొబైల్ హెల్త్ టీంల ద్వారా లేదా జిల్లా DEIC కేంద్రంలో",
+    "processing_time": "Screened at school; tertiary surgery scheduled within 1-4 weeks",
+    "processing_time_te": "పాఠశాలలో స్క్రీనింగ్ అనంతరం అవసరమైన సర్జరీలను 1-4 వారాల్లో నిర్వహిస్తారు",
+    "facility_type": "District Early Intervention Centres (DEIC) & Empanelled Tertiary Pediatric Hospitals",
+    "facility_type_te": "జిల్లా ఎర్లీ ఇంటర్వెన్షన్ కేంద్రాలు (DEIC) & ప్రభుత్వ స్పెషాలిటీ ఆసుపత్రులు",
+    "validity_period": "Continuous annual school screening up to age 18",
+    "validity_period_te": "18 సంవత్సరాల వయస్సు వరకు వార్షిక పరీక్షల ద్వారా నిరంతరం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1800-425-7778 (DEIC Child Health Helpline)"
+    ],
+    "key_treatments": [
+      "Congenital Heart Defects (Free Paediatric Cardiac Surgery)",
+      "Neural Tube Defects, Cleft Lip & Cleft Palate Surgeries",
+      "Club Foot (Ponseti treatment) & Congenital Cataract Removal",
+      "Severe Acute Malnutrition (SAM) & Severe Anaemia Management",
+      "Developmental Delays, Autism, Vision & Hearing Impairment Therapy at DEIC"
+    ],
+    "key_treatments_te": [
+      "పుట్టుకతో వచ్చే గుండె జబ్బులకు ఉచిత శస్త్రచికిత్సలు",
+      "చీలిక పెదవి (Cleft Lip), అంగిలి లోపాలకు ఉచిత సర్జరీలు",
+      "వంకర పాదాలు (Club Foot) మరియు పుట్టుకతో వచ్చే కంటి శుక్లాల చికిత్స",
+      "తీవ్ర పోషకాహార లోపం (SAM) మరియు రక్తహీనత నివారణ",
+      "నడవలేకపోవడం, వినికిడి లోపాలు, మాటలు రాని పిల్లలకు DEIC లో ప్రత్యేక థెరపీ"
+    ],
+    "exclusions": "Routine non-prescription nutritional supplements outside RBSK protocol.",
+    "exclusions_te": "ఆర్బీఎస్కే నిబంధనలకు సంబంధం లేని సాధారణ టానిక్కులు వర్తించవు."
+  },
+  "Pradhan Mantri National Dialysis Programme": {
+    "level": "National",
+    "category": "Kidney dialysis",
+    "icon": "kidney",
+    "telugu_name": "ప్రధాన మంత్రి డయాలిసిస్ కార్యక్రమం",
+    "audio_file": "static/audio/dialysis.mp3",
+    "source_name": "Pradhan Mantri National Dialysis Programme",
+    "source_url": "https://pmndp.mohfw.gov.in/",
+    "keywords": [
+      "డయాలిసిస్",
+      "కిడ్నీ",
+      "మూత్రపిండం",
+      "bpl",
+      "kidney",
+      "dialysis"
+    ],
+    "original_complex_text": "Pradhan Mantri National Dialysis Programme is run under the National Health Mission to make renal care services accessible and affordable to BPL patients. It provides free dialysis services to poor patients through dialysis centres in district hospitals and other public/private partnership models. The programme supports hemodialysis and peritoneal dialysis services as per state implementation.",
+    "simplified": {
+      "eligibility": "Poor/BPL patients who need dialysis for kidney failure, as checked by the government hospital or dialysis centre.",
+      "benefits": "Free or government-supported dialysis services at approved district hospital dialysis centres, depending on local availability.",
+      "documents": "Aadhaar, ration/BPL card, doctor's referral, kidney reports, old dialysis records, phone number.",
+      "steps": "Visit the district hospital or kidney specialist. Ask about PM National Dialysis Programme. Submit referral and documents. Follow the dialysis schedule given by the centre.",
+      "description": "The Pradhan Mantri National Dialysis Programme provides free and subsidized life-sustaining hemodialysis and peritoneal dialysis services for poor and BPL patients suffering from end-stage renal disease (kidney failure) through dedicated dialysis units established in district hospitals."
+    },
+    "telugu": {
+      "eligibility": "కిడ్నీ సమస్య వల్ల డయాలిసిస్ అవసరమైన పేద/BPL రోగులు. అర్హతను ప్రభుత్వ ఆసుపత్రి లేదా డయాలిసిస్ కేంద్రం చెక్ చేస్తుంది.",
+      "benefits": "ఆమోదిత జిల్లా ఆసుపత్రి డయాలిసిస్ కేంద్రాల్లో స్థానికంగా అందుబాటులో ఉన్న మేరకు ఉచిత లేదా ప్రభుత్వ మద్దతు ఉన్న డయాలిసిస్ సేవలు.",
+      "documents": "ఆధార్, రేషన్/BPL కార్డు, డాక్టర్ రిఫరల్, కిడ్నీ రిపోర్టులు, పాత డయాలిసిస్ రికార్డులు, మొబైల్ నంబర్.",
+      "steps": "జిల్లా ఆసుపత్రి లేదా కిడ్నీ డాక్టర్ ను కలవండి. PM National Dialysis Programme గురించి అడగండి. రిఫరల్ మరియు పత్రాలు ఇవ్వండి. కేంద్రం చెప్పిన తేదీలకు డయాలిసిస్ కు వెళ్లండి.",
+      "description": "ప్రధాన మంత్రి జాతీయ డయాలిసిస్ కార్యక్రమం ద్వారా కిడ్నీ వైఫల్యంతో బాధపడుతున్న నిరుపేద/బీపీఎల్ రోగులకు జిల్లా కేంద్ర ఆసుపత్రులలోని ప్రత్యేక డయాలిసిస్ కేంద్రాలలో ఉచితంగా లేదా రాయితీపై హీమోడయాలసిస్ మరియు పెరిటోనియల్ డయాలిసిస్ సేవలను అందిస్తారు."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://nhm.gov.in/",
+    "contact_office": "District Hospital / Dialysis Centre",
+    "eligibility_confirmation": "Hospital Nephrologist / Dialysis Centre",
+    "eligibility_questions": [
+      {
+        "question_te": "TB రోగి?",
+        "question_en": "Is patient a TB patient?",
+        "weight": "high"
+      },
+      {
+        "question_te": "డయాలిసిస్ చికిత్స అవసరమైనదా?",
+        "question_en": "Does patient need dialysis?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Medical Diagnosis Report",
+        "name_te": "వైద్య నిర్ధారణ",
+        "optional": false
+      },
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్",
+        "optional": true
+      },
+      {
+        "name": "Doctor Referral",
+        "name_te": "డాక్టర్ సిఫారిష్",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "district_hospital": "District Hospital",
+      "dialysis_centre": "Empanelled dialysis centre",
+      "nephrologist": "Nephrologist consultation"
+    },
+    "telugu_description": "ప్రధాన మంత్రి జాతీయ డయాలిసిస్ కార్యక్రమం ద్వారా కిడ్నీ వైఫల్యంతో బాధపడుతున్న నిరుపేద/బీపీఎల్ రోగులకు జిల్లా కేంద్ర ఆసుపత్రులలోని ప్రత్యేక డయాలిసిస్ కేంద్రాలలో ఉచితంగా లేదా రాయితీపై హీమోడయాలసిస్ మరియు పెరిటోనియల్ డయాలిసిస్ సేవలను అందిస్తారు.",
+    "english_description": "The Pradhan Mantri National Dialysis Programme provides free and subsidized life-sustaining hemodialysis and peritoneal dialysis services for poor and BPL patients suffering from end-stage renal disease (kidney failure) through dedicated dialysis units established in district hospitals.",
+    "coverage_type": "Free Hemodialysis & Peritoneal Dialysis for End-Stage Renal Disease (ESRD)",
+    "coverage_type_te": "కిడ్నీ వ్యాధిగ్రస్తులకు ఉచిత డయాలసిస్ సేవలు",
+    "benefit_amount": "100% Free Dialysis Sessions, Dialyzers, Heparin & EPO Injections",
+    "benefit_amount_te": "100% ఉచిత డయాలసిస్ సెషన్లు, మందులు మరియు ఇంజెక్షన్లు",
+    "target_beneficiary": "BPL & Poor Chronic Kidney Failure Patients requiring regular maintenance dialysis",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని దీర్ఘకాలిక మూత్రపిండ వైఫల్యం (CKD) ఉన్న పేద రోగులు",
+    "application_mode": "Registration at District Hospital / Area Hospital / CHC Dialysis Unit with Aarogyasri Card",
+    "application_mode_te": "ఆరోగ్యశ్రీ కార్డుతో సమీప జిల్లా / ఏరియా ఆసుపత్రి డయాలసిస్ కేంద్రంలో నమోదు",
+    "processing_time": "Scheduled slots 2-3 times per week as per nephrologist prescription",
+    "processing_time_te": "వైద్యుల సూచన మేరకు వారానికి 2-3 సార్లు నిర్ణీత సమయాల్లో",
+    "facility_type": "Public-Private Partnership (PPP) & Government Hospital Dialysis Centres",
+    "facility_type_te": "ప్రభుత్వ మరియు పీపీపీ డయాలసిస్ నెట్‌వర్క్ కేంద్రాలు",
+    "validity_period": "Lifelong maintenance therapy until kidney transplant",
+    "validity_period_te": "కిడ్నీ మార్పిడి జరిగే వరకు జీవితాంతం ఉచితంగా కొనసాగుతుంది",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1800-425-7778 (Dialysis Care Desk)"
+    ],
+    "key_treatments": [
+      "Hemodialysis (HD) sessions 2-3 times weekly",
+      "Peritoneal Dialysis (PD) catheter support & training",
+      "Free Erythropoietin (EPO) & Iron Injections for Anaemia",
+      "Routine biochemical kidney profile and electrolyte monitoring",
+      "Arteriovenous (AV) Fistula creation surgery"
+    ],
+    "key_treatments_te": [
+      "వారానికి 2 నుండి 3 సార్లు ఉచిత హెమోడయాలసిస్ సెషన్లు",
+      "పెరిటోనియల్ డయాలసిస్ (PD) కిట్లు మరియు శిక్షణ",
+      "రక్తహీనత నివారణకు ఉచిత ఎరిత్రోపాయిటిన్ (EPO) ఇంజెక్షన్లు",
+      "సీరం క్రియాటినిన్, యూరియా తదితర క్రమబద్ధ రక్త పరీక్షలు",
+      "డయాలసిస్ కొరకు ఏవీ ఫిస్టులా (AV Fistula) శస్త్రచికిత్స"
+    ],
+    "exclusions": "Dialysis at luxury non-empanelled private clinics without Dr. NTR Vaidya Seva / PM-JAY authorization.",
+    "exclusions_te": "ప్రభుత్వ గుర్తింపు లేని ప్రైవేట్ కార్పొరేట్ కేంద్రాలలో అనుమతి లేని డయాలసిస్ వర్తించవు."
+  },
+  "Ni-kshay Poshan Yojana (TB Nutrition Support)": {
+    "level": "National",
+    "category": "TB support",
+    "icon": "nutrition",
+    "telugu_name": "నిక్షయ్ పోషణ యోజన",
+    "audio_file": "static/audio/nikshay_poshan_yojana.mp3",
+    "source_name": "Central TB Division, MoHFW",
+    "source_url": "https://tbcindia.mohfw.gov.in/",
+    "keywords": [
+      "టిబి",
+      "క్షయ",
+      "నిక్షయ్",
+      "పోషణ",
+      "tb",
+      "tuberculosis",
+      "nutrition"
+    ],
+    "original_complex_text": "Ni-kshay Poshan Yojana provides direct benefit transfer nutrition support to notified TB patients under the National TB Elimination Programme. Recent national guidance says every TB patient is supported at Rs. 1000 per month through DBT. TB patients should be notified in Ni-kshay and keep bank account details updated through the TB health staff.",
+    "simplified": {
+      "eligibility": "People diagnosed and notified with TB under the government TB programme.",
+      "benefits": "Monthly nutrition support through direct bank transfer during TB treatment, as per current national TB programme rules.",
+      "documents": "Aadhaar, bank passbook/account details, phone number, TB treatment card or Ni-kshay ID.",
+      "steps": "Get TB treatment from PHC, government hospital or registered doctor. Make sure your name is entered in Ni-kshay. Give bank details to TB staff. Take medicines regularly and check if DBT is received.",
+      "description": "Ni-kshay Poshan Yojana is a direct benefit transfer (DBT) scheme under the National Tuberculosis Elimination Programme, providing monthly financial support directly into the bank accounts of all notified TB patients to fulfill their nutritional needs throughout the active treatment period."
+    },
+    "telugu": {
+      "eligibility": "ప్రభుత్వ TB కార్యక్రమంలో TB గా నమోదు అయిన రోగులు.",
+      "benefits": "TB చికిత్స సమయంలో ప్రస్తుత జాతీయ TB నియమాల ప్రకారం పోషకాహార సహాయం ప్రతి నెలా బ్యాంక్ ఖాతాకు వస్తుంది.",
+      "documents": "ఆధార్, బ్యాంక్ పాస్ బుక్/ఖాతా వివరాలు, మొబైల్ నంబర్, TB చికిత్స కార్డు లేదా నిక్షయ్ ఐడి.",
+      "steps": "PHC, ప్రభుత్వ ఆసుపత్రి లేదా నమోదు చేసిన డాక్టర్ వద్ద TB చికిత్స తీసుకోండి. మీ పేరు నిక్షయ్ లో నమోదు అయ్యిందో చూడండి. బ్యాంక్ వివరాలు TB సిబ్బందికి ఇవ్వండి. మందులు క్రమంగా తీసుకుని DBT వచ్చిందో చెక్ చేయండి.",
+      "description": "నిక్షయ్ పోషణ యోజన పథకం ద్వారా ప్రభుత్వంలో నమోదైన క్షయ (టీబీ) రోగులందరికీ చికిత్స కాలంలో పోషకాహార అవసరాల కోసం ప్రతి నెలా వారి బ్యాంక్ ఖాతాకు నేరుగా డీబీటీ (DBT) ద్వారా ఆర్థిక సహాయం జమ చేయబడుతుంది."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://nikshay.gov.in/",
+    "contact_office": "TB Centre / PHC / District TB Officer",
+    "eligibility_confirmation": "TB Centre / Hospital confirmed TB patient",
+    "eligibility_questions": [
+      {
+        "question_te": "TB రోగి?",
+        "question_en": "Are you a TB patient?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "చికిత్స కోసం నమోదు చేసినారా?",
+        "question_en": "Registered for TB treatment?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "TB Registration",
+        "name_te": "TB నమోదు",
+        "optional": false
+      },
+      {
+        "name": "Aadhaar",
+        "name_te": "ఆధార్",
+        "optional": true
+      },
+      {
+        "name": "Medical Certificate",
+        "name_te": "వైద్య సర్టిఫికేట్",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "tb_centre": "TB Centre",
+      "phc": "PHC with TB services",
+      "district_tb": "District TB Officer",
+      "nikshay": "https://nikshay.gov.in/"
+    },
+    "telugu_description": "నిక్షయ్ పోషణ యోజన పథకం ద్వారా ప్రభుత్వంలో నమోదైన క్షయ (టీబీ) రోగులందరికీ చికిత్స కాలంలో పోషకాహార అవసరాల కోసం ప్రతి నెలా వారి బ్యాంక్ ఖాతాకు నేరుగా డీబీటీ (DBT) ద్వారా ఆర్థిక సహాయం జమ చేయబడుతుంది.",
+    "english_description": "Ni-kshay Poshan Yojana is a direct benefit transfer (DBT) scheme under the National Tuberculosis Elimination Programme, providing monthly financial support directly into the bank accounts of all notified TB patients to fulfill their nutritional needs throughout the active treatment period.",
+    "coverage_type": "Direct Benefit Transfer (DBT) Monthly Cash Grant for TB Nutritional Support",
+    "coverage_type_te": "క్షయ (టీబీ) రోగులకు నెలవారీ పోషకాహార ఆర్థిక సహాయం (DBT)",
+    "benefit_amount": "₹500 to ₹1,000 per month credited directly to bank account throughout treatment",
+    "benefit_amount_te": "చికిత్స ముగిసేవరకు నెలకు ₹500 నుండి ₹1,000 నేరుగా బ్యాంక్ ఖాతాలో జమ",
+    "target_beneficiary": "All Notified Tuberculosis (TB) Patients undergoing treatment across India",
+    "target_beneficiary_te": "ని-క్షయ్ పోర్టల్‌లో నమోదైన క్షయ (టీబీ) వ్యాధిగ్రస్తులందరూ",
+    "application_mode": "Automatic enrollment on Ni-kshay Portal by Treating Doctor / Senior Treatment Supervisor (STS)",
+    "application_mode_te": "ప్రభుత్వ ఆసుపత్రి లేదా డాక్టర్ ద్వారా ని-క్షయ్ పోర్టల్‌లో ఆటోమేటిక్ నమోదు",
+    "processing_time": "Monthly installment transfer during active anti-TB drug regimen",
+    "processing_time_te": "నెలవారీ చికిత్స నివేదిక ఆధారంగా నేరుగా బ్యాంక్ ఖాతాలో జమ",
+    "facility_type": "Designated Microscopy Centres (DMC), PHCs, CHCs, TB Sanatoriums & District TB Centres",
+    "facility_type_te": "అన్ని ప్రభుత్వ ప్రాథమిక ఆరోగ్య కేంద్రాలు & జిల్లా క్షయ నివారణ కేంద్రాలు",
+    "validity_period": "Duration of anti-TB treatment (6 months to 24 months for MDR-TB)",
+    "validity_period_te": "చికిత్స పూర్తయ్యే వరకు (6 నెలల నుండి 24 నెలల వరకు)",
+    "helpline_numbers": [
+      "1800-11-6666 (National TB Toll-Free Helpline)",
+      "104 (Health Advice)"
+    ],
+    "key_treatments": [
+      "100% Free Daily DOTS / Fixed-Dose Combination Anti-TB Medicines",
+      "CBNAAT & TrueNat Molecular Drug Resistance Diagnostic Testing",
+      "Monthly DBT Financial Grant for protein-rich nutritional food",
+      "Free Chest X-rays, Sputum Microscopy & Regular Sputum Follow-up",
+      "Treatment Support & Counseling by Ni-kshay Mitras"
+    ],
+    "key_treatments_te": [
+      "100% ఉచిత పూర్తి కోర్సు టీబీ మందులు (DOTS కిట్లు)",
+      "ట్రూనాట్ (TrueNat) మరియు జీన్ ఎక్స్‌పర్ట్ అధునాతన ల్యాబ్ పరీక్షలు",
+      "పౌష్టికాహారం కొరకు ప్రతి నెలా నేరుగా బ్యాంక్ ఖాతాలో ఆర్థిక సాయం",
+      "ఉచిత ఛాతీ ఎక్స్-రే మరియు కఫం (స్పుటమ్) పరీక్షలు",
+      "ని-క్షయ్ మిత్రల ద్వారా కౌన్సిలింగ్ మరియు పోషకాహార కిట్ల పంపిణీ"
+    ],
+    "exclusions": "Non-notified private clinic patients whose bank details and Aadhaar are not linked on Ni-kshay portal.",
+    "exclusions_te": "ని-క్షయ్ పోర్టల్‌లో నమోదు చేయని లేదా ఆధార్ సీడింగ్ లేని ప్రైవేట్ క్లినిక్ రోగులకు డీబీటీ అందదు."
+  }
+}

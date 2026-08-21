@@ -1,0 +1,559 @@
+{
+  "Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA)": {
+    "level": "National",
+    "category": "Maternal Health",
+    "icon": "pregnancy",
+    "telugu_name": "ప్రధానమంత్రి సురక్షిత మాతృత్వ అభియాన్",
+    "audio_file": "static/audio/pmsma.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://pmsma.nhp.gov.in/",
+    "keywords": [
+      "PMSMA",
+      "pregnancy",
+      "maternal",
+      "pregnant women",
+      "free checkup"
+    ],
+    "original_complex_text": "Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA) is a national initiative to provide quality antenatal care (ANC) for pregnant women. Every pregnant woman in India receives a package of free comprehensive diagnostic and clinical services on the 9th day of every month at Government Health facilities (PHCs/CHCs/DHs). It aims to reduce Maternal Mortality Ratio (MMR) and Infant Mortality Rate (IMR).",
+    "simplified": {
+      "eligibility": "All pregnant women in India, specifically in their 2nd and 3rd trimesters.",
+      "benefits": "Free medical checkups, blood pressure checks, sugar checks, ultrasounds, and doctor consultations on the 9th of every month.",
+      "documents": "Pregnancy registration card, ANC card, Identity proof.",
+      "steps": "Visit the nearest government hospital, PHC, or health centre on the 9th day of any month to receive free specialist checkups.",
+      "description": "Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA) guarantees free, comprehensive antenatal checkups conducted by specialist gynecologists on the 9th of every month for pregnant women in their 2nd and 3rd trimesters across government health facilities."
+    },
+    "telugu": {
+      "eligibility": "భారతదేశంలోని గర్భిణీ స్త్రీలు అందరూ (ముఖ్యంగా ప్రసవానికి 3 నుండి 9 నెలల మధ్య ఉన్నవారు) అర్హులు.",
+      "benefits": "ప్రతి నెలా 9వ తేదీన ఉచిత రక్త పరీక్షలు, బీపీ మరియు షుగర్ తనిఖీలు, అల్ట్రాసౌండ్ స్కానింగ్ మరియు డాక్టర్ సంప్రదింపులు.",
+      "documents": "గర్భధారణ నమోదు కార్డు (ANC కార్డు), గుర్తింపు కార్డు.",
+      "steps": "ఏదైనా ప్రభుత్వ ఆసుపత్రి లేదా ప్రాథమిక ఆరోగ్య కేంద్రం (PHC) ని ప్రతి నెలా 9వ తేదీన సందర్శించి ఉచిత పరీక్షలు పొందవచ్చు.",
+      "description": "ప్రధానమంత్రి సురక్షిత మాతృత్వ అభియాన్ (PMSMA) కింద ప్రతి నెలా 9వ తేదీన ప్రభుత్వ ఆసుపత్రులు మరియు పీహెచ్‌సీలలో గర్భిణీ స్త్రీలకు (రెండవ, మూడవ త్రైమాసికంలో) స్పెషలిస్ట్ గైనకాలజిస్టుల ద్వారా ఉచిత సమగ్ర వైద్య పరీక్షలు, అల్ట్రాసౌండ్ మరియు మందులను అందిస్తారు."
+    },
+    "last_updated": "2026-04-12",
+    "official_website": "https://pmsma.nhp.gov.in/",
+    "contact_office": "ANM / Village Secretariat Health Assistant",
+    "eligibility_confirmation": "ASHA Worker or ANM",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు గర్భవతిగా ఉన్నారా?",
+        "question_en": "Are you pregnant?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "మీరు గర్భధారణ రెండవ లేదా మూడవ దశలో ఉన్నారా?",
+        "question_en": "Are you in your 2nd or 3rd trimester?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "ANC Registration Card",
+        "name_te": "ANC నమోదు కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "ASHA Worker / Village Health Clinic"
+    },
+    "telugu_description": "ప్రధానమంత్రి సురక్షిత మాతృత్వ అభియాన్ (PMSMA) కింద ప్రతి నెలా 9వ తేదీన ప్రభుత్వ ఆసుపత్రులు మరియు పీహెచ్‌సీలలో గర్భిణీ స్త్రీలకు (రెండవ, మూడవ త్రైమాసికంలో) స్పెషలిస్ట్ గైనకాలజిస్టుల ద్వారా ఉచిత సమగ్ర వైద్య పరీక్షలు, అల్ట్రాసౌండ్ మరియు మందులను అందిస్తారు.",
+    "english_description": "Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA) guarantees free, comprehensive antenatal checkups conducted by specialist gynecologists on the 9th of every month for pregnant women in their 2nd and 3rd trimesters across government health facilities.",
+    "coverage_type": "Fixed-Day Quality Specialist Antenatal Care (ANC) on 9th of Every Month",
+    "coverage_type_te": "ప్రతినెల 9వ తేదీన ఉచిత స్పెషలిస్ట్ గర్భిణీ పరీక్షలు (PMSMA)",
+    "benefit_amount": "100% Free Obstetric Specialist Consultation, Ultrasound Scanning, Lab Investigations & High-Risk Tracking",
+    "benefit_amount_te": "100% ఉచిత గైనకాలజిస్ట్ పరీక్షలు, ఉచిత స్కానింగ్ (USG) & ల్యాబ్ టెస్టులు",
+    "target_beneficiary": "All Pregnant Women in their 2nd and 3rd trimesters across Andhra Pradesh",
+    "target_beneficiary_te": "2వ మరియు 3వ త్రైమాసికంలో ఉన్న గర్భిణీ స్త్రీలందరూ",
+    "application_mode": "Walk-in on the 9th of every month at any Govt PHC, CHC, Area Hospital or District Hospital",
+    "application_mode_te": "ప్రతినెల 9వ తేదీన సమీప ప్రభుత్వ ప్రాథమిక, సామాజిక లేదా జిల్లా ఆసుపత్రికి వెళ్లడం",
+    "processing_time": "Same-day comprehensive specialist package on 9th of every month",
+    "processing_time_te": "9వ తేదీన అదే రోజున పూర్తి వైద్య పరీక్షలు మరియు రిపోర్టులు",
+    "facility_type": "Designated PMSMA Clinics at Government Health Facilities and Empanelled Private Voluntarily Participating Gynaecologists",
+    "facility_type_te": "ప్రభుత్వ ఆసుపత్రులు మరియు స్వచ్ఛందంగా పాల్గొనే ప్రైవేట్ గైనకాలజిస్టులు",
+    "validity_period": "Throughout pregnancy from 4th month to delivery",
+    "validity_period_te": "గర్భధారణ 4వ నెల నుండి ప్రసవం వరకు ప్రతి నెలా 9వ తేదీన",
+    "helpline_numbers": [
+      "104 (Maternal Health Helpline)",
+      "1800-11-2016 (PMSMA Toll-Free)"
+    ],
+    "key_treatments": [
+      "Comprehensive Examination by Gynaecologist / Obstetrician",
+      "Free Obstetric Ultrasound Scanning (USG) for fetal growth and anomaly screening",
+      "Free Laboratory Investigations (Blood Grouping, Hb, Blood Sugar, Urine Albumin, HIV, Syphilis, Hepatitis B)",
+      "Identification and Red-Sticker Flagging of High-Risk Pregnancies (HRP)",
+      "Free Iron-Folic Acid, Calcium tablets and dietary nutrition counseling"
+    ],
+    "key_treatments_te": [
+      "గైనకాలజిస్ట్ (స్త్రీల వైద్య నిపుణులు) ద్వారా సమగ్ర వైద్య పరీక్షలు",
+      "శిశువు ఎదుగుదలను పరిశీలించే 100% ఉచిత అల్ట్రాసౌండ్ స్కానింగ్",
+      "రక్తహీనత, షుగర్, బీపీ, హెపటైటిస్ తదితర పూర్తి ఉచిత ల్యాబ్ పరీక్షలు",
+      "అధిక ప్రమాదం ఉన్న గర్భిణులను (High Risk) గుర్తించి ఎరుపు రంగు స్టిక్కర్ తో ప్రత్యేక పర్యవేక్షణ",
+      "ఉచిత కాల్షియం, ఐరన్ మాత్రలు మరియు పౌష్టికాహార సలహాలు"
+    ],
+    "exclusions": "Non-pregnant general gynaecological consultations on PMSMA day (held for antenatal mothers).",
+    "exclusions_te": "9వ తేదీన కేవలం గర్భిణీ తల్లులకు ప్రాధాన్యత ఇవ్వబడుతుంది."
+  },
+  "Pradhan Mantri Matru Vandana Yojana (PMMVY)": {
+    "level": "National",
+    "category": "Maternal Cash Support",
+    "icon": "mother-child",
+    "telugu_name": "ప్రధానమంత్రి మాతృ వందన యోజన",
+    "audio_file": "static/audio/pmmvy.mp3",
+    "source_name": "Ministry of Women and Child Development",
+    "source_url": "https://wcd.nic.in/",
+    "keywords": [
+      "PMMVY",
+      "cash support",
+      "pregnancy money",
+      "maternity benefit",
+      "first child"
+    ],
+    "original_complex_text": "Pradhan Mantri Matru Vandana Yojana is a maternity benefit program run by the Government of India. It provides a cash incentive of Rs. 5000 in two installments directly to the bank account of pregnant women and lactating mothers for the first living child of the family. The financial aid helps compensate for wage loss and ensures proper nutrition during and after pregnancy.",
+    "simplified": {
+      "eligibility": "Pregnant women and lactating mothers for the first living child of the family (excluding government employees).",
+      "benefits": "Direct cash incentive of Rs. 5000 transferred to the mother's linked bank account in two installments.",
+      "documents": "Mother and Child Protection (MCP) card, bank account linked with Aadhaar, husband's Aadhaar, registration form.",
+      "steps": "Apply online through the PMMVY portal or register offline with your local Anganwadi worker or ASHA helper.",
+      "description": "Pradhan Mantri Matru Vandana Yojana (PMMVY) is a direct benefit transfer maternity incentive providing Rs. 5,000 in two installments into the mother's Aadhaar-linked bank account to support nutrition and partial wage compensation during first pregnancy."
+    },
+    "telugu": {
+      "eligibility": "కుటుంబంలో మొదటి కాన్పు గర్భవతులు మరియు పాలిచ్చే తల్లులు అర్హులు (ప్రభుత్వ ఉద్యోగులు కాకూడదు).",
+      "benefits": "తల్లి బ్యాంకు ఖాతాలో నేరుగా రూ. 5000 రెండు విడతలలో జమ చేయబడుతుంది.",
+      "documents": "తల్లి మరియు పిల్లల సంరక్షణ కార్డు (MCP కార్డు), ఆధార్ అనుసంధానం చేసిన బ్యాంకు ఖాతా.",
+      "steps": "స్థానిక అంగన్‌వాడీ కేంద్రం లేదా ఆశా కార్యకర్తను సంప్రదించి దరఖాస్తు ఫారమ్ సమర్పించాలి.",
+      "description": "ప్రధానమంత్రి మాతృ వందన యోజన (PMMVY) మొదటి సంతానం కోసం గర్భిణీలకు మరియు బాలింతలకు వేతన నష్టాన్ని భర్తీ చేయడానికి మరియు మెరుగైన పోషకాహారం కొరకు నేరుగా తల్లి బ్యాంక్ ఖాతాలో రూ. 5,000 నగదును రెండు విడతల్లో జమ చేసే పథకం."
+    },
+    "last_updated": "2026-05-10",
+    "official_website": "https://pmmvy.wcd.gov.in/",
+    "contact_office": "Anganwadi Centre / Village Secretariat",
+    "eligibility_confirmation": "Anganwadi Worker / ASHA Worker",
+    "eligibility_questions": [
+      {
+        "question_te": "ఇది మీ మొదటి ప్రసవమా?",
+        "question_en": "Is this your first pregnancy?",
+        "weight": "critical"
+      },
+      {
+        "question_te": "మీరు ప్రైవేట్ ఉద్యోగి లేదా గృహిణియేనా (ప్రభుత్వ ఉద్యోగి కాదా)?",
+        "question_en": "Are you NOT a government employee?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "MCP Card",
+        "name_te": "తల్లి పిల్లల రక్షణ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Aadhaar Linked Bank Passbook",
+        "name_te": "ఆధార్ లింక్డ్ బ్యాంకు పాస్‌బుక్ కాపీ",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Anganwadi Centre / Village Secretariat"
+    },
+    "telugu_description": "ప్రధానమంత్రి మాతృ వందన యోజన (PMMVY) మొదటి సంతానం కోసం గర్భిణీలకు మరియు బాలింతలకు వేతన నష్టాన్ని భర్తీ చేయడానికి మరియు మెరుగైన పోషకాహారం కొరకు నేరుగా తల్లి బ్యాంక్ ఖాతాలో రూ. 5,000 నగదును రెండు విడతల్లో జమ చేసే పథకం.",
+    "english_description": "Pradhan Mantri Matru Vandana Yojana (PMMVY) is a direct benefit transfer maternity incentive providing Rs. 5,000 in two installments into the mother's Aadhaar-linked bank account to support nutrition and partial wage compensation during first pregnancy.",
+    "coverage_type": "Direct Benefit Transfer (DBT) Maternity Cash Incentive for First & Second Child",
+    "coverage_type_te": "గర్భిణీ తల్లులకు ₹5,000 నుండి ₹6,000 నేరుగా బ్యాంక్ బదిలీ (PMMVY)",
+    "benefit_amount": "₹5,000 in two installments for 1st child; ₹6,000 in single installment if 2nd child is a girl",
+    "benefit_amount_te": "మొదటి కాన్పుకు ₹5,000; రెండవ కాన్పులో ఆడపిల్ల పుడితే ₹6,000 బ్యాంక్ ఖాతాలో జమ",
+    "target_beneficiary": "Pregnant Women & Lactating Mothers belonging to socially/economically disadvantaged sections",
+    "target_beneficiary_te": "ఆర్థికంగా వెనుకబడిన, రేషన్ కార్డు కలిగిన గర్భిణులు మరియు బాలింతలు",
+    "application_mode": "Online at pmmvy.wcd.gov.in or through Village ANM / Anganwadi Worker at Sachivalayam",
+    "application_mode_te": "గ్రామ సచివాలయంలో ఏఎన్ఎం / అంగన్‌వాడీ ద్వారా లేదా pmmvy.wcd.gov.in పోర్టల్ ద్వారా",
+    "processing_time": "Direct installment credit to Aadhaar-seeded bank account within 30 days of stage verification",
+    "processing_time_te": "నమోదు మరియు పరీక్షల ధృవీకరణ పూర్తయిన 30 రోజుల్లో నేరుగా ఖాతాలో జమ",
+    "facility_type": "Anganwadi Centres, Village Secretariats & Govt Health Centres",
+    "facility_type_te": "అంగన్‌వాడీ కేంద్రాలు, గ్రామ సచివాలయాలు మరియు ప్రభుత్వ ఆరోగ్య కేంద్రాలు",
+    "validity_period": "From early pregnancy registration up to completion of 1st cycle of child vaccination",
+    "validity_period_te": "గర్భం దాల్చినప్పటి నుండి బిడ్డ మొదటి విడత టీకాలు పూర్తయ్యే వరకు",
+    "helpline_numbers": [
+      "104 (Health Information)",
+      "011-23382393 (PMMVY Helpdesk)",
+      "14408 (Poshan Helpline)"
+    ],
+    "key_treatments": [
+      "1st Installment (₹3,000) on Early ANC Registration & at least one ANC checkup within 6 months",
+      "2nd Installment (₹2,000) upon Child Birth Registration and completion of 1st cycle of vaccinations (BCG, OPV, DPT, Hep B)",
+      "Special Girl Child Incentive: ₹6,000 single installment for second girl child to promote child sex ratio",
+      "Wage compensation for resting during advanced pregnancy and breastfeeding",
+      "Improved institutional health-seeking behaviour"
+    ],
+    "key_treatments_te": [
+      "మొదటి విడత (₹3,000): గర్భం దాల్చిన 6 నెలల్లోపు నమోదు చేసుకుని కనీసం ఒకసారి వైద్య పరీక్ష చేయించుకున్నప్పుడు",
+      "రెండవ విడత (₹2,000): బిడ్డ పుట్టిన తర్వాత జనన నమోదు చేసి మొదటి విడత టీకాలు వేయించినప్పుడు",
+      "రెండవ కాన్పులో ఆడపిల్ల పుడితే ఒకే విడతలో ₹6,000 ప్రత్యేక ప్రోత్సాహకం",
+      "గర్భిణి విశ్రాంతి సమయంలో వేతన నష్టపరిహారంగా ఆర్థిక రక్షణ",
+      "ఆసుపత్రుల్లో సురక్షిత కాన్పులను ప్రోత్సహించే ప్రత్యక్ష ప్రయోజనం"
+    ],
+    "exclusions": "Regular Central or State Government employees and Public Sector Undertaking (PSU) employees.",
+    "exclusions_te": "ప్రభుత్వ మరియు పబ్లిక్ సెక్టార్ శాశ్వత ఉద్యోగులకు ఈ నగదు సాయం వర్తించదు."
+  },
+  "YSR Village Health Clinics": {
+    "level": "Andhra Pradesh",
+    "category": "Primary Care Clinics",
+    "icon": "clinic",
+    "telugu_name": "వైఎస్ఆర్ విలేజ్ హెల్త్ క్లినిక్స్",
+    "audio_file": "static/audio/ysr_village_clinics.mp3",
+    "source_name": "Andhra Pradesh Department of Health and Family Welfare",
+    "source_url": "https://cfw.ap.nic.in/",
+    "keywords": [
+      "YSR Village Clinic",
+      "ANM",
+      "doctor",
+      "health sub centre",
+      "village doctor",
+      "AP health"
+    ],
+    "original_complex_text": "YSR Village Health Clinics are established at the village level in Andhra Pradesh to provide comprehensive primary healthcare services close to home. Each clinic is staffed with a B.Sc. Nursing qualified Mid-Level Health Provider (MLHP) and an ANM. They offer 12 basic health services, free screening for diabetes & hypertension, and dispense 105 essential medicines and diagnostics.",
+    "simplified": {
+      "eligibility": "All residents of rural villages in Andhra Pradesh needing basic healthcare.",
+      "benefits": "Free consultations, screening for chronic diseases, telemedicine support with expert doctors, and free essential medicines.",
+      "documents": "Aadhaar card or health card (Aarogyasri card) if available (not mandatory for basic consultation).",
+      "steps": "Walk into your local YSR Village Health Clinic during working hours to consult the MLHP/ANM.",
+      "description": "YSR Village Health Clinics operate at the village secretariat level across Andhra Pradesh, delivering round-the-clock primary health services by Mid-Level Health Providers (MLHPs), 105 free essential medicines, 14 diagnostic tests, and specialist tele-consultations."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్‌లోని గ్రామీణ ప్రాంత ప్రజలందరికీ ఉచిత ప్రాథమిక చికిత్స అందుబాటులో ఉంటుంది.",
+      "benefits": "ఉచిత డాక్టర్ సంప్రదింపులు, బీపీ/షుగర్ ఉచిత పరీక్షలు, 105 రకాల ఉచిత మందులు మరియు టెలిమెడిసిన్ సేవలు.",
+      "documents": "ఆధార్ కార్డు లేదా ఆరోగ్యశ్రీ కార్డు (ఉంటేనే, తప్పనిసరి కాదు).",
+      "steps": "గ్రామ పరిధిలోని వైఎస్ఆర్ విలేజ్ క్లినిక్‌ను నేరుగా సందర్శించి వైద్య సేవలు పొందవచ్చు.",
+      "description": "వైఎస్ఆర్ విలేజ్ హెల్త్ క్లినిక్స్ ఆంధ్రప్రదేశ్‌లోని ప్రతి గ్రామ పంచాయతీ పరిధిలో 105 రకాల ఉచిత మందులు, 14 రకాల ఉచిత పరీక్షలు, మిడ్-లెవల్ హెల్త్ ప్రొవైడర్ (MLHP) సేవలు మరియు టెలిమెడిసిన్ ద్వారా వైద్యుల సంప్రదింపులను గ్రామంలోనే అందిస్తాయి."
+    },
+    "last_updated": "2026-06-01",
+    "official_website": "https://hmfw.ap.gov.in/",
+    "contact_office": "YSR Village Clinic Helper / ANM",
+    "eligibility_confirmation": "ANM or MLHP at Village Clinic",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు ఆంధ్రప్రదేశ్ గ్రామీణ ప్రాంత నివాసియా?",
+        "question_en": "Are you a resident of rural Andhra Pradesh?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Local YSR Village Health Clinic"
+    },
+    "telugu_description": "వైఎస్ఆర్ విలేజ్ హెల్త్ క్లినిక్స్ ఆంధ్రప్రదేశ్‌లోని ప్రతి గ్రామ పంచాయతీ పరిధిలో 105 రకాల ఉచిత మందులు, 14 రకాల ఉచిత పరీక్షలు, మిడ్-లెవల్ హెల్త్ ప్రొవైడర్ (MLHP) సేవలు మరియు టెలిమెడిసిన్ ద్వారా వైద్యుల సంప్రదింపులను గ్రామంలోనే అందిస్తాయి.",
+    "english_description": "YSR Village Health Clinics operate at the village secretariat level across Andhra Pradesh, delivering round-the-clock primary health services by Mid-Level Health Providers (MLHPs), 105 free essential medicines, 14 diagnostic tests, and specialist tele-consultations.",
+    "coverage_type": "Permanent Village-Level Primary Healthcare, 14 Diagnostics, 67 Essential Drugs & Telemedicine",
+    "coverage_type_te": "గ్రామంలోనే 24x7 శాశ్వత విలేజ్ క్లినిక్, 14 పరీక్షలు & 67 మందులు",
+    "benefit_amount": "100% Free Daily Clinic Services, Community Health Officer (CHO) Care & Tele-Consultation",
+    "benefit_amount_te": "100% ఉచిత వైద్య సేవలు, కమ్యూనిటీ హెల్త్ ఆఫీసర్ సంరక్షణ మరియు ఉచిత మందులు",
+    "target_beneficiary": "All Rural Citizens residing in Grama Panchayats across Andhra Pradesh",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని గ్రామీణ పంచాయతీలలో నివసించే పౌరులందరూ",
+    "application_mode": "Walk-in at local YSR Village Health Clinic (attached to Grama Sachivalayam)",
+    "application_mode_te": "గ్రామ సచివాలయం పక్కనే ఉన్న విలేజ్ హెల్త్ క్లినిక్‌కు నేరుగా వెళ్లడం",
+    "processing_time": "Immediate on-site testing and consultation (Open 9:00 AM to 4:00 PM)",
+    "processing_time_te": "వెంటనే బీపీ, షుగర్ పరీక్షలు మరియు ఉచిత మందుల పంపిణీ",
+    "facility_type": "State-of-the-art Village Health Clinics with dedicated MLHP/CHO, ANM and ASHA network",
+    "facility_type_te": "గ్రామాల్లోని సుసజ్జిత విలేజ్ హెల్త్ క్లినిక్‌లు (MLHP/CHO మరియు ఏఎన్ఎం)",
+    "validity_period": "Continuous daily village primary healthcare",
+    "validity_period_te": "ప్రతిరోజూ గ్రామ ప్రజలకు నిరంతర ప్రాథమిక వైద్య సేవలు",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (CM Citizen Helpline)"
+    ],
+    "key_treatments": [
+      "Daily Outpatient Services by Community Health Officer (B.Sc Nursing / MLHP)",
+      "14 Point-of-Care Diagnostic Tests (BP, Blood Glucose, Haemoglobin, Urine Pregnancy, Malaria RDT)",
+      "Free 67 Essential Generic Drugs dispensing",
+      "Doctor-to-Doctor Tele-Consultations connecting patients directly with PHC/Medical College Specialists",
+      "Routine Antenatal, Postnatal and Child Immunization sessions at village level"
+    ],
+    "key_treatments_te": [
+      "కమ్యూనిటీ హెల్త్ ఆఫీసర్ ద్వారా ప్రతిరోజూ ఉచిత వైద్య పరీక్షలు",
+      "గ్రామంలోనే 14 రకాల తక్షణ రక్త, మూత్ర పరీక్షలు",
+      "67 రకాల ఉచిత అత్యవసర మందుల అందజేత",
+      "టెలి-మెడిసిన్ ద్వారా పెద్దాసుపత్రి స్పెషలిస్ట్ డాక్టర్లతో నేరుగా వీడియో సంప్రదింపులు",
+      "గ్రామ గర్భిణులకు పరీక్షలు మరియు పిల్లలకు సార్వత్రిక టీకాలు"
+    ],
+    "exclusions": "Major inpatient surgeries and trauma resuscitations (linked seamlessly via 108 to Network Hospitals).",
+    "exclusions_te": "పెద్ద ఆపరేషన్లు ఉన్న రోగులను 108 ద్వారా పెద్దాసుపత్రులకు తరలిస్తారు."
+  },
+  "AP Organ Donation Programme (Jeevandan)": {
+    "level": "Andhra Pradesh",
+    "category": "Organ Donation Services",
+    "icon": "kidney",
+    "telugu_name": "జీవన్‌దాన్ అవయవ దానం పథకం",
+    "audio_file": "static/audio/jeevandan.mp3",
+    "source_name": "AP Jeevandan Registry",
+    "source_url": "http://www.jeevandan.ap.gov.in/",
+    "keywords": [
+      "Jeevandan",
+      "organ donation",
+      "kidney transplant",
+      "AP organ registry"
+    ],
+    "original_complex_text": "The Jeevandan Organ Donation Programme is run by the Government of Andhra Pradesh to regulate and promote cadaver organ transplantation. It coordinates organ retrieval and allocation between registered hospitals and patients needing kidney, liver, heart, or lung transplants. Families can pledge organs of deceased loved ones.",
+    "simplified": {
+      "eligibility": "Any citizen wishing to pledge organs, or patients needing organ transplants in registered AP hospitals.",
+      "benefits": "Enables kidney, liver, heart, and lung transplant matches under ethical guidelines, free registration.",
+      "documents": "Donor pledge form, organ recipient medical report, identity proof.",
+      "steps": "Register online at the Jeevandan portal or visit an authorized hospital coordinator.",
+      "description": "The AP Jeevandan Cadaver Organ Donation Programme is the Andhra Pradesh government's nodal initiative regulating deceased organ donations, coordinating transparent allocation of kidneys, livers, hearts, and lungs to waitlisted patients in registered transplant centres."
+    },
+    "telugu": {
+      "eligibility": "అవయవ దానం చేయాలనుకునే వారందరూ మరియు అవయవ మార్పిడి అవసరమైన రోగులు రిజిస్టర్ చేసుకోవచ్చు.",
+      "benefits": "కిడ్నీ, లివర్, గుండె మొదలైన అవయవ మార్పిడి కోసం ప్రభుత్వ సమన్వయం మరియు ఉచిత నమోదు.",
+      "documents": "అవయవ దాత ఫారమ్, రోగి మెడికల్ రిపోర్టులు, ఐడెంటిటీ ప్రూఫ్.",
+      "steps": "జీవన్‌దాన్ అధికారిక వెబ్‌సైట్ లో నమోదు చేసుకోండి లేదా గుర్తింపు పొందిన ఆసుపత్రిని సంప్రదించండి.",
+      "description": "జీవన్‌దాన్ అవయవ దానం పథకం ఆంధ్రప్రదేశ్ ప్రభుత్వ పర్యవేక్షణలో బ్రెయిన్ డెడ్ వ్యక్తుల నుండి అవయవ దానాలను సమన్వయం చేస్తూ, కిడ్నీ, లివర్, గుండె వంటి అవయవాలు అవసరమైన నిరుపేద రోగులకు పారదర్శక వెయిటింగ్ లిస్ట్ ద్వారా అవయవ మార్పిడి సహాయాన్ని అందిస్తుంది."
+    },
+    "last_updated": "2026-03-20",
+    "official_website": "http://www.jeevandan.ap.gov.in/",
+    "contact_office": "Jeevandan Coordinators in Government General Hospitals",
+    "eligibility_confirmation": "Jeevandan Registry Office",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు అవయవ దానం చేయడానికి ప్రతిజ్ఞ చేయాలనుకుంటున్నారా?",
+        "question_en": "Do you wish to pledge organ donation?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Consent / Pledge Form",
+        "name_te": "అవయవ దాన అంగీకార పత్రం",
+        "optional": false
+      },
+      {
+        "name": "Identity Proof",
+        "name_te": "గుర్తింపు కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "District": "Government General Hospital"
+    },
+    "telugu_description": "జీవన్‌దాన్ అవయవ దానం పథకం ఆంధ్రప్రదేశ్ ప్రభుత్వ పర్యవేక్షణలో బ్రెయిన్ డెడ్ వ్యక్తుల నుండి అవయవ దానాలను సమన్వయం చేస్తూ, కిడ్నీ, లివర్, గుండె వంటి అవయవాలు అవసరమైన నిరుపేద రోగులకు పారదర్శక వెయిటింగ్ లిస్ట్ ద్వారా అవయవ మార్పిడి సహాయాన్ని అందిస్తుంది.",
+    "english_description": "The AP Jeevandan Cadaver Organ Donation Programme is the Andhra Pradesh government's nodal initiative regulating deceased organ donations, coordinating transparent allocation of kidneys, livers, hearts, and lungs to waitlisted patients in registered transplant centres.",
+    "coverage_type": "State Deceased Organ Donation Registry, Cadavre Allocation & Transplant Network",
+    "coverage_type_te": "ఆంధ్రప్రదేశ్ 'జీవన్‌దాన్' అవయవ దానం & అవయవ మార్పిడి సమన్వయం",
+    "benefit_amount": "Priceless Life-Saving Organ Allocation with Free Surgeries for BPL Patients under Aarogyasri",
+    "benefit_amount_te": "ప్రాణ రక్షణ అవయవాల పారదర్శక కేటాయింపు మరియు ఆరోగ్యశ్రీ ద్వారా ఉచిత సర్జరీలు",
+    "target_beneficiary": "End-Stage Organ Failure Patients on state waitlist and altruistic organ donor families in AP",
+    "target_beneficiary_te": "అవయవాలు ఫెయిల్ అయిన రోగులు మరియు అవయవదానం చేయాలనుకునే దాతలు",
+    "application_mode": "Online Donor Pledge at jeevandan.ap.gov.in or Patient Waitlist Registration via Transplant Hospital",
+    "application_mode_te": "jeevandan.ap.gov.in లో డోనర్ ప్రతిజ్ఞ లేదా ఆసుపత్రి ద్వారా వెయిట్‌లిస్ట్‌లో నమోదు",
+    "processing_time": "Instant donor card download; waitlist allocation strictly as per state computerized score",
+    "processing_time_te": "వెంటనే డోనర్ కార్డు డౌన్‌లోడ్; పారదర్శక కంప్యూటర్ స్కోర్ ఆధారంగా అవయవాల కేటాయింపు",
+    "facility_type": "Empanelled Organ Transplant Centres in Visakhapatnam, Vijayawada, Guntur, Tirupati & Kurnool",
+    "facility_type_te": "విశాఖపట్నం, విజయవాడ, గుంటూరు, తిరుపతి, కర్నూలులలోని గుర్తింపు పొందిన ట్రాన్స్‌ప్లాంట్ ఆసుపత్రులు",
+    "validity_period": "Active waitlist status with ongoing clinical updates",
+    "validity_period_te": "అవయవం లభించే వరకు వెయిట్‌లిస్ట్‌లో నిరంతర పర్యవేక్షణ",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1800-425-7778 (Jeevandan Hotline)"
+    ],
+    "key_treatments": [
+      "Deceased Donor (Brain-Stem Death) Organ Retrieval: Kidneys, Liver, Heart, Lungs, Pancreas, Corneas",
+      "Equitable and transparent computerized allocation as per NOTTO/SOTTO guidelines",
+      "Green Corridor Fast-Track Inter-City Organ Transport with Police Escort",
+      "Grief Counseling and Family Support for deceased donor kin",
+      "State honours for cadaver organ donor families"
+    ],
+    "key_treatments_te": [
+      "బ్రెయిన్ డెడ్ దాతల నుండి కిడ్నీలు, కాలేయం, గుండె, ఊపిరితిత్తులు, కళ్ళ సేకరణ",
+      "కంప్యూటరైజ్డ్ విధానంలో ఎవరికీ అన్యాయం జరగకుండా పారదర్శక అవయవాల కేటాయింపు",
+      "పోలీసు ఎస్కార్ట్ తో ట్రాఫిక్ లేని 'గ్రీన్ కారిడార్' ద్వారా అవయవాల వేగవంతమైన రవాణా",
+      "దాత కుటుంబాలకు ప్రత్యేక కౌన్సిలింగ్ మరియు ప్రభుత్వ గౌరవ మర్యాదలు",
+      "ఆరోగ్యశ్రీ కింద పేద రోగులకు ఉచిత అవయవ మార్పిడి శస్త్రచికిత్సలు"
+    ],
+    "exclusions": "Commercial paid organ trade is strictly illegal and severely punishable under Indian law.",
+    "exclusions_te": "అవయవాల క్రయవిక్రయాలు చట్టరీత్యా నేరం."
+  },
+  "National Mental Health Programme (NMHP)": {
+    "level": "National",
+    "category": "Mental Health Services",
+    "icon": "phone-doctor",
+    "telugu_name": "జాతీయ మానసిక ఆరోగ్య పథకం",
+    "audio_file": "static/audio/nmhp.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://main.mohfw.gov.in/",
+    "keywords": [
+      "Mental Health",
+      "NMHP",
+      "counseling",
+      "psychiatrist",
+      "stress support"
+    ],
+    "original_complex_text": "The National Mental Health Programme (NMHP) was launched to ensure the availability of primary mental healthcare services. The District Mental Health Programme (DMHP) is integrated at community health centers and district hospitals, offering counseling, medication, and rehabilitation for patients with depression, anxiety, and other conditions.",
+    "simplified": {
+      "eligibility": "Any citizen suffering from mental health issues, stress, depression, or psychiatric disorders.",
+      "benefits": "Free psychiatric counseling, diagnosis, therapy, and essential medicines at district level health facilities.",
+      "documents": "Patient OPD card, identity proof.",
+      "steps": "Visit the psychiatric or DMHP clinic at your local District Government Hospital.",
+      "description": "The National Mental Health Programme (NMHP) provides decentralized mental healthcare through District Mental Health Programme (DMHP) clinics, offering free psychiatric evaluations, clinical counseling, therapy, and free psychotropic medications."
+    },
+    "telugu": {
+      "eligibility": "మానసిక ఒత్తిడి, ఆందోళన లేదా మానసిక సమస్యలతో బాధపడే ఏ పౌరుడైనా అర్హుడు.",
+      "benefits": "ఉచిత కౌన్సిలింగ్, మానసిక నిపుణుల సంప్రదింపులు మరియు ఉచిత మందుల పంపిణీ.",
+      "documents": "రోగి ఓపీడీ కార్డు, గుర్తింపు కార్డు.",
+      "steps": "జిల్ల్లా కేంద్ర ఆసుపత్రిలోని మానసిక ఆరోగ్య విభాగం (DMHP) ను సంప్రదించండి.",
+      "description": "జాతీయ మానసిక ఆరోగ్య పథకం (NMHP) జిల్లా ఆసుపత్రులలోని మానసిక ఆరోగ్య విభాగాల (DMHP) ద్వారా మానసిక ఒత్తిడి, ఆందోళన, డిప్రెషన్ మరియు మానసిక సమస్యలతో బాధపడే పౌరులకు ఉచిత కౌన్సిలింగ్, సైకియాట్రిస్ట్ చికిత్స మరియు ఉచిత మందులను అందిస్తుంది."
+    },
+    "last_updated": "2026-02-15",
+    "official_website": "https://main.mohfw.gov.in/",
+    "contact_office": "District Mental Health Programme (DMHP) Cell",
+    "eligibility_confirmation": "District Hospital Psychiatrist",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు మానసిక సమస్య లేదా ఒత్తిడి కోసం సంప్రదించాలనుకుంటున్నారా?",
+        "question_en": "Do you seek support for mental health or stress?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "District": "District Government Hospital"
+    },
+    "telugu_description": "జాతీయ మానసిక ఆరోగ్య పథకం (NMHP) జిల్లా ఆసుపత్రులలోని మానసిక ఆరోగ్య విభాగాల (DMHP) ద్వారా మానసిక ఒత్తిడి, ఆందోళన, డిప్రెషన్ మరియు మానసిక సమస్యలతో బాధపడే పౌరులకు ఉచిత కౌన్సిలింగ్, సైకియాట్రిస్ట్ చికిత్స మరియు ఉచిత మందులను అందిస్తుంది.",
+    "english_description": "The National Mental Health Programme (NMHP) provides decentralized mental healthcare through District Mental Health Programme (DMHP) clinics, offering free psychiatric evaluations, clinical counseling, therapy, and free psychotropic medications.",
+    "coverage_type": "District Mental Health Services, Life Skills, Suicide Prevention & Free Psychiatric Drugs",
+    "coverage_type_te": "జిల్లా మానసిక ఆరోగ్య సేవలు, కౌన్సిలింగ్ & ఉచిత సైకియాట్రిక్ మందులు",
+    "benefit_amount": "100% Free Psychiatric OPD, Clinical Counseling, Day Care Rehabilitation & Psychotropic Drugs",
+    "benefit_amount_te": "100% ఉచిత మానసిక వైద్య పరీక్షలు, కౌన్సిలింగ్ మరియు ఉచిత మందులు",
+    "target_beneficiary": "Individuals suffering from Depression, Schizophrenia, Bipolar Disorder, Anxiety, Substance Abuse, Epilepsy",
+    "target_beneficiary_te": "డిప్రెషన్, ఆందోళన, నిద్రలేమి, తీవ్ర మానసిక సమస్యలు లేదా వ్యసనాలతో బాధపడుతున్నవారు",
+    "application_mode": "Walk-in at District Mental Health Clinic (DMHP) in District Hospital or Tele-MANAS (14416)",
+    "application_mode_te": "జిల్లా ఆసుపత్రిలోని మానసిక ఆరోగ్య విభాగం లేదా 14416 టెలి-మానస్ కాల్ ద్వారా",
+    "processing_time": "Immediate clinical consultation and same-day medicine initiation",
+    "processing_time_te": "హాజరైన వెంటనే డాక్టర్ పరీక్ష మరియు ఉచిత మందుల పంపిణీ",
+    "facility_type": "District Mental Health Programme (DMHP) Units, Government Psychiatric Hospitals & Medical Colleges",
+    "facility_type_te": "జిల్లా మానసిక ఆరోగ్య కేంద్రాలు మరియు విశాఖపట్నం మానసిక వైద్యశాల",
+    "validity_period": "Continuous long-term clinical maintenance and relapse prevention",
+    "validity_period_te": "పూర్తిగా కోలుకునే వరకు నిరంతర ఉచిత చికిత్స మరియు కౌన్సిలింగ్",
+    "helpline_numbers": [
+      "14416 (Tele-MANAS Toll-Free 24x7)",
+      "104 (Health Helpline)",
+      "1800-891-4416"
+    ],
+    "key_treatments": [
+      "Specialist Psychiatric Outpatient and Inpatient Care",
+      "Free Supply of Essential Psychotropic Medications (Antidepressants, Antipsychotics, Mood Stabilizers, Anti-epileptics)",
+      "Individual Psychotherapy, Cognitive Behavioral Therapy (CBT) & Family Counseling",
+      "De-addiction Clinic for Alcohol and Substance Dependence",
+      "Suicide Prevention and Crisis Intervention Counseling"
+    ],
+    "key_treatments_te": [
+      "సైకియాట్రిస్ట్ నిపుణుల ద్వారా ఓపీడీ మరియు ఇన్‌పేషెంట్ సంరక్షణ",
+      "డిప్రెషన్, ఫిట్స్, నిద్రలేమి నివారణకు 100% ఉచిత సైకియాట్రిక్ మందులు",
+      "సైకోథెరపీ, బిహేవియరల్ థెరపీ (CBT) మరియు కుటుంబ కౌన్సిలింగ్",
+      "మద్యపానం మరియు మత్తు పదార్థాల వ్యసన విముక్తి చికిత్సలు",
+      "ఆత్మహత్యల నివారణ మరియు అత్యవసర మానసిక సహాయ సేవలు"
+    ],
+    "exclusions": "Involuntary detention without competent medical board certification as per Mental Healthcare Act 2017.",
+    "exclusions_te": "చట్టపరమైన నిబంధనల ప్రకారం రోగి హక్కులకు పూర్తి రక్షణ ఉంటుంది."
+  },
+  "National Programme for Health Care of the Elderly (NPHCE)": {
+    "level": "National",
+    "category": "Elderly Care Services",
+    "icon": "clinic",
+    "telugu_name": "జాతీయ వృద్ధుల ఆరోగ్య సంరక్షణ పథకం",
+    "audio_file": "static/audio/nphce.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://main.mohfw.gov.in/",
+    "keywords": [
+      "NPHCE",
+      "elderly care",
+      "senior citizen",
+      "free checkup for old people",
+      "geriatric clinic"
+    ],
+    "original_complex_text": "The National Programme for Health Care of the Elderly (NPHCE) provides dedicated health facilities for senior citizens. It sets up geriatric clinics and wards in district hospitals and community health centres to offer outpatient clinics, physiotherapy, rehabilitation, and free chronic disease diagnostics for elderly people aged 60 and above.",
+    "simplified": {
+      "eligibility": "Senior citizens aged 60 years and above.",
+      "benefits": "Dedicated geriatric queues, free screening for age-related illnesses, free physiotherapy, and medication.",
+      "documents": "Age proof (Aadhaar Card, Senior Citizen Card).",
+      "steps": "Visit the dedicated Geriatric Clinic at the local Community Health Centre or District Hospital.",
+      "description": "The National Programme for Health Care of the Elderly (NPHCE) provides dedicated, accessible geriatric services for senior citizens aged 60+, including dedicated clinic queues, free chronic disease management, specialized physiotherapy, and mobility assistive devices."
+    },
+    "telugu": {
+      "eligibility": "60 సంవత్సరాలు మరియు అంతకంటే ఎక్కువ వయస్సు ఉన్న వృద్ధులు అందరూ అర్హులు.",
+      "benefits": "వృద్ధుల కోసం ప్రత్యేక కౌంటర్లు, ఉచిత ఫిజియోథెరపీ మరియు వయస్సు సంబంధిత వ్యాధులకు ఉచిత వైద్య పరీక్షలు.",
+      "documents": "వయస్సు ధృవీకరణ పత్రం (ఆధార్ కార్డు లేదా ఓటర్ కార్డు).",
+      "steps": "సమీపంలోని జిల్లా ఆసుపత్రి లేదా కమ్యూనిటీ హెల్త్ సెంటర్‌లోని వృద్ధుల క్లినిక్‌ను సంప్రదించండి.",
+      "description": "జాతీయ వృద్ధుల ఆరోగ్య సంరక్షణ పథకం (NPHCE) 60 ఏళ్లు పైబడిన వృద్ధులకు ప్రభుత్వ ఆసుపత్రులలో ప్రత్యేక వృద్ధుల ఓపీడీ కౌంటర్లు, ఉచిత ఫిజియోథెరపీ, వయస్సు సంబంధిత దీర్ఘకాలిక వ్యాధుల ఉచిత పరీక్షలు మరియు ఉచిత మందులను అందిస్తుంది."
+    },
+    "last_updated": "2026-05-18",
+    "official_website": "https://main.mohfw.gov.in/",
+    "contact_office": "Geriatric Clinic OPD",
+    "eligibility_confirmation": "Geriatric Clinic Doctor",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ వయస్సు 60 సంవత్సరాలు లేదా అంతకంటే ఎక్కువ?",
+        "question_en": "Is your age 60 years or above?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card (Age Proof)",
+        "name_te": "ఆధార్ కార్డు (వయస్సు రుజువు)",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Village Secretariat ANM",
+      "District": "Geriatric Ward, District Hospital"
+    },
+    "telugu_description": "జాతీయ వృద్ధుల ఆరోగ్య సంరక్షణ పథకం (NPHCE) 60 ఏళ్లు పైబడిన వృద్ధులకు ప్రభుత్వ ఆసుపత్రులలో ప్రత్యేక వృద్ధుల ఓపీడీ కౌంటర్లు, ఉచిత ఫిజియోథెరపీ, వయస్సు సంబంధిత దీర్ఘకాలిక వ్యాధుల ఉచిత పరీక్షలు మరియు ఉచిత మందులను అందిస్తుంది.",
+    "english_description": "The National Programme for Health Care of the Elderly (NPHCE) provides dedicated, accessible geriatric services for senior citizens aged 60+, including dedicated clinic queues, free chronic disease management, specialized physiotherapy, and mobility assistive devices.",
+    "coverage_type": "Dedicated Geriatric Healthcare Clinics, Physiotherapy, Home Care & Free Assistive Devices",
+    "coverage_type_te": "వృద్ధుల ప్రత్యేక ఆరోగ్య క్లినిక్‌లు, ఫిజియోథెరపీ & ఉచిత సంరక్షణ (NPHCE)",
+    "benefit_amount": "100% Free Dedicated Geriatric OPD, 10-Bed Geriatric Ward, Free Physiotherapy & Chronic Medications",
+    "benefit_amount_te": "100% ఉచిత వృద్ధుల ఓపీడీ, ప్రత్యేక వార్డులు, ఉచిత ఫిజియోథెరపీ & మందులు",
+    "target_beneficiary": "All Senior Citizens aged 60 years and above in Andhra Pradesh",
+    "target_beneficiary_te": "60 సంవత్సరాలు పైబడిన ఆంధ్రప్రదేశ్ వృద్ధ పౌరులందరూ",
+    "application_mode": "Walk-in with priority queue at Geriatric OPD in District Hospital, CHC or PHC",
+    "application_mode_te": "ప్రభుత్వ ఆసుపత్రిలోని వృద్ధుల ప్రత్యేక క్యూ లైన్ / జెరియాట్రిక్ ఓపీడీలో",
+    "processing_time": "Fast-track priority consultation with zero waiting for senior citizens",
+    "processing_time_te": "వృద్ధులకు ప్రత్యేక ప్రాధాన్యతతో వేగవంతమైన వైద్య పరీక్షలు",
+    "facility_type": "Geriatric Units in District Hospitals, Regional Geriatric Centres & Government Teaching Hospitals",
+    "facility_type_te": "జిల్లా ఆసుపత్రులలోని ప్రత్యేక వృద్ధుల వార్డులు మరియు పీహెచ్‌సీలు",
+    "validity_period": "Continuous lifelong senior care and domiciliary nurse visits for bedridden elders",
+    "validity_period_te": "జీవితాంతం నిరంతర సంరక్షణ మరియు మంచానికే పరిమితమైన వృద్ధులకు ఇంటి వద్దే వైద్యం",
+    "helpline_numbers": [
+      "14567 (Elderline National Senior Citizens Helpline)",
+      "104 (Health Advice)",
+      "1902 (Grievance)"
+    ],
+    "key_treatments": [
+      "Dedicated Senior Citizen Fast-Track OPD and 10-Bed Inpatient Geriatric Wards",
+      "Free Physiotherapy and Rehabilitation for arthritis, stroke paralysis, and mobility disorders",
+      "Screening and Long-term Management of Hypertension, Diabetes, Dementia, Alzheimer's, Parkinson's",
+      "Domiciliary / Home-based Palliative Care for bedridden elderly citizens",
+      "Free Prescription Walking Sticks, Hearing Aids and Spectacles linkage"
+    ],
+    "key_treatments_te": [
+      "వృద్ధుల కోసం ప్రత్యేక ఓపీడీ మరియు 10 పడకల ప్రత్యేక ఆసుపత్రి వార్డులు",
+      "కీళ్ల నొప్పులు, పక్షవాతం కోసం ఉచిత ఫిజియోథెరపీ మరియు వ్యాయామ శిక్షణ",
+      "బీపీ, షుగర్, మతిమరుపు (డిమెన్షియా), పార్కిన్సన్స్ వ్యాధులకు ఉచిత మందులు",
+      "మంచానికే పరిమితమైన వృద్ధులకు ఇంటి వద్దకే వచ్చి నర్సింగ్ సేవలు",
+      "ఉచిత చేతికర్రలు, వినికిడి యంత్రాలు మరియు కళ్ళద్దాల అందజేత"
+    ],
+    "exclusions": "Commercial paid private nursing homes without government health accreditation.",
+    "exclusions_te": "ప్రభుత్వ ఆరోగ్య కేంద్రాల ద్వారా ఈ సేవలు పూర్తిగా ఉచితంగా లభిస్తాయి."
+  }
+}

@@ -1,0 +1,1628 @@
+{
+  "National Tobacco Control Programme (NTCP)": {
+    "level": "National",
+    "category": "De-addiction Services",
+    "icon": "shield",
+    "telugu_name": "జాతీయ పొగాకు నియంత్రణ పథకం",
+    "audio_file": "static/audio/ntcp.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://ntcp.mohfw.gov.in/",
+    "keywords": [
+      "NTCP",
+      "tobacco",
+      "smoking",
+      "de-addiction",
+      "quit smoking",
+      "nicotine"
+    ],
+    "original_complex_text": "The National Tobacco Control Programme (NTCP) is aimed at creating awareness about the harmful effects of tobacco use, establishing tobacco cessation centres, and enforcing laws like COTPA 2003. Tobacco Cessation Centres (TCCs) provide counseling, behavior therapy, and nicotine replacement therapies (NRT) like patches and gums to help users quit smoking or chewing tobacco.",
+    "simplified": {
+      "eligibility": "Any citizen addicted to tobacco, smoking, or chewing, wishing to de-addict.",
+      "benefits": "Free counseling, behavior modification therapy, and free Nicotine Replacement Therapy (gums, patches) at cessation centres.",
+      "documents": "Patient Registration Card (issued at clinic).",
+      "steps": "Visit the nearest Tobacco Cessation Centre (TCC) in a District Hospital or Community Health Centre for counseling and free nicotine gums.",
+      "description": "The National Tobacco Control Programme (NTCP) establishes Tobacco Cessation Centres (TCCs) in district hospitals to provide free de-addiction counseling, behavioral therapy, and free Nicotine Replacement Therapy (NRT gums and patches) to help individuals quit tobacco consumption."
+    },
+    "telugu": {
+      "eligibility": "పొగాకు, సిగరెట్లు లేదా గుట్కా అలవాటు నుండి విముక్తి పొందాలనుకునే ఏ పౌరుడైనా అర్హుడు.",
+      "benefits": "ఉచిత కౌన్సిలింగ్, మానసిక చికిత్స మరియు పొగాకు అలవాటు మాన్పించడానికి ఉచిత నికోటిన్ గమ్స్/ప్యాచీల పంపిణీ.",
+      "documents": "ఆసుపత్రి రిజిస్ట్రేషన్ కార్డు.",
+      "steps": "జిల్లా కేంద్ర ఆసుపత్రిలోని పొగాకు నివారణ కేంద్రాన్ని (TCC) సంప్రదించి చికిత్స మరియు ఉచిత సలహాలు పొందవచ్చు.",
+      "description": "జాతీయ పొగాకు నియంత్రణ పథకం (NTCP) అనేది పొగాకు, సిగరెట్లు, గుట్కా అలవాటు నుండి విముక్తి పొందాలనుకునే పౌరులకు జిల్లా ఆసుపత్రులలోని పొగాకు నివారణ కేంద్రాల (TCC) ద్వారా ఉచిత కౌన్సిలింగ్, బిహేవియరల్ థెరపీ మరియు ఉచిత నికోటిన్ గమ్స్/ప్యాచీలను అందించే కార్యక్రమం."
+    },
+    "last_updated": "2026-03-11",
+    "official_website": "https://ntcp.mohfw.gov.in/",
+    "contact_office": "Tobacco Cessation Centre, District Hospital",
+    "eligibility_confirmation": "Cessation Centre Counselor",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు పొగాకు అలవాటును మానుకోవాలనుకుంటున్నారా?",
+        "question_en": "Do you wish to quit tobacco use?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "District": "District General Hospital TCC"
+    },
+    "telugu_description": "జాతీయ పొగాకు నియంత్రణ పథకం (NTCP) అనేది పొగాకు, సిగరెట్లు, గుట్కా అలవాటు నుండి విముక్తి పొందాలనుకునే పౌరులకు జిల్లా ఆసుపత్రులలోని పొగాకు నివారణ కేంద్రాల (TCC) ద్వారా ఉచిత కౌన్సిలింగ్, బిహేవియరల్ థెరపీ మరియు ఉచిత నికోటిన్ గమ్స్/ప్యాచీలను అందించే కార్యక్రమం.",
+    "english_description": "The National Tobacco Control Programme (NTCP) establishes Tobacco Cessation Centres (TCCs) in district hospitals to provide free de-addiction counseling, behavioral therapy, and free Nicotine Replacement Therapy (NRT gums and patches) to help individuals quit tobacco consumption.",
+    "coverage_type": "Free Tobacco Cessation Services & Behavioral Counseling",
+    "coverage_type_te": "ఉచిత పొగాకు వ్యసన విముక్తి కౌన్సిలింగ్ & చికిత్స",
+    "benefit_amount": "100% Free Nicotine Replacement Therapy & Tobacco Cessation Counseling",
+    "benefit_amount_te": "100% ఉచిత నికోటిన్ రీప్లేస్‌మెంట్ చికిత్స & కౌన్సిలింగ్",
+    "target_beneficiary": "Citizens seeking assistance to quit smoking, gutkha, khaini or tobacco products",
+    "target_beneficiary_te": "పొగాకు, సిగరెట్, గుట్కా వ్యసనం నుండి బయటపడాలనుకునే పౌరులందరూ",
+    "application_mode": "Toll-Free National Quitline (1800-11-2356) or District Tobacco Cessation Centre (TCC)",
+    "application_mode_te": "టోల్-ఫ్రీ నేషనల్ క్విట్‌లైన్ (1800-11-2356) లేదా జిల్లా ఆసుపత్రిలోని TCC కేంద్రం",
+    "processing_time": "Immediate counseling on call or walk-in",
+    "processing_time_te": "కాల్ చేసిన వెంటనే నిపుణుల సలహాలు ప్రారంభం",
+    "facility_type": "District Tobacco Cessation Centres (TCCs) & Dental Colleges",
+    "facility_type_te": "జిల్లా ఆసుపత్రులలోని టొబాకో సెసేషన్ కేంద్రాలు మరియు డెంటల్ కాలేజీలు",
+    "validity_period": "6 to 12 months guided behavioral recovery protocol",
+    "validity_period_te": "వ్యసనం తగ్గే వరకు నిరంతర ఫాలో-అప్",
+    "helpline_numbers": [
+      "1800-11-2356 (National Tobacco Quitline)",
+      "104 (Health Advice)"
+    ],
+    "key_treatments": [
+      "One-on-one Behavioral Counseling and Relapse Prevention Therapy",
+      "Free Nicotine Gums, Nicotine Patches (NRT) for heavy dependence",
+      "Bupropion / Varenicline medical therapy under specialist supervision",
+      "Oral precancerous screening (Leukoplakia, Oral Submucous Fibrosis)",
+      "Quit Tobacco SMS and digital mobile support"
+    ],
+    "key_treatments_te": [
+      "వ్యక్తిగత కౌన్సిలింగ్ మరియు మానసిక స్థైర్యం పెంపొందించే థెరపీ",
+      "ఉచిత నికోటిన్ గమ్స్ మరియు ప్యాచ్‌ల పంపిణీ",
+      "నోటి క్యాన్సర్ ముందస్తు పరీక్షలు మరియు తెల్లటి మచ్చల నిర్ధారణ",
+      "పొగాకు మానేయడానికి ఉచిత మొబైల్ మెసేజ్ సలహాలు"
+    ],
+    "exclusions": "Non-FDA approved commercial alternative smoking devices (e-cigarettes / vapes are banned).",
+    "exclusions_te": "నిషేధించబడిన ఈ-సిగరెట్లు లేదా వాణిజ్య పరికరాలు అనుమతించబడవు."
+  },
+  "National Leprosy Eradication Programme (NLEP)": {
+    "level": "National",
+    "category": "Leprosy Services",
+    "icon": "shield",
+    "telugu_name": "జాతీయ కుష్టువ్యాధి నివారణ పథకం",
+    "audio_file": "static/audio/nlep.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://nlep.nic.in/",
+    "keywords": [
+      "NLEP",
+      "leprosy",
+      "MDT",
+      "skin patches",
+      "free leprosy treatment"
+    ],
+    "original_complex_text": "The National Leprosy Eradication Programme (NLEP) is a decentralized health scheme under National Health Mission. It focuses on early detection of leprosy cases, free distribution of Multi-Drug Therapy (MDT) to cure leprosy, deformity prevention, and reconstructive surgeries. Free counseling and supportive medicines are provided at all government primary health centres.",
+    "simplified": {
+      "eligibility": "Any person showing early symptoms of leprosy, skin patches with loss of sensation, or diagnosed leprosy.",
+      "benefits": "Free Multi-Drug Therapy (MDT) medicine packs, free reconstructive surgery for deformities, and financial aid for surgery patients.",
+      "documents": "Medical diagnosis report, Aadhaar Card.",
+      "steps": "Visit your nearest Primary Health Centre (PHC) for a free skin test. If diagnosed, register to receive free MDT medicine packets.",
+      "description": "The National Leprosy Eradication Programme (NLEP) delivers free Multi-Drug Therapy (MDT) blister packs across all primary health centres, provides free reconstructive surgery for deformities, and offers welfare support for patients diagnosed with leprosy."
+    },
+    "telugu": {
+      "eligibility": "చర్మంపై మొద్దుబారిన మచ్చలు లేదా కుష్టువ్యాధి లక్షణాలు ఉన్న రోగులందరూ అర్హులు.",
+      "benefits": "ఉచిత మల్టీ-డ్రగ్ థెరపీ (MDT) మందులు, వైకల్యాలు నివారించడానికి ఉచిత ఆపరేషన్లు మరియు సహాయక చికిత్సలు.",
+      "documents": "వైద్య నిర్ధారణ రిపోర్టు, ఆధార్ కార్డు.",
+      "steps": "సమీపంలోని ప్రాథమిక ఆరోగ్య కేంద్రానికి (PHC) వెళ్లి ఉచిత చర్మ పరీక్ష చేయించుకుని MDT మందులు పొందవచ్చు.",
+      "description": "జాతీయ కుష్టువ్యాధి నివారణ పథకం (NLEP) కుష్టువ్యాధిని ప్రారంభ దశలోనే గుర్తించి, ప్రాథమిక ఆరోగ్య కేంద్రాల ద్వారా ఉచిత మల్టీ-డ్రగ్ థెరపీ (MDT) మందుల పంపిణీ, వైకల్యాలు నివారించడానికి ఉచిత ఆపరేషన్లు మరియు పునరావాస సహాయాన్ని అందిస్తుంది."
+    },
+    "last_updated": "2026-04-05",
+    "official_website": "https://nlep.nic.in/",
+    "contact_office": "Primary Health Centre (PHC)",
+    "eligibility_confirmation": "PHC Medical Officer / Health Supervisor",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ శరీరంపై మొద్దుబారిన మచ్చలు ఉన్నాయా?",
+        "question_en": "Do you have skin patches with loss of sensation?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Diagnosis Report",
+        "name_te": "వైద్య నిర్ధారణ పత్రం",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "ASHA Worker / ANM / Sub Centre"
+    },
+    "telugu_description": "జాతీయ కుష్టువ్యాధి నివారణ పథకం (NLEP) కుష్టువ్యాధిని ప్రారంభ దశలోనే గుర్తించి, ప్రాథమిక ఆరోగ్య కేంద్రాల ద్వారా ఉచిత మల్టీ-డ్రగ్ థెరపీ (MDT) మందుల పంపిణీ, వైకల్యాలు నివారించడానికి ఉచిత ఆపరేషన్లు మరియు పునరావాస సహాయాన్ని అందిస్తుంది.",
+    "english_description": "The National Leprosy Eradication Programme (NLEP) delivers free Multi-Drug Therapy (MDT) blister packs across all primary health centres, provides free reconstructive surgery for deformities, and offers welfare support for patients diagnosed with leprosy.",
+    "coverage_type": "Free Multi-Drug Therapy (MDT) & Disability Prevention / Medical Rehabilitation",
+    "coverage_type_te": "కుష్టు వ్యాధి ఉచిత పూర్తి చికిత్స (MDT) & పునరావాసం",
+    "benefit_amount": "100% Free MDT Blister Packs, Reconstructive Surgeries & ₹8,000 RCS Incentive",
+    "benefit_amount_te": "100% ఉచిత ఎండీటీ మందులు, ఉచిత ఆపరేషన్లు మరియు ₹8,000 ప్రోత్సాహకం",
+    "target_beneficiary": "All individuals diagnosed with Paucibacillary (PB) or Multibacillary (MB) Leprosy",
+    "target_beneficiary_te": "కుష్టు వ్యాధి లక్షణాలు లేదా తెల్లటి స్పర్శలేని మచ్చలు ఉన్న బాధితులందరూ",
+    "application_mode": "Walk-in at Govt PHC, CHC, District Hospital or Doorstep Leprosy Case Detection Campaign (LCDC)",
+    "application_mode_te": "సమీప పీహెచ్‌సీ లేదా ఆశా కార్యకర్తల ఇంటింటి కుష్టు గుర్తింపు సర్వే ద్వారా",
+    "processing_time": "Same day diagnosis and first MDT dose administration",
+    "processing_time_te": "అదే రోజున ఉచిత వ్యాధి నిర్ధారణ మరియు మందుల కిట్ ప్రారంభం",
+    "facility_type": "All PHCs, CHCs, District Hospitals & Reconstructive Surgery Centres",
+    "facility_type_te": "అన్ని ప్రభుత్వ ప్రాథమిక ఆరోగ్య కేంద్రాలు & జిల్లా కుష్టు నివారణ విభాగాలు",
+    "validity_period": "6 months (for PB) to 12 months (for MB) complete curative course",
+    "validity_period_te": "పూర్తి కోర్సు ముగిసే వరకు (6 నెలల నుండి 12 నెలల వరకు)",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1800-11-1075 (National Health Portal)"
+    ],
+    "key_treatments": [
+      "100% Free WHO Multi-Drug Therapy (Rifampicin, Clofazimine, Dapsone) Blister Packs",
+      "Free Reconstructive Surgery (RCS) for hand, foot and eye deformities with ₹8,000 cash incentive",
+      "Free Microcellular Rubber (MCR) Footwear to prevent ulceration",
+      "Self-care kits and physiotherapy guidance at PHC level",
+      "Monthly disability pension linkage through Sachivalayam"
+    ],
+    "key_treatments_te": [
+      "100% ఉచిత WHO ఎండీటీ (MDT) మందుల బ్లిస్టర్ ప్యాక్‌లు",
+      "అవయవ లోపాలు సరిచేయడానికి ఉచిత రికన్‌స్ట్రక్టివ్ సర్జరీ & ₹8,000 నగదు సాయం",
+      "పుండ్లు పడకుండా కాపాడే ఉచిత ఎంసీఆర్ (MCR) పాదరక్షల అందజేత",
+      "పుండ్ల సంరక్షణ కిట్లు మరియు ఫిజియోథెరపీ సేవలు",
+      "సచివాలయం ద్వారా నెలకు ప్రత్యేక పింఛను సదుపాయం"
+    ],
+    "exclusions": "Leprosy is completely curable; isolation sanatoriums are obsolete and discontinued.",
+    "exclusions_te": "కుష్టు వ్యాధి మందులతో పూర్తిగా నయమవుతుంది, రోగులను వేరుగా ఉంచాల్సిన అవసరం లేదు."
+  },
+  "National Vector Borne Disease Control Programme (NVBDCP)": {
+    "level": "National",
+    "category": "Malaria & Dengue Services",
+    "icon": "shield",
+    "telugu_name": "జాతీయ దోమల ద్వారా సంక్రమించే వ్యాధుల నివారణ పథకం",
+    "audio_file": "static/audio/nvbdcp.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://nvbdcp.gov.in/",
+    "keywords": [
+      "NVBDCP",
+      "malaria",
+      "dengue",
+      "chikungunya",
+      "mosquito",
+      "fever test",
+      "bed nets"
+    ],
+    "original_complex_text": "The National Vector Borne Disease Control Programme (NVBDCP) targets the prevention and control of vector-borne diseases namely Malaria, Dengue, Chikungunya, Japanese Encephalitis, Kala-azar, and Lymphatic Filariasis. It provides free diagnostic rapid tests, distribution of Long-Lasting Insecticidal Nets (LLINs) in endemic areas, and free treatment drugs like ACT at all government clinics.",
+    "simplified": {
+      "eligibility": "Any citizen suffering from high fever, suspected vector diseases, or residing in vector-prone areas.",
+      "benefits": "Free rapid diagnostic tests for malaria/dengue, free anti-malarial medicines, and distribution of insecticide-treated bed nets.",
+      "documents": "Identity card (Aadhaar or Voter ID).",
+      "steps": "Contact the local ASHA worker or visit the nearest Sub-Centre/PHC to get your blood tested for malaria/dengue for free.",
+      "description": "The National Vector Borne Disease Control Programme (NVBDCP) provides free rapid diagnostic testing, free treatment medicines for Malaria, Dengue, and Chikungunya, and distributes Long-Lasting Insecticidal Nets (LLINs) in endemic rural areas to control vector transmission."
+    },
+    "telugu": {
+      "eligibility": "తీవ్రమైన జ్వరం లేదా మలేరియా, డెంగ్యూ లక్షణాలు ఉన్న ప్రజలు అందరూ ఈ చికిత్సకు అర్హులు.",
+      "benefits": "ఉచిత రక్త పరీక్షలు (మలేరియా/డెంగ్యూ నిర్ధారణ), ఉచిత మందుల పంపిణీ మరియు దోమతెరల పంపిణీ.",
+      "documents": "గుర్తింపు కార్డు (ఆధార్ కార్డు).",
+      "steps": "గ్రామ ఆశా కార్యకర్తను సంప్రదించి రక్త పరీక్ష స్లైడ్ చేయించుకోవాలి లేదా పీహెచ్‌సీని సందర్శించాలి.",
+      "description": "జాతీయ దోమల ద్వారా సంక్రమించే వ్యాధుల నివారణ పథకం (NVBDCP) మలేరియా, డెంగ్యూ, చికెన్‌గున్యా, జపనీస్ ఎన్సెఫాలిటిస్ వంటి వ్యాధుల నివారణకు ఉచిత రక్త పరీక్షలు, ఉచిత మందులు మరియు స్థానిక ప్రాంతాల్లో క్రిమిసంహారక దోమతెరల (LLINs) పంపిణీని చేపడుతుంది."
+    },
+    "last_updated": "2026-02-18",
+    "official_website": "https://nvbdcp.gov.in/",
+    "contact_office": "Primary Health Centre (PHC) / Sub Centre",
+    "eligibility_confirmation": "Health Assistant / ASHA worker",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు చలిజ్వరం లేదా విపరీతమైన ఒంటి నొప్పులు ఉన్నాయా?",
+        "question_en": "Do you have high fever with chills or body pain?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "ASHA Worker / ANM / Sub-Centre"
+    },
+    "telugu_description": "జాతీయ దోమల ద్వారా సంక్రమించే వ్యాధుల నివారణ పథకం (NVBDCP) మలేరియా, డెంగ్యూ, చికెన్‌గున్యా, జపనీస్ ఎన్సెఫాలిటిస్ వంటి వ్యాధుల నివారణకు ఉచిత రక్త పరీక్షలు, ఉచిత మందులు మరియు స్థానిక ప్రాంతాల్లో క్రిమిసంహారక దోమతెరల (LLINs) పంపిణీని చేపడుతుంది.",
+    "english_description": "The National Vector Borne Disease Control Programme (NVBDCP) provides free rapid diagnostic testing, free treatment medicines for Malaria, Dengue, and Chikungunya, and distributes Long-Lasting Insecticidal Nets (LLINs) in endemic rural areas to control vector transmission.",
+    "coverage_type": "Free Rapid Diagnostic Testing & Treatment for Mosquito-Borne Diseases",
+    "coverage_type_te": "దోమల ద్వారా వ్యాపించే వ్యాధులకు ఉచిత పరీక్షలు & చికిత్స",
+    "benefit_amount": "100% Free Rapid Test Kits (RDT), ACT Antimalarials & Indoor Residual Spraying",
+    "benefit_amount_te": "100% ఉచిత తక్షణ రక్త పరీక్షలు, ఉచిత మలేరియా/డెంగ్యూ మందులు",
+    "target_beneficiary": "All Citizens suffering from acute fever, chills, body ache, or suspected vector diseases in AP",
+    "target_beneficiary_te": "జ్వరం, చలి, ఒళ్ళు నొప్పులతో బాధపడుతున్న ఆంధ్రప్రదేశ్ పౌరులందరూ",
+    "application_mode": "Walk-in at Village Health Clinic / PHC / CHC or Village Fever Survey by ANM",
+    "application_mode_te": "గ్రామ సచివాలయ ఏఎన్ఎం జ్వర సర్వే లేదా పీహెచ్‌సీలో నేరుగా పరీక్ష",
+    "processing_time": "Rapid blood smear / RDT result within 15-30 minutes",
+    "processing_time_te": "15-30 నిమిషాల్లో రక్త పరీక్ష ఫలితం లభిస్తుంది",
+    "facility_type": "Village Health Clinics, PHCs, CHCs & District Sentinel Surveillance Labs",
+    "facility_type_te": "విలేజ్ క్లినిక్‌లు, పీహెచ్‌సీలు మరియు జిల్లా డయాగ్నస్టిక్ ల్యాబ్‌లు",
+    "validity_period": "Full acute illness recovery and continuous vector surveillance",
+    "validity_period_te": "వ్యాధి పూర్తిగా నయమయ్యే వరకు నిరంతర పర్యవేక్షణ",
+    "helpline_numbers": [
+      "104 (Health Advice)",
+      "108 (Severe Fever / Dengue Emergency Transit)"
+    ],
+    "key_treatments": [
+      "Point-of-Care Bivalent RDT Testing for Malaria (P. falciparum and P. vivax)",
+      "Complete Artemisinin Combination Therapy (ACT) & Primaquine regimens",
+      "ELISA NS1 Antigen & IgM Serology Testing for Dengue and Chikungunya",
+      "Platelet count monitoring & free platelet transfusion linkage in District Hospitals",
+      "Distribution of Long Lasting Insecticidal Nets (LLIN) in tribal/high-risk endemic zones"
+    ],
+    "key_treatments_te": [
+      "మలేరియా నిర్ధారణకు 15 నిమిషాల్లో తక్షణ రక్త పరీక్ష",
+      "ఉచిత ACT మరియు ప్రైమాక్విన్ మలేరియా పూర్తి కోర్సు మందులు",
+      "డెంగ్యూ నిర్ధారణకు ఉచిత ఎలైసా (ELISA) మరియు ప్లేట్‌లెట్స్ పరీక్షలు",
+      "తీవ్ర డెంగ్యూ బాధితులకు ప్రభుత్వ బ్లడ్ బ్యాంకుల ద్వారా ఉచిత ప్లేట్‌లెట్ మార్పిడి",
+      "గిరిజన ప్రాంతాల్లో ఉచిత దోమతెరల (LLIN) పంపిణీ మరియు ఫాగింగ్"
+    ],
+    "exclusions": "Non-accredited unvalidated private rapid dengue antibody card tests.",
+    "exclusions_te": "గుర్తింపు లేని ప్రైవేట్ ర్యాపిడ్ కార్డు పరీక్షలు అధికారికంగా పరిగణించబడవు."
+  },
+  "National Programme for Control of Blindness (NPCBVI)": {
+    "level": "National",
+    "category": "Eye Care Services",
+    "icon": "clinic",
+    "telugu_name": "జాతీయ అంధత్వ నివారణ పథకం",
+    "audio_file": "static/audio/npcbvi.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://npcbvi.mohfw.gov.in/",
+    "keywords": [
+      "NPCBVI",
+      "blindness",
+      "cataract",
+      "cataract surgery",
+      "free glasses",
+      "eye test"
+    ],
+    "original_complex_text": "The National Programme for Control of Blindness and Visual Impairment (NPCBVI) is implemented to reduce the prevalence of blindness. The scheme offers free cataract surgeries with intraocular lens (IOL) implantation, screening of school children for refractive errors, distribution of free spectacles, and development of eye banks for corneal transplantation.",
+    "simplified": {
+      "eligibility": "All citizens, specifically elderly patients with cataract (white lens clouding) and school children with poor vision.",
+      "benefits": "Free cataract surgeries, free spectacles for school-aged kids, free eye screening camps, and corneal transplant facilitation.",
+      "documents": "Identity card (Aadhaar or Voter ID).",
+      "steps": "Attend a government-organized free eye camp or visit the ophthalmology department at a District Hospital or CHC.",
+      "description": "The National Programme for Control of Blindness and Visual Impairment (NPCBVI) provides free cataract surgeries with intraocular lens (IOL) implantation, free eye screenings in government schools, free prescription spectacles for children, and corneal transplantation support."
+    },
+    "telugu": {
+      "eligibility": "కంటి చూపు మందగించిన వారు, ముఖ్యంగా శుక్లాలు (క్యాటరాక్ట్) ఉన్న వృద్ధులు మరియు కంటి సమస్యలున్న విద్యార్థులు అర్హులు.",
+      "benefits": "ఉచిత శుక్లాల ఆపరేషన్లు, కంటి పరీక్షలు మరియు విద్యార్థులకు ఉచిత కళ్ళజోళ్ల పంపిణీ.",
+      "documents": "ఆధార్ కార్డు లేదా వయస్సు ధృవీకరణ పత్రం.",
+      "steps": "ప్రభుత్వ ఉచిత కంటి వైద్య శిబిరాలను లేదా జిల్లా కేంద్ర ఆసుపత్రిలోని నేత్ర విభాగాన్ని సంప్రదించాలి.",
+      "description": "జాతీయ అంధత్వ నివారణ పథకం (NPCBVI) అంధత్వాన్ని తగ్గించడానికి వృద్ధులకు ఉచిత శుక్లాల (క్యాటరాక్ట్) శస్త్రచికిత్సలు, ఇంట్రాఓక్యులర్ లెన్స్ అమరిక, పాఠశాల విద్యార్థులకు ఉచిత కంటి పరీక్షలు, ఉచిత కళ్ళజోళ్ల పంపిణీ మరియు కార్నియల్ అంధత్వానికి ఉచిత సేవలను అందిస్తుంది."
+    },
+    "last_updated": "2026-05-12",
+    "official_website": "https://npcbvi.mohfw.gov.in/",
+    "contact_office": "Ophthalmic Surgeon / Eye Clinic at District Hospital",
+    "eligibility_confirmation": "Ophthalmic Officer at District Hospital / CHC",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు కంటి చూపు మసకబారి శుక్లాలు ఉన్నట్టు నిర్ధారించారా?",
+        "question_en": "Do you have blurred vision diagnosed as cataract?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "ANM / Village Clinic Helper",
+      "District": "District Hospital Eye Ward"
+    },
+    "telugu_description": "జాతీయ అంధత్వ నివారణ పథకం (NPCBVI) అంధత్వాన్ని తగ్గించడానికి వృద్ధులకు ఉచిత శుక్లాల (క్యాటరాక్ట్) శస్త్రచికిత్సలు, ఇంట్రాఓక్యులర్ లెన్స్ అమరిక, పాఠశాల విద్యార్థులకు ఉచిత కంటి పరీక్షలు, ఉచిత కళ్ళజోళ్ల పంపిణీ మరియు కార్నియల్ అంధత్వానికి ఉచిత సేవలను అందిస్తుంది.",
+    "english_description": "The National Programme for Control of Blindness and Visual Impairment (NPCBVI) provides free cataract surgeries with intraocular lens (IOL) implantation, free eye screenings in government schools, free prescription spectacles for children, and corneal transplantation support.",
+    "coverage_type": "Free Universal Eye Screening, Free Cataract Surgeries & Low Vision Aids",
+    "coverage_type_te": "అంధత్వ నివారణ ఉచిత కంటి శుక్లాల ఆపరేషన్లు & కంటి పరీక్షలు",
+    "benefit_amount": "100% Free SICS/Phaco Cataract Surgery with Intraocular Lens & Free Spectacles",
+    "benefit_amount_te": "100% ఉచిత కంటి శుక్లాల శస్త్రచికిత్స, లెన్స్ అమరిక మరియు ఉచిత కళ్ళద్దాలు",
+    "target_beneficiary": "Senior citizens (60+ years), school children and visually impaired citizens",
+    "target_beneficiary_te": "వృద్ధులు, పాఠశాల విద్యార్థులు మరియు చూపు లోపం ఉన్న పౌరులందరూ",
+    "application_mode": "District Blindness Control Society (DBCS) Camps / District Hospital Ophthalmic Unit",
+    "application_mode_te": "జిల్లా అంధత్వ నివారణ శిబిరాలు లేదా ప్రభుత్వ కంటి ఆసుపత్రిలో",
+    "processing_time": "Same-day screening; surgery scheduled within 1 week",
+    "processing_time_te": "అదే రోజున పరీక్ష; 1 వారంలో ఉచిత ఆపరేషన్",
+    "facility_type": "District Ophthalmic Units, Teaching Eye Hospitals & Accredited Eye NGO Centres",
+    "facility_type_te": "జిల్లా కంటి ఆసుపత్రులు మరియు స్వచ్ఛంద నేత్ర వైద్యశాలలు",
+    "validity_period": "Lifelong post-operative vision recovery and annual checkup",
+    "validity_period_te": "ఆపరేషన్ తర్వాత జీవితాంతం చూపు మెరుగుపడుతుంది",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1800-425-7778 (Vision Helpline)"
+    ],
+    "key_treatments": [
+      "Small Incision Cataract Surgery (SICS) with Foldable/Rigid Intraocular Lens (IOL)",
+      "Refraction error screening and distribution of free prescription eyeglasses",
+      "Diabetic Retinopathy and Glaucoma laser screening",
+      "Free Corneal Transplant surgery under Eye Bank linkage",
+      "Low vision aids for partially sighted individuals"
+    ],
+    "key_treatments_te": [
+      "నాణ్యమైన ఇంట్రాఓక్యులర్ లెన్స్ (IOL) తో ఉచిత కంటి శుక్లాల ఆపరేషన్",
+      "చూపు లోపాలకు ఉచిత ప్రిస్క్రిప్షన్ కళ్ళద్దాల పంపిణీ",
+      "డయాబెటిక్ రెటినోపతి మరియు గ్లకోమా లేజర్ పరీక్షలు",
+      "కంటి కార్నియా మార్పిడి (కంటి చూపు దానం) ఉచిత శస్త్రచికిత్స",
+      "దృష్టి లోపం ఉన్నవారికి ప్రత్యేక రీడింగ్ పరికరాలు"
+    ],
+    "exclusions": "High-end elective cosmetic laser surgeries (LASIK/PRK).",
+    "exclusions_te": "సౌందర్య లేసిక్ (LASIK) లేజర్ సర్జరీలు వర్తించవు."
+  },
+  "National Oral Health Programme": {
+    "level": "National",
+    "category": "Dental Health",
+    "icon": "clinic",
+    "telugu_name": "జాతీయ దంత ఆరోగ్య పథకం",
+    "audio_file": "static/audio/oral_health.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://main.mohfw.gov.in/",
+    "keywords": [
+      "oral health",
+      "dental care",
+      "tooth ache",
+      "dentist",
+      "free dental",
+      "fluorosis"
+    ],
+    "original_complex_text": "The National Oral Health Programme is designed to provide integrated, comprehensive oral health care in the country. Geriatric and pediatric dental care are prioritized. Dental units at Community Health Centres (CHCs) and District Hospitals provide free dental checkups, tooth extractions, scaling, filling, and awareness on oral hygiene and fluorosis control.",
+    "simplified": {
+      "eligibility": "All citizens needing dental treatment, tooth extraction, or oral hygiene guidance.",
+      "benefits": "Free dental checkups, cavity fillings, tooth extractions, scaling, and treatment for dental fluorosis.",
+      "documents": "Identity card (Aadhaar or Voter ID).",
+      "steps": "Visit the Dental Clinic department at the nearest Community Health Centre (CHC) or District Hospital.",
+      "description": "The National Oral Health Programme provides integrated, accessible oral healthcare services through dental clinics at CHCs and District Hospitals, offering free dental checkups, extractions, fillings, scaling, oral cancer screening, and oral hygiene education."
+    },
+    "telugu": {
+      "eligibility": "దంతాల నొప్పులు, పంటి వ్యాధులు లేదా దంత చికిత్స అవసరమైన ఏ పౌరుడైనా అర్హుడు.",
+      "benefits": "ఉచిత పంటి పరీక్షలు, పిప్పి పళ్ళు తీసివేయడం, పళ్ళు క్లీన్ చేయడం మరియు ఫ్లోరోసిస్ వ్యాధికి ఉచిత చికిత్స.",
+      "documents": "ఆధార్ కార్డు.",
+      "steps": "దగ్గరలోని కమ్యూనిటీ హెల్త్ సెంటర్ (CHC) లేదా జిల్లా ఆసుపత్రిలోని దంత వైద్యుడిని సంప్రదించండి.",
+      "description": "జాతీయ దంత ఆరోగ్య పథకం కమ్యూనిటీ హెల్త్ సెంటర్లు (CHC) మరియు జిల్లా ఆసుపత్రులలోని డెంటల్ యూనిట్ల ద్వారా పౌరులందరికీ ఉచిత దంత పరీక్షలు, పిప్పి పళ్ళు తీసివేయడం, పళ్ళు క్లీనింగ్, ఫిల్లింగ్ మరియు నోటి పరిశుభ్రత సంరక్షణ సేవలను అందిస్తుంది."
+    },
+    "last_updated": "2026-03-24",
+    "official_website": "https://main.mohfw.gov.in/",
+    "contact_office": "Dental OPD, CHC or District Hospital",
+    "eligibility_confirmation": "Dental Surgeon / Dentist at CHC",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు పంటి నొప్పి లేదా నోటి పూత సమస్యలు ఉన్నాయా?",
+        "question_en": "Do you have toothache or oral hygiene issues?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "District": "CHC / District General Hospital Dental Unit"
+    },
+    "telugu_description": "జాతీయ దంత ఆరోగ్య పథకం కమ్యూనిటీ హెల్త్ సెంటర్లు (CHC) మరియు జిల్లా ఆసుపత్రులలోని డెంటల్ యూనిట్ల ద్వారా పౌరులందరికీ ఉచిత దంత పరీక్షలు, పిప్పి పళ్ళు తీసివేయడం, పళ్ళు క్లీనింగ్, ఫిల్లింగ్ మరియు నోటి పరిశుభ్రత సంరక్షణ సేవలను అందిస్తుంది.",
+    "english_description": "The National Oral Health Programme provides integrated, accessible oral healthcare services through dental clinics at CHCs and District Hospitals, offering free dental checkups, extractions, fillings, scaling, oral cancer screening, and oral hygiene education.",
+    "coverage_type": "Free Preventive, Diagnostic & Curative Dental Healthcare",
+    "coverage_type_te": "ఉచిత దంత వైద్య పరీక్షలు, చికిత్సలు & సంరక్షణ",
+    "benefit_amount": "100% Free Dental OPD, Scaling, Restorations, Extractions & Oral Cancer Screening",
+    "benefit_amount_te": "100% ఉచిత పంటి చికిత్సలు, క్లీనింగ్, పిప్పి పన్ను ఫిల్లింగ్ మరియు నోటి క్యాన్సర్ పరీక్షలు",
+    "target_beneficiary": "All Citizens with dental caries, gum disease, toothache, or tobacco-related oral lesions",
+    "target_beneficiary_te": "పంటి నొప్పి, చిగుళ్ల సమస్యలు లేదా నోటి పూతలతో బాధపడుతున్న పౌరులందరూ",
+    "application_mode": "Walk-in at Dental Unit in District Hospital, CHC or Government Dental College",
+    "application_mode_te": "జిల్లా ఆసుపత్రి లేదా ప్రభుత్వ డెంటల్ కాలేజీ దంత వైద్య విభాగంలో",
+    "processing_time": "Same-day dental consultation and immediate outpatient procedure",
+    "processing_time_te": "అదే రోజున ఉచిత దంత పరీక్ష మరియు ప్రాథమిక చికిత్స",
+    "facility_type": "Government Dental Colleges, District Hospital Dental Clinics & Upgraded CHCs",
+    "facility_type_te": "ప్రభుత్వ డెంటల్ కాలేజీలు మరియు జిల్లా ఆసుపత్రుల దంత విభాగాలు",
+    "validity_period": "Per dental treatment episode with ongoing preventive care",
+    "validity_period_te": "దంత సమస్య తగ్గే వరకు ఉచిత వైద్య సేవలు",
+    "helpline_numbers": [
+      "104 (Health Advice)",
+      "1902 (Public Grievance)"
+    ],
+    "key_treatments": [
+      "Dental Caries Restoration (Light-cure Composite / Glass Ionomer Fillings)",
+      "Painless Tooth Extractions under Local Anaesthesia",
+      "Ultrasonic Scaling and Periodontal Deep Cleaning",
+      "Root Canal Treatment (RCT) in District Dental Units",
+      "Oral Pre-Cancerous Lesions Screening & Biopsy (for tobacco users)"
+    ],
+    "key_treatments_te": [
+      "పిప్పి పన్నులకు ఉచిత సిమెంట్ ఫిల్లింగ్",
+      "నొప్పి లేని పంటి తొలగింపు (టూత్ ఎక్స్‌ట్రాక్షన్)",
+      "అల్ట్రాసోనిక్ స్కేలింగ్ ద్వారా పళ్ళ క్లీనింగ్",
+      "రూట్ కెనాల్ ట్రీట్‌మెంట్ (RCT) సదుపాయం",
+      "గుట్కా, పొగాకు వాడేవారికి నోటి క్యాన్సర్ ముందస్తు బయాప్సీ పరీక్షలు"
+    ],
+    "exclusions": "Purely cosmetic dental veneers and precious metal crowns.",
+    "exclusions_te": "సౌందర్య దంత చికిత్సలు (కాస్మెటిక్ వీనియర్స్) వర్తించవు."
+  },
+  "Anaemia Mukt Bharat": {
+    "level": "National",
+    "category": "Nutritional Services",
+    "icon": "nutrition",
+    "telugu_name": "రక్తహీనత రహిత భారతదేశం పథకం",
+    "audio_file": "static/audio/anaemia_mukt_bharat.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://anemiamb.nhp.gov.in/",
+    "keywords": [
+      "Anaemia",
+      "blood deficiency",
+      "iron tablets",
+      "folic acid",
+      "pregnant women",
+      "blood test"
+    ],
+    "original_complex_text": "Anaemia Mukt Bharat (AMB) targets reduction of anaemia prevalence across life stages: Children (6-59 months), Adolescents (10-19 years), Pregnant women, and Lactating mothers. It utilizes prophylactic Iron and Folic Acid (IFA) supplementation, deworming, testing of anaemia using digital haemoglobinometers, and point-of-care treatment.",
+    "simplified": {
+      "eligibility": "Children under 5, school children, adolescent girls, pregnant women, and lactating mothers.",
+      "benefits": "Free Iron and Folic Acid (IFA) tablets/syrups, free deworming tablets (Albendazole), and free haemoglobin blood testing.",
+      "documents": "Mother & Child Protection (MCP) card for pregnant women, School ID for students.",
+      "steps": "Get free IFA supplements from the local Anganwadi centre, government school, or primary health centre.",
+      "description": "Anaemia Mukt Bharat is an intensive national strategy to reduce anemia across vulnerable groups through routine Iron and Folic Acid (IFA) supplementation, bi-annual deworming with Albendazole, digital point-of-care hemoglobin testing, and nutritional counseling."
+    },
+    "telugu": {
+      "eligibility": "గర్భిణీలు, పాలిచ్చే తల్లులు, బాలింతలు, మరియు ప్రభుత్వ పాఠశాలలు, అంగన్‌వాడీలలోని పిల్లలు అర్హులు.",
+      "benefits": "ఉచిత ఐరన్ మరియు ఫోలిక్ యాసిడ్ టాబ్లెట్లు, ఉచిత నులిపురుగుల నివారణ బిళ్ళలు (అల్బెండజోల్) మరియు ఉచిత రక్త పరీక్ష.",
+      "documents": "తల్లి-పిల్లల సంరక్షణ కార్డు (MCP కార్డు) లేదా స్కూల్ ఐడి కార్డు.",
+      "steps": "స్థానిక అంగన్‌వాడీ కేంద్రం, ఆశా కార్యకర్త లేదా ప్రభుత్వ పాఠశాల ద్వారా ఐరన్ టాబ్లెట్లను ఉచితంగా పొందవచ్చు.",
+      "description": "అనీమియా ముక్త్ భారత్ వ్యూహం ద్వారా గర్భిణీలు, పాలిచ్చే తల్లులు, కిశోర బాలికలు మరియు పిల్లల్లో రక్తహీనతను నివారించడానికి ఐరన్ మరియు ఫోలిక్ యాసిడ్ (IFA) మాత్రలు/సిరప్‌ల ఉచిత పంపిణీ, ఉచిత రక్తహీనత పరీక్షలు మరియు నట్టల నివారణ (డీవార్మింగ్) మాత్రలను అందిస్తారు."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://anemiamb.nhp.gov.in/",
+    "contact_office": "Anganwadi Worker / School Headmaster / ANM",
+    "eligibility_confirmation": "ANM or Anganwadi Supervisor",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు లేదా మీ బిడ్డకు నీరసం, అలసట లేదా రక్తహీనత లక్షణాలు ఉన్నాయా?",
+        "question_en": "Do you or your child show symptoms of tiredness or blood deficiency?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "MCP Card (for pregnant women)",
+        "name_te": "తల్లి-పిల్లల సంరక్షణ కార్డు (గర్భిణీలకు)",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Anganwadi Centre / Village School"
+    },
+    "telugu_description": "అనీమియా ముక్త్ భారత్ వ్యూహం ద్వారా గర్భిణీలు, పాలిచ్చే తల్లులు, కిశోర బాలికలు మరియు పిల్లల్లో రక్తహీనతను నివారించడానికి ఐరన్ మరియు ఫోలిక్ యాసిడ్ (IFA) మాత్రలు/సిరప్‌ల ఉచిత పంపిణీ, ఉచిత రక్తహీనత పరీక్షలు మరియు నట్టల నివారణ (డీవార్మింగ్) మాత్రలను అందిస్తారు.",
+    "english_description": "Anaemia Mukt Bharat is an intensive national strategy to reduce anemia across vulnerable groups through routine Iron and Folic Acid (IFA) supplementation, bi-annual deworming with Albendazole, digital point-of-care hemoglobin testing, and nutritional counseling.",
+    "coverage_type": "Universal Prophylactic & Therapeutic Iron-Folic Acid (IFA) Strategy (6x6x6)",
+    "coverage_type_te": "రక్తహీనత నివారణ ఉచిత ఐరన్-ఫోలిక్ యాసిడ్ పంపిణీ పథకం",
+    "benefit_amount": "100% Free Age-Appropriate IFA Syrups/Tablets, Deworming (Albendazole) & Point-of-Care Testing",
+    "benefit_amount_te": "100% ఉచిత ఐరన్ సిరప్‌లు, ఐరన్ మాత్రలు, నట్టల నివారణ మాత్రలు",
+    "target_beneficiary": "Children (6-59m), School Kids (5-9y), Adolescents (10-19y), Women of Reproductive Age (15-49y), Pregnant & Lactating Mothers",
+    "target_beneficiary_te": "చిన్నపిల్లలు, బడికెళ్లే విద్యార్థులు, కిశోర బాలికలు మరియు గర్భిణీ తల్లులు",
+    "application_mode": "Anganwadi Centres, Schools (WIFS), Village Clinics & Primary Health Centres",
+    "application_mode_te": "అంగన్‌వాడీ కేంద్రాలు, పాఠశాలలు మరియు ప్రభుత్వ ఆరోగ్య కేంద్రాల ద్వారా",
+    "processing_time": "Immediate on-site screening and weekly/daily distribution",
+    "processing_time_te": "వెంటనే హిమోగ్లోబిన్ పరీక్ష మరియు ఉచిత ఐరన్ మాత్రల అందజేత",
+    "facility_type": "All Anganwadis, Govt Schools, Junior Colleges, PHCs & Urban Clinics",
+    "facility_type_te": "అన్ని అంగన్‌వాడీలు, ప్రభుత్వ పాఠశాలలు మరియు ప్రాథమిక ఆరోగ్య కేంద్రాలు",
+    "validity_period": "Continuous lifecourse intervention as per National Iron Plus Initiative",
+    "validity_period_te": "జీవిత చక్రం పొడవునా నిర్దేశిత వయస్సు ప్రకారం నిరంతరం",
+    "helpline_numbers": [
+      "104 (Nutrition Helpline)",
+      "1075 (National Health Portal)"
+    ],
+    "key_treatments": [
+      "Bi-weekly Iron Folic Acid Syrup for Infants 6-59 months",
+      "Weekly Pink IFA Tablets for School Children 5-9 years",
+      "Weekly Blue IFA Tablets for Adolescents 10-19 years in Schools and Anganwadis",
+      "Daily Red IFA Tablets for Pregnant Women (from 2nd trimester) and Lactating Mothers",
+      "Bi-annual National Deworming Day (Albendazole 400mg) for all children",
+      "Point-of-Care Digital Haemoglobinometer Screening"
+    ],
+    "key_treatments_te": [
+      "6-59 నెలల పసిపిల్లలకు వారానికి రెండుసార్లు ఐరన్ సిరప్",
+      "5-9 సంవత్సరాల పిల్లలకు వారానికి ఒకసారి గులాబీ రంగు ఐరన్ మాత్రలు",
+      "10-19 సంవత్సరాల విద్యార్థినులకు వారానికి ఒకసారి నీలి రంగు ఐరన్ మాత్రలు",
+      "గర్భిణులు మరియు బాలింతలకు రోజువారీ ఎరుపు రంగు ఐరన్ మాత్రలు",
+      "సంవత్సరానికి రెండుసార్లు ఉచిత నట్టల నివారణ ఆల్బెండజోల్ మాత్రలు",
+      "డిజిటల్ మీటర్ ద్వారా క్షణాల్లో రక్తహీనత (Hb) శాతం నిర్ధారణ"
+    ],
+    "exclusions": "Patients with Thalassemia Major (iron supplementation is contraindicated without serum ferritin check).",
+    "exclusions_te": "తలసేమియా మేజర్ రోగులకు ఐరన్ మాత్రలు వాడకూడదు (వైద్యుల సలహా తప్పనిసరి)."
+  },
+  "Poshan Abhiyaan": {
+    "level": "National",
+    "category": "Nutritional Services",
+    "icon": "nutrition",
+    "telugu_name": "పోషణ్ అభియాన్ పథకం",
+    "audio_file": "static/audio/poshan_abhiyaan.mp3",
+    "source_name": "Ministry of Women and Child Development",
+    "source_url": "https://www.poshanabhiyaan.gov.in/",
+    "keywords": [
+      "Poshan Abhiyaan",
+      "nutrition",
+      "malnutrition",
+      "Anganwadi",
+      "pregnant women nutrition",
+      "free ration"
+    ],
+    "original_complex_text": "Poshan Abhiyaan (National Nutrition Mission) targets reduction of stunting, under-nutrition, anaemia (among young children, women, and adolescent girls) and low birth weight. It coordinates food supplementation, growth monitoring, and nutrition counseling through the Anganwadi services network.",
+    "simplified": {
+      "eligibility": "Pregnant women, lactating mothers, and children under the age of 6 years.",
+      "benefits": "Free nutritional take-home ration (THR), eggs, milk, hot cooked meals at Anganwadi centres, and nutrition counseling.",
+      "documents": "Aadhaar Card, Child birth registration document (MCP card).",
+      "steps": "Register at the nearest local Anganwadi centre with your child to receive nutrition ration packs monthly.",
+      "description": "POSHAN Abhiyaan (National Nutrition Mission) targets the reduction of stunting, wasting, and under-nutrition among young children, pregnant women, and lactating mothers through Anganwadi-based supplementary nutrition, growth tracking, and maternal health education."
+    },
+    "telugu": {
+      "eligibility": "గర్భిణీ స్త్రీలు, పాలిచ్చే తల్లులు మరియు 6 సంవత్సరాలలోపు వయస్సు ఉన్న చిన్నారులు అర్హులు.",
+      "benefits": "అంగన్‌వాడీ కేంద్రాల ద్వారా ఉచిత గుడ్లు, పాలు, బాలామృతం పిండి, వేడి వండిన ఆహారం మరియు పౌష్టికాహార సలహాలు.",
+      "documents": "ఆధార్ కార్డు, శిశువు జనన ధృవీకరణ కార్డు (MCP కార్డు).",
+      "steps": "సమీపంలోని అంగన్‌వాడీ కేంద్రానికి వెళ్లి గర్భిణీ లేదా శిశువు వివరాలు నమోదు చేసుకుని ఉచిత రేషన్ పొందవచ్చు.",
+      "description": "పోషణ్ అభియాన్ (జాతీయ పోషకాహార మిషన్) అంగన్‌వాడీ కేంద్రాల ద్వారా చిన్న పిల్లలు, గర్భిణీలు మరియు పాలిచ్చే తల్లులకు పౌష్టికాహారం, గ్రోత్ మానిటరింగ్, పోషక లోప నివారణ మరియు మహిళా సాధికారతకు సంబంధించిన సేవలను అందిస్తుంది."
+    },
+    "last_updated": "2026-05-22",
+    "official_website": "https://www.poshanabhiyaan.gov.in/",
+    "contact_office": "Anganwadi Worker / Anganwadi Centre",
+    "eligibility_confirmation": "Anganwadi Teacher",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ ఇంట్లో 6 సంవత్సరాలలోపు వయస్సు గల పిల్లలు లేదా గర్భిణీలు ఉన్నారా?",
+        "question_en": "Do you have children under 6 years or pregnant women in your family?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "MCP Card",
+        "name_te": "అమ్మ ఒడి / నమోదు కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Local Anganwadi Centre"
+    },
+    "telugu_description": "పోషణ్ అభియాన్ (జాతీయ పోషకాహార మిషన్) అంగన్‌వాడీ కేంద్రాల ద్వారా చిన్న పిల్లలు, గర్భిణీలు మరియు పాలిచ్చే తల్లులకు పౌష్టికాహారం, గ్రోత్ మానిటరింగ్, పోషక లోప నివారణ మరియు మహిళా సాధికారతకు సంబంధించిన సేవలను అందిస్తుంది.",
+    "english_description": "POSHAN Abhiyaan (National Nutrition Mission) targets the reduction of stunting, wasting, and under-nutrition among young children, pregnant women, and lactating mothers through Anganwadi-based supplementary nutrition, growth tracking, and maternal health education.",
+    "coverage_type": "National Holistic Nutrition Mission & Growth Monitoring Programme",
+    "coverage_type_te": "సంపూర్ణ పోషకాహార మిషన్ & పిల్లల ఎదుగుదల పర్యవేక్షణ",
+    "benefit_amount": "100% Free Supplementary Nutrition (Take Home Ration / Hot Cooked Meals) & Poshan Tracker Monitoring",
+    "benefit_amount_te": "100% ఉచిత పౌష్టికాహార రేషన్, వేడి పౌష్టిక భోజనం మరియు గుడ్లు",
+    "target_beneficiary": "Children aged 0-6 years, Pregnant Women, Lactating Mothers and Adolescent Girls in AP",
+    "target_beneficiary_te": "0-6 సంవత్సరాల పిల్లలు, గర్భిణులు, బాలింతలు మరియు కిశోర బాలికలు",
+    "application_mode": "Enrollment at local Anganwadi Centre under ICDS / Poshan Tracker App",
+    "application_mode_te": "సమీప అంగన్‌వాడీ కేంద్రంలో పోషణ్ ట్రాకర్‌లో నమోదు చేసుకోవడం ద్వారా",
+    "processing_time": "Immediate enrollment for monthly Take-Home Ration & daily preschool meals",
+    "processing_time_te": "నమోదైన వెంటనే ప్రతి నెలా ఉచిత పోషకాహార కిట్లు ప్రారంభం",
+    "facility_type": "All Anganwadi Centres (AWCs) in rural, urban and tribal project areas",
+    "facility_type_te": "గ్రామీణ, గిరిజన మరియు పట్టణ ప్రాంతాల్లోని అంగన్‌వాడీ కేంద్రాలు",
+    "validity_period": "From conception through first 1,000 golden days of child life up to age 6",
+    "validity_period_te": "గర్భధారణ నుండి మొదటి 1000 రోజులు మరియు 6 సంవత్సరాల వయస్సు వరకు",
+    "helpline_numbers": [
+      "14408 (Poshan Abhiyaan Toll-Free)",
+      "104 (Maternal & Child Health)"
+    ],
+    "key_treatments": [
+      "Daily Hot Cooked Meal with Milk, Eggs and Fortified Rice for Pregnant/Lactating Mothers",
+      "Nutritious Balaamrutham / Take-Home Ration (THR) for 7m-3y infants",
+      "Monthly Child Growth Monitoring (Height, Weight, Stunting & Wasting tracking via Poshan Tracker)",
+      "Management of Severely Underweight (SUW) & Moderately Acute Malnutrition (MAM)",
+      "Breastfeeding, Infant & Young Child Feeding (IYCF) Counseling"
+    ],
+    "key_treatments_te": [
+      "గర్భిణులు, బాలింతలకు రోజువారీ వేడి పౌష్టిక భోజనం, పాలు మరియు కోడిగుడ్లు",
+      "చిన్నపిల్లలకు బలవర్ధకమైన బాలామృతం ప్యాకెట్ల అందజేత",
+      "ప్రతినెల పిల్లల ఎత్తు, బరువు కొలిచి ఎదుగుదల లోపాలను పర్యవేక్షించడం",
+      "తీవ్ర పోషకాహార లోపం ఉన్న పిల్లలకు ప్రత్యేక చికిత్స & సంరక్షణ",
+      "తల్లులకు తల్లిపాల ప్రాముఖ్యత మరియు శిశు సంరక్షణపై శిక్షణ"
+    ],
+    "exclusions": "Non-pregnant, non-lactating individuals outside targeted maternal/child age brackets.",
+    "exclusions_te": "పథక పరిధిలో లేని సాధారణ పెద్దవారికి వర్తించదు."
+  },
+  "National AIDS Control Programme (NACP)": {
+    "level": "National",
+    "category": "HIV & AIDS Services",
+    "icon": "shield",
+    "telugu_name": "జాతీయ ఎయిడ్స్ నియంత్రణ పథకం",
+    "audio_file": "static/audio/nacp.mp3",
+    "source_name": "National AIDS Control Organisation (NACO)",
+    "source_url": "https://naco.gov.in/",
+    "keywords": [
+      "NACP",
+      "HIV",
+      "AIDS",
+      "ART centre",
+      "condoms",
+      "blood safety",
+      "counseling",
+      "ICTC"
+    ],
+    "original_complex_text": "The National AIDS Control Programme (NACP) offers comprehensive care, support, and treatment for people living with HIV/AIDS. Services include Integrated Counseling and Testing Centres (ICTC) for confidential testing, free Anti-Retroviral Therapy (ART) clinics for medicines, and prevention of parent-to-child transmission.",
+    "simplified": {
+      "eligibility": "Any person desiring confidential HIV testing, or diagnosed HIV positive patients.",
+      "benefits": "Free confidential HIV testing, free counseling, free monthly life-saving Anti-Retroviral (ART) medicines, and nutritional guidance.",
+      "documents": "None mandatory for testing (confidential). Medical registration at ART centre requires ID proof.",
+      "steps": "Visit the local ICTC centre in a government hospital for free testing. If positive, enroll at the ART clinic for lifetime free medications.",
+      "description": "The National AIDS Control Programme (NACP) provides free and strictly confidential HIV testing and counseling at ICTC centres, free lifelong Anti-Retroviral Therapy (ART) medication, opportunistic infection management, and prevention of mother-to-child transmission."
+    },
+    "telugu": {
+      "eligibility": "హెచ్ఐవి (HIV) పరీక్ష చేయించుకోవాలనుకునే వారు లేదా హెచ్ఐవి పాజిటివ్‌గా నిర్ధారించబడిన రోగులు అర్హులు.",
+      "benefits": "ఉచిత రహస్య హెచ్ఐవి పరీక్షలు, ఉచిత కౌన్సిలింగ్ మరియు జీవితకాలం ఉచిత ఏఆర్టీ (ART) మందుల పంపిణీ.",
+      "documents": "పరీక్షలకు ఏ పత్రాలు అవసరం లేదు (పూర్తి రహస్యం). ఏఆర్టీ సెంటర్‌లో చేరడానికి ఆధార్ కార్డు అవసరం.",
+      "steps": "ఏదైనా ప్రభుత్వ ఆసుపత్రిలోని ఐసిటిసి (ICTC) కేంద్రానికి వెళ్లి ఉచితంగా మరియు రహస్యంగా పరీక్ష చేయించుకోవచ్చు.",
+      "description": "జాతీయ ఎయిడ్స్ నియంత్రణ పథకం (NACP) ప్రభుత్వ ఆసుపత్రులలోని ICTC కేంద్రాల ద్వారా ఉచిత హెచ్‌ఐవీ పరీక్షలు, గోప్యమైన కౌన్సిలింగ్ మరియు ART కేంద్రాల ద్వారా జీవితాంతం ఉచిత యాంటీరెట్రోవైరల్ థెరపీ (ART) మందుల పంపిణీని అందిస్తుంది."
+    },
+    "last_updated": "2026-04-18",
+    "official_website": "https://naco.gov.in/",
+    "contact_office": "ICTC Centre / ART Clinic at Government Hospital",
+    "eligibility_confirmation": "ART Medical Officer / ICTC Counselor",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు రహస్య హెచ్ఐవి పరీక్ష లేదా ఏఆర్టీ మందుల నమోదు కోరుకుంటున్నారా?",
+        "question_en": "Do you seek confidential HIV testing or ART medication registration?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Identity Proof (for ART registration only)",
+        "name_te": "గుర్తింపు కార్డు (ఏఆర్టీ నమోదుకు మాత్రమే)",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "District": "District Government General Hospital ICTC / ART Centre"
+    },
+    "telugu_description": "జాతీయ ఎయిడ్స్ నియంత్రణ పథకం (NACP) ప్రభుత్వ ఆసుపత్రులలోని ICTC కేంద్రాల ద్వారా ఉచిత హెచ్‌ఐవీ పరీక్షలు, గోప్యమైన కౌన్సిలింగ్ మరియు ART కేంద్రాల ద్వారా జీవితాంతం ఉచిత యాంటీరెట్రోవైరల్ థెరపీ (ART) మందుల పంపిణీని అందిస్తుంది.",
+    "english_description": "The National AIDS Control Programme (NACP) provides free and strictly confidential HIV testing and counseling at ICTC centres, free lifelong Anti-Retroviral Therapy (ART) medication, opportunistic infection management, and prevention of mother-to-child transmission.",
+    "coverage_type": "Free Universal HIV Testing, Anti-Retroviral Therapy (ART) & Prevention of Parent-to-Child Transmission",
+    "coverage_type_te": "ఉచిత హెచ్ఐవి పరీక్షలు, ఏఆర్టీ (ART) మందులు & ఉచిత సంరక్షణ",
+    "benefit_amount": "100% Free Lifelong Antiretroviral Drugs, CD4/Viral Load Testing & Free Delivery Care",
+    "benefit_amount_te": "100% ఉచిత జీవితాంతం ART మందులు, ఉచిత వైరల్ లోడ్ పరీక్షలు",
+    "target_beneficiary": "All Individuals living with HIV/AIDS (PLHIV) and high-risk demographic populations",
+    "target_beneficiary_te": "హెచ్ఐవితో జీవిస్తున్న బాధితులు మరియు వారి కుటుంబ సభ్యులు",
+    "application_mode": "Integrated Counseling and Testing Centres (ICTC) & Anti-Retroviral Therapy (ART) Centres in Govt Hospitals",
+    "application_mode_te": "ప్రభుత్వ ఆసుపత్రులలోని ICTC మరియు ART కేంద్రాల వద్ద సంప్రదించడం ద్వారా",
+    "processing_time": "Same-day rapid confidential HIV test; ART initiation on diagnosis",
+    "processing_time_te": "అదే రోజున గోప్యంగా ఉచిత పరీక్ష మరియు వెంటనే మందుల ప్రారంభం",
+    "facility_type": "Government Medical Colleges, District Hospital ART Centres & Care and Support Centres (CSC)",
+    "facility_type_te": "ప్రభుత్వ బోధనాసుపత్రులు మరియు జిల్లా ఏఆర్టీ (ART) కేంద్రాలు",
+    "validity_period": "Lifelong uninterrupted daily medication and viral suppression care",
+    "validity_period_te": "జీవితాంతం క్రమం తప్పకుండా ఉచిత మందులు మరియు వైద్య పరీక్షలు",
+    "helpline_numbers": [
+      "1097 (National AIDS Helpline Toll-Free)",
+      "104 (Health Helpline)"
+    ],
+    "key_treatments": [
+      "100% Free Daily Fixed-Dose Combination Antiretroviral Therapy (TLD Regimen)",
+      "Free Periodic CD4 Count and Quantitative HIV Viral Load Plasma Testing",
+      "Prevention of Parent to Child Transmission (PPTCT) with safe institutional delivery",
+      "Free Prophylaxis and Treatment for Opportunistic Infections (TB, Cryptococcal Meningitis)",
+      "Confidential Pre-Test and Post-Test Counseling with strict privacy safeguards"
+    ],
+    "key_treatments_te": [
+      "100% ఉచిత రోజువారీ ఆధునిక ఏఆర్టీ (TLD) మందులు",
+      "ఉచిత సీడీ4 (CD4) కౌంట్ మరియు వైరల్ లోడ్ ల్యాబ్ పరీక్షలు",
+      "తల్లి నుండి బిడ్డకు వైరస్ సోకకుండా సురక్షిత కాన్పు సేవలు (PPTCT)",
+      "టీబీ మరియు ఇతర ఇన్ఫెక్షన్ల నివారణకు ఉచిత మందులు",
+      "పూర్తి గోప్యతతో కూడిన ఉచిత కౌన్సిలింగ్ సేవలు"
+    ],
+    "exclusions": "Commercial paid private testing (Government ICTC centres guarantee 100% free and confidential services).",
+    "exclusions_te": "ప్రభుత్వ కేంద్రాల్లో పూర్తి ఉచితం మరియు పేర్లు గోప్యంగా ఉంచబడతాయి."
+  },
+  "Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP)": {
+    "level": "National",
+    "category": "Affordable Medicines",
+    "icon": "shield",
+    "telugu_name": "ప్రధానమంత్రి భారతీయ జనౌషధి పరియోజన",
+    "audio_file": "static/audio/pmbjp.mp3",
+    "source_name": "Pharmaceuticals & Medical Devices Bureau of India",
+    "source_url": "http://janaushadhi.gov.in/",
+    "keywords": [
+      "PMBJP",
+      "generic medicines",
+      "Janaushadhi Kendra",
+      "cheap medicines",
+      "affordable drugs"
+    ],
+    "original_complex_text": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) is a campaign launched by the Department of Pharmaceuticals to provide quality generic medicines at affordable prices. PMBJP Kendras are generic medicine stores selling quality medicines at 50% to 90% cheaper rates than branded market options.",
+    "simplified": {
+      "eligibility": "All citizens needing prescription medications (open to the general public).",
+      "benefits": "Access to high-quality generic medicines, surgical items, and sanitary pads at 50%-90% lower prices compared to market brands.",
+      "documents": "Valid doctor's prescription.",
+      "steps": "Take your doctor's prescription to the nearest PM Jan Aushadhi Kendra to purchase generic medicines at cheap rates.",
+      "description": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) operates dedicated Jan Aushadhi Kendras to provide high-quality generic medicines, surgical consumables, and sanitary napkins at prices 50% to 90% lower than branded market alternatives."
+    },
+    "telugu": {
+      "eligibility": "వైద్యుల ప్రిస్క్రిప్షన్ కలిగిన సాధారణ పౌరులు అందరూ ఈ స్టోర్ల నుండి మందులు కొనుగోలు చేయవచ్చు.",
+      "benefits": "బ్రాండెడ్ మందులతో సమానమైన నాణ్యత గల జెనరిక్ మందులు 50% నుండి 90% వరకు అతి తక్కువ ధరలకే లభిస్తాయి.",
+      "documents": "వైద్యుడు రాసిన మందుల చీటి (ప్రిస్క్రిప్షన్).",
+      "steps": "మీ ప్రిస్క్రిప్షన్ పట్టుకుని సమీపంలోని జనౌషధి కేంద్రానికి (జెనరిక్ మందుల షాప్) వెళ్లి తక్కువ ధరకే మందులు కొనవచ్చు.",
+      "description": "ప్రధాన మంత్రి భారతీయ జనౌషధి పరియోజన (PMBJP) ద్వారా జనౌషధి కేంద్రాలలో బ్రాండెడ్ మందులతో సమానమైన నాణ్యత కలిగిన జెనరిక్ మందులు, శానిటరీ ప్యాడ్‌లు మరియు వైద్య పరికరాలను 50% నుండి 90% తక్కువ ధరకు సామాన్య ప్రజలకు అందుబాటులో ఉంచుతారు."
+    },
+    "last_updated": "2026-06-10",
+    "official_website": "http://janaushadhi.gov.in/",
+    "contact_office": "Jan Aushadhi Kendra Store Pharmacist",
+    "eligibility_confirmation": "Jan Aushadhi Store Manager",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ వద్ద వైద్యుడు రాసిన మందుల చీటి ఉందా?",
+        "question_en": "Do you have a valid doctor prescription?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Doctor Prescription",
+        "name_te": "వైద్యుడి ప్రిస్క్రిప్షన్",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Town": "Nearest Pradhan Mantri Jan Aushadhi Store"
+    },
+    "telugu_description": "ప్రధాన మంత్రి భారతీయ జనౌషధి పరియోజన (PMBJP) ద్వారా జనౌషధి కేంద్రాలలో బ్రాండెడ్ మందులతో సమానమైన నాణ్యత కలిగిన జెనరిక్ మందులు, శానిటరీ ప్యాడ్‌లు మరియు వైద్య పరికరాలను 50% నుండి 90% తక్కువ ధరకు సామాన్య ప్రజలకు అందుబాటులో ఉంచుతారు.",
+    "english_description": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) operates dedicated Jan Aushadhi Kendras to provide high-quality generic medicines, surgical consumables, and sanitary napkins at prices 50% to 90% lower than branded market alternatives.",
+    "coverage_type": "High-Quality Affordable Generic Medicines & Surgical Consumables at 50-90% Discount",
+    "coverage_type_te": "50% నుండి 90% తక్కువ ధరకే నాణ్యమైన జెనరిక్ మందుల పంపిణీ",
+    "benefit_amount": "50% to 90% Discount compared to branded market drugs across 2,000+ essential medicines",
+    "benefit_amount_te": "బ్రాండెడ్ మందులతో పోలిస్తే 50% నుండి 90% వరకు భారీ తగ్గింపు ధరలు",
+    "target_beneficiary": "All Citizens across India seeking high-quality affordable medications",
+    "target_beneficiary_te": "తక్కువ ఖర్చుతో నాణ్యమైన మందులు పొందాలనుకునే భారతదేశ పౌరులందరూ",
+    "application_mode": "Walk-in with doctor's prescription at nearest Pradhan Mantri Jan Aushadhi Kendra",
+    "application_mode_te": "డాక్టర్ ప్రిస్క్రిప్షన్‌తో సమీప జన్ ఔషధి కేంద్రంలో నేరుగా కొనుగోలు",
+    "processing_time": "Immediate over-the-counter dispensing",
+    "processing_time_te": "వెంటనే కౌంటర్ వద్ద బిల్లింగ్ మరియు మందుల అందజేత",
+    "facility_type": "10,000+ Standalone PMBJP Outlets, Hospital Campuses & Railway Stations",
+    "facility_type_te": "ఆసుపత్రుల ప్రాంగణాలు మరియు మార్కెట్లలోని జన్ ఔషధి కేంద్రాలు",
+    "validity_period": "Per prescription purchase with official receipt",
+    "validity_period_te": "ప్రిస్క్రిప్షన్ ఆధారంగా ఎప్పుడైనా కొనుగోలు చేయవచ్చు",
+    "helpline_numbers": [
+      "1800-180-8080 (PMBJP National Toll-Free)",
+      "104 (Health Information)"
+    ],
+    "key_treatments": [
+      "Over 2,046 Generic Formulations (Cardiac, Anti-diabetic, Anti-hypertensive, Antibiotics)",
+      "300+ Surgical Implants and Consumables (Surgical Gloves, Cannulas, Syringes)",
+      "Suvidha Oxo-Biodegradable Sanitary Napkins at just ₹1 per pad",
+      "Nutraceuticals, Protein Supplements, and Immuno-boosters",
+      "NABL-Accredited Lab Quality Tested Formulations"
+    ],
+    "key_treatments_te": [
+      "గుండె జబ్బులు, బీపీ, షుగర్ మరియు యాంటీబయాటిక్స్ తో సహా 2,046+ రకాల మందులు",
+      "శస్త్రచికిత్సలకు అవసరమైన 300+ సర్జికల్ వస్తువులు",
+      "కేవలం ₹1 కే 'సువిధ' పర్యావరణ హిత శానిటరీ న్యాప్‌కిన్లు",
+      "ప్రొటీన్ పౌడర్లు, విటమిన్లు మరియు న్యూట్రిషన్ ఉత్పత్తులు",
+      "NABL ల్యాబ్ పరీక్షల్లో నాణ్యత ధృవీకరించబడిన ఔషధాలు"
+    ],
+    "exclusions": "Narcotics and Schedule X restricted psychotropic drugs without valid specialist triplicate prescription.",
+    "exclusions_te": "షెడ్యూల్ X మరియు నిషేధిత మత్తు మందులు సాధారణంగా విక్రయించబడవు."
+  },
+  "Ayushman Bharat Health Account (ABHA)": {
+    "level": "National",
+    "category": "Digital Health Services",
+    "icon": "phone-doctor",
+    "telugu_name": "ఆయుష్మాన్ భారత్ హెల్త్ అకౌంట్ (ABHA)",
+    "audio_file": "static/audio/abha.mp3",
+    "source_name": "National Health Authority (NHA)",
+    "source_url": "https://abdm.gov.in/",
+    "keywords": [
+      "ABHA",
+      "digital health card",
+      "health ID",
+      "medical records",
+      "ABDM",
+      "health account"
+    ],
+    "original_complex_text": "Ayushman Bharat Health Account (ABHA) is a key component of Ayushman Bharat Digital Mission (ABDM). It creates a unique 14-digit Health ID for citizens to digitize their medical records, prescriptions, and lab test reports, allowing seamless sharing with authorized healthcare providers.",
+    "simplified": {
+      "eligibility": "All citizens of India.",
+      "benefits": "A unique digital identity card, online storage for all medical records, prescriptions, and test results, enabling paperless hospital visits.",
+      "documents": "Aadhaar Card or Driving License linked to mobile number.",
+      "steps": "Register online at the ABHA portal, use the ABHA app, or register at any government hospital helper counter using Aadhaar OTP.",
+      "description": "Ayushman Bharat Health Account (ABHA) creates a secure 14-digit digital health ID for citizens, enabling seamless, consent-based digital storage and sharing of personal medical records, prescriptions, and lab diagnostic reports across healthcare providers nationwide."
+    },
+    "telugu": {
+      "eligibility": "భారతదేశ పౌరులు అందరూ ఈ డిజిటల్ కార్డు నమోదు చేసుకోవడానికి అర్హులు.",
+      "benefits": "14 అంకెల ప్రత్యేక హెల్త్ ఐడీ కార్డు, వైద్య చరిత్ర, మందుల చీటి మరియు ల్యాబ్ రిపోర్టులు డిజిటల్‌గా భద్రపర్చుకునే ఉచిత సదుపాయం.",
+      "documents": "ఆధార్ కార్డు మరియు లింక్ అయిన మొబైల్ నంబర్.",
+      "steps": "ఆధార్ నంబర్ మరియు ఓటీపీ సహాయంతో ఆన్‌లైన్ లో లేదా ప్రభుత్వ ఆసుపత్రిలోని హెల్ప్ డెస్క్ వద్ద 5 నిమిషాల్లో కార్డు సృష్టించుకోవచ్చు.",
+      "description": "ఆయుష్మాన్ భారత్ హెల్త్ అకౌంట్ (ABHA) అనేది ప్రతి పౌరుడికి 14 అంకెల ప్రత్యేక డిజిటల్ ఆరోగ్య గుర్తింపు సంఖ్యను అందిస్తుంది. దీని ద్వారా రోగి వైద్య రికార్డులు, ల్యాబ్ రిపోర్టులు మరియు ప్రిస్క్రిప్షన్‌లను డిజిటల్‌గా సురక్షితంగా నిల్వ చేసుకుని భారతదేశంలోని ఏ ఆసుపత్రిలోనైనా సులభంగా పంచుకోవచ్చు."
+    },
+    "last_updated": "2026-06-15",
+    "official_website": "https://healthid.ndhm.gov.in/",
+    "contact_office": "Digital Health Help Desk at CHC / District Hospital",
+    "eligibility_confirmation": "National Health Authority ABDM team",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ వద్ద మొబైల్ నంబర్ అనుసంధానించిన ఆధార్ కార్డు ఉందా?",
+        "question_en": "Do you have an Aadhaar card linked with a mobile number?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Village Secretariat Digital Assistant",
+      "District": "District Government Hospital counter"
+    },
+    "telugu_description": "ఆయుష్మాన్ భారత్ హెల్త్ అకౌంట్ (ABHA) అనేది ప్రతి పౌరుడికి 14 అంకెల ప్రత్యేక డిజిటల్ ఆరోగ్య గుర్తింపు సంఖ్యను అందిస్తుంది. దీని ద్వారా రోగి వైద్య రికార్డులు, ల్యాబ్ రిపోర్టులు మరియు ప్రిస్క్రిప్షన్‌లను డిజిటల్‌గా సురక్షితంగా నిల్వ చేసుకుని భారతదేశంలోని ఏ ఆసుపత్రిలోనైనా సులభంగా పంచుకోవచ్చు.",
+    "english_description": "Ayushman Bharat Health Account (ABHA) creates a secure 14-digit digital health ID for citizens, enabling seamless, consent-based digital storage and sharing of personal medical records, prescriptions, and lab diagnostic reports across healthcare providers nationwide.",
+    "coverage_type": "Universal Digital 14-Digit Health Identity & Interoperable EHR System",
+    "coverage_type_te": "14 అంకెల జాతీయ డిజిటల్ హెల్త్ ఐడీ & ఆన్‌లైన్ మెడికల్ రికార్డులు",
+    "benefit_amount": "100% Free Lifetime Digital Health Locker & Paperless Hospital Registration",
+    "benefit_amount_te": "100% ఉచిత డిజిటల్ హెల్త్ లాకర్ మరియు పేపర్‌లెస్ ఆసుపత్రి క్యూ నమోదు",
+    "target_beneficiary": "All Citizens of India desiring consolidated digital health records",
+    "target_beneficiary_te": "ఆరోగ్య రికార్డులను ఆన్‌లైన్‌లో భద్రపరుచుకోవాలనుకునే భారత పౌరులందరూ",
+    "application_mode": "Online at abha.abdm.gov.in / ABHA App / Scan & Share QR at Hospital OPD",
+    "application_mode_te": "abha.abdm.gov.in వెబ్‌సైట్, ABHA యాప్ లేదా ఆసుపత్రి ఓపీడీ క్యూఆర్ కోడ్ స్కాన్ ద్వారా",
+    "processing_time": "Instant 2-minute creation via Aadhaar / Mobile OTP",
+    "processing_time_te": "ఆధార్ లేదా మొబైల్ ఓటీపీతో కేవలం 2 నిమిషాల్లో తయారవుతుంది",
+    "facility_type": "All ABDM-Enabled Public Hospitals, Private Clinics, Diagnostic Labs & Pharmacies",
+    "facility_type_te": "అన్ని ప్రభుత్వ, ప్రైవేట్ ఆసుపత్రులు మరియు డయాగ్నస్టిక్ ల్యాబ్‌లు",
+    "validity_period": "Permanent unique lifetime digital health identity",
+    "validity_period_te": "జీవితాంతం శాశ్వతంగా ఉండే విశిష్ట డిజిటల్ హెల్త్ నంబర్",
+    "helpline_numbers": [
+      "1800-11-4477 (ABDM National Toll-Free)",
+      "1075 (National Health Portal)"
+    ],
+    "key_treatments": [
+      "Unique 14-Digit ABHA ID and ABHA Address (@abdm handle)",
+      "Paperless 'Scan & Share' Fast-Track OPD Registration in Hospitals",
+      "Interoperable Linking of Lab Reports, Prescriptions, Hospital Discharge Summaries",
+      "Consent-Based Secure Sharing of Medical History with Treating Specialists",
+      "Integration with Aarogya Setu and Personal Health Record (PHR) Mobile Apps"
+    ],
+    "key_treatments_te": [
+      "14 అంకెల విశిష్ట డిజిటల్ హెల్త్ ఐడీ కార్డు",
+      "ఆసుపత్రులలో లైన్లలో నిలబడకుండా 'స్కాన్ & షేర్' ద్వారా వేగవంతమైన ఓపీడీ టోకెన్",
+      "పాత రక్త పరీక్షల రిపోర్టులు, డిశ్చార్జ్ సమ్మరీలను ఒకే చోట భద్రపరుచుకునే సదుపాయం",
+      "రోగి అనుమతితో మాత్రమే డాక్టర్లకు పాత వైద్య చరిత్రను షేర్ చేసే భద్రత",
+      "ఆరోగ్య సేతు మరియు ABHA యాప్‌లతో సులభ అనుసంధానం"
+    ],
+    "exclusions": "Does not provide direct medical insurance by itself (acts as the digital gateway for PM-JAY and other health programs).",
+    "exclusions_te": "ఇది డిజిటల్ హెల్త్ ఐడీ మాత్రమే, ఇన్సూరెన్స్ పథకాలకు లింక్ చేసుకునేందుకు ఉపయోగపడుతుంది."
+  },
+  "National Rabies Control Programme (NRCP)": {
+    "level": "National",
+    "category": "Rabies Prevention",
+    "icon": "shield",
+    "telugu_name": "జాతీయ రేబిస్ నివారణ పథకం",
+    "audio_file": "static/audio/nrcp.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://main.mohfw.gov.in/",
+    "keywords": [
+      "Rabies",
+      "dog bite",
+      "anti rabies vaccine",
+      "ARV",
+      "monkey bite",
+      "free rabies vaccine"
+    ],
+    "original_complex_text": "The National Rabies Control Programme (NRCP) ensures the availability of Anti-Rabies Vaccine (ARV) and Anti-Rabies Serum (ARS) for free post-exposure prophylaxis in all government community health centres and district hospitals for patients bitten by stray dogs or other rabid animals.",
+    "simplified": {
+      "eligibility": "Any person bitten or scratched by a stray dog, cat, monkey, or other animal suspected of rabies.",
+      "benefits": "Free life-saving Anti-Rabies Vaccines (ARV injections, full course of 4-5 doses) and Rabies Immunoglobulin (serum) in severe cases.",
+      "documents": "OPD slip issued at hospital emergency ward.",
+      "steps": "Wash the wound immediately with soap and running water for 15 minutes, then go directly to a government hospital/CHC for free vaccination.",
+      "description": "The National Rabies Control Programme (NRCP) provides free Anti-Rabies Vaccines (ARV) and Rabies Immunoglobulin (RIG) post-exposure prophylaxis across all public health facilities to prevent fatal rabies infections following animal bites."
+    },
+    "telugu": {
+      "eligibility": "పిచ్చి కుక్క, పిల్లి, కోతి లేదా ఏదైనా జంతువు కరిచిన / గీరిన బాధితులు అందరూ అర్హులు.",
+      "benefits": "ప్రభుత్వ ఆసుపత్రుల ద్వారా ఉచిత యాంటీ-రేబిస్ వ్యాక్సిన్ (ARV ఇంజెక్షన్లు - 4 నుండి 5 డోసులు) మరియు తీవ్ర గాయాలకు ఉచిత సీరమ్ చికిత్స.",
+      "documents": "ఆసుపత్రి అత్యవసర ఓపీడీ చీటి.",
+      "steps": "గాయాన్ని వెంటనే సబ్బు మరియు ప్రవహించే నీటితో 15 నిమిషాలు కడిగి, వెంటనే ప్రభుత్వ ఆసుపత్రికి వెళ్లి ఉచిత ఇంజెక్షన్ వేయించుకోవాలి.",
+      "description": "జాతీయ రేబీస్ నియంత్రణ పథకం (NRCP) ద్వారా కుక్క, పిల్లి లేదా జంతువుల కాటుకు గురైన వారికి అన్ని ప్రభుత్వ ఆసుపత్రులు మరియు పీహెచ్‌సీలలో ప్రాణరక్షక యాంటీ-రేబీస్ వ్యాక్సిన్ (ARV) మరియు యాంటీ-రేబీస్ సీరంను పూర్తి ఉచితంగా అందిస్తారు."
+    },
+    "last_updated": "2026-01-10",
+    "official_website": "https://main.mohfw.gov.in/",
+    "contact_office": "Emergency / Casualty Ward, CHC or District Hospital",
+    "eligibility_confirmation": "Emergency Doctor / General Surgeon",
+    "eligibility_questions": [
+      {
+        "question_te": "మిమ్మల్ని కుక్క లేదా ఇతర అడవి జంతువు కరిచిందా?",
+        "question_en": "Were you bitten by a dog or other wild animal?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Identity Proof (for records)",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Nearest Primary Health Centre (PHC) / CHC",
+      "District": "District Hospital Emergency Ward"
+    },
+    "telugu_description": "జాతీయ రేబీస్ నియంత్రణ పథకం (NRCP) ద్వారా కుక్క, పిల్లి లేదా జంతువుల కాటుకు గురైన వారికి అన్ని ప్రభుత్వ ఆసుపత్రులు మరియు పీహెచ్‌సీలలో ప్రాణరక్షక యాంటీ-రేబీస్ వ్యాక్సిన్ (ARV) మరియు యాంటీ-రేబీస్ సీరంను పూర్తి ఉచితంగా అందిస్తారు.",
+    "english_description": "The National Rabies Control Programme (NRCP) provides free Anti-Rabies Vaccines (ARV) and Rabies Immunoglobulin (RIG) post-exposure prophylaxis across all public health facilities to prevent fatal rabies infections following animal bites.",
+    "coverage_type": "Free Post-Exposure Prophylaxis (PEP) & Anti-Rabies Vaccination (ARV)",
+    "coverage_type_te": "కుక్కకాటు ఉచిత వ్యాక్సిన్ (ARV) & యాంటీ-రేబిస్ సీరం చికిత్స",
+    "benefit_amount": "100% Free Intra-Dermal Anti-Rabies Vaccine (ARV) & Rabies Immunoglobulin (RIG)",
+    "benefit_amount_te": "100% ఉచిత రేబిస్ నిరోధక ఇంజెక్షన్లు (ARV) మరియు ఇమ్యునోగ్లోబులిన్ (RIG)",
+    "target_beneficiary": "All individuals bitten, scratched or exposed to suspected rabid dogs, cats, monkeys or wildlife",
+    "target_beneficiary_te": "కుక్కకాటు, పిల్లికాటు లేదా కోతికాటుకు గురైన బాధితులందరూ",
+    "application_mode": "Immediate walk-in at Casualty / Anti-Rabies Clinic in Govt PHC, CHC or District Hospital",
+    "application_mode_te": "ప్రభుత్వ ఆసుపత్రిలోని క్యాజువాలిటీ లేదా యాంటీ-రేబిస్ క్లినిక్ వద్ద తక్షణమే హాజరుకావడం",
+    "processing_time": "Immediate emergency wound washing and Day 0 vaccination dose",
+    "processing_time_te": "చేరిన వెంటనే గాయం శుభ్రం చేసి మొదటి డోస్ ఇంజెక్షన్ వేస్తారు",
+    "facility_type": "Designated Anti-Rabies Clinics, Government CHCs, Area Hospitals and Teaching Hospitals",
+    "facility_type_te": "అన్ని ప్రభుత్వ సామాజిక ఆరోగ్య కేంద్రాలు (CHC) మరియు ఏరియా ఆసుపత్రులు",
+    "validity_period": "Mandatory multi-dose regimen (Days 0, 3, 7, 28 for IDRV)",
+    "validity_period_te": "నిర్దేశిత షెడ్యూల్ ప్రకారం (0, 3, 7, 28వ రోజులలో) 4 డోసులు పూర్తి చేయాలి",
+    "helpline_numbers": [
+      "104 (Health Advice)",
+      "108 (Emergency Transit for Severe Bites)"
+    ],
+    "key_treatments": [
+      "Immediate Scientific Wound Washing with running water and soap for 15 minutes",
+      "Intradermal Rabies Vaccination (IDRV - 0.1ml at 2 sites on Days 0, 3, 7, 28)",
+      "Equine or Human Rabies Immunoglobulin (eRIG / hRIG) infiltration into Category III wounds",
+      "Tetanus Toxoid (TT/Td) booster administration",
+      "Animal observation counseling for 10 days"
+    ],
+    "key_treatments_te": [
+      "కుక్కకాటు గాయాన్ని పారే నీరు మరియు సబ్బుతో 15 నిమిషాలు శుభ్రం చేయడం",
+      "ఉచిత ఇంట్రాడెర్మల్ రేబిస్ ఇంజెక్షన్ల షెడ్యూల్ (0, 3, 7, 28వ రోజులు)",
+      "తీవ్ర గాయాలకు లోతుగా ఇచ్చే యాంటీ-రేబిస్ ఇమ్యునోగ్లోబులిన్ (RIG) ఇంజెక్షన్",
+      "ధనుర్వాతం రాకుండా ధనుర్వాతం (టిటి) ఇంజెక్షన్",
+      "కుక్కను 10 రోజుల పాటు పర్యవేక్షించే విధానంపై సలహాలు"
+    ],
+    "exclusions": "Non-exposure contact (touching animal or un-broken skin without saliva contact requires simple soap washing only).",
+    "exclusions_te": "గాయం లేని సాధారణ స్పర్శకు సబ్బుతో కడిగితే సరిపోతుంది (ఇంజెక్షన్లు అవసరం ఉండదు)."
+  },
+  "National Programme for Prevention of Deafness (NPPCD)": {
+    "level": "National",
+    "category": "Hearing Care Services",
+    "icon": "clinic",
+    "telugu_name": "జాతీయ బధిరత్వ నివారణ పథకం",
+    "audio_file": "static/audio/nppcd.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://main.mohfw.gov.in/",
+    "keywords": [
+      "NPPCD",
+      "deafness",
+      "hearing loss",
+      "hearing aid",
+      "ear pain",
+      "ENT doctor"
+    ],
+    "original_complex_text": "The National Programme for Prevention and Control of Deafness (NPPCD) focuses on early identification of hearing impairment and ear diseases. Geriatric and pediatric audiometry testing, free ENT checkups, hearing screening camps, and free hearing aids distribution are carried out at district government clinics.",
+    "simplified": {
+      "eligibility": "Any citizen suffering from hearing loss, ear discharge, or deafness, especially children and senior citizens.",
+      "benefits": "Free ENT doctor checkups, free hearing tests (audiometry), and free hearing aids for poor and needy patients.",
+      "documents": "Income certificate (for free hearing aid), identity proof.",
+      "steps": "Visit the ENT Outpatient Clinic (OPD) at the local District Government Hospital or participate in a government hearing camp.",
+      "description": "The National Programme for the Prevention and Control of Deafness (NPPCD) offers free hearing assessments, audiometry screenings, early intervention for hearing impairment, free distribution of hearing aids, and surgical referral for deafness."
+    },
+    "telugu": {
+      "eligibility": "చెవుడు, వినికిడి లోపం, లేదా తీవ్రమైన చెవి సమస్యలతో బాధపడే వారు (ముఖ్యంగా చిన్న పిల్లలు మరియు వృద్ధులు) అర్హులు.",
+      "benefits": "ఈఎన్‌టీ (ENT) డాక్టర్ ద్వారా ఉచిత చెవి పరీక్షలు, ఉచిత వినికిడి పరీక్ష మరియు పేదలకు ఉచిత వినికిడి యంత్రాల (హియరింగ్ ఎయిడ్స్) పంపిణీ.",
+      "documents": "ఆదాయ ధృవీకరణ పత్రం (ఉచిత వినికిడి యంత్రం కొరకు), ఆధార్ కార్డు.",
+      "steps": "సమీపంలోని జిల్లా ప్రభుత్వ ఆసుపత్రిలోని ఈఎన్‌టీ (ENT) విభాగాన్ని సంప్రదించాలి.",
+      "description": "జాతీయ వినికిడి లోప నివారణ పథకం (NPPCD) ద్వారా వినికిడి సమస్యలు ఉన్న పిల్లలు మరియు వృద్ధులకు ఉచిత ఆడియోమెట్రీ పరీక్షలు, వినికిడి చికిత్సలు, ఉచిత శ్రవణ యంత్రాల (హియరింగ్ ఎయిడ్స్) పంపిణీ మరియు అవసరమైన వారికి శస్త్రచికిత్స సహాయాన్ని అందిస్తారు."
+    },
+    "last_updated": "2026-04-10",
+    "official_website": "https://main.mohfw.gov.in/",
+    "contact_office": "ENT Department OPD, District Hospital",
+    "eligibility_confirmation": "ENT Specialist / Audiologist",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు వినికిడి లోపంతో బాధపడుతున్నారా?",
+        "question_en": "Do you suffer from hearing loss or deafness?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Income Certificate (for free aid)",
+        "name_te": "ఆదాయ ధృవీకరణ పత్రం (యంత్రం కొరకు)",
+        "optional": true
+      },
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "District": "District Government Hospital ENT OPD"
+    },
+    "telugu_description": "జాతీయ వినికిడి లోప నివారణ పథకం (NPPCD) ద్వారా వినికిడి సమస్యలు ఉన్న పిల్లలు మరియు వృద్ధులకు ఉచిత ఆడియోమెట్రీ పరీక్షలు, వినికిడి చికిత్సలు, ఉచిత శ్రవణ యంత్రాల (హియరింగ్ ఎయిడ్స్) పంపిణీ మరియు అవసరమైన వారికి శస్త్రచికిత్స సహాయాన్ని అందిస్తారు.",
+    "english_description": "The National Programme for the Prevention and Control of Deafness (NPPCD) offers free hearing assessments, audiometry screenings, early intervention for hearing impairment, free distribution of hearing aids, and surgical referral for deafness.",
+    "coverage_type": "Free Universal Hearing Screening, Ear Surgeries & Free Digital Hearing Aids",
+    "coverage_type_te": "వినికిడి లోపాల ఉచిత పరీక్షలు, చెవి ఆపరేషన్లు & ఉచిత వినికిడి యంత్రాలు",
+    "benefit_amount": "100% Free Pure Tone Audiometry (PTA), Tympanometry, Tympanoplasty Surgeries & Hearing Aids",
+    "benefit_amount_te": "100% ఉచిత ఆడియోమెట్రీ పరీక్షలు, కర్ణభేరి శస్త్రచికిత్సలు & ఉచిత వినికిడి మిషన్లు",
+    "target_beneficiary": "Infants, school children, industrial workers, elderly with age-related hearing loss (Presbycusis)",
+    "target_beneficiary_te": "వినికిడి లోపం, చెవిలో చీము లేదా శబ్దాల సమస్యలతో బాధపడుతున్న పౌరులందరూ",
+    "application_mode": "ENT OPD at District Hospital / Teaching Hospital / Audiology Assessment Camps",
+    "application_mode_te": "జిల్లా ఆసుపత్రిలోని ఈఎన్‌టీ (ENT) విభాగం లేదా వినికిడి నిర్ధారణ క్యాంపులలో",
+    "processing_time": "Audiological evaluation within 1-3 days; hearing aid fitting within 2 weeks",
+    "processing_time_te": "ఆడియోమెట్రీ పరీక్ష అనంతరం 2 వారాల్లో ఉచిత వినికిడి పరికరం అందజేత",
+    "facility_type": "District Hospital ENT Departments, Medical Colleges & DEIC Centres",
+    "facility_type_te": "జిల్లా ఆసుపత్రులు మరియు ప్రభుత్వ మెడికల్ కాలేజీల ఈఎన్‌టీ విభాగాలు",
+    "validity_period": "Lifelong audiological monitoring and annual device maintenance",
+    "validity_period_te": "వినికిడి పరికరం ద్వారా నిరంతర సంరక్షణ",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1800-425-7778 (ENT Care Desk)"
+    ],
+    "key_treatments": [
+      "Pure Tone Audiometry (PTA) & Brainstem Evoked Response Audiometry (BERA)",
+      "Treatment and Microsurgery for Chronic Suppurative Otitis Media (CSOM / Perforated Eardrum)",
+      "Tympanoplasty, Mastoidectomy and Stapedectomy Ear Surgeries",
+      "Free Fitting of Custom Digital Behind-the-Ear (BTE) Hearing Aids",
+      "Ear Wax Removal and Noise-Induced Hearing Loss Prevention Education"
+    ],
+    "key_treatments_te": [
+      "కంప్యూటరైజ్డ్ ఆడియోమెట్రీ (PTA) మరియు బెరా వినికిడి పరీక్షలు",
+      "చెవిలో కర్ణభేరి రంధ్రం (CSOM) పూడ్చడానికి ఉచిత టింపనోప్లాస్టీ ఆపరేషన్",
+      "చెవిలో చీము మరియు ఎముక సమస్యలకు ఉచిత మైక్రో సర్జరీలు",
+      "చెవి వెనుక పెట్టుకునే నాణ్యమైన ఉచిత డిజిటల్ వినికిడి యంత్రాల పంపిణీ",
+      "చెవి గులిమి శుభ్రం చేయడం మరియు శబ్ద కాలుష్య నివారణ సలహాలు"
+    ],
+    "exclusions": "High-end luxury invisible Bluetooth fashion hearing aids (standard clinical high-performance BTE units provided free).",
+    "exclusions_te": "ఫ్యాషన్ బ్లూటూత్ డివైజ్‌లు వర్తించవు (ప్రభుత్వం నాణ్యమైన క్లినికల్ బిటిఈ పరికరాలను ఉచితంగా ఇస్తుంది)."
+  },
+  "National Organ Transplant Programme (NOTP)": {
+    "level": "National",
+    "category": "Organ Donation Services",
+    "icon": "kidney",
+    "telugu_name": "జాతీయ అవయవ మార్పిడి పథకం",
+    "audio_file": "static/audio/notp.mp3",
+    "source_name": "National Organ and Tissue Transplant Organisation (NOTTO)",
+    "source_url": "https://www.notto.mohfw.gov.in/",
+    "keywords": [
+      "NOTP",
+      "NOTTO",
+      "organ donor",
+      "kidney transplant",
+      "cornea donation",
+      "organ registry"
+    ],
+    "original_complex_text": "The National Organ Transplant Programme (NOTP) is implemented to promote organ and tissue donation and establish a network for procurement and distribution. It maintains the national registry of waiting patients and donor cards, assuring ethical matching for kidney, liver, and tissue transplants.",
+    "simplified": {
+      "eligibility": "All citizens needing organ transplants or wishing to sign up as organ donors in India.",
+      "benefits": "Free registration in the national waiting list for organs, ethical organ procurement, and provision of organ donor cards.",
+      "documents": "Identity proof (Aadhaar), medical referral from a certified transplant hospital.",
+      "steps": "Register through a government-approved transplant hospital on the NOTTO network portal.",
+      "description": "The National Organ Transplant Programme (NOTP) manages ethical organ retrieval, donor registration, national organ sharing registries, and supports financial assistance for life-saving organ transplantations among disadvantaged patients."
+    },
+    "telugu": {
+      "eligibility": "భారతదేశంలో అవయవ మార్పిడి అవసరమైన రోగులు మరియు అవయవ దానం చేయాలనుకునే దాతలు అందరూ అర్హులు.",
+      "benefits": "జాతీయ అవయవ నిరీక్షణ జాబితాలో ఉచిత నమోదు, నైతిక అవయవ కేటాయింపు మరియు అవయవ దాత కార్డు జారీ.",
+      "documents": "ఆధార్ కార్డు, గుర్తింపు పొందిన ఆసుపత్రి నుండి మెడికల్ రిఫరల్ లెటర్.",
+      "steps": "నమోదు కొరకు గుర్తింపు పొందిన ప్రభుత్వ అవయవ మార్పిడి కేంద్రం లేదా ఆసుపత్రిని సంప్రదించాలి.",
+      "description": "జాతీయ అవయవ మార్పిడి పథకం (NOTP) ద్వారా అవయవ దానం చేయాలనుకునే దాతల నమోదు, అవయవ మార్పిడి అవసరమైన రోగుల వెయిటింగ్ లిస్ట్ నిర్వహణ మరియు పేద రోగులకు అవయవ మార్పిడి ప్రక్రియలో సహాయం అందించబడుతుంది."
+    },
+    "last_updated": "2026-03-30",
+    "official_website": "https://www.notto.mohfw.gov.in/",
+    "contact_office": "Organ Transplant Coordinator at Registered Apex Hospital",
+    "eligibility_confirmation": "NOTTO Transplant Committee",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు అవయవ దాత కార్డు నమోదు లేదా అవయవ మార్పిడి చికిత్స అవసరమా?",
+        "question_en": "Do you require organ donor registration or organ transplant services?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Transplant Hospital Reference",
+        "name_te": "ఆసుపత్రి రిఫరల్ లెటర్",
+        "optional": false
+      },
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "District": "Government General Hospital Transplant Cell"
+    },
+    "telugu_description": "జాతీయ అవయవ మార్పిడి పథకం (NOTP) ద్వారా అవయవ దానం చేయాలనుకునే దాతల నమోదు, అవయవ మార్పిడి అవసరమైన రోగుల వెయిటింగ్ లిస్ట్ నిర్వహణ మరియు పేద రోగులకు అవయవ మార్పిడి ప్రక్రియలో సహాయం అందించబడుతుంది.",
+    "english_description": "The National Organ Transplant Programme (NOTP) manages ethical organ retrieval, donor registration, national organ sharing registries, and supports financial assistance for life-saving organ transplantations among disadvantaged patients.",
+    "coverage_type": "Deceased & Living Organ Donation Coordination, Waitlist Registry & Post-Transplant Medication Support",
+    "coverage_type_te": "అవయవ దానం, ఉచిత అవయవ మార్పిడి శస్త్రచికిత్స & పోస్ట్-ట్రాన్స్‌ప్లాంట్ మందులు",
+    "benefit_amount": "Free Organ Transplant Surgeries under Dr. NTR Vaidya Seva / PM-JAY & Free Immunosuppressants",
+    "benefit_amount_te": "ఆరోగ్యశ్రీ ద్వారా ఉచిత అవయవ మార్పిడి సర్జరీలు & ఉచిత రోగనిరోధక మందులు",
+    "target_beneficiary": "Patients with End-Stage Organ Failure (Kidney, Liver, Heart, Lungs, Cornea) in AP",
+    "target_beneficiary_te": "కిడ్నీ, కాలేయం, గుండె వైఫల్యంతో బాధపడుతూ అవయవ మార్పిడి అవసరమైన రోగులు",
+    "application_mode": "Registration through State Organ Tissue Transplant Organization (SOTTO / Jeevandan AP)",
+    "application_mode_te": "ఆంధ్రప్రదేశ్ 'జీవన్‌దాన్' పోర్టల్ మరియు నెట్‌వర్క్ ఆసుపత్రి ద్వారా రిజిస్ట్రేషన్",
+    "processing_time": "Waiting list priority based on clinical severity (MELD/Status score) and tissue matching",
+    "processing_time_te": "వ్యాధి తీవ్రత మరియు బ్లడ్ గ్రూప్ మ్యాచ్ ఆధారంగా అధికారిక జాబితా ప్రకారం",
+    "facility_type": "Registered Super-Specialty Organ Transplant Centres & Government Teaching Hospitals",
+    "facility_type_te": "గుర్తింపు పొందిన సూపర్ స్పెషాలిటీ ట్రాన్స్‌ప్లాంట్ ఆసుపత్రులు",
+    "validity_period": "Lifelong post-transplant follow-up and immunosuppressive therapy",
+    "validity_period_te": "ఆపరేషన్ తర్వాత జీవితాంతం ఉచిత మందులు మరియు వైద్య పర్యవేక్షణ",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1800-425-7778 (Jeevandan AP Hotline)"
+    ],
+    "key_treatments": [
+      "Deceased Donor (Cadaver) Kidney, Liver, Heart, Lung and Cornea Harvesting & Allocation",
+      "Living Related Kidney and Living Donor Liver Transplant Surgeries",
+      "Green Corridor Traffic Coordination for emergency interstate organ transport",
+      "Free Post-Transplant Immunosuppressive Medications (Tacrolimus, Mycophenolate)",
+      "Donor Family Facilitation and Honouring Ceremonies"
+    ],
+    "key_treatments_te": [
+      "బ్రెయిన్ డెడ్ రోగుల నుండి కిడ్నీ, లివర్, గుండె అవయవాల స్వీకరణ మరియు పారదర్శక కేటాయింపు",
+      "బంధువుల నుండి కిడ్నీ మరియు కాలేయ మార్పిడి శస్త్రచికిత్సలు",
+      "అవయవాలను వేగంగా చేరవేయడానికి గ్రీన్ కారిడార్ పోలీసు రవాణా సమన్వయం",
+      "ఆపరేషన్ తర్వాత జీవితాంతం వాడాల్సిన ఉచిత టాక్రోలిమస్ తదితర మందుల సరఫరా",
+      "అవయవ దాతల కుటుంబాలకు ప్రభుత్వం తరపున సత్కారం"
+    ],
+    "exclusions": "Commercial paid organ trade (strictly prohibited and illegal under the Transplantation of Human Organs Act).",
+    "exclusions_te": "అవయవాల క్రయవిక్రయాలు చట్టరీత్యా నేరం (అధికారిక జీవన్‌దాన్ ద్వారా మాత్రమే జరుగుతుంది)."
+  },
+  "National Iodine Deficiency Disorders Control Programme (NIDDCP)": {
+    "level": "National",
+    "category": "Nutritional Services",
+    "icon": "nutrition",
+    "telugu_name": "జాతీయ అయోడిన్ లోప నివారణ పథకం",
+    "audio_file": "static/audio/niddcp.mp3",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://main.mohfw.gov.in/",
+    "keywords": [
+      "NIDDCP",
+      "iodised salt",
+      "goitre",
+      "iodine deficiency",
+      "thyroid",
+      "salt testing"
+    ],
+    "original_complex_text": "The National Iodine Deficiency Disorders Control Programme (NIDDCP) aims to prevent goitre, thyroid disorders, and mental sub-normality caused by iodine deficiency. The programme mandates the universal iodization of common salt, runs local salt testing clinics, and provides thyroid tests at public laboratories.",
+    "simplified": {
+      "eligibility": "All citizens, specifically children showing thyroid swelling (goitre) or intellectual delay.",
+      "benefits": "Free screening for thyroid disorders and goitre at community health centers, salt testing kits distributed for salt verification.",
+      "documents": "Identity proof (Aadhaar).",
+      "steps": "Consult the medical officer at the nearest CHC if you notice swelling in the neck (goitre) to receive free thyroid tests.",
+      "description": "The National Iodine Deficiency Disorders Control Programme (NIDDCP) prevents goiter, cretinism, and cognitive impairments by ensuring 100% household access to adequately iodized salt and conducting community-level iodine deficiency surveillance."
+    },
+    "telugu": {
+      "eligibility": "థైరాయిడ్ సమస్యలు, గొంతు వాపు (గొయిటర్) లేదా అయోడిన్ లోపంతో బాధపడే పౌరులు అందరూ అర్హులు.",
+      "benefits": "గొంతు వాపు (గొయిటర్) మరియు థైరాయిడ్ సమస్యలకు ఉచిత వైద్య పరీక్షలు మరియు ఉప్పు తనిఖీ కిట్ల సరఫరా.",
+      "documents": "ఆధార్ కార్డు.",
+      "steps": "గొంతులో వాపు గమనించినట్లయితే వెంటనే దగ్గరలోని పీహెచ్‌సీ లేదా సీహెచ్‌సీ డాక్టర్‌ను సంప్రదించి పరీక్షలు చేయించుకోవాలి.",
+      "description": "జాతీయ అయోడిన్ లోప నివారణ పథకం (NIDDCP) గొంతువాపు (గాయిటర్), మానసిక ఎదుగుదల లోపాలు మరియు అయోడిన్ లోప సంబంధిత సమస్యలను నివారించడానికి అయోడైజ్డ్ ఉప్పు వాడకంపై అవగాహన మరియు ఉచిత అయోడిన్ స్థాయి పరీక్షలను నిర్వహిస్తుంది."
+    },
+    "last_updated": "2026-05-02",
+    "official_website": "https://main.mohfw.gov.in/",
+    "contact_office": "Primary Health Centre (PHC) / CHC",
+    "eligibility_confirmation": "PHC Medical Officer / Lab Technician",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు గొంతు వాపు లేదా థైరాయిడ్ సమస్యలు ఉన్నాయా?",
+        "question_en": "Do you have thyroid swelling or thyroid disorders?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Village": "ASHA Worker / Village Clinic"
+    },
+    "telugu_description": "జాతీయ అయోడిన్ లోప నివారణ పథకం (NIDDCP) గొంతువాపు (గాయిటర్), మానసిక ఎదుగుదల లోపాలు మరియు అయోడిన్ లోప సంబంధిత సమస్యలను నివారించడానికి అయోడైజ్డ్ ఉప్పు వాడకంపై అవగాహన మరియు ఉచిత అయోడిన్ స్థాయి పరీక్షలను నిర్వహిస్తుంది.",
+    "english_description": "The National Iodine Deficiency Disorders Control Programme (NIDDCP) prevents goiter, cretinism, and cognitive impairments by ensuring 100% household access to adequately iodized salt and conducting community-level iodine deficiency surveillance.",
+    "coverage_type": "Universal Salt Iodization, Goitre Surveillance & Community Iodine Testing",
+    "coverage_type_te": "అయోడిన్ లోప నివారణ, గాయిటర్ సర్వే & నాణ్యమైన ఉప్పు పర్యవేక్షణ",
+    "benefit_amount": "100% Subsidized Adequately Iodized Salt via PDS Ration & Free MBI Kit Testing",
+    "benefit_amount_te": "రేషన్ దుకాణాల ద్వారా నాణ్యమైన అయోడైజ్డ్ ఉప్పు సరఫరా & ఉచిత పరీక్షలు",
+    "target_beneficiary": "All Households, Pregnant Women, Infants and Growing Children across AP",
+    "target_beneficiary_te": "ఆంధ్రప్రదేశ్‌లోని అన్ని కుటుంబాలు, గర్భిణులు మరియు ఎదుగుతున్న పిల్లలు",
+    "application_mode": "Available via Public Distribution System (PDS / Rice Card) and Local Retail Outlets",
+    "application_mode_te": "రేషన్ షాపుల ద్వారా మరియు అంగన్‌వాడీ కేంద్రాల ద్వారా",
+    "processing_time": "Continuous daily dietary consumption",
+    "processing_time_te": "రోజువారీ ఆహారంలో నాణ్యమైన అయోడైజ్డ్ ఉప్పు వినియోగం",
+    "facility_type": "District Food Safety Labs, PDS Fair Price Shops, Anganwadis & PHCs",
+    "facility_type_te": "రేషన్ దుకాణాలు, అంగన్‌వాడీలు మరియు ఆహార భద్రతా ల్యాబ్‌లు",
+    "validity_period": "Lifelong preventive dietary nutrition",
+    "validity_period_te": "జీవితాంతం నిరంతర పోషకాహార రక్షణ",
+    "helpline_numbers": [
+      "104 (Health Information)",
+      "1902 (Public Grievance)"
+    ],
+    "key_treatments": [
+      "Mandatory Salt Iodization (≥15 ppm iodine at household level, ≥30 ppm at production level)",
+      "Spot Testing of Household Salt samples by ASHA workers using MBI Field Kits",
+      "Prevention of Endemic Goitre, Cretinism, Mental Retardation and Deaf-Mutism",
+      "Urinary Iodine Excretion (UIE) lab surveillance in vulnerable populations",
+      "Thyroid Health Education and Maternal Iodine Awareness"
+    ],
+    "key_treatments_te": [
+      "తగినంత అయోడిన్ కలిగిన ఉప్పు వినియోగాన్ని నిర్ధారించడం (15 పీపీఎం పైగా)",
+      "ఆశా కార్యకర్తల ద్వారా ఇళ్లలోని ఉప్పును ఉచితంగా పరీక్షించే కిట్లు",
+      "గొంతు వాపు (గాయిటర్), మానసిక ఎదుగుదల లోపాలు మరియు బుద్ధిమాంద్యం నివారణ",
+      "గర్భిణులలో థైరాయిడ్ మరియు పిండం మెదడు ఎదుగుదలకు అవగాహన",
+      "రేషన్ ద్వారా తక్కువ ధరకే నాణ్యమైన అయోడైజ్డ్ ఉప్పు పంపిణీ"
+    ],
+    "exclusions": "Non-iodized industrial crude salt for human culinary consumption.",
+    "exclusions_te": "అయోడిన్ లేని పారిశ్రామిక ఉప్పును ఆహారంలో వాడకూడదు."
+  },
+  "YSR Urban Health Clinics": {
+    "level": "Andhra Pradesh",
+    "category": "Primary Care Clinics",
+    "icon": "clinic",
+    "telugu_name": "వైఎస్ఆర్ అర్బన్ హెల్త్ క్లినిక్స్",
+    "audio_file": "static/audio/ysr_urban_clinics.mp3",
+    "source_name": "Andhra Pradesh Department of Health and Family Welfare",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "keywords": [
+      "YSR Urban Clinic",
+      "UHC",
+      "city doctor",
+      "urban health sub centre",
+      "AP urban health"
+    ],
+    "original_complex_text": "YSR Urban Health Clinics (UHCs) are established in urban areas, slums, and municipalities across Andhra Pradesh. Staffed by a Medical Officer, Staff Nurse, and pharmacists, they provide free primary care services, screening for hypertension, diabetes, maternal checkups, and dispense 120+ essential generic medicines.",
+    "simplified": {
+      "eligibility": "All residents of urban cities, municipal towns, and slum areas in Andhra Pradesh.",
+      "benefits": "Free MBBS doctor consultation, free chronic screening, antenatal care for urban poor, and free generic medicines.",
+      "documents": "Aadhaar card or health card (not mandatory).",
+      "steps": "Walk into your local YSR Urban Primary Health Centre (UPHC) during outpatient hours to receive treatment.",
+      "description": "YSR Urban Health Clinics provide comprehensive, accessible outpatient healthcare services to urban poor and slum populations across Andhra Pradesh towns and cities, featuring free consultations, diagnostic screenings, free medications, and telemedicine."
+    },
+    "telugu": {
+      "eligibility": "ఆంధ్రప్రదేశ్‌లోని మున్సిపల్ పట్టణాలు మరియు మురికివాడల్లో నివసించే పట్టణ ప్రజలందరికీ చికిత్స అందుబాటులో ఉంటుంది.",
+      "benefits": "ఉచిత ఎంబీబీఎస్ డాక్టర్ సంప్రదింపులు, బీపీ/షుగర్ ఉచిత పరీక్షలు, మరియు 120 రకాలకు పైగా ఉచిత నాణ్యమైన మందుల పంపిణీ.",
+      "documents": "ఆధార్ కార్డు లేదా ఆరోగ్యశ్రీ కార్డు (ఉంటేనే, తప్పనిసరి కాదు).",
+      "steps": "పట్టణ పరిధిలోని సమీప వైఎస్ఆర్ అర్బన్ క్లినిక్‌ను నేరుగా ఓపీ వేళల్లో సందర్శించి వైద్య సేవలు పొందవచ్చు.",
+      "description": "వైఎస్ఆర్ అర్బన్ హెల్త్ క్లినిక్స్ ఆంధ్రప్రదేశ్‌లోని మున్సిపాలిటీలు మరియు నగరాల్లోని పేదలు, మురికివాడల నివాసితుల సమీపంలో ఉచిత ఓపీడీ సేవలు, ప్రాథమిక పరీక్షలు, ఉచిత మందులు మరియు టెలిమెడిసిన్ ద్వారా ప్రత్యేక వైద్యుల సేవలను అందిస్తాయి."
+    },
+    "last_updated": "2026-06-03",
+    "official_website": "https://hmfw.ap.gov.in/",
+    "contact_office": "Urban Health Clinic Medical Officer",
+    "eligibility_confirmation": "UHC Staff Nurse / Pharmacist",
+    "eligibility_questions": [
+      {
+        "question_te": "మీరు పట్టణ మున్సిపాలిటీ లేదా మురికివాడ నివాసియా?",
+        "question_en": "Are you a resident of an urban municipality or slum?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": true
+      }
+    ],
+    "local_help_locations": {
+      "Town": "Nearest YSR Urban Health Clinic / UPHC"
+    },
+    "telugu_description": "వైఎస్ఆర్ అర్బన్ హెల్త్ క్లినిక్స్ ఆంధ్రప్రదేశ్‌లోని మున్సిపాలిటీలు మరియు నగరాల్లోని పేదలు, మురికివాడల నివాసితుల సమీపంలో ఉచిత ఓపీడీ సేవలు, ప్రాథమిక పరీక్షలు, ఉచిత మందులు మరియు టెలిమెడిసిన్ ద్వారా ప్రత్యేక వైద్యుల సేవలను అందిస్తాయి.",
+    "english_description": "YSR Urban Health Clinics provide comprehensive, accessible outpatient healthcare services to urban poor and slum populations across Andhra Pradesh towns and cities, featuring free consultations, diagnostic screenings, free medications, and telemedicine.",
+    "coverage_type": "Comprehensive Urban Primary Healthcare, Free Diagnostics & Specialist E-Clinics",
+    "coverage_type_te": "పట్టణ పేదలకు వార్డుల్లోనే ఉచిత వైద్యం, పరీక్షలు & మందులు",
+    "benefit_amount": "100% Free Outpatient Care, 63 Essential Lab Tests, 172 Medicines & Tele-Consultations",
+    "benefit_amount_te": "100% ఉచిత ఓపీడీ వైద్యం, 63 రకాల ల్యాబ్ టెస్టులు, 172 ఉచిత మందులు",
+    "target_beneficiary": "Urban slum dwellers, daily-wage workers and all urban ward residents across AP municipalities",
+    "target_beneficiary_te": "పట్టణ పేదలు, మురికివాడల నివాసితులు మరియు పట్టణ వార్డుల ప్రజలందరూ",
+    "application_mode": "Walk-in at Ward Urban Primary Health Centre (UPHC / Urban Clinic)",
+    "application_mode_te": "సమీప వార్డు అర్బన్ హెల్త్ క్లినిక్ వద్ద నేరుగా సంప్రదించడం",
+    "processing_time": "Immediate outpatient consultation; rapid lab tests within 30 minutes",
+    "processing_time_te": "వెంటనే డాక్టర్ పరీక్ష మరియు అరగంటలో ల్యాబ్ రిపోర్టులు",
+    "facility_type": "Upgraded Modern Ward Urban Health Clinics staffed with MBBS Doctors, Staff Nurses & Pharmacists",
+    "facility_type_te": "ఎంబీబీఎస్ డాక్టర్, స్టాఫ్ నర్స్ మరియు ఫార్మసిస్ట్ కలిగిన అర్బన్ క్లినిక్‌లు",
+    "validity_period": "Continuous daily outpatient services (9:00 AM to 4:00 PM)",
+    "validity_period_te": "ప్రతిరోజూ ఉదయం 9 నుండి సాయంత్రం 4 గంటల వరకు నిరంతరం",
+    "helpline_numbers": [
+      "104 (Health Helpline)",
+      "1902 (Citizen Helpline)"
+    ],
+    "key_treatments": [
+      "Daily Doctor OPD Consultation for acute illnesses and chronic diseases",
+      "Free 63 Point-of-Care and Centralized Diagnostic Lab Investigations",
+      "Free 172 Essential Generic Medicines Dispensing",
+      "Specialist Tele-Consultations with Teaching Hospital Professors via eSanjeevani",
+      "Antenatal, Immunization and Family Welfare Services in Urban Slums"
+    ],
+    "key_treatments_te": [
+      "ఎంబీబీఎస్ డాక్టర్ ద్వారా రోజువారీ ఉచిత ఓపీడీ వైద్య పరీక్షలు",
+      "షుగర్, థైరాయిడ్, లిపిడ్ ప్రొఫైల్ సహా 63 రకాల ఉచిత ల్యాబ్ పరీక్షలు",
+      "172 రకాల నాణ్యమైన ఉచిత మందుల పంపిణీ",
+      "మెడికల్ కాలేజీ ప్రొఫెసర్లతో ఉచిత వీడియో స్పెషలిస్ట్ టెలి-మెడిసిన్",
+      "పట్టణ గర్భిణులకు ఉచిత పరీక్షలు మరియు పిల్లలకు టీకాలు"
+    ],
+    "exclusions": "Major overnight hospital admissions (referred seamlessly to Govt General Hospital under Aarogyasri).",
+    "exclusions_te": "రాత్రి బస చేసే ఇన్ పేషెంట్ అడ్మిషన్లు (పెద్ద ప్రభుత్వ ఆసుపత్రికి రిఫర్ చేస్తారు)."
+  },
+  "AP Blood Bank Services": {
+    "level": "Andhra Pradesh",
+    "category": "Blood Bank Services",
+    "icon": "clinic",
+    "telugu_name": "ఆంధ్రప్రదేశ్ బ్లడ్ బ్యాంక్ సేవలు",
+    "audio_file": "static/audio/ap_blood_bank.mp3",
+    "source_name": "Andhra Pradesh State AIDS Control Society (APSACS)",
+    "source_url": "https://apsacs.in/",
+    "keywords": [
+      "blood bank",
+      "blood donor",
+      "ap blood registry",
+      "platelets",
+      "plasma",
+      "AP blood bank"
+    ],
+    "original_complex_text": "The AP Blood Bank Services coordinate blood donor registration and emergency blood units supply across Andhra Pradesh. Under the Red Cross and government hospitals network, it facilitates blood units availability, testing, plasma extraction, and online blood stock registry.",
+    "simplified": {
+      "eligibility": "Any citizen wishing to donate blood (aged 18-60), or emergency patients needing blood units in registered AP hospitals.",
+      "benefits": "Free matching and cross-testing of blood, access to government blood bank stock registry, and certificate for donors.",
+      "documents": "Donor medical screening card, recipient doctor blood requirement slip.",
+      "steps": "Check stock online or visit the nearest government hospital blood bank counter to request blood or pledge donation.",
+      "description": "AP Blood Bank Services coordinate voluntary blood donation and testing to ensure 24/7 availability of safe, screened whole blood and blood components for pregnant women, trauma victims, and thalassemia patients across government blood banks."
+    },
+    "telugu": {
+      "eligibility": "రక్తం దానం చేయాలనుకునే ఆరోగ్యవంతులు (18-60 సంవత్సరాల వయస్సు) మరియు రక్తం అవసరమైన అత్యవసర రోగులు అర్హులు.",
+      "benefits": "ఉచిత బ్లడ్ గ్రూపింగ్, ప్రభుత్వ బ్లడ్ బ్యాంక్‌ల లైవ్ స్టాక్ ఆన్‌లైన్‌లో తనిఖీ చేసుకునే సదుపాయం.",
+      "documents": "బ్లడ్ రిక్వెస్ట్ స్లిప్ (డాక్టర్ సంతకం చేసినది), దాత ఆరోగ్య కార్డ్.",
+      "steps": "సమీప ప్రభుత్వ ఆసుపత్రిలోని బ్లడ్ బ్యాంక్ విభాగానికి వెళ్లి బ్లడ్ స్టాక్ సరిచూసుకుని రక్తాన్ని ఉచితంగా/మార్పిడి ద్వారా పొందవచ్చు.",
+      "description": "ఆంధ్రప్రదేశ్ బ్లడ్ బ్యాంక్ సర్వీసెస్ రాష్ట్రంలోని ప్రభుత్వ ఆసుపత్రులు మరియు రెడ్‌క్రాస్ ద్వారా అవసరమైన రోగులకు (ప్రసవాలు, ప్రమాదాలు, తలసేమియా) స్వచ్ఛంద రక్తదానం ద్వారా సురక్షితమైన రక్తం మరియు రక్త భాగాలను నిరంతరం అందుబాటులో ఉంచుతుంది."
+    },
+    "last_updated": "2026-04-20",
+    "official_website": "https://apsacs.in/",
+    "contact_office": "Government Blood Bank In-Charge",
+    "eligibility_confirmation": "Blood Bank Medical Officer",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ వద్ద వైద్యుడు రాసిన బ్లడ్ రిక్వెస్ట్ స్లిప్ లేదా మీరు రక్తదానం చేయాలనుకుంటున్నారా?",
+        "question_en": "Do you have a doctor blood request slip or wish to donate blood?",
+        "weight": "high"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Doctor Blood Request Slip",
+        "name_te": "వైద్యుడి బ్లడ్ రిక్వెస్ట్ స్లిప్",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "District": "District Area Government Hospital Blood Bank"
+    },
+    "telugu_description": "ఆంధ్రప్రదేశ్ బ్లడ్ బ్యాంక్ సర్వీసెస్ రాష్ట్రంలోని ప్రభుత్వ ఆసుపత్రులు మరియు రెడ్‌క్రాస్ ద్వారా అవసరమైన రోగులకు (ప్రసవాలు, ప్రమాదాలు, తలసేమియా) స్వచ్ఛంద రక్తదానం ద్వారా సురక్షితమైన రక్తం మరియు రక్త భాగాలను నిరంతరం అందుబాటులో ఉంచుతుంది.",
+    "english_description": "AP Blood Bank Services coordinate voluntary blood donation and testing to ensure 24/7 availability of safe, screened whole blood and blood components for pregnant women, trauma victims, and thalassemia patients across government blood banks.",
+    "coverage_type": "Safe Blood Transfusion Services, Component Separation & 24x7 Emergency Blood Availability",
+    "coverage_type_te": "సురక్షిత రక్తం, ప్లేట్‌లెట్స్, ప్లాస్మా ఉచిత అందజేత సేవలు",
+    "benefit_amount": "100% Free Blood & Blood Components for Aarogyasri / Govt Hospital Patients, Thalassemia & Trauma Victims",
+    "benefit_amount_te": "ప్రభుత్వ ఆసుపత్రులు, ఆరోగ్యశ్రీ రోగులు, తలసేమియా బాధితులకు 100% ఉచిత రక్తం",
+    "target_beneficiary": "Emergency trauma patients, surgical cases, pregnant mothers, Thalassemia/Haemophilia patients across AP",
+    "target_beneficiary_te": "ప్రమాద బాధితులు, గర్భిణులు, శస్త్రచికిత్స రోగులు మరియు తలసేమియా బాధితులు",
+    "application_mode": "Doctor's Blood Requisition Form at District Hospital / Blood Centre or via e-RaktKosh Portal",
+    "application_mode_te": "డాక్టర్ ప్రిస్క్రిప్షన్‌తో బ్లడ్ బ్యాంకులో లేదా e-RaktKosh పోర్టల్ ద్వారా",
+    "processing_time": "Emergency cross-matching within 30-45 minutes; uncrossmatched O-negative immediate",
+    "processing_time_te": "క్రాస్ మ్యాచింగ్ అనంతరం 30-45 నిమిషాల్లో సురక్షిత రక్తం అందజేత",
+    "facility_type": "Government Model Blood Banks, Component Separation Units & Red Cross Blood Centres",
+    "facility_type_te": "జిల్లా ప్రభుత్వ బ్లడ్ బ్యాంకులు మరియు బ్లడ్ కాంపోనెంట్ యూనిట్లు",
+    "validity_period": "Per emergency blood requirement episode",
+    "validity_period_te": "అత్యవసర చికిత్స అవసరమైన ప్రతిసారీ వర్తిస్తుంది",
+    "helpline_numbers": [
+      "104 (Blood Availability Search Helpline)",
+      "108 (Emergency)",
+      "1902 (Grievance)"
+    ],
+    "key_treatments": [
+      "100% Nucleic Acid Testing (NAT) / ELISA Tested Safe Blood against HIV, Hep B, Hep C, Malaria & Syphilis",
+      "Blood Component Separation: Packed Red Blood Cells (PRBC), Platelet Concentrates, Fresh Frozen Plasma (FFP), Cryoprecipitate",
+      "Single Donor Platelet (SDP) Apheresis for severe Dengue and Oncology emergencies",
+      "Free Voluntary Blood Donation Mobile Camps and Donor Felicitation",
+      "Real-Time Online Blood Stock Tracking on e-RaktKosh Portal"
+    ],
+    "key_treatments_te": [
+      "హెచ్ఐవి, హెపటైటిస్ పరీక్షలు పూర్తి చేసిన 100% సురక్షిత రక్తం",
+      "రక్త కణాలు వేరుచేసే పద్ధతి: ఎర్ర రక్తకణాలు (PRBC), ప్లేట్‌లెట్స్, ప్లాస్మా (FFP)",
+      "డెంగ్యూ మరియు క్యాన్సర్ రోగుల కోసం సింగిల్ డోనర్ ప్లేట్‌లెట్ (SDP) సేవలు",
+      "స్వచ్ఛంద రక్తదాన శిబిరాలు మరియు రక్తదాతలకు గుర్తింపు కార్డులు",
+      "e-RaktKosh పోర్టల్‌లో జిల్లావ్యాప్తంగా అందుబాటులో ఉన్న రక్తం నిల్వల వివరాలు"
+    ],
+    "exclusions": "Commercial paid blood selling (strictly banned and punishable by law; only voluntary donation allowed).",
+    "exclusions_te": "రక్తం అమ్మడం చట్టరీత్యా నేరం (స్వచ్ఛంద దానం ద్వారా మాత్రమే లభిస్తుంది)."
+  },
+  "National TB Elimination Programme (NTEP)": {
+    "level": "National",
+    "category": "TB Elimination Services",
+    "icon": "shield",
+    "telugu_name": "జాతీయ క్షయవ్యాధి నివారణ పథకం (NTEP)",
+    "audio_file": "static/audio/ntep.mp3",
+    "source_name": "Central TB Division, Ministry of Health",
+    "source_url": "https://tbcindia.gov.in/",
+    "keywords": [
+      "NTEP",
+      "tuberculosis",
+      "TB test",
+      "sputum test",
+      "DOTS",
+      "free TB treatment",
+      "chest clinic"
+    ],
+    "original_complex_text": "The National Tuberculosis Elimination Programme (NTEP), formerly RNTCP, aims to eliminate Tuberculosis in India. It coordinates free sputum microscopy and CBNAAT testing, free DOTS medication courses, and provides Rs. 500/month cash nutrition support under Ni-kshay Poshan Yojana for all registered patients.",
+    "simplified": {
+      "eligibility": "Any citizen showing symptoms of tuberculosis (continuous cough for over 2 weeks, low fever, weight loss) or diagnosed TB patients.",
+      "benefits": "Free sputum microscopy testing, free high-quality DOTS medicines course, free chest X-rays, and Rs. 500 monthly nutrition cash support.",
+      "documents": "Identity proof (Aadhaar), bank account copy (for cash transfer).",
+      "steps": "Submit your sputum sample at any government PHC or Designated Microscopy Centre (DMC) for free testing. If diagnosed, begin free DOTS medicine immediately.",
+      "description": "The National TB Elimination Programme (NTEP) provides free advanced molecular diagnostics (CB-NAAT/Truenat), digital chest X-rays, free fixed-dose combination anti-TB medication courses under DOTS, and household contact screening."
+    },
+    "telugu": {
+      "eligibility": "2 వారాల కంటే ఎక్కువ కాలం దగ్గు, జ్వరం ఉన్న వారు లేదా క్షయవ్యాధి (టీబీ) ఉన్నట్లు నిర్ధారించబడిన రోగులు అర్హులు.",
+      "benefits": "ఉచిత కఫం పరీక్ష, డిజిటల్ టీబీ పరీక్షలు (CBNAAT), ఉచిత డాట్స్ (DOTS) మందులు మరియు నెలవారీ రూ. 500 పౌష్టికాహార సహాయం.",
+      "documents": "ఆధార్ కార్డు, బ్యాంక్ అకౌంట్ పాస్‌బుక్ కాపీ.",
+      "steps": "సమీపంలోని పీహెచ్‌సీకి వెళ్లి ఉచిత కఫం పరీక్ష చేయించుకోవాలి. పాజిటివ్ వస్తే వెంటనే ఉచిత డాట్స్ (DOTS) మందులు ప్రారంభించవచ్చు.",
+      "description": "జాతీయ క్షయ నిర్మూలన పథకం (NTEP) ద్వారా ఉచిత సీబీ-నాట్ (CB-NAAT) కఫ పరీక్షలు, ఛాతీ ఎక్స్-రే, డ్రగ్ రెసిస్టెంట్ టీబీ పరీక్షలు మరియు సంపూర్ణ ఉచిత టీబీ మందుల కోర్సు (DOTS) అందించబడుతుంది."
+    },
+    "last_updated": "2026-05-15",
+    "official_website": "https://tbcindia.gov.in/",
+    "contact_office": "TB Clinic OPD / Designated Microscopy Centre (DMC)",
+    "eligibility_confirmation": "Senior Treatment Supervisor (STS) / PHC Doctor",
+    "eligibility_questions": [
+      {
+        "question_te": "మీకు రెండు వారాలకు మించి కఫంతో కూడిన దగ్గు మరియు జ్వరం ఉన్నాయా?",
+        "question_en": "Do you have cough with sputum and fever for more than two weeks?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "Aadhaar Card",
+        "name_te": "ఆధార్ కార్డు",
+        "optional": false
+      },
+      {
+        "name": "Bank Passbook",
+        "name_te": "బ్యాంకు పాస్‌బుక్ కాపీ",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Village": "ASHA Worker / Village Secretariat ANM",
+      "District": "District TB Centre (DTC)"
+    },
+    "telugu_description": "జాతీయ క్షయ నిర్మూలన పథకం (NTEP) ద్వారా ఉచిత సీబీ-నాట్ (CB-NAAT) కఫ పరీక్షలు, ఛాతీ ఎక్స్-రే, డ్రగ్ రెసిస్టెంట్ టీబీ పరీక్షలు మరియు సంపూర్ణ ఉచిత టీబీ మందుల కోర్సు (DOTS) అందించబడుతుంది.",
+    "english_description": "The National TB Elimination Programme (NTEP) provides free advanced molecular diagnostics (CB-NAAT/Truenat), digital chest X-rays, free fixed-dose combination anti-TB medication courses under DOTS, and household contact screening.",
+    "coverage_type": "Free Universal Tuberculosis Diagnosis, TrueNat Molecular Testing & Daily FDC Treatment",
+    "coverage_type_te": "క్షయ (టీబీ) ఉచిత నిర్ధారణ, ట్రూనాట్ పరీక్షలు & పూర్తి ఉచిత మందులు",
+    "benefit_amount": "100% Free CBNAAT/TrueNat Testing, Free Anti-TB Medicines, Bedaquiline for MDR-TB & ₹500-1000/mo DBT",
+    "benefit_amount_te": "100% ఉచిత అధునాతన ల్యాబ్ పరీక్షలు, ఉచిత టీబీ మందులు & నెలకు ₹500-1000 పోషకాహార సాయం",
+    "target_beneficiary": "All individuals with cough > 2 weeks, fever, night sweats, unexplained weight loss or diagnosed TB",
+    "target_beneficiary_te": "2 వారాలకు పైగా దగ్గు, సాయంత్రం జ్వరం, బరువు తగ్గడం లక్షణాలు ఉన్న పౌరులందరూ",
+    "application_mode": "Walk-in at Designated Microscopy Centre (DMC), PHC, CHC or TB Unit (TU) in Govt Hospital",
+    "application_mode_te": "సమీప ప్రభుత్వ ప్రాథమిక ఆరోగ్య కేంద్రం లేదా జిల్లా టీబీ సెంటర్‌లో",
+    "processing_time": "Sputum microscopy same day; TrueNat/CBNAAT molecular results within 24 hours",
+    "processing_time_te": "అదే రోజున కఫం పరీక్ష; 24 గంటల్లో ట్రూనాట్ మాలిక్యులర్ రిపోర్ట్",
+    "facility_type": "All Government PHCs, CHCs, District TB Sanatoriums, DMCs & Intermediate Reference Labs",
+    "facility_type_te": "అన్ని ప్రభుత్వ ప్రాథమిక ఆరోగ్య కేంద్రాలు & జిల్లా క్షయ నివారణ విభాగాలు",
+    "validity_period": "Full curative treatment duration (6 months for Drug-Sensitive TB, 9-24 months for Drug-Resistant TB)",
+    "validity_period_te": "వ్యాధి పూర్తిగా నయమయ్యే వరకు (6 నెలల నుండి 24 నెలల వరకు)",
+    "helpline_numbers": [
+      "1800-11-6666 (National TB Toll-Free Helpline)",
+      "104 (Health Helpline)"
+    ],
+    "key_treatments": [
+      "Point-of-Care TrueNat and CBNAAT (GeneXpert) Molecular Drug Resistance Testing",
+      "100% Free Daily Fixed-Dose Combination (FDC) Anti-TB Oral Medicines",
+      "Advanced All-Oral Regimens containing Bedaquiline and Delamanid for MDR/XDR-TB",
+      "Monthly ₹500 to ₹1,000 Ni-kshay Poshan Direct Benefit Transfer (DBT) into Bank Account",
+      "Free Preventive Therapy (TPT) for household contacts and children under 5"
+    ],
+    "key_treatments_te": [
+      "కఫం పరీక్ష మరియు అధునాతన ట్రూనాట్ (TrueNat) జన్యు పరీక్షలు",
+      "100% ఉచిత పూర్తి కోర్సు రోజువారీ టీబీ మందుల కిట్లు",
+      "తీవ్రమైన మందులకు లొంగని టీబీ (MDR-TB) రోగులకు బేడాక్విలిన్ ఉచిత చికిత్స",
+      "పోషకాహారం కొరకు ప్రతి నెలా బ్యాంక్ ఖాతాలో ₹500 నుండి ₹1,000 నగదు జమ",
+      "ఇంట్లోని చిన్న పిల్లలకు టీబీ సోకకుండా ఉచిత ప్రివెంటివ్ మందులు"
+    ],
+    "exclusions": "Irregular non-supervised medication intake (monitored via 99DOTS / digital pill tracking).",
+    "exclusions_te": "మందులు మధ్యలో ఆపకూడదు (క్రమం తప్పకుండా వాడితేనే పూర్తిగా నయమవుతుంది)."
+  },
+  "Integrated Child Development Services (ICDS)": {
+    "level": "National",
+    "category": "Nutritional Services",
+    "icon": "mother-child",
+    "telugu_name": "సమన్వయ శిశు అభివృద్ధి సేవల పథకం (ICDS)",
+    "audio_file": "static/audio/icds.mp3",
+    "source_name": "Ministry of Women and Child Development",
+    "source_url": "https://wcd.nic.in/",
+    "keywords": [
+      "ICDS",
+      "Anganwadi",
+      "child care",
+      "free immunization",
+      "preschool education",
+      "nutrition",
+      "pregnant women"
+    ],
+    "original_complex_text": "Integrated Child Development Services (ICDS) is a government welfare programme which provides food, preschool education, primary healthcare, immunization, health checkups, and referral services to children under 6 years of age and their mothers.",
+    "simplified": {
+      "eligibility": "Children in the age group of 0-6 years, pregnant women, and lactating mothers.",
+      "benefits": "Free supplementary nutrition, immunization tracking, health checkups, non-formal preschool education, and health education for mothers.",
+      "documents": "Aadhaar card of mother and child, MCP card.",
+      "steps": "Visit your local Anganwadi Centre to register your child or yourself (if pregnant) in the Anganwadi registry.",
+      "description": "Integrated Child Development Services (ICDS) provides early childhood care through Anganwadi centres, offering supplementary hot cooked nutrition, pre-school non-formal education, routine immunization monitoring, and maternal health support."
+    },
+    "telugu": {
+      "eligibility": "0 నుండి 6 సంవత్సరాల వయస్సు ఉన్న చిన్నారులు, గర్భిణీలు మరియు పాలిచ్చే తల్లులు అర్హులు.",
+      "benefits": "అంగన్‌వాడీల ద్వారా ఉచిత పోషకాహార పదార్ధాలు, టీకాలు వేయడం, ఉచిత వైద్య పరీక్షలు మరియు చిన్నపిల్లలకు ఉచిత ఎల్‌కేజీ బోధన.",
+      "documents": "తల్లి మరియు శిశువు ఆధార్ కార్డు, తల్లి-పిల్లల రక్షణ కార్డు.",
+      "steps": "గ్రామంలోని స్థానిక అంగన్‌వాడీ కేంద్రాన్ని సందర్శించి మీ పేరు మరియు శిశువు పేరు నమోదు చేసుకోవాలి.",
+      "description": "సమగ్ర శిశు అభివృద్ధి సేవల పథకం (ICDS) అంగన్‌వాడీ కేంద్రాల ద్వారా 6 సంవత్సరాల లోపు పిల్లలకు, గర్భిణీలకు మరియు బాలింతలకు పౌష్టికాహార భోజనం, ప్రీ-స్కూల్ విద్య, రోగనిరోధక టీకాలు మరియు క్రమం తప్పని ఆరోగ్య పరీక్షలను అందిస్తుంది."
+    },
+    "last_updated": "2026-06-05",
+    "official_website": "https://wcd.nic.in/",
+    "contact_office": "Anganwadi Worker / ICDS Project Supervisor",
+    "eligibility_confirmation": "Anganwadi Teacher / Helper",
+    "eligibility_questions": [
+      {
+        "question_te": "మీ ఇంట్లో 6 సంవత్సరాలలోపు వయస్సు గల పిల్లలు ఉన్నారా?",
+        "question_en": "Do you have children under 6 years in your home?",
+        "weight": "critical"
+      }
+    ],
+    "required_documents": [
+      {
+        "name": "MCP Card",
+        "name_te": "తల్లి-పిల్లల సంరక్షణ కార్డు",
+        "optional": false
+      }
+    ],
+    "local_help_locations": {
+      "Village": "Local Anganwadi Centre"
+    },
+    "telugu_description": "సమగ్ర శిశు అభివృద్ధి సేవల పథకం (ICDS) అంగన్‌వాడీ కేంద్రాల ద్వారా 6 సంవత్సరాల లోపు పిల్లలకు, గర్భిణీలకు మరియు బాలింతలకు పౌష్టికాహార భోజనం, ప్రీ-స్కూల్ విద్య, రోగనిరోధక టీకాలు మరియు క్రమం తప్పని ఆరోగ్య పరీక్షలను అందిస్తుంది.",
+    "english_description": "Integrated Child Development Services (ICDS) provides early childhood care through Anganwadi centres, offering supplementary hot cooked nutrition, pre-school non-formal education, routine immunization monitoring, and maternal health support.",
+    "coverage_type": "Holistic Early Childhood Development, Supplementary Nutrition, Pre-School Education & Health Checkups",
+    "coverage_type_te": "సమగ్ర శిశు అభివృద్ధి, ఉచిత పౌష్టికాహారం & ముందస్తు విద్య",
+    "benefit_amount": "100% Free Nutritional Meals, Eggs, Milk, Growth Monitoring, Pre-School Kits & Health Checkups",
+    "benefit_amount_te": "100% ఉచిత పౌష్టికాహారం, కోడిగుడ్లు, పాలు, ప్రీ-స్కూల్ విద్య మరియు ఆరోగ్య పరీక్షలు",
+    "target_beneficiary": "Children aged 6 months to 6 years, Pregnant Women, Lactating Mothers and Adolescent Girls in AP",
+    "target_beneficiary_te": "6 నెలల నుండి 6 సంవత్సరాల పిల్లలు, గర్భిణులు, బాలింతలు మరియు కిశోర బాలికలు",
+    "application_mode": "Enrollment at Village / Ward Anganwadi Centre through Anganwadi Worker (AWW)",
+    "application_mode_te": "గ్రామ / వార్డు అంగన్‌వాడీ కార్యకర్త వద్ద నేరుగా పేరు నమోదు చేసుకోవడం ద్వారా",
+    "processing_time": "Immediate enrollment for daily preschool attendance and monthly food rations",
+    "processing_time_te": "నమోదైన వెంటనే ప్రతిరోజూ అంగన్‌వాడీ సేవలు ప్రారంభం",
+    "facility_type": "55,000+ Anganwadi Centres (AWCs) and Mini-Anganwadis across Andhra Pradesh",
+    "facility_type_te": "ఆంధ్రప్రదేశ్ వ్యాప్తంగా ఉన్న 55,000+ అంగన్‌వాడీ కేంద్రాలు",
+    "validity_period": "From pregnancy through lactation and child's 6th year of age",
+    "validity_period_te": "గర్భధారణ సమయం నుండి శిశువుకు 6 సంవత్సరాలు నిండే వరకు",
+    "helpline_numbers": [
+      "1098 (Childline Helpline Toll-Free)",
+      "14408 (Poshan Helpline)",
+      "104 (Health Advice)"
+    ],
+    "key_treatments": [
+      "Supplementary Nutrition (Hot Cooked Meals, Eggs 4-5 times weekly, Fortified Milk)",
+      "Take-Home Ration (Balaamrutham packets for children 6m to 3y)",
+      "Non-Formal Pre-School Education for children aged 3 to 6 years",
+      "Regular Immunization and Health Checkups in coordination with ANM and ASHA",
+      "Referral Services for severely malnourished or sick children to Nutrition Rehabilitation Centres (NRC)"
+    ],
+    "key_treatments_te": [
+      "రోజువారీ వేడి పౌష్టిక ఆహారం, వారానికి 4-5 కోడిగుడ్లు, పాలు",
+      "చిన్నపిల్లలకు బలవర్ధకమైన 'బాలామృతం' ఉచిత ప్యాకెట్ల పంపిణీ",
+      "3 నుండి 6 సంవత్సరాల పిల్లలకు ఆటపాటలతో కూడిన ప్రాథమిక ముందస్తు విద్య",
+      "ఏఎన్ఎం మరియు ఆశా కార్యకర్తలతో కలిసి క్రమబద్ధమైన టీకాలు & పరీక్షలు",
+      "తీవ్ర పోషకాహార లోపం ఉన్న పిల్లలను NRC పోషకాహార కేంద్రాలకు పంపే సదుపాయం"
+    ],
+    "exclusions": "Non-enrolled individuals outside the designated project catchment area.",
+    "exclusions_te": "అంగన్‌వాడీ పరిధిలోని స్థానిక ప్రజలందరికీ ఈ సేవలు వర్తిస్తాయి."
+  }
+}

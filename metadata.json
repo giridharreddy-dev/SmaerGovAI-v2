@@ -1,0 +1,11 @@
+{
+  "name": "SmartGov Health",
+  "description": "Andhra Pradesh government health schemes lookup, AI assistant, and document simplification platform.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

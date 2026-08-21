@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Admin Dashboard - SmartGovAI</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .admin-header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--green);
+        }
+        .admin-header-actions {
+            display: flex;
+            gap: 12px;
+        }
+        .admin-header-actions a {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        
+        .dashboard-section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        .dashboard-section h2 {
+            margin-top: 0;
+            color: var(--blue);
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .metric-card {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--green);
+            margin: 10px 0;
+        }
+        .metric-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+        .metric-subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .scheme-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .scheme-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .scheme-item:last-child {
+            border-bottom: none;
+        }
+        .scheme-item-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .scheme-item-stats {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .stat-pill {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--ink);
+        }
+        .stat-pill.rating {
+            background: #fff8e1;
+            color: #f57f17;
+            border-color: #ffe082;
+        }
+        
+        body.dark-mode .stat-pill.rating {
+            background: #422a00;
+            color: #ffca28;
+            border-color: #ffca28;
+        }
+        body.high-contrast .stat-pill.rating {
+            background: #000;
+            color: #ff0;
+            border-color: #ff0;
+        }
+
+        @media (max-width: 600px) {
+            .scheme-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .admin-header {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+    <div class="app-shell">
+        <header class="admin-header">
+            <h1>ADMIN DASHBOARD</h1>
+            <div class="admin-header-actions">
+                <a href="/" class="btn secondary">← Back</a>
+                <a href="/admin/logout" class="btn primary-btn">లాగ్అవుట్ (Logout)</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard-section">
+                <h2>Impact & Community Usage</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-title">📊 మొత్తం సందర్శనలు</div>
+                        <div class="metric-value"><%= metrics.total_requests %></div>
+                        <div class="metric-subtitle">Total Views</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">💬 మొత్తం అభిప్రాయాలు</div>
+                        <div class="metric-value"><%= metrics.total_feedback %></div>
+                        <div class="metric-subtitle">Total Feedback</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">⭐ సగటు రేటింగ్</div>
+                        <div class="metric-value"><%= Number(metrics.avg_rating || 0).toFixed(1) %> <span style="font-size:1.2rem; color:var(--muted)">/ 5</span></div>
+                        <div class="metric-subtitle">Avg Rating</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>అత్యధికంగా చూసిన పథకాలు (Popular Schemes)</h2>
+                <ul class="scheme-list">
+                    <% if (stats && stats.length > 0) { %>
+                        <% stats.forEach(function(item) { %>
+                        <li class="scheme-item">
+                            <div class="scheme-item-name"><%= item.name || item[0] %></div>
+                            <div class="scheme-item-stats">
+                                <span class="stat-pill">👁️ <%= item.count || item[1] %> సందర్శనలు</span>
+                                <% if (item.rating || item[2]) { %>
+                                <span class="stat-pill rating">⭐ <%= item.rating || item[2] %></span>
+                                <% } %>
+                            </div>
+                        </li>
+                        <% }); %>
+                    <% } else { %>
+                        <li class="scheme-item">
+                            <div class="scheme-item-name" style="color:var(--muted)">ఇప్పటివరకు డేటా లేదు (No data yet)</div>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
