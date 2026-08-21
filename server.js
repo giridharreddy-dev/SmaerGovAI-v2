@@ -8,9 +8,70 @@ import fs from 'fs';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
+import { createClient } from 'redis';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, collection, doc, setDoc, addDoc, getDoc, getDocs, getCountFromServer, query, orderBy, limit as fsLimit } from 'firebase/firestore';
+
+let firebaseConfig = {};
+try {
+  const configContent = fs.readFileSync(path.resolve('./firebase-applet-config.json'), 'utf8');
+  firebaseConfig = JSON.parse(configContent);
+} catch (e) {
+  console.log("Firebase config not found.");
+}
+
+let dbAdmin = null;
+if (firebaseConfig.projectId && getApps().length === 0) {
+  const app = initializeApp(firebaseConfig);
+  dbAdmin = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
+} else if (getApps().length > 0) {
+  dbAdmin = getFirestore(getApp(), firebaseConfig.firestoreDatabaseId || '(default)');
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Redis Setup
+let redisUrl = 'redis://localhost:6379';
+if (process.env.REDIS_URL && process.env.REDIS_URL.startsWith('redis')) {
+  redisUrl = process.env.REDIS_URL.trim();
+}
+
+const redisClient = createClient({
+  url: redisUrl
+});
+
+let isRedisConnected = false;
+redisClient.on('error', (err) => {
+  // Silent error for fallback
+});
+redisClient.on('connect', () => {
+  isRedisConnected = true;
+  console.log('Connected to Redis');
+});
+redisClient.connect().catch(() => {
+  console.log('Redis connection failed, bypassing cache (in-memory fallback active).');
+});
+
+async function getCache(key) {
+  if (isRedisConnected) {
+    try {
+      const val = await redisClient.get(key);
+      if (val) return JSON.parse(val);
+    } catch (e) {
+      return null;
+    }
+  }
+  return null;
+}
+
+async function setCache(key, value, exp = 3600) {
+  if (isRedisConnected) {
+    try {
+      await redisClient.set(key, JSON.stringify(value), { EX: exp });
+    } catch (e) {}
+  }
+}
 
 const app = express();
 const PORT = 3000;
@@ -34,12 +95,18 @@ app.use(
 );
 
 // Static assets
-app.use('/static', express.static(path.join(__dirname, 'static')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.get('/service-worker.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'service-worker.js'));
+});
+app.get('/manifest.webmanifest', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'manifest.webmanifest'));
+});
 
-// Upload configuration for PDF and Scanned Document simplification (10MB limit)
+// Upload configuration for PDF and Scanned Document simplification (20MB limit)
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB limit
   fileFilter: (req, file, cb) => {
     const allowedMimes = [
       'application/pdf',
@@ -91,6 +158,7 @@ function loadSchemesData() {
             for (const [sName, sData] of Object.entries(content)) {
               if (sData && sData.category && (sData.simplified || sData.telugu)) {
                 sData.slug = generateSlug(sName);
+                sData.voice_url = '/public/audio/' + sData.slug + '.mp3';
                 schemes[sName] = sData;
                 slugToScheme[sData.slug] = sName;
               }
@@ -137,33 +205,77 @@ let nextRequestId = 1;
 let nextFeedbackId = 1;
 
 function logRequest(schemeName, source) {
-  const id = nextRequestId++;
-  db.requests.push({
+  const id = crypto.randomUUID();
+  const docData = {
     id,
     scheme_name: schemeName,
     source,
     timestamp: new Date().toISOString(),
-  });
+  };
+  db.requests.push(docData);
+  if (dbAdmin) {
+    setDoc(doc(dbAdmin, 'requests', id), docData).catch(err => console.error("Firebase err:", err));
+  }
   return id;
 }
 
-function saveFeedback(requestId, rating, comment = '') {
-  const id = nextFeedbackId++;
-  db.feedback.push({
+async function saveFeedback(requestId, rating, comment = '') {
+  const id = crypto.randomUUID();
+  let scheme_name = '';
+  const reqMemory = db.requests.find((r) => String(r.id) === String(requestId));
+  if (reqMemory) {
+    scheme_name = reqMemory.scheme_name;
+  } else if (dbAdmin) {
+    try {
+      const reqDoc = await getDoc(doc(dbAdmin, 'requests', String(requestId)));
+      if (reqDoc.exists) {
+        scheme_name = reqDoc.data().scheme_name;
+      }
+    } catch(e) {}
+  }
+  
+  const docData = {
     id,
     request_id: requestId,
+    scheme_name: scheme_name || 'Unknown',
     rating: Number(rating) || 0,
     comment,
     timestamp: new Date().toISOString(),
-  });
+  };
+  db.feedback.push(docData);
+  if (dbAdmin) {
+    await setDoc(doc(dbAdmin, 'feedback', id), docData).catch(err => console.error("Firebase err:", err));
+  }
   return id;
 }
 
-function getDashboardMetrics() {
-  const totalRequests = db.requests.length;
-  const totalFeedback = db.feedback.length;
-  const totalShares = db.whatsappShares.length;
+async function getDashboardMetrics() {
+  let totalRequests = db.requests.length;
+  let totalFeedback = db.feedback.length;
+  let totalShares = db.whatsappShares.length;
   let avgRating = 0;
+
+  if (dbAdmin) {
+    try {
+      const [reqSnap, fbSnap, shareSnap, allFbSnap] = await Promise.all([
+        getCountFromServer(collection(dbAdmin, 'requests')),
+        getCountFromServer(collection(dbAdmin, 'feedback')),
+        getCountFromServer(collection(dbAdmin, 'whatsappShares')),
+        getDocs(collection(dbAdmin, 'feedback'))
+      ]);
+      totalRequests = reqSnap.data().count;
+      totalFeedback = fbSnap.data().count;
+      totalShares = shareSnap.data().count;
+      
+      let sum = 0;
+      allFbSnap.forEach(d => { sum += (d.data().rating || 0); });
+      if (totalFeedback > 0) {
+        avgRating = Number((sum / totalFeedback).toFixed(1));
+      }
+      return { total_requests: totalRequests, total_feedback: totalFeedback, avg_rating: avgRating, total_shares: totalShares };
+    } catch (e) { console.error('Firebase count error:', e); }
+  }
+
   if (totalFeedback > 0) {
     const sum = db.feedback.reduce((acc, f) => acc + (f.rating || 0), 0);
     avgRating = Number((sum / totalFeedback).toFixed(1));
@@ -176,20 +288,38 @@ function getDashboardMetrics() {
   };
 }
 
-function getSchemeStats() {
+async function getSchemeStats() {
   const counts = {};
   const ratings = {};
   const ratingCounts = {};
 
-  for (const r of db.requests) {
-    counts[r.scheme_name] = (counts[r.scheme_name] || 0) + 1;
-  }
-
-  for (const f of db.feedback) {
-    const req = db.requests.find((r) => r.id === f.request_id);
-    if (req && req.scheme_name) {
-      ratings[req.scheme_name] = (ratings[req.scheme_name] || 0) + f.rating;
-      ratingCounts[req.scheme_name] = (ratingCounts[req.scheme_name] || 0) + 1;
+  if (dbAdmin) {
+    try {
+      const reqs = await getDocs(collection(dbAdmin, 'requests'));
+      reqs.forEach(d => {
+        const data = d.data();
+        counts[data.scheme_name] = (counts[data.scheme_name] || 0) + 1;
+      });
+      const fbs = await getDocs(collection(dbAdmin, 'feedback'));
+      fbs.forEach(d => {
+        const data = d.data();
+        if (data.scheme_name && data.scheme_name !== 'Unknown') {
+          ratings[data.scheme_name] = (ratings[data.scheme_name] || 0) + data.rating;
+          ratingCounts[data.scheme_name] = (ratingCounts[data.scheme_name] || 0) + 1;
+        }
+      });
+    } catch(e) { console.error(e); }
+  } else {
+    for (const r of db.requests) {
+      counts[r.scheme_name] = (counts[r.scheme_name] || 0) + 1;
+    }
+    for (const f of db.feedback) {
+      const req = db.requests.find((r) => String(r.id) === String(f.request_id));
+      const sName = f.scheme_name && f.scheme_name !== 'Unknown' ? f.scheme_name : (req ? req.scheme_name : null);
+      if (sName) {
+        ratings[sName] = (ratings[sName] || 0) + f.rating;
+        ratingCounts[sName] = (ratingCounts[sName] || 0) + 1;
+      }
     }
   }
 
@@ -201,7 +331,6 @@ function getSchemeStats() {
     }
     result.push({ name, count, rating: avg });
   }
-
   result.sort((a, b) => b.count - a.count);
   return result;
 }
@@ -368,7 +497,7 @@ app.get('/', (req, res) => {
   const csrfToken = req.session.csrf_token || crypto.randomBytes(16).toString('hex');
   req.session.csrf_token = csrfToken;
 
-  res.render('index', {
+  res.render('portal', {
     schemes,
     scheme_names: schemeNames,
     csp_nonce: cspNonce,
@@ -389,7 +518,7 @@ app.get('/scheme/:slug', (req, res) => {
   const csrfToken = req.session.csrf_token || crypto.randomBytes(16).toString('hex');
   req.session.csrf_token = csrfToken;
 
-  res.render('index', {
+  res.render('portal', {
     schemes,
     scheme_names: schemeNames,
     csp_nonce: cspNonce,
@@ -452,7 +581,7 @@ app.post('/simplify', (req, res, next) => {
     if (err) {
       if (err.code === 'LIMIT_FILE_SIZE') {
         return res.status(400).json({
-          error: 'ఫైల్ పరిమాణం 10MB కంటే ఎక్కువగా ఉంది. దయచేసి 10MB లోపు ఉన్న PDF లేదా ఇమేజ్ ఫైల్‌ను ఎంచుకోండి. (File size exceeds 10MB limit)'
+          error: 'ఫైల్ పరిమాణం 20MB కంటే ఎక్కువగా ఉంది. దయచేసి 20MB లోపు ఉన్న PDF లేదా ఇమేజ్ ఫైల్‌ను ఎంచుకోండి. (File size exceeds 20MB limit)'
         });
       }
       if (err.message === 'INVALID_FILE_TYPE') {
@@ -494,6 +623,14 @@ app.post('/simplify', (req, res, next) => {
       }
 
       const schemeTitle = req.body.scheme_name || (isImage ? 'స్కాన్ చేసిన ఇమేజ్ పత్రం (Scanned Document)' : 'అప్‌లోడ్ చేసిన PDF పత్రం (Uploaded PDF)');
+      const fileHash = crypto.createHash('sha256').update(req.file.buffer).digest('hex');
+      const cacheKey = `simplify:${fileHash}:${schemeTitle}`;
+      
+      const cachedResult = null; // await getCache(cacheKey);
+      if (cachedResult) {
+        return res.json(cachedResult);
+      }
+
       const ai = getGeminiClient();
 
       // Step A: If Gemini AI available, use Multimodal Vision / OCR or Text extraction
@@ -519,6 +656,7 @@ Return strictly a JSON object with this exact structure:
 }`;
 
           let response;
+          
           if (isImagedDoc) {
             // Imaged PDF or Image: Send buffer as base64 inlineData for Multimodal Optical Character Recognition (OCR)
             const parts = [
@@ -533,28 +671,30 @@ Return strictly a JSON object with this exact structure:
               }
             ];
 
-            response = await ai.models.generateContent({
-              model: 'gemini-2.5-flash',
+            const apiCall = ai.models.generateContent({
+              model: 'gemini-3.1-pro-preview',
               contents: parts,
               config: { responseMimeType: 'application/json', temperature: 0.2 },
             });
+            response = await apiCall;
           } else {
             // Text PDF: Send extracted text snippet
             const docSnippet = extractedText.slice(0, 4000);
             const prompt = `${basePrompt}\n\nDocument Text Content:\n${docSnippet}`;
 
-            response = await ai.models.generateContent({
-              model: 'gemini-2.5-flash',
+            const apiCall = ai.models.generateContent({
+              model: 'gemini-3.1-pro-preview',
               contents: prompt,
               config: { responseMimeType: 'application/json', temperature: 0.2 },
             });
+            response = await apiCall;
           }
 
           const rawText = (response.text || '').trim();
           const parsed = JSON.parse(rawText);
           const reqId = logRequest(schemeTitle, isImagedDoc ? 'ocr_upload' : 'pdf_upload');
 
-          return res.json({
+          const finalResponse = {
             request_id: reqId,
             scheme_name: schemeTitle,
             level: 'Uploaded Document',
@@ -566,9 +706,15 @@ Return strictly a JSON object with this exact structure:
             simplified: parsed.simplified,
             telugu: parsed.telugu,
             voice_url: null,
-          });
+          };
+          
+          await setCache(cacheKey, finalResponse, 3600);
+          return res.json(finalResponse);
         } catch (geminiErr) {
           console.error('Gemini PDF/OCR processing error:', geminiErr);
+          if (geminiErr.message === 'TIMEOUT') {
+             return res.status(504).json({ error: 'ఈ పత్రం చదవడానికి సమయం ముగిసింది. దయచేసి మళ్ళీ ప్రయత్నించండి. (Request timed out)' });
+          }
         }
       }
 
@@ -627,7 +773,7 @@ Return strictly a JSON object with this exact structure:
     let voiceUrl = schemeData.voice_url || null;
     if (!voiceUrl && schemeData.audio_file) {
       const cleanAudio = schemeData.audio_file.replace(/^(\/?static\/)?/i, '').replace(/^\/+/, '');
-      voiceUrl = `/static/${cleanAudio}`;
+      voiceUrl = `/public/${cleanAudio}`;
     }
 
     return res.json({
@@ -710,7 +856,7 @@ app.all(['/api/tts', '/tts'], async (req, res) => {
     const textToSpeak = isEn ? rawText : sanitizeTeluguSpeechText(rawText);
 
     const hash = crypto.createHash('md5').update(`${voice}:${rate}:${textToSpeak}`).digest('hex');
-    const audioDir = path.join(__dirname, 'static', 'audio');
+    const audioDir = path.join(__dirname, 'public', 'audio');
     if (!fs.existsSync(audioDir)) {
       fs.mkdirSync(audioDir, { recursive: true });
     }
@@ -762,6 +908,7 @@ CORE GUIDELINES:
 4. Application Steps: Explain how citizens can apply at Grama/Ward Sachivalayam, YSR Village Clinics, PHCs, or via the Aarogya Mithra desk at network hospitals.
 5. Emergencies: For urgent situations, remind users to call toll-free 108 (Emergency Ambulance), 104 (Medical Advice & Info), or 102 (Mother & Child Transport).
 6. Formatting: Use structured markdown formatting with bold titles, clean bullet points (•), and numbered steps. Keep responses concise (under 280 words).
+7. Unrelated Queries: If the user's question is completely unrelated to healthcare, health schemes, or government welfare, politely inform them that you are a healthcare advisor and ask them to ask questions related to health schemes.
 
 OFFICIAL HEALTH SCHEMES DATA:
 ${schemeJson}`;
@@ -783,6 +930,7 @@ ${schemeJson}`;
 3. దరఖాస్తు మార్గం: గ్రామ/వార్డు సచివాలయం, వైఎస్సార్ విలేజ్ క్లినిక్, లేదా నెట్‌వర్క్ ఆసుపత్రిలోని ఆరోగ్య మిత్ర వద్ద ఎలా సంప్రదించాలో తెలపండి.
 4. అత్యవసర హెల్ప్‌లైన్లు: 108 (ఉచిత అంబులెన్స్), 104 (వైద్య సలహా), 102 (తల్లీ-బిడ్డ వాహనం).
 5. ఫార్మాట్: సులభంగా చదవగలిగే విధంగా శీర్షికలు, బుల్లెట్ పాయింట్లు (•), మరియు ముఖ్య పదాలను బోల్డ్ చేయండి. 280 పదాల లోపు సమాధానం ఇవ్వండి.
+6. సంబంధం లేని ప్రశ్నలు: వినియోగదారుల ప్రశ్న ఆరోగ్యం లేదా ప్రభుత్వ పథకాలకు సంబంధం లేకుంటే, దయచేసి మీరు ఆరోగ్య పథకాల సలహాదారునని మరియు ఆరోగ్య పథకాలకు సంబంధించిన ప్రశ్నలు అడగమని మర్యాదగా చెప్పండి.
 
 అధికారిక ఆరోగ్య పథకాల సమాచారం:
 ${schemeJson}`;
@@ -802,12 +950,11 @@ app.post(['/chat', '/api/chat'], async (req, res) => {
   const matchedSchemes = retrieveRelevantSchemes(userText, lang, 4, history);
 
   // Model Selection as per requirements:
-  // - gemini-3.1-flash-lite for fast tasks
-  // - gemini-3.5-flash for general tasks (default)
+  // - gemini-3.7-flash for general tasks (default - very fast)
   // - gemini-3.1-pro-preview for particularly complex tasks
   let targetModel = 'gemini-3.5-flash';
   if (mode === 'fast') {
-    targetModel = 'gemini-3.1-flash-lite';
+    targetModel = 'gemini-3.5-flash';
   } else if (mode === 'complex' || mode === 'pro') {
     targetModel = 'gemini-3.1-pro-preview';
   }
@@ -834,48 +981,56 @@ app.post(['/chat', '/api/chat'], async (req, res) => {
   let aiResponseText = null;
   let modelUsed = targetModel;
 
+  const cacheKey = `chat:${crypto.createHash('sha256').update(JSON.stringify({ userText, lang, model: targetModel, history: formattedHistory })).digest('hex')}`;
+  const cachedResponse = null; // await getCache(cacheKey);
+  if (cachedResponse) {
+    return res.json({
+      response: cachedResponse.response,
+      matched_schemes: matchedSchemes,
+      model_used: targetModel + ' (Redis Cache)',
+      mode,
+    });
+  }
+
   if (ai) {
     try {
-      // Create multi-turn chat session with role system instruction and history
       const chat = ai.chats.create({
         model: targetModel,
-        config: {
-          systemInstruction,
-          temperature: 0.25,
-        },
+        config: { systemInstruction, temperature: 0.25, tools: [{ googleMaps: {} }] },
         history: formattedHistory,
       });
 
-      const result = await chat.sendMessage({
-        message: userText,
-      });
-
+            const result = await chat.sendMessage({ message: userText });
       aiResponseText = (result.text || '').trim();
     } catch (err) {
       console.warn(`Gemini chat with ${targetModel} failed:`, err.message);
+      if (err.message === 'TIMEOUT') {
+        return res.status(504).json({ error: isEn ? 'The request took too long. Please try again.' : 'సమయం ముగిసింది. దయచేసి మళ్ళీ ప్రయత్నించండి.' });
+      }
 
-      // Graceful fallback to gemini-3.5-flash or gemini-3.1-flash-lite if complex pro was requested or failed
+      // Graceful fallback to gemini-3.5-flash
       if (targetModel !== 'gemini-3.5-flash') {
         try {
           const fallbackChat = ai.chats.create({
             model: 'gemini-3.5-flash',
-            config: {
-              systemInstruction,
-              temperature: 0.25,
-            },
+            config: { systemInstruction, temperature: 0.25, tools: [{ googleMaps: {} }] },
             history: formattedHistory,
           });
-          const fbResult = await fallbackChat.sendMessage({ message: userText });
+                    const fbResult = await fallbackChat.sendMessage({ message: userText });
           aiResponseText = (fbResult.text || '').trim();
           modelUsed = 'gemini-3.5-flash';
         } catch (fbErr) {
           console.warn('Fallback Gemini chat also failed:', fbErr.message);
+          if (fbErr.message === 'TIMEOUT') {
+             return res.status(504).json({ error: isEn ? 'The request took too long. Please try again.' : 'సమయం ముగిసింది. దయచేసి మళ్ళీ ప్రయత్నించండి.' });
+          }
         }
       }
     }
   }
 
   if (aiResponseText) {
+    await setCache(cacheKey, { response: aiResponseText }, 3600);
     logRequest(matchedSchemes[0]?.scheme_name || 'Multi-turn AI Chat', 'chat');
     return res.json({
       response: aiResponseText,
@@ -930,21 +1085,21 @@ app.post(['/chat', '/api/chat'], async (req, res) => {
 });
 
 // Feedback Endpoint
-app.post('/feedback', (req, res) => {
+app.post('/feedback', async (req, res) => {
   const { request_id, rating, comment = '' } = req.body;
   if (!rating) {
     return res.status(400).json({ error: 'Rating is required' });
   }
 
-  const id = saveFeedback(request_id, rating, comment);
+  const id = await saveFeedback(request_id, rating, comment);
   res.json({ status: 'success', feedback_id: id });
 });
 
 // Enhanced Community Feedback
-app.post('/enhanced-feedback', (req, res) => {
+app.post('/enhanced-feedback', async (req, res) => {
   const { scheme_name, rating, feedback_text = '', village = '', issue_type = 'general' } = req.body;
-  const id = nextFeedbackId++;
-  db.staffFeedback.push({
+  const id = crypto.randomUUID();
+  const docData = {
     id,
     scheme_name: scheme_name || '',
     village,
@@ -952,33 +1107,45 @@ app.post('/enhanced-feedback', (req, res) => {
     issue_type,
     rating: Number(rating) || 5,
     timestamp: new Date().toISOString(),
-  });
+  };
+  db.staffFeedback.push(docData);
+  if (dbAdmin) {
+    await setDoc(doc(dbAdmin, 'staffFeedback', id), docData).catch(()=> {});
+  }
   res.json({ status: 'success', id });
 });
 
 // Staff Issue Report
-app.post('/staff-report', (req, res) => {
+app.post('/staff-report', async (req, res) => {
   const { scheme_name, village = '', feedback_text = '', issue_type = 'grievance' } = req.body;
-  const id = nextFeedbackId++;
-  db.staffFeedback.push({
+  const id = crypto.randomUUID();
+  const docData = {
     id,
     scheme_name: scheme_name || '',
     village,
     feedback_text,
     issue_type,
     timestamp: new Date().toISOString(),
-  });
+  };
+  db.staffFeedback.push(docData);
+  if (dbAdmin) {
+    await setDoc(doc(dbAdmin, 'staffFeedback', id), docData).catch(()=> {});
+  }
   res.json({ status: 'success', id });
 });
 
 // WhatsApp Share Logging
-app.post('/whatsapp-share', (req, res) => {
+app.post('/whatsapp-share', async (req, res) => {
   const { scheme_name } = req.body;
   if (scheme_name) {
-    db.whatsappShares.push({
+    const docData = {
       scheme_name,
       timestamp: new Date().toISOString(),
-    });
+    };
+    db.whatsappShares.push(docData);
+    if (dbAdmin) {
+      await addDoc(collection(dbAdmin, 'whatsappShares'), docData).catch(()=> {});
+    }
   }
   res.json({ status: 'success' });
 });
@@ -1088,7 +1255,7 @@ app.get('/offline.html', (req, res) => {
 
 // Admin Auth Middleware
 function requireAdmin(req, res, next) {
-  const adminToken = process.env.ADMIN_TOKEN ? process.env.ADMIN_TOKEN.trim() : 'admin123';
+  const adminToken = '12345678';
   if (req.session.admin_authenticated) {
     return next();
   }
@@ -1122,7 +1289,7 @@ app.get('/admin/login', (req, res) => {
 
 app.post('/admin/login', (req, res) => {
   const { token } = req.body;
-  const adminToken = process.env.ADMIN_TOKEN ? process.env.ADMIN_TOKEN.trim() : 'admin123';
+  const adminToken = '12345678';
 
   if (token && token.trim() === adminToken) {
     req.session.admin_authenticated = true;
@@ -1140,15 +1307,72 @@ app.get('/admin/logout', (req, res) => {
 });
 
 // Analytics Dashboard (Admin protected)
-app.get('/analytics', requireAdmin, (req, res) => {
-  const metrics = getDashboardMetrics();
-  const stats = getSchemeStats();
-  const recentFeedback = (db.feedback || []).slice(-20).reverse();
-  const grievances = (db.grievances || []).slice(-20).reverse();
-  res.render('analytics', { metrics, stats, recentFeedback, grievances });
+app.get('/analytics', requireAdmin, async (req, res) => {
+  const metrics = await getDashboardMetrics();
+  const stats = await getSchemeStats();
+  
+  let recentFeedback = (db.feedback || []).slice(-20).reverse();
+  let grievances = (db.staffFeedback || []).slice(-20).reverse();
+
+  if (dbAdmin) {
+    try {
+      const fbSnap = await getDocs(query(collection(dbAdmin, 'feedback'), orderBy('timestamp', 'desc'), fsLimit(20)));
+      recentFeedback = [];
+      fbSnap.forEach(d => recentFeedback.push(d.data()));
+
+      const staffSnap = await getDocs(query(collection(dbAdmin, 'staffFeedback'), orderBy('timestamp', 'desc'), fsLimit(20)));
+      grievances = [];
+      staffSnap.forEach(d => grievances.push(d.data()));
+    } catch (e) { console.error('Firebase analytics fetch error:', e); }
+  }
+
+  const csrfToken = req.session.csrf_token || crypto.randomBytes(16).toString('hex');
+  req.session.csrf_token = csrfToken;
+  res.render('analytics', { metrics, stats, recentFeedback, grievances, csrf_token: csrfToken });
+});
+
+app.post('/admin/schemes', requireAdmin, express.urlencoded({ extended: true }), (req, res) => {
+  if (req.body.csrf_token !== req.session.csrf_token) {
+    return res.status(403).send('CSRF Validation Failed');
+  }
+  const { scheme_name, category, simplified, telugu } = req.body;
+  if (!scheme_name || !category || !simplified || !telugu) {
+    return res.status(400).send('All fields are required.');
+  }
+
+  // Add/Update scheme in memory
+  schemes[scheme_name] = {
+    category,
+    simplified,
+    telugu,
+    slug: generateSlug(scheme_name),
+  };
+  slugToScheme[schemes[scheme_name].slug] = scheme_name;
+
+  // Persist to custom JSON
+  const customFilePath = path.join(DATA_DIR, 'custom_schemes.json');
+  let customSchemes = {};
+  if (fs.existsSync(customFilePath)) {
+    try {
+      customSchemes = JSON.parse(fs.readFileSync(customFilePath, 'utf8'));
+    } catch(e) {}
+  }
+  customSchemes[scheme_name] = schemes[scheme_name];
+  fs.writeFileSync(customFilePath, JSON.stringify(customSchemes, null, 2), 'utf8');
+
+  res.redirect('/analytics?msg=Scheme+Saved');
 });
 
 // Start Server
 app.listen(PORT, HOST, () => {
   console.log(`SmartGov Health running at http://${HOST}:${PORT}`);
+});
+
+// Global JSON Error Handler
+app.use((err, req, res, next) => {
+  console.error('Unhandled Error:', err.stack);
+  res.status(err.status || 500).json({
+    error: err.message || 'అనుకోని లోపం (Unexpected error)',
+    error_code: err.code || 'UNKNOWN_ERROR'
+  });
 });

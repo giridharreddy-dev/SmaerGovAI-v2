@@ -23,7 +23,7 @@ SmartGovAI is an open-source academic prototype designed to mitigate the digital
 - `data/` - JSON scheme definitions and facility data
 - `docs/` - Technical documentation and academic materials
 - `services/` - Core backend logic (audio, chat, Gemini, PDF, QR)
-- `static/` & `templates/` - Frontend assets and Jinja2 templates
+- `public/` & `views/` - Frontend assets and Jinja2 templates
 - `tests/` - Pytest suite
 
 ## Branching & Commit Conventions

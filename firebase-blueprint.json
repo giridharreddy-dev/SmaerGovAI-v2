@@ -1,0 +1,69 @@
+{
+  "entities": {
+    "Request": {
+      "title": "Request",
+      "description": "Log of API/User requests for schemes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "scheme_name": { "type": "string" },
+        "source": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Feedback": {
+      "title": "Feedback",
+      "description": "User feedback and rating",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "request_id": { "type": "string" },
+        "scheme_name": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "StaffFeedback": {
+      "title": "StaffFeedback",
+      "description": "Feedback or report submitted by staff",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "scheme_name": { "type": "string" },
+        "village": { "type": "string" },
+        "feedback_text": { "type": "string" },
+        "issue_type": { "type": "string" },
+        "rating": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "WhatsappShare": {
+      "title": "WhatsappShare",
+      "description": "Log of a WhatsApp share event",
+      "type": "object",
+      "properties": {
+        "scheme_name": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "/requests/{requestId}": {
+      "schema": { "$ref": "#/entities/Request" },
+      "description": "Stores all API requests"
+    },
+    "/feedback/{feedbackId}": {
+      "schema": { "$ref": "#/entities/Feedback" },
+      "description": "Stores user feedback"
+    },
+    "/staffFeedback/{staffFeedbackId}": {
+      "schema": { "$ref": "#/entities/StaffFeedback" },
+      "description": "Stores staff reports and feedback"
+    },
+    "/whatsappShares/{shareId}": {
+      "schema": { "$ref": "#/entities/WhatsappShare" },
+      "description": "Stores whatsapp share metrics"
+    }
+  }
+}

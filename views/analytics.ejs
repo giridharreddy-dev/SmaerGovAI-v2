@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Admin Dashboard - SmartGov Health Guide</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/theme.css">
     <style>
         .admin-wrap {
             max-width: 1100px;
@@ -172,7 +173,7 @@
     <div class="admin-wrap">
         <header class="admin-header">
             <div class="admin-header-left">
-                <img src="/static/icon.svg" alt="Logo" width="44" height="44">
+                <img src="/public/icon.svg" alt="Logo" width="44" height="44">
                 <div>
                     <h1>నిర్వాహక డాష్‌బోర్డ్ <small>(Admin Dashboard)</small></h1>
                     <span>SmartGov Health Analytics & Community Feedback</span>
@@ -259,6 +260,40 @@
                 </div>
             </section>
             <% } %>
+
+            <section class="dashboard-section">
+                <h2>➕ పథకం జోడించండి / నవీకరించండి (Add / Update Scheme)</h2>
+                <form action="/admin/schemes" method="POST" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                    <input type="hidden" name="csrf_token" value="<%= csrf_token %>">
+                    
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="scheme_name" style="font-weight: 700;">Scheme Name (English)</label>
+                        <input type="text" id="scheme_name" name="scheme_name" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="e.g. YSR Aarogyasri">
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="category" style="font-weight: 700;">Category</label>
+                        <select id="category" name="category" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);">
+                            <option value="Health Insurance & Financial Assistance">Health Insurance & Financial Assistance</option>
+                            <option value="Maternal & Child Health">Maternal & Child Health</option>
+                            <option value="Nutrition & Sanitation">Nutrition & Sanitation</option>
+                            <option value="Disease Control & Prevention">Disease Control & Prevention</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="simplified" style="font-weight: 700;">Description (English)</label>
+                        <textarea id="simplified" name="simplified" rows="4" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="Brief details about the scheme in English..."></textarea>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="telugu" style="font-weight: 700;">Description (Telugu)</label>
+                        <textarea id="telugu" name="telugu" rows="4" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="తెలుగులో పథకం వివరాలు..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn" style="align-self: flex-start; padding: 12px 24px;">Save Scheme</button>
+                </form>
+            </section>
         </main>
     </div>
 </body>
