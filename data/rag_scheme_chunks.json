@@ -1,0 +1,93 @@
+[
+  {
+    "id": "national_pmjay",
+    "scheme_name": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన",
+    "category": "Hospitalization & Cashless Coverage",
+    "financial_limit": "₹5,00,000 per family per year",
+    "source_url": "https://pmjay.gov.in",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY) (ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన)\nCategory: Hospitalization & Cashless Coverage\nCoverage Limit: ₹5,00,000 per family per year\nEligibility: BPL families, SECC 2011 database beneficiaries, White Ration Card holders in AP.\nBenefits: Free secondary and tertiary care hospitalization across 29,000+ empanelled public and private hospitals across India.\nHow to Apply: Visit any empanelled network hospital with Aadhaar card or Rice Card to verify eligibility at the Pradhan Mantri Arogya Mitra (PMAM) desk.\nRequired Documents: Aadhaar Card, White Ration / Rice Card, Family ID Proof\nOfficial Portal: https://pmjay.gov.in",
+    "keywords": [
+      "ayushman",
+      "pmjay",
+      "5 lakhs",
+      "cashless",
+      "center scheme",
+      " national health",
+      "ఆయుష్మాన్"
+    ],
+    "updated_at": "2026-09-23T13:41:25.247Z"
+  },
+  {
+    "id": "national_pmmvy",
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "telugu_name": "ప్రధాన మంత్రి మాతృ వందన యోజన",
+    "category": "Maternal & Child Health",
+    "financial_limit": "₹5,000 - ₹6,000 cash incentive",
+    "source_url": "https://pmmvy.wcd.gov.in",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Matru Vandana Yojana (PMMVY) (ప్రధాన మంత్రి మాతృ వందన యోజన)\nCategory: Maternal & Child Health\nCoverage Limit: ₹5,000 - ₹6,000 cash incentive\nEligibility: Pregnant women and lactating mothers for 1st live birth, and ₹6,000 for 2nd live birth if it is a girl child.\nBenefits: Direct Benefit Transfer (DBT) cash incentive paid directly into bank account to offset wage loss and support nutrition.\nHow to Apply: Register at nearest Anganwadi Centre (AWC) or Village Health Sub-Centre within 150 days of pregnancy with Aadhaar and MCP card.\nRequired Documents: Aadhaar Card, MCP (Mother and Child Protection) Card, Bank Passbook linked with Aadhaar\nOfficial Portal: https://pmmvy.wcd.gov.in",
+    "keywords": [
+      "pmmvy",
+      "maternal",
+      "pregnant",
+      "cash incentive",
+      "dbt",
+      "మాతృ వందన"
+    ],
+    "updated_at": "2026-09-23T13:41:25.248Z"
+  },
+  {
+    "id": "national_nhm",
+    "scheme_name": "National Health Mission (NHM) & Free Diagnostic Services",
+    "telugu_name": "నేషనల్ హెల్త్ మిషన్ మరియు ఉచిత డయాగ్నోస్టిక్స్ సేవలు",
+    "category": "Free Medicines & Diagnostics",
+    "financial_limit": "100% Free Medicines & Blood Tests",
+    "source_url": "https://nhm.gov.in",
+    "rag_text_chunk": "Scheme Name: National Health Mission (NHM) & Free Diagnostic Services (నేషనల్ హెల్త్ మిషన్ మరియు ఉచిత డయాగ్నోస్టిక్స్ సేవలు)\nCategory: Free Medicines & Diagnostics\nCoverage Limit: 100% Free Medicines & Blood Tests\nEligibility: Open to all citizens visiting Government Primary Health Centres (PHCs), CHCs, and District Hospitals.\nBenefits: Free essential medicines, 50+ free diagnostic tests, dial-a-doctor tele-consultation (eSanjeevani), and emergency transport.\nHow to Apply: Walk in to any Government Hospital, PHC, or Urban Health Centre. No income certificate required.\nRequired Documents: Any Govt Photo ID (Aadhaar / Voter ID)\nOfficial Portal: https://nhm.gov.in",
+    "keywords": [
+      "nhm",
+      "free medicines",
+      "free diagnostic",
+      "phc",
+      "esanjeevani",
+      "నేషనల్ హెల్త్"
+    ],
+    "updated_at": "2026-09-23T13:41:25.248Z"
+  },
+  {
+    "id": "national_nikshay",
+    "scheme_name": "Ni-kshay Poshan Yojana (TB Financial & Nutritional Support)",
+    "telugu_name": "నిక్షయ్ పోషణ్ యోజన (టీబీ రోగుల పోషకాహార సహాయం)",
+    "category": "Nutritional Support & Disease Management",
+    "financial_limit": "₹500 / month direct transfer during treatment",
+    "source_url": "https://nikshay.in",
+    "rag_text_chunk": "Scheme Name: Ni-kshay Poshan Yojana (TB Financial & Nutritional Support) (నిక్షయ్ పోషణ్ యోజన (టీబీ రోగుల పోషకాహార సహాయం))\nCategory: Nutritional Support & Disease Management\nCoverage Limit: ₹500 / month direct transfer during treatment\nEligibility: All notified Tuberculosis (TB) patients undergoing anti-TB treatment in government or private health facilities.\nBenefits: Monthly financial assistance of ₹500 transferred directly to patient bank account until treatment completion.\nHow to Apply: Register at nearest Government Health Centre or DOTS provider with Aadhaar card and active bank passbook.\nRequired Documents: Aadhaar Card, Bank Account details, TB Treatment Notification ID\nOfficial Portal: https://nikshay.in",
+    "keywords": [
+      "nikshay",
+      "tb",
+      "tuberculosis",
+      "poshan",
+      "nutrition",
+      "టీబీ"
+    ],
+    "updated_at": "2026-09-23T13:41:25.248Z"
+  },
+  {
+    "id": "national_jsy",
+    "scheme_name": "Janani Suraksha Yojana (JSY)",
+    "telugu_name": "జనని సురక్ష యోజన",
+    "category": "Maternal & Institutional Delivery",
+    "financial_limit": "₹1,000 - ₹1,400 financial assistance",
+    "source_url": "https://nhm.gov.in/index1.php?sublink_id=841&level=3&lid=309&lang=1",
+    "rag_text_chunk": "Scheme Name: Janani Suraksha Yojana (JSY) (జనని సురక్ష యోజన)\nCategory: Maternal & Institutional Delivery\nCoverage Limit: ₹1,000 - ₹1,400 financial assistance\nEligibility: Pregnant women from BPL / SC / ST families delivering in public health institutions or accredited private hospitals.\nBenefits: Cash assistance upon institutional delivery to reduce maternal and infant mortality.\nHow to Apply: Contact your local ASHA worker or ANM at the Village Secretariat / PHC before delivery.\nRequired Documents: Aadhaar Card, BPL Card / Rice Card, MCP Card, Bank Passbook\nOfficial Portal: https://nhm.gov.in/index1.php?sublink_id=841&level=3&lid=309&lang=1",
+    "keywords": [
+      "jsy",
+      "delivery",
+      "hospital delivery",
+      "pregnant",
+      "asha",
+      "జనని సురక్ష"
+    ],
+    "updated_at": "2026-09-23T13:41:25.248Z"
+  }
+]

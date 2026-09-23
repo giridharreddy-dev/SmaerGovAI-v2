@@ -176,6 +176,10 @@
                     </div>
                 </div>
                 <div class="chat-header-actions">
+                    <button type="button" class="chat-header-action-btn" id="downloadChatBtn" data-action="download-chat" title="సంభాషణను రికార్డుగా డౌన్‌లోడ్ చేయండి (Download Conversation)">
+                        <span aria-hidden="true">📥</span>
+                        <span class="download-text" data-i18n="downloadChatBtn">చాట్ డౌన్‌లోడ్</span>
+                    </button>
                     <button type="button" class="chat-header-action-btn" id="clearChatBtn" data-action="clear-chat" title="సంభాషణను క్లియర్ చేయండి (Clear Conversation)">
                         <span aria-hidden="true">🗑️</span>
                         <span class="clear-text" data-i18n="clearChatBtn">కొత్త చాట్</span>
@@ -414,6 +418,32 @@
                             <input type="file" id="pdfUpload" accept="application/pdf,image/png,image/jpeg,image/webp">
                             <small style="color:var(--muted); font-size:0.75rem; display:block; margin-top:3px;" data-i18n="pdfOcrSupport">స్కాన్ చేసిన ఇమేజ్ పత్రాలు (OCR) & PDF లకు మద్దతు కలదు (గరిష్టం: 20 MB)</small>
                         </div>
+
+                        <!-- Document Preview Box -->
+                        <div id="documentPreviewBox" style="display:none; margin: 12px 0; padding: 12px; background: var(--surface-soft, #f8fafc); border: 1.5px dashed var(--primary, #0284c7); border-radius: 12px; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                                <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+                                    <div id="docPreviewThumbnail" style="width: 52px; height: 52px; border-radius: 8px; background: #e0f2fe; border: 1px solid #bae6fd; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; font-size: 1.6rem;">
+                                        📄
+                                    </div>
+                                    <div style="min-width: 0;">
+                                        <div id="docPreviewName" style="font-weight: 700; font-size: 0.92rem; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">document.pdf</div>
+                                        <div style="display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--muted); margin-top: 2px;">
+                                            <span id="docPreviewSize">0 KB</span>
+                                            <span>•</span>
+                                            <span id="docPreviewBadge" style="background: #e0f2fe; color: #0369a1; padding: 1px 6px; border-radius: 4px; font-weight: 700;">PDF Document</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" id="docPreviewRemoveBtn" onclick="clearDocumentPreview()" style="background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; padding: 6px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; flex-shrink: 0;">
+                                    ❌ Remove
+                                </button>
+                            </div>
+                            <div style="margin-top: 8px; font-size: 0.8rem; color: #047857; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 4px 8px; border-radius: 6px; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+                                ✅ <span id="docPreviewVerifiedText">First page received & verified. Ready for AI & OCR analysis.</span>
+                            </div>
+                        </div>
+
                         <div class="privacy-warning" style="margin: 12px 0 0; font-size: 0.85rem;" data-i18n="privacyWarning">
                             🔒 గోప్యతా నోటీసు: ఆధార్ కార్డు నంబర్లు లేదా వ్యక్తిగత వైద్య పత్రాలను ఇక్కడ అప్‌లోడ్ చేయవద్దు.
                         </div>
@@ -610,6 +640,7 @@
 <script src="/public/assets/leaflet/leaflet.js"></script>
 <script src="/public/js/i18n.js"></script>
 <script src="/public/js/app-client.js"></script>
+<script src="/public/js/scheme-chatbot.js"></script>
 <script src="/public/js/scheme-nlp-search.js"></script>
 <script src="/public/js/recharts-dashboard.bundle.js"></script>
 
@@ -1209,6 +1240,10 @@
             source_url: data.source_url
         };
 
+        if (!schemesCatalog[data.scheme_name]) {
+            schemesCatalog[data.scheme_name] = scheme;
+        }
+
         const currentLang = window.getLang ? window.getLang() : 'te';
         const isEn = currentLang === 'en';
 
@@ -1239,7 +1274,7 @@
             : `<span>📄 ${window.escapeHtml(data.source_name || uploadedSource)}</span>`;
 
         const aiBadge = data.is_ai_generated ? `<span class="ai-badge" style="background:#e8f0fe; color:#1a73e8; padding:2px 8px; border-radius:12px; font-size:0.8rem; margin-left:8px; display:inline-block; vertical-align:middle;" title="This information is generated by AI from the uploaded document">✨ AI-Generated</span>` : '';
-        const aiDisclaimer = data.is_ai_generated ? `<div class="privacy-warning" style="background:#fff3cd; color:#856404; border:1px solid #ffeeba; margin-top:10px;">⚠️ ఈ సమాచారం AI ద్వారా పత్రం నుండి తీసుకోబడింది. ఇది అధికారిక ప్రభుత్వ ప్రకటన కాదు. (AI-generated explanation, not an official government statement)</div>` : '';
+        const aiDisclaimer = data.is_ai_generated ? `<div class="privacy-warning" style="background:#fff3cd; color:#856404; border:1px solid #ffeeba; margin-top:10px;">${isEn ? '⚠️ This information is extracted by AI from the document. It is an explanation, not an official government statement.' : '⚠️ ఈ సమాచారం AI ద్వారా పత్రం నుండి తీసుకోబడింది. ఇది అధికారిక ప్రభుత్వ ప్రకటన కాదు.'}</div>` : '';
 
         const richDetailsHtml = SmartGovEnhanced.buildRichDetails ? SmartGovEnhanced.buildRichDetails(scheme) : '';
         const eligibilityChecker = SmartGovEnhanced.buildEligibilityChecker(scheme);
@@ -1289,9 +1324,9 @@
                         <button type="button" class="share-result-btn secondary-btn" data-scheme="${window.escapeHtml(data.scheme_name)}">${window.t ? window.t('shareResultBtn') : '📤 ఫలితాన్ని షేర్ చేయండి'}</button>
                     </div>
 
-                    <div class="action-buttons share-channels-row">
-                        <button class="action-btn whatsapp-share-btn share-whatsapp-btn" type="button" data-scheme="${window.escapeHtml(data.scheme_name)}">
-                            📱 WhatsApp
+                    <div class="action-buttons share-channels-row" style="margin-bottom: 10px;">
+                        <button class="action-btn whatsapp-share-btn share-whatsapp-btn" type="button" data-scheme="${window.escapeHtml(data.scheme_name)}" style="background: #25D366; color: #ffffff; font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border: none; box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);">
+                            💬 ${isEn ? 'Share via WhatsApp' : 'WhatsApp ద్వారా షేర్ చేయండి'}
                         </button>
                         <button class="action-btn sms-share-btn share-sms-btn" type="button" data-scheme="${window.escapeHtml(data.scheme_name)}">
                             📲 SMS
@@ -1299,7 +1334,7 @@
                     </div>
 
                     <div class="action-buttons tools-row">
-                        <button class="action-btn print-scheme-btn" type="button" data-action="print-scheme" data-scheme="${window.escapeHtml(data.scheme_name)}">
+                        <button class="action-btn print-scheme-btn" type="button" data-action="print-scheme" data-scheme="${window.escapeHtml(data.scheme_name)}" data-i18n="printSchemeBtn">
                             ${window.t ? window.t('printSchemeBtn') : '🖨️ పథకం ముద్రణ'}
                         </button>
                         <button class="action-btn qr-card-btn" type="button" data-action="print-qr-card" data-scheme="${window.escapeHtml(data.scheme_name)}" data-slug="${window.escapeHtml(scheme.slug || '')}">
@@ -1313,20 +1348,84 @@
                         </button>
                     </div>
 
-                    <div class="feedback-section-wrap">
-                        <div class="feedback-row">
-                            <button class="feedback-btn good" type="button" data-rating="5" data-action="rate-good">${window.t ? window.t('feedbackGood') : '👍 ఉపయోగకరమైనది'}</button>
-                            <button class="feedback-btn improve" type="button" data-rating="2" data-action="rate-improve">${window.t ? window.t('feedbackImprove') : '👎 మెరుగుపర్చండి'}</button>
+                    <div class="ai-accuracy-card">
+                        <div style="font-weight: 800; color: var(--ink, #0f172a); margin-bottom: 4px; font-size: 1rem;" data-i18n="aiAccuracyFeedbackTitle">
+                            ${isEn ? '⭐ Rate AI Simplification Accuracy' : '⭐ AI విశ్లేషణ ఖచ్చితత్వాన్ని రేట్ చేయండి'}
                         </div>
-                        <div id="feedbackStatus" class="feedback-status"></div>
+                        <div style="font-size: 0.84rem; color: var(--muted, #64748b); margin-bottom: 12px;" data-i18n="aiAccuracyFeedbackSub">
+                            ${isEn ? 'Was this AI scheme summary accurate and helpful for your needs?' : 'ఈ AI పథకం విశ్లేషణ మీకు సరిగ్గా మరియు ఉపయోగపడేలా ఉందా?'}
+                        </div>
+
+                        <!-- Interactive Star Rating -->
+                        <div class="star-rating-row" id="aiStarRatingRow">
+                            <span class="star-item" data-val="1" title="Inaccurate / తప్పుగా ఉంది">★</span>
+                            <span class="star-item" data-val="2" title="Needs Improvement / మెరుగుపరచాలి">★</span>
+                            <span class="star-item" data-val="3" title="Average / పర్వాలేదు">★</span>
+                            <span class="star-item" data-val="4" title="Good / బాగుంది">★</span>
+                            <span class="star-item" data-val="5" title="Excellent / అద్భుతం">★</span>
+                        </div>
+
+                        <!-- Feedback Chip Options -->
+                        <div class="feedback-chip-group">
+                            <button type="button" class="feedback-chip" data-tag="clear_simple">${isEn ? '✅ Clear & Simple' : '✅ సులభంగా అర్థమైంది'}</button>
+                            <button type="button" class="feedback-chip" data-tag="accurate_docs">${isEn ? '📑 Accurate Documents' : '📑 సరైన పత్రాలు'}</button>
+                            <button type="button" class="feedback-chip" data-tag="need_more_info">${isEn ? '💡 Need More Info' : '💡 సమాచారం తక్కువ'}</button>
+                            <button type="button" class="feedback-chip" data-tag="simpler_telugu">${isEn ? '📝 Simpler Telugu Needed' : '📝 సరళమైన తెలుగు అవసరం'}</button>
+                        </div>
+
+                        <!-- Optional Comment & Submit Button -->
+                        <div style="display: flex; gap: 8px; max-width: 500px; margin: 0 auto;">
+                            <input type="text" id="accuracyCommentInput" placeholder="${isEn ? 'Optional feedback comment...' : 'మరేదైనా అభిప్రాయం/సలహా రాయండి...'}" style="flex: 1; padding: 8px 12px; border: 1px solid var(--border, #cbd5e1); border-radius: 8px; font-size: 0.85rem;">
+                            <button type="button" id="submitAccuracyRatingBtn" class="primary-btn" style="padding: 8px 18px; font-size: 0.88rem; font-weight: 750; border-radius: 8px; background: #0284c7; color: white;">
+                                ${isEn ? 'Submit' : 'పంపండి'}
+                            </button>
+                        </div>
+
+                        <div id="feedbackStatus" class="feedback-status" style="margin-top: 10px; font-weight: 750; font-size: 0.88rem; min-height: 22px;"></div>
                     </div>
                 </div>
             </div>
         `;
 
-        document.querySelectorAll('.feedback-btn[data-rating]').forEach(button => {
-            button.addEventListener('click', () => sendFeedback(button.dataset.rating));
+        // Initialize Star Rating Interactivity
+        let selectedStarRating = 5;
+        const stars = document.querySelectorAll('#aiStarRatingRow .star-item');
+        
+        function updateStarDisplay(val) {
+            stars.forEach(s => {
+                const sVal = Number(s.dataset.val);
+                if (sVal <= val) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        }
+        updateStarDisplay(selectedStarRating);
+
+        stars.forEach(s => {
+            s.addEventListener('mouseenter', () => updateStarDisplay(Number(s.dataset.val)));
+            s.addEventListener('mouseleave', () => updateStarDisplay(selectedStarRating));
+            s.addEventListener('click', () => {
+                selectedStarRating = Number(s.dataset.val);
+                updateStarDisplay(selectedStarRating);
+            });
         });
+
+        // Initialize Chip Toggle
+        document.querySelectorAll('.feedback-chip').forEach(chip => {
+            chip.addEventListener('click', () => chip.classList.toggle('active'));
+        });
+
+        // Submit Rating Action
+        const submitBtn = document.getElementById('submitAccuracyRatingBtn');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                const activeTags = Array.from(document.querySelectorAll('.feedback-chip.active')).map(c => c.dataset.tag);
+                const commentText = document.getElementById('accuracyCommentInput')?.value || '';
+                sendAccuracyFeedback(selectedStarRating, activeTags, commentText, data.scheme_name);
+            });
+        }
 
         restoreEligibilityAnswers();
         restoreDocumentChecks();
@@ -1449,33 +1548,47 @@
         }
     };
 
-    async function sendFeedback(rating) {
-        const reqId = currentRequestId || (currentSchemeName ? 'scheme_' + encodeURIComponent(currentSchemeName) : 'anon_' + Date.now());
+    async function sendAccuracyFeedback(rating, tags = [], comment = '', schemeName = '') {
+        const reqId = currentRequestId || (schemeName ? 'scheme_' + encodeURIComponent(schemeName) : 'anon_' + Date.now());
         const status = document.getElementById('feedbackStatus');
-        if (status) status.textContent = window.t ? window.t('feedbackSaving') : 'సేవ్ చేస్తున్నాం...';
+        const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+
+        if (status) status.textContent = isEn ? 'Saving feedback...' : 'సేవ్ చేస్తున్నాం...';
         try {
-            const data = await safeFetch("/feedback", {
+            const combinedComment = [
+                tags.length ? `[Tags: ${tags.join(', ')}]` : '',
+                comment ? comment.trim() : ''
+            ].filter(Boolean).join(' ');
+
+            const data = await safeFetch("/enhanced-feedback", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRFToken': csrfToken
                 },
-                body: JSON.stringify({ request_id: reqId, rating: Number(rating) })
+                body: JSON.stringify({ 
+                    request_id: reqId, 
+                    scheme_name: schemeName || currentSchemeName || '',
+                    rating: Number(rating),
+                    feedback_text: combinedComment || 'AI Simplification accuracy rating',
+                    issue_type: 'accuracy_rating'
+                })
             });
+
             if (status) {
-                status.textContent = data.status === 'success' ? (window.t ? window.t('feedbackSuccess') : '✅ ధన్యవాదాలు! మీ స్పందన సేవ్ అయింది.') : (window.t ? window.t('feedbackError') : `లోపం: ${data.error}`);
+                status.style.color = '#15803d';
+                status.textContent = isEn ? '✅ Thank you! Your accuracy rating has been recorded.' : '✅ ధన్యవాదాలు! మీ విశ్లేషణ రేటింగ్ సేవ్ చేయబడింది.';
             }
-            if (data.status === 'success' && typeof window.showToast === 'function') {
-                window.showToast(window.t ? window.t('feedbackSuccess') : '✅ ధన్యవాదాలు! మీ స్పందన సేవ్ అయింది.', 'success');
-            } else if (typeof window.showToast === 'function') {
-                window.showToast(data.error || 'Error', 'error');
+            if (typeof window.showToast === 'function') {
+                window.showToast(isEn ? '✅ Thank you! Your feedback has been recorded.' : '✅ ధన్యవాదాలు! మీ స్పందన నమోదు చేయబడింది.', 'success');
             }
         } catch (error) {
             if (status) {
-                status.textContent = window.t ? window.t('networkError', { error: error.message }) : `లోపం: ${error.message}`;
+                status.style.color = '#dc2626';
+                status.textContent = isEn ? `Error: ${error.message}` : `లోపం: ${error.message}`;
             }
             if (typeof window.showToast === 'function') {
-                window.showToast(`లోపం: ${error.message}`, 'error');
+                window.showToast(error.message, 'error');
             }
         }
     }
@@ -1520,14 +1633,14 @@
         const isEn = currentLang === 'en';
 
         const stages = isEn ? [
-            { pct: 18, badge: 'Validating', title: 'Reading & Verifying Document...', sub: 'Validating file encryption and verifying document structure...', step: 1 },
-            { pct: 45, badge: 'Ingesting', title: 'Extracting Scheme Sections...', sub: 'Ingesting pages, optical characters, and tabular data...', step: 2 },
-            { pct: 74, badge: 'Analyzing', title: 'Interpreting Welfare Provisions...', sub: 'Extracting official eligibility rules, coverage limits, and clinical benefits...', step: 3 },
-            { pct: 92, badge: 'Synthesizing', title: 'Preparing Bilingual Guidance...', sub: 'Synthesizing interactive checklist and Telugu/English summaries...', step: 4 }
+            { pct: 18, badge: 'Validating', title: 'Reading & Verifying Document...', sub: 'Validating file integrity and loading first page preview...', step: 1 },
+            { pct: 45, badge: 'OCR in Progress', title: 'OCR in Progress / Extracting Text...', sub: 'Ingesting pages, optical characters, and tabular scheme text...', step: 2 },
+            { pct: 74, badge: 'Analyzing Text', title: 'Analyzing Text & Scheme Criteria...', sub: 'Extracting official eligibility rules, coverage limits, and clinical benefits...', step: 3 },
+            { pct: 92, badge: 'Synthesizing', title: 'Preparing Guidance Card...', sub: 'Synthesizing interactive document checklist and Telugu/English summaries...', step: 4 }
         ] : [
-            { pct: 18, badge: 'పరిశీలన', title: 'పత్రం పరిశీలిస్తున్నాం...', sub: 'ఫైల్ భద్రత మరియు పత్రం నిర్మాణాన్ని ధృవీకరిస్తున్నాం...', step: 1 },
-            { pct: 45, badge: 'స్కాన్', title: 'డేటాను సంగ్రహిస్తున్నాం...', sub: 'పత్రం పేజీల సమాచారం, పట్టికలు మరియు అక్షరాలను స్కాన్ చేస్తున్నాం...', step: 2 },
-            { pct: 74, badge: 'విశ్లేషణ', title: 'ప్రభుత్వ మార్గదర్శకాలు & అర్హతలు...', sub: 'పథకం నిబంధనలు, అర్హత ప్రమాణాలు మరియు ఉచిత చికిత్సలను గుర్తిస్తున్నాం...', step: 3 },
+            { pct: 18, badge: 'పరిశీలన', title: 'పత్రం పరిశీలిస్తున్నాం...', sub: 'ఫైల్ భద్రత మరియు మొదటి పేజీ ప్రివ్యూను లోడ్ చేస్తున్నాం...', step: 1 },
+            { pct: 45, badge: 'OCR జరుగుతోంది', title: 'OCR లో అక్షరాల స్కాన్ జరుగుతోంది...', sub: 'పత్రం పేజీల సమాచారం, స్కాన్డ్ అక్షరాలను క్రోడీకరిస్తున్నాం...', step: 2 },
+            { pct: 74, badge: 'టెక్స్ట్ విశ్లేషణ', title: 'టెక్స్ట్ విశ్లేషణ & పథకం వివరాలు...', sub: 'ప్రభుత్వ పథకం నిబంధనలు, ఉచిత చికిత్సలు, అర్హతలను విశ్లేషిస్తున్నాం...', step: 3 },
             { pct: 92, badge: 'సిద్ధం', title: 'ద్విభాషా సమాచారం సిద్ధం...', sub: 'తెలుగు & ఇంగ్లీష్ సారాంశం మరియు పత్రాల చెక్‌లిస్ట్‌ను సిద్ధం చేస్తున్నాం...', step: 4 }
         ];
 
@@ -1574,8 +1687,8 @@
                 </div>
 
                 <div class="doc-scan-steps-row" aria-hidden="true">
-                    <div class="doc-scan-step active" id="docStep1"><span class="step-num">1</span> <span class="step-lbl">${isEn ? 'Ingest' : 'అప్‌లోడ్'}</span></div>
-                    <div class="doc-scan-step" id="docStep2"><span class="step-num">2</span> <span class="step-lbl">${isEn ? 'Extract' : 'స్కాన్'}</span></div>
+                    <div class="doc-scan-step active" id="docStep1"><span class="step-num">1</span> <span class="step-lbl">${isEn ? 'Read' : 'పరిశీలన'}</span></div>
+                    <div class="doc-scan-step" id="docStep2"><span class="step-num">2</span> <span class="step-lbl">${isEn ? 'OCR' : 'స్కాన్'}</span></div>
                     <div class="doc-scan-step" id="docStep3"><span class="step-num">3</span> <span class="step-lbl">${isEn ? 'Analyze' : 'విశ్లేషణ'}</span></div>
                     <div class="doc-scan-step" id="docStep4"><span class="step-num">4</span> <span class="step-lbl">${isEn ? 'Ready' : 'సిద్ధం'}</span></div>
                 </div>
@@ -1624,6 +1737,21 @@
         }, 1300);
 
         return {
+            update: (chunk) => {
+                if (docProgressTimer) {
+                    clearInterval(docProgressTimer);
+                    docProgressTimer = null;
+                }
+                const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+                const updateStage = {
+                    pct: chunk.pct || 50,
+                    badge: chunk.badge || (isEn ? 'OCR / Processing' : 'OCR / పరిశీలన'),
+                    title: chunk.title || (isEn ? 'OCR in progress / Processing Document...' : 'OCR లో అక్షరాల స్కాన్ జరుగుతోంది...'),
+                    sub: chunk.sub || (isEn ? 'Extracting document details and scheme criteria...' : 'పత్రం వివరాలను క్రోడీకరిస్తున్నాం...'),
+                    step: chunk.pct > 75 ? 3 : (chunk.pct > 35 ? 2 : 1)
+                };
+                updateStageUI(updateStage);
+            },
             finish: () => {
                 if (docProgressTimer) {
                     clearInterval(docProgressTimer);
@@ -1634,6 +1762,36 @@
                     : { pct: 100, badge: 'పూర్తయింది', title: 'విశ్లేషణ పూర్తయింది!', sub: 'పథకం నిబంధనలు, అర్హతలు మరియు అవసరమైన పత్రాల వివరాలు సిద్ధంగా ఉన్నాయి.', step: 4 };
                 updateStageUI(finishStage);
             },
+            nonScheme: (errMessage) => {
+                if (docProgressTimer) {
+                    clearInterval(docProgressTimer);
+                    docProgressTimer = null;
+                }
+                const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+                resultArea.innerHTML = `
+                    <div class="doc-scan-error-card" role="alert" style="border-color: #f59e0b; background: #fffbeb; text-align: center; padding: 24px; border-radius: 16px; margin: 16px auto; max-width: 580px; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.12);">
+                        <div class="error-icon" style="font-size: 2.4rem; margin-bottom: 8px;">📄🚫</div>
+                        <span style="background: #fef3c7; color: #b45309; padding: 3px 12px; border-radius: 9999px; font-weight: 700; font-size: 0.8rem; display: inline-block; margin-bottom: 8px;">
+                            ${isEn ? 'Unrelated Document' : 'అసంబంధిత పత్రం'}
+                        </span>
+                        <h3 style="margin: 6px 0 8px; font-weight: 800; color: #b45309; font-size: 1.15rem;">
+                            ${isEn ? 'Uploaded PDF is Not Related to Government Schemes' : 'అప్‌లోడ్ చేసిన PDF పత్రం ప్రభుత్వ పథకాలకు సంబంధించినది కాదు'}
+                        </h3>
+                        <p style="margin: 0 0 16px; color: #475569; font-size: 0.92rem; line-height: 1.5;">
+                            ${window.escapeHtml(errMessage)}
+                        </p>
+                        <div style="background: #ffffff; border: 1px solid #fde68a; border-radius: 10px; padding: 12px 16px; font-size: 0.85rem; color: #78350f; text-align: left; margin-bottom: 18px; line-height: 1.5;">
+                            💡 <strong>${isEn ? 'Supported Scheme Documents' : 'మద్దతు ఉన్న ప్రభుత్వ పత్రాలు'}:</strong><br>
+                            ${isEn 
+                                ? '• Official AP Government Orders (G.O.s) & Circulars<br>• Dr. YSR Aarogyasri / Health Scheme Flyers & Brochures<br>• PM-JAY / Central Health Welfare Guidelines<br>• Official Hospital Sanction Letters' 
+                                : '• అధికారిక ఆంధ్రప్రదేశ్ ప్రభుత్వ జీవోలు (G.O.) & సర్క్యులర్లు<br>• డా. వైఎస్సార్ ఆరోగ్యశ్రీ / ఆరోగ్య పథకాల బ్రోచర్లు<br>• పిఎం-జేఏవై / కేంద్ర ఆరోగ్య సంక్షేమ మార్గదర్శకాలు<br>• అధికారిక ఆసుపత్రి సహాయ అనుమతి పత్రాలు'}
+                        </div>
+                        <button type="button" class="primary-btn" id="chooseAnotherFileBtn" onclick="resetAndChooseFile()" style="padding: 12px 24px; font-size: 0.95rem; font-weight: 700; cursor: pointer; border-radius: 8px; width: 100%; background: #0f172a; color: #ffffff;">
+                            🔄 ${isEn ? 'Choose Another File' : 'మరొక పత్రం ఎంచుకోండి'}
+                        </button>
+                    </div>
+                `;
+            },
             error: (errMessage) => {
                 if (docProgressTimer) {
                     clearInterval(docProgressTimer);
@@ -1643,9 +1801,9 @@
                 resultArea.innerHTML = `
                     <div class="doc-scan-error-card" role="alert">
                         <div class="error-icon">⚠️</div>
-                        <h3 style="margin: 0 0 8px; font-weight: 800; color: #dc2626;">${isEn ? 'Document Ingestion Failed' : 'పత్రం విశ్లేషణలో అంతరాయం'}</h3>
+                        <h3 style="margin: 0 0 8px; font-weight: 800; color: #dc2626;">${isEn ? 'Document Ingestion Error' : 'పత్రం పరిశీలనలో అంతరాయం'}</h3>
                         <p style="margin: 0 0 16px; color: var(--muted); font-size: 0.9rem; line-height: 1.5;">${window.escapeHtml(errMessage)}</p>
-                        <button type="button" class="primary-btn" onclick="document.getElementById('pdfUpload').click()" style="padding: 8px 20px; font-size: 0.9rem;">
+                        <button type="button" class="primary-btn" id="chooseAnotherFileBtn" onclick="resetAndChooseFile()" style="padding: 10px 22px; font-size: 0.92rem; font-weight: 700; cursor: pointer; border-radius: 8px;">
                             🔄 ${isEn ? 'Choose Another File' : 'మరొక పత్రం ఎంచుకోండి'}
                         </button>
                     </div>
@@ -1653,6 +1811,23 @@
             }
         };
     }
+
+    window.resetAndChooseFile = function() {
+        const fileInput = document.getElementById('pdfUpload');
+        const previewBox = document.getElementById('documentPreviewBox');
+        if (fileInput) {
+            fileInput.value = '';
+            if (previewBox) previewBox.style.display = 'none';
+            fileInput.click();
+        }
+    };
+
+    window.clearDocumentPreview = function() {
+        const fileInput = document.getElementById('pdfUpload');
+        const previewBox = document.getElementById('documentPreviewBox');
+        if (fileInput) fileInput.value = '';
+        if (previewBox) previewBox.style.display = 'none';
+    };
 
     async function handleUpload() {
         if (!navigator.onLine) {
@@ -1667,7 +1842,6 @@
             return;
         }
 
-        // 20MB File Size Limit Check
         const MAX_FILE_SIZE = 20 * 1024 * 1024;
         if (file.size > MAX_FILE_SIZE) {
             showError(window.t ? window.t('fileTooLargeError') : 'ఫైల్ పరిమాణం 20MB కంటే ఎక్కువగా ఉంది. దయచేసి 20MB లోపు ఉన్న PDF లేదా ఇమేజ్ ఫైల్‌ను ఎంచుకోండి.');
@@ -1676,12 +1850,30 @@
 
         const consentCheckbox = document.getElementById('pdfConsent');
         if (!consentCheckbox || !consentCheckbox.checked) {
-            showError(window.t ? window.t('pdfConsent') : 'దయచేసి పత్రం అప్‌లోడ్ చేయడానికి ముందు గోప్యతా అంగీకారం చెక్‌బాక్స్ ను టిక్ చేయండి.');
+            const consentContainer = consentCheckbox ? (consentCheckbox.closest('label') || consentCheckbox.parentElement) : null;
+            if (consentContainer) {
+                consentContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                consentContainer.style.transition = 'all 0.3s ease';
+                consentContainer.style.outline = '2px dashed #dc2626';
+                consentContainer.style.borderRadius = '8px';
+                consentContainer.style.padding = '8px';
+                consentContainer.style.background = '#fef2f2';
+                setTimeout(() => {
+                    consentContainer.style.outline = 'none';
+                    consentContainer.style.background = 'transparent';
+                    consentContainer.style.padding = '0';
+                }, 4000);
+            }
+            if (consentCheckbox) consentCheckbox.focus();
+
+            const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+            showError(isEn 
+                ? '⚠️ Please check "I confirm this document contains no personal data / PII and consent to processing" before uploading.' 
+                : '⚠️ దయచేసి పత్రం అప్‌లోడ్ చేయడానికి ముందు గోప్యతా అంగీకారం చెక్‌బాక్స్ (Consent) ను టిక్ చేయండి.');
             return;
         }
 
         const isImageFile = file.type.startsWith('image/');
-        // Start sleek animated progress bar overlay
         const controller = startDocumentIngestionUI(file, isImageFile);
 
         const resultArea = document.getElementById('resultArea');
@@ -1694,7 +1886,7 @@
         formData.append('consent', 'true');
 
         try {
-            const data = await safeFetch("/simplify", {
+            const response = await fetch("/simplify-stream", {
                 method: 'POST',
                 headers: {
                     'X-CSRFToken': csrfToken
@@ -1702,23 +1894,87 @@
                 body: formData
             });
 
-            if (!data || data.status === 'error' || data.error) {
-                const errMsg = data?.message || data?.error || (window.t ? window.t('pdfAnalysisError') : 'పత్రం విశ్లేషించడంలో సమస్య ఏర్పడింది. దయచేసి మళ్ళీ ప్రయత్నించండి.');
-                controller.error(errMsg);
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+                const errMsg = isEn 
+                    ? (errData?.error_en || errData?.message_en || errData?.rejection_reason_en || errData?.error || 'Uploaded PDF is not related to government healthcare schemes.')
+                    : (errData?.error || errData?.message || errData?.rejection_reason_te || 'అప్‌లోడ్ చేసిన PDF పత్రం ప్రభుత్వ ఆరోగ్య లేదా సంక్షేమ పథకాలకు సంబంధించినది కాదు.');
+                if (errData?.is_not_govt_scheme || response.status === 400) {
+                    controller.nonScheme(errMsg);
+                } else {
+                    controller.error(errMsg);
+                }
                 return;
             }
 
-            controller.finish();
-            setTimeout(() => {
-                displayResult(data);
-                if (resultArea) {
-                    resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder('utf-8');
+            let buffer = '';
+            let finalResultData = null;
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                buffer += decoder.decode(value, { stream: true });
+                const blocks = buffer.split('\n\n');
+                buffer = blocks.pop() || '';
+
+                for (const block of blocks) {
+                    if (!block.trim()) continue;
+                    let eventType = 'message';
+                    let eventDataStr = '';
+
+                    for (const line of block.split('\n')) {
+                        if (line.startsWith('event: ')) {
+                            eventType = line.replace('event: ', '').trim();
+                        } else if (line.startsWith('data: ')) {
+                            eventDataStr += line.replace('data: ', '').trim();
+                        }
+                    }
+
+                    if (eventDataStr) {
+                        try {
+                            const parsedData = JSON.parse(eventDataStr);
+                            if (eventType === 'progress') {
+                                controller.update(parsedData);
+                            } else if (eventType === 'result') {
+                                finalResultData = parsedData;
+                            } else if (eventType === 'error' || parsedData.status === 'rejected' || parsedData.is_not_govt_scheme) {
+                                const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+                                const errMsg = isEn 
+                                    ? (parsedData.error_en || parsedData.message_en || parsedData.rejection_reason_en || parsedData.error || 'Uploaded PDF is not related to government healthcare schemes.') 
+                                    : (parsedData.error || parsedData.message || parsedData.rejection_reason_te || 'అప్‌లోడ్ చేసిన PDF పత్రం ప్రభుత్వ ఆరోగ్య లేదా సంక్షేమ పథకాలకు సంబంధించినది కాదు.');
+                                if (parsedData.is_not_govt_scheme) {
+                                    controller.nonScheme(errMsg);
+                                } else {
+                                    controller.error(errMsg);
+                                }
+                                return;
+                            }
+                        } catch (e) {
+                            console.warn('SSE Chunk parse notice:', e);
+                        }
+                    }
                 }
-            }, 350);
+            }
+
+            if (finalResultData) {
+                controller.finish();
+                setTimeout(() => {
+                    displayResult(finalResultData);
+                    if (resultArea) {
+                        resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 300);
+            } else {
+                controller.error((window.getLang ? window.getLang() : 'te') === 'en' ? 'Document analysis yielded no result.' : 'పత్రం విశ్లేషణ ఫలితం పొందడంలో విఫలమైంది.');
+            }
         } catch (error) {
             const friendlyErr = (window.getLang ? window.getLang() : 'te') === 'en'
-                ? 'Network connection issue while analyzing document. Please verify your internet connection and try again.'
-                : 'పత్రం విశ్లేషించే సమయంలో నెట్‌వర్క్ సమస్య ఏర్పడింది. దయచేసి ఇంటర్నెట్ సరిచూసుకుని మళ్ళీ ప్రయత్నించండి.';
+                ? 'Network connection issue while analyzing document stream. Please verify your connection.'
+                : 'పత్రం విశ్లేషణలో నెట్‌వర్క్ లోపం ఏర్పడింది. దయచేసి కనెక్షన్ సరిచూసుకోండి.';
             controller.error(friendlyErr);
         }
     }
@@ -2569,9 +2825,43 @@
     }
 
     // Handle Dropdown and Upload Buttons
+    document.getElementById('schemeSelect')?.addEventListener('change', function() {
+        const val = this.value;
+        if (val) fetchScheme(val);
+    });
+
     document.getElementById('dropdownBtn')?.addEventListener('click', () => {
         const val = document.getElementById('schemeSelect').value;
         if (val) fetchScheme(val);
+    });
+
+    document.getElementById('pdfUpload')?.addEventListener('change', function(e) {
+        const file = e.target.files?.[0];
+        const previewBox = document.getElementById('documentPreviewBox');
+        const thumbEl = document.getElementById('docPreviewThumbnail');
+        const nameEl = document.getElementById('docPreviewName');
+        const sizeEl = document.getElementById('docPreviewSize');
+        const badgeEl = document.getElementById('docPreviewBadge');
+        const verifiedEl = document.getElementById('docPreviewVerifiedText');
+        const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+
+        if (file && previewBox) {
+            previewBox.style.display = 'block';
+            if (nameEl) nameEl.textContent = file.name;
+            if (sizeEl) sizeEl.textContent = formatBytes(file.size);
+            const isImg = file.type.startsWith('image/');
+            if (badgeEl) badgeEl.textContent = isImg ? (isEn ? 'Scanned Image (OCR)' : 'స్కాన్ ఇమేజ్ (OCR)') : 'PDF Document';
+            if (verifiedEl) verifiedEl.textContent = isEn ? 'Document received & verified. Ready for AI & OCR analysis.' : 'పత్రం ధృవీకరించబడింది. AI & OCR విశ్లేషణకు సిద్ధంగా ఉంది.';
+
+            if (isImg && thumbEl) {
+                const imgUrl = URL.createObjectURL(file);
+                thumbEl.innerHTML = `<img src="${imgUrl}" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">`;
+            } else if (thumbEl) {
+                thumbEl.innerHTML = '📑';
+            }
+        } else if (previewBox) {
+            previewBox.style.display = 'none';
+        }
     });
 
     document.getElementById('uploadBtn')?.addEventListener('click', handleUpload);
@@ -3176,6 +3466,9 @@
         updateChatUi();
         populateSchemeDropdown();
         renderSchemeCards(true);
+        if (currentSchemeName && schemesCatalog[currentSchemeName]) {
+            displayResult(schemesCatalog[currentSchemeName], true);
+        }
         if (typeof window.mountSchemesDashboard === 'function') {
             const activeLang = window.getLang ? window.getLang() : 'te';
             window.mountSchemesDashboard('schemesDashboardRoot', window.schemesCatalog || {}, activeLang);

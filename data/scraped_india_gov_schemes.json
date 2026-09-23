@@ -1,0 +1,111 @@
+{
+  "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY)": {
+    "scheme_name": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన",
+    "category": "Hospitalization & Cashless Coverage",
+    "official_website": "https://pmjay.gov.in",
+    "source_url": "https://www.india.gov.in/spotlight/ayushman-bharat-pradhan-mantri-jan-arogya-yojana",
+    "financial_limit": "₹5,00,000 per family per year",
+    "keywords": [
+      "ayushman",
+      "pmjay",
+      "5 lakhs",
+      "center scheme",
+      "national health",
+      "ఆయుష్మాన్"
+    ],
+    "simplified": {
+      "benefits": "Free secondary and tertiary care hospitalization across 29,000+ empanelled public and private hospitals across India.",
+      "eligibility": "BPL families, SECC 2011 database beneficiaries, white card holders.",
+      "steps": "Visit any empanelled hospital with Aadhaar card or Ration card to verify eligibility with Pradhan Mantri Arogya Mitra (PMAM).",
+      "limit": "₹5,00,000 per family per year"
+    },
+    "telugu": {
+      "benefits": "Free secondary and tertiary care hospitalization across 29,000+ empanelled public and private hospitals across India.",
+      "eligibility": "BPL families, SECC 2011 database beneficiaries, white card holders.",
+      "steps": "Visit any empanelled hospital with Aadhaar card or Ration card to verify eligibility with Pradhan Mantri Arogya Mitra (PMAM).",
+      "limit": "₹5,00,000 per family per year"
+    }
+  },
+  "Pradhan Mantri Matru Vandana Yojana (PMMVY)": {
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "telugu_name": "ప్రధాన మంత్రి మాతృ వందన యోజన",
+    "category": "Maternal & Child Health",
+    "official_website": "https://pmmvy.wcd.gov.in",
+    "source_url": "https://www.india.gov.in/schemes-under-ministry-women-and-child-development",
+    "financial_limit": "₹5,000 - ₹6,000 cash incentive",
+    "keywords": [
+      "pmmvy",
+      "maternal",
+      "pregnant",
+      "cash incentive",
+      "మాతృ వందన"
+    ],
+    "simplified": {
+      "benefits": "Direct Benefit Transfer (DBT) cash incentive paid in installments directly to bank account upon registering pregnancy and child immunization.",
+      "eligibility": "Pregnant women and lactating mothers for first and second live child (if second child is a girl).",
+      "steps": "Apply at nearest Anganwadi Centre (AWC) or Village Health Sub-Centre with Aadhaar card, MCP Card, and Bank Account details.",
+      "limit": "₹5,000 - ₹6,000 cash incentive"
+    },
+    "telugu": {
+      "benefits": "Direct Benefit Transfer (DBT) cash incentive paid in installments directly to bank account upon registering pregnancy and child immunization.",
+      "eligibility": "Pregnant women and lactating mothers for first and second live child (if second child is a girl).",
+      "steps": "Apply at nearest Anganwadi Centre (AWC) or Village Health Sub-Centre with Aadhaar card, MCP Card, and Bank Account details.",
+      "limit": "₹5,000 - ₹6,000 cash incentive"
+    }
+  },
+  "National Health Mission (NHM) & Free Diagnostic Services": {
+    "scheme_name": "National Health Mission (NHM) & Free Diagnostic Services",
+    "telugu_name": "నేషనల్ హెల్త్ మిషన్ మరియు ఉచిత డయాగ్నోస్టిక్స్ సేవలు",
+    "category": "Free Medicines & Diagnostics",
+    "official_website": "https://nhm.gov.in",
+    "source_url": "https://www.india.gov.in/topics/health-family-welfare/national-health-mission",
+    "financial_limit": "100% Free Medicines & Blood Tests",
+    "keywords": [
+      "nhm",
+      "free medicines",
+      "free tests",
+      "phc",
+      "నేషనల్ హెల్త్"
+    ],
+    "simplified": {
+      "benefits": "Free essential drugs, 50+ free diagnostic blood & urine tests, dial-a-doctor tele-consultation.",
+      "eligibility": "Open to all citizens visiting Government Primary Health Centres (PHCs) and Area Hospitals.",
+      "steps": "Walk in to any Government Hospital or Primary Health Centre (PHC). No income certificate required.",
+      "limit": "100% Free Medicines & Blood Tests"
+    },
+    "telugu": {
+      "benefits": "Free essential drugs, 50+ free diagnostic blood & urine tests, dial-a-doctor tele-consultation.",
+      "eligibility": "Open to all citizens visiting Government Primary Health Centres (PHCs) and Area Hospitals.",
+      "steps": "Walk in to any Government Hospital or Primary Health Centre (PHC). No income certificate required.",
+      "limit": "100% Free Medicines & Blood Tests"
+    }
+  },
+  "Ni-kshay Poshan Yojana (TB Financial & Nutritional Support)": {
+    "scheme_name": "Ni-kshay Poshan Yojana (TB Financial & Nutritional Support)",
+    "telugu_name": "నిక్షయ్ పోషణ్ యోజన (టీబీ రోగుల పోషకాహార సహాయం)",
+    "category": "Nutritional Support & Disease Management",
+    "official_website": "https://nikshay.in",
+    "source_url": "https://www.india.gov.in/my-government/schemes",
+    "financial_limit": "₹500 / month direct transfer during treatment",
+    "keywords": [
+      "nikshay",
+      "tb",
+      "tuberculosis",
+      "poshan",
+      "టీబీ"
+    ],
+    "simplified": {
+      "benefits": "Monthly financial assistance of ₹500 transferred directly to patient bank accounts for nutritional support.",
+      "eligibility": "All notified Tuberculosis (TB) patients undergoing anti-TB treatment in public or private sector.",
+      "steps": "Register at nearest Government Health Centre or DOTS provider with Aadhaar card and bank passbook.",
+      "limit": "₹500 / month direct transfer during treatment"
+    },
+    "telugu": {
+      "benefits": "Monthly financial assistance of ₹500 transferred directly to patient bank accounts for nutritional support.",
+      "eligibility": "All notified Tuberculosis (TB) patients undergoing anti-TB treatment in public or private sector.",
+      "steps": "Register at nearest Government Health Centre or DOTS provider with Aadhaar card and bank passbook.",
+      "limit": "₹500 / month direct transfer during treatment"
+    }
+  }
+}

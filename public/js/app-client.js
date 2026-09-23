@@ -864,7 +864,7 @@ function buildTrustInfo(scheme) {
     const isEn = window.getLang && window.getLang() === 'en';
     const lastUpdated = scheme.last_updated || (isEn ? 'Not specified' : 'తెలియదు');
     const confirmationSource = scheme.eligibility_confirmation || (isEn ? 'Government office / Empanelled hospital' : 'ప్రభుత్వ కార్యాలయం / ఆసుపత్రి');
-    const officialWebsite = scheme.official_website || '#';
+    const officialWebsite = scheme.official_website || scheme.source_url || '';
 
     const title = isEn ? '🔒 Trust & Transparency' : '🔒 విశ్వాస సమాచారం';
     const updatedLabel = isEn ? '📅 Last Updated:' : '📅 చివరిగా నవీకరించిన:';
@@ -872,12 +872,14 @@ function buildTrustInfo(scheme) {
     const siteLabel = isEn ? '🌐 Official Portal:' : '🌐 అధికారిక సంచిక:';
     const visitText = isEn ? 'Visit Website' : 'సందర్శించండి';
 
+    const hasValidWebsite = officialWebsite && officialWebsite !== '#' && officialWebsite.startsWith('http');
+
     return `
         <div class="trust-info">
             <strong>${title}</strong><br>
             ${updatedLabel} ${window.escapeHtml(lastUpdated)}<br>
-            ${verifyLabel} ${window.escapeHtml(confirmationSource)}<br>
-            ${siteLabel} <a class="source-link" href="${window.escapeHtml(officialWebsite)}" target="_blank" rel="noopener noreferrer">${visitText}</a>
+            ${verifyLabel} ${window.escapeHtml(confirmationSource)}
+            ${hasValidWebsite ? `<br>${siteLabel} <a class="source-link" href="${window.escapeHtml(officialWebsite)}" target="_blank" rel="noopener noreferrer">${visitText}</a>` : ''}
         </div>
     `;
 }
@@ -1179,7 +1181,8 @@ async function cacheForOffline() {
         const data = await response.json();
         localStorage.setItem('smartgov_offline_data', JSON.stringify(data));
         localStorage.setItem('smartgov_offline_timestamp', new Date().toISOString());
-        console.log('✅ ऑफलाइन संचयन अद्यतन: ' + data.schemes + ' పథక');
+        const count = data.schemes_count || (data.schemes_list ? Object.keys(data.schemes_list).length : 0);
+        console.log('✅ Offline cache updated: ' + count + ' schemes cached.');
     } catch (error) {
         console.warn('Offline caching failed:', error);
     }
@@ -1191,7 +1194,7 @@ async function cacheForOffline() {
 function loadOfflineData() {
     const offlineData = localStorage.getItem('smartgov_offline_data');
     if (offlineData) {
-        console.log('📱 ఆఫ్‌లైన్ సమాచారం ఉపయోగం చేస్తున్నాం');
+        console.log('📱 Using offline cache data');
         window.offlineMode = true;
         return JSON.parse(offlineData);
     }
@@ -1213,12 +1216,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if offline
     if (!navigator.onLine) {
         loadOfflineData();
-        console.log('📡 ఆఫ్‌లైన్ మోడ్ చేతనం');
+        console.log('📡 Offline mode activated');
     }
 
     // Listen for connection changes
     window.addEventListener('offline', () => {
-        console.log('📡 ఇంటర్నెట్ కనెక్షన్ కోల్పోయారు');
+        console.log('📡 Internet connection lost');
         const indicator = document.getElementById('offlineIndicator');
         if (indicator) {
             indicator.style.display = 'block';
@@ -1226,7 +1229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('online', () => {
-        console.log('📡 ఇంటర్నెట్ కనెక్షన్ పునరుద్ధరించారు');
+        console.log('📡 Internet connection restored');
         const indicator = document.getElementById('offlineIndicator');
         if (indicator) {
             indicator.style.display = 'none';
@@ -1910,6 +1913,13 @@ const SmartGovUX = (function() {
                 <span>${s.icon}</span> <span>${window.escapeHtml(s.label)}</span>
             </button>`;
         }).join('');
+
+        setTimeout(() => {
+            const activePill = pillsContainer.querySelector('.guided-step-pill.active');
+            if (activePill && typeof activePill.scrollIntoView === 'function') {
+                activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        }, 30);
     }
 
     function renderGuidedStep(step) {

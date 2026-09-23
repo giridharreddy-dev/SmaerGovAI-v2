@@ -11,6 +11,7 @@ import { GoogleGenAI } from '@google/genai';
 import { createClient } from 'redis';
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getFirestore, collection, doc, setDoc, addDoc, getDoc, getDocs, getCountFromServer, query, orderBy, limit as fsLimit } from 'firebase/firestore';
+import { scrapeAndSyncIndiaGovSchemes } from './scripts/scrape_india_gov_schemes.js';
 
 let firebaseConfig = {};
 try {
@@ -258,8 +259,84 @@ function loadFacilitiesData() {
   }
 }
 
+async function prewarmCache() {
+  try {
+    console.log('⚡ Prewarming Redis and in-memory cache for ultra-fast query execution...');
+    // 1. All schemes
+    await setCache('scheme:all', schemes, 86400);
+
+    // 2. Summary
+    const summary = computeSchemesSummary();
+    await setCache('scheme:summary', { success: true, ...summary }, 86400);
+
+    // 3. Common batch pagination pages (pages 1 to 5)
+    const limit = 25;
+    const total = schemeNames.length;
+    const totalPages = Math.ceil(total / limit) || 1;
+
+    for (let page = 1; page <= Math.min(totalPages, 10); page++) {
+      const offset = (page - 1) * limit;
+      const slice = schemeNames.slice(offset, offset + limit);
+      const batchSchemes = {};
+      const batchList = [];
+
+      slice.forEach(name => {
+        const s = schemes[name];
+        if (s) {
+          batchSchemes[name] = s;
+          batchList.push({ name, ...s });
+        }
+      });
+
+      const pageResult = {
+        success: true,
+        total,
+        page,
+        limit,
+        offset,
+        totalPages,
+        hasMore: offset + limit < total,
+        nextOffset: offset + limit < total ? offset + limit : null,
+        nextPage: offset + limit < total ? page + 1 : null,
+        count: slice.length,
+        schemes: batchSchemes,
+        schemesList: batchList
+      };
+
+      await setCache(`scheme:batch::::25:${offset}:${page}`, pageResult, 86400);
+      await setCache(`scheme:query::::25:${offset}`, pageResult, 86400);
+    }
+
+    // 4. Cache individual scheme details for top/frequent schemes
+    for (const name of schemeNames) {
+      const s = schemes[name];
+      if (s) {
+        const cacheKey = `scheme:detail:${encodeURIComponent(name)}`;
+        const voiceUrl = s.voice_url || (s.audio_file ? `/public/${s.audio_file.replace(/^(\/?static\/)?/i, '').replace(/^\/+/, '')}` : null);
+        const payload = {
+          request_id: 'prewarmed_' + crypto.randomUUID(),
+          scheme_name: name,
+          level: s.level || 'Andhra Pradesh',
+          category: s.category || 'Health',
+          source_name: s.source_name || 'Government of Andhra Pradesh',
+          source_url: s.official_website || s.source_url || '',
+          is_ai_generated: false,
+          simplified: s.simplified || {},
+          telugu: s.telugu || {},
+          voice_url: voiceUrl,
+        };
+        await setCache(cacheKey, payload, 86400);
+      }
+    }
+    console.log(`🚀 Prewarmed cache for ${schemeNames.length} schemes! Sub-second response times guaranteed.`);
+  } catch (err) {
+    console.warn('Prewarming cache warning:', err.message);
+  }
+}
+
 loadSchemesData();
 loadFacilitiesData();
+setTimeout(() => prewarmCache(), 500);
 
 // Cache for pre-aggregated schemes analytics summary
 let cachedSchemesSummary = null;
@@ -644,11 +721,34 @@ const STOPWORDS = new Set([
   'want',
   'need',
   'tell',
+  'hi',
+  'hello',
+  'hey',
+  'namaste',
+  'namaskaram',
+  'namaskar',
+  'thanks',
+  'thank',
+  'thankyou',
+  'bye',
+  'good',
+  'morning',
+  'afternoon',
+  'evening',
+  'hiii',
+  'heyya',
 ]);
 
 function retrieveRelevantSchemes(question, lang = 'te', maxResults = 4, history = []) {
   const currentQuery = (question || '').trim();
   const qLower = currentQuery.toLowerCase().replace(/[.,?!'\"(){}\[\]:;-]/g, '');
+
+  // Ignore scheme matching for pure conversational greetings
+  const GREETING_REGEX = /^(hi+|hello+|hey+|namaste+|namaskaram+|namaskar+|good\s*(morning|afternoon|evening)|hi\s+there|howdy|greetings|who\s+are\s+you|what\s+can\s+you\s+do|నమస్కారం|నమస్తే|హలో|హాయ్|ధన్యవాదాలు|థ్యాంక్స్|బై)$/i;
+  if (GREETING_REGEX.test(qLower)) {
+    return [];
+  }
+
   const tokens = qLower.split(/\s+/).filter((t) => t && !STOPWORDS.has(t));
 
   // Extract prior user search context (exclude bot responses to prevent topic bleeding)
@@ -682,11 +782,10 @@ function retrieveRelevantSchemes(question, lang = 'te', maxResults = 4, history 
     const teluguName = (data.telugu_name || '').toLowerCase();
     const keywords = (data.keywords || []).map((k) => k.toLowerCase());
     const category = (data.category || '').toLowerCase();
-    const allText = `${nameLower} ${teluguName} ${category} ${keywords.join(' ')}`;
 
     // High-weight direct match with current question
     for (const kw of keywords) {
-      if (qLower.includes(kw)) score += 6;
+      if (kw.length >= 2 && qLower.includes(kw)) score += 6;
     }
 
     for (const ea of expandedAliases) {
@@ -696,9 +795,14 @@ function retrieveRelevantSchemes(question, lang = 'te', maxResults = 4, history 
     }
 
     for (const token of tokens) {
-      if (token.length <= 1) continue;
-      if (teluguName.includes(token)) score += 5;
-      if (nameLower.includes(token)) score += 4;
+      if (token.length <= 2) continue; // Prevent accidental short substring matching like "hi" matching "child hearing"
+      const wordRegex = new RegExp(`\\b${token}\\b`, 'i');
+      if (wordRegex.test(teluguName)) score += 5;
+      else if (teluguName.includes(token)) score += 3;
+
+      if (wordRegex.test(nameLower)) score += 5;
+      else if (nameLower.includes(token)) score += 2;
+
       if (category.includes(token)) score += 3;
       if (keywords.some((k) => k.includes(token))) score += 4;
     }
@@ -815,7 +919,7 @@ app.get('/version', (req, res) => {
   });
 });
 
-app.get('/api/schemes', (req, res) => {
+app.get('/api/schemes', async (req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=300');
   
   // If batch pagination is requested via query params
@@ -825,6 +929,12 @@ app.get('/api/schemes', (req, res) => {
     const category = (req.query.category || '').toLowerCase().trim();
     const level = (req.query.level || '').trim();
     const search = (req.query.search || req.query.q || '').toLowerCase().trim();
+
+    const cacheKey = `scheme:query:${category}:${level}:${search}:${limit}:${offset}`;
+    const cached = await getCache(cacheKey);
+    if (cached) {
+      return res.json(cached);
+    }
 
     let filtered = schemeNames;
 
@@ -867,7 +977,7 @@ app.get('/api/schemes', (req, res) => {
       }
     });
 
-    return res.json({
+    const result = {
       success: true,
       total,
       page,
@@ -880,24 +990,41 @@ app.get('/api/schemes', (req, res) => {
       count: slice.length,
       schemes: batchSchemes,
       schemesList: batchList
-    });
+    };
+
+    await setCache(cacheKey, result, 3600);
+    return res.json(result);
   }
 
+  const allCached = await getCache('scheme:all');
+  if (allCached) {
+    return res.json(allCached);
+  }
+
+  await setCache('scheme:all', schemes, 3600);
   res.json(schemes);
 });
 
 // Dedicated fast summary endpoint for instantaneous dashboard loading
-app.get('/api/schemes/summary', (req, res) => {
+app.get('/api/schemes/summary', async (req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=300');
+  const cacheKey = 'scheme:summary';
+  const cached = await getCache(cacheKey);
+  if (cached) {
+    return res.json(cached);
+  }
+
   const summary = computeSchemesSummary();
-  res.json({
+  const responseData = {
     success: true,
     ...summary
-  });
+  };
+  await setCache(cacheKey, responseData, 3600);
+  res.json(responseData);
 });
 
 // Dedicated batch chunk endpoint for progressive hydration
-app.get('/api/schemes/batch', (req, res) => {
+app.get('/api/schemes/batch', async (req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=60, stale-while-revalidate=300');
   const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 25, 1), 100);
   const page = Math.max(parseInt(req.query.page, 10) || 1, 1);
@@ -905,6 +1032,12 @@ app.get('/api/schemes/batch', (req, res) => {
   const category = (req.query.category || '').toLowerCase().trim();
   const level = (req.query.level || '').trim();
   const search = (req.query.search || req.query.q || '').toLowerCase().trim();
+
+  const cacheKey = `scheme:batch:${category}:${level}:${search}:${limit}:${offset}:${page}`;
+  const cached = await getCache(cacheKey);
+  if (cached) {
+    return res.json(cached);
+  }
 
   let filtered = schemeNames;
 
@@ -946,7 +1079,7 @@ app.get('/api/schemes/batch', (req, res) => {
     }
   });
 
-  res.json({
+  const responseData = {
     success: true,
     total,
     page,
@@ -959,13 +1092,18 @@ app.get('/api/schemes/batch', (req, res) => {
     count: slice.length,
     schemes: batchSchemes,
     schemesList: batchList
-  });
+  };
+
+  await setCache(cacheKey, responseData, 3600);
+  res.json(responseData);
 });
 
 app.post('/api/schemes/refresh', async (req, res) => {
   loadSchemesData();
   await syncSchemesFromFirestore();
   invalidateSchemesCache();
+  await flushSchemeCache();
+  await prewarmCache();
   const summary = computeSchemesSummary();
   res.json({ success: true, schemes_count: schemeNames.length, summary });
 });
@@ -1025,6 +1163,290 @@ function validateIsGovernmentHealthScheme(text = '', filename = '') {
   return { isGovtScheme: true };
 }
 
+// Helper function: Tesseract.js OCR Engine for scanned images and image-based PDFs
+async function runTesseractOCR(fileBuffer) {
+  try {
+    const Tesseract = await import('tesseract.js');
+    const tessPromise = Tesseract.default.recognize(fileBuffer, 'eng');
+    const tessTimeout = new Promise((_, rej) => setTimeout(() => rej(new Error('TESS_TIMEOUT')), 6000));
+    const { data: { text } } = await Promise.race([tessPromise, tessTimeout]);
+    return (text || '').trim();
+  } catch (err) {
+    console.warn('Tesseract.js OCR engine note:', err.message);
+    return '';
+  }
+}
+
+// Formatted PDF Document Download Endpoint with official scheme source links
+app.get(['/api/download-scheme-pdf', '/download-scheme-pdf'], (req, res) => {
+  const schemeName = (req.query.scheme_name || req.query.name || '').trim();
+  const lang = req.query.lang || 'te';
+  const isEn = lang === 'en';
+
+  let matched = null;
+  if (schemeName) {
+    matched = catalogData.schemes.find(s => 
+      (s.scheme_name && s.scheme_name.toLowerCase() === schemeName.toLowerCase()) || 
+      (s.telugu_name && s.telugu_name.toLowerCase() === schemeName.toLowerCase())
+    );
+  }
+  if (!matched) {
+    matched = catalogData.schemes[0];
+  }
+
+  const title = isEn ? (matched.scheme_name || schemeName) : (matched.telugu_name || matched.scheme_name || schemeName);
+  const altTitle = isEn ? (matched.telugu_name || '') : (matched.scheme_name || '');
+  const sourceUrl = matched.official_website || matched.source_url || 'https://ysraarogyasri.ap.gov.in';
+  const level = matched.level || 'Andhra Pradesh';
+  const category = matched.category || (isEn ? 'Healthcare Welfare Scheme' : 'ఆరోగ్య సంక్షేమ పథకం');
+  
+  const elig = isEn 
+    ? (matched.simplified?.eligibility || matched.english_description || 'Resident families of Andhra Pradesh with valid Rice Card or annual family income below state limit.')
+    : (matched.telugu?.eligibility || matched.telugu_description || 'ఆంధ్రప్రదేశ్ రాష్ట్ర నివాసితులు, చెల్లుబాటు అయ్యే వైట్ రేషన్ / బియ్యం కార్డు ఉన్న కుటుంబాలు.');
+
+  const benefits = isEn
+    ? (matched.simplified?.benefits || 'Cashless hospitalization, surgery, and free diagnostic tests in empanelled network hospitals.')
+    : (matched.telugu?.benefits || 'నెట్‌వర్క్ ఆసుపత్రులలో ఉచిత నగదు రహిత చికిత్స, శస్త్రచికిత్సలు మరియు ఉచిత వైద్య పరీక్షలు.');
+
+  const steps = isEn
+    ? (matched.simplified?.steps || '1. Visit nearest Grama/Ward Sachivalayam or Network Hospital.\n2. Present Aadhaar & Rice Card at Aarogya Mithra desk.\n3. Get electronic pre-authorization for cashless treatment.')
+    : (matched.telugu?.steps || '1. సమీప గ్రామ/వార్డు సచివాలయం లేదా ఆరోగ్యశ్రీ నెట్‌వర్క్ ఆసుపత్రిని సందర్శించండి.\n2. ఆరోగ్య మిత్ర హెల్ప్ డెస్క్ వద్ద ఆధార్ మరియు రేషన్ కార్డును చూపించండి.\n3. ఉచితంగా ఈ-ప్రీఆథరైజేషన్ పొంది నగదు రహిత చికిత్స ప్రారంభించండి.');
+
+  const docsList = [
+    isEn ? 'Aadhaar Card (Beneficiary / Patient)' : 'లబ్ధిదారుని ఆధార్ కార్డు',
+    isEn ? 'Rice Card / White Ration Card / Health Card' : 'బియ్యం కార్డు / తెల్ల రేషన్ కార్డు / ఆరోగ్య కార్డు',
+    isEn ? 'Doctor Referral / Hospital Admission Slip' : 'వైద్యుల రిఫరల్ / ఆసుపత్రి అడ్మిషన్ పత్రం'
+  ];
+
+  const contact = matched.telugu?.contact_office || matched.contact_office || (isEn ? 'Grama/Ward Sachivalayam, Network Hospitals, Toll-Free 104 / 1902' : 'గ్రామ/వార్డు సచివాలయం, నెట్‌వర్క్ ఆసుపత్రులు, టోల్ ఫ్రీ 104 / 1902');
+  const printDate = new Date().toLocaleDateString(isEn ? 'en-IN' : 'te-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  const html = `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title} - SmartGovAI Official Summary</title>
+    <style>
+        @page { size: A4 portrait; margin: 12mm 15mm; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: ${isEn ? 'system-ui, -apple-system, sans-serif' : '"Noto Sans Telugu", system-ui, sans-serif'};
+            color: #0f172a;
+            background: #ffffff;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+            font-size: 11pt;
+        }
+        .pdf-card {
+            max-width: 820px;
+            margin: 0 auto;
+            border: 2.5px solid #0284c7;
+            border-radius: 12px;
+            padding: 28px;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        .header-seal {
+            font-size: 32px;
+            margin-bottom: 4px;
+        }
+        .header-sub {
+            font-size: 9pt;
+            font-weight: 800;
+            color: #0284c7;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .header-main {
+            font-size: 14pt;
+            font-weight: 800;
+            color: #0f172a;
+            margin-top: 2px;
+        }
+        .title-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .title-text {
+            font-size: 16pt;
+            font-weight: 800;
+            color: #0369a1;
+            margin: 0 0 4px 0;
+        }
+        .alt-title {
+            font-size: 11pt;
+            color: #475569;
+            font-weight: 600;
+        }
+        .badge-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .badge {
+            background: #0284c7;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 8.5pt;
+            font-weight: 700;
+        }
+        .badge-outline {
+            background: #ffffff;
+            color: #0369a1;
+            border: 1px solid #0284c7;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 8.5pt;
+            font-weight: 700;
+        }
+        .section-box {
+            margin-bottom: 16px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #0284c7;
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+        .section-heading {
+            font-size: 11pt;
+            font-weight: 800;
+            color: #0369a1;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .doc-checklist {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+        }
+        .doc-checklist li {
+            margin-bottom: 4px;
+        }
+        .source-link-box {
+            background: #eff6ff;
+            border: 1.5px solid #60a5fa;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 22px;
+        }
+        .source-heading {
+            font-size: 10pt;
+            font-weight: 800;
+            color: #1e40af;
+            margin-bottom: 4px;
+        }
+        .source-url-text {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 10pt;
+            word-break: break-all;
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 24px;
+            border-top: 1px solid #cbd5e1;
+            padding-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8.5pt;
+            color: #64748b;
+        }
+        @media print {
+            body { padding: 0; }
+            .pdf-card { border: none; box-shadow: none; max-width: 100%; padding: 0; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print" style="text-align: center; margin-bottom: 16px;">
+        <button onclick="window.print()" style="background: #0284c7; color: white; border: none; padding: 10px 24px; font-weight: 800; font-size: 1rem; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(2,132,199,0.25);">
+            🖨️ ${isEn ? 'Print / Save as PDF' : 'పిడిఎఫ్ ముద్రణ / ప్రింట్ చేయండి'}
+        </button>
+    </div>
+
+    <div class="pdf-card">
+        <div class="header">
+            <div class="header-seal">🏛️</div>
+            <div class="header-sub">Government of Andhra Pradesh • Healthcare & Welfare Portal</div>
+            <div class="header-main">SmartGovAI Official Scheme Briefing & Document Checklist</div>
+        </div>
+
+        <div class="title-box">
+            <div class="title-text">${title}</div>
+            ${altTitle ? `<div class="alt-title">${altTitle}</div>` : ''}
+            <div class="badge-row">
+                <span class="badge">📍 ${level}</span>
+                <span class="badge-outline">🏥 ${category}</span>
+                <span class="badge"> Verified Government Record</span>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <div class="section-heading">🎯 ${isEn ? 'Eligibility Requirements' : 'అర్హత నిబంధనలు'}</div>
+            <div>${elig}</div>
+        </div>
+
+        <div class="section-box">
+            <div class="section-heading">💊 ${isEn ? 'Key Benefits & Coverage' : 'పథకం ఉచిత ప్రయోజనాలు & చికిత్సలు'}</div>
+            <div>${benefits}</div>
+        </div>
+
+        <div class="section-box">
+            <div class="section-heading">📋 ${isEn ? 'Required Document Checklist' : 'అవసరమైన పత్రాల చెక్‌లిస్ట్'}</div>
+            <ul class="doc-checklist">
+                ${docsList.map(d => `<li><strong>${d}</strong></li>`).join('')}
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <div class="section-heading">🚀 ${isEn ? 'How to Apply & Contact Desk' : 'దరఖాస్తు విధానం & సంప్రదించాల్సిన కార్యాలయం'}</div>
+            <div style="white-space: pre-line;">${steps}</div>
+            <div style="margin-top: 8px; font-weight: 700; color: #0369a1;">📞 ${contact}</div>
+        </div>
+
+        <div class="source-link-box">
+            <div class="source-heading">🌐 ${isEn ? 'Official Government Portal Source Link' : 'అధికారిక ప్రభుత్వ మూల వెబ్‌సైట్ లింక్'}:</div>
+            <a href="${sourceUrl}" target="_blank" class="source-url-text">${sourceUrl}</a>
+            <div style="font-size: 8pt; color: #475569; margin-top: 4px;">
+                ${isEn ? 'Direct link to government portal, G.O. guidelines, and network hospital empanelment.' : 'అధికారిక జిఒలు, ఆరోగ్యశ్రీ నెట్‌వర్క్ ఆసుపత్రుల జాబితా మరియు ప్రభుత్వ ఆదేశాలకు నేరుగా లింక్.'}
+            </div>
+        </div>
+
+        <div class="footer">
+            <span> SmartGovAI Healthcare Advisor • AP State Portal</span>
+            <span>📅 Generated: ${printDate}</span>
+        </div>
+    </div>
+
+    <script>
+        // Auto trigger print preview if requested
+        if (window.location.search.indexOf('autoprint=true') !== -1) {
+            window.onload = function() { setTimeout(function() { window.print(); }, 400); };
+        }
+    </script>
+</body>
+</html>`;
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
+});
+
 // Scheme Details and PDF / Scanned Image Document Simplification with OCR
 app.post('/simplify', (req, res, next) => {
   upload.single('document')(req, res, (err) => {
@@ -1078,6 +1500,11 @@ app.post('/simplify', (req, res, next) => {
           isImagedDoc = false;
         } else {
           isImagedDoc = true;
+          // Fallback to Tesseract.js OCR engine for scanned image-based PDFs
+          const ocrText = await runTesseractOCR(req.file.buffer);
+          if (ocrText) {
+            extractedText = ocrText;
+          }
         }
       }
 
@@ -1090,7 +1517,8 @@ app.post('/simplify', (req, res, next) => {
             is_not_govt_scheme: true,
             error: textVal.reasonTe,
             error_en: textVal.reasonEn,
-            message: textVal.reasonTe
+            message: textVal.reasonTe,
+            message_en: textVal.reasonEn
           });
         }
       }
@@ -1189,14 +1617,14 @@ If it IS a valid healthcare/welfare scheme or medical document, extract the key 
             contents: parts,
             config: {
               responseMimeType: 'application/json',
-              temperature: 0.2,
-              maxOutputTokens: 1200,
+              temperature: 0.1,
+              maxOutputTokens: 950,
             },
           });
 
-          // Fast 9-second timeout to avoid long hanging
+          // Fast 6.5-second timeout for responsive document analysis
           const timeoutPromise = new Promise((_, reject) => 
-            setTimeout(() => reject(new Error('TIMEOUT')), 9000)
+            setTimeout(() => reject(new Error('TIMEOUT')), 6500)
           );
 
           const response = await Promise.race([geminiCall, timeoutPromise]);
@@ -1211,7 +1639,8 @@ If it IS a valid healthcare/welfare scheme or medical document, extract the key 
                 is_not_govt_scheme: true,
                 error: parsed.rejection_reason_te || 'అప్‌లోడ్ చేసిన పత్రం ప్రభుత్వ ఆరోగ్య లేదా సంక్షేమ పథకానికి సంబంధించినది కాదు.',
                 error_en: parsed.rejection_reason_en || 'The uploaded document is not a recognized government health or welfare scheme.',
-                message: parsed.rejection_reason_te || 'అప్‌లోడ్ చేసిన పత్రం ప్రభుత్వ ఆరోగ్య లేదా సంక్షేమ పథకానికి సంబంధించినది కాదు.'
+                message: parsed.rejection_reason_te || 'అప్‌లోడ్ చేసిన పత్రం ప్రభుత్వ ఆరోగ్య లేదా సంక్షేమ పథకానికి సంబంధించినది కాదు.',
+                message_en: parsed.rejection_reason_en || 'The uploaded document is not a recognized government health or welfare scheme.'
               });
             }
 
@@ -1324,7 +1753,8 @@ If it IS a valid healthcare/welfare scheme or medical document, extract the key 
           is_not_govt_scheme: true,
           error: finalVal.reasonTe,
           error_en: finalVal.reasonEn,
-          message: finalVal.reasonTe
+          message: finalVal.reasonTe,
+          message_en: finalVal.reasonEn
         });
       }
 
@@ -1365,6 +1795,12 @@ If it IS a valid healthcare/welfare scheme or medical document, extract the key 
       return res.status(400).json({ error: 'దయచేసి పథకం పేరును ఎంచుకోండి.' });
     }
 
+    const cacheKey = `scheme:detail:${encodeURIComponent(schemeName)}`;
+    const cachedDetail = await getCache(cacheKey);
+    if (cachedDetail) {
+      return res.json(cachedDetail);
+    }
+
     const schemeData = schemes[schemeName];
     if (!schemeData) {
       return res.status(404).json({ error: 'పథకం కనుగొనబడలేదు.' });
@@ -1379,7 +1815,7 @@ If it IS a valid healthcare/welfare scheme or medical document, extract the key 
       voiceUrl = `/public/${cleanAudio}`;
     }
 
-    return res.json({
+    const responsePayload = {
       request_id: reqId,
       scheme_name: schemeName,
       level: schemeData.level || 'Andhra Pradesh',
@@ -1390,10 +1826,282 @@ If it IS a valid healthcare/welfare scheme or medical document, extract the key 
       simplified: schemeData.simplified || {},
       telugu: schemeData.telugu || {},
       voice_url: voiceUrl,
-    });
+    };
+
+    await setCache(cacheKey, responsePayload, 86400);
+    return res.json(responsePayload);
   } catch (err) {
     console.error('Error in /simplify:', err);
     res.status(500).json({ error: 'సర్వర్ లోపం ఏర్పడింది. దయచేసి మళ్ళీ ప్రయత్నించండి.' });
+  }
+});
+
+// Chunk-based SSE stream for document upload processing
+app.post('/simplify-stream', (req, res, next) => {
+  upload.single('document')(req, res, (err) => {
+    if (err) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(400).json({ error: 'ఫైల్ పరిమాణం 20MB కంటే ఎక్కువగా ఉంది. దయచేసి 20MB లోపు ఉన్న PDF లేదా ఇమేజ్ ఫైల్‌ను ఎంచుకోండి.' });
+      }
+      return res.status(400).json({ error: `అప్‌లోడ్ లోపం: ${err.message}` });
+    }
+    next();
+  });
+}, async (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+  res.setHeader('X-Accel-Buffering', 'no');
+
+  const sendEvent = (event, data) => {
+    res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+    if (res.flush) res.flush();
+  };
+
+  try {
+    if (!req.file) {
+      sendEvent('error', { error: 'No document file provided.' });
+      return res.end();
+    }
+
+    const consent = req.body.consent;
+    if (!consent || consent !== 'true') {
+      sendEvent('error', { error: 'Consent is required before uploading documents.' });
+      return res.end();
+    }
+
+    sendEvent('progress', {
+      stage: 'extracting',
+      pct: 20,
+      badge: 'Ingested',
+      title: 'Parsing PDF Document Chunks...',
+      sub: `Loaded ${Math.round(req.file.size / 1024)} KB. Extracting text streams & structure...`
+    });
+
+    const mimeType = req.file.mimetype || 'application/pdf';
+    const isImage = mimeType.startsWith('image/');
+    let extractedText = '';
+    let isImagedDoc = isImage;
+
+    if (!isImage) {
+      try {
+        const pdfModule = await import('pdf-parse');
+        if (typeof pdfModule.default === 'function') {
+          const pdfData = await pdfModule.default(req.file.buffer);
+          extractedText = (pdfData.text || '').trim();
+        } else if (pdfModule.PDFParse) {
+          const parser = new pdfModule.PDFParse({ data: req.file.buffer });
+          await parser.load();
+          const textResult = await parser.getText();
+          extractedText = (typeof textResult === 'string' ? textResult : (textResult?.text || '')).trim();
+        }
+      } catch (pdfErr) {
+        console.warn('pdf-parse extraction warning:', pdfErr.message);
+      }
+      if (extractedText && extractedText.length >= 20) {
+        isImagedDoc = false;
+      } else {
+        isImagedDoc = true;
+        sendEvent('progress', {
+          stage: 'ocr_ingest',
+          pct: 35,
+          badge: 'Tesseract OCR',
+          title: 'Running Tesseract.js OCR Engine...',
+          sub: 'Extracting optical characters from scanned PDF pages...'
+        });
+        const ocrText = await runTesseractOCR(req.file.buffer);
+        if (ocrText) {
+          extractedText = ocrText;
+        }
+      }
+    }
+
+    if (extractedText && extractedText.length > 20) {
+      const textVal = validateIsGovernmentHealthScheme(extractedText, req.file.originalname);
+      if (!textVal.isGovtScheme) {
+        sendEvent('error', {
+          status: 'rejected',
+          is_not_govt_scheme: true,
+          error: textVal.reasonTe,
+          error_en: textVal.reasonEn,
+          message: textVal.reasonTe,
+          message_en: textVal.reasonEn
+        });
+        return res.end();
+      }
+
+      sendEvent('progress', {
+        stage: 'validating',
+        pct: 50,
+        badge: 'Verified',
+        title: `Extracted ${extractedText.length} Characters`,
+        sub: `Verified AP government document structure (~${Math.ceil(extractedText.length / 800)} pages).`
+      });
+    } else {
+      sendEvent('progress', {
+        stage: 'ocr_ingest',
+        pct: 45,
+        badge: 'OCR Stream',
+        title: isImage ? 'Scanned Image OCR' : 'Scanned PDF (Multimodal Vision OCR)',
+        sub: 'Routing scanned document to Gemini Multimodal OCR Vision pipeline...'
+      });
+    }
+
+    sendEvent('progress', {
+      stage: 'analyzing',
+      pct: 78,
+      badge: 'Analyzing',
+      title: 'Interpreting Scheme Criteria with Gemini AI...',
+      sub: 'Synthesizing eligibility rules, hospital coverage limits & required documents...'
+    });
+
+    const schemeTitle = req.body.scheme_name || (isImage ? 'స్కాన్ చేసిన ఇమేజ్ పత్రం (Scanned Document)' : 'అప్‌లోడ్ చేసిన PDF పత్రం (Uploaded PDF)');
+    const ai = getGeminiClient();
+    let finalResponse = null;
+
+    if (ai) {
+      try {
+        const basePrompt = `You are SmartGovAI, an authoritative Andhra Pradesh healthcare scheme analyst and OCR interpreter.
+Analyze this uploaded document. FIRST, determine if this is an official government healthcare or welfare scheme document, Government Order (GO), public health circular, Aarogyasri guideline, or genuine hospital medical record.
+If the document is an academic assignment, software specification, homework, syllabus, resume, dummy sample, or unrelated technical text that has nothing to do with government healthcare schemes, you MUST return:
+{
+  "is_government_scheme": false,
+  "rejection_reason_te": "అప్‌లోడ్ చేసిన ఫైల్ ప్రభుత్వ ఆరోగ్య పథకం లేదా అధికారిక జీవో (GO) కాదు.",
+  "rejection_reason_en": "The uploaded file is not a government health or welfare scheme document."
+}
+
+If it IS a valid healthcare/welfare scheme or medical document, extract key details and return JSON:
+{
+  "is_government_scheme": true,
+  "scheme_name": "Official Scheme Name (English)",
+  "telugu_name": "పథకం పేరు (తెలుగు)",
+  "category": "Healthcare Category",
+  "level": "Andhra Pradesh",
+  "benefit_amount": "Financial coverage or assistance amount",
+  "benefit_amount_te": "ఆర్థిక రక్షణ పరిమితి లేదా ఉచిత చికిత్స వివరాలు",
+  "simplified": {
+    "eligibility": "Who is eligible (English)",
+    "benefits": "What coverage is provided (English)",
+    "documents": "What documents required (English)",
+    "steps": "Step by step application process (English)"
+  },
+  "telugu": {
+    "eligibility": "ఎవరు అర్హులు (తెలుగు)",
+    "benefits": "ఏమి ప్రయోజనాలు (తెలుగు)",
+    "documents": "కావలసిన పత్రాలు (తెలుగు)",
+    "steps": "ఎలా దరఖాస్తు చేయాలి (తెలుగు)"
+  },
+  "required_documents": [
+    { "name": "Aadhaar Card", "name_te": "ఆధార్ కార్డు", "optional": false },
+    { "name": "Rice Card / White Ration Card", "name_te": "బియ్యం కార్డు / తెల్ల రేషన్ కార్డు", "optional": false }
+  ]
+}`;
+
+        let parts;
+        if (isImage) {
+          parts = [
+            { inlineData: { mimeType: mimeType, data: req.file.buffer.toString('base64') } },
+            { text: `${basePrompt}\n\nNote: Perform optical character recognition (OCR) on all visual text in this document image.` }
+          ];
+        } else if (isImagedDoc) {
+          parts = [
+            { inlineData: { mimeType: 'application/pdf', data: req.file.buffer.toString('base64') } },
+            { text: `${basePrompt}\n\nNote: Perform optical character recognition (OCR) on all visual text in this scanned PDF.` }
+          ];
+        } else {
+          parts = [{ text: `${basePrompt}\n\nDocument Text Content:\n${extractedText.slice(0, 4000)}` }];
+        }
+
+        const geminiCall = ai.models.generateContent({
+          model: 'gemini-3.8-flash',
+          contents: parts,
+          config: { responseMimeType: 'application/json', temperature: 0.1, maxOutputTokens: 950 }
+        });
+
+        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('TIMEOUT')), 6500));
+        const response = await Promise.race([geminiCall, timeoutPromise]);
+        const rawText = (response.text || '').trim();
+        const jsonMatch = rawText.match(/\{[\s\S]*\}/);
+        const parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : JSON.parse(rawText);
+
+        if (parsed) {
+          if (parsed.is_government_scheme === false) {
+            sendEvent('error', {
+              status: 'rejected',
+              is_not_govt_scheme: true,
+              error: parsed.rejection_reason_te || 'అప్‌లోడ్ చేసిన పత్రం ప్రభుత్వ ఆరోగ్య పథకం కాదు.',
+              error_en: parsed.rejection_reason_en || 'The uploaded document is not a recognized government health or welfare scheme.',
+              message: parsed.rejection_reason_te || 'అప్‌లోడ్ చేసిన పత్రం ప్రభుత్వ ఆరోగ్య పథకం కాదు.',
+              message_en: parsed.rejection_reason_en || 'The uploaded document is not a recognized government health or welfare scheme.'
+            });
+            return res.end();
+          }
+
+          if (parsed.simplified || parsed.telugu) {
+            const reqId = logRequest(parsed.scheme_name || schemeTitle, isImagedDoc ? 'ocr_stream' : 'pdf_stream');
+            finalResponse = {
+              request_id: reqId,
+              scheme_name: parsed.scheme_name || schemeTitle,
+              telugu_name: parsed.telugu_name || schemeTitle,
+              level: parsed.level || 'Andhra Pradesh',
+              category: parsed.category || 'Healthcare Welfare Scheme',
+              benefit_amount: parsed.benefit_amount || 'Free Cashless Healthcare',
+              benefit_amount_te: parsed.benefit_amount_te || 'ఉచిత నగదు రహిత చికిత్స',
+              required_documents: Array.isArray(parsed.required_documents) && parsed.required_documents.length > 0 ? parsed.required_documents : [
+                { name: "Aadhaar Card", name_te: "ఆధార్ కార్డు", optional: false },
+                { name: "Rice Card / White Ration Card", name_te: "బియ్యం కార్డు / తెల్ల రేషన్ కార్డు", optional: false }
+              ],
+              source_name: isImagedDoc ? 'Scanned Document (OCR Analyzed)' : 'Uploaded Document (Stream Parsed)',
+              source_url: '',
+              is_ai_generated: true,
+              is_ocr_processed: isImagedDoc,
+              simplified: parsed.simplified,
+              telugu: parsed.telugu,
+              voice_url: null
+            };
+          }
+        }
+      } catch (gemErr) {
+        console.warn('Gemini stream analysis fallback:', gemErr.message);
+      }
+    }
+
+    if (!finalResponse) {
+      const snippet = extractedText ? extractedText.slice(0, 300) : '';
+      const reqId = logRequest(schemeTitle, 'stream_fallback');
+      finalResponse = {
+        request_id: reqId,
+        scheme_name: schemeTitle,
+        telugu_name: schemeTitle,
+        level: 'Uploaded Document',
+        category: 'Health Document',
+        source_name: isImagedDoc ? 'Scanned Document (OCR Extracted)' : 'Government PDF Document',
+        source_url: '',
+        is_ai_generated: true,
+        is_ocr_processed: isImagedDoc,
+        simplified: {
+          eligibility: snippet ? `Extracted snippet: "${snippet.slice(0, 120)}...". Applicable to residents of AP.` : 'Eligible residents of Andhra Pradesh according to document provisions.',
+          benefits: 'Free medical treatment, diagnostic tests, or government welfare benefits.',
+          documents: 'Aadhaar Card, White Ration / Rice Card, and Medical Records.',
+          steps: 'Apply at nearest Grama Sachivalayam, Village Clinic, or empanelled hospital.'
+        },
+        telugu: {
+          eligibility: snippet ? `గ్రహించిన సారాంశం: "${snippet.slice(0, 120)}...". అర్హులైన నివాసితులు.` : 'ఆంధ్రప్రదేశ్ రాష్ట్ర నివాసితులు మరియు నిబంధనల ప్రకారం అర్హులైన కుటుంబాలు.',
+          benefits: 'ఉచిత వైద్య సేవలు, పరీక్షలు లేదా నిర్దేశిత ఆసుపత్రులలో నగదు రహిత చికిత్స.',
+          documents: 'ఆధార్ కార్డు, బియ్యం కార్డు / రేషన్ కార్డు, డాక్టర్ ప్రిస్క్రిప్షన్.',
+          steps: 'సమీప గ్రామ సచివాలయం లేదా వైఎస్సార్ విలేజ్ క్లినిక్ కి వెళ్లవచ్చు.'
+        },
+        voice_url: null
+      };
+    }
+
+    sendEvent('progress', { stage: 'complete', pct: 100, badge: 'Complete', title: 'Stream Processing Complete!', sub: 'Rendering scheme details card...' });
+    sendEvent('result', finalResponse);
+    res.end();
+  } catch (err) {
+    console.error('Error in /simplify-stream:', err);
+    sendEvent('error', { error: 'Stream error occurred. Please try uploading again.' });
+    res.end();
   }
 });
 
@@ -1491,15 +2199,44 @@ app.all(['/api/tts', '/tts'], async (req, res) => {
 // Fast in-memory cache for chat queries to ensure instant sub-second responses
 const quickChatCache = new Map();
 
+// Query Language Detection Helper: dynamically respects client UI state while prioritizing explicit prompt requests
+function detectQueryLanguage(userText = '', clientLang = 'en') {
+  const text = (userText || '').trim();
+
+  // 1. Explicit language overrides in user text
+  const explicitHindiReq = /\b(in hindi|hindi lo|speak hindi|tell in hindi|reply in hindi|answer in hindi|हिंदी|हिन्दी)\b/i.test(text);
+  if (explicitHindiReq) return 'hi';
+
+  const explicitTeluguReq = /\b(in telugu|telugu lo|telugulo|speak telugu|tell in telugu|reply in telugu|answer in telugu|తెలుగులో|తెలుగు)\b/i.test(text);
+  if (explicitTeluguReq) return 'te';
+
+  const explicitEnglishReq = /\b(in english|speak english|tell in english|reply in english|answer in english|english)\b/i.test(text);
+  if (explicitEnglishReq) return 'en';
+
+  // 2. Check for Telugu script characters (\u0C00-\u0C7F)
+  const hasTeluguScript = /[\u0C00-\u0C7F]/.test(text);
+  if (hasTeluguScript) return 'te';
+
+  // 3. Dynamic UI state preference: honor the client UI language selection
+  if (clientLang && ['te', 'hi', 'en'].includes(clientLang)) {
+    return clientLang;
+  }
+
+  return 'en';
+}
+
 // System Instruction Builder for SmartGovAI Healthcare Advisor Role
-function buildHealthcareAdvisorSystemInstruction(lang = 'te', matchedSchemes = [], roleType = 'advisor') {
+function buildHealthcareAdvisorSystemInstruction(lang = 'en', matchedSchemes = [], roleType = 'advisor') {
   const isEn = lang === 'en';
+  const isTe = lang === 'te';
+
   // Extract compact scheme summary to minimize token overhead and accelerate response latency
   const compactSchemes = (matchedSchemes || []).slice(0, 3).map(s => ({
     name: s.scheme_name,
     telugu_name: s.telugu_name,
     category: s.category,
     limit: s.financial_limit || s.limit,
+    official_website: s.official_website || s.source_url || 'https://ysraarogyasri.ap.gov.in',
     eligibility: isEn ? (s.simplified?.eligibility || s.eligibility) : (s.telugu?.eligibility || s.eligibility),
     benefits: isEn ? (s.simplified?.benefits || s.benefits) : (s.telugu?.benefits || s.benefits),
     steps: isEn ? (s.simplified?.steps || s.steps) : (s.telugu?.steps || s.steps)
@@ -1507,87 +2244,105 @@ function buildHealthcareAdvisorSystemInstruction(lang = 'te', matchedSchemes = [
   const schemeJson = JSON.stringify(compactSchemes);
 
   if (isEn) {
-    return `You are SmartGovAI, the official Virtual Healthcare & Welfare Advisor for Andhra Pradesh (AP).
-ROLE: Fast, compassionate counselor. Keep responses clear, accurate, and concise (under 160 words).
-GUIDELINES:
-1. Explain AP health benefits (e.g. Aarogyasri up to ₹25 Lakhs per family per year, free hospital care, maternity aid, pensions).
-2. Detail eligibility (White/Rice card, BPL status) and apply steps (Grama Sachivalayam, PHC, Aarogya Mithra).
-3. Urgencies: 108 (Ambulance), 104 (Health line), 102 (Mother transport).
-4. Format: Bold headers, short bullet points.
-RELEVANT SCHEMES: ${schemeJson}`;
+    return `You are SmartGovAI, the official Virtual Healthcare & Welfare Advisor and Health Scheme Information Specialist for Andhra Pradesh (AP).
+
+STRICT DOMAIN BOUNDARY & REFUSAL POLICY:
+- You are strictly a Health Scheme Information Specialist for Andhra Pradesh and National Public Health Welfare Programs.
+- If the user asks non-scheme questions or topics outside of public healthcare, government welfare, medical assistance, eligibility, or hospital services (e.g., sports, movies, coding, general trivia, weather, political banter, entertainment, non-medical topics), you MUST POLITELY REFUSE to answer.
+- Refusal Response Pattern: Politely state that as SmartGovAI Healthcare Advisor, you are specialized exclusively in Andhra Pradesh and National public healthcare and welfare schemes. List 2-3 topics you CAN assist with (e.g., Dr. YSR Aarogyasri ₹25 Lakhs cashless hospital treatment, Aarogya Asara recovery allowance, or 108/104/102 helplines), and invite them to ask a scheme-related query.
+
+OFFICIAL SOURCE CITATION REQUIREMENT:
+- All responses discussing specific schemes MUST cite the specific official Andhra Pradesh government health scheme source or portal URL where available (e.g., official_website in data or default https://ysraarogyasri.ap.gov.in).
+- Format citations cleanly at the end of your response, e.g.: 🔗 **Official Portal**: https://ysraarogyasri.ap.gov.in
+
+LANGUAGE DIRECTIVE:
+- The active user interface language is ENGLISH. Generate your ENTIRE response fluently in clear, natural English.
+- Translate all underlying scheme details, eligibility requirements, and steps into natural English.
+
+CONVERSATIONAL DIRECTIVE:
+- If the user sends a simple greeting (e.g. "hi", "hello", "namaste", "good morning"), respond warmly as SmartGovAI AP Healthcare Advisor, introduce what you can help with (Aarogyasri ₹25 Lakhs coverage, Aarogya Asara, maternal aid, finding nearby network hospitals), and invite them to ask their question. Do NOT output details of a specific scheme when answering a casual greeting.
+
+ROLE & FORMAT:
+- Act as a fast, compassionate, authoritative counselor.
+- Keep responses clear, accurate, and concise (under 160 words).
+- Format: Bold headers, clean bullet points.
+- Explain AP health benefits (e.g. Dr. YSR / NTR Aarogyasri up to ₹25 Lakhs cashless hospital care, Aarogya Asara allowance, maternal aid, pensions).
+- Detail eligibility (White/Rice card, BPL status) and application steps (Grama Sachivalayam, PHC, Aarogya Mithra desk).
+- Emergency Helplines: 108 (Ambulance), 104 (Medical Advice), 102 (Mother & Child Transport).
+
+RELEVANT SCHEMES DATA: ${schemeJson}`;
   }
 
-  return `మీరు SmartGovAI అధికారిక ఆంధ్రప్రదేశ్ ఆరోగ్య పథకాల సలహాదారు (AP Healthcare Advisor).
-పాత్ర: ప్రజలకు వేగవంతమైన, స్నేహపూర్వక సమాధానాలు ఇవ్వండి. సమాధానం స్పష్టంగా, సంక్షిప్తంగా (150 పదాల లోపు) ఉండాలి.
+  if (isTe) {
+    return `మీరు SmartGovAI అధికారిక ఆంధ్రప్రదేశ్ ఆరోగ్య పథకాల సమాచార నిపుణుడు మరియు సలహాదారు (AP Healthcare & Welfare Scheme Specialist).
+
+విషయ పరిమితి & తిరస్కరణ నిబంధనలు (STRICT DOMAIN BOUNDARY & REFUSAL POLICY):
+- మీరు కేవలం ఆంధ్రప్రదేశ్ మరియు జాతీయ ప్రభుత్వ ఆరోగ్య, సంక్షేమ పథకాల సమాచార నిపుణుడు మాత్రమే.
+- వినియోగదారు ప్రభుత్వ ఆరోగ్య పథకాలు, వైద్య సహాయం, ఆసుపత్రులు, అర్హతలు కాకుండా ఇతర విషయాల గురించి (ఉదాహరణకు: సినిమాలు, క్రీడలు, సాఫ్ట్‌వేర్ కోడింగ్, వాతావరణం, రాజకీయం, వినోదం) అడిగితే, ఆ ప్రశ్నలకు జవాబు ఇవ్వడానికి వినయంగా నిరాకరించండి.
+- తిరస్కరణ శైలి: "క్షమించండి, SmartGovAI సలహాదారుగా నేను కేవలం ఆంధ్రప్రదేశ్ మరియు జాతీయ ఆరోగ్య పథకాల సమాచారాన్ని మాత్రమే అందించగలను." అని చెప్పి, మీరు సహాయపడగల అంశాలను (ఆరోగ్యశ్రీ ₹25 లక్షల ఉచిత వైద్యం, ఆరోగ్య ఆసరా, 108/104 హెల్ప్‌లైన్‌లు) గుర్తుచేసి ఆరోగ్య పథకాలకు సంబంధించిన ప్రశ్నలు అడగమని కోరండి.
+
+అధికారిక వెబ్‌సైట్ మరియు మూలాల సూచన (OFFICIAL SOURCE CITATION REQUIREMENT):
+- మీరు పథకం గురించి సమాధానం ఇచ్చే ప్రతిసారీ తప్పనిసరిగా సదరు ఆంధ్రప్రదేశ్ ప్రభుత్వ ఆరోగ్య పథకం యొక్క అధికారిక వెబ్‌సైట్ / పోర్టల్ URL ను క్రమంగా దాఖలు చేయాలి (ఉదాహరణకు: 🔗 **అధికారిక పోర్టల్**: https://ysraarogyasri.ap.gov.in లేదా డేటాలో ఉన్న official_website URL).
+- ఈ వెబ్‌సైట్ లింక్‌ను సమాధానం చివర స్పష్టంగా చూపించండి.
+
+భాషా సూచన:
+- ప్రస్తుతం యాక్టివ్ UI భాష తెలుగు (Telugu). మీ మొత్తం సమాధానం స్పష్టమైన, సులభమైన తెలుగు భాషలోనే ఉండాలి.
+- సమాధానం స్పష్టంగా, సంక్షిప్తంగా (150 పదాల లోపు) ఉండాలి.
+
+సాధారణ సంభాషణల సూచన:
+- వినియోగదారు "హాయ్", "నమస్కారం", "హలో" వంటి సాధారణ అభివాదాలు తెలిపితే, సలహాదారుగా స్వాగతం చెప్పి మీరు దేని గురించి సహాయపడగలరో (ఆరోగ్యశ్రీ, ఆసరా, తల్లీబిడ్డల సంరక్షణ, ఆసుపత్రుల వివరాలు) చెప్పి ప్రశ్న అడగమని కోరండి. అవసరం లేకుండా ఏ ప్రత్యేక పథకం వివరాలు ఇవ్వకండి.
+
 ముఖ్య సమాచారం:
 1. ప్రయోజనాలు (ఆరోగ్యశ్రీ ₹25 లక్షల ఉచిత చికిత్స, ఉచిత పరీక్షలు, పెన్షన్లు, గర్భిణుల సహాయం).
 2. అర్హత (బియ్యం కార్డు / రేషన్ కార్డు) మరియు దరఖాస్తు విధానం (గ్రామ సచివాలయం, PHC, నెట్‌వర్క్ ఆసుపత్రిలోని ఆరోగ్యమిత్ర).
 3. హెల్ప్‌లైన్లు: 108 (అంబులెన్స్), 104 (ఆరోగ్య సలహాలు), 102 (తల్లీబిడ్డల వాహనం).
 4. ఫార్మాట్: బోల్డ్ హెడ్డింగ్స్, బుల్లెట్ పాయింట్లు.
+
 పథకాల వివరాలు: ${schemeJson}`;
+  }
+
+  return `You are SmartGovAI, the official Virtual Healthcare & Welfare Advisor and Health Scheme Specialist for Andhra Pradesh (AP).
+
+STRICT DOMAIN BOUNDARY:
+- You are strictly an Andhra Pradesh and National Healthcare Schemes Specialist.
+- If the user asks non-healthcare or non-scheme questions (e.g., entertainment, sports, coding, weather, politics), politely refuse in Hindi, stating that SmartGovAI is specialized exclusively in AP Healthcare and Welfare Schemes (like Aarogyasri ₹25 Lakhs coverage, Aarogya Asara, and 108/104 helplines).
+
+OFFICIAL SOURCE CITATION REQUIREMENT:
+- All responses discussing specific schemes MUST cite the specific official Andhra Pradesh government health scheme source or portal URL where available (e.g. 🔗 Official Portal: https://ysraarogyasri.ap.gov.in).
+
+LANGUAGE DIRECTIVE: The user UI language is Hindi. Respond strictly in clear Hindi (Devanagari script).
+Keep answers clear, concise (under 160 words) with bullet points.
+RELEVANT SCHEMES DATA: ${schemeJson}`;
 }
 
 // Multi-Turn Chat Endpoint with Gemini + Fast Grounded Fallback
 app.post(['/chat', '/api/chat'], async (req, res) => {
-  const { question, query, message, history = [], lang = 'te', mode = 'general' } = req.body;
+  const { question, query, message, history = [], lang = 'en', mode = 'general' } = req.body;
   const userText = (question || query || message || '').trim();
 
   if (!userText) {
     return res.status(400).json({ error: 'Question or message is required' });
   }
 
-  const isEn = lang === 'en';
+  // Language Detection: Detect query language, strictly enforcing English unless another language is requested
+  const effectiveLang = detectQueryLanguage(userText, lang);
+  const isEn = effectiveLang === 'en';
+
   // Context-aware scheme retrieval utilizing both current prompt and recent history
-  const matchedSchemes = retrieveRelevantSchemes(userText, lang, 4, history);
+  const matchedSchemes = retrieveRelevantSchemes(userText, effectiveLang, 4, history);
 
-  // Fast memory cache check for immediate sub-second response
-  const memCacheKey = `${lang}:${userText.toLowerCase()}`;
-  if (quickChatCache.has(memCacheKey)) {
-    const cached = quickChatCache.get(memCacheKey);
-    return res.json({
-      response: cached.response,
-      matched_schemes: matchedSchemes,
-      model_used: 'SmartGov Instant Memory Cache',
-      mode,
-    });
+  // Model Selection based on task complexity:
+  // - 'fast': gemini-3.1-flash-lite
+  // - 'complex': gemini-3.1-pro-preview
+  // - 'general': gemini-3.5-flash
+  let targetModel = 'gemini-3.5-flash';
+  if (mode === 'fast') {
+    targetModel = 'gemini-3.1-flash-lite';
+  } else if (mode === 'complex') {
+    targetModel = 'gemini-3.1-pro-preview';
   }
 
-  // Model Selection: gemini-3.8-flash is the primary high-speed model
-  const targetModel = 'gemini-3.8-flash';
-  const systemInstruction = buildHealthcareAdvisorSystemInstruction(lang, matchedSchemes, 'advisor');
-
-  // Format previous history into Gemini SDK format:
-  // 1. Exclude the current user query if it was appended at the end of history by client
-  // 2. Ensure strictly alternating user -> model -> user -> model sequence
-  // 3. Ensure history starts with a user turn
-  const formattedHistory = [];
-  if (Array.isArray(history)) {
-    const priorTurns = history.filter((turn) => {
-      if (!turn) return false;
-      const tText = (turn.text || (turn.parts && turn.parts[0]?.text) || turn.content || '').trim();
-      return tText && tText.toLowerCase() !== userText.toLowerCase();
-    }).slice(-8);
-
-    let expectedRole = 'user';
-    for (const turn of priorTurns) {
-      const role = (turn.role === 'assistant' || turn.role === 'bot' || turn.role === 'model') ? 'model' : 'user';
-      const text = (turn.text || (turn.parts && turn.parts[0]?.text) || turn.content || '').trim();
-      if (!text) continue;
-
-      if (role === expectedRole) {
-        formattedHistory.push({
-          role,
-          parts: [{ text }],
-        });
-        expectedRole = role === 'user' ? 'model' : 'user';
-      }
-    }
-
-    // History must end with a model turn so that chat.sendMessage creates the next user turn
-    if (formattedHistory.length > 0 && formattedHistory[formattedHistory.length - 1].role === 'user') {
-      formattedHistory.pop();
-    }
-  }
+  const systemInstruction = buildHealthcareAdvisorSystemInstruction(effectiveLang, matchedSchemes, 'advisor');
 
   const ai = getGeminiClient();
   let aiResponseText = null;
@@ -1595,40 +2350,125 @@ app.post(['/chat', '/api/chat'], async (req, res) => {
 
   if (ai) {
     try {
-      const chat = ai.chats.create({
+      // Build structured multi-turn conversation history for Gemini API
+      const contents = [];
+      if (Array.isArray(history) && history.length > 0) {
+        history.slice(-8).forEach(turn => {
+          const role = (turn.role === 'model' || turn.role === 'assistant') ? 'model' : 'user';
+          const t = (turn.text || turn.content || '').trim();
+          if (t) {
+            contents.push({
+              role: role,
+              parts: [{ text: t }]
+            });
+          }
+        });
+      }
+
+      // Ensure last turn is current user message
+      if (contents.length === 0 || contents[contents.length - 1].role !== 'user') {
+        contents.push({
+          role: 'user',
+          parts: [{ text: userText }]
+        });
+      } else {
+        contents[contents.length - 1].parts[0].text = userText;
+      }
+
+      const geminiPromise = ai.models.generateContent({
         model: targetModel,
+        contents: contents,
         config: {
-          systemInstruction,
-          temperature: 0.2,
-          maxOutputTokens: 600,
-        },
-        history: formattedHistory,
+          systemInstruction: systemInstruction,
+          temperature: 0.3,
+          maxOutputTokens: 800,
+        }
       });
 
-      const geminiPromise = chat.sendMessage({ message: userText });
-      // Strict 6.0-second timeout so user never waits indefinitely
+      // 7-second timeout for fast responsive UI
       const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('TIMEOUT')), 6000)
+        setTimeout(() => reject(new Error('TIMEOUT')), 7000)
       );
 
       const result = await Promise.race([geminiPromise, timeoutPromise]);
       aiResponseText = (result.text || '').trim();
     } catch (err) {
-      console.warn(`Gemini chat notice (${err.message}): fallback to grounded AP scheme analyzer`);
+      console.warn(`Gemini chat notice (${targetModel} - ${err.message}): fallback to gemini-3.5-flash / grounded AP scheme analyzer`);
+      // Fallback attempt with gemini-3.5-flash if primary model fails
+      if (targetModel !== 'gemini-3.5-flash') {
+        try {
+          modelUsed = 'gemini-3.5-flash';
+          const fallbackRes = await ai.models.generateContent({
+            model: 'gemini-3.5-flash',
+            contents: [{ role: 'user', parts: [{ text: userText }] }],
+            config: {
+              systemInstruction: systemInstruction,
+              temperature: 0.2,
+              maxOutputTokens: 600,
+            }
+          });
+          aiResponseText = (fallbackRes.text || '').trim();
+        } catch (e) {
+          console.warn('Gemini 3.5 flash fallback error:', e.message);
+        }
+      }
     }
   }
 
   if (aiResponseText) {
-    quickChatCache.set(memCacheKey, { response: aiResponseText });
-    if (quickChatCache.size > 200) {
-      const firstKey = quickChatCache.keys().next().value;
-      quickChatCache.delete(firstKey);
-    }
     logRequest(matchedSchemes[0]?.scheme_name || 'Multi-turn AI Chat', 'chat');
     return res.json({
       response: aiResponseText,
+      answer: aiResponseText,
       matched_schemes: matchedSchemes,
       model_used: modelUsed,
+      mode,
+    });
+  }
+
+  const qClean = userText.toLowerCase().replace(/[.,?!'\"(){}\[\]:;-]/g, '').trim();
+  const isGreeting = /^(hi+|hello+|hey+|namaste+|namaskaram+|namaskar+|good\s*(morning|afternoon|evening)|hi\s+there|howdy|greetings|who\s+are\s+you|what\s+can\s+you\s+do|నమస్కారం|నమస్తే|హలో|హాయ్)$/i.test(qClean);
+  const isGratitude = /^(thanks+|thank\s*you+|thx+|dhanyavadalu+|ధన్యవాదాలు|థ్యాంక్స్)$/i.test(qClean);
+  const isFarewell = /^(bye+|goodbye+|cya+|see\s*you+|వెళ్తాను|బై)$/i.test(qClean);
+
+  if (isGreeting) {
+    const greetingMsg = isEn
+      ? `Hello! 👋 Welcome to **SmartGovAI**, your official virtual advisor for Andhra Pradesh Healthcare & Welfare Schemes.\n\nI can assist you with:\n• **Dr. YSR / NTR Aarogyasri**: Free cashless hospital treatment up to ₹25 Lakhs per family.\n• **YSR Aarogya Asara**: Daily post-operative wage replacement allowance during recovery.\n• **Maternal & Child Health**: Financial aid, nutrition, and 102 free transport.\n• **Network Hospitals**: Locating nearby empanelled government and private hospitals.\n\nHow can I help you today? Feel free to ask about any medical procedure, eligibility, or required documents!`
+      : `నమస్కారం! 🙏 **SmartGovAI** ఆంధ్రప్రదేశ్ ఆరోగ్య మరియు సంక్షేమ పథకాల వర్చువల్ సలహాదారుకి స్వాగతం.\n\nనేను మీకు వీటి గురించి స్పష్టమైన సమాచారం అందించగలను:\n• **డాక్టర్ వైఎస్‌ఆర్ ఆరోగ్యశ్రీ**: కుటుంబానికి ₹25 లక్షల వరకు ఉచిత ఆసుపత్రి చికిత్స.\n• **ఆరోగ్య ఆసరా**: ఆసుపత్రి నుంచి కోలుకునే సమయంలో రోజువారీ ఆర్థిక సహాయం.\n• **తల్లీబిడ్డల సంరక్షణ**: గర్భిణులు, శిశువుల ఆరోగ్య పథకాలు మరియు 102 ఉచిత రవాణా.\n• **నెట్‌వర్క్ ఆసుపత్రులు**: మీ సమీపంలోని ఆరోగ్యశ్రీ ఆసుపత్రుల వివరాలు.\n\nఈరోజు మీకు ఎలా సహాయపడగలను? ఏదైనా వైద్య సమస్య, అర్హత లేదా కావలసిన పత్రాల గురించి అడగండి!`;
+
+    return res.json({
+      response: greetingMsg,
+      answer: greetingMsg,
+      matched_schemes: [],
+      model_used: 'smartgov-greeting-handler',
+      mode,
+    });
+  }
+
+  if (isGratitude) {
+    const gratitudeMsg = isEn
+      ? `You're very welcome! 😊 I'm glad I could help.\n\nStay healthy! Feel free to ask whenever you have questions about AP government health schemes, hospital admissions, or helplines (108 / 104 / 102).`
+      : `మీకు కూడా నా ధన్యవాదాలు! 😊 మీకు సహాయపడటం నా బాధ్యత.\n\nఆరోగ్యంగా ఉండండి! ఆంధ్రప్రదేశ్ ప్రభుత్వ ఉచిత వైద్య పథకాలు లేదా హెల్ప్‌లైన్లు (108 / 104 / 102) గురించి ఏ సందేహం ఉన్నా నన్ను అడగవచ్చు.`;
+
+    return res.json({
+      response: gratitudeMsg,
+      answer: gratitudeMsg,
+      matched_schemes: [],
+      model_used: 'smartgov-gratitude-handler',
+      mode,
+    });
+  }
+
+  if (isFarewell) {
+    const farewellMsg = isEn
+      ? `Goodbye! 👋 Stay healthy and safe. Remember you can consult SmartGovAI anytime for AP health scheme guidance!\n\nEmergency Helpline: 108 | Health Advice: 104`
+      : `శుభం! 👋 మీ ఆరోగ్యాన్ని జాగ్రత్తగా చూసుకోండి. ప్రభుత్వ ఉచిత వైద్య పథకాల వివరాల కోసం ఎప్పుడైనా SmartGovAI ని సంప్రదించవచ్చు!\n\nఅత్యవసర అంబులెన్స్: 108 | ఆరోగ్య సలహాలు: 104`;
+
+    return res.json({
+      response: farewellMsg,
+      answer: farewellMsg,
+      matched_schemes: [],
+      model_used: 'smartgov-farewell-handler',
       mode,
     });
   }
@@ -1679,6 +2519,7 @@ app.post(['/chat', '/api/chat'], async (req, res) => {
     logRequest(top.scheme_name, 'chat_offline_fallback');
     return res.json({
       response: fallbackText,
+      answer: fallbackText,
       matched_schemes: matchedSchemes,
       model_used: 'grounded-catalog-engine',
       mode,
@@ -1692,6 +2533,7 @@ app.post(['/chat', '/api/chat'], async (req, res) => {
 
   return res.json({
     response: defaultMsg,
+    answer: defaultMsg,
     matched_schemes: [],
     model_used: 'default-guide',
     mode,
@@ -1765,8 +2607,15 @@ app.post('/whatsapp-share', async (req, res) => {
 });
 
 // AP Health Facilities API
-app.get('/api/facilities', (req, res) => {
+app.get('/api/facilities', async (req, res) => {
   const { lat, lng, type, district, limit = 2000, locale = 'en' } = req.query;
+  
+  const cacheKey = `facilities:${lat || ''}:${lng || ''}:${type || ''}:${district || ''}:${limit}:${locale}`;
+  const cached = await getCache(cacheKey);
+  if (cached) {
+    return res.json(cached);
+  }
+
   let results = [...facilitiesData];
 
   if (type && type !== 'all' && type !== 'none') {
@@ -1814,6 +2663,7 @@ app.get('/api/facilities', (req, res) => {
     };
   });
 
+  await setCache(cacheKey, localizedResults, 3600);
   res.json(localizedResults);
 });
 
@@ -1992,6 +2842,26 @@ app.post('/admin/schemes', requireAdmin, express.urlencoded({ extended: true }),
   fs.writeFileSync(customFilePath, JSON.stringify(customSchemes, null, 2), 'utf8');
 
   res.redirect('/analytics?msg=Scheme+Saved');
+});
+
+// Endpoint to trigger India.gov.in / MyScheme.gov.in scheme scraper and sync catalog
+app.post('/api/admin/sync-india-gov-schemes', async (req, res) => {
+  try {
+    console.log('🔄 Triggering India.gov.in scheme scraper and synchronization...');
+    const result = await scrapeAndSyncIndiaGovSchemes();
+    // Reload local scheme catalog into server memory
+    loadSchemesData();
+    res.json({
+      success: true,
+      message: 'National scheme data scraped and synchronized successfully from India.gov.in & MyScheme.gov.in',
+      source: result.source,
+      total_schemes_loaded: schemeNames.length,
+      scraped_count: result.count || result.total_schemes
+    });
+  } catch (err) {
+    console.error('Failed to sync India.gov.in schemes:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 // Start Server
