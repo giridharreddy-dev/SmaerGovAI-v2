@@ -173,7 +173,7 @@
     <div class="admin-wrap">
         <header class="admin-header">
             <div class="admin-header-left">
-                <img src="/public/icon.svg" alt="Logo" width="44" height="44">
+                <img src="/public/assets/icon.svg" alt="Logo" width="44" height="44">
                 <div>
                     <h1>నిర్వాహక డాష్‌బోర్డ్ <small>(Admin Dashboard)</small></h1>
                     <span>SmartGov Health Analytics & Community Feedback</span>
@@ -198,6 +198,11 @@
                         <div class="metric-title">💬 పౌరుల స్పందనలు</div>
                         <div class="metric-value"><%= metrics.total_feedback %></div>
                         <div class="metric-subtitle">Total Citizen Feedback</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">📝 నివేదించబడిన సమస్యలు</div>
+                        <div class="metric-value"><%= metrics.total_grievances || 0 %></div>
+                        <div class="metric-subtitle">Reported Issues</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-title">⭐ సగటు సంతృప్తి రేటింగ్</div>
@@ -253,6 +258,48 @@
                                 <td><%= new Date(fb.timestamp).toLocaleString('te-IN') %></td>
                                 <td><span class="stat-pill rating">⭐ <%= fb.rating %>/5</span></td>
                                 <td><%= fb.comment || 'రేటింగ్ మాత్రమే నమోదు చేయబడింది' %></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+                        <% } %>
+
+            <% if (typeof grievances !== 'undefined' && grievances && grievances.length > 0) { %>
+            <section class="dashboard-section">
+                <h2>📝 నివేదించబడిన సమస్యలు మరియు అభిప్రాయాలు (Reported Issues & Feedback)</h2>
+                <div class="feedback-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>సమయం (Timestamp)</th>
+                                <th>రకం (Type)</th>
+                                <th>పథకం (Scheme Name)</th>
+                                <th>వివరణ (Description)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% grievances.forEach(function(fb) { %>
+                            <tr>
+                                <td><%= new Date(fb.timestamp).toLocaleString('te-IN') %></td>
+                                <td>
+                                    <span class="stat-pill" style="background: var(--surface-soft); color: var(--primary);">
+                                        <%= fb.issue_type === 'wrong_info' ? 'తప్పుడు సమాచారం' : 
+                                            fb.issue_type === 'audio_issue' ? 'ఆడియో సమస్య' : 
+                                            fb.issue_type === 'missing_scheme' ? 'పథకం దొరకలేదు' : 
+                                            fb.issue_type === 'suggestion' ? 'సలహా' : 
+                                            fb.issue_type === 'general' ? 'సాధారణ' : fb.issue_type %>
+                                    </span>
+                                </td>
+                                <td>
+                                    <% if (fb.scheme_name === 'General Portal Feedback') { %>
+                                        <span style="color: var(--muted); font-weight: 500;">అప్లికేషన్ అభిప్రాయం (Entire App)</span>
+                                    <% } else { %>
+                                        <strong><%= fb.scheme_name %></strong>
+                                    <% } %>
+                                </td>
+                                <td><%= fb.feedback_text %></td>
                             </tr>
                             <% }); %>
                         </tbody>

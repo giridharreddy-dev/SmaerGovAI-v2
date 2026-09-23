@@ -46,6 +46,23 @@
         "scheme_name": { "type": "string" },
         "timestamp": { "type": "string", "format": "date-time" }
       }
+    },
+    "Scheme": {
+      "title": "Scheme",
+      "description": "Government healthcare scheme details extracted from official portals",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "scheme_name": { "type": "string" },
+        "telugu_name": { "type": "string" },
+        "level": { "type": "string" },
+        "category": { "type": "string" },
+        "benefit_amount": { "type": "string" },
+        "benefit_amount_te": { "type": "string" },
+        "source_name": { "type": "string" },
+        "source_url": { "type": "string" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      }
     }
   },
   "firestore": {
@@ -64,6 +81,10 @@
     "/whatsappShares/{shareId}": {
       "schema": { "$ref": "#/entities/WhatsappShare" },
       "description": "Stores whatsapp share metrics"
+    },
+    "/schemes/{schemeId}": {
+      "schema": { "$ref": "#/entities/Scheme" },
+      "description": "Stores official healthcare scheme catalog records"
     }
   }
 }

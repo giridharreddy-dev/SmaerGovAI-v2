@@ -1,4 +1,30 @@
 
+// Toast Notification System
+window.showToast = function(message, type = 'success') {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        document.body.appendChild(container);
+    }
+    
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+    
+    container.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('hiding');
+        toast.addEventListener('animationend', () => {
+            toast.remove();
+            if (container.children.length === 0) {
+                container.remove();
+            }
+        });
+    }, 4000);
+};
+
 
 window.escapeHtml = function(value) {
     const map = {
@@ -146,7 +172,7 @@ function speakText(text, lang, btn) {
  */
 function speakPageAloud(btn) {
     if (!window.currentSchemeName) {
-        alert(window.t ? window.t('selectSchemeError') : 'దయచేసి ముందుగా పథకం ఎంచుకోండి.');
+        window.showToast(window.t ? window.t('selectSchemeError') : 'దయచేసి ముందుగా పథకం ఎంచుకోండి.', 'error');
         return;
     }
 
@@ -311,7 +337,7 @@ function printFullScheme(schemeName) {
     
     const printWindow = window.open('', '', 'width=850,height=1050');
     if (!printWindow) {
-        alert(isEn ? 'Popup blocked. Please allow popups to print.' : 'పాప్‌అప్ బ్లాక్ చేయబడింది. దయచేసి పాప్‌అప్‌లను అనుమతించండి.');
+        window.showToast(isEn ? 'Popup blocked. Please allow popups to print.' : 'పాప్‌అప్ బ్లాక్ చేయబడింది. దయచేసి పాప్‌అప్‌లను అనుమతించండి.', 'error');
         return;
     }
 
@@ -549,13 +575,13 @@ function printDocumentChecklist(schemeName) {
 function printSchemeQRCard(schemeName, slug, schemeData) {
     const isEn = window.getLang && window.getLang() === 'en';
     if (!slug) {
-        alert(isEn ? 'QR code not available.' : 'QR కోడ్ అందుబాటులో లేదు.');
+        window.showToast(isEn ? 'QR code not available.' : 'QR కోడ్ అందుబాటులో లేదు.', 'error');
         return;
     }
 
     const printWindow = window.open('', '', 'width=700,height=900');
     if (!printWindow) {
-        alert(isEn ? 'Popup blocked. Please allow popups to print.' : 'పాప్‌అప్ బ్లాక్ చేయబడింది. దయచేసి పాప్‌అప్‌లను అనుమతించండి.');
+        window.showToast(isEn ? 'Popup blocked. Please allow popups to print.' : 'పాప్‌అప్ బ్లాక్ చేయబడింది. దయచేసి పాప్‌అప్‌లను అనుమతించండి.', 'error');
         return;
     }
 
@@ -935,7 +961,7 @@ function generateShareText(schemeName) {
 async function shareOnWhatsApp(schemeName) {
     const isEn = window.getLang && window.getLang() === 'en';
     if (!navigator.onLine && !window.offlineMode) {
-        alert(isEn ? 'No network connection. Internet is required for WhatsApp sharing.' : 'నెట్‌వర్క్ కనెక్షన్ లేదు. WhatsApp షేర్ కొరకు ఇంటర్నెట్ అవసరం.');
+        window.showToast(isEn ? 'No network connection. Internet is required for WhatsApp sharing.' : 'నెట్‌వర్క్ కనెక్షన్ లేదు. WhatsApp షేర్ కొరకు ఇంటర్నెట్ అవసరం.', 'error');
         return;
     }
 
@@ -956,7 +982,7 @@ async function shareOnWhatsApp(schemeName) {
         window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
     } catch (error) {
         console.error('WhatsApp share error:', error);
-        alert(isEn ? `Error: ${error.message}` : `లోపం: ${error.message}`);
+        window.showToast(isEn ? `Error: ${error.message}` : `లోపం: ${error.message}`, 'error');
     }
 }
 
@@ -971,7 +997,7 @@ async function shareOnSMS(schemeName) {
         window.location.href = `sms:?body=${encodedMessage}`;
     } catch (error) {
         console.error('SMS share error:', error);
-        alert(isEn ? `Error: ${error.message}` : `లోపం: ${error.message}`);
+        window.showToast(isEn ? `Error: ${error.message}` : `లోపం: ${error.message}`, 'error');
     }
 }
 
@@ -980,7 +1006,7 @@ async function shareOnSMS(schemeName) {
  */
 async function reportIssue(schemeName) {
     if (!schemeName && typeof window.currentSchemeName === 'undefined') {
-        alert(window.t ? window.t('selectSchemeError') : 'దయచేసి పథకం ఎంచుకోండి.');
+        window.showToast(window.t ? window.t('selectSchemeError') : 'దయచేసి పథకం ఎంచుకోండి.', 'error');
         return;
     }
     openFeedbackModal(document.activeElement);
@@ -1028,112 +1054,94 @@ function closeChat() {
 let currentRating = 0;
 let previousFocusFeedback = null;
 
-function openFeedbackModal(triggerBtn) {
-    if (!window.currentRequestId && typeof window.currentSchemeName === 'undefined') {
-        const statusEl = document.getElementById('feedbackStatus');
-        if (statusEl) {
-            statusEl.textContent = 'దయచేసి ముందుగా పథకం ఎంచుకోండి.';
-            statusEl.className = 'feedback-status error';
-        }
+function openFeedbackModal(triggerBtn, schemeName = null) {
+    if (schemeName) {
+        window.currentSchemeName = schemeName;
     }
     previousFocusFeedback = triggerBtn || document.activeElement;
-    const modal = document.getElementById('feedbackOverlay');
+    const modal = document.getElementById('feedbackModal');
     if (!modal) return;
-
-    modal.classList.remove('hidden');
-    modal.setAttribute('aria-hidden', 'false');
-
-    // Reset state
-    currentRating = 0;
-    document.querySelectorAll('.star-rating button').forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
-    });
-    document.querySelectorAll('.feedback-chips .chip').forEach(c => {
-        c.classList.remove('selected');
-        c.setAttribute('aria-pressed', 'false');
-    });
-    const commentBox = document.getElementById('feedbackComment');
-    if (commentBox) commentBox.value = '';
-
-    const status = document.getElementById('feedbackStatus');
-    if (status) {
-        status.textContent = '';
-        status.className = 'feedback-status';
+    
+    // Reset form
+    const form = document.getElementById('feedbackForm');
+    if (form) form.reset();
+    
+    // Setup submit listener if not already there
+    if (form && !form.dataset.listenerAttached) {
+        form.dataset.listenerAttached = 'true';
+        form.addEventListener('submit', submitFeedback);
     }
 
-    const title = document.getElementById('feedbackTitle');
-    if (title) title.focus();
+    if (typeof modal.showModal === 'function') {
+        if (!modal.open) modal.showModal();
+    } else {
+        modal.classList.remove('hidden');
+    }
 }
 
 function closeFeedbackModal() {
-    const modal = document.getElementById('feedbackOverlay');
+    const modal = document.getElementById('feedbackModal');
     if (modal) {
-        modal.classList.add('hidden');
-        modal.setAttribute('aria-hidden', 'true');
+        if (typeof modal.close === 'function') {
+            modal.close();
+        } else {
+            modal.classList.add('hidden');
+        }
     }
     if (previousFocusFeedback) {
         previousFocusFeedback.focus();
     }
 }
 
-function setRating(val) {
-    currentRating = parseInt(val, 10);
-    document.querySelectorAll('.star-rating button').forEach(b => {
-        const bVal = parseInt(b.dataset.value, 10);
-        const isActive = bVal <= currentRating;
-        b.classList.toggle('active', isActive);
-        b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    });
-}
+async function submitFeedback(e) {
+    if (e) e.preventDefault();
+    
+    const messageInput = document.getElementById('feedbackMessage');
+    const typeInput = document.getElementById('feedbackType');
+    const errorDiv = document.getElementById('feedbackFormError');
+    const submitBtn = document.querySelector('#feedbackForm button[type="submit"]');
+    
+    const message = messageInput ? messageInput.value.trim() : '';
+    const type = typeInput ? typeInput.value : 'general';
+    
+    const showError = (msg) => {
+        if (errorDiv) {
+            errorDiv.style.display = 'block';
+            errorDiv.textContent = msg;
+        } else {
+            window.showToast(msg, 'error');
+        }
+    };
 
-function setFeedbackChip(btn) {
-    const isSelected = btn.classList.toggle('selected');
-    btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
-}
+    if (errorDiv) errorDiv.style.display = 'none';
 
-async function submitFeedback() {
-    const statusEl = document.getElementById('feedbackStatus');
-    if (!statusEl) return;
-
-    if (!window.currentRequestId && typeof window.currentSchemeName === 'undefined') {
-        statusEl.textContent = 'దయచేసి ముందుగా పథకం ఎంచుకోండి.';
-        statusEl.className = 'feedback-status error';
+    // Client-Side Validation
+    if (!message) {
+        showError(window.t ? window.t('pleaseEnterFeedback') : 'దయచేసి మీ అభిప్రాయాన్ని నమోదు చేయండి.');
+        if (messageInput) messageInput.focus();
         return;
     }
-    if (currentRating === 0) {
-        statusEl.textContent = 'దయచేసి రేటింగ్ ఎంచుకోండి (Please select a rating).';
-        statusEl.className = 'feedback-status error';
+    
+    if (message.length < 5) {
+        showError(window.t ? window.t('feedbackTooShort') : 'మీ అభిప్రాయం మరీ చిన్నదిగా ఉంది. దయచేసి మరికొన్ని వివరాలు ఇవ్వండి.');
+        if (messageInput) messageInput.focus();
         return;
     }
 
-    statusEl.textContent = 'పంపుతున్నాం (Submitting)...';
-    statusEl.className = 'feedback-status';
+    const payload = {
+        scheme_name: window.currentSchemeName || 'General Feedback',
+        issue_type: type,
+        village: 'Self-reported',
+        feedback_text: message
+    };
 
-    const selectedChips = Array.from(document.querySelectorAll('.feedback-chips .chip.selected')).map(c => c.dataset.value);
-    const commentBox = document.getElementById('feedbackComment');
-    const comment = commentBox ? commentBox.value.trim() : '';
-
-    const combinedComment = [...selectedChips, comment].filter(Boolean).join(' | ');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'పంపుతున్నాం (Submitting)...';
+    }
 
     try {
-        const payload = window.currentRequestId ? {
-            request_id: window.currentRequestId,
-            rating: currentRating,
-            was_clear: combinedComment.includes('సమాచారం') ? 'yes' : 'N/A',
-            got_benefit: 'unknown',
-            village: 'Unknown',
-            problem: combinedComment
-        } : {
-            scheme_name: window.currentSchemeName || 'Unknown',
-            feedback_type: 'user_reported_issue',
-            village: 'Self-reported',
-            feedback_text: `Rating: ${currentRating}. Comments: ${combinedComment}`
-        };
-
-        const endpoint = window.currentRequestId ? '/enhanced-feedback' : '/staff-report';
-
-        const response = await fetch(endpoint, {
+        const response = await fetch('/staff-report', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1143,18 +1151,20 @@ async function submitFeedback() {
         });
 
         const data = await response.json();
-
         if (response.ok) {
-            statusEl.textContent = window.t ? window.t('feedbackSuccess') : '✅ ధన్యవాదాలు! మీ అభిప్రాయం నమోదు చేయబడింది.';
-            statusEl.className = 'feedback-status success';
-            setTimeout(closeFeedbackModal, 2000);
+            window.showToast(window.t ? window.t('feedbackSuccess') : '✅ ధన్యవాదాలు! మీ అభిప్రాయం నమోదు చేయబడింది.', 'success');
+            closeFeedbackModal();
         } else {
             throw new Error(data.error || 'Server error');
         }
     } catch (error) {
-        statusEl.textContent = window.t ? window.t('feedbackError') : '❌ అభిప్రాయం పంపలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.';
-        statusEl.className = 'feedback-status error';
+        window.showToast(window.t ? window.t('feedbackError') : '❌ అభిప్రాయం పంపలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.', 'error');
         console.error('Feedback submission error:', error);
+    } finally {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'సమర్పించండి (Submit)';
+        }
     }
 }
 
@@ -1284,7 +1294,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const reportIssueBtn = target.closest('.report-issue-btn');
             if (reportIssueBtn) {
                 const schemeName = reportIssueBtn.dataset.scheme;
-                openFeedbackModal(reportIssueBtn);
+                event.stopPropagation();
+                openFeedbackModal(reportIssueBtn, schemeName);
                 return;
             }
 
@@ -1557,9 +1568,9 @@ const SmartGovUX = (function() {
         searches = searches.filter(q => q && typeof q === 'string' && q.trim().toLowerCase() !== cleanQuery.toLowerCase());
         // Insert at the beginning
         searches.unshift(cleanQuery);
-        // Limit to 8 recent searches
-        if (searches.length > 8) {
-            searches = searches.slice(0, 8);
+        // Limit to 5 recent searches
+        if (searches.length > 5) {
+            searches = searches.slice(0, 5);
         }
         Storage.set(KEYS.RECENT_SEARCHES, searches);
         renderRecentSearches();
@@ -1636,7 +1647,7 @@ const SmartGovUX = (function() {
         // Fallback: Clipboard
         try {
             await navigator.clipboard.writeText(text);
-            alert(window.t ? window.t('shareSuccess') : '✅ ఫలితం కాపీ చేయబడింది!');
+            window.showToast(window.t ? window.t('shareSuccess') : '✅ ఫలితం కాపీ చేయబడింది!', 'success');
         } catch (err) {
             // Fallback 2: Manual copy prompt
             const promptText = window.getLang && window.getLang() === 'en' ? 'Copy the text below:' : 'కాపీ చేయడానికి కింద ఉన్న వచనాన్ని ఉపయోగించండి:';
@@ -2194,6 +2205,12 @@ const SmartGovUX = (function() {
                     if (window.renderSchemeCards) {
                         window.renderSchemeCards(true);
                     }
+                    const matchedCards = document.querySelectorAll('.scheme-card').length;
+                    const topCard = document.querySelector('.scheme-card[data-scheme]');
+                    const topSchemeName = topCard ? topCard.getAttribute('data-scheme') : '';
+                    if (typeof window.announceSearchResults === 'function') {
+                        window.announceSearchResults(query, matchedCards, topSchemeName);
+                    }
                     searchInput.focus();
                 }
                 return;
@@ -2339,7 +2356,18 @@ const SmartGovUX = (function() {
                     openFeedbackModal(actionTarget, actionTarget.dataset.scheme || window.currentSchemeName);
                     return;
                 }
-                if (action === 'show-symptom-categories') {
+                
+            if (action === 'open-compare') {
+                e.stopPropagation();
+                window.openCompareModal();
+                return;
+            }
+            if (action === 'close-compare') {
+                e.stopPropagation();
+                window.closeCompareModal();
+                return;
+            }
+            if (action === 'show-symptom-categories') {
                     showSymptomCategories();
                     return;
                 }
@@ -2396,8 +2424,61 @@ const SmartGovUX = (function() {
                     // Let the form's native submit handle it.
                     return;
                 }
+                if (action === 'toggle-dashboard' || action === 'open-dashboard') {
+                    e.preventDefault();
+                    if (typeof window.openSchemesDashboardModal === 'function') {
+                        window.openSchemesDashboardModal();
+                    } else {
+                        const modal = document.getElementById('schemesDashboardModal');
+                        if (modal) {
+                            if (typeof modal.showModal === 'function') modal.showModal();
+                            else modal.style.display = 'block';
+                        }
+                    }
+                    return;
+                }
+                if (action === 'close-dashboard') {
+                    e.preventDefault();
+                    if (typeof window.closeSchemesDashboardModal === 'function') {
+                        window.closeSchemesDashboardModal();
+                    } else {
+                        const modal = document.getElementById('schemesDashboardModal');
+                        if (modal) {
+                            if (typeof modal.close === 'function') modal.close();
+                            else modal.style.display = 'none';
+                        }
+                    }
+                    return;
+                }
             }
         });
+
+        window.openSchemesDashboardModal = function() {
+            const modal = document.getElementById('schemesDashboardModal');
+            if (modal) {
+                if (typeof modal.showModal === 'function') {
+                    modal.showModal();
+                } else {
+                    modal.style.display = 'block';
+                }
+                // Trigger chart re-render so responsive container measures modal size accurately
+                if (typeof window.mountSchemesDashboard === 'function') {
+                    const activeLang = window.getLang ? window.getLang() : 'te';
+                    window.mountSchemesDashboard('schemesDashboardRoot', window.schemesCatalog || {}, activeLang);
+                }
+            }
+        };
+
+        window.closeSchemesDashboardModal = function() {
+            const modal = document.getElementById('schemesDashboardModal');
+            if (modal) {
+                if (typeof modal.close === 'function') {
+                    modal.close();
+                } else {
+                    modal.style.display = 'none';
+                }
+            }
+        };
 
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') {
@@ -2424,6 +2505,10 @@ const SmartGovUX = (function() {
                 const emergencyModal = document.getElementById('emergencyModal');
                 if (emergencyModal && emergencyModal.open) {
                     emergencyModal.close();
+                }
+                const schemesDashboardModal = document.getElementById('schemesDashboardModal');
+                if (schemesDashboardModal && schemesDashboardModal.open) {
+                    window.closeSchemesDashboardModal();
                 }
             }
         });
@@ -2465,7 +2550,7 @@ const SmartGovUX = (function() {
         async function loadFacilities(forceReload = false) {
             if (mapFacilities.length > 0 && !forceReload) return mapFacilities;
             try {
-                let url = '/api/facilities?limit=2000';
+                let url = '/api/facilities?limit=2000&locale=en';
                 if (userLat !== null && userLng !== null) {
                     url += `&lat=${userLat}&lng=${userLng}`;
                 }
@@ -2567,7 +2652,7 @@ const SmartGovUX = (function() {
             if (el) el.value = mapState.village;
         });
 
-        ['searchInput', 'searchInputFull'].forEach(id => {
+        ['facilitySearchInput', 'facilitySearchInputFull'].forEach(id => {
             const el = document.getElementById(id);
             if (el) el.value = mapState.search;
         });
@@ -2581,6 +2666,19 @@ const SmartGovUX = (function() {
         ['btnMode', 'btnModeFull'].forEach(id => {
             const el = document.getElementById(id);
             if (el) el.innerHTML = nextModeLabel;
+        });
+
+        const locationBtnText = window.t ? window.t('mapLocationBtn') : (isEn ? '📍 My Location / District' : '📍 నా స్థానం / జిల్లాను గుర్తించు');
+        ['btnLocation', 'btnLocationFull'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                const spanEl = el.querySelector('span[data-i18n="mapLocationBtn"]');
+                if (spanEl) {
+                    spanEl.textContent = locationBtnText;
+                } else {
+                    el.innerHTML = locationBtnText;
+                }
+            }
         });
     }
 
@@ -2642,6 +2740,48 @@ const SmartGovUX = (function() {
             applyFiltersAndRender();
         };
 
+        const AP_DISTRICT_CENTROIDS = [
+            { id: 'alluri', name_en: 'Alluri Sitharama Raju', name_te: 'అల్లూరి సీతారామరాజు', lat: 18.06, lng: 82.52 },
+            { id: 'anakapalli', name_en: 'Anakapalli', name_te: 'అనకాపల్లి', lat: 17.68, lng: 83.00 },
+            { id: 'ananthapuramu', name_en: 'Ananthapuramu', name_te: 'అనంతపురము', lat: 14.68, lng: 77.60 },
+            { id: 'annamayya', name_en: 'Annamayya', name_te: 'అన్నమయ్య', lat: 14.02, lng: 78.96 },
+            { id: 'bapatla', name_en: 'Bapatla', name_te: 'బాపట్ల', lat: 15.90, lng: 80.46 },
+            { id: 'chittoor', name_en: 'Chittoor', name_te: 'చిత్తూరు', lat: 13.21, lng: 79.10 },
+            { id: 'konaseema', name_en: 'Dr. B.R. Ambedkar Konaseema', name_te: 'డా. బి.ఆర్. అంబేద్కర్ కోనసీమ', lat: 16.58, lng: 82.00 },
+            { id: 'east_godavari', name_en: 'East Godavari', name_te: 'తూర్పు గోదావరి', lat: 17.00, lng: 81.80 },
+            { id: 'eluru', name_en: 'Eluru', name_te: 'ఏలూరు', lat: 16.71, lng: 81.10 },
+            { id: 'guntur', name_en: 'Guntur', name_te: 'గుంటూరు', lat: 16.30, lng: 80.43 },
+            { id: 'kakinada', name_en: 'Kakinada', name_te: 'కాకినాడ', lat: 16.98, lng: 82.24 },
+            { id: 'krishna', name_en: 'Krishna', name_te: 'కృష్ణా', lat: 16.18, lng: 81.13 },
+            { id: 'kurnool', name_en: 'Kurnool', name_te: 'కర్నూలు', lat: 15.82, lng: 78.03 },
+            { id: 'nandyal', name_en: 'Nandyal', name_te: 'నంద్యాల', lat: 15.48, lng: 78.48 },
+            { id: 'ntr', name_en: 'NTR', name_te: 'ఎన్టీఆర్', lat: 16.50, lng: 80.64 },
+            { id: 'palnadu', name_en: 'Palnadu', name_te: 'పల్నాడు', lat: 16.23, lng: 79.98 },
+            { id: 'parvathipuram', name_en: 'Parvathipuram Manyam', name_te: 'పార్వతీపురం మన్యం', lat: 18.77, lng: 83.42 },
+            { id: 'prakasam', name_en: 'Prakasam', name_te: 'ప్రకాశం', lat: 15.50, lng: 80.05 },
+            { id: 'nellore', name_en: 'Sri Potti Sriramulu Nellore', name_te: 'శ్రీ పొట్టి శ్రీరాములు నెల్లూరు', lat: 14.44, lng: 79.98 },
+            { id: 'sri_sathya_sai', name_en: 'Sri Sathya Sai', name_te: 'శ్రీ సత్యసాయి', lat: 14.16, lng: 77.81 },
+            { id: 'srikakulam', name_en: 'Srikakulam', name_te: 'శ్రీకాకుళం', lat: 18.30, lng: 83.90 },
+            { id: 'tirupati', name_en: 'Tirupati', name_te: 'తిరుపతి', lat: 13.62, lng: 79.41 },
+            { id: 'visakhapatnam', name_en: 'Visakhapatnam', name_te: 'విశాఖపట్నం', lat: 17.68, lng: 83.21 },
+            { id: 'vizianagaram', name_en: 'Vizianagaram', name_te: 'విజయనగరం', lat: 18.11, lng: 83.40 },
+            { id: 'west_godavari', name_en: 'West Godavari', name_te: 'పశ్చిమ గోదావరి', lat: 16.54, lng: 81.52 },
+            { id: 'ysr_kadapa', name_en: 'YSR Kadapa', name_te: 'వైఎస్సార్ కడప', lat: 14.47, lng: 78.82 }
+        ];
+
+        function findClosestDistrict(lat, lng) {
+            let closest = AP_DISTRICT_CENTROIDS[0];
+            let minDist = Infinity;
+            AP_DISTRICT_CENTROIDS.forEach(d => {
+                const dist = calculateDistance(lat, lng, d.lat, d.lng);
+                if (dist < minDist) {
+                    minDist = dist;
+                    closest = d;
+                }
+            });
+            return closest;
+        }
+
         const handleLocation = () => {
             if (navigator.geolocation) {
                 const isEn = window.getLang && window.getLang() === 'en';
@@ -2656,28 +2796,51 @@ const SmartGovUX = (function() {
                     async (pos) => {
                         userLat = pos.coords.latitude;
                         userLng = pos.coords.longitude;
+                        
+                        // Auto-detect closest AP District
+                        const detectedDist = findClosestDistrict(userLat, userLng);
+                        if (detectedDist) {
+                            mapState.mode = 'AP';
+                            mapState.district = detectedDist.name_en;
+                            mapState.mandal = '';
+                            mapState.village = '';
+                            populateDropdowns();
+                            syncUiFromState();
+
+                            // Update notice banner
+                            const noticeEl = document.getElementById('districtSchemesNotice') || document.getElementById('searchResultsFull');
+                            if (noticeEl) {
+                                const distName = isEn ? detectedDist.name_en : detectedDist.name_te;
+                                noticeEl.innerHTML = `📍 <strong>${isEn ? 'Detected District:' : 'గుర్తించబడిన జిల్లా:'}</strong> ${distName} — <span style="font-size:0.85rem; color:#059669;">${isEn ? 'Showing nearby hospitals & active schemes' : 'సమీప ఆసుపత్రులు & వర్తించే పథకాలు హైలైట్ చేయబడ్డాయి'}</span>`;
+                            }
+                        }
+
                         await loadFacilities(true);
                         btns.forEach(b => { if(b) b.innerHTML = locationBtnText; });
                         
                         if (inlineMapObj) {
                             if (inlineUserMarker) inlineMapObj.removeLayer(inlineUserMarker);
                             inlineUserMarker = L.circleMarker([userLat, userLng], {radius: 8, fillColor: '#228be6', color: '#fff', weight: 2, opacity: 1, fillOpacity: 0.8})
-                                                .addTo(inlineMapObj).bindPopup(`<b>${yourLocText}</b>`);
+                                                .addTo(inlineMapObj)
+                                                .bindPopup(`<b>Your Location</b><br><small>${detectedDist ? detectedDist.name_en : 'Andhra Pradesh'}</small>`)
+                                                .bindTooltip('Your Location', { direction: 'top', offset: [0, -6] });
                         }
                         
                         if (fullMapObj) {
                             if (fullUserMarker) fullMapObj.removeLayer(fullUserMarker);
                             fullUserMarker = L.circleMarker([userLat, userLng], {radius: 8, fillColor: '#228be6', color: '#fff', weight: 2, opacity: 1, fillOpacity: 0.8})
-                                              .addTo(fullMapObj).bindPopup(`<b>${yourLocText}</b>`);
+                                              .addTo(fullMapObj)
+                                              .bindPopup(`<b>Your Location</b><br><small>${detectedDist ? detectedDist.name_en : 'Andhra Pradesh'}</small>`)
+                                              .bindTooltip('Your Location', { direction: 'top', offset: [0, -6] });
                         }
                         
                         applyFiltersAndRender();
                         
                         if (inlineMapObj) {
-                            inlineMapObj.setView([userLat, userLng], 15);
+                            inlineMapObj.setView([userLat, userLng], 13);
                         }
                         if (fullMapObj) {
-                            fullMapObj.setView([userLat, userLng], 15);
+                            fullMapObj.setView([userLat, userLng], 13);
                         }
                     },
                     (err) => {
@@ -2699,7 +2862,7 @@ const SmartGovUX = (function() {
         ['districtSelect', 'districtSelectFull'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('change', handleDistChange); });
         ['mandalSelect', 'mandalSelectFull'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('change', handleMandalChange); });
         ['villageSelect', 'villageSelectFull'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('change', handleVillageChange); });
-        ['searchInput', 'searchInputFull'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('input', handleSearch); });
+        ['facilitySearchInput', 'facilitySearchInputFull'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('input', handleSearch); });
         ['btnMode', 'btnModeFull'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('click', handleModeToggle); });
         ['btnLocation', 'btnLocationFull'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('click', handleLocation); });
     }
@@ -2830,44 +2993,64 @@ const SmartGovUX = (function() {
         
         let renderedCount = 0;
         let singleMarkerToOpen = null;
-        const isEn = window.getLang && window.getLang() === 'en';
-        const contactLabel = window.t ? window.t('mapContact') : (isEn ? 'Contact:' : 'సంప్రదించండి:');
-        const distLabel = window.t ? window.t('mapDist') : (isEn ? 'Distance:' : 'దూరం:');
-        const kmUnit = window.t ? window.t('mapKm') : (isEn ? 'km' : 'కి.మీ');
+        const contactLabel = 'Contact:';
+        const distLabel = 'Distance:';
+        const kmUnit = 'km';
+        const mandalSuffix = 'Mandal';
         
         facilities.forEach(fac => {
             if (!hasValidCoordinates(fac)) return;
             
             const lat = Number(fac.lat !== undefined ? fac.lat : fac.latitude);
             const lng = Number(fac.lng !== undefined ? fac.lng : fac.longitude);
-            const marker = L.marker([lat, lng], {
-                icon: getMarkerIcon(fac.type || fac.facility_type)
-            }).addTo(map);
             
-            renderedCount++;
-            singleMarkerToOpen = marker;
-            
-            const safeName = window.escapeHtml(fac.name || '');
-            const safeType = window.escapeHtml(fac.type || fac.facility_type || '');
+            const rawType = fac.type || fac.facility_type || 'Hospital';
+            let localizedType = rawType;
+            if (rawType.toLowerCase().includes('hospital') || rawType === 'ఆసుపత్రి') {
+                localizedType = 'Hospital';
+            } else if (rawType === 'PHC') {
+                localizedType = 'Primary Health Centre (PHC)';
+            } else if (rawType === 'CHC') {
+                localizedType = 'Community Health Centre (CHC)';
+            }
+
+            const safeName = window.escapeHtml(fac.name || 'Healthcare Facility');
+            const safeType = window.escapeHtml(localizedType);
             const safeVillage = window.escapeHtml(fac.village || '');
             const safeMandal = window.escapeHtml(fac.mandal || '');
             const safeDistrict = window.escapeHtml(fac.district || '');
             const safeContact = window.escapeHtml(fac.contact || fac.phone || '');
+
+            const marker = L.marker([lat, lng], {
+                icon: getMarkerIcon(fac.type || fac.facility_type),
+                title: fac.name || 'Healthcare Facility'
+            }).addTo(map);
+
+            // Consistent English Tooltip on Hover
+            marker.bindTooltip(`<strong>${safeName}</strong><br><span style="color:#0284c7; font-size:0.8rem;">${safeType}</span>${safeDistrict ? `<br><span style="color:#64748b; font-size:0.75rem;">${safeDistrict}</span>` : ''}`, {
+                direction: 'top',
+                offset: [0, -10],
+                opacity: 0.95
+            });
+            
+            renderedCount++;
+            singleMarkerToOpen = marker;
             
             let popupContent = '';
-            if (safeName) popupContent += `<b>${safeName}</b><br>`;
-            if (safeType) popupContent += `<i>${safeType}</i><br>`;
+            if (safeName) popupContent += `<div style="font-family:system-ui, -apple-system, sans-serif; min-width:180px;"><strong style="font-size:0.95rem; color:#0f172a;">${safeName}</strong><br>`;
+            if (safeType) popupContent += `<span style="font-size:0.82rem; color:#0284c7; font-weight:600;">${safeType}</span><br>`;
             
             let locParts = [];
             if (safeVillage) locParts.push(safeVillage);
-            if (safeMandal) locParts.push(`${safeMandal} (${isEn ? 'Mandal' : 'మండలం'})`);
+            if (safeMandal) locParts.push(`${safeMandal} (${mandalSuffix})`);
             if (safeDistrict) locParts.push(safeDistrict);
             
-            if (locParts.length > 0) popupContent += locParts.join(', ') + '<br>';
-            if (safeContact) popupContent += `<b>${contactLabel}</b> ${safeContact}<br>`;
+            if (locParts.length > 0) popupContent += `<span style="font-size:0.82rem; color:#475569;">${locParts.join(', ')}</span><br>`;
+            if (safeContact) popupContent += `<span style="font-size:0.82rem; color:#334155;"><b>${contactLabel}</b> ${safeContact}</span><br>`;
             if (fac.distance_km !== undefined && fac.distance_km !== null) {
-                popupContent += `<b>${distLabel}</b> ${fac.distance_km} ${kmUnit}<br>`;
+                popupContent += `<span style="font-size:0.82rem; color:#059669; font-weight:600;"><b>${distLabel}</b> ${fac.distance_km} ${kmUnit}</span><br>`;
             }
+            popupContent += `</div>`;
             
             marker.bindPopup(popupContent);
             markersArray.push(marker);
@@ -2906,7 +3089,9 @@ const SmartGovUX = (function() {
             const yourLocText = window.t ? window.t('mapYourLocationPopup') : (isEn ? 'Your Location' : 'మీ స్థానం');
             inlineUserMarker = L.circleMarker([userLat, userLng], {
                 radius: 8, fillColor: '#228be6', color: '#fff', weight: 2, opacity: 1, fillOpacity: 0.8
-            }).addTo(inlineMapObj).bindPopup(`<b>${yourLocText}</b>`);
+            }).addTo(inlineMapObj)
+              .bindPopup(`<b>Your Location</b>`)
+              .bindTooltip('Your Location', { direction: 'top', offset: [0, -6] });
         }
 
         setTimeout(() => inlineMapObj.invalidateSize(), 100);
@@ -2924,6 +3109,12 @@ const SmartGovUX = (function() {
         overlay.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
         setupEventListenersOnce();
+
+        if (window.SmartGovI18n && typeof window.SmartGovI18n.applyStaticTranslations === 'function') {
+            window.SmartGovI18n.applyStaticTranslations();
+        }
+        populateDropdowns();
+        syncUiFromState();
         
         if (!fullMapObj) {
             fullMapObj = L.map('fullScreenMap');
@@ -2933,11 +3124,11 @@ const SmartGovUX = (function() {
             }).addTo(fullMapObj);
             
             if (userLat !== null && userLng !== null) {
-                const isEn = window.getLang && window.getLang() === 'en';
-                const yourLocText = window.t ? window.t('mapYourLocationPopup') : (isEn ? 'Your Location' : 'మీ స్థానం');
                 fullUserMarker = L.circleMarker([userLat, userLng], {
                     radius: 8, fillColor: '#228be6', color: '#fff', weight: 2, opacity: 1, fillOpacity: 0.8
-                }).addTo(fullMapObj).bindPopup(`<b>${yourLocText}</b>`);
+                }).addTo(fullMapObj)
+                  .bindPopup(`<b>Your Location</b>`)
+                  .bindTooltip('Your Location', { direction: 'top', offset: [0, -6] });
             }
         }
         
@@ -3027,3 +3218,404 @@ const SmartGovUX = (function() {
 
     return uxExports;
 })();
+
+
+// ==========================================
+// SCHEME COMPARISON LOGIC
+// ==========================================
+window.openCompareModal = function() {
+    const modal = document.getElementById('compareModal');
+    if (!modal) return;
+    
+    window.populateCompareDropdowns();
+    if (typeof window.attachCompareListeners === 'function') {
+        window.attachCompareListeners();
+    }
+    
+    // Clear previous results
+    const resultsContainer = document.getElementById('compareResults');
+    if (resultsContainer) {
+        resultsContainer.innerHTML = `
+            <div class="empty-state" style="text-align:center; padding:40px 20px; color:var(--muted); font-size:1.05rem;">
+                దయచేసి పై జాబితా నుండి రెండు పథకాలను ఎంచుకోండి.<br><span style="font-size:0.9rem;">(Please select two schemes to compare)</span>
+            </div>
+        `;
+    }
+
+    if (typeof modal.showModal === 'function') {
+        modal.showModal();
+    } else {
+        modal.classList.remove('hidden');
+    }
+};
+
+window.closeCompareModal = function() {
+    const modal = document.getElementById('compareModal');
+    if (modal) {
+        if (typeof modal.close === 'function') {
+            modal.close();
+        } else {
+            modal.classList.add('hidden');
+        }
+    }
+};
+
+window.populateCompareDropdowns = function() {
+    const s1 = document.getElementById('compareSelect1');
+    const s2 = document.getElementById('compareSelect2');
+    if (!s1 || !s2 || !window.schemesCatalog) return;
+
+    const val1 = s1.value;
+    const val2 = s2.value;
+
+    const schemes = Object.keys(window.schemesCatalog).sort();
+    const isEn = window.getLang && window.getLang() === 'en';
+    const defaultText = window.t ? window.t('selectDropdownPlaceholder') : (isEn ? '-- Select Scheme --' : '-- ఎంచుకోండి --');
+    
+    const optionsHtml = `<option value="">${defaultText}</option>` + schemes.map(s => {
+        const data = window.schemesCatalog[s];
+        const label = isEn ? s : `${data.telugu_name || s} | ${s}`;
+        return `<option value="${s}">${window.escapeHtml(label)}</option>`;
+    }).join('');
+
+    s1.innerHTML = optionsHtml;
+    s2.innerHTML = optionsHtml;
+
+    if (val1) s1.value = val1;
+    if (val2) s2.value = val2;
+};
+
+window.renderComparison = function() {
+    const s1Name = document.getElementById('compareSelect1')?.value;
+    const s2Name = document.getElementById('compareSelect2')?.value;
+    const resultsContainer = document.getElementById('compareResults');
+    if (!resultsContainer) return;
+
+    if (!s1Name || !s2Name) {
+        resultsContainer.innerHTML = `
+            <div class="empty-state" style="text-align:center; padding:40px 20px; color:var(--muted); font-size:1.05rem;">
+                దయచేసి పై జాబితా నుండి రెండు పథకాలను ఎంచుకోండి.<br><span style="font-size:0.9rem;">(Please select two schemes to compare)</span>
+            </div>
+        `;
+        return;
+    }
+
+    const s1 = window.schemesCatalog[s1Name];
+    const s2 = window.schemesCatalog[s2Name];
+    const isEn = window.getLang && window.getLang() === 'en';
+
+    const getListHtml = (arr) => {
+        if (!arr || arr.length === 0) return '-';
+        return `<ul>${arr.map(item => `<li>${window.escapeHtml(item)}</li>`).join('')}</ul>`;
+    };
+
+    const s1Display = isEn ? s1Name : s1.telugu_name || s1Name;
+    const s2Display = isEn ? s2Name : s2.telugu_name || s2Name;
+
+    const html = `
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th class="attribute-col" style="border:none; background:transparent;"></th>
+                    <th class="compare-header">${window.escapeHtml(s1Display)}</th>
+                    <th class="compare-header">${window.escapeHtml(s2Display)}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="attribute-col">వర్గం (Category)</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s1Display)}">${window.escapeHtml(s1.category || '-')}</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s2Display)}">${window.escapeHtml(s2.category || '-')}</td>
+                </tr>
+                <tr>
+                    <td class="attribute-col">లబ్ధిదారులు (Target Audience)</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s1Display)}">${window.escapeHtml(s1.target_audience || '-')}</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s2Display)}">${window.escapeHtml(s2.target_audience || '-')}</td>
+                </tr>
+                <tr>
+                    <td class="attribute-col">ప్రయోజనాలు (Benefits)</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s1Display)}">${getListHtml(s1.benefits)}</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s2Display)}">${getListHtml(s2.benefits)}</td>
+                </tr>
+                <tr>
+                    <td class="attribute-col">అర్హతలు (Eligibility)</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s1Display)}">${getListHtml(s1.eligibility_criteria)}</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s2Display)}">${getListHtml(s2.eligibility_criteria)}</td>
+                </tr>
+                <tr>
+                    <td class="attribute-col">అవసరమైన పత్రాలు (Required Docs)</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s1Display)}">${getListHtml(s1.required_documents)}</td>
+                    <td class="value-col" data-scheme-name="${window.escapeHtml(s2Display)}">${getListHtml(s2.required_documents)}</td>
+                </tr>
+            </tbody>
+        </table>
+    `;
+
+    resultsContainer.innerHTML = html;
+};
+
+// Attach listeners for compare
+function attachCompareListeners() {
+    const s1 = document.getElementById('compareSelect1');
+    const s2 = document.getElementById('compareSelect2');
+    if (s1 && !s1.dataset.hasCompareListener) {
+        s1.dataset.hasCompareListener = 'true';
+        s1.addEventListener('change', window.renderComparison);
+    }
+    if (s2 && !s2.dataset.hasCompareListener) {
+        s2.dataset.hasCompareListener = 'true';
+        s2.addEventListener('change', window.renderComparison);
+    }
+}
+window.attachCompareListeners = attachCompareListeners;
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachCompareListeners);
+} else {
+    attachCompareListeners();
+}
+
+/**
+ * =============================================================================
+ * BatchSchemeLoader: High-Performance Progressive Batch Fetching Engine
+ * =============================================================================
+ * Ensures instantaneous portal & Recharts dashboard initializations while
+ * continuously and smoothly streaming scraped schemes in non-blocking batches.
+ */
+window.BatchSchemeLoader = (function () {
+    const BATCH_SIZE = 25;
+    const CACHE_KEY = 'smartgov_schemes_batch_cache_v2';
+    const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+
+    let isFetching = false;
+    let totalSchemes = 0;
+    let loadedSchemes = 0;
+    let currentPage = 1;
+
+    function getSessionCache() {
+        try {
+            const raw = sessionStorage.getItem(CACHE_KEY);
+            if (!raw) return null;
+            const parsed = JSON.parse(raw);
+            if (Date.now() - (parsed.timestamp || 0) < CACHE_TTL && parsed.schemes) {
+                return parsed;
+            }
+        } catch (e) {
+            console.warn('[BatchLoader] Cache read failed', e);
+        }
+        return null;
+    }
+
+    function saveSessionCache(schemesMap, total) {
+        try {
+            sessionStorage.setItem(CACHE_KEY, JSON.stringify({
+                timestamp: Date.now(),
+                total,
+                schemes: schemesMap
+            }));
+        } catch (e) {
+            console.warn('[BatchLoader] Cache write quota exceeded', e);
+        }
+    }
+
+    function notifyBatchProgress(detail) {
+        window.dispatchEvent(new CustomEvent('schemesBatchProgress', { detail }));
+    }
+
+    function notifyBatchLoaded(detail) {
+        window.dispatchEvent(new CustomEvent('schemesBatchLoaded', { detail }));
+    }
+
+    async function fetchBatch(page = 1, limit = BATCH_SIZE) {
+        try {
+            const res = await fetch(`/api/schemes/batch?page=${page}&limit=${limit}`, {
+                headers: { 'Accept': 'application/json' }
+            });
+            if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+            return await res.json();
+        } catch (err) {
+            console.error(`[BatchLoader] Failed to fetch batch ${page}:`, err);
+            return null;
+        }
+    }
+
+    async function fetchSummary() {
+        try {
+            const res = await fetch('/api/schemes/summary', {
+                headers: { 'Accept': 'application/json' }
+            });
+            if (!res.ok) return null;
+            return await res.json();
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async function startProgressiveBatchHydration(options = {}) {
+        if (isFetching) return;
+        isFetching = true;
+
+        if (!window.schemesCatalog) {
+            window.schemesCatalog = {};
+        }
+
+        const existingCount = Object.keys(window.schemesCatalog).length;
+        loadedSchemes = existingCount;
+
+        // 1. If catalog already has schemes in memory from initial render, cache and return immediately
+        if (!options.force && existingCount >= 15) {
+            saveSessionCache(window.schemesCatalog, existingCount);
+            notifyBatchLoaded({
+                page: 1,
+                totalPages: 1,
+                loaded: existingCount,
+                total: existingCount,
+                progress: 100,
+                fromCache: true
+            });
+            isFetching = false;
+            return;
+        }
+
+        // 2. Check Session Cache for zero-latency boot
+        const cached = getSessionCache();
+        if (cached && Object.keys(cached.schemes).length > existingCount) {
+            Object.assign(window.schemesCatalog, cached.schemes);
+            loadedSchemes = Object.keys(window.schemesCatalog).length;
+            totalSchemes = cached.total || loadedSchemes;
+            if (window.registerNewSchemesBatch) {
+                window.registerNewSchemesBatch(cached.schemes, true);
+            }
+            notifyBatchLoaded({
+                page: 1,
+                totalPages: 1,
+                loaded: loadedSchemes,
+                total: totalSchemes,
+                progress: 100,
+                fromCache: true
+            });
+            isFetching = false;
+            return;
+        }
+
+        // 2. Fetch Batch 1 if not already populated
+        const batch1 = await fetchBatch(1, BATCH_SIZE);
+        if (batch1 && batch1.success) {
+            totalSchemes = batch1.total || 0;
+            const newItems = batch1.schemes || {};
+            Object.assign(window.schemesCatalog, newItems);
+            loadedSchemes = Object.keys(window.schemesCatalog).length;
+
+            if (window.registerNewSchemesBatch) {
+                window.registerNewSchemesBatch(newItems, false);
+            }
+
+            const totalPages = batch1.totalPages || 1;
+            const progress = Math.min(100, Math.round((loadedSchemes / (totalSchemes || 1)) * 100));
+
+            notifyBatchProgress({
+                page: 1,
+                totalPages,
+                loaded: loadedSchemes,
+                total: totalSchemes,
+                progress
+            });
+
+            notifyBatchLoaded({
+                page: 1,
+                totalPages,
+                loaded: loadedSchemes,
+                total: totalSchemes,
+                progress,
+                batch: newItems
+            });
+
+            // 3. Fetch remaining batches progressively in non-blocking background loop
+            if (totalPages > 1) {
+                for (let p = 2; p <= totalPages; p++) {
+                    // Small yield to let UI and user interactions remain 60fps buttery smooth
+                    await new Promise(r => setTimeout(r, 60));
+                    const nextBatch = await fetchBatch(p, BATCH_SIZE);
+                    if (nextBatch && nextBatch.success && nextBatch.schemes) {
+                        Object.assign(window.schemesCatalog, nextBatch.schemes);
+                        loadedSchemes = Object.keys(window.schemesCatalog).length;
+                        if (window.registerNewSchemesBatch) {
+                            window.registerNewSchemesBatch(nextBatch.schemes, false);
+                        }
+                        const curProgress = Math.min(100, Math.round((loadedSchemes / (totalSchemes || 1)) * 100));
+                        notifyBatchProgress({
+                            page: p,
+                            totalPages,
+                            loaded: loadedSchemes,
+                            total: totalSchemes,
+                            progress: curProgress
+                        });
+                        notifyBatchLoaded({
+                            page: p,
+                            totalPages,
+                            loaded: loadedSchemes,
+                            total: totalSchemes,
+                            progress: curProgress,
+                            batch: nextBatch.schemes
+                        });
+                    }
+                }
+            }
+
+            // Save consolidated cache
+            saveSessionCache(window.schemesCatalog, totalSchemes);
+        }
+
+        isFetching = false;
+    }
+
+    async function syncLatestScrapedSchemes() {
+        try {
+            isFetching = true;
+            sessionStorage.removeItem(CACHE_KEY);
+            const refRes = await fetch('/api/schemes/refresh', { method: 'POST' });
+            const refData = await refRes.json();
+            isFetching = false;
+            await startProgressiveBatchHydration({ force: true });
+            return refData;
+        } catch (err) {
+            isFetching = false;
+            console.error('[BatchLoader] Refresh failed:', err);
+            throw err;
+        }
+    }
+
+    return {
+        init: startProgressiveBatchHydration,
+        fetchBatch,
+        fetchSummary,
+        syncLatest: syncLatestScrapedSchemes,
+        getStatus: () => ({ isFetching, loadedSchemes, totalSchemes })
+    };
+})();
+
+window.syncLatestScrapedSchemesBatch = function () {
+    const isEn = window.getLang && window.getLang() === 'en';
+    const noticeEl = document.getElementById('batchSyncStatusBanner');
+    if (noticeEl) {
+        noticeEl.innerHTML = `🔄 <span style="font-weight:600;">${isEn ? 'Syncing latest scraped schemes from database...' : 'డేటాబేస్ నుండి తాజా పథకాలను సమన్వయం చేస్తోంది...'}</span>`;
+        noticeEl.style.display = 'block';
+    }
+
+    return window.BatchSchemeLoader.syncLatest()
+        .then(res => {
+            if (noticeEl) {
+                const count = res.schemes_count || Object.keys(window.schemesCatalog || {}).length;
+                noticeEl.innerHTML = `✅ <span style="font-weight:600; color:#10b981;">${isEn ? `Successfully synchronized ${count} active healthcare schemes!` : `విజయవంతంగా ${count} ఆరోగ్య పథకాలు అప్‌డేట్ చేయబడ్డాయి!`}</span>`;
+                setTimeout(() => {
+                    if (noticeEl) noticeEl.style.display = 'none';
+                }, 4000);
+            }
+        })
+        .catch(err => {
+            if (noticeEl) {
+                noticeEl.innerHTML = `⚠️ <span style="color:#ef4444;">${isEn ? 'Sync failed. Please check network connection.' : 'సమన్వయం విఫలమైంది. దయచేసి నెట్‌వర్క్ తనిఖీ చేయండి.'}</span>`;
+            }
+        });
+};
+

@@ -1,0 +1,9 @@
+const fs = require('fs');
+let code = fs.readFileSync('public/js/app-client.js', 'utf8');
+
+code = code.replace(
+"window.populateCompareDropdowns = function() {\n    const s1 = document.getElementById('compareSelect1');\n    const s2 = document.getElementById('compareSelect2');\n    if (!s1 || !s2 || !window.schemesCatalog) return;\n\n    const schemes = Object.keys(window.schemesCatalog).sort();\n    const isEn = window.getLang && window.getLang() === 'en';\n    \n    const optionsHtml = `<option value=\"\">-- ఎంచుకోండి --</option>` + schemes.map(s => {\n        const data = window.schemesCatalog[s];\n        const label = isEn ? s : `${data.telugu_name || s} | ${s}`;\n        return `<option value=\"${s}\">${window.escapeHtml(label)}</option>`;\n    }).join('');\n\n    s1.innerHTML = optionsHtml;\n    s2.innerHTML = optionsHtml;\n};",
+"window.populateCompareDropdowns = function() {\n    const s1 = document.getElementById('compareSelect1');\n    const s2 = document.getElementById('compareSelect2');\n    if (!s1 || !s2 || !window.schemesCatalog) return;\n\n    const val1 = s1.value;\n    const val2 = s2.value;\n\n    const schemes = Object.keys(window.schemesCatalog).sort();\n    const isEn = window.getLang && window.getLang() === 'en';\n    const defaultText = window.t ? window.t('selectDropdownPlaceholder') : (isEn ? '-- Select Scheme --' : '-- ఎంచుకోండి --');\n    \n    const optionsHtml = `<option value=\"\">${defaultText}</option>` + schemes.map(s => {\n        const data = window.schemesCatalog[s];\n        const label = isEn ? s : `${data.telugu_name || s} | ${s}`;\n        return `<option value=\"${s}\">${window.escapeHtml(label)}</option>`;\n    }).join('');\n\n    s1.innerHTML = optionsHtml;\n    s2.innerHTML = optionsHtml;\n\n    if (val1) s1.value = val1;\n    if (val2) s2.value = val2;\n};"
+);
+
+fs.writeFileSync('public/js/app-client.js', code);
