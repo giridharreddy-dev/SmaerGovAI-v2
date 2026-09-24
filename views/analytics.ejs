@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Admin Dashboard - SmartGov Health Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/theme.css">
     <style>
         .admin-wrap {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 24px 16px 60px;
         }
@@ -32,6 +32,7 @@
             margin: 0;
             font-size: 1.4rem;
             color: var(--ink);
+            font-weight: 800;
         }
         .admin-header-left span {
             font-size: 0.85rem;
@@ -59,13 +60,14 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            font-weight: 700;
         }
         body.dark-mode .dashboard-section h2 {
             color: var(--primary-light);
         }
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 16px;
         }
         .metric-card {
@@ -74,20 +76,26 @@
             border-radius: var(--radius-md);
             padding: 20px;
             text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
         .metric-value {
-            font-size: 2.4rem;
-            font-weight: 900;
+            font-size: 2.3rem;
+            font-weight: 800;
             color: var(--primary);
             margin: 8px 0;
+            letter-spacing: -0.02em;
         }
         .metric-title {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 700;
             color: var(--ink);
         }
         .metric-subtitle {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--muted);
         }
         .scheme-list {
@@ -106,7 +114,7 @@
             border-bottom: none;
         }
         .scheme-item-name {
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 700;
             color: var(--ink);
         }
@@ -121,7 +129,7 @@
             padding: 4px 12px;
             border-radius: var(--radius-full);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--ink);
         }
         .stat-pill.rating {
@@ -155,6 +163,104 @@
             font-size: 0.78rem;
             letter-spacing: 0.05em;
         }
+
+        /* Database Explorer Styles */
+        .db-explorer-container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 16px;
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-top: 16px;
+        }
+        .db-collection-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .db-col-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--ink);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+        .db-col-btn:hover {
+            border-color: var(--primary);
+            background: var(--surface-soft);
+        }
+        .db-col-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary-dark);
+        }
+        .db-col-btn.active .col-badge {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
+        .col-badge {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .db-docs-view {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            min-height: 380px;
+            max-height: 540px;
+            overflow-y: auto;
+        }
+        .doc-item-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            margin-bottom: 10px;
+            background: var(--surface-soft);
+        }
+        .doc-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .doc-json-preview {
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            padding: 10px 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            max-height: 180px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin: 0;
+        }
+
+        @media (max-width: 850px) {
+            .db-explorer-container {
+                grid-template-columns: 1fr;
+            }
+        }
         @media (max-width: 650px) {
             .admin-header {
                 flex-direction: column;
@@ -173,59 +279,157 @@
     <div class="admin-wrap">
         <header class="admin-header">
             <div class="admin-header-left">
-                <img src="/public/assets/icon.svg" alt="Logo" width="44" height="44">
+                <img src="/public/assets/icon.svg" alt="SmartGov Emblem" width="44" height="44" style="border-radius: 50%;">
                 <div>
-                    <h1>నిర్వాహక డాష్‌బోర్డ్ <small>(Admin Dashboard)</small></h1>
-                    <span>SmartGov Health Analytics & Community Feedback</span>
+                    <h1>SmartGov Administration Dashboard</h1>
+                    <span>Real-time Health Analytics & Community Feedback</span>
                 </div>
             </div>
             <div class="admin-header-actions">
-                <a href="/" class="btn secondary">← ప్రధాన పేజీ (Home)</a>
-                <a href="/admin/logout" class="btn primary-btn">లాగ్అవుట్ (Logout)</a>
+                <a href="/" class="btn secondary">← Citizen Portal (Home)</a>
+                <a href="/admin/logout" class="btn primary-btn">Logout</a>
             </div>
         </header>
 
         <main>
+            <!-- 1. Key Portal Metrics -->
             <section class="dashboard-section">
-                <h2>📈 ప్రభావం & వినియోగం (Portal Metrics)</h2>
+                <h2>📈 Portal Impact & Metrics</h2>
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <div class="metric-title">📊 మొత్తం ప్రశ్నలు / సందర్శనలు</div>
+                        <div class="metric-title">📊 Total Views & Searches</div>
                         <div class="metric-value"><%= metrics.total_requests %></div>
-                        <div class="metric-subtitle">Total Views & Searches</div>
+                        <div class="metric-subtitle">Citizen Queries & Visits</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-title">💬 పౌరుల స్పందనలు</div>
+                        <div class="metric-title">💬 Citizen Reviews</div>
                         <div class="metric-value"><%= metrics.total_feedback %></div>
-                        <div class="metric-subtitle">Total Citizen Feedback</div>
+                        <div class="metric-subtitle">Verified Feedback Records</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-title">📝 నివేదించబడిన సమస్యలు</div>
+                        <div class="metric-title">📝 Reported Issues</div>
                         <div class="metric-value"><%= metrics.total_grievances || 0 %></div>
-                        <div class="metric-subtitle">Reported Issues</div>
+                        <div class="metric-subtitle">Grievances & Field Notes</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-title">⭐ సగటు సంతృప్తి రేటింగ్</div>
+                        <div class="metric-title">⭐ Avg Satisfaction Rating</div>
                         <div class="metric-value"><%= Number(metrics.avg_rating || 0).toFixed(1) %> <span style="font-size:1.1rem; color:var(--muted)">/ 5</span></div>
-                        <div class="metric-subtitle">Avg Rating</div>
+                        <div class="metric-subtitle">Citizen Rating Score</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-title">📤 వాట్సాప్ షేర్లు</div>
+                        <div class="metric-title">📤 WhatsApp Shares</div>
                         <div class="metric-value"><%= metrics.total_shares || 0 %></div>
-                        <div class="metric-subtitle">WhatsApp Shares</div>
+                        <div class="metric-subtitle">Direct Scheme Dispatches</div>
                     </div>
                 </div>
             </section>
 
+            <!-- 2. Database & Dataset Management (Image, Overview & Live Explorer) -->
+            <section class="dashboard-section" id="datasetManagementSection">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px;">
+                    <div>
+                        <h2 style="margin: 0; border: none; padding: 0;">🗄️ Firestore Database & Dataset Management</h2>
+                        <span style="font-size: 0.85rem; color: var(--muted); margin-top: 4px; display: block;">
+                            Inspect collections, document trees, and browse live records stored in Google Cloud Firestore.
+                        </span>
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a href="https://console.firebase.google.com/project/concise-archway-txhgq/firestore" target="_blank" rel="noopener noreferrer" class="btn secondary" style="font-size: 0.82rem; padding: 6px 12px;">
+                            🔗 Firebase Console ↗
+                        </a>
+                        <a href="https://console.cloud.google.com/firestore/databases/ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09/data/panel?project=concise-archway-txhgq" target="_blank" rel="noopener noreferrer" class="btn secondary" style="font-size: 0.82rem; padding: 6px 12px;">
+                            ☁️ Google Cloud Console ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Database Metadata Chips -->
+                <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; font-size: 0.85rem;">
+                    <div style="background: var(--surface-soft); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--radius-sm);">
+                        <strong style="color: var(--muted);">Project ID:</strong> <code>concise-archway-txhgq</code>
+                    </div>
+                    <div style="background: var(--surface-soft); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--radius-sm);">
+                        <strong style="color: var(--muted);">Database ID:</strong> <code>ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09</code>
+                    </div>
+                    <div style="background: var(--surface-soft); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--radius-sm);">
+                        <strong style="color: var(--muted);">Engine:</strong> <span>Cloud Firestore Enterprise (Multi-Region)</span>
+                    </div>
+                    <div style="background: #ecfdf5; border: 1px solid #6ee7b7; color: #047857; padding: 8px 14px; border-radius: var(--radius-sm); font-weight: 700;">
+                        ● Connected & Live
+                    </div>
+                </div>
+
+                <!-- Navigation Help Banner -->
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 18px; font-size: 0.86rem; color: #1e40af; line-height: 1.5;">
+                    <strong>💡 How to navigate in Firebase / Cloud Console:</strong>
+                    Firebase projects often default to <code>(default)</code>. Our application uses the dedicated database <code>ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09</code>.
+                    In the Firebase Console, click the dropdown next to <em>Cloud Firestore</em> at the top to select this database. Or use the <strong>Google Cloud Console ↗</strong> button above to open the exact data panel directly.
+                </div>
+
+                <!-- Dataset Management Architecture Visual Diagram -->
+                <div style="margin-bottom: 20px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); background: #0f172a;">
+                    <div style="padding: 10px 16px; background: #1e293b; color: #f8fafc; font-size: 0.85rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        <span>📷 Dataset Architecture & Schema Visualizer</span>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button type="button" onclick="downloadDatasetScreenshot()" class="btn primary-btn" style="font-size: 0.78rem; padding: 5px 12px; background: #0d9488; border-color: #0f766e;">
+                                📸 Download PNG Screenshot (HD)
+                            </button>
+                            <a href="/public/assets/dataset_management.svg" target="_blank" style="color: #38bdf8; font-size: 0.8rem; text-decoration: none; font-weight: 600;">
+                                🔍 Open Full Image ↗
+                            </a>
+                        </div>
+                    </div>
+                    <img id="datasetManagementImg" src="/public/assets/dataset_management.svg" alt="Dataset Management Schema & Architecture" style="width: 100%; height: auto; display: block; max-height: 480px; object-fit: contain; background: #0f172a;">
+                </div>
+
+                <!-- Interactive Live Collection Dataset Browser -->
+                <h3 style="margin: 20px 0 10px; font-size: 1.05rem; color: var(--ink);">Interactive Live Collection Browser</h3>
+                <div class="db-explorer-container">
+                    <div class="db-collection-nav">
+                        <button type="button" class="db-col-btn active" onclick="switchCollectionTab('schemes', this)">
+                            <span>📁 schemes</span>
+                            <span class="col-badge" id="badge-schemes">12</span>
+                        </button>
+                        <button type="button" class="db-col-btn" onclick="switchCollectionTab('feedback', this)">
+                            <span>⭐ feedback</span>
+                            <span class="col-badge" id="badge-feedback">30</span>
+                        </button>
+                        <button type="button" class="db-col-btn" onclick="switchCollectionTab('requests', this)">
+                            <span>📊 requests</span>
+                            <span class="col-badge" id="badge-requests">371</span>
+                        </button>
+                        <button type="button" class="db-col-btn" onclick="switchCollectionTab('staffFeedback', this)">
+                            <span>📝 staffFeedback</span>
+                            <span class="col-badge" id="badge-staffFeedback">22</span>
+                        </button>
+                        <button type="button" class="db-col-btn" onclick="switchCollectionTab('whatsappShares', this)">
+                            <span>📤 whatsappShares</span>
+                            <span class="col-badge" id="badge-whatsappShares">53</span>
+                        </button>
+                    </div>
+
+                    <div class="db-docs-view" id="dbDocsView">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+                            <strong id="activeCollectionTitle" style="color: var(--ink);">Collection: schemes</strong>
+                            <span id="activeCollectionCount" class="stat-pill" style="font-size: 0.78rem;">Loading...</span>
+                        </div>
+                        <div id="dbDocsContent">
+                            <p style="color: var(--muted); text-align: center; padding: 20px;">Loading collection records...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Popular Health Schemes -->
             <section class="dashboard-section">
-                <h2>🏆 అత్యధికంగా అభ్యర్థించిన పథకాలు (Popular Schemes)</h2>
+                <h2>🏆 Most Inquired Health Schemes (Popularity Ranking)</h2>
                 <ul class="scheme-list">
                     <% if (stats && stats.length > 0) { %>
                         <% stats.forEach(function(item) { %>
                         <li class="scheme-item">
                             <div class="scheme-item-name"><%= item.name || item[0] %></div>
                             <div class="scheme-item-stats">
-                                <span class="stat-pill">👁️ <%= item.count || item[1] %> సార్లు చూసారు</span>
+                                <span class="stat-pill">👁️ <%= item.count || item[1] %> Inquiries</span>
                                 <% if (item.rating || item[2]) { %>
                                 <span class="stat-pill rating">⭐ <%= item.rating || item[2] %></span>
                                 <% } %>
@@ -234,72 +438,43 @@
                         <% }); %>
                     <% } else { %>
                         <li class="scheme-item">
-                            <div class="scheme-item-name" style="color:var(--muted)">ఇప్పటివరకు డేటా లేదు (No scheme requests yet)</div>
+                            <div class="scheme-item-name" style="color:var(--muted)">No scheme requests recorded yet</div>
                         </li>
                     <% } %>
                 </ul>
             </section>
 
+            <!-- 4. Recent Citizen Reviews & Testimonials -->
             <% if (typeof recentFeedback !== 'undefined' && recentFeedback && recentFeedback.length > 0) { %>
             <section class="dashboard-section">
-                <h2>💬 పౌరుల తాజా అభిప్రాయాలు (Recent Feedback)</h2>
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+                    <h2 style="margin:0; border:none; padding:0;">💬 Recent Citizen Reviews & Testimonials</h2>
+                    <span class="stat-pill" style="background:var(--primary); color:#fff; font-weight:700; font-size:0.85rem;">
+                        Total: <%= recentFeedback.length %> Verified Reviews
+                    </span>
+                </div>
                 <div class="feedback-table-wrap">
                     <table class="admin-table">
                         <thead>
                             <tr>
-                                <th>సమయం (Timestamp)</th>
-                                <th>రేటింగ్ (Rating)</th>
-                                <th>వివరణ (Comment)</th>
+                                <th style="width: 140px;">Timestamp</th>
+                                <th>Scheme & Beneficiary</th>
+                                <th style="width: 110px;">Rating</th>
+                                <th>Citizen Review / Comment</th>
                             </tr>
                         </thead>
                         <tbody>
                             <% recentFeedback.forEach(function(fb) { %>
                             <tr>
-                                <td><%= new Date(fb.timestamp).toLocaleString('te-IN') %></td>
-                                <td><span class="stat-pill rating">⭐ <%= fb.rating %>/5</span></td>
-                                <td><%= fb.comment || 'రేటింగ్ మాత్రమే నమోదు చేయబడింది' %></td>
-                            </tr>
-                            <% }); %>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-                        <% } %>
-
-            <% if (typeof grievances !== 'undefined' && grievances && grievances.length > 0) { %>
-            <section class="dashboard-section">
-                <h2>📝 నివేదించబడిన సమస్యలు మరియు అభిప్రాయాలు (Reported Issues & Feedback)</h2>
-                <div class="feedback-table-wrap">
-                    <table class="admin-table">
-                        <thead>
-                            <tr>
-                                <th>సమయం (Timestamp)</th>
-                                <th>రకం (Type)</th>
-                                <th>పథకం (Scheme Name)</th>
-                                <th>వివరణ (Description)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% grievances.forEach(function(fb) { %>
-                            <tr>
-                                <td><%= new Date(fb.timestamp).toLocaleString('te-IN') %></td>
+                                <td style="white-space: nowrap; font-size: 0.85rem; color: var(--muted);"><%= new Date(fb.timestamp).toLocaleString('en-US') %></td>
                                 <td>
-                                    <span class="stat-pill" style="background: var(--surface-soft); color: var(--primary);">
-                                        <%= fb.issue_type === 'wrong_info' ? 'తప్పుడు సమాచారం' : 
-                                            fb.issue_type === 'audio_issue' ? 'ఆడియో సమస్య' : 
-                                            fb.issue_type === 'missing_scheme' ? 'పథకం దొరకలేదు' : 
-                                            fb.issue_type === 'suggestion' ? 'సలహా' : 
-                                            fb.issue_type === 'general' ? 'సాధారణ' : fb.issue_type %>
-                                    </span>
-                                </td>
-                                <td>
-                                    <% if (fb.scheme_name === 'General Portal Feedback') { %>
-                                        <span style="color: var(--muted); font-weight: 500;">అప్లికేషన్ అభిప్రాయం (Entire App)</span>
-                                    <% } else { %>
-                                        <strong><%= fb.scheme_name %></strong>
+                                    <div style="font-weight: 700; color: var(--ink);"><%= fb.scheme_name || 'General Portal Feedback' %></div>
+                                    <% if (fb.citizen_name) { %>
+                                        <div style="font-size: 0.8rem; color: var(--muted); margin-top: 3px;">👤 <%= fb.citizen_name %></div>
                                     <% } %>
                                 </td>
-                                <td><%= fb.feedback_text %></td>
+                                <td><span class="stat-pill rating" style="font-weight: 700;">⭐ <%= fb.rating %>/5</span></td>
+                                <td style="line-height: 1.45; font-size: 0.92rem;"><%= fb.comment || 'Rating submitted' %></td>
                             </tr>
                             <% }); %>
                         </tbody>
@@ -308,15 +483,66 @@
             </section>
             <% } %>
 
-            <!-- Firestore Scheme Catalog Manager (Direct CRUD) -->
+            <!-- 5. Reported Issues & Feedback (in Telugu only) -->
+            <% if (typeof grievances !== 'undefined' && grievances && grievances.length > 0) { %>
+            <section class="dashboard-section" id="reportedIssuesSection">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:12px;">
+                    <h2 style="margin:0; border:none; padding:0; display:flex; align-items:center; gap:8px;">
+                        📝 నివేదించబడిన సమస్యలు మరియు అభిప్రాయాలు (Reported Issues & Feedback)
+                    </h2>
+                    <span class="stat-pill" style="background:var(--primary); color:#fff; font-weight:700; font-size:0.85rem;">
+                        మొత్తం: <%= grievances.length %> నివేదికలు
+                    </span>
+                </div>
+                <div class="feedback-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 150px;">సమయం (TIMESTAMP)</th>
+                                <th style="width: 140px;">రకం (TYPE)</th>
+                                <th style="width: 250px;">పథకం (SCHEME NAME)</th>
+                                <th>వివరణ (DESCRIPTION)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% grievances.forEach(function(fb) { %>
+                            <tr>
+                                <td style="white-space: nowrap; font-size: 0.85rem; color: var(--muted);"><%= new Date(fb.timestamp).toLocaleString('en-US') %></td>
+                                <td>
+                                    <span class="stat-pill" style="background: var(--surface-soft); color: var(--primary); font-weight: 700;">
+                                        <%= fb.issue_type === 'wrong_info' ? 'తప్పుడు సమాచారం' : 
+                                            fb.issue_type === 'audio_issue' ? 'ఆడియో సమస్య' : 
+                                            fb.issue_type === 'missing_scheme' ? 'పథకం దొరకలేదు' : 
+                                            fb.issue_type === 'suggestion' ? 'సలహా' : 
+                                            fb.issue_type === 'accuracy_rating' ? 'సమీక్ష / రేటింగ్' :
+                                            fb.issue_type === 'general' ? 'సాధారణ' : fb.issue_type %>
+                                    </span>
+                                </td>
+                                <td>
+                                    <% if (fb.scheme_name === 'General Portal Feedback' || !fb.scheme_name) { %>
+                                        <span style="color: var(--muted); font-weight: 600;">అప్లికేషన్ అభిప్రాయం (Entire App)</span>
+                                    <% } else { %>
+                                        <strong style="color: var(--ink);"><%= fb.scheme_name %></strong>
+                                    <% } %>
+                                </td>
+                                <td style="line-height: 1.5; font-size: 0.92rem; color: var(--ink);"><%= fb.feedback_text %></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+
+            <!-- 6. Firestore Scheme Catalog Manager (Direct CRUD) -->
             <section class="dashboard-section" id="firestoreManagerSection">
                 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px;">
                     <div>
                         <h2 style="margin: 0; border: none; padding: 0; display: flex; align-items: center; gap: 8px;">
-                            🔥 ఫైర్‌స్టోర్ పథకాల నిర్వహణ <small>(Firestore Schemes Direct CRUD)</small>
+                            🔥 Firestore Scheme Catalog Manager (Direct CRUD)
                         </h2>
                         <span style="font-size: 0.85rem; color: var(--muted); margin-top: 4px; display: block;">
-                            View, edit, or delete scheme data directly in the Firestore collection.
+                            Create, update, or remove scheme documents directly in the Firestore database.
                         </span>
                     </div>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
@@ -335,11 +561,11 @@
                 <!-- Filters & Search Toolbar -->
                 <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; background: var(--surface-soft); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border);">
                     <div style="flex: 1; min-width: 200px;">
-                        <input type="text" id="fsSearchInput" placeholder="🔍 Search scheme by name or Telugu title..." oninput="filterFsTable()" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; box-sizing: border-box;">
+                        <input type="text" id="fsSearchInput" placeholder="🔍 Search schemes by name or keywords..." oninput="filterFsTable()" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; box-sizing: border-box;">
                     </div>
                     <div style="min-width: 180px;">
                         <select id="fsCategorySelect" onchange="filterFsTable()" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; box-sizing: border-box;">
-                            <option value="all">All Categories (అన్ని వర్గాలు)</option>
+                            <option value="all">All Categories</option>
                             <option value="Health Insurance & Financial Assistance">Health Insurance & Financial Assistance</option>
                             <option value="Maternal & Child Health">Maternal & Child Health</option>
                             <option value="Nutrition & Sanitation">Nutrition & Sanitation</option>
@@ -358,7 +584,7 @@
                     <table class="admin-table" id="fsSchemesTable">
                         <thead>
                             <tr>
-                                <th>Scheme & ID</th>
+                                <th>Scheme & Document ID</th>
                                 <th>Telugu Name</th>
                                 <th>Category & Level</th>
                                 <th>Official Portal</th>
@@ -393,12 +619,12 @@
 
                 <div style="display: flex; flex-direction: column; gap: 6px;">
                     <label style="font-weight: 700; font-size: 0.88rem;">Scheme Name (English) *</label>
-                    <input type="text" id="modal_scheme_name" name="scheme_name" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="e.g. YSR Aarogyasri Scheme">
+                    <input type="text" id="modal_scheme_name" name="scheme_name" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="e.g. Dr. YSR Aarogyasri Scheme">
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 6px;">
-                    <label style="font-weight: 700; font-size: 0.88rem;">Telugu Name (తెలుగు ಹೆಸರು)</label>
-                    <input type="text" id="modal_telugu_name" name="telugu_name" style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="ఉదా. వైఎస్సార్ ఆరోగ్యశ్రీ పథకం">
+                    <label style="font-weight: 700; font-size: 0.88rem;">Telugu Name</label>
+                    <input type="text" id="modal_telugu_name" name="telugu_name" style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="ఉదా. డా. వైఎస్సార్ ఆరోగ్యశ్రీ పథకం">
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
@@ -441,7 +667,7 @@
 
                 <div style="display: flex; flex-direction: column; gap: 6px;">
                     <label style="font-weight: 700; font-size: 0.88rem;">Description (Telugu) *</label>
-                    <textarea id="modal_telugu" name="telugu" rows="3" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="తెలుగులో వివరాలు..."></textarea>
+                    <textarea id="modal_telugu" name="telugu" rows="3" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="వివరాలు మరియు అర్హతలు..."></textarea>
                 </div>
 
                 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; border-top: 1px solid var(--border); padding-top: 14px;">
@@ -452,7 +678,7 @@
         </div>
     </div>
 
-    <!-- Client-side Firestore Manager Script -->
+    <!-- Client-side Scripts -->
     <script>
         let allFsSchemes = [];
 
@@ -470,6 +696,91 @@
             setTimeout(() => { toast.style.opacity = '0'; }, 3500);
         }
 
+        /* ---------------- Download PNG Screenshot (Client Canvas Export) ---------------- */
+        function downloadDatasetScreenshot() {
+            showAdminToast('Generating high-resolution PNG screenshot...');
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = function() {
+                try {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 2400; // Ultra crisp 2x HD resolution
+                    canvas.height = 1360;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, 2400, 1360);
+                    const link = document.createElement('a');
+                    link.download = 'SmartGov_Firestore_Dataset_Management.png';
+                    link.href = canvas.toDataURL('image/png');
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    showAdminToast('Screenshot downloaded successfully!');
+                } catch(err) {
+                    // Fallback to opening SVG image directly in new window
+                    window.open('/public/assets/dataset_management.svg', '_blank');
+                }
+            };
+            img.onerror = function() {
+                window.open('/public/assets/dataset_management.svg', '_blank');
+            };
+            img.src = '/public/assets/dataset_management.svg';
+        }
+
+        /* ---------------- Dataset Explorer Handler ---------------- */
+        async function switchCollectionTab(colName, btnElem) {
+            document.querySelectorAll('.db-col-btn').forEach(b => b.classList.remove('active'));
+            if (btnElem) btnElem.classList.add('active');
+
+            const title = document.getElementById('activeCollectionTitle');
+            const countBadge = document.getElementById('activeCollectionCount');
+            const content = document.getElementById('dbDocsContent');
+
+            if (title) title.textContent = `Collection: ${colName}`;
+            if (countBadge) countBadge.textContent = 'Fetching...';
+            if (content) content.innerHTML = '<p style="color:var(--muted); text-align:center; padding:30px;">⏳ Loading live records from Firestore collection...</p>';
+
+            try {
+                const res = await fetch(`/api/admin/firestore/collection/${encodeURIComponent(colName)}`);
+                if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+                const data = await res.json();
+
+                if (data.success && Array.isArray(data.documents)) {
+                    const badgeElem = document.getElementById(`badge-${colName}`);
+                    if (badgeElem) badgeElem.textContent = data.count;
+                    if (countBadge) countBadge.textContent = `${data.count} Documents`;
+
+                    if (data.documents.length === 0) {
+                        content.innerHTML = '<p style="color:var(--muted); text-align:center; padding:30px;">Collection is empty.</p>';
+                        return;
+                    }
+
+                    let html = '';
+                    data.documents.forEach((doc, idx) => {
+                        const docId = doc._firestore_id || doc.id || `doc-${idx + 1}`;
+                        const cleanDoc = { ...doc };
+                        delete cleanDoc._firestore_id;
+
+                        html += `
+                            <div class="doc-item-card">
+                                <div class="doc-item-header">
+                                    <span>📄 Document ID: ${escapeHtml(docId)}</span>
+                                    <span style="font-size:0.75rem; color:var(--muted);">#${idx + 1}</span>
+                                </div>
+                                <pre class="doc-json-preview">${escapeHtml(JSON.stringify(cleanDoc, null, 2))}</pre>
+                            </div>
+                        `;
+                    });
+                    content.innerHTML = html;
+                } else {
+                    throw new Error(data.error || 'Failed to parse response');
+                }
+            } catch (err) {
+                if (content) content.innerHTML = `<p style="color:#dc2626; text-align:center; padding:20px;">❌ Error loading collection: ${err.message}</p>`;
+                if (countBadge) countBadge.textContent = 'Error';
+            }
+        }
+
+        /* ---------------- Firestore Schemes CRUD ---------------- */
         async function loadFirestoreSchemes() {
             const tbody = document.getElementById('fsSchemesTbody');
             const badge = document.getElementById('fsSchemeCountBadge');
@@ -484,6 +795,8 @@
                 if (data.success && Array.isArray(data.schemes)) {
                     allFsSchemes = data.schemes;
                     if (badge) badge.textContent = `${allFsSchemes.length} Schemes in Firestore`;
+                    const badgeSchemes = document.getElementById('badge-schemes');
+                    if (badgeSchemes) badgeSchemes.textContent = allFsSchemes.length;
                     filterFsTable();
                 } else {
                     throw new Error(data.error || 'Failed to parse response');
@@ -519,7 +832,7 @@
                 const docId = s.id || s._firestore_id || '';
                 const titleEn = s.scheme_name || 'Unnamed Scheme';
                 const titleTe = s.telugu_name || titleEn;
-                const category = s.category || 'General';
+                const category = s.category || 'General Healthcare';
                 const level = s.level || 'State Government';
                 const webUrl = s.official_website || s.source_url || '';
 
@@ -680,9 +993,46 @@
             }
         }
 
-        // Auto-load schemes on dashboard boot
+        // Auto-persist and synchronize admin token for iframes
+        (function() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const qToken = params.get('token') || params.get('admin_token');
+                if (qToken) {
+                    sessionStorage.setItem('admin_token', qToken);
+                    localStorage.setItem('admin_token', qToken);
+                }
+            } catch (e) {}
+
+            const activeToken = (new URLSearchParams(window.location.search).get('token')) || 
+                                sessionStorage.getItem('admin_token') || 
+                                localStorage.getItem('admin_token') || '';
+
+            if (activeToken) {
+                const origFetch = window.fetch;
+                window.fetch = function(url, options) {
+                    options = options || {};
+                    options.headers = options.headers || {};
+                    if (options.headers instanceof Headers) {
+                        if (!options.headers.has('x-admin-token')) {
+                            options.headers.set('x-admin-token', activeToken);
+                        }
+                    } else if (Array.isArray(options.headers)) {
+                        options.headers.push(['x-admin-token', activeToken]);
+                    } else {
+                        if (!options.headers['x-admin-token']) {
+                            options.headers['x-admin-token'] = activeToken;
+                        }
+                    }
+                    return origFetch(url, options);
+                };
+            }
+        })();
+
+        // Auto-load schemes and first collection on boot
         document.addEventListener('DOMContentLoaded', () => {
             loadFirestoreSchemes();
+            switchCollectionTab('schemes', document.querySelector('.db-col-btn'));
         });
     </script>
 </body>

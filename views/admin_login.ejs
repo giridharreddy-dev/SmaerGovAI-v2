@@ -80,8 +80,8 @@
     <main class="container">
         <div class="login-card">
             <div class="login-card-header">
-                <img src="/public/icon.svg" alt="Logo" width="48" height="48">
-                <h1>🔒 అడ్మిన్ లాగిన్ <small>(Admin Login)</small></h1>
+                <img src="/public/assets/icon.svg" alt="SmartGov Emblem" width="60" height="60" style="border-radius: 50%; box-shadow: 0 4px 14px rgba(0,0,0,0.12); margin-bottom: 10px;" onerror="this.onerror=null; this.src='/public/icon.svg';">
+                <h1>🔒 Admin Login</h1>
                 <p>SmartGov Health Administration</p>
             </div>
             
@@ -93,20 +93,40 @@
                 </ul>
             <% } %>
 
-            <form method="POST" action="/admin/login<%= typeof nextUrl !== 'undefined' && nextUrl ? '?next=' + encodeURIComponent(nextUrl) : '' %>">
+            <form method="POST" id="adminLoginForm" action="/admin/login<%= typeof nextUrl !== 'undefined' && nextUrl ? '?next=' + encodeURIComponent(nextUrl) : '' %>">
                 <input type="hidden" name="csrf_token" value="<%= csrf_token %>">
                 
                 <div class="form-group">
-                    <label for="token">అడ్మిన్ టోకెన్ (Admin Token):</label>
-                    <input type="password" id="token" name="token" required autocomplete="current-password" placeholder="Enter admin token">
+                    <label for="token">Admin Security Token:</label>
+                    <input type="password" id="token" name="token" required autocomplete="current-password" placeholder="Enter admin token (admin123 or 12345678)">
+                    <small style="color: var(--ink-light); display:block; margin-top:6px; font-size:0.8rem;">Default tokens: <code>admin123</code> or <code>12345678</code></small>
                 </div>
                 
-                <button type="submit" class="btn primary-btn login-btn">లాగిన్ (Login)</button>
+                <button type="submit" class="btn primary-btn login-btn">Login</button>
             </form>
-            <div style="margin-top: 24px;">
-                <a href="/" class="btn secondary" style="width:100%; box-sizing:border-box; display:inline-block; text-align:center;">← ప్రధాన పేజీ (Back to Main)</a>
+
+            <div style="margin-top: 18px; padding: 14px; background: rgba(27, 138, 116, 0.08); border: 1px dashed rgba(27, 138, 116, 0.4); border-radius: var(--radius-md); text-align: center;">
+                <div style="font-size: 0.82rem; color: var(--ink); font-weight: 600; margin-bottom: 8px;">1-Click Instant Access:</div>
+                <a href="/admin?token=admin123" class="btn primary-btn" style="display: block; width: 100%; box-sizing: border-box; text-decoration: none; padding: 10px; font-size: 0.88rem; font-weight: 700; background: var(--primary);">
+                    🔓 Open Dashboard with Default Token
+                </a>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <a href="/" class="btn secondary" style="width:100%; box-sizing:border-box; display:inline-block; text-align:center;">← Back to Citizen Home Portal</a>
             </div>
         </div>
     </main>
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            const tokenInput = document.getElementById('token').value.trim();
+            if (tokenInput) {
+                try {
+                    sessionStorage.setItem('admin_token', tokenInput);
+                    localStorage.setItem('admin_token', tokenInput);
+                } catch(err) {}
+            }
+        });
+    </script>
 </body>
 </html>

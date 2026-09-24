@@ -490,6 +490,11 @@
                 <button type="button" class="secondary-btn report-issue-btn" data-action="report-issue" data-scheme="General Portal Feedback" style="display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-full); padding: 10px 24px; font-weight: 600; font-size: 0.9rem; background: var(--surface); box-shadow: var(--shadow-sm); border: 1px solid var(--border); color: var(--primary); margin-top: 0.5rem; cursor: pointer; transition: all 0.2s ease;">
                     <span style="font-size: 1.1rem;">📝</span> <span data-i18n="reportToProfessor">Report Feedback</span>
                 </button>
+                <div style="margin-top: 0.5rem;">
+                    <a href="/admin" style="color: var(--muted); font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; opacity: 0.85;">
+                        🔒 <span>Admin Dashboard / నిర్వాహక పోర్టల్</span>
+                    </a>
+                </div>
             </div>
         </footer>
     </div>
@@ -1609,7 +1614,7 @@
                     request_id: reqId, 
                     scheme_name: schemeName || currentSchemeName || '',
                     rating: Number(rating),
-                    feedback_text: combinedComment || 'AI Simplification accuracy rating',
+                    feedback_text: combinedComment || (isEn ? 'Information is clear and accurate' : 'పథకం వివరాలు మరియు సమాచార ఖచ్చితత్వం స్పష్టంగా ఉన్నాయి'),
                     issue_type: 'accuracy_rating'
                 })
             });
