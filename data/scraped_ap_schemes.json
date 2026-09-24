@@ -1262,7 +1262,7 @@
     }
   },
   "Tele-MANAS AP (14416) - National Mental Health Helpline": {
-    "level": "National",
+    "level": "Andhra Pradesh",
     "category": "Mental Health & Psychological Counseling",
     "icon": "phone-call",
     "telugu_name": "టెలి-మానస్ (14416) - జాతీయ మానసిక ఆరోగ్య టోల్-ఫ్రీ సేవ",
@@ -1352,10 +1352,11 @@
       "clinical_condition": "Psychological distress, anxiety, depression, or psychiatric consultation",
       "residency_requirement": "Indian Citizen",
       "age_group": "All Ages"
-    }
+    },
+    "state": "Andhra Pradesh"
   },
   "eSanjeevani AP - Telemedicine Consultations": {
-    "level": "National",
+    "level": "Andhra Pradesh",
     "category": "Digital Teleconsultation & Specialist Care",
     "icon": "laptop",
     "telugu_name": "ఈ-సంజీవని ఉచిత టెలిమెడిసిన్ కన్సల్టేషన్",
@@ -1448,7 +1449,8 @@
       "clinical_condition": "Prescribed generic medications for acute or chronic illness",
       "residency_requirement": "Indian Citizen",
       "age_group": "All Ages"
-    }
+    },
+    "state": "Andhra Pradesh"
   },
   "AP Family Doctor Programme": {
     "level": "Andhra Pradesh",
@@ -1873,7 +1875,7 @@
     }
   },
   "National Viral Hepatitis Control Programme (NVHCP - AP)": {
-    "level": "National",
+    "level": "Andhra Pradesh",
     "category": "Communicable Disease & Liver Care",
     "icon": "medicine",
     "telugu_name": "జాతీయ వైరల్ హెపటైటిస్ నియంత్రణ & ఉచిత కాలేయ చికిత్స పథకం (NVHCP)",
@@ -1940,7 +1942,8 @@
       "clinical_condition": "Prescribed generic medications for acute or chronic illness",
       "residency_requirement": "Indian Citizen",
       "age_group": "All Ages"
-    }
+    },
+    "state": "Andhra Pradesh"
   },
   "Pradhan Mantri TB Mukt Bharat Abhiyan & Ni-kshay Mitra": {
     "level": "National",
@@ -2012,7 +2015,7 @@
     }
   },
   "Surakshit Matritva Aashwasan (SUMAN Scheme - AP)": {
-    "level": "National",
+    "level": "Andhra Pradesh",
     "category": "Zero-Expense Maternal & Infant Care",
     "icon": "maternal",
     "telugu_name": "సురక్షిత మాతృత్వ ఆశ్వాసన్ (సుమన్ - సున్నా ఖర్చు ప్రసవ సేవలు)",
@@ -2073,7 +2076,8 @@
       "clinical_condition": "General medical consultation, preventive screening, or healthcare service",
       "residency_requirement": "Indian Citizen",
       "age_group": "19 Years and above (Mothers)"
-    }
+    },
+    "state": "Andhra Pradesh"
   },
   "AP Thalassemia Free Blood Transfusion & Chelation Scheme": {
     "level": "Andhra Pradesh",
@@ -2151,7 +2155,7 @@
     }
   },
   "Rashtriya Kishor Swasthya Karyakram (RKSK - AP)": {
-    "level": "National",
+    "level": "Andhra Pradesh",
     "category": "Adolescent Health & Counseling",
     "icon": "doctor",
     "telugu_name": "రాష్ట్రీయ కిశోర్ స్వాస్థ్య కార్యక్రమం (కౌమార బాలబాలికల ఆరోగ్యం)",
@@ -2212,7 +2216,8 @@
       "clinical_condition": "Psychological distress, anxiety, depression, or psychiatric consultation",
       "residency_requirement": "Indian Citizen",
       "age_group": "All Ages"
-    }
+    },
+    "state": "Andhra Pradesh"
   },
   "AP Universal Health Insurance Coverage (25 Lakh Aarogya Raksha)": {
     "level": "Andhra Pradesh",
@@ -2494,7 +2499,7 @@
     }
   },
   "National Palliative Care Programme (AP Home-Based Care)": {
-    "level": "National",
+    "level": "Andhra Pradesh",
     "category": "Chronic & End-of-Life Palliative Care",
     "icon": "specialized",
     "telugu_name": "జాతీయ పాలియేటివ్ కేర్ - దీర్ఘకాలిక రోగులకు గృహ ఆధారిత సంరక్షణ",
@@ -2560,7 +2565,8 @@
       "clinical_condition": "General medical consultation, preventive screening, or healthcare service",
       "residency_requirement": "Indian Citizen",
       "age_group": "All Ages"
-    }
+    },
+    "state": "Andhra Pradesh"
   },
   "AP Free Ultrasound, TIFFA Scan & Maternal Diagnostics": {
     "level": "Andhra Pradesh",
@@ -2632,7 +2638,7 @@
     }
   },
   "National Tobacco Cessation & De-addiction Services (AP NTCP Clinics)": {
-    "level": "National",
+    "level": "Andhra Pradesh",
     "category": "Substance De-addiction & Preventive Health",
     "icon": "medicine",
     "telugu_name": "జాతీయ పొగాకు వ్యసన విముక్తి కేంద్రాలు (NTCP డి-అడిక్షన్ సేవలు)",
@@ -2687,7 +2693,8 @@
       "clinical_condition": "General medical consultation, preventive screening, or healthcare service",
       "residency_requirement": "Indian Citizen",
       "age_group": "All Ages"
-    }
+    },
+    "state": "Andhra Pradesh"
   },
   "AP Mukhyamantri e-Eye Care (Tele-Ophthalmology Services)": {
     "level": "Andhra Pradesh",

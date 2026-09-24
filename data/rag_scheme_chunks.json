@@ -1,93 +1,2518 @@
 [
   {
-    "id": "national_pmjay",
+    "id": "scheme_dr__ysr_aarogya_asara__post_operative_financial_allowance_",
+    "scheme_name": "Dr. YSR Aarogya Asara (Post-Operative Financial Allowance)",
+    "telugu_name": "డా. వైఎస్ఆర్ ఆరోగ్య ఆసరా (చికిత్స తర్వాతి ఆర్థిక సాయం)",
+    "level": "Andhra Pradesh",
+    "category": "Post-Operative Financial Support",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Dr. YSR Aarogya Asara (Post-Operative Financial Allowance) (డా. వైఎస్ఆర్ ఆరోగ్య ఆసరా (చికిత్స తర్వాతి ఆర్థిక సాయం))\nLevel: Andhra Pradesh\nCategory: Post-Operative Financial Support\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: All patients undergoing designated surgeries and medical treatments under the Dr. YSR Aarogyasri / NTR Vaidya Seva scheme in empanelled hospitals.\nBenefits: Financial aid of Rs. 225 per day (up to a maximum of Rs. 5,000 per month) for the designated rest/recuperation period credited directly to bank account.\nHow to Apply: Provided automatically upon hospital discharge by the hospital Aarogyamitra. Bank account verification is completed before discharge.\nRequired Documents: Aarogyasri Card / BPL Rice Card, Discharge Summary with prescribed rest days, Aadhaar card, and Active Bank Account details.\nKeywords: Aarogya Asara, post-operative wage, recuperation allowance, surgery financial aid, ఆరోగ్య ఆసరా, daily allowance",
+    "keywords": [
+      "Aarogya Asara",
+      "post-operative wage",
+      "recuperation allowance",
+      "surgery financial aid",
+      "ఆరోగ్య ఆసరా",
+      "daily allowance"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_jagananna_aarogya_suraksha__doorstep_health_screening___specialist_camps_",
+    "scheme_name": "Jagananna Aarogya Suraksha (Doorstep Health Screening & Specialist Camps)",
+    "telugu_name": "జగనన్న ఆరోగ్య సురక్ష (ఇంటింటి ఆరోగ్య పరీక్షలు & నిపుణుల వైద్య శిబిరాలు)",
+    "level": "Andhra Pradesh",
+    "category": "Doorstep Health Screening",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Jagananna Aarogya Suraksha (Doorstep Health Screening & Specialist Camps) (జగనన్న ఆరోగ్య సురక్ష (ఇంటింటి ఆరోగ్య పరీక్షలు & నిపుణుల వైద్య శిబిరాలు))\nLevel: Andhra Pradesh\nCategory: Doorstep Health Screening\nOfficial Website: https://hmfw.ap.gov.in/\nEligibility: All citizens and families residing in Andhra Pradesh (rural and urban).\nBenefits: Free doorstep health screening, free diagnostic lab tests (BP, sugar, hemoglobin, malaria), free specialist doctor consultations, free medicine delivery, and fast-track referral to network hospitals.\nHow to Apply: Attend the household health screening when ANMs/ASHAs visit your door, or visit the village health camp conducted in your Grama/Ward Sachivalayam.\nRequired Documents: Aadhaar Card, Aarogyasri Card (if available), Previous medical prescription records.\nKeywords: Aarogya Suraksha, doorstep health checkup, village health camp, free specialist diagnosis, ఆరోగ్య సురక్ష, free medicines",
+    "keywords": [
+      "Aarogya Suraksha",
+      "doorstep health checkup",
+      "village health camp",
+      "free specialist diagnosis",
+      "ఆరోగ్య సురక్ష",
+      "free medicines"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_dr__ysr_kanti_velugu__comprehensive_universal_eye_care_",
+    "scheme_name": "Dr. YSR Kanti Velugu (Comprehensive Universal Eye Care)",
+    "telugu_name": "డా. వైఎస్ఆర్ కంటి వెలుగు (సమగ్ర ఉచిత నేత్ర సంరక్షణ)",
+    "level": "Andhra Pradesh",
+    "category": "Eye Care & Vision Services",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Dr. YSR Kanti Velugu (Comprehensive Universal Eye Care) (డా. వైఎస్ఆర్ కంటి వెలుగు (సమగ్ర ఉచిత నేత్ర సంరక్షణ))\nLevel: Andhra Pradesh\nCategory: Eye Care & Vision Services\nOfficial Website: https://hmfw.ap.gov.in/\nEligibility: All residents of Andhra Pradesh, including school children, senior citizens, and general public.\nBenefits: Free eye examinations, free customized prescription spectacles delivered to doorstep, and free cataract surgeries with IOL lenses.\nHow to Apply: Visit your local Village Health Clinic, PHC, or government hospital eye screening camps.\nRequired Documents: Aadhaar Card, Resident proof / Ration Card.\nKeywords: Kanti Velugu, free spectacles, cataract surgery, eye testing, కంటి వెలుగు, free glasses",
+    "keywords": [
+      "Kanti Velugu",
+      "free spectacles",
+      "cataract surgery",
+      "eye testing",
+      "కంటి వెలుగు",
+      "free glasses"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ap_free_dialysis_and_ckd_financial_aid_scheme",
+    "scheme_name": "AP Free Dialysis and CKD Financial Aid Scheme",
+    "telugu_name": "ఆంధ్రప్రదేశ్ ఉచిత డయాలసిస్ & కిడ్నీ బాధితుల పింఛను పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Kidney Care & Chronic Disease",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Free Dialysis and CKD Financial Aid Scheme (ఆంధ్రప్రదేశ్ ఉచిత డయాలసిస్ & కిడ్నీ బాధితుల పింఛను పథకం)\nLevel: Andhra Pradesh\nCategory: Kidney Care & Chronic Disease\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Chronic Kidney Disease (CKD) patients on regular dialysis in Andhra Pradesh holding BPL/Aarogyasri eligibility.\nBenefits: 100% free hemodialysis sessions, free erythropoietin injections and iron supplements, plus Rs. 10,000 monthly financial pension transferred to bank account.\nHow to Apply: Register at the dialysis unit of your District/Area Hospital. Apply for the monthly pension at your Grama/Ward Sachivalayam with dialysis certificates.\nRequired Documents: Aarogyasri Card, Medical certificate from Nephrologist confirming regular dialysis, Dialysis Logbook, Aadhaar, and Bank Account.\nKeywords: Dialysis pension, Uddanam kidney, free dialysis, CKD pension 10000, డయాలసిస్, kidney patient aid",
+    "keywords": [
+      "Dialysis pension",
+      "Uddanam kidney",
+      "free dialysis",
+      "CKD pension 10000",
+      "డయాలసిస్",
+      "kidney patient aid"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ap_thalassaemia_and_haemophilia_financial_aid_scheme",
+    "scheme_name": "AP Thalassaemia and Haemophilia Financial Aid Scheme",
+    "telugu_name": "ఆంధ్రప్రదేశ్ తలసేమియా & హీమోఫీలియా ఆర్థిక సాయం పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Chronic Blood Disorders",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Thalassaemia and Haemophilia Financial Aid Scheme (ఆంధ్రప్రదేశ్ తలసేమియా & హీమోఫీలియా ఆర్థిక సాయం పథకం)\nLevel: Andhra Pradesh\nCategory: Chronic Blood Disorders\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Patients medically diagnosed with Thalassaemia Major, Haemophilia, or Severe Sickle Cell Disease residing in AP.\nBenefits: Free regular blood transfusions, free Factor VIII/IX injections, free iron chelation medicines, and Rs. 10,000 monthly financial pension.\nHow to Apply: Register at the District Blood Bank / Teaching Hospital Hematology OPD, and submit medical certificate at your local Sachivalayam for pension.\nRequired Documents: Hematologist diagnosis certificate, Blood transfusion records, Aarogyasri Card, Aadhaar, and Bank Account.\nKeywords: Thalassaemia, Haemophilia, blood transfusion, chronic blood disorder, తలసేమియా, హీమోఫీలియా",
+    "keywords": [
+      "Thalassaemia",
+      "Haemophilia",
+      "blood transfusion",
+      "chronic blood disorder",
+      "తలసేమియా",
+      "హీమోఫీలియా"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ap_free_cochlear_implant_scheme__child_hearing_restoration_",
+    "scheme_name": "AP Free Cochlear Implant Scheme (Child Hearing Restoration)",
+    "telugu_name": "ఆంధ్రప్రదేశ్ ఉచిత కాక్లియర్ ఇంప్లాంట్ పథకం (పిల్లల వినికిడి పునరుద్ధరణ)",
+    "level": "Andhra Pradesh",
+    "category": "Child Hearing Care",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Free Cochlear Implant Scheme (Child Hearing Restoration) (ఆంధ్రప్రదేశ్ ఉచిత కాక్లియర్ ఇంప్లాంట్ పథకం (పిల్లల వినికిడి పునరుద్ధరణ))\nLevel: Andhra Pradesh\nCategory: Child Hearing Care\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Children under 3 to 5 years with bilateral severe-to-profound sensorineural hearing loss having an Aarogyasri / BPL card in AP.\nBenefits: Free cochlear implant surgery worth Rs. 6,50,000+, free sound processor, and 2 years of free post-op speech & auditory verbal therapy.\nHow to Apply: Get hearing screening done at District Hospital ENT department, obtain pre-authorization via Aarogyamitra, and undergo surgery at empanelled super-speciality ENT centers.\nRequired Documents: Child Birth Certificate, BERA & Audiometry Test Reports, CT/MRI temporal bone scan, Aarogyasri card, and Parent Aadhaar.\nKeywords: Cochlear Implant, deaf child surgery, hearing restoration, speech therapy, కాక్లియర్ ఇంప్లాంట్, hearing aid",
+    "keywords": [
+      "Cochlear Implant",
+      "deaf child surgery",
+      "hearing restoration",
+      "speech therapy",
+      "కాక్లియర్ ఇంప్లాంట్",
+      "hearing aid"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_tele_manas_national_mental_health_helpline__14416_",
+    "scheme_name": "Tele-MANAS National Mental Health Helpline (14416)",
+    "telugu_name": "టెలీ-మానస్ జాతీయ మానసిక ఆరోగ్య హెల్ప్‌లైన్ (14416)",
+    "level": "National",
+    "category": "Mental Health & Counseling",
+    "source_url": "https://telemanas.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Tele-MANAS National Mental Health Helpline (14416) (టెలీ-మానస్ జాతీయ మానసిక ఆరోగ్య హెల్ప్‌లైన్ (14416))\nLevel: National\nCategory: Mental Health & Counseling\nOfficial Website: https://telemanas.mohfw.gov.in/\nEligibility: All citizens across India experiencing mental distress, anxiety, stress, depression, or seeking counseling.\nBenefits: 100% free, 24/7 confidential phone counseling in regional languages (Telugu/English), psychiatric consultation, and local hospital linkage.\nHow to Apply: Dial toll-free 14416 or 1800-891-4416 from any mobile or landline phone to instantly speak with a certified counselor.\nRequired Documents: None required (100% free and confidential toll-free phone service).\nKeywords: Tele MANAS, 14416, mental health, depression counseling, stress help, టెలీ మానస్",
+    "keywords": [
+      "Tele MANAS",
+      "14416",
+      "mental health",
+      "depression counseling",
+      "stress help",
+      "టెలీ మానస్"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_sickle_cell_anaemia_elimination_mission",
+    "scheme_name": "National Sickle Cell Anaemia Elimination Mission",
+    "telugu_name": "జాతీయ సికిల్ సెల్ ఎనీమియా నిర్మూలన మిషన్",
+    "level": "National",
+    "category": "Genetic Blood Disorders",
+    "source_url": "https://sickle.nhp.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Sickle Cell Anaemia Elimination Mission (జాతీయ సికిల్ సెల్ ఎనీమియా నిర్మూలన మిషన్)\nLevel: National\nCategory: Genetic Blood Disorders\nOfficial Website: https://sickle.nhp.gov.in/\nEligibility: Citizens in tribal and high-prevalence districts, aged 0 to 40 years.\nBenefits: Free genetic blood screening, Sickle Cell Status Card, counseling, and free hydroxyurea management.\nHow to Apply: Attend screening camps at local primary health centres or schools.\nRequired Documents: Aadhaar Card, Tribal / Identity proof.\nKeywords: sickle cell, blood disorder, tribal health, genetic screening",
+    "keywords": [
+      "sickle cell",
+      "blood disorder",
+      "tribal health",
+      "genetic screening"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_tobacco_control_programme__ntcp_",
+    "scheme_name": "National Tobacco Control Programme (NTCP)",
+    "telugu_name": "జాతీయ పొగాకు నియంత్రణ పథకం",
+    "level": "National",
+    "category": "De-addiction Services",
+    "source_url": "https://ntcp.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Tobacco Control Programme (NTCP) (జాతీయ పొగాకు నియంత్రణ పథకం)\nLevel: National\nCategory: De-addiction Services\nOfficial Website: https://ntcp.mohfw.gov.in/\nEligibility: Any citizen addicted to tobacco, smoking, or chewing, wishing to de-addict.\nBenefits: Free counseling, behavior modification therapy, and free Nicotine Replacement Therapy (gums, patches) at cessation centres.\nHow to Apply: Visit the nearest Tobacco Cessation Centre (TCC) in a District Hospital or Community Health Centre for counseling and free nicotine gums.\nRequired Documents: Patient Registration Card (issued at clinic).\nKeywords: NTCP, tobacco, smoking, de-addiction, quit smoking, nicotine",
+    "keywords": [
+      "NTCP",
+      "tobacco",
+      "smoking",
+      "de-addiction",
+      "quit smoking",
+      "nicotine"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_leprosy_eradication_programme__nlep_",
+    "scheme_name": "National Leprosy Eradication Programme (NLEP)",
+    "telugu_name": "జాతీయ కుష్టువ్యాధి నివారణ పథకం",
+    "level": "National",
+    "category": "Leprosy Services",
+    "source_url": "https://nlep.nic.in/",
+    "rag_text_chunk": "Scheme Name: National Leprosy Eradication Programme (NLEP) (జాతీయ కుష్టువ్యాధి నివారణ పథకం)\nLevel: National\nCategory: Leprosy Services\nOfficial Website: https://nlep.nic.in/\nEligibility: Any person showing early symptoms of leprosy, skin patches with loss of sensation, or diagnosed leprosy.\nBenefits: Free Multi-Drug Therapy (MDT) medicine packs, free reconstructive surgery for deformities, and financial aid for surgery patients.\nHow to Apply: Visit your nearest Primary Health Centre (PHC) for a free skin test. If diagnosed, register to receive free MDT medicine packets.\nRequired Documents: Medical diagnosis report, Aadhaar Card.\nKeywords: NLEP, leprosy, MDT, skin patches, free leprosy treatment",
+    "keywords": [
+      "NLEP",
+      "leprosy",
+      "MDT",
+      "skin patches",
+      "free leprosy treatment"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_vector_borne_disease_control_programme__nvbdcp_",
+    "scheme_name": "National Vector Borne Disease Control Programme (NVBDCP)",
+    "telugu_name": "జాతీయ దోమల ద్వారా సంక్రమించే వ్యాధుల నివారణ పథకం",
+    "level": "National",
+    "category": "Malaria & Dengue Services",
+    "source_url": "https://nvbdcp.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Vector Borne Disease Control Programme (NVBDCP) (జాతీయ దోమల ద్వారా సంక్రమించే వ్యాధుల నివారణ పథకం)\nLevel: National\nCategory: Malaria & Dengue Services\nOfficial Website: https://nvbdcp.gov.in/\nEligibility: Any citizen suffering from high fever, suspected vector diseases, or residing in vector-prone areas.\nBenefits: Free rapid diagnostic tests for malaria/dengue, free anti-malarial medicines, and distribution of insecticide-treated bed nets.\nHow to Apply: Contact the local ASHA worker or visit the nearest Sub-Centre/PHC to get your blood tested for malaria/dengue for free.\nRequired Documents: Identity card (Aadhaar or Voter ID).\nKeywords: NVBDCP, malaria, dengue, chikungunya, mosquito, fever test, bed nets",
+    "keywords": [
+      "NVBDCP",
+      "malaria",
+      "dengue",
+      "chikungunya",
+      "mosquito",
+      "fever test",
+      "bed nets"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_programme_for_control_of_blindness__npcbvi_",
+    "scheme_name": "National Programme for Control of Blindness (NPCBVI)",
+    "telugu_name": "జాతీయ అంధత్వ నివారణ పథకం",
+    "level": "National",
+    "category": "Eye Care Services",
+    "source_url": "https://npcbvi.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Programme for Control of Blindness (NPCBVI) (జాతీయ అంధత్వ నివారణ పథకం)\nLevel: National\nCategory: Eye Care Services\nOfficial Website: https://npcbvi.mohfw.gov.in/\nEligibility: All citizens, specifically elderly patients with cataract (white lens clouding) and school children with poor vision.\nBenefits: Free cataract surgeries, free spectacles for school-aged kids, free eye screening camps, and corneal transplant facilitation.\nHow to Apply: Attend a government-organized free eye camp or visit the ophthalmology department at a District Hospital or CHC.\nRequired Documents: Identity card (Aadhaar or Voter ID).\nKeywords: NPCBVI, blindness, cataract, cataract surgery, free glasses, eye test",
+    "keywords": [
+      "NPCBVI",
+      "blindness",
+      "cataract",
+      "cataract surgery",
+      "free glasses",
+      "eye test"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_oral_health_programme",
+    "scheme_name": "National Oral Health Programme",
+    "telugu_name": "జాతీయ దంత ఆరోగ్య పథకం",
+    "level": "National",
+    "category": "Dental Health",
+    "source_url": "https://main.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Oral Health Programme (జాతీయ దంత ఆరోగ్య పథకం)\nLevel: National\nCategory: Dental Health\nOfficial Website: https://main.mohfw.gov.in/\nEligibility: All citizens needing dental treatment, tooth extraction, or oral hygiene guidance.\nBenefits: Free dental checkups, cavity fillings, tooth extractions, scaling, and treatment for dental fluorosis.\nHow to Apply: Visit the Dental Clinic department at the nearest Community Health Centre (CHC) or District Hospital.\nRequired Documents: Identity card (Aadhaar or Voter ID).\nKeywords: oral health, dental care, tooth ache, dentist, free dental, fluorosis",
+    "keywords": [
+      "oral health",
+      "dental care",
+      "tooth ache",
+      "dentist",
+      "free dental",
+      "fluorosis"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_anaemia_mukt_bharat",
+    "scheme_name": "Anaemia Mukt Bharat",
+    "telugu_name": "రక్తహీనత రహిత భారతదేశం పథకం",
+    "level": "National",
+    "category": "Nutritional Services",
+    "source_url": "https://anemiamb.nhp.gov.in/",
+    "rag_text_chunk": "Scheme Name: Anaemia Mukt Bharat (రక్తహీనత రహిత భారతదేశం పథకం)\nLevel: National\nCategory: Nutritional Services\nOfficial Website: https://anemiamb.nhp.gov.in/\nEligibility: Children under 5, school children, adolescent girls, pregnant women, and lactating mothers.\nBenefits: Free Iron and Folic Acid (IFA) tablets/syrups, free deworming tablets (Albendazole), and free haemoglobin blood testing.\nHow to Apply: Get free IFA supplements from the local Anganwadi centre, government school, or primary health centre.\nRequired Documents: Mother & Child Protection (MCP) card for pregnant women, School ID for students.\nKeywords: Anaemia, blood deficiency, iron tablets, folic acid, pregnant women, blood test",
+    "keywords": [
+      "Anaemia",
+      "blood deficiency",
+      "iron tablets",
+      "folic acid",
+      "pregnant women",
+      "blood test"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_poshan_abhiyaan",
+    "scheme_name": "Poshan Abhiyaan",
+    "telugu_name": "పోషణ్ అభియాన్ పథకం",
+    "level": "National",
+    "category": "Nutritional Services",
+    "source_url": "https://www.poshanabhiyaan.gov.in/",
+    "rag_text_chunk": "Scheme Name: Poshan Abhiyaan (పోషణ్ అభియాన్ పథకం)\nLevel: National\nCategory: Nutritional Services\nOfficial Website: https://www.poshanabhiyaan.gov.in/\nEligibility: Pregnant women, lactating mothers, and children under the age of 6 years.\nBenefits: Free nutritional take-home ration (THR), eggs, milk, hot cooked meals at Anganwadi centres, and nutrition counseling.\nHow to Apply: Register at the nearest local Anganwadi centre with your child to receive nutrition ration packs monthly.\nRequired Documents: Aadhaar Card, Child birth registration document (MCP card).\nKeywords: Poshan Abhiyaan, nutrition, malnutrition, Anganwadi, pregnant women nutrition, free ration",
+    "keywords": [
+      "Poshan Abhiyaan",
+      "nutrition",
+      "malnutrition",
+      "Anganwadi",
+      "pregnant women nutrition",
+      "free ration"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_aids_control_programme__nacp_",
+    "scheme_name": "National AIDS Control Programme (NACP)",
+    "telugu_name": "జాతీయ ఎయిడ్స్ నియంత్రణ పథకం",
+    "level": "National",
+    "category": "HIV & AIDS Services",
+    "source_url": "https://naco.gov.in/",
+    "rag_text_chunk": "Scheme Name: National AIDS Control Programme (NACP) (జాతీయ ఎయిడ్స్ నియంత్రణ పథకం)\nLevel: National\nCategory: HIV & AIDS Services\nOfficial Website: https://naco.gov.in/\nEligibility: Any person desiring confidential HIV testing, or diagnosed HIV positive patients.\nBenefits: Free confidential HIV testing, free counseling, free monthly life-saving Anti-Retroviral (ART) medicines, and nutritional guidance.\nHow to Apply: Visit the local ICTC centre in a government hospital for free testing. If positive, enroll at the ART clinic for lifetime free medications.\nRequired Documents: None mandatory for testing (confidential). Medical registration at ART centre requires ID proof.\nKeywords: NACP, HIV, AIDS, ART centre, condoms, blood safety, counseling, ICTC",
+    "keywords": [
+      "NACP",
+      "HIV",
+      "AIDS",
+      "ART centre",
+      "condoms",
+      "blood safety",
+      "counseling",
+      "ICTC"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_bhartiya_janaushadhi_pariyojana__pmbjp_",
+    "scheme_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP)",
+    "telugu_name": "ప్రధానమంత్రి భారతీయ జనౌషధి పరియోజన",
+    "level": "National",
+    "category": "Affordable Medicines",
+    "source_url": "http://janaushadhi.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) (ప్రధానమంత్రి భారతీయ జనౌషధి పరియోజన)\nLevel: National\nCategory: Affordable Medicines\nOfficial Website: http://janaushadhi.gov.in/\nEligibility: All citizens needing prescription medications (open to the general public).\nBenefits: Access to high-quality generic medicines, surgical items, and sanitary pads at 50%-90% lower prices compared to market brands.\nHow to Apply: Take your doctor's prescription to the nearest PM Jan Aushadhi Kendra to purchase generic medicines at cheap rates.\nRequired Documents: Valid doctor's prescription.\nKeywords: PMBJP, generic medicines, Janaushadhi Kendra, cheap medicines, affordable drugs",
+    "keywords": [
+      "PMBJP",
+      "generic medicines",
+      "Janaushadhi Kendra",
+      "cheap medicines",
+      "affordable drugs"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ayushman_bharat_health_account__abha_",
+    "scheme_name": "Ayushman Bharat Health Account (ABHA)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ హెల్త్ అకౌంట్ (ABHA)",
+    "level": "National",
+    "category": "Digital Health Services",
+    "source_url": "https://healthid.ndhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat Health Account (ABHA) (ఆయుష్మాన్ భారత్ హెల్త్ అకౌంట్ (ABHA))\nLevel: National\nCategory: Digital Health Services\nOfficial Website: https://healthid.ndhm.gov.in/\nEligibility: All citizens of India.\nBenefits: A unique digital identity card, online storage for all medical records, prescriptions, and test results, enabling paperless hospital visits.\nHow to Apply: Register online at the ABHA portal, use the ABHA app, or register at any government hospital helper counter using Aadhaar OTP.\nRequired Documents: Aadhaar Card or Driving License linked to mobile number.\nKeywords: ABHA, digital health card, health ID, medical records, ABDM, health account",
+    "keywords": [
+      "ABHA",
+      "digital health card",
+      "health ID",
+      "medical records",
+      "ABDM",
+      "health account"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_rabies_control_programme__nrcp_",
+    "scheme_name": "National Rabies Control Programme (NRCP)",
+    "telugu_name": "జాతీయ రేబిస్ నివారణ పథకం",
+    "level": "National",
+    "category": "Rabies Prevention",
+    "source_url": "https://main.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Rabies Control Programme (NRCP) (జాతీయ రేబిస్ నివారణ పథకం)\nLevel: National\nCategory: Rabies Prevention\nOfficial Website: https://main.mohfw.gov.in/\nEligibility: Any person bitten or scratched by a stray dog, cat, monkey, or other animal suspected of rabies.\nBenefits: Free life-saving Anti-Rabies Vaccines (ARV injections, full course of 4-5 doses) and Rabies Immunoglobulin (serum) in severe cases.\nHow to Apply: Wash the wound immediately with soap and running water for 15 minutes, then go directly to a government hospital/CHC for free vaccination.\nRequired Documents: OPD slip issued at hospital emergency ward.\nKeywords: Rabies, dog bite, anti rabies vaccine, ARV, monkey bite, free rabies vaccine",
+    "keywords": [
+      "Rabies",
+      "dog bite",
+      "anti rabies vaccine",
+      "ARV",
+      "monkey bite",
+      "free rabies vaccine"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_programme_for_prevention_of_deafness__nppcd_",
+    "scheme_name": "National Programme for Prevention of Deafness (NPPCD)",
+    "telugu_name": "జాతీయ బధిరత్వ నివారణ పథకం",
+    "level": "National",
+    "category": "Hearing Care Services",
+    "source_url": "https://main.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Programme for Prevention of Deafness (NPPCD) (జాతీయ బధిరత్వ నివారణ పథకం)\nLevel: National\nCategory: Hearing Care Services\nOfficial Website: https://main.mohfw.gov.in/\nEligibility: Any citizen suffering from hearing loss, ear discharge, or deafness, especially children and senior citizens.\nBenefits: Free ENT doctor checkups, free hearing tests (audiometry), and free hearing aids for poor and needy patients.\nHow to Apply: Visit the ENT Outpatient Clinic (OPD) at the local District Government Hospital or participate in a government hearing camp.\nRequired Documents: Income certificate (for free hearing aid), identity proof.\nKeywords: NPPCD, deafness, hearing loss, hearing aid, ear pain, ENT doctor",
+    "keywords": [
+      "NPPCD",
+      "deafness",
+      "hearing loss",
+      "hearing aid",
+      "ear pain",
+      "ENT doctor"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_organ_transplant_programme__notp_",
+    "scheme_name": "National Organ Transplant Programme (NOTP)",
+    "telugu_name": "జాతీయ అవయవ మార్పిడి పథకం",
+    "level": "National",
+    "category": "Organ Donation Services",
+    "source_url": "https://www.notto.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Organ Transplant Programme (NOTP) (జాతీయ అవయవ మార్పిడి పథకం)\nLevel: National\nCategory: Organ Donation Services\nOfficial Website: https://www.notto.mohfw.gov.in/\nEligibility: All citizens needing organ transplants or wishing to sign up as organ donors in India.\nBenefits: Free registration in the national waiting list for organs, ethical organ procurement, and provision of organ donor cards.\nHow to Apply: Register through a government-approved transplant hospital on the NOTTO network portal.\nRequired Documents: Identity proof (Aadhaar), medical referral from a certified transplant hospital.\nKeywords: NOTP, NOTTO, organ donor, kidney transplant, cornea donation, organ registry",
+    "keywords": [
+      "NOTP",
+      "NOTTO",
+      "organ donor",
+      "kidney transplant",
+      "cornea donation",
+      "organ registry"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_iodine_deficiency_disorders_control_programme__niddcp_",
+    "scheme_name": "National Iodine Deficiency Disorders Control Programme (NIDDCP)",
+    "telugu_name": "జాతీయ అయోడిన్ లోప నివారణ పథకం",
+    "level": "National",
+    "category": "Nutritional Services",
+    "source_url": "https://main.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Iodine Deficiency Disorders Control Programme (NIDDCP) (జాతీయ అయోడిన్ లోప నివారణ పథకం)\nLevel: National\nCategory: Nutritional Services\nOfficial Website: https://main.mohfw.gov.in/\nEligibility: All citizens, specifically children showing thyroid swelling (goitre) or intellectual delay.\nBenefits: Free screening for thyroid disorders and goitre at community health centers, salt testing kits distributed for salt verification.\nHow to Apply: Consult the medical officer at the nearest CHC if you notice swelling in the neck (goitre) to receive free thyroid tests.\nRequired Documents: Identity proof (Aadhaar).\nKeywords: NIDDCP, iodised salt, goitre, iodine deficiency, thyroid, salt testing",
+    "keywords": [
+      "NIDDCP",
+      "iodised salt",
+      "goitre",
+      "iodine deficiency",
+      "thyroid",
+      "salt testing"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ysr_urban_health_clinics",
+    "scheme_name": "YSR Urban Health Clinics",
+    "telugu_name": "వైఎస్ఆర్ అర్బన్ హెల్త్ క్లినిక్స్",
+    "level": "Andhra Pradesh",
+    "category": "Primary Care Clinics",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: YSR Urban Health Clinics (వైఎస్ఆర్ అర్బన్ హెల్త్ క్లినిక్స్)\nLevel: Andhra Pradesh\nCategory: Primary Care Clinics\nOfficial Website: https://hmfw.ap.gov.in/\nEligibility: All residents of urban cities, municipal towns, and slum areas in Andhra Pradesh.\nBenefits: Free MBBS doctor consultation, free chronic screening, antenatal care for urban poor, and free generic medicines.\nHow to Apply: Walk into your local YSR Urban Primary Health Centre (UPHC) during outpatient hours to receive treatment.\nRequired Documents: Aadhaar card or health card (not mandatory).\nKeywords: YSR Urban Clinic, UHC, city doctor, urban health sub centre, AP urban health",
+    "keywords": [
+      "YSR Urban Clinic",
+      "UHC",
+      "city doctor",
+      "urban health sub centre",
+      "AP urban health"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ap_blood_bank_services",
+    "scheme_name": "AP Blood Bank Services",
+    "telugu_name": "ఆంధ్రప్రదేశ్ బ్లడ్ బ్యాంక్ సేవలు",
+    "level": "Andhra Pradesh",
+    "category": "Blood Bank Services",
+    "source_url": "https://apsacs.in/",
+    "rag_text_chunk": "Scheme Name: AP Blood Bank Services (ఆంధ్రప్రదేశ్ బ్లడ్ బ్యాంక్ సేవలు)\nLevel: Andhra Pradesh\nCategory: Blood Bank Services\nOfficial Website: https://apsacs.in/\nEligibility: Any citizen wishing to donate blood (aged 18-60), or emergency patients needing blood units in registered AP hospitals.\nBenefits: Free matching and cross-testing of blood, access to government blood bank stock registry, and certificate for donors.\nHow to Apply: Check stock online or visit the nearest government hospital blood bank counter to request blood or pledge donation.\nRequired Documents: Donor medical screening card, recipient doctor blood requirement slip.\nKeywords: blood bank, blood donor, ap blood registry, platelets, plasma, AP blood bank",
+    "keywords": [
+      "blood bank",
+      "blood donor",
+      "ap blood registry",
+      "platelets",
+      "plasma",
+      "AP blood bank"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_tb_elimination_programme__ntep_",
+    "scheme_name": "National TB Elimination Programme (NTEP)",
+    "telugu_name": "జాతీయ క్షయవ్యాధి నివారణ పథకం (NTEP)",
+    "level": "National",
+    "category": "TB Elimination Services",
+    "source_url": "https://tbcindia.gov.in/",
+    "rag_text_chunk": "Scheme Name: National TB Elimination Programme (NTEP) (జాతీయ క్షయవ్యాధి నివారణ పథకం (NTEP))\nLevel: National\nCategory: TB Elimination Services\nOfficial Website: https://tbcindia.gov.in/\nEligibility: Any citizen showing symptoms of tuberculosis (continuous cough for over 2 weeks, low fever, weight loss) or diagnosed TB patients.\nBenefits: Free sputum microscopy testing, free high-quality DOTS medicines course, free chest X-rays, and Rs. 500 monthly nutrition cash support.\nHow to Apply: Submit your sputum sample at any government PHC or Designated Microscopy Centre (DMC) for free testing. If diagnosed, begin free DOTS medicine immediately.\nRequired Documents: Identity proof (Aadhaar), bank account copy (for cash transfer).\nKeywords: NTEP, tuberculosis, TB test, sputum test, DOTS, free TB treatment, chest clinic",
+    "keywords": [
+      "NTEP",
+      "tuberculosis",
+      "TB test",
+      "sputum test",
+      "DOTS",
+      "free TB treatment",
+      "chest clinic"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_integrated_child_development_services__icds_",
+    "scheme_name": "Integrated Child Development Services (ICDS)",
+    "telugu_name": "సమన్వయ శిశు అభివృద్ధి సేవల పథకం (ICDS)",
+    "level": "National",
+    "category": "Nutritional Services",
+    "source_url": "https://wcd.nic.in/",
+    "rag_text_chunk": "Scheme Name: Integrated Child Development Services (ICDS) (సమన్వయ శిశు అభివృద్ధి సేవల పథకం (ICDS))\nLevel: National\nCategory: Nutritional Services\nOfficial Website: https://wcd.nic.in/\nEligibility: Children in the age group of 0-6 years, pregnant women, and lactating mothers.\nBenefits: Free supplementary nutrition, immunization tracking, health checkups, non-formal preschool education, and health education for mothers.\nHow to Apply: Visit your local Anganwadi Centre to register your child or yourself (if pregnant) in the Anganwadi registry.\nRequired Documents: Aadhaar card of mother and child, MCP card.\nKeywords: ICDS, Anganwadi, child care, free immunization, preschool education, nutrition, pregnant women",
+    "keywords": [
+      "ICDS",
+      "Anganwadi",
+      "child care",
+      "free immunization",
+      "preschool education",
+      "nutrition",
+      "pregnant women"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_dr__ntr_vaidya_seva__ap_cashless_hospital_care_",
+    "scheme_name": "Dr. NTR Vaidya Seva (AP Cashless Hospital Care)",
+    "telugu_name": "డా. ఎన్.టి.ఆర్ వైద్య సేవ",
+    "level": "Andhra Pradesh",
+    "category": "Hospital treatment",
+    "source_url": "https://apfinance.gov.in/",
+    "rag_text_chunk": "Scheme Name: Dr. NTR Vaidya Seva (AP Cashless Hospital Care) (డా. ఎన్.టి.ఆర్ వైద్య సేవ)\nLevel: Andhra Pradesh\nCategory: Hospital treatment\nOfficial Website: https://apfinance.gov.in/\nEligibility: Poor/BPL families in Andhra Pradesh. The hospital help desk checks the family details before treatment.\nBenefits: Cashless treatment for selected major diseases, surgeries and therapies in network hospitals. The cover can be up to Rs. 25 lakh per family per year as per AP budget documents.\nHow to Apply: Go to a government or network hospital. Ask for the Aarogya Mithra/help desk. Show Aadhaar and ration/health card. The hospital checks eligibility and starts cashless treatment if the disease is covered.\nRequired Documents: Aadhaar card, ration card or health card, phone number, old medical reports if available.\nKeywords: ఆరోగ్యశ్రీ, వైద్య సేవ, ఎన్టీఆర్, హాస్పిటల్, ఆపరేషన్, సర్జరీ, cashless, hospital, arogyasri, ntr",
+    "keywords": [
+      "ఆరోగ్యశ్రీ",
+      "వైద్య సేవ",
+      "ఎన్టీఆర్",
+      "హాస్పిటల్",
+      "ఆపరేషన్",
+      "సర్జరీ",
+      "cashless",
+      "hospital",
+      "arogyasri",
+      "ntr"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ap_108_emergency_ambulance_service",
+    "scheme_name": "AP 108 Emergency Ambulance Service",
+    "telugu_name": "108 అత్యవసర అంబులెన్స్",
+    "level": "Andhra Pradesh",
+    "category": "Emergency ambulance",
+    "source_url": "https://apfinance.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP 108 Emergency Ambulance Service (108 అత్యవసర అంబులెన్స్)\nLevel: Andhra Pradesh\nCategory: Emergency ambulance\nOfficial Website: https://apfinance.gov.in/\nEligibility: Anyone in Andhra Pradesh who has a medical emergency can call.\nBenefits: Free ambulance help in emergencies such as accidents, delivery pain, heart attack symptoms, stroke symptoms, serious injury or sudden severe illness.\nHow to Apply: Call 108. Say the village name, nearby landmark and patient problem. Keep the phone nearby. Send one person to the road to guide the ambulance.\nRequired Documents: No documents are needed to call. Keep Aadhaar or hospital card ready later if possible.\nKeywords: 108, అంబులెన్స్, ఎమర్జెన్సీ, ప్రమాదం, గర్భిణి, ambulance, emergency, accident",
+    "keywords": [
+      "108",
+      "అంబులెన్స్",
+      "ఎమర్జెన్సీ",
+      "ప్రమాదం",
+      "గర్భిణి",
+      "ambulance",
+      "emergency",
+      "accident"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ap_104_mobile_medical_units",
+    "scheme_name": "AP 104 Mobile Medical Units",
+    "telugu_name": "104 మొబైల్ మెడికల్ యూనిట్లు",
+    "level": "Andhra Pradesh",
+    "category": "Village health service",
+    "source_url": "https://apfinance.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP 104 Mobile Medical Units (104 మొబైల్ మెడికల్ యూనిట్లు)\nLevel: Andhra Pradesh\nCategory: Village health service\nOfficial Website: https://apfinance.gov.in/\nEligibility: Rural and tribal residents in Andhra Pradesh, especially pregnant women, elderly people, bedridden patients and people with long-term diseases.\nBenefits: Doctor/health staff visit near the village. Basic checkups, pregnancy care, BP/sugar-related screening, simple tests, medicines and follow-up help may be available.\nHow to Apply: Ask ASHA, ANM, village secretariat or PHC when the 104 vehicle comes. Visit the camp with old reports. Follow the advice and collect medicines if given.\nRequired Documents: Aadhaar card, old prescription, medical reports, pregnancy/MCP card if applicable.\nKeywords: 104, మొబైల్ మెడికల్, గ్రామం, పిహెచ్సి, డాక్టర్, టెస్టులు, mobile medical, village clinic",
+    "keywords": [
+      "104",
+      "మొబైల్ మెడికల్",
+      "గ్రామం",
+      "పిహెచ్సి",
+      "డాక్టర్",
+      "టెస్టులు",
+      "mobile medical",
+      "village clinic"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ayushman_bharat_pm_jay__national_health_cover_",
+    "scheme_name": "Ayushman Bharat PM-JAY (National Health Cover)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ PM-JAY",
+    "level": "National",
+    "category": "Hospital treatment",
+    "source_url": "https://nha.gov.in/PM-JAY",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat PM-JAY (National Health Cover) (ఆయుష్మాన్ భారత్ PM-JAY)\nLevel: National\nCategory: Hospital treatment\nOfficial Website: https://nha.gov.in/PM-JAY\nEligibility: Poor and vulnerable families listed as eligible under PM-JAY/State health assurance records.\nBenefits: Cashless hospital treatment up to Rs. 5 lakh per eligible family per year for listed serious illnesses across empanelled hospitals in India.\nHow to Apply: Check eligibility at a PM-JAY counter, Common Service Centre, empanelled hospital or official PM-JAY portal. If eligible, get an Ayushman card/e-card and use it at an empanelled hospital.\nRequired Documents: Aadhaar card, ration card or PM-JAY/health card, mobile number, medical reports.\nKeywords: ఆయుష్మాన్, pmjay, pm-jay, పీఎంజే, health cover, hospital, cashless",
+    "keywords": [
+      "ఆయుష్మాన్",
+      "pmjay",
+      "pm-jay",
+      "పీఎంజే",
+      "health cover",
+      "hospital",
+      "cashless"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ayushman_arogya_mandir__free_primary_health_care_",
+    "scheme_name": "Ayushman Arogya Mandir (Free Primary Health Care)",
+    "telugu_name": "ఆయుష్మాన్ ఆరోగ్య మందిర్",
+    "level": "National",
+    "category": "PHC and village care",
+    "source_url": "https://aam.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ayushman Arogya Mandir (Free Primary Health Care) (ఆయుష్మాన్ ఆరోగ్య మందిర్)\nLevel: National\nCategory: PHC and village care\nOfficial Website: https://aam.mohfw.gov.in/\nEligibility: Everyone can visit the nearest Ayushman Arogya Mandir, Sub Centre or PHC.\nBenefits: Free nearby care for common illness, pregnancy and child care, vaccination, BP/sugar screening, TB/leprosy support, basic medicines, simple tests and teleconsultation.\nHow to Apply: Visit the nearest Ayushman Arogya Mandir/PHC. Tell the health worker your problem. Take tests or medicines as advised. If needed, they refer you to a bigger hospital.\nRequired Documents: Aadhaar is useful but not always required for basic care. Carry old prescriptions and reports.\nKeywords: ఆరోగ్య మందిర్, పిహెచ్సి, సబ్ సెంటర్, మందులు, బీపీ, షుగర్, primary care, free medicines",
+    "keywords": [
+      "ఆరోగ్య మందిర్",
+      "పిహెచ్సి",
+      "సబ్ సెంటర్",
+      "మందులు",
+      "బీపీ",
+      "షుగర్",
+      "primary care",
+      "free medicines"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_esanjeevani_national_telemedicine_service",
+    "scheme_name": "eSanjeevani National Telemedicine Service",
+    "telugu_name": "ఈ-సంజీవని డాక్టర్ సేవ",
+    "level": "National",
+    "category": "Doctor by phone",
+    "source_url": "https://esanjeevani.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: eSanjeevani National Telemedicine Service (ఈ-సంజీవని డాక్టర్ సేవ)\nLevel: National\nCategory: Doctor by phone\nOfficial Website: https://esanjeevani.mohfw.gov.in/\nEligibility: Any citizen who needs non-emergency doctor advice can use eSanjeevani, if phone/internet service is available.\nBenefits: Doctor consultation from home or through a health centre. Useful for common illness, follow-up advice and specialist advice through health staff.\nHow to Apply: For home consultation, use the eSanjeevani website/app and register with mobile OTP. For village help, visit the nearest Health and Wellness Centre/PHC and ask for teleconsultation.\nRequired Documents: Mobile number, Aadhaar if asked, old prescription, test reports.\nKeywords: ఈ సంజీవని, సంజీవని, ఫోన్ డాక్టర్, ఆన్లైన్ డాక్టర్, telemedicine, doctor online, opd",
+    "keywords": [
+      "ఈ సంజీవని",
+      "సంజీవని",
+      "ఫోన్ డాక్టర్",
+      "ఆన్లైన్ డాక్టర్",
+      "telemedicine",
+      "doctor online",
+      "opd"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_janani_shishu_suraksha_karyakram__free_delivery_care_",
+    "scheme_name": "Janani Shishu Suraksha Karyakram (Free Delivery Care)",
+    "telugu_name": "జనని శిశు సురక్షా కార్యక్రమం",
+    "level": "National",
+    "category": "Pregnancy and newborn",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Janani Shishu Suraksha Karyakram (Free Delivery Care) (జనని శిశు సురక్షా కార్యక్రమం)\nLevel: National\nCategory: Pregnancy and newborn\nOfficial Website: https://nhm.gov.in/\nEligibility: Pregnant women using government health facilities for delivery, and sick newborns up to one year.\nBenefits: Free delivery or C-section in government hospitals, free medicines, tests, blood if needed, food during stay and transport support.\nHow to Apply: Register pregnancy with ASHA/ANM/Anganwadi or PHC. Go for ANC checkups. For delivery, go to a government hospital or call 108 in emergency. Ask hospital staff for JSSK free services.\nRequired Documents: MCP/mother card, Aadhaar, phone number, old pregnancy reports if available.\nKeywords: గర్భిణి, డెలివరీ, ప్రసవం, బిడ్డ, జనని, శిశు, delivery, pregnancy, newborn",
+    "keywords": [
+      "గర్భిణి",
+      "డెలివరీ",
+      "ప్రసవం",
+      "బిడ్డ",
+      "జనని",
+      "శిశు",
+      "delivery",
+      "pregnancy",
+      "newborn"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_janani_suraksha_yojana__safe_motherhood_cash_support_",
+    "scheme_name": "Janani Suraksha Yojana (Safe Motherhood Cash Support)",
+    "telugu_name": "జనని సురక్షా యోజన",
+    "level": "National",
+    "category": "Pregnancy cash support",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Janani Suraksha Yojana (Safe Motherhood Cash Support) (జనని సురక్షా యోజన)\nLevel: National\nCategory: Pregnancy cash support\nOfficial Website: https://nhm.gov.in/\nEligibility: Poor pregnant women as per JSY rules. In many high-performing states, BPL/SC/ST women delivering in government or accredited hospitals are eligible.\nBenefits: Cash support for institutional delivery and help from ASHA for registration, checkups, delivery and newborn immunization.\nHow to Apply: Register pregnancy early with ASHA/ANM. Attend checkups. Deliver at a government or accredited hospital. Submit bank and required details through ASHA/health staff.\nRequired Documents: MCP/mother card, Aadhaar, bank account details, caste/BPL proof if required, hospital delivery record.\nKeywords: జనని సురక్ష, గర్భిణి డబ్బు, డెలివరీ సహాయం, asha, pregnancy cash, institutional delivery",
+    "keywords": [
+      "జనని సురక్ష",
+      "గర్భిణి డబ్బు",
+      "డెలివరీ సహాయం",
+      "asha",
+      "pregnancy cash",
+      "institutional delivery"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_mission_indradhanush___universal_immunization",
+    "scheme_name": "Mission Indradhanush / Universal Immunization",
+    "telugu_name": "మిషన్ ఇంద్రధనుష్ టీకాలు",
+    "level": "National",
+    "category": "Vaccination",
+    "source_url": "https://mis.dghs.gov.in/",
+    "rag_text_chunk": "Scheme Name: Mission Indradhanush / Universal Immunization (మిషన్ ఇంద్రధనుష్ టీకాలు)\nLevel: National\nCategory: Vaccination\nOfficial Website: https://mis.dghs.gov.in/\nEligibility: Children and pregnant women who need routine vaccines, especially missed or incomplete vaccines.\nBenefits: Free vaccines to protect from serious diseases such as polio, measles-rubella, diphtheria, pertussis, tetanus, hepatitis B and others as per age schedule.\nHow to Apply: Ask ASHA/ANM or Anganwadi about the next vaccine day. Take the child or pregnant woman to the session. Keep the vaccine card safely and follow the next date.\nRequired Documents: Child immunization card/MCP card, Aadhaar if available, birth record if available.\nKeywords: టీకా, వ్యాక్సిన్, పోలియో, పిల్లలు, గర్భిణి టీకా, vaccination, immunization",
+    "keywords": [
+      "టీకా",
+      "వ్యాక్సిన్",
+      "పోలియో",
+      "పిల్లలు",
+      "గర్భిణి టీకా",
+      "vaccination",
+      "immunization"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_rashtriya_bal_swasthya_karyakram__child_health_screening_",
+    "scheme_name": "Rashtriya Bal Swasthya Karyakram (Child Health Screening)",
+    "telugu_name": "రాష్ట్రీయ బాల స్వాస్థ్య కార్యక్రమం",
+    "level": "National",
+    "category": "Child health",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Rashtriya Bal Swasthya Karyakram (Child Health Screening) (రాష్ట్రీయ బాల స్వాస్థ్య కార్యక్రమం)\nLevel: National\nCategory: Child health\nOfficial Website: https://nhm.gov.in/\nEligibility: Children from birth to 18 years, including children at Anganwadi centres and government schools.\nBenefits: Free screening for birth defects, disease, deficiency and development delay. Free treatment or referral is arranged for identified problems.\nHow to Apply: Send the child for school/Anganwadi health checkup. If the team finds a problem, follow the referral slip to the PHC, District Early Intervention Centre or hospital.\nRequired Documents: Child Aadhaar if available, school/Anganwadi details, health card, old reports.\nKeywords: పిల్లల ఆరోగ్యం, స్కూల్ చెకప్, అంగన్వాడి, బాల స్వాస్థ్య, child screening, school health",
+    "keywords": [
+      "పిల్లల ఆరోగ్యం",
+      "స్కూల్ చెకప్",
+      "అంగన్వాడి",
+      "బాల స్వాస్థ్య",
+      "child screening",
+      "school health"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_national_dialysis_programme",
+    "scheme_name": "Pradhan Mantri National Dialysis Programme",
+    "telugu_name": "ప్రధాన మంత్రి డయాలిసిస్ కార్యక్రమం",
+    "level": "National",
+    "category": "Kidney dialysis",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri National Dialysis Programme (ప్రధాన మంత్రి డయాలిసిస్ కార్యక్రమం)\nLevel: National\nCategory: Kidney dialysis\nOfficial Website: https://nhm.gov.in/\nEligibility: Poor/BPL patients who need dialysis for kidney failure, as checked by the government hospital or dialysis centre.\nBenefits: Free or government-supported dialysis services at approved district hospital dialysis centres, depending on local availability.\nHow to Apply: Visit the district hospital or kidney specialist. Ask about PM National Dialysis Programme. Submit referral and documents. Follow the dialysis schedule given by the centre.\nRequired Documents: Aadhaar, ration/BPL card, doctor's referral, kidney reports, old dialysis records, phone number.\nKeywords: డయాలిసిస్, కిడ్నీ, మూత్రపిండం, bpl, kidney, dialysis",
+    "keywords": [
+      "డయాలిసిస్",
+      "కిడ్నీ",
+      "మూత్రపిండం",
+      "bpl",
+      "kidney",
+      "dialysis"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ni_kshay_poshan_yojana__tb_nutrition_support_",
+    "scheme_name": "Ni-kshay Poshan Yojana (TB Nutrition Support)",
+    "telugu_name": "నిక్షయ్ పోషణ యోజన",
+    "level": "National",
+    "category": "TB support",
+    "source_url": "https://nikshay.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ni-kshay Poshan Yojana (TB Nutrition Support) (నిక్షయ్ పోషణ యోజన)\nLevel: National\nCategory: TB support\nOfficial Website: https://nikshay.gov.in/\nEligibility: People diagnosed and notified with TB under the government TB programme.\nBenefits: Monthly nutrition support through direct bank transfer during TB treatment, as per current national TB programme rules.\nHow to Apply: Get TB treatment from PHC, government hospital or registered doctor. Make sure your name is entered in Ni-kshay. Give bank details to TB staff. Take medicines regularly and check if DBT is received.\nRequired Documents: Aadhaar, bank passbook/account details, phone number, TB treatment card or Ni-kshay ID.\nKeywords: టిబి, క్షయ, నిక్షయ్, పోషణ, tb, tuberculosis, nutrition",
+    "keywords": [
+      "టిబి",
+      "క్షయ",
+      "నిక్షయ్",
+      "పోషణ",
+      "tb",
+      "tuberculosis",
+      "nutrition"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ayushman_bharat___pm_jay",
+    "scheme_name": "Ayushman Bharat - PM-JAY",
+    "telugu_name": "ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన ఆరోగ్య యోజన (PM-JAY)",
+    "level": "National",
+    "category": "National Health Protection Scheme",
+    "source_url": "https://nha.gov.in/PM-JAY",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat - PM-JAY (ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన ఆరోగ్య యోజన (PM-JAY))\nLevel: National\nCategory: National Health Protection Scheme\nOfficial Website: https://nha.gov.in/PM-JAY\nEligibility: Eligible families listed under SECC 2011 database or holding an official Ayushman Card / NFSA Ration Card.\nBenefits: Cashless treatment up to ₹5 Lakhs per family annually covering surgeries, ICU, daycare, and 3 days pre & 15 days post hospitalization expenses.\nHow to Apply: Check name eligibility at mera.pmjay.gov.in or Grama Sachivalayam. Present Ayushman Card at any PM-JAY hospital kiosk.\nRequired Documents: Ayushman Bharat Card, Aadhaar Card, Ration Card / NFSA Card.\nKeywords: PMJAY, Ayushman Bharat, Golden Card, PM-JAY, ఆయుష్మాన్ భారత్, నేషనల్ హెల్త్ స్కీమ్, 5 Lakhs",
+    "keywords": [
+      "PMJAY",
+      "Ayushman Bharat",
+      "Golden Card",
+      "PM-JAY",
+      "ఆయుష్మాన్ భారత్",
+      "నేషనల్ హెల్త్ స్కీమ్",
+      "5 Lakhs"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_tuberculosis_elimination_programme__ntep___nikshay_poshan_",
+    "scheme_name": "National Tuberculosis Elimination Programme (NTEP - Nikshay Poshan)",
+    "telugu_name": "జాతీయ క్షయ నివారణ పథకం (నిక్షయ్ పోషణ్ యోజన)",
+    "level": "National",
+    "category": "Infectious Disease Care & Nutritional Support",
+    "source_url": "https://tbcindia.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Tuberculosis Elimination Programme (NTEP - Nikshay Poshan) (జాతీయ క్షయ నివారణ పథకం (నిక్షయ్ పోషణ్ యోజన))\nLevel: National\nCategory: Infectious Disease Care & Nutritional Support\nOfficial Website: https://tbcindia.gov.in/\nEligibility: Any individual diagnosed with pulmonary or extra-pulmonary Tuberculosis in public or private health facilities.\nBenefits: 100% free course of anti-TB medications, free molecular GeneXpert/CBNAAT sputum tests, and ₹500/month DBT for nutrition.\nHow to Apply: Visit your nearest Government Primary Health Centre (PHC) or District TB Centre with a sputum sample. Get registered on Ni-kshay.\nRequired Documents: Aadhaar Card, Bank Account Details (with IFSC), Medical Diagnosis / TB Treatment Card.\nKeywords: TB, Nikshay, Tuberculosis, క్షయ వ్యాధి, నిక్షయ్ పోషణ్, TB free medicine, ₹500 TB",
+    "keywords": [
+      "TB",
+      "Nikshay",
+      "Tuberculosis",
+      "క్షయ వ్యాధి",
+      "నిక్షయ్ పోషణ్",
+      "TB free medicine",
+      "₹500 TB"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_tele_manas_ap__14416____national_mental_health_helpline",
+    "scheme_name": "Tele-MANAS AP (14416) - National Mental Health Helpline",
+    "telugu_name": "టెలి-మానస్ (14416) - జాతీయ మానసిక ఆరోగ్య టోల్-ఫ్రీ సేవ",
+    "level": "Andhra Pradesh",
+    "category": "Mental Health & Psychological Counseling",
+    "source_url": "https://telemanas.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Tele-MANAS AP (14416) - National Mental Health Helpline (టెలి-మానస్ (14416) - జాతీయ మానసిక ఆరోగ్య టోల్-ఫ్రీ సేవ)\nLevel: Andhra Pradesh\nCategory: Mental Health & Psychological Counseling\nOfficial Website: https://telemanas.mohfw.gov.in/\nEligibility: Anyone dealing with mental distress, stress, depression, anxiety, grief, academic anxiety, or suicidal thoughts.\nBenefits: 100% free, confidential counseling by mental health professionals in Telugu and English, 24 hours a day.\nHow to Apply: Dial 14416 or 1800-891-4416 from any phone. Select Telugu (or English) to speak with a clinical counselor immediately.\nRequired Documents: No documents needed. Completely anonymous and toll-free.\nKeywords: Tele MANAS, Mental Health, Counseling, 14416, మానసిక ఆరోగ్యం, కౌన్సిలింగ్, డిప్రెషన్, ఒత్తిడి",
+    "keywords": [
+      "Tele MANAS",
+      "Mental Health",
+      "Counseling",
+      "14416",
+      "మానసిక ఆరోగ్యం",
+      "కౌన్సిలింగ్",
+      "డిప్రెషన్",
+      "ఒత్తిడి"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_esanjeevani_ap___telemedicine_consultations",
+    "scheme_name": "eSanjeevani AP - Telemedicine Consultations",
+    "telugu_name": "ఈ-సంజీవని ఉచిత టెలిమెడిసిన్ కన్సల్టేషన్",
+    "level": "Andhra Pradesh",
+    "category": "Digital Teleconsultation & Specialist Care",
+    "source_url": "https://esanjeevani.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: eSanjeevani AP - Telemedicine Consultations (ఈ-సంజీవని ఉచిత టెలిమెడిసిన్ కన్సల్టేషన్)\nLevel: Andhra Pradesh\nCategory: Digital Teleconsultation & Specialist Care\nOfficial Website: https://esanjeevani.mohfw.gov.in/\nEligibility: Any citizen of Andhra Pradesh requiring general or specialist medical opinion without travelling to distant cities.\nBenefits: Free video consultation with specialist doctors, digital prescription sent directly to mobile phone, and free medicines dispensed at nearest PHC/Clinic.\nHow to Apply: Download eSanjeevani App or visit your local YSR Village Health Clinic. The Community Health Officer connects you with a specialist.\nRequired Documents: Aadhaar Card or Mobile Number for OTP login, past medical reports (optional upload).\nKeywords: eSanjeevani, Telemedicine, Online Doctor, ఈ సంజీవని, టెలిమెడిసిన్, వీడియో డాక్టర్, ఉచిత సలహా",
+    "keywords": [
+      "eSanjeevani",
+      "Telemedicine",
+      "Online Doctor",
+      "ఈ సంజీవని",
+      "టెలిమెడిసిన్",
+      "వీడియో డాక్టర్",
+      "ఉచిత సలహా"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_viral_hepatitis_control_programme__nvhcp___ap_",
+    "scheme_name": "National Viral Hepatitis Control Programme (NVHCP - AP)",
+    "telugu_name": "జాతీయ వైరల్ హెపటైటిస్ నియంత్రణ & ఉచిత కాలేయ చికిత్స పథకం (NVHCP)",
+    "level": "Andhra Pradesh",
+    "category": "Communicable Disease & Liver Care",
+    "source_url": "https://nvhcp.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Viral Hepatitis Control Programme (NVHCP - AP) (జాతీయ వైరల్ హెపటైటిస్ నియంత్రణ & ఉచిత కాలేయ చికిత్స పథకం (NVHCP))\nLevel: Andhra Pradesh\nCategory: Communicable Disease & Liver Care\nOfficial Website: https://nvhcp.mohfw.gov.in/\nEligibility: Anyone tested positive for Hepatitis B surface antigen (HBsAg) or Hepatitis C antibody (Anti-HCV) in Andhra Pradesh.\nBenefits: Free viral load PCR confirmation tests, free 12-week curative oral medicines for Hepatitis C, free lifelong antiviral suppression therapy for Hepatitis B, and free Hepatitis B vaccines for high-risk individuals.\nHow to Apply: Visit the NVHCP Model Treatment Centre at your District Hospital or Government Medical College. Blood sample is tested free and medication is dispensed from the hospital pharmacy.\nRequired Documents: Aadhaar Card, Initial HBsAg / Anti-HCV screening report.\nKeywords: NVHCP, Hepatitis B, Hepatitis C, Liver disease cure, హెపటైటిస్ బి, హెపటైటిస్ సి, Sofosbuvir free medicine, కాలేయ వ్యాధి",
+    "keywords": [
+      "NVHCP",
+      "Hepatitis B",
+      "Hepatitis C",
+      "Liver disease cure",
+      "హెపటైటిస్ బి",
+      "హెపటైటిస్ సి",
+      "Sofosbuvir free medicine",
+      "కాలేయ వ్యాధి"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_tb_mukt_bharat_abhiyan___ni_kshay_mitra",
+    "scheme_name": "Pradhan Mantri TB Mukt Bharat Abhiyan & Ni-kshay Mitra",
+    "telugu_name": "ప్రధాన మంత్రి టీబీ ముక్త భారత్ అభియాన్ & నిక్షయ్ మిత్ర",
+    "level": "National",
+    "category": "TB Nutrition & Community Support",
+    "source_url": "https://nikshay.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri TB Mukt Bharat Abhiyan & Ni-kshay Mitra (ప్రధాన మంత్రి టీబీ ముక్త భారత్ అభియాన్ & నిక్షయ్ మిత్ర)\nLevel: National\nCategory: TB Nutrition & Community Support\nOfficial Website: https://nikshay.in/\nEligibility: All patients diagnosed with active pulmonary or extra-pulmonary Tuberculosis receiving treatment under the National TB Elimination Programme in AP.\nBenefits: Monthly food basket containing 3kg pulses, 1.5kg edible oil, protein powder, and millet flour from Ni-kshay Mitras, plus ₹500/month DBT to bank account.\nHow to Apply: Registered automatically when TB treatment starts at government DOTS center. Patient gives consent on the Ni-kshay portal to receive food baskets.\nRequired Documents: Ni-kshay ID, Aadhaar Card, Bank Account details.\nKeywords: TB Mukt Bharat, Ni-kshay Mitra, TB food basket, టీబీ ముక్త భారత్, నిక్షయ్ మిత్ర, క్షయ వ్యాధి పౌష్టికాహారం, Ni-kshay Poshan",
+    "keywords": [
+      "TB Mukt Bharat",
+      "Ni-kshay Mitra",
+      "TB food basket",
+      "టీబీ ముక్త భారత్",
+      "నిక్షయ్ మిత్ర",
+      "క్షయ వ్యాధి పౌష్టికాహారం",
+      "Ni-kshay Poshan"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_surakshit_matritva_aashwasan__suman_scheme___ap_",
+    "scheme_name": "Surakshit Matritva Aashwasan (SUMAN Scheme - AP)",
+    "telugu_name": "సురక్షిత మాతృత్వ ఆశ్వాసన్ (సుమన్ - సున్నా ఖర్చు ప్రసవ సేవలు)",
+    "level": "Andhra Pradesh",
+    "category": "Zero-Expense Maternal & Infant Care",
+    "source_url": "https://suman.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Surakshit Matritva Aashwasan (SUMAN Scheme - AP) (సురక్షిత మాతృత్వ ఆశ్వాసన్ (సుమన్ - సున్నా ఖర్చు ప్రసవ సేవలు))\nLevel: Andhra Pradesh\nCategory: Zero-Expense Maternal & Infant Care\nOfficial Website: https://suman.mohfw.gov.in/\nEligibility: All pregnant women and infants up to 6 months visiting any public health facility in Andhra Pradesh.\nBenefits: Zero expense for registration, diagnostics, blood, Caesarean surgery, food during stay, medicines, and free 102 transport back to home.\nHow to Apply: Walk into any government PHC, CHC, Area Hospital, or Teaching Hospital. Dial 104 if any staff demands money or denies service.\nRequired Documents: Aadhaar Card, MCP / RCH Card (services are never denied even without documents).\nKeywords: SUMAN, Zero expense delivery, Surakshit Matritva, సుమన్ పథకం, సున్నా ఖర్చు ప్రసవం, Free C section govt hospital, 102 Mahata ambulance",
+    "keywords": [
+      "SUMAN",
+      "Zero expense delivery",
+      "Surakshit Matritva",
+      "సుమన్ పథకం",
+      "సున్నా ఖర్చు ప్రసవం",
+      "Free C section govt hospital",
+      "102 Mahata ambulance"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_rashtriya_kishor_swasthya_karyakram__rksk___ap_",
+    "scheme_name": "Rashtriya Kishor Swasthya Karyakram (RKSK - AP)",
+    "telugu_name": "రాష్ట్రీయ కిశోర్ స్వాస్థ్య కార్యక్రమం (కౌమార బాలబాలికల ఆరోగ్యం)",
+    "level": "Andhra Pradesh",
+    "category": "Adolescent Health & Counseling",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Rashtriya Kishor Swasthya Karyakram (RKSK - AP) (రాష్ట్రీయ కిశోర్ స్వాస్థ్య కార్యక్రమం (కౌమార బాలబాలికల ఆరోగ్యం))\nLevel: Andhra Pradesh\nCategory: Adolescent Health & Counseling\nOfficial Website: https://nhm.gov.in/\nEligibility: All adolescents (boys and girls) aged 10 to 19 years residing in Andhra Pradesh.\nBenefits: Confidential counseling by trained counselors, free Weekly Iron and Folic Acid (WIFS) tablets, free sanitary pads, and treatment for reproductive tract infections.\nHow to Apply: Walk into the nearest PHC or CHC and visit the dedicated 'Yuva Clinic / AFHC' room on clinic days.\nRequired Documents: No mandatory documentation; open access at all government health facilities.\nKeywords: RKSK, Adolescent health, AFHC Yuva clinic, కౌమార ఆరోగ్యం, యువ క్లినిక్, Weekly Iron Folic Acid, Menstrual hygiene",
+    "keywords": [
+      "RKSK",
+      "Adolescent health",
+      "AFHC Yuva clinic",
+      "కౌమార ఆరోగ్యం",
+      "యువ క్లినిక్",
+      "Weekly Iron Folic Acid",
+      "Menstrual hygiene"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_palliative_care_programme__ap_home_based_care_",
+    "scheme_name": "National Palliative Care Programme (AP Home-Based Care)",
+    "telugu_name": "జాతీయ పాలియేటివ్ కేర్ - దీర్ఘకాలిక రోగులకు గృహ ఆధారిత సంరక్షణ",
+    "level": "Andhra Pradesh",
+    "category": "Chronic & End-of-Life Palliative Care",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Palliative Care Programme (AP Home-Based Care) (జాతీయ పాలియేటివ్ కేర్ - దీర్ఘకాలిక రోగులకు గృహ ఆధారిత సంరక్షణ)\nLevel: Andhra Pradesh\nCategory: Chronic & End-of-Life Palliative Care\nOfficial Website: https://nhm.gov.in/\nEligibility: Bedridden patients, terminal cancer patients, severe stroke, or paraplegic patients living in Andhra Pradesh.\nBenefits: Free home visits by trained palliative nurses and doctors, free oral morphine and analgesics for pain relief, free catheterization, wound dressings, and counseling.\nHow to Apply: Inform your village ANM or visit the Palliative Care Unit at the District Hospital to register for regular home visits.\nRequired Documents: Medical record / Cancer discharge card, Aadhaar Card.\nKeywords: Palliative Care, Home nursing, Bedridden care, పాలియేటివ్ కేర్, గృహ సంరక్షణ, Oral morphine pain relief, Bedsore dressing",
+    "keywords": [
+      "Palliative Care",
+      "Home nursing",
+      "Bedridden care",
+      "పాలియేటివ్ కేర్",
+      "గృహ సంరక్షణ",
+      "Oral morphine pain relief",
+      "Bedsore dressing"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_tobacco_cessation___de_addiction_services__ap_ntcp_clinics_",
+    "scheme_name": "National Tobacco Cessation & De-addiction Services (AP NTCP Clinics)",
+    "telugu_name": "జాతీయ పొగాకు వ్యసన విముక్తి కేంద్రాలు (NTCP డి-అడిక్షన్ సేవలు)",
+    "level": "Andhra Pradesh",
+    "category": "Substance De-addiction & Preventive Health",
+    "source_url": "https://ntcp.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Tobacco Cessation & De-addiction Services (AP NTCP Clinics) (జాతీయ పొగాకు వ్యసన విముక్తి కేంద్రాలు (NTCP డి-అడిక్షన్ సేవలు))\nLevel: Andhra Pradesh\nCategory: Substance De-addiction & Preventive Health\nOfficial Website: https://ntcp.mohfw.gov.in/\nEligibility: Any individual residing in Andhra Pradesh seeking help to quit smoking (cigarettes/beedis) or smokeless tobacco (gutkha/khaini).\nBenefits: Free one-on-one psychological counseling, carbon monoxide breathalyzer assessment, free nicotine chewing gums and patches, and toll-free helpline support.\nHow to Apply: Walk into the Tobacco Cessation Clinic at the District Hospital or call the National Quitline toll-free at 1800-11-2356.\nRequired Documents: No documents required (universal free public health service).\nKeywords: NTCP, Tobacco cessation, Quit smoking, పొగాకు విముక్తి, సిగరెట్ వ్యసనం, గుట్కా మాన్పించే కేంద్రాలు, Nicotine replacement",
+    "keywords": [
+      "NTCP",
+      "Tobacco cessation",
+      "Quit smoking",
+      "పొగాకు విముక్తి",
+      "సిగరెట్ వ్యసనం",
+      "గుట్కా మాన్పించే కేంద్రాలు",
+      "Nicotine replacement"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_rabies_post_exposure_prophylaxis___free_arv_rig_programme",
+    "scheme_name": "National Rabies Post-Exposure Prophylaxis & Free ARV/RIG Programme",
+    "telugu_name": "జాతీయ రేబీస్ నివారణ - ఉచిత యాంటీ రేబీస్ టీకా & సీరం పథకం",
+    "level": "National",
+    "category": "Emergency Animal Bite Prophylaxis",
+    "source_url": "https://ncdc.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Rabies Post-Exposure Prophylaxis & Free ARV/RIG Programme (జాతీయ రేబీస్ నివారణ - ఉచిత యాంటీ రేబీస్ టీకా & సీరం పథకం)\nLevel: National\nCategory: Emergency Animal Bite Prophylaxis\nOfficial Website: https://ncdc.mohfw.gov.in/\nEligibility: Any person bitten, scratched, or exposed to rabies through dogs, monkeys, cats, or wild animals in Andhra Pradesh.\nBenefits: Free wound washing with antiseptic, free 4-dose Intradermal Anti-Rabies Vaccine course, and free Rabies Immunoglobulin (RIG) infiltration for severe bites.\nHow to Apply: Wash the bite wound immediately with soap and running water for 15 minutes. Report immediately to the nearest Government Hospital or 24x7 PHC for vaccine administration.\nRequired Documents: No documents needed (emergency life-saving service).\nKeywords: Rabies, Dog bite vaccine, Free ARV injection, యాంటీ రేబీస్ టీకా, కుక్క కాటు ఇంజెక్షన్, Animal bite RIG, Anti rabies vaccine free",
+    "keywords": [
+      "Rabies",
+      "Dog bite vaccine",
+      "Free ARV injection",
+      "యాంటీ రేబీస్ టీకా",
+      "కుక్క కాటు ఇంజెక్షన్",
+      "Animal bite RIG",
+      "Anti rabies vaccine free"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_ayushman_bharat_health_infrastructure_mission",
+    "scheme_name": "Pradhan Mantri Ayushman Bharat Health Infrastructure Mission",
+    "telugu_name": "ప్రధాన మంత్రి ఆయుష్మాన్ భారత్ ఆరోగ్య మౌలిక వసతుల మిషన్ (PM-ABHIM)",
+    "level": "National",
+    "category": "Critical Healthcare Infrastructure",
+    "source_url": "https://pmabhim.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Ayushman Bharat Health Infrastructure Mission (ప్రధాన మంత్రి ఆయుష్మాన్ భారత్ ఆరోగ్య మౌలిక వసతుల మిషన్ (PM-ABHIM))\nLevel: National\nCategory: Critical Healthcare Infrastructure\nOfficial Website: https://pmabhim.mohfw.gov.in/\nEligibility: All citizens requiring intensive care (ICU), advanced diagnostics, ventilator support, and emergency trauma management in Andhra Pradesh public hospitals.\nBenefits: Free access to state-of-the-art 50-100 bedded Critical Care Units, round-the-clock ventilator beds, liquid medical oxygen, and advanced molecular pathology tests.\nHow to Apply: Services are provided directly at District Hospital Critical Care Blocks for serious trauma and medical emergencies.\nRequired Documents: Standard hospital in-patient admission documents.\nKeywords: PM-ABHIM, Critical Care Block, Health Infrastructure, ఆరోగ్య మౌలిక వసతులు, క్రిటికల్ కేర్ బ్లాక్, Public Health Labs, ICU beds",
+    "keywords": [
+      "PM-ABHIM",
+      "Critical Care Block",
+      "Health Infrastructure",
+      "ఆరోగ్య మౌలిక వసతులు",
+      "క్రిటికల్ కేర్ బ్లాక్",
+      "Public Health Labs",
+      "ICU beds"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_matru_vandana_yojana__pmmvy____maternal_health_aid",
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY) - Maternal Health Aid",
+    "telugu_name": "ప్రధాన మంత్రి మాతృ వందన యోజన (గర్భిణుల ఆర్థిక సాయం)",
+    "level": "National",
+    "category": "Maternal Welfare & Nutrition Financial Aid",
+    "source_url": "https://pmmvy.wcd.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Matru Vandana Yojana (PMMVY) - Maternal Health Aid (ప్రధాన మంత్రి మాతృ వందన యోజన (గర్భిణుల ఆర్థిక సాయం))\nLevel: National\nCategory: Maternal Welfare & Nutrition Financial Aid\nOfficial Website: https://pmmvy.wcd.gov.in/\nEligibility: Pregnant women and lactating mothers aged 19 years and above for first live birth (and second live birth if child is female). Excludes regular government employees.\nBenefits: ₹5,000 cash assistance in installments upon early pregnancy registration, ANC checkups, and child immunization. Additional ₹1,000 under Janani Suraksha Yojana for institutional delivery.\nHow to Apply: 1. Register pregnancy within 150 days at the local Anganwadi Center or PHC.\n2. Complete prescribed ANC health checkups.\n3. Benefits transferred directly via DBT to the mother's bank account.\nRequired Documents: Mother and Father Aadhaar Card, MCP (Mother Child Protection) Card, and Mother's Single Bank Account Passbook.\nKeywords: pmmvy, maternity benefit, pregnancy allowance, anganwadi maternity, మాతృ వందన, గర్భిణుల సాయం",
+    "keywords": [
+      "pmmvy",
+      "maternity benefit",
+      "pregnancy allowance",
+      "anganwadi maternity",
+      "మాతృ వందన",
+      "గర్భిణుల సాయం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ayushman_bharat___pmjay__national_health_protection_mission_",
+    "scheme_name": "Ayushman Bharat - PMJAY (National Health Protection Mission)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన ఆరోగ్య యోజన (PM-JAY)",
+    "level": "National",
+    "category": "Tertiary Hospital Healthcare",
+    "source_url": "https://pmjay.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat - PMJAY (National Health Protection Mission) (ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన ఆరోగ్య యోజన (PM-JAY))\nLevel: National\nCategory: Tertiary Hospital Healthcare\nOfficial Website: https://pmjay.gov.in/\nEligibility: Families identified under SECC 2011 rural and urban deprivation criteria, active Ration Card holders, and low-income citizens registered on the PM-JAY portal.\nBenefits: Cashless in-patient care up to ₹5 Lakhs per annum covering 1,949 medical and surgical procedures including oncology, cardiology, neurosurgery, and intensive care.\nHow to Apply: 1. Verify your name at mera.pmjay.gov.in or visit the nearest Ayushman Kendra.\n2. Complete biometric e-KYC to get your Ayushman Golden Card.\n3. Show the card at any empanelled hospital for instant cashless admission.\nRequired Documents: Aadhaar Card, Ration Card, PM-JAY Golden Card / Ayushman Card or Family ID.\nKeywords: ayushman bharat, pmjay, 5 lakh insurance, cashless hospitalization, golden card, nha, ఆయుష్మాన్ భారత్",
+    "keywords": [
+      "ayushman bharat",
+      "pmjay",
+      "5 lakh insurance",
+      "cashless hospitalization",
+      "golden card",
+      "nha",
+      "ఆయుష్మాన్ భారత్"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_bhartiya_janaushadhi_pariyojana__pmbjp___national_",
+    "scheme_name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) (National)",
+    "telugu_name": "ప్రధాన మంత్రి భారతీయ జన్ ఔషధి పరియోజన (PMBJP - చౌక మందులు)",
+    "level": "National",
+    "category": "Affordable Medicines & Pharmacy",
+    "source_url": "https://janaushadhi.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP) (National) (ప్రధాన మంత్రి భారతీయ జన్ ఔషధి పరియోజన (PMBJP - చౌక మందులు))\nLevel: National\nCategory: Affordable Medicines & Pharmacy\nOfficial Website: https://janaushadhi.gov.in/\nEligibility: Open to all Indian citizens without any income or residency restrictions.\nBenefits: Access to over 1,965 generic drugs, Suvidha sanitary pads at ₹1/pad, and surgical essentials at 50%-90% discounted rates.\nHow to Apply: 1. Take your doctor's prescription.\n2. Locate your nearest Jan Aushadhi Kendra using the Jan Aushadhi Sugam App.\n3. Purchase prescribed generic medicines at subsidized rates.\nRequired Documents: Valid doctor's medical prescription (Aadhaar optional for billing discounts).\nKeywords: jan aushadhi, pmbjp, cheap medicines, generic pharmacy, discount medicines, జన్ ఔషధి, చౌక మందులు",
+    "keywords": [
+      "jan aushadhi",
+      "pmbjp",
+      "cheap medicines",
+      "generic pharmacy",
+      "discount medicines",
+      "జన్ ఔషధి",
+      "చౌక మందులు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_matru_vandana_yojana__pmmvy_",
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "telugu_name": "ప్రధాన మంత్రి మాతృ వందన యోజన (PMMVY - గర్భిణుల ఆర్థిక సాయం)",
+    "level": "National",
+    "category": "Maternal & Child Health",
+    "source_url": "https://pmmvy.wcd.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Matru Vandana Yojana (PMMVY) (ప్రధాన మంత్రి మాతృ వందన యోజన (PMMVY - గర్భిణుల ఆర్థిక సాయం))\nLevel: National\nCategory: Maternal & Child Health\nOfficial Website: https://pmmvy.wcd.gov.in/\nEligibility: Pregnant women and lactating mothers aged 19 years or above for first live birth, or second child if girl child (excluding regular government employees).\nBenefits: ₹5,000 in two installments for first child, ₹6,000 in single installment for second girl child directly credited to Aadhaar-linked bank account.\nHow to Apply: 1. Register pregnancy at the local Anganwadi Centre within 150 days of LMP.\n2. Submit Form 1A along with MCP card copy.\n3. Receive installments after mandatory ANC checks and infant vaccinations.\nRequired Documents: Mother & Child Protection (MCP) Card, Aadhaar Card of mother & husband, Bank Passbook.\nKeywords: pmmvy, maternity benefit, pregnant woman cash, delivery aid, dbt, మాతృ వందన",
+    "keywords": [
+      "pmmvy",
+      "maternity benefit",
+      "pregnant woman cash",
+      "delivery aid",
+      "dbt",
+      "మాతృ వందన"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_tb_elimination_programme___ni_kshay_poshan__ntep_",
+    "scheme_name": "National TB Elimination Programme & Ni-kshay Poshan (NTEP)",
+    "telugu_name": "జాతీయ క్షయ నివారణ పథకం & నిక్షయ్ పోషణ్ యోజన (NTEP)",
+    "level": "National",
+    "category": "Infectious Disease & Nutrition",
+    "source_url": "https://nikshay.in/",
+    "rag_text_chunk": "Scheme Name: National TB Elimination Programme & Ni-kshay Poshan (NTEP) (జాతీయ క్షయ నివారణ పథకం & నిక్షయ్ పోషణ్ యోజన (NTEP))\nLevel: National\nCategory: Infectious Disease & Nutrition\nOfficial Website: https://nikshay.in/\nEligibility: Any individual diagnosed with pulmonary or extra-pulmonary Tuberculosis notified on Ni-kshay.\nBenefits: Free sputum tests, CBNAAT/TrueNat molecular testing, complete course of anti-TB drugs, and ₹500/month direct cash assistance for nutrition.\nHow to Apply: 1. Visit nearest PHC or DOTS center with cough symptoms (>2 weeks).\n2. Undergo free sputum/CBNAAT test.\n3. Start free treatment regimen and submit bank details for monthly Ni-kshay nutrition credits.\nRequired Documents: Aadhaar Card and Bank Account details for DBT credit.\nKeywords: tb, tuberculosis, nikshay, nikshay poshan, dot center, free tb medicine, నిక్షయ్, క్షయ",
+    "keywords": [
+      "tb",
+      "tuberculosis",
+      "nikshay",
+      "nikshay poshan",
+      "dot center",
+      "free tb medicine",
+      "నిక్షయ్",
+      "క్షయ"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_tele_mental_health_programme__tele_manas_",
+    "scheme_name": "National Tele-Mental Health Programme (Tele-MANAS)",
+    "telugu_name": "జాతీయ టెలీ-మానసిక ఆరోగ్య కార్యక్రమం (టెలీ-మానస్ - 14416)",
+    "level": "National",
+    "category": "Mental Health & Counseling",
+    "source_url": "https://telemanas.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Tele-Mental Health Programme (Tele-MANAS) (జాతీయ టెలీ-మానసిక ఆరోగ్య కార్యక్రమం (టెలీ-మానస్ - 14416))\nLevel: National\nCategory: Mental Health & Counseling\nOfficial Website: https://telemanas.mohfw.gov.in/\nEligibility: Universal Access — Any individual, student, parent, senior citizen, or caregiver experiencing emotional distress or seeking mental wellness guidance.\nBenefits: Confidential, 24/7 telephonic consultation with certified counselors and clinical psychiatrists, free psychological first-aid, stress management techniques, and hospital referral if required.\nHow to Apply: 1. Dial 14416 from any mobile or landline in India.\n2. Choose your preferred language (Press 1 for Telugu / 2 for English).\n3. Speak immediately with a trained mental health professional.\nRequired Documents: No documents required — 100% anonymous & toll-free dial-in service.\nKeywords: telemanas, mental health, counseling, 14416, depression help, stress relief, psychiatry, టెలీ మానస్, మానసిక ఆరోగ్యం",
+    "keywords": [
+      "telemanas",
+      "mental health",
+      "counseling",
+      "14416",
+      "depression help",
+      "stress relief",
+      "psychiatry",
+      "టెలీ మానస్",
+      "మానసిక ఆరోగ్యం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_programme_for_control_of_blindness___visual_impairment__npcbvi_",
+    "scheme_name": "National Programme for Control of Blindness & Visual Impairment (NPCBVI)",
+    "telugu_name": "జాతీయ అంధత్వ నివారణ కార్యక్రమం (NPCBVI - ఉచిత కంటి వైద్యం)",
+    "level": "National",
+    "category": "Eye Care & Free Cataract Surgery",
+    "source_url": "https://npcbvi.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Programme for Control of Blindness & Visual Impairment (NPCBVI) (జాతీయ అంధత్వ నివారణ కార్యక్రమం (NPCBVI - ఉచిత కంటి వైద్యం))\nLevel: National\nCategory: Eye Care & Free Cataract Surgery\nOfficial Website: https://npcbvi.gov.in/\nEligibility: Citizens aged 50 and above suffering from cataract/visual impairment, and school children with refractive errors.\nBenefits: Free sutureless cataract surgery, free high-grade foldable IOL lens, free post-operative eye drops, black sunglasses, and free corrective spectacles.\nHow to Apply: 1. Attend the nearest government eye screening camp or PHC ophthalmic desk.\n2. Undergo comprehensive vision examination.\n3. Get scheduled for free cataract surgery at government eye hospital with free transport.\nRequired Documents: Aadhaar Card, Senior Citizen ID or Ration Card.\nKeywords: npcbvi, cataract surgery, eye care, free spectacles, blindness control, కంటి వెలుగు, శుక్లాలు",
+    "keywords": [
+      "npcbvi",
+      "cataract surgery",
+      "eye care",
+      "free spectacles",
+      "blindness control",
+      "కంటి వెలుగు",
+      "శుక్లాలు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_assistance_to_disabled_persons_for_purchase_fitting_of_aids__adip_scheme_",
+    "scheme_name": "Assistance to Disabled Persons for Purchase/Fitting of Aids (ADIP Scheme)",
+    "telugu_name": "దివ్యాంగులకు ఉచిత సహాయ ఉపకరణాల పంపిణీ పథకం (ADIP)",
+    "level": "National",
+    "category": "Disability & Assistive Devices",
+    "source_url": "https://adip.disabilityaffairs.gov.in/",
+    "rag_text_chunk": "Scheme Name: Assistance to Disabled Persons for Purchase/Fitting of Aids (ADIP Scheme) (దివ్యాంగులకు ఉచిత సహాయ ఉపకరణాల పంపిణీ పథకం (ADIP))\nLevel: National\nCategory: Disability & Assistive Devices\nOfficial Website: https://adip.disabilityaffairs.gov.in/\nEligibility: Indian citizens with 40% or more disability holding a valid Disability Certificate (UDID / SADAREM) and monthly income below ₹30,000.\nBenefits: 100% free aids for monthly income up to ₹22,500 (Tricycles, wheelchairs, hearing aids, Braille kits, motorized tricycles for severe locomotion).\nHow to Apply: 1. Obtain UDID/SADAREM certificate.\n2. Apply at nearest ALIMCO camp or via the ADIP portal.\n3. Receive fitted assistive equipment at local distribution mega camp.\nRequired Documents: UDID / SADAREM Disability Certificate, Income Certificate, Aadhaar Card, Passport Photo.\nKeywords: adip, wheelchair, tricycle, hearing aid, prosthetics, disability aid, దివ్యాంగులు, సదరం",
+    "keywords": [
+      "adip",
+      "wheelchair",
+      "tricycle",
+      "hearing aid",
+      "prosthetics",
+      "disability aid",
+      "దివ్యాంగులు",
+      "సదరం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_oral_health_programme__nohp___dental_care_",
+    "scheme_name": "National Oral Health Programme (NOHP - Dental Care)",
+    "telugu_name": "జాతీయ దంత ఆరోగ్య కార్యక్రమం (NOHP - ఉచిత దంత చికిత్స)",
+    "level": "National",
+    "category": "Dental & Oral Healthcare",
+    "source_url": "https://nohp.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Oral Health Programme (NOHP - Dental Care) (జాతీయ దంత ఆరోగ్య కార్యక్రమం (NOHP - ఉచిత దంత చికిత్స))\nLevel: National\nCategory: Dental & Oral Healthcare\nOfficial Website: https://nohp.mohfw.gov.in/\nEligibility: All citizens seeking oral, dental, and gum healthcare services.\nBenefits: Free dentist consultations, tooth extraction, cavities filling, root canal therapy, and tobacco-induced oral lesion screening.\nHow to Apply: 1. Visit Dental OPD at your nearest Community Health Centre (CHC) or District Hospital.\n2. Consult government dental surgeon.\n3. Undergo free dental procedure and receive medications.\nRequired Documents: Hospital OPD Slip / Aadhaar Card.\nKeywords: nohp, dental care, teeth clinic, free tooth extraction, dentist, oral health, దంత చికిత్స, పంటి నొప్పి",
+    "keywords": [
+      "nohp",
+      "dental care",
+      "teeth clinic",
+      "free tooth extraction",
+      "dentist",
+      "oral health",
+      "దంత చికిత్స",
+      "పంటి నొప్పి"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_ayush_mission__ayurveda__yoga___naturopathy_",
+    "scheme_name": "National AYUSH Mission (Ayurveda, Yoga & Naturopathy)",
+    "telugu_name": "జాతీయ ఆయుష్ మిషన్ (ఆయుర్వేదం, యునాని, సిద్ధ, హోమియోపతి & యోగా)",
+    "level": "National",
+    "category": "Traditional Medicine & Wellness",
+    "source_url": "https://ayush.gov.in/",
+    "rag_text_chunk": "Scheme Name: National AYUSH Mission (Ayurveda, Yoga & Naturopathy) (జాతీయ ఆయుష్ మిషన్ (ఆయుర్వేదం, యునాని, సిద్ధ, హోమియోపతి & యోగా))\nLevel: National\nCategory: Traditional Medicine & Wellness\nOfficial Website: https://ayush.gov.in/\nEligibility: All citizens interested in traditional and alternative medical systems.\nBenefits: Free consultation with certified AYUSH doctors, free natural herbal medicines, lifestyle wellness advice, and Panchakarma therapies.\nHow to Apply: 1. Visit the local Government AYUSH Dispensary or AYUSH Health & Wellness Centre.\n2. Consult with the Ayurvedic/Homeopathic Medical Officer.\n3. Collect prescribed herbal remedies free of cost.\nRequired Documents: Aadhaar Card / Patient Registration Card.\nKeywords: ayush, ayurveda, homeopathy, unani, yoga, herbal medicine, panchakarma, ఆయుర్వేదం, హోమియోపతి",
+    "keywords": [
+      "ayush",
+      "ayurveda",
+      "homeopathy",
+      "unani",
+      "yoga",
+      "herbal medicine",
+      "panchakarma",
+      "ఆయుర్వేదం",
+      "హోమియోపతి"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_rashtriya_bal_swasthya_karyakram__rbsk___child_health_screening_",
+    "scheme_name": "Rashtriya Bal Swasthya Karyakram (RBSK - Child Health Screening)",
+    "telugu_name": "రాష్ట్రీయ బాల స్వస్థ్య కార్యక్రమం (RBSK - బాలల ఉచిత ఆరోగ్య పరీక్షలు)",
+    "level": "National",
+    "category": "Child & Adolescent Health",
+    "source_url": "https://rbsk.gov.in/",
+    "rag_text_chunk": "Scheme Name: Rashtriya Bal Swasthya Karyakram (RBSK - Child Health Screening) (రాష్ట్రీయ బాల స్వస్థ్య కార్యక్రమం (RBSK - బాలల ఉచిత ఆరోగ్య పరీక్షలు))\nLevel: National\nCategory: Child & Adolescent Health\nOfficial Website: https://rbsk.gov.in/\nEligibility: All children from 0 to 18 years enrolled in Anganwadi centers, government schools, or born in public health facilities.\nBenefits: Free comprehensive screening for 30+ conditions (Cleft Lip, Clubfoot, Congenital Heart Disease, Vision/Hearing defects) and free surgical corrections at DEIC.\nHow to Apply: 1. Mobile Health Teams screen children at Anganwadis and schools.\n2. Identified children receive a referral card to the District Early Intervention Centre (DEIC).\n3. Undergo free specialist consultations, therapy, and surgical interventions.\nRequired Documents: Birth Certificate / School ID / Aadhaar Card.\nKeywords: rbsk, child screening, congenital defects, clubfoot, cleft lip, heart defect children, బాల స్వస్థ్య",
+    "keywords": [
+      "rbsk",
+      "child screening",
+      "congenital defects",
+      "clubfoot",
+      "cleft lip",
+      "heart defect children",
+      "బాల స్వస్థ్య"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_non_communicable_diseases_screening__np_ncd_",
+    "scheme_name": "National Non-Communicable Diseases Screening (NP-NCD)",
+    "telugu_name": "జాతీయ అసంక్రమిత వ్యాధుల నివారణ & నియంత్రణ పథకం (NP-NCD)",
+    "level": "National",
+    "category": "Preventive Health & Chronic Care",
+    "source_url": "https://ncd.nhp.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Non-Communicable Diseases Screening (NP-NCD) (జాతీయ అసంక్రమిత వ్యాధుల నివారణ & నియంత్రణ పథకం (NP-NCD))\nLevel: National\nCategory: Preventive Health & Chronic Care\nOfficial Website: https://ncd.nhp.gov.in/\nEligibility: All citizens aged 30 years and above.\nBenefits: Free blood sugar test, digital BP monitoring, cancer screening, and monthly free supply of anti-hypertensive and anti-diabetic medicines.\nHow to Apply: 1. Visit local Ayushman Arogya Mandir or Village Health Clinic.\n2. ASHA/ANM performs CBAC risk assessment and diagnostic check.\n3. Collect monthly free prescription medications.\nRequired Documents: Aadhaar Card / ABHA ID.\nKeywords: ncd, diabetes, blood pressure, hypertension, free bp medicine, sugar test, మధుమేహం, రక్తపోటు",
+    "keywords": [
+      "ncd",
+      "diabetes",
+      "blood pressure",
+      "hypertension",
+      "free bp medicine",
+      "sugar test",
+      "మధుమేహం",
+      "రక్తపోటు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_programme_for_control_of_blindness__npcbvi___national_",
+    "scheme_name": "National Programme for Control of Blindness (NPCBVI) (National)",
+    "telugu_name": "జాతీయ అంధత్వ నివారణ & దృష్టి నియంత్రణ పథకం (NPCBVI)",
+    "level": "National",
+    "category": "Eye & Vision Care",
+    "source_url": "https://npcbvi.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Programme for Control of Blindness (NPCBVI) (National) (జాతీయ అంధత్వ నివారణ & దృష్టి నియంత్రణ పథకం (NPCBVI))\nLevel: National\nCategory: Eye & Vision Care\nOfficial Website: https://npcbvi.mohfw.gov.in/\nEligibility: All citizens with refractive errors, cataract, or low vision, with priority for senior citizens and schoolchildren.\nBenefits: Free eye examination, sutureless cataract surgery with foldable IOL lens, free antibiotic eye drops, and customized spectacles.\nHow to Apply: 1. Attend Community Eye Screening Camp or visit District Hospital.\n2. Get screened for cataract or refractive error.\n3. Undergo free surgery with provided transport and follow-up care.\nRequired Documents: Aadhaar Card and OPD Registration.\nKeywords: npcbvi, cataract surgery, free spectacles, eye care, kanti velugu, vision, కంటి వెలుగు, కంటిశుక్లం",
+    "keywords": [
+      "npcbvi",
+      "cataract surgery",
+      "free spectacles",
+      "eye care",
+      "kanti velugu",
+      "vision",
+      "కంటి వెలుగు",
+      "కంటిశుక్లం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_tb_mukt_bharat_abhiyaan__ni_kshay_mitra_",
+    "scheme_name": "Pradhan Mantri TB Mukt Bharat Abhiyaan (Ni-kshay Mitra)",
+    "telugu_name": "ప్రధాన మంత్రి టీబీ ముక్త భారత్ అభియాన్ (నిక్షయ్ మిత్ర)",
+    "level": "National",
+    "category": "Infectious Disease & Community Care",
+    "source_url": "https://communitysupport.nikshay.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri TB Mukt Bharat Abhiyaan (Ni-kshay Mitra) (ప్రధాన మంత్రి టీబీ ముక్త భారత్ అభియాన్ (నిక్షయ్ మిత్ర))\nLevel: National\nCategory: Infectious Disease & Community Care\nOfficial Website: https://communitysupport.nikshay.in/\nEligibility: All registered TB patients consenting to receive community nutritional and vocational support.\nBenefits: Monthly food basket containing pulses, millets, vegetable oil, milk powder, and eggs, along with vocational training options.\nHow to Apply: 1. Provide consent during TB notification.\n2. District TB Centre links patient with an active Ni-kshay Mitra donor.\n3. Receive monthly nutrition kits directly at home or via nearest health centre.\nRequired Documents: Ni-kshay ID, Consent Form.\nKeywords: tb mukt bharat, nikshay mitra, nutrition basket, community support, tuberculosis aid",
+    "keywords": [
+      "tb mukt bharat",
+      "nikshay mitra",
+      "nutrition basket",
+      "community support",
+      "tuberculosis aid"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_national_leprosy_eradication_programme__nlep___national_",
+    "scheme_name": "National Leprosy Eradication Programme (NLEP) (National)",
+    "telugu_name": "జాతీయ కుష్టు నివారణ కార్యక్రమం (NLEP - ఉచిత చికిత్స)",
+    "level": "National",
+    "category": "Infectious Disease & Reconstructive Surgery",
+    "source_url": "https://nlep.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Leprosy Eradication Programme (NLEP) (National) (జాతీయ కుష్టు నివారణ కార్యక్రమం (NLEP - ఉచిత చికిత్స))\nLevel: National\nCategory: Infectious Disease & Reconstructive Surgery\nOfficial Website: https://nlep.mohfw.gov.in/\nEligibility: Individuals diagnosed with Paucibacillary (PB) or Multibacillary (MB) Leprosy, or deformities due to leprosy.\nBenefits: Full course of blister-pack MDT drugs free, free corrective surgery at empanelled hospitals with ₹12,000 financial support, free MCR sandals and self-care ulcer kits.\nHow to Apply: 1. Visit PHC or Urban Clinic for skin patch examination.\n2. Receive instant free MDT blister pack course.\n3. If deformity exists, get scheduled for reconstructive surgery with DBT compensation.\nRequired Documents: Aadhaar Card, Hospital Registration Card, Bank Account.\nKeywords: nlep, leprosy, mdt, mcr footwear, reconstructive surgery, కుష్టు నివారణ",
+    "keywords": [
+      "nlep",
+      "leprosy",
+      "mdt",
+      "mcr footwear",
+      "reconstructive surgery",
+      "కుష్టు నివారణ"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_surakshit_matritva_abhiyan__pmsma_",
+    "scheme_name": "Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA)",
+    "telugu_name": "ప్రధానమంత్రి సురక్షిత మాతృత్వ అభియాన్",
+    "level": "National",
+    "category": "Maternal Health",
+    "source_url": "https://pmsma.nhp.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA) (ప్రధానమంత్రి సురక్షిత మాతృత్వ అభియాన్)\nLevel: National\nCategory: Maternal Health\nOfficial Website: https://pmsma.nhp.gov.in/\nEligibility: All pregnant women in India, specifically in their 2nd and 3rd trimesters.\nBenefits: Free medical checkups, blood pressure checks, sugar checks, ultrasounds, and doctor consultations on the 9th of every month.\nHow to Apply: Visit the nearest government hospital, PHC, or health centre on the 9th day of any month to receive free specialist checkups.\nRequired Documents: Pregnancy registration card, ANC card, Identity proof.\nKeywords: PMSMA, pregnancy, maternal, pregnant women, free checkup",
+    "keywords": [
+      "PMSMA",
+      "pregnancy",
+      "maternal",
+      "pregnant women",
+      "free checkup"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_matru_vandana_yojana__pmmvy___national_",
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY) (National)",
+    "telugu_name": "ప్రధాన మంత్రి మాతృ వందన యోజన (PMMVY - గర్భిణుల ఆర్థిక సాయం)",
+    "level": "National",
+    "category": "Maternal & Child Health",
+    "source_url": "https://pmmvy.wcd.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Matru Vandana Yojana (PMMVY) (National) (ప్రధాన మంత్రి మాతృ వందన యోజన (PMMVY - గర్భిణుల ఆర్థిక సాయం))\nLevel: National\nCategory: Maternal & Child Health\nOfficial Website: https://pmmvy.wcd.gov.in/\nEligibility: Pregnant women and lactating mothers aged 19 years or above for first live birth, or second child if girl child (excluding regular government employees).\nBenefits: ₹5,000 in two installments for first child, ₹6,000 in single installment for second girl child directly credited to Aadhaar-linked bank account.\nHow to Apply: 1. Register pregnancy at the local Anganwadi Centre within 150 days of LMP.\n2. Submit Form 1A along with MCP card copy.\n3. Receive installments after mandatory ANC checks and infant vaccinations.\nRequired Documents: Mother & Child Protection (MCP) Card, Aadhaar Card of mother & husband, Bank Passbook.\nKeywords: pmmvy, maternity benefit, pregnant woman cash, delivery aid, dbt, మాతృ వందన",
+    "keywords": [
+      "pmmvy",
+      "maternity benefit",
+      "pregnant woman cash",
+      "delivery aid",
+      "dbt",
+      "మాతృ వందన"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ysr_village_health_clinics",
+    "scheme_name": "YSR Village Health Clinics",
+    "telugu_name": "వైఎస్ఆర్ విలేజ్ హెల్త్ క్లినిక్స్",
+    "level": "Andhra Pradesh",
+    "category": "Primary Care Clinics",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: YSR Village Health Clinics (వైఎస్ఆర్ విలేజ్ హెల్త్ క్లినిక్స్)\nLevel: Andhra Pradesh\nCategory: Primary Care Clinics\nOfficial Website: https://hmfw.ap.gov.in/\nEligibility: All residents of rural villages in Andhra Pradesh needing basic healthcare.\nBenefits: Free consultations, screening for chronic diseases, telemedicine support with expert doctors, and free essential medicines.\nHow to Apply: Walk into your local YSR Village Health Clinic during working hours to consult the MLHP/ANM.\nRequired Documents: Aadhaar card or health card (Aarogyasri card) if available (not mandatory for basic consultation).\nKeywords: YSR Village Clinic, ANM, doctor, health sub centre, village doctor, AP health",
+    "keywords": [
+      "YSR Village Clinic",
+      "ANM",
+      "doctor",
+      "health sub centre",
+      "village doctor",
+      "AP health"
+    ],
+    "updated_at": "2026-09-23T18:07:53.170Z"
+  },
+  {
+    "id": "scheme_ap_organ_donation_programme__jeevandan_",
+    "scheme_name": "AP Organ Donation Programme (Jeevandan)",
+    "telugu_name": "జీవన్‌దాన్ అవయవ దానం పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Organ Donation Services",
+    "source_url": "http://www.jeevandan.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Organ Donation Programme (Jeevandan) (జీవన్‌దాన్ అవయవ దానం పథకం)\nLevel: Andhra Pradesh\nCategory: Organ Donation Services\nOfficial Website: http://www.jeevandan.ap.gov.in/\nEligibility: Any citizen wishing to pledge organs, or patients needing organ transplants in registered AP hospitals.\nBenefits: Enables kidney, liver, heart, and lung transplant matches under ethical guidelines, free registration.\nHow to Apply: Register online at the Jeevandan portal or visit an authorized hospital coordinator.\nRequired Documents: Donor pledge form, organ recipient medical report, identity proof.\nKeywords: Jeevandan, organ donation, kidney transplant, AP organ registry",
+    "keywords": [
+      "Jeevandan",
+      "organ donation",
+      "kidney transplant",
+      "AP organ registry"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_mental_health_programme__nmhp_",
+    "scheme_name": "National Mental Health Programme (NMHP)",
+    "telugu_name": "జాతీయ మానసిక ఆరోగ్య పథకం",
+    "level": "National",
+    "category": "Mental Health Services",
+    "source_url": "https://main.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Mental Health Programme (NMHP) (జాతీయ మానసిక ఆరోగ్య పథకం)\nLevel: National\nCategory: Mental Health Services\nOfficial Website: https://main.mohfw.gov.in/\nEligibility: Any citizen suffering from mental health issues, stress, depression, or psychiatric disorders.\nBenefits: Free psychiatric counseling, diagnosis, therapy, and essential medicines at district level health facilities.\nHow to Apply: Visit the psychiatric or DMHP clinic at your local District Government Hospital.\nRequired Documents: Patient OPD card, identity proof.\nKeywords: Mental Health, NMHP, counseling, psychiatrist, stress support",
+    "keywords": [
+      "Mental Health",
+      "NMHP",
+      "counseling",
+      "psychiatrist",
+      "stress support"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_programme_for_health_care_of_the_elderly__nphce_",
+    "scheme_name": "National Programme for Health Care of the Elderly (NPHCE)",
+    "telugu_name": "జాతీయ వృద్ధుల ఆరోగ్య సంరక్షణ పథకం",
+    "level": "National",
+    "category": "Elderly Care Services",
+    "source_url": "https://main.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Programme for Health Care of the Elderly (NPHCE) (జాతీయ వృద్ధుల ఆరోగ్య సంరక్షణ పథకం)\nLevel: National\nCategory: Elderly Care Services\nOfficial Website: https://main.mohfw.gov.in/\nEligibility: Senior citizens aged 60 years and above.\nBenefits: Dedicated geriatric queues, free screening for age-related illnesses, free physiotherapy, and medication.\nHow to Apply: Visit the dedicated Geriatric Clinic at the local Community Health Centre or District Hospital.\nRequired Documents: Age proof (Aadhaar Card, Senior Citizen Card).\nKeywords: NPHCE, elderly care, senior citizen, free checkup for old people, geriatric clinic",
+    "keywords": [
+      "NPHCE",
+      "elderly care",
+      "senior citizen",
+      "free checkup for old people",
+      "geriatric clinic"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_dr__ysr_aarogyasri",
+    "scheme_name": "Dr. YSR Aarogyasri",
+    "telugu_name": "డా. వైఎస్ఆర్ / ఎన్టీఆర్ ఆరోగ్యశ్రీ పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Universal Health Coverage & Tertiary Care",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Dr. YSR Aarogyasri (డా. వైఎస్ఆర్ / ఎన్టీఆర్ ఆరోగ్యశ్రీ పథకం)\nLevel: Andhra Pradesh\nCategory: Universal Health Coverage & Tertiary Care\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Families residing in Andhra Pradesh holding a valid Rice Card, White Ration Card, or having an annual household income below ₹5,00,000.\nBenefits: Cashless hospitalization, surgical procedures, ICU care, diagnostics, food, and post-discharge medicines for 3,257 treatments up to ₹25 Lakhs.\nHow to Apply: Approach the Aarogyamithra desk at any network hospital or Village/Ward Secretariat. Complete biometric e-KYC to initiate pre-authorization.\nRequired Documents: Rice Card / White Ration Card, Aadhaar Card of all family members, Patient Medical Records / Doctor Prescription.\nKeywords: Aarogyasri, Cashless, Health Card, BPL, ఆరోగ్యశ్రీ, ఉచిత వైద్యం, Arogyasri card, Network Hospital",
+    "keywords": [
+      "Aarogyasri",
+      "Cashless",
+      "Health Card",
+      "BPL",
+      "ఆరోగ్యశ్రీ",
+      "ఉచిత వైద్యం",
+      "Arogyasri card",
+      "Network Hospital"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ysr_aarogya_aasara",
+    "scheme_name": "YSR Aarogya Aasara",
+    "telugu_name": "వైఎస్ఆర్ ఆరోగ్య ఆసరా పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Post-Operative Wage Compensation",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: YSR Aarogya Aasara (వైఎస్ఆర్ ఆరోగ్య ఆసరా పథకం)\nLevel: Andhra Pradesh\nCategory: Post-Operative Wage Compensation\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Patients who underwent surgical procedures covered under Aarogyasri and have an active bank account linked with Aadhaar.\nBenefits: Financial subsistence allowance of ₹225 per day (maximum ₹5,000/month) for the prescribed post-operative rest period.\nHow to Apply: Discharge coordinator collects patient bank account details at hospital discharge. Amount is credited via DBT within 48 hours.\nRequired Documents: Aadhaar Card, Aarogyasri Hospital Discharge Summary, Bank Passbook copy with IFSC code.\nKeywords: Aarogya Aasara, Aasara, wage allowance, ఆరోగ్య ఆసరా, విశ్రాంతి భృతి, post surgery financial aid",
+    "keywords": [
+      "Aarogya Aasara",
+      "Aasara",
+      "wage allowance",
+      "ఆరోగ్య ఆసరా",
+      "విశ్రాంతి భృతి",
+      "post surgery financial aid"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_employee_health_scheme__ehs___ap_",
+    "scheme_name": "Employee Health Scheme (EHS - AP)",
+    "telugu_name": "డా. ఎన్టీఆర్ / వైఎస్ఆర్ ఉద్యోగుల ఆరోగ్య పథకం (EHS)",
+    "level": "Andhra Pradesh",
+    "category": "Cashless Govt Employee & Pensioner Healthcare",
+    "source_url": "https://ehs.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Employee Health Scheme (EHS - AP) (డా. ఎన్టీఆర్ / వైఎస్ఆర్ ఉద్యోగుల ఆరోగ్య పథకం (EHS))\nLevel: Andhra Pradesh\nCategory: Cashless Govt Employee & Pensioner Healthcare\nOfficial Website: https://ehs.ap.gov.in/\nEligibility: Regular state government employees, local body teachers/staff, and service pensioners of Andhra Pradesh along with registered dependents.\nBenefits: 100% cashless medical treatment and diagnostics for listed surgical and medical therapies up to ₹2 Lakhs per episode or unlimited for critical packages.\nHow to Apply: Present digital EHS Health Card at the Aarogyamithra / Network Hospital EHS desk on hospital admission.\nRequired Documents: EHS Health Card / CFMS Employee Code, Aadhaar Card, Government ID Card / Pension Payment Order (PPO).\nKeywords: EHS, Employee Health Scheme, AP Pensioners Health, ఉద్యోగుల ఆరోగ్య పథకం, పెన్షనర్ల వైద్యం, CFMS Health Card",
+    "keywords": [
+      "EHS",
+      "Employee Health Scheme",
+      "AP Pensioners Health",
+      "ఉద్యోగుల ఆరోగ్య పథకం",
+      "పెన్షనర్ల వైద్యం",
+      "CFMS Health Card"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_working_journalists_health_scheme__wjhs___ap_",
+    "scheme_name": "Working Journalists Health Scheme (WJHS - AP)",
+    "telugu_name": "గుర్తింపు పొందిన పాత్రికేయుల ఆరోగ్య పథకం (WJHS)",
+    "level": "Andhra Pradesh",
+    "category": "Cashless Journalist Healthcare",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Working Journalists Health Scheme (WJHS - AP) (గుర్తింపు పొందిన పాత్రికేయుల ఆరోగ్య పథకం (WJHS))\nLevel: Andhra Pradesh\nCategory: Cashless Journalist Healthcare\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Accredited journalists in Andhra Pradesh possessing active accreditation cards from the I&PR Department.\nBenefits: Cashless tertiary healthcare, surgical packages, ICU treatments, and diagnostics up to ₹2 Lakhs per illness episode.\nHow to Apply: Present WJHS card at the Aarogyamithra desk of empanelled network hospitals upon admission.\nRequired Documents: I&PR Journalist Accreditation Card, WJHS Health Card, Aadhaar Card.\nKeywords: WJHS, Working Journalists, Journalist Health Scheme, జర్నలిస్టుల ఆరోగ్య పథకం, జర్నలిస్ట్ కార్డు",
+    "keywords": [
+      "WJHS",
+      "Working Journalists",
+      "Journalist Health Scheme",
+      "జర్నలిస్టుల ఆరోగ్య పథకం",
+      "జర్నలిస్ట్ కార్డు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_104_mobile_medical_units___family_physician_concept",
+    "scheme_name": "104 Mobile Medical Units & Family Physician Concept",
+    "telugu_name": "104 మొబైల్ మెడికల్ యూనిట్లు & ఫ్యామిలీ ఫిజిషియన్ విధానం",
+    "level": "Andhra Pradesh",
+    "category": "Primary Health & Doorstep Clinical Care",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: 104 Mobile Medical Units & Family Physician Concept (104 మొబైల్ మెడికల్ యూనిట్లు & ఫ్యామిలీ ఫిజిషియన్ విధానం)\nLevel: Andhra Pradesh\nCategory: Primary Health & Doorstep Clinical Care\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: All rural and tribal citizens residing in Andhra Pradesh; special focus on elderly, pregnant women, and chronic disease patients.\nBenefits: Free doctor consultations, 14 spot diagnostic lab tests, free monthly medicines for diabetes, hypertension, asthma, and doorstep care for bedridden patients.\nHow to Apply: Visit your YSR Village Health Clinic (గ్రామ సచివాలయం వద్ద విలేజ్ క్లినిక్) on the scheduled 104 visit day.\nRequired Documents: Aadhaar Card, Village Health Record / ABHA Health ID, Previous Prescription (if available).\nKeywords: 104, Family Physician, Mobile Medical Unit, MMU, ఫ్యామిలీ ఫిజిషియన్, 104 వాహనం, గ్రామ వైద్యం, ఉచిత మందులు",
+    "keywords": [
+      "104",
+      "Family Physician",
+      "Mobile Medical Unit",
+      "MMU",
+      "ఫ్యామిలీ ఫిజిషియన్",
+      "104 వాహనం",
+      "గ్రామ వైద్యం",
+      "ఉచిత మందులు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_108_emergency_medical_services",
+    "scheme_name": "108 Emergency Medical Services",
+    "telugu_name": "108 అత్యవసర అంబులెన్స్ వైద్య సేవలు",
+    "level": "Andhra Pradesh",
+    "category": "Emergency & Trauma Transit Healthcare",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: 108 Emergency Medical Services (108 అత్యవసర అంబులెన్స్ వైద్య సేవలు)\nLevel: Andhra Pradesh\nCategory: Emergency & Trauma Transit Healthcare\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: Anyone within the geographical boundary of Andhra Pradesh experiencing a medical emergency, trauma, accident, or labor pain.\nBenefits: 100% free emergency ambulance dispatch, trained Emergency Medical Technician life support, onboard oxygen/ventilator, and prompt hospital transfer.\nHow to Apply: Dial toll-free 108 from any mobile phone or landline. State your exact location and the nature of the patient emergency.\nRequired Documents: No documents required to dial and receive emergency response service.\nKeywords: 108, Ambulance, Emergency, 108 అంబులెన్స్, అత్యవసర సేవ, Trauma, Accident",
+    "keywords": [
+      "108",
+      "Ambulance",
+      "Emergency",
+      "108 అంబులెన్స్",
+      "అత్యవసర సేవ",
+      "Trauma",
+      "Accident"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_matru_vandana_yojana__pmmvy___ap_",
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY - AP)",
+    "telugu_name": "ప్రధాన మంత్రి మాతృ వందన యోజన (PMMVY)",
+    "level": "Andhra Pradesh",
+    "category": "Maternal & Infant Financial Support",
+    "source_url": "https://wcd.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Matru Vandana Yojana (PMMVY - AP) (ప్రధాన మంత్రి మాతృ వందన యోజన (PMMVY))\nLevel: Andhra Pradesh\nCategory: Maternal & Infant Financial Support\nOfficial Website: https://wcd.ap.gov.in/\nEligibility: Pregnant women and lactating mothers (except regular government employees) for their first living child and second girl child.\nBenefits: ₹5,000 direct bank transfer in 2 installments (and ₹6,000 for 2nd girl child) to support nutritious food and clinical checkups.\nHow to Apply: Register at your nearest Anganwadi Centre or Village Secretariat within 150 days of Last Menstrual Period (LMP).\nRequired Documents: Mother & Father Aadhaar Cards, Mother's Aadhaar-linked Bank Passbook, Mother & Child Protection (MCP) Card.\nKeywords: PMMVY, Maternity Benefit, Pregnant Women, మాతృ వందన, గర్భిణుల పథకం, పుష్టికర ఆహారం, DBT",
+    "keywords": [
+      "PMMVY",
+      "Maternity Benefit",
+      "Pregnant Women",
+      "మాతృ వందన",
+      "గర్భిణుల పథకం",
+      "పుష్టికర ఆహారం",
+      "DBT"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_dr__ysr_kanti_velugu",
+    "scheme_name": "Dr. YSR Kanti Velugu",
+    "telugu_name": "డా. వైఎస్ఆర్ కంటి వెలుగు పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Universal Eye Care & Cataract Surgery",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: Dr. YSR Kanti Velugu (డా. వైఎస్ఆర్ కంటి వెలుగు పథకం)\nLevel: Andhra Pradesh\nCategory: Universal Eye Care & Cataract Surgery\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: All residents of Andhra Pradesh, especially senior citizens, school children, and rural poor requiring eye correction or surgery.\nBenefits: Free digital eye examinations, customized prescription eyeglasses delivered to home/school, and 100% free cataract surgeries.\nHow to Apply: Attend the mobile vision camp in your village/ward or visit the Community Health Centre (CHC) Vision Centre.\nRequired Documents: Aadhaar Card, Rice Card (if applying for hospital surgical admission).\nKeywords: Kanti Velugu, Eye Care, Cataract surgery, Free Spectacles, కంటి వెలుగు, కంటి పరీక్షలు, ఉచిత అద్దాలు, కంటి ఆపరేషన్",
+    "keywords": [
+      "Kanti Velugu",
+      "Eye Care",
+      "Cataract surgery",
+      "Free Spectacles",
+      "కంటి వెలుగు",
+      "కంటి పరీక్షలు",
+      "ఉచిత అద్దాలు",
+      "కంటి ఆపరేషన్"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pm_national_dialysis_programme__free_dialysis_ap_",
+    "scheme_name": "PM National Dialysis Programme (Free Dialysis AP)",
+    "telugu_name": "ప్రధాన మంత్రి జాతీయ డయాలసిస్ పథకం (ఉచిత డయాలసిస్ సేవలు)",
+    "level": "Andhra Pradesh",
+    "category": "Chronic Kidney Disease & Renal Care",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: PM National Dialysis Programme (Free Dialysis AP) (ప్రధాన మంత్రి జాతీయ డయాలసిస్ పథకం (ఉచిత డయాలసిస్ సేవలు))\nLevel: Andhra Pradesh\nCategory: Chronic Kidney Disease & Renal Care\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: Patients diagnosed with End-Stage Renal Disease (ESRD) or chronic kidney failure holding an AP Rice Card or White Ration Card.\nBenefits: 100% free bi-weekly or tri-weekly hemodialysis sessions, free consumable dialyzers, blood tests, and erythropoietin injections.\nHow to Apply: Present nephrologist referral at the Dialysis Centre of your nearest Government District or Area Hospital for registry registration.\nRequired Documents: Nephrologist Medical Certificate, Rice Card / Ration Card, Aadhaar Card, Recent Serum Creatinine / Blood Urea Reports.\nKeywords: Dialysis, Kidney, CKD, డయాలసిస్, కిడ్నీ వ్యాధి, ఉచిత డయాలసిస్, Hemodialysis",
+    "keywords": [
+      "Dialysis",
+      "Kidney",
+      "CKD",
+      "డయాలసిస్",
+      "కిడ్నీ వ్యాధి",
+      "ఉచిత డయాలసిస్",
+      "Hemodialysis"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ysr_chronic_kidney_disease__ckd__pension_scheme",
+    "scheme_name": "YSR Chronic Kidney Disease (CKD) Pension Scheme",
+    "telugu_name": "వైఎస్ఆర్ కిడ్నీ రోగుల పెన్షన్ పథకం (రూ. 10,000 / రూ. 5,000)",
+    "level": "Andhra Pradesh",
+    "category": "Chronic Illness Financial Assistance Pension",
+    "source_url": "https://navasakam.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: YSR Chronic Kidney Disease (CKD) Pension Scheme (వైఎస్ఆర్ కిడ్నీ రోగుల పెన్షన్ పథకం (రూ. 10,000 / రూ. 5,000))\nLevel: Andhra Pradesh\nCategory: Chronic Illness Financial Assistance Pension\nOfficial Website: https://navasakam.ap.gov.in/\nEligibility: Residents of Andhra Pradesh undergoing maintenance dialysis (Stage 5 ESRD) or diagnosed with severe chronic kidney disease (Stage 3/4 in designated areas).\nBenefits: Monthly pension of ₹10,000 for dialysis patients and ₹5,000 for Stage 3/4 non-dialysis CKD patients, delivered doorstep by Village Volunteers / Sachivalayam.\nHow to Apply: Apply through your Grama/Ward Sachivalayam Welfare Assistant with hospital dialysis records.\nRequired Documents: Hospital Dialysis Card / Medical Board Certificate, Rice Card, Aadhaar Card, Bank Account Details.\nKeywords: CKD Pension, Kidney Pension, Dialysis Pension, కిడ్నీ పెన్షన్, డయాలసిస్ పెన్షన్, 10000 Pension, Uddanam",
+    "keywords": [
+      "CKD Pension",
+      "Kidney Pension",
+      "Dialysis Pension",
+      "కిడ్నీ పెన్షన్",
+      "డయాలసిస్ పెన్షన్",
+      "10000 Pension",
+      "Uddanam"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_family_doctor_programme",
+    "scheme_name": "AP Family Doctor Programme",
+    "telugu_name": "వైఎస్ఆర్ / ఎన్టీఆర్ ఫ్యామిలీ డాక్టర్ విధానం (గ్రామీణ గడప వద్దకే వైద్యం)",
+    "level": "Andhra Pradesh",
+    "category": "Doorstep Primary Healthcare & NCD Care",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: AP Family Doctor Programme (వైఎస్ఆర్ / ఎన్టీఆర్ ఫ్యామిలీ డాక్టర్ విధానం (గ్రామీణ గడప వద్దకే వైద్యం))\nLevel: Andhra Pradesh\nCategory: Doorstep Primary Healthcare & NCD Care\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: All rural residents, chronically ill patients, elderly individuals, pregnant and lactating mothers in Andhra Pradesh villages.\nBenefits: Free general checkup by qualified MBBS doctor at village level, 14 free point-of-care diagnostics (blood glucose, hemoglobin, urine routine), 67 free essential medications, and doorstep home visits for bedridden patients.\nHow to Apply: Visit your local Village Health Clinic (YSR/NTR Health Clinic) on the designated 104 visit day or inform your ANM/ASHA worker for a home visit if bedridden.\nRequired Documents: Aadhaar Card or Village Clinic Family Health Folder (no formal paper application required).\nKeywords: Family Doctor, Doctor at Doorstep, 104 Mobile Unit, ఫ్యామిలీ డాక్టర్, గడప వద్దకే వైద్యం, PHC doctor village visit, NCD screening",
+    "keywords": [
+      "Family Doctor",
+      "Doctor at Doorstep",
+      "104 Mobile Unit",
+      "ఫ్యామిలీ డాక్టర్",
+      "గడప వద్దకే వైద్యం",
+      "PHC doctor village visit",
+      "NCD screening"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ntr_baby_kit___mukhyamantri_bal_suraksha_kit",
+    "scheme_name": "NTR Baby Kit & Mukhyamantri Bal Suraksha Kit",
+    "telugu_name": "ఎన్టీఆర్ బేబీ కిట్ & నవజాత శిశు సంరక్షణ పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Newborn & Maternal Care",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: NTR Baby Kit & Mukhyamantri Bal Suraksha Kit (ఎన్టీఆర్ బేబీ కిట్ & నవజాత శిశు సంరక్షణ పథకం)\nLevel: Andhra Pradesh\nCategory: Newborn & Maternal Care\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: Every mother who delivers her baby in any Government Hospital, CHC, or Teaching Hospital in Andhra Pradesh.\nBenefits: Free 18-item high quality baby care kit including mosquito-netted baby bed, warm clothing, baby oil, soaps, thermometer, and maternal sanitary supplies, presented at hospital discharge.\nHow to Apply: Kit is gifted automatically by the hospital staff at the time of discharge following normal delivery or caesarean section in the government hospital.\nRequired Documents: Mother and Child Tracking System (MCTS / RCH) ID, Aadhaar Card, Hospital Delivery Registration.\nKeywords: Baby Kit, NTR Baby Kit, Newborn Care Kit, బేబీ కిట్, నవజాత శిశు కిట్, Govt hospital delivery kit",
+    "keywords": [
+      "Baby Kit",
+      "NTR Baby Kit",
+      "Newborn Care Kit",
+      "బేబీ కిట్",
+      "నవజాత శిశు కిట్",
+      "Govt hospital delivery kit"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ysr_sampoorna_poshana",
+    "scheme_name": "YSR Sampoorna Poshana",
+    "telugu_name": "వైఎస్ఆర్ / ఎన్టీఆర్ సంపూర్ణ పోషణ (మహిళలు & శిశువులకు పోషకాహారం)",
+    "level": "Andhra Pradesh",
+    "category": "Maternal & Child Nutrition Support",
+    "source_url": "https://wdcw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: YSR Sampoorna Poshana (వైఎస్ఆర్ / ఎన్టీఆర్ సంపూర్ణ పోషణ (మహిళలు & శిశువులకు పోషకాహారం))\nLevel: Andhra Pradesh\nCategory: Maternal & Child Nutrition Support\nOfficial Website: https://wdcw.ap.gov.in/\nEligibility: All pregnant women, lactating mothers (up to 6 months post-delivery), and children aged 6 months to 6 years residing in Andhra Pradesh.\nBenefits: Daily hot nutritious meal with boiled egg and milk at Anganwadi, monthly take-home ration kits (multigrain flour, iron chikki, dry dates), growth monitoring, and vitamin supplements.\nHow to Apply: Register at the nearest village Anganwadi Centre as soon as pregnancy is confirmed. Collect monthly rations and attend Anganwadi feeding sessions.\nRequired Documents: Aadhaar Card of mother/child and Anganwadi enrolment entry in YSR/NTR Kishori/Poshan tracker.\nKeywords: Sampoorna Poshana, Anganwadi nutrition, Maternal food ration, సంపూర్ణ పోషణ, అంగన్‌వాడీ ఆహారం, Pregnant women eggs milk, Anaemia prevention",
+    "keywords": [
+      "Sampoorna Poshana",
+      "Anganwadi nutrition",
+      "Maternal food ration",
+      "సంపూర్ణ పోషణ",
+      "అంగన్‌వాడీ ఆహారం",
+      "Pregnant women eggs milk",
+      "Anaemia prevention"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ysr_sampoorna_poshana_plus",
+    "scheme_name": "YSR Sampoorna Poshana Plus",
+    "telugu_name": "వైఎస్ఆర్ / ఎన్టీఆర్ సంపూర్ణ పోషణ ప్లస్ (గిరిజన ప్రాంత పోషకాహారం)",
+    "level": "Andhra Pradesh",
+    "category": "Tribal Maternal & Child Nutrition",
+    "source_url": "https://wdcw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: YSR Sampoorna Poshana Plus (వైఎస్ఆర్ / ఎన్టీఆర్ సంపూర్ణ పోషణ ప్లస్ (గిరిజన ప్రాంత పోషకాహారం))\nLevel: Andhra Pradesh\nCategory: Tribal Maternal & Child Nutrition\nOfficial Website: https://wdcw.ap.gov.in/\nEligibility: Pregnant women, nursing mothers, and children under 6 in 77 tribal mandals under ITDAs in Andhra Pradesh.\nBenefits: Higher quantity of fortified milk (daily 200ml for 30 days), 30 eggs a month, enriched ragi malt, iron jaggery chikkis, and complete cooked meals.\nHow to Apply: Enrol at the local tribal habitation Anganwadi centre. Rations are supplied directly or via mobile distribution in remote hamlets.\nRequired Documents: Aadhaar Card, ITDA Tribal Area Residence verification.\nKeywords: Sampoorna Poshana Plus, ITDA Nutrition, Tribal pregnant women, సంపూర్ణ పోషణ ప్లస్, గిరిజన పోషకాహారం, Agency areas food kit",
+    "keywords": [
+      "Sampoorna Poshana Plus",
+      "ITDA Nutrition",
+      "Tribal pregnant women",
+      "సంపూర్ణ పోషణ ప్లస్",
+      "గిరిజన పోషకాహారం",
+      "Agency areas food kit"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_free_knee_and_hip_replacement_scheme",
+    "scheme_name": "AP Free Knee and Hip Replacement Scheme",
+    "telugu_name": "ఆరోగ్యశ్రీ ఉచిత కీళ్ల మార్పిడి (మోకాలు & తుంటి ఆపరేషన్లు)",
+    "level": "Andhra Pradesh",
+    "category": "Orthopaedic Joint Replacement Surgery",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Free Knee and Hip Replacement Scheme (ఆరోగ్యశ్రీ ఉచిత కీళ్ల మార్పిడి (మోకాలు & తుంటి ఆపరేషన్లు))\nLevel: Andhra Pradesh\nCategory: Orthopaedic Joint Replacement Surgery\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: BPL Rice Card holders in AP suffering from Grade IV osteoarthritis, joint destruction, or avascular necrosis of femoral head confirmed by orthopaedic surgeon.\nBenefits: 100% free knee/hip joint replacement surgery with premium certified implants, free hospital stay, medications, and ₹5,000 monthly Aarogya Asara wage compensation during recovery.\nHow to Apply: Consult an orthopaedic specialist at any empanelled network hospital or Government Teaching Hospital. Aarogyamithra initiates cashless pre-authorization.\nRequired Documents: Rice Card / BPL Card, Aadhaar Card, Recent X-Rays / MRI joint reports from empanelled hospital.\nKeywords: Knee Replacement, Hip Replacement, Total Knee Replacement, మోకాలు మార్పిడి, తుంటి మార్పిడి, Aarogyasri joint surgery, Free orthopaedic surgery",
+    "keywords": [
+      "Knee Replacement",
+      "Hip Replacement",
+      "Total Knee Replacement",
+      "మోకాలు మార్పిడి",
+      "తుంటి మార్పిడి",
+      "Aarogyasri joint surgery",
+      "Free orthopaedic surgery"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_free_cancer_chemotherapy___radiation_scheme",
+    "scheme_name": "AP Free Cancer Chemotherapy & Radiation Scheme",
+    "telugu_name": "ఆరోగ్యశ్రీ ఉచిత క్యాన్సర్ చికిత్స, కీమోథెరపీ & రేడియేషన్ పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Oncology & Cancer Treatment",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Free Cancer Chemotherapy & Radiation Scheme (ఆరోగ్యశ్రీ ఉచిత క్యాన్సర్ చికిత్స, కీమోథెరపీ & రేడియేషన్ పథకం)\nLevel: Andhra Pradesh\nCategory: Oncology & Cancer Treatment\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: All BPL / Rice Card holders in Andhra Pradesh diagnosed with any form or stage of cancer.\nBenefits: Unlimited cashless chemotherapy cycles, targeted therapy, immunotherapy, radiation therapy (IMRT/IGRT), surgical tumor removal, follow-up diagnostics, and Aarogya Asara financial wage aid.\nHow to Apply: Visit any empanelled cancer institute or government oncology hospital. Hospital Aarogyamithra completes biometric authentication and initiates pre-authorization.\nRequired Documents: Rice Card / Aarogyasri Card, Aadhaar Card, Histopathology / Biopsy report confirming malignancy.\nKeywords: Cancer Care, Free Chemotherapy, Radiation Therapy, క్యాన్సర్ చికిత్స, కీమోథెరపీ, రేడియేషన్, Aarogyasri oncology",
+    "keywords": [
+      "Cancer Care",
+      "Free Chemotherapy",
+      "Radiation Therapy",
+      "క్యాన్సర్ చికిత్స",
+      "కీమోథెరపీ",
+      "రేడియేషన్",
+      "Aarogyasri oncology"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_tb_mukt_bharat_abhiyan___ni_kshay_mitra__national_",
+    "scheme_name": "Pradhan Mantri TB Mukt Bharat Abhiyan & Ni-kshay Mitra (National)",
+    "telugu_name": "ప్రధాన మంత్రి టీబీ ముక్త భారత్ అభియాన్ & నిక్షయ్ మిత్ర",
+    "level": "National",
+    "category": "TB Nutrition & Community Support",
+    "source_url": "https://nikshay.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri TB Mukt Bharat Abhiyan & Ni-kshay Mitra (National) (ప్రధాన మంత్రి టీబీ ముక్త భారత్ అభియాన్ & నిక్షయ్ మిత్ర)\nLevel: National\nCategory: TB Nutrition & Community Support\nOfficial Website: https://nikshay.in/\nEligibility: All patients diagnosed with active pulmonary or extra-pulmonary Tuberculosis receiving treatment under the National TB Elimination Programme in AP.\nBenefits: Monthly food basket containing 3kg pulses, 1.5kg edible oil, protein powder, and millet flour from Ni-kshay Mitras, plus ₹500/month DBT to bank account.\nHow to Apply: Registered automatically when TB treatment starts at government DOTS center. Patient gives consent on the Ni-kshay portal to receive food baskets.\nRequired Documents: Ni-kshay ID, Aadhaar Card, Bank Account details.\nKeywords: TB Mukt Bharat, Ni-kshay Mitra, TB food basket, టీబీ ముక్త భారత్, నిక్షయ్ మిత్ర, క్షయ వ్యాధి పౌష్టికాహారం, Ni-kshay Poshan",
+    "keywords": [
+      "TB Mukt Bharat",
+      "Ni-kshay Mitra",
+      "TB food basket",
+      "టీబీ ముక్త భారత్",
+      "నిక్షయ్ మిత్ర",
+      "క్షయ వ్యాధి పౌష్టికాహారం",
+      "Ni-kshay Poshan"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_thalassemia_free_blood_transfusion___chelation_scheme",
+    "scheme_name": "AP Thalassemia Free Blood Transfusion & Chelation Scheme",
+    "telugu_name": "తలసేమియా & సికిల్ సెల్ ఉచిత రక్త మార్పిడి & మందుల సహాయ పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Rare Blood Disorders & Chronic Care",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Thalassemia Free Blood Transfusion & Chelation Scheme (తలసేమియా & సికిల్ సెల్ ఉచిత రక్త మార్పిడి & మందుల సహాయ పథకం)\nLevel: Andhra Pradesh\nCategory: Rare Blood Disorders & Chronic Care\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Patients diagnosed with Thalassemia Major, Haemophilia, or Severe Sickle Cell Anaemia holding an Andhra Pradesh Medical Board disability certificate.\nBenefits: Free leuko-depleted blood transfusions, free daily iron chelator tablets, free regular serum ferritin monitoring, and ₹10,000 monthly bank pension.\nHow to Apply: Register at District Hospital Blood Bank and apply for monthly pension through your Ward / Grama Sachivalayam Welfare Assistant.\nRequired Documents: SADAREM Disability Certificate / Medical Board Certificate, Rice Card, Aadhaar Card, Bank Account Passbook.\nKeywords: Thalassemia, Sickle Cell, Blood transfusion, తలసేమియా, సికిల్ సెల్, ఉచిత రక్తం మార్పిడి, Thalassemia pension 10000",
+    "keywords": [
+      "Thalassemia",
+      "Sickle Cell",
+      "Blood transfusion",
+      "తలసేమియా",
+      "సికిల్ సెల్",
+      "ఉచిత రక్తం మార్పిడి",
+      "Thalassemia pension 10000"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_universal_health_insurance_coverage__25_lakh_aarogya_raksha_",
+    "scheme_name": "AP Universal Health Insurance Coverage (25 Lakh Aarogya Raksha)",
+    "telugu_name": "ఆంధ్రప్రదేశ్ ₹25 లక్షల సార్వత్రిక ఆరోగ్య రక్ష పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Universal Comprehensive Health Insurance",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Universal Health Insurance Coverage (25 Lakh Aarogya Raksha) (ఆంధ్రప్రదేశ్ ₹25 లక్షల సార్వత్రిక ఆరోగ్య రక్ష పథకం)\nLevel: Andhra Pradesh\nCategory: Universal Comprehensive Health Insurance\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: All families holding an Andhra Pradesh Rice Card / BPL Card or certified under state universal health eligibility criteria.\nBenefits: Free cashless treatment, surgeries, intensive care (ICU), and medicines up to ₹25,00,000 per family annually across empanelled super-specialty hospitals.\nHow to Apply: Walk into any empanelled public or private network hospital. The hospital Aarogyamithra verifies biometric credentials and registers the case without any advance deposit.\nRequired Documents: Aadhaar Card, Rice Card / Aarogyasri Card.\nKeywords: 25 Lakh Health Insurance, Universal Health Coverage, Aarogya Raksha, ₹25 లక్షల ఉచిత చికిత్స, సార్వత్రిక ఆరోగ్య బీమా, 3257 medical procedures",
+    "keywords": [
+      "25 Lakh Health Insurance",
+      "Universal Health Coverage",
+      "Aarogya Raksha",
+      "₹25 లక్షల ఉచిత చికిత్స",
+      "సార్వత్రిక ఆరోగ్య బీమా",
+      "3257 medical procedures"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_vikalangula_sahaya_sanstha_prosthetic___hearing_aids_scheme",
+    "scheme_name": "AP Vikalangula Sahaya Sanstha Prosthetic & Hearing Aids Scheme",
+    "telugu_name": "దివ్యాంగులకు ఉచిత సహాయ ఉపకరణాలు & వినికిడి యంత్రాల పంపిణీ పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Disability Rehabilitation & Assistive Devices",
+    "source_url": "https://apdascac.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Vikalangula Sahaya Sanstha Prosthetic & Hearing Aids Scheme (దివ్యాంగులకు ఉచిత సహాయ ఉపకరణాలు & వినికిడి యంత్రాల పంపిణీ పథకం)\nLevel: Andhra Pradesh\nCategory: Disability Rehabilitation & Assistive Devices\nOfficial Website: https://apdascac.ap.gov.in/\nEligibility: Persons with certified physical, hearing, or visual disability of 40% or more having a valid SADAREM certificate in Andhra Pradesh.\nBenefits: 100% free motorized tricycles, wheelchairs, digital hearing aids, artificial limbs, braille kits, and walking smart canes.\nHow to Apply: Apply through Grama/Ward Sachivalayam or online on the APDASCAC portal. Devices are distributed at district assessment camps.\nRequired Documents: SADAREM Disability Certificate, Aadhaar Card, Rice Card, Passport size photos.\nKeywords: APDASCAC, Prosthetics, Hearing aids, Battery tricycle, దివ్యాంగుల ఉపకరణాలు, వినికిడి యంత్రం, కృత్రిమ అవయవాలు",
+    "keywords": [
+      "APDASCAC",
+      "Prosthetics",
+      "Hearing aids",
+      "Battery tricycle",
+      "దివ్యాంగుల ఉపకరణాలు",
+      "వినికిడి యంత్రం",
+      "కృత్రిమ అవయవాలు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_tribal_bike_ambulance___feeder_ambulance_service",
+    "scheme_name": "AP Tribal Bike Ambulance & Feeder Ambulance Service",
+    "telugu_name": "గిరిజన ప్రాంత అత్యవసర బైక్ అంబులెన్స్ & ఫీడర్ సేవలు",
+    "level": "Andhra Pradesh",
+    "category": "Remote & Agency Emergency Transport",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: AP Tribal Bike Ambulance & Feeder Ambulance Service (గిరిజన ప్రాంత అత్యవసర బైక్ అంబులెన్స్ & ఫీడర్ సేవలు)\nLevel: Andhra Pradesh\nCategory: Remote & Agency Emergency Transport\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: All residents living in remote, hilly, and inaccessible tribal hamlets in Andhra Pradesh requiring urgent hospital transport.\nBenefits: Free rapid emergency transport from doorstep over forest paths to the main highway feeder point, where a 108 Advanced Life Support ambulance takes over.\nHow to Apply: Dial 108 toll-free. The central dispatch coordinates with the local agency bike ambulance rider based on GPS tracking.\nRequired Documents: No documents needed during emergency.\nKeywords: Bike Ambulance, Tribal ambulance, Feeder ambulance, బైక్ అంబులెన్స్, గిరిజన అత్యవసర వాహనం, 108 feeder service, Agency emergency transport",
+    "keywords": [
+      "Bike Ambulance",
+      "Tribal ambulance",
+      "Feeder ambulance",
+      "బైక్ అంబులెన్స్",
+      "గిరిజన అత్యవసర వాహనం",
+      "108 feeder service",
+      "Agency emergency transport"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_chief_minister_relief_fund__cmrf__medical_aid",
+    "scheme_name": "AP Chief Minister Relief Fund (CMRF) Medical Aid",
+    "telugu_name": "ముఖ్యమంత్రి సహాయ నిధి (CMRF) అత్యవసర వైద్య ఆర్థిక సాయం",
+    "level": "Andhra Pradesh",
+    "category": "Emergency Discretionary Medical Assistance",
+    "source_url": "https://cmrf.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Chief Minister Relief Fund (CMRF) Medical Aid (ముఖ్యమంత్రి సహాయ నిధి (CMRF) అత్యవసర వైద్య ఆర్థిక సాయం)\nLevel: Andhra Pradesh\nCategory: Emergency Discretionary Medical Assistance\nOfficial Website: https://cmrf.ap.gov.in/\nEligibility: BPL and low-income residents of Andhra Pradesh who incurred major medical expenses for severe illnesses not covered or exceeding Aarogyasri limits.\nBenefits: Direct financial aid cheque / bank credit ranging from ₹50,000 up to ₹3,00,000+ depending on medical board evaluation.\nHow to Apply: Submit original bills and hospital discharge summary to the local MLA office or District Collectorate Spandana / CMRF section.\nRequired Documents: Original Hospital Medical Bills, Discharge Summary, Aadhaar Card, Rice Card, Bank Passbook, MLA Recommendation Letter.\nKeywords: CMRF, Chief Minister Relief Fund, CM medical aid, ముఖ్యమంత్రి సహాయ నిధి, వైద్య ఖర్చుల సాయం, Emergency financial grant",
+    "keywords": [
+      "CMRF",
+      "Chief Minister Relief Fund",
+      "CM medical aid",
+      "ముఖ్యమంత్రి సహాయ నిధి",
+      "వైద్య ఖర్చుల సాయం",
+      "Emergency financial grant"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_free_ultrasound__tiffa_scan___maternal_diagnostics",
+    "scheme_name": "AP Free Ultrasound, TIFFA Scan & Maternal Diagnostics",
+    "telugu_name": "గర్భిణులకు ఉచిత అల్ట్రాసౌండ్ & టిఫా (TIFFA) స్కానింగ్ పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Advanced Maternal Diagnostics",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: AP Free Ultrasound, TIFFA Scan & Maternal Diagnostics (గర్భిణులకు ఉచిత అల్ట్రాసౌండ్ & టిఫా (TIFFA) స్కానింగ్ పథకం)\nLevel: Andhra Pradesh\nCategory: Advanced Maternal Diagnostics\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: Every pregnant woman in Andhra Pradesh registered in the Reproductive and Child Health (RCH) system.\nBenefits: Free anomaly ultrasound (TIFFA scan), early pregnancy dating scan, 3rd trimester growth doppler, and complete antenatal lab profile.\nHow to Apply: Obtain an ultrasound referral slip from your PHC Medical Officer or Gynecologist. Present the voucher at empanelled scan centres for cashless scan.\nRequired Documents: RCH Mother ID, Aadhaar Card, Doctor Referral Voucher from PHC / Government Hospital.\nKeywords: TIFFA Scan, Ultrasound pregnant, Fetal anomaly scan, టిఫా స్కానింగ్, గర్భిణుల అల్ట్రాసౌండ్, Free pregnancy scan, Maternal diagnostics",
+    "keywords": [
+      "TIFFA Scan",
+      "Ultrasound pregnant",
+      "Fetal anomaly scan",
+      "టిఫా స్కానింగ్",
+      "గర్భిణుల అల్ట్రాసౌండ్",
+      "Free pregnancy scan",
+      "Maternal diagnostics"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_mukhyamantri_e_eye_care__tele_ophthalmology_services_",
+    "scheme_name": "AP Mukhyamantri e-Eye Care (Tele-Ophthalmology Services)",
+    "telugu_name": "వైఎస్ఆర్ / ఎన్టీఆర్ ముఖ్యమంత్రి ఇ-నేత్ర రక్షణ (టెలి-ఆప్తాల్మాలజీ)",
+    "level": "Andhra Pradesh",
+    "category": "Vision Care & Digital Eye Clinics",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: AP Mukhyamantri e-Eye Care (Tele-Ophthalmology Services) (వైఎస్ఆర్ / ఎన్టీఆర్ ముఖ్యమంత్రి ఇ-నేత్ర రక్షణ (టెలి-ఆప్తాల్మాలజీ))\nLevel: Andhra Pradesh\nCategory: Vision Care & Digital Eye Clinics\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: All citizens of Andhra Pradesh suffering from defective vision, refractive errors, cataract, or diabetic eye complications.\nBenefits: Free computerized eye checkup, digital fundus imaging, free high quality prescription eyeglasses delivered to home, and free surgical referral for cataract.\nHow to Apply: Visit the Tele-Ophthalmology Vision Centre at the nearest Community Health Centre (CHC). Eyeglasses are delivered via post/Sachivalayam.\nRequired Documents: Aadhaar Card, Mobile Number.\nKeywords: e-Eye Care, Tele-Ophthalmology, Free spectacles, ఇ-నేత్ర రక్షణ, కంటి అద్దాలు ఉచితం, Vision Centre AP, Diabetic retinopathy screening",
+    "keywords": [
+      "e-Eye Care",
+      "Tele-Ophthalmology",
+      "Free spectacles",
+      "ఇ-నేత్ర రక్షణ",
+      "కంటి అద్దాలు ఉచితం",
+      "Vision Centre AP",
+      "Diabetic retinopathy screening"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_mobile_medical_teams_for_schools___hostels",
+    "scheme_name": "AP Mobile Medical Teams for Schools & Hostels",
+    "telugu_name": "పాఠశాలలు & సంక్షేమ వసతి గృహాల మొబైల్ ఆరోగ్య బృందాలు (RBSK మొబైల్ యూనిట్లు)",
+    "level": "Andhra Pradesh",
+    "category": "Child & Student Health Screening",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: AP Mobile Medical Teams for Schools & Hostels (పాఠశాలలు & సంక్షేమ వసతి గృహాల మొబైల్ ఆరోగ్య బృందాలు (RBSK మొబైల్ యూనిట్లు))\nLevel: Andhra Pradesh\nCategory: Child & Student Health Screening\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: All infants and children aged 0 to 18 years enrolled in Anganwadis, government schools, and welfare hostels in AP.\nBenefits: Free comprehensive screening for 32 health conditions, free corrective surgeries (congenital heart holes, cleft palate, club foot), free spectacles, and nutritional supplements.\nHow to Apply: Screening is conducted on-campus during scheduled visits by the RBSK mobile health team. Parents are informed and assisted for higher treatment.\nRequired Documents: Student ID or Anganwadi record.\nKeywords: Hostel health checkup, School medical screening, RBSK mobile unit, పాఠశాల ఆరోగ్య పరీక్షలు, వసతి గృహాల విద్యార్థుల ఆరోగ్యం, Congenital heart disease screening",
+    "keywords": [
+      "Hostel health checkup",
+      "School medical screening",
+      "RBSK mobile unit",
+      "పాఠశాల ఆరోగ్య పరీక్షలు",
+      "వసతి గృహాల విద్యార్థుల ఆరోగ్యం",
+      "Congenital heart disease screening"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_free_dialysis_home_delivery_peritoneal_dialysis__capd_",
+    "scheme_name": "AP Free Dialysis Home Delivery Peritoneal Dialysis (CAPD)",
+    "telugu_name": "కిడ్నీ బాధితులకు ఉచిత నిరంతర పెరిటోనియల్ డయాలసిస్ (CAPD) గృహ పంపిణీ",
+    "level": "Andhra Pradesh",
+    "category": "Nephrology & Renal Failure Care",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Free Dialysis Home Delivery Peritoneal Dialysis (CAPD) (కిడ్నీ బాధితులకు ఉచిత నిరంతర పెరిటోనియల్ డయాలసిస్ (CAPD) గృహ పంపిణీ)\nLevel: Andhra Pradesh\nCategory: Nephrology & Renal Failure Care\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Chronic Kidney Disease (CKD Stage 5) patients certified by an empanelled nephrologist in Andhra Pradesh who opt for home peritoneal dialysis.\nBenefits: Free monthly home delivery of 120 sterile CAPD fluid bags (worth ₹25,000/month), free minicaps/transfer sets, plus ₹10,000 monthly financial pension.\nHow to Apply: Catheter is placed at an empanelled nephrology center under Aarogyasri. The trust coordinates automated monthly doorstep logistics.\nRequired Documents: Rice Card, Aadhaar Card, Nephrologist CAPD Recommendation, SADAREM / Dialysis Card.\nKeywords: CAPD, Peritoneal Dialysis, Home dialysis, పెరిటోనియల్ డయాలసిస్, కిడ్నీ రోగుల ఇంటికే డయాలసిస్, Free dialysis fluid, Uddanam kidney care",
+    "keywords": [
+      "CAPD",
+      "Peritoneal Dialysis",
+      "Home dialysis",
+      "పెరిటోనియల్ డయాలసిస్",
+      "కిడ్నీ రోగుల ఇంటికే డయాలసిస్",
+      "Free dialysis fluid",
+      "Uddanam kidney care"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_dr__ntr_vaidya_seva__aarogyasri_health_scheme_",
+    "scheme_name": "Dr. NTR Vaidya Seva (Aarogyasri Health Scheme)",
+    "telugu_name": "డా. ఎన్టీఆర్ వైద్యసేవ (ఆరోగ్యశ్రీ పథకం)",
+    "level": "Andhra Pradesh",
+    "category": "Tertiary Hospital Healthcare",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Dr. NTR Vaidya Seva (Aarogyasri Health Scheme) (డా. ఎన్టీఆర్ వైద్యసేవ (ఆరోగ్యశ్రీ పథకం))\nLevel: Andhra Pradesh\nCategory: Tertiary Hospital Healthcare\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: BPL families residing in Andhra Pradesh holding an active Rice Card, Aarogyasri Card, or annual family income below ₹5 Lakhs. Covers all family members registered on the card.\nBenefits: 100% cashless hospitalization, surgical interventions, medicines, diagnostics, food, and post-discharge medications up to ₹25 Lakhs per year. Includes 3,257 medical procedures.\nHow to Apply: 1. Approach the Aarogya Mithra kiosk at any network hospital.\n2. Present your Aadhaar and Rice Card for biometric e-KYC.\n3. The medical team generates a pre-authorization within hours.\n4. Receive complete cashless treatment and follow-up care.\nRequired Documents: Original Aadhaar Card and AP Rice Card / White Ration Card / Aarogyasri Health Card.\nKeywords: aarogyasri, ntr vaidya seva, cashless treatment, 25 lakhs, hospitalization, ఆరోగ్యశ్రీ",
+    "keywords": [
+      "aarogyasri",
+      "ntr vaidya seva",
+      "cashless treatment",
+      "25 lakhs",
+      "hospitalization",
+      "ఆరోగ్యశ్రీ"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_dr__ysr_aarogya_asara__post_operative_financial_allowance___andhra_pradesh_",
+    "scheme_name": "Dr. YSR Aarogya Asara (Post-Operative Financial Allowance) (Andhra Pradesh)",
+    "telugu_name": "డా. వైఎస్సార్ ఆరోగ్య ఆసరా (విశ్రాంతి వేతన పథకం)",
+    "level": "Andhra Pradesh",
+    "category": "Post-Operative Financial Assistance",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: Dr. YSR Aarogya Asara (Post-Operative Financial Allowance) (Andhra Pradesh) (డా. వైఎస్సార్ ఆరోగ్య ఆసరా (విశ్రాంతి వేతన పథకం))\nLevel: Andhra Pradesh\nCategory: Post-Operative Financial Assistance\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Patients who underwent surgical treatment under Aarogyasri scheme in empanelled hospitals for prescribed surgical procedures requiring rest.\nBenefits: ₹225 per day up to ₹5,000 per month credited directly to the beneficiary's Aadhaar-linked bank account within 48 hours of hospital discharge.\nHow to Apply: 1. Complete eligible surgery under Aarogyasri.\n2. Aarogya Mithra captures bank details during discharge.\n3. Allowance credited via DBT directly to patient's account.\nRequired Documents: Aadhaar Card, Aarogyasri Card, Discharge Summary with resting period, and Active Bank Passbook copy.\nKeywords: aarogya asara, post-operative allowance, wage compensation, ఆసరా, విశ్రాంతి వేతనం",
+    "keywords": [
+      "aarogya asara",
+      "post-operative allowance",
+      "wage compensation",
+      "ఆసరా",
+      "విశ్రాంతి వేతనం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ysr_pension_kanuka___chronic_illness_healthcare_pension",
+    "scheme_name": "YSR Pension Kanuka - Chronic Illness Healthcare Pension",
+    "telugu_name": "వైఎస్సార్ పెన్షన్ కానుక - దీర్ఘకాలిక వ్యాధుల పెన్షన్",
+    "level": "Andhra Pradesh",
+    "category": "Chronic Disease Monthly Financial Pension",
+    "source_url": "https://sspensions.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: YSR Pension Kanuka - Chronic Illness Healthcare Pension (వైఎస్సార్ పెన్షన్ కానుక - దీర్ఘకాలిక వ్యాధుల పెన్షన్)\nLevel: Andhra Pradesh\nCategory: Chronic Disease Monthly Financial Pension\nOfficial Website: https://sspensions.ap.gov.in/\nEligibility: Residents of Andhra Pradesh verified with chronic kidney disease on regular dialysis, or diagnosed with Thalassemia, Hemophilia, Severe Paralysis, or Muscular Dystrophy with clinical certificate.\nBenefits: Dialysis patients receive ₹10,000 every month; Thalassemia, Hemophilia, and Severe Paralysis patients receive ₹5,000 every month delivered at doorstep.\nHow to Apply: 1. Submit application at Grama / Ward Sachivalayam with medical certificate.\n2. Medical Officer verifies the clinical case records.\n3. Monthly pension delivered to your doorstep on the 1st of every month.\nRequired Documents: Aadhaar Card, Rice Card, Medical Board Certificate / Dialysis Case Sheet, Bank Details, and Passport size photo.\nKeywords: pension kanuka, dialysis pension, thalassemia pension, chronic disease pension, పెన్షన్ కానుక, డయాలసిస్ పెన్షన్",
+    "keywords": [
+      "pension kanuka",
+      "dialysis pension",
+      "thalassemia pension",
+      "chronic disease pension",
+      "పెన్షన్ కానుక",
+      "డయాలసిస్ పెన్షన్"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_104_mobile_medical_units___village_clinics__doctor_ysr_sanchara_chikitsha_",
+    "scheme_name": "104 Mobile Medical Units & Village Clinics (Doctor YSR Sanchara Chikitsha)",
+    "telugu_name": "104 మొబైల్ మెడికల్ యూనిట్స్ & వైఎస్సార్ విలేజ్ క్లినిక్స్",
+    "level": "Andhra Pradesh",
+    "category": "Rural Primary Healthcare & Diagnostic Screening",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: 104 Mobile Medical Units & Village Clinics (Doctor YSR Sanchara Chikitsha) (104 మొబైల్ మెడికల్ యూనిట్స్ & వైఎస్సార్ విలేజ్ క్లినిక్స్)\nLevel: Andhra Pradesh\nCategory: Rural Primary Healthcare & Diagnostic Screening\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: All residents in rural and tribal villages of Andhra Pradesh. No ration card restrictions; accessible to everyone in the village.\nBenefits: Free general consultation with MBBS doctor, antenatal checkups, screening for diabetes, hypertension, cancer, 20 rapid lab diagnostics, and 67 essential free medicines.\nHow to Apply: 1. Visit the 104 mobile vehicle on scheduled village visit day or walk into Village Clinic.\n2. Get vitals, BP, and blood sugar tested free of charge.\n3. Consult the medical officer and collect free prescribed medicines.\nRequired Documents: Aadhaar Card or Mobile Number for electronic health record generation.\nKeywords: 104 mobile clinic, village clinic, free medicines, bp sugar tests, 104 వాహనం, విలేజ్ క్లినిక్",
+    "keywords": [
+      "104 mobile clinic",
+      "village clinic",
+      "free medicines",
+      "bp sugar tests",
+      "104 వాహనం",
+      "విలేజ్ క్లినిక్"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_108_emergency_ambulance_medical_service",
+    "scheme_name": "108 Emergency Ambulance Medical Service",
+    "telugu_name": "108 అత్యవసర అంబులెన్స్ సేవలు",
+    "level": "Andhra Pradesh",
+    "category": "Emergency Medical Transport & Pre-Hospital Care",
+    "source_url": "https://cfw.ap.nic.in/",
+    "rag_text_chunk": "Scheme Name: 108 Emergency Ambulance Medical Service (108 అత్యవసర అంబులెన్స్ సేవలు)\nLevel: Andhra Pradesh\nCategory: Emergency Medical Transport & Pre-Hospital Care\nOfficial Website: https://cfw.ap.nic.in/\nEligibility: Anyone within the territory of Andhra Pradesh in need of critical medical attention, road accident transport, cardiac emergency, or pregnancy labor.\nBenefits: 24x7 toll-free dispatch, on-site paramedic stabilization, Advanced Life Support ventilation, and rapid transit to the nearest hospital at zero charge.\nHow to Apply: 1. Immediately dial 108 from any mobile or landline without prefix.\n2. State your location, nearest landmark, and the patient's medical condition.\n3. The nearest GPS-tracked ambulance arrives within 15 minutes.\nRequired Documents: No documents required to summon or board an emergency ambulance.\nKeywords: 108 ambulance, emergency ambulance, als ambulance, trauma transport, 108 అంబులెన్స్, అత్యవసర వాహనం",
+    "keywords": [
+      "108 ambulance",
+      "emergency ambulance",
+      "als ambulance",
+      "trauma transport",
+      "108 అంబులెన్స్",
+      "అత్యవసర వాహనం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ayushman_bharat___pmjay__national_health_protection_mission___national_",
+    "scheme_name": "Ayushman Bharat - PMJAY (National Health Protection Mission) (National)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన ఆరోగ్య యోజన (PM-JAY)",
+    "level": "National",
+    "category": "Tertiary Hospital Healthcare",
+    "source_url": "https://pmjay.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat - PMJAY (National Health Protection Mission) (National) (ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన ఆరోగ్య యోజన (PM-JAY))\nLevel: National\nCategory: Tertiary Hospital Healthcare\nOfficial Website: https://pmjay.gov.in/\nEligibility: Families identified under SECC 2011 rural and urban deprivation criteria, active Ration Card holders, and low-income citizens registered on the PM-JAY portal.\nBenefits: Cashless in-patient care up to ₹5 Lakhs per annum covering 1,949 medical and surgical procedures including oncology, cardiology, neurosurgery, and intensive care.\nHow to Apply: 1. Verify your name at mera.pmjay.gov.in or visit the nearest Ayushman Kendra.\n2. Complete biometric e-KYC to get your Ayushman Golden Card.\n3. Show the card at any empanelled hospital for instant cashless admission.\nRequired Documents: Aadhaar Card, Ration Card, PM-JAY Golden Card / Ayushman Card or Family ID.\nKeywords: ayushman bharat, pmjay, 5 lakh insurance, cashless hospitalization, golden card, nha, ఆయుష్మాన్ భారత్",
+    "keywords": [
+      "ayushman bharat",
+      "pmjay",
+      "5 lakh insurance",
+      "cashless hospitalization",
+      "golden card",
+      "nha",
+      "ఆయుష్మాన్ భారత్"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_tb_elimination_programme___ni_kshay_poshan__ntep___national_",
+    "scheme_name": "National TB Elimination Programme & Ni-kshay Poshan (NTEP) (National)",
+    "telugu_name": "జాతీయ క్షయ నివారణ పథకం & నిక్షయ్ పోషణ్ యోజన (NTEP)",
+    "level": "National",
+    "category": "Infectious Disease & Nutrition",
+    "source_url": "https://nikshay.in/",
+    "rag_text_chunk": "Scheme Name: National TB Elimination Programme & Ni-kshay Poshan (NTEP) (National) (జాతీయ క్షయ నివారణ పథకం & నిక్షయ్ పోషణ్ యోజన (NTEP))\nLevel: National\nCategory: Infectious Disease & Nutrition\nOfficial Website: https://nikshay.in/\nEligibility: Any individual diagnosed with pulmonary or extra-pulmonary Tuberculosis notified on Ni-kshay.\nBenefits: Free sputum tests, CBNAAT/TrueNat molecular testing, complete course of anti-TB drugs, and ₹500/month direct cash assistance for nutrition.\nHow to Apply: 1. Visit nearest PHC or DOTS center with cough symptoms (>2 weeks).\n2. Undergo free sputum/CBNAAT test.\n3. Start free treatment regimen and submit bank details for monthly Ni-kshay nutrition credits.\nRequired Documents: Aadhaar Card and Bank Account details for DBT credit.\nKeywords: tb, tuberculosis, nikshay, nikshay poshan, dot center, free tb medicine, నిక్షయ్, క్షయ",
+    "keywords": [
+      "tb",
+      "tuberculosis",
+      "nikshay",
+      "nikshay poshan",
+      "dot center",
+      "free tb medicine",
+      "నిక్షయ్",
+      "క్షయ"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_tele_mental_health_programme__tele_manas___national_",
+    "scheme_name": "National Tele-Mental Health Programme (Tele-MANAS) (National)",
+    "telugu_name": "జాతీయ టెలీ-మానసిక ఆరోగ్య కార్యక్రమం (టెలీ-మానస్ - 14416)",
+    "level": "National",
+    "category": "Mental Health & Counseling",
+    "source_url": "https://telemanas.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Tele-Mental Health Programme (Tele-MANAS) (National) (జాతీయ టెలీ-మానసిక ఆరోగ్య కార్యక్రమం (టెలీ-మానస్ - 14416))\nLevel: National\nCategory: Mental Health & Counseling\nOfficial Website: https://telemanas.mohfw.gov.in/\nEligibility: Universal Access — Any individual, student, parent, senior citizen, or caregiver experiencing emotional distress or seeking mental wellness guidance.\nBenefits: Confidential, 24/7 telephonic consultation with certified counselors and clinical psychiatrists, free psychological first-aid, stress management techniques, and hospital referral if required.\nHow to Apply: 1. Dial 14416 from any mobile or landline in India.\n2. Choose your preferred language (Press 1 for Telugu / 2 for English).\n3. Speak immediately with a trained mental health professional.\nRequired Documents: No documents required — 100% anonymous & toll-free dial-in service.\nKeywords: telemanas, mental health, counseling, 14416, depression help, stress relief, psychiatry, టెలీ మానస్, మానసిక ఆరోగ్యం",
+    "keywords": [
+      "telemanas",
+      "mental health",
+      "counseling",
+      "14416",
+      "depression help",
+      "stress relief",
+      "psychiatry",
+      "టెలీ మానస్",
+      "మానసిక ఆరోగ్యం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_programme_for_control_of_blindness___visual_impairment__npcbvi___nation",
+    "scheme_name": "National Programme for Control of Blindness & Visual Impairment (NPCBVI) (National)",
+    "telugu_name": "జాతీయ అంధత్వ నివారణ కార్యక్రమం (NPCBVI - ఉచిత కంటి వైద్యం)",
+    "level": "National",
+    "category": "Eye Care & Free Cataract Surgery",
+    "source_url": "https://npcbvi.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Programme for Control of Blindness & Visual Impairment (NPCBVI) (National) (జాతీయ అంధత్వ నివారణ కార్యక్రమం (NPCBVI - ఉచిత కంటి వైద్యం))\nLevel: National\nCategory: Eye Care & Free Cataract Surgery\nOfficial Website: https://npcbvi.gov.in/\nEligibility: Citizens aged 50 and above suffering from cataract/visual impairment, and school children with refractive errors.\nBenefits: Free sutureless cataract surgery, free high-grade foldable IOL lens, free post-operative eye drops, black sunglasses, and free corrective spectacles.\nHow to Apply: 1. Attend the nearest government eye screening camp or PHC ophthalmic desk.\n2. Undergo comprehensive vision examination.\n3. Get scheduled for free cataract surgery at government eye hospital with free transport.\nRequired Documents: Aadhaar Card, Senior Citizen ID or Ration Card.\nKeywords: npcbvi, cataract surgery, eye care, free spectacles, blindness control, కంటి వెలుగు, శుక్లాలు",
+    "keywords": [
+      "npcbvi",
+      "cataract surgery",
+      "eye care",
+      "free spectacles",
+      "blindness control",
+      "కంటి వెలుగు",
+      "శుక్లాలు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_assistance_to_disabled_persons_for_purchase_fitting_of_aids__adip_scheme___natio",
+    "scheme_name": "Assistance to Disabled Persons for Purchase/Fitting of Aids (ADIP Scheme) (National)",
+    "telugu_name": "దివ్యాంగులకు ఉచిత సహాయ ఉపకరణాల పంపిణీ పథకం (ADIP)",
+    "level": "National",
+    "category": "Disability & Assistive Devices",
+    "source_url": "https://adip.disabilityaffairs.gov.in/",
+    "rag_text_chunk": "Scheme Name: Assistance to Disabled Persons for Purchase/Fitting of Aids (ADIP Scheme) (National) (దివ్యాంగులకు ఉచిత సహాయ ఉపకరణాల పంపిణీ పథకం (ADIP))\nLevel: National\nCategory: Disability & Assistive Devices\nOfficial Website: https://adip.disabilityaffairs.gov.in/\nEligibility: Indian citizens with 40% or more disability holding a valid Disability Certificate (UDID / SADAREM) and monthly income below ₹30,000.\nBenefits: 100% free aids for monthly income up to ₹22,500 (Tricycles, wheelchairs, hearing aids, Braille kits, motorized tricycles for severe locomotion).\nHow to Apply: 1. Obtain UDID/SADAREM certificate.\n2. Apply at nearest ALIMCO camp or via the ADIP portal.\n3. Receive fitted assistive equipment at local distribution mega camp.\nRequired Documents: UDID / SADAREM Disability Certificate, Income Certificate, Aadhaar Card, Passport Photo.\nKeywords: adip, wheelchair, tricycle, hearing aid, prosthetics, disability aid, దివ్యాంగులు, సదరం",
+    "keywords": [
+      "adip",
+      "wheelchair",
+      "tricycle",
+      "hearing aid",
+      "prosthetics",
+      "disability aid",
+      "దివ్యాంగులు",
+      "సదరం"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_oral_health_programme__nohp___dental_care___national_",
+    "scheme_name": "National Oral Health Programme (NOHP - Dental Care) (National)",
+    "telugu_name": "జాతీయ దంత ఆరోగ్య కార్యక్రమం (NOHP - ఉచిత దంత చికిత్స)",
+    "level": "National",
+    "category": "Dental & Oral Healthcare",
+    "source_url": "https://nohp.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Oral Health Programme (NOHP - Dental Care) (National) (జాతీయ దంత ఆరోగ్య కార్యక్రమం (NOHP - ఉచిత దంత చికిత్స))\nLevel: National\nCategory: Dental & Oral Healthcare\nOfficial Website: https://nohp.mohfw.gov.in/\nEligibility: All citizens seeking oral, dental, and gum healthcare services.\nBenefits: Free dentist consultations, tooth extraction, cavities filling, root canal therapy, and tobacco-induced oral lesion screening.\nHow to Apply: 1. Visit Dental OPD at your nearest Community Health Centre (CHC) or District Hospital.\n2. Consult government dental surgeon.\n3. Undergo free dental procedure and receive medications.\nRequired Documents: Hospital OPD Slip / Aadhaar Card.\nKeywords: nohp, dental care, teeth clinic, free tooth extraction, dentist, oral health, దంత చికిత్స, పంటి నొప్పి",
+    "keywords": [
+      "nohp",
+      "dental care",
+      "teeth clinic",
+      "free tooth extraction",
+      "dentist",
+      "oral health",
+      "దంత చికిత్స",
+      "పంటి నొప్పి"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_ayush_mission__ayurveda__yoga___naturopathy___national_",
+    "scheme_name": "National AYUSH Mission (Ayurveda, Yoga & Naturopathy) (National)",
+    "telugu_name": "జాతీయ ఆయుష్ మిషన్ (ఆయుర్వేదం, యునాని, సిద్ధ, హోమియోపతి & యోగా)",
+    "level": "National",
+    "category": "Traditional Medicine & Wellness",
+    "source_url": "https://ayush.gov.in/",
+    "rag_text_chunk": "Scheme Name: National AYUSH Mission (Ayurveda, Yoga & Naturopathy) (National) (జాతీయ ఆయుష్ మిషన్ (ఆయుర్వేదం, యునాని, సిద్ధ, హోమియోపతి & యోగా))\nLevel: National\nCategory: Traditional Medicine & Wellness\nOfficial Website: https://ayush.gov.in/\nEligibility: All citizens interested in traditional and alternative medical systems.\nBenefits: Free consultation with certified AYUSH doctors, free natural herbal medicines, lifestyle wellness advice, and Panchakarma therapies.\nHow to Apply: 1. Visit the local Government AYUSH Dispensary or AYUSH Health & Wellness Centre.\n2. Consult with the Ayurvedic/Homeopathic Medical Officer.\n3. Collect prescribed herbal remedies free of cost.\nRequired Documents: Aadhaar Card / Patient Registration Card.\nKeywords: ayush, ayurveda, homeopathy, unani, yoga, herbal medicine, panchakarma, ఆయుర్వేదం, హోమియోపతి",
+    "keywords": [
+      "ayush",
+      "ayurveda",
+      "homeopathy",
+      "unani",
+      "yoga",
+      "herbal medicine",
+      "panchakarma",
+      "ఆయుర్వేదం",
+      "హోమియోపతి"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_non_communicable_diseases_screening__np_ncd___national_",
+    "scheme_name": "National Non-Communicable Diseases Screening (NP-NCD) (National)",
+    "telugu_name": "జాతీయ అసంక్రమిత వ్యాధుల నివారణ & నియంత్రణ పథకం (NP-NCD)",
+    "level": "National",
+    "category": "Preventive Health & Chronic Care",
+    "source_url": "https://ncd.nhp.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Non-Communicable Diseases Screening (NP-NCD) (National) (జాతీయ అసంక్రమిత వ్యాధుల నివారణ & నియంత్రణ పథకం (NP-NCD))\nLevel: National\nCategory: Preventive Health & Chronic Care\nOfficial Website: https://ncd.nhp.gov.in/\nEligibility: All citizens aged 30 years and above.\nBenefits: Free blood sugar test, digital BP monitoring, cancer screening, and monthly free supply of anti-hypertensive and anti-diabetic medicines.\nHow to Apply: 1. Visit local Ayushman Arogya Mandir or Village Health Clinic.\n2. ASHA/ANM performs CBAC risk assessment and diagnostic check.\n3. Collect monthly free prescription medications.\nRequired Documents: Aadhaar Card / ABHA ID.\nKeywords: ncd, diabetes, blood pressure, hypertension, free bp medicine, sugar test, మధుమేహం, రక్తపోటు",
+    "keywords": [
+      "ncd",
+      "diabetes",
+      "blood pressure",
+      "hypertension",
+      "free bp medicine",
+      "sugar test",
+      "మధుమేహం",
+      "రక్తపోటు"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ayushman_bharat___pradhan_mantri_jan_arogya_yojana__pm_jay_",
     "scheme_name": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
     "telugu_name": "ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన",
+    "level": "National",
     "category": "Hospitalization & Cashless Coverage",
-    "financial_limit": "₹5,00,000 per family per year",
     "source_url": "https://pmjay.gov.in",
-    "rag_text_chunk": "Scheme Name: Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY) (ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన)\nCategory: Hospitalization & Cashless Coverage\nCoverage Limit: ₹5,00,000 per family per year\nEligibility: BPL families, SECC 2011 database beneficiaries, White Ration Card holders in AP.\nBenefits: Free secondary and tertiary care hospitalization across 29,000+ empanelled public and private hospitals across India.\nHow to Apply: Visit any empanelled network hospital with Aadhaar card or Rice Card to verify eligibility at the Pradhan Mantri Arogya Mitra (PMAM) desk.\nRequired Documents: Aadhaar Card, White Ration / Rice Card, Family ID Proof\nOfficial Portal: https://pmjay.gov.in",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY) (ఆయుష్మాన్ భారత్ - ప్రధాన మంత్రి జన్ ఆరోగ్య యోజన)\nLevel: National\nCategory: Hospitalization & Cashless Coverage\nOfficial Website: https://pmjay.gov.in\nEligibility: BPL families, SECC 2011 database beneficiaries, white card holders.\nBenefits: Free secondary and tertiary care hospitalization across 29,000+ empanelled public and private hospitals across India.\nHow to Apply: Visit any empanelled hospital with Aadhaar card or Ration card to verify eligibility with Pradhan Mantri Arogya Mitra (PMAM).\nRequired Documents: Aadhaar Card, Identity Proof\nKeywords: ayushman, pmjay, 5 lakhs, center scheme, national health, ఆయుష్మాన్",
     "keywords": [
       "ayushman",
       "pmjay",
       "5 lakhs",
-      "cashless",
       "center scheme",
-      " national health",
+      "national health",
       "ఆయుష్మాన్"
     ],
-    "updated_at": "2026-09-23T13:41:25.247Z"
+    "updated_at": "2026-09-23T18:07:53.171Z"
   },
   {
-    "id": "national_pmmvy",
-    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "id": "scheme_pradhan_mantri_matru_vandana_yojana__pmmvy____maternal___child_health",
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY) - Maternal & Child Health",
     "telugu_name": "ప్రధాన మంత్రి మాతృ వందన యోజన",
+    "level": "National",
     "category": "Maternal & Child Health",
-    "financial_limit": "₹5,000 - ₹6,000 cash incentive",
     "source_url": "https://pmmvy.wcd.gov.in",
-    "rag_text_chunk": "Scheme Name: Pradhan Mantri Matru Vandana Yojana (PMMVY) (ప్రధాన మంత్రి మాతృ వందన యోజన)\nCategory: Maternal & Child Health\nCoverage Limit: ₹5,000 - ₹6,000 cash incentive\nEligibility: Pregnant women and lactating mothers for 1st live birth, and ₹6,000 for 2nd live birth if it is a girl child.\nBenefits: Direct Benefit Transfer (DBT) cash incentive paid directly into bank account to offset wage loss and support nutrition.\nHow to Apply: Register at nearest Anganwadi Centre (AWC) or Village Health Sub-Centre within 150 days of pregnancy with Aadhaar and MCP card.\nRequired Documents: Aadhaar Card, MCP (Mother and Child Protection) Card, Bank Passbook linked with Aadhaar\nOfficial Portal: https://pmmvy.wcd.gov.in",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Matru Vandana Yojana (PMMVY) - Maternal & Child Health (ప్రధాన మంత్రి మాతృ వందన యోజన)\nLevel: National\nCategory: Maternal & Child Health\nOfficial Website: https://pmmvy.wcd.gov.in\nEligibility: Pregnant women and lactating mothers for first and second live child (if second child is a girl).\nBenefits: Direct Benefit Transfer (DBT) cash incentive paid in installments directly to bank account upon registering pregnancy and child immunization.\nHow to Apply: Apply at nearest Anganwadi Centre (AWC) or Village Health Sub-Centre with Aadhaar card, MCP Card, and Bank Account details.\nRequired Documents: Aadhaar Card, Identity Proof\nKeywords: pmmvy, maternal, pregnant, cash incentive, మాతృ వందన",
     "keywords": [
       "pmmvy",
       "maternal",
       "pregnant",
       "cash incentive",
-      "dbt",
       "మాతృ వందన"
     ],
-    "updated_at": "2026-09-23T13:41:25.248Z"
+    "updated_at": "2026-09-23T18:07:53.171Z"
   },
   {
-    "id": "national_nhm",
+    "id": "scheme_national_health_mission__nhm____free_diagnostic_services",
     "scheme_name": "National Health Mission (NHM) & Free Diagnostic Services",
     "telugu_name": "నేషనల్ హెల్త్ మిషన్ మరియు ఉచిత డయాగ్నోస్టిక్స్ సేవలు",
+    "level": "National",
     "category": "Free Medicines & Diagnostics",
-    "financial_limit": "100% Free Medicines & Blood Tests",
     "source_url": "https://nhm.gov.in",
-    "rag_text_chunk": "Scheme Name: National Health Mission (NHM) & Free Diagnostic Services (నేషనల్ హెల్త్ మిషన్ మరియు ఉచిత డయాగ్నోస్టిక్స్ సేవలు)\nCategory: Free Medicines & Diagnostics\nCoverage Limit: 100% Free Medicines & Blood Tests\nEligibility: Open to all citizens visiting Government Primary Health Centres (PHCs), CHCs, and District Hospitals.\nBenefits: Free essential medicines, 50+ free diagnostic tests, dial-a-doctor tele-consultation (eSanjeevani), and emergency transport.\nHow to Apply: Walk in to any Government Hospital, PHC, or Urban Health Centre. No income certificate required.\nRequired Documents: Any Govt Photo ID (Aadhaar / Voter ID)\nOfficial Portal: https://nhm.gov.in",
+    "rag_text_chunk": "Scheme Name: National Health Mission (NHM) & Free Diagnostic Services (నేషనల్ హెల్త్ మిషన్ మరియు ఉచిత డయాగ్నోస్టిక్స్ సేవలు)\nLevel: National\nCategory: Free Medicines & Diagnostics\nOfficial Website: https://nhm.gov.in\nEligibility: Open to all citizens visiting Government Primary Health Centres (PHCs) and Area Hospitals.\nBenefits: Free essential drugs, 50+ free diagnostic blood & urine tests, dial-a-doctor tele-consultation.\nHow to Apply: Walk in to any Government Hospital or Primary Health Centre (PHC). No income certificate required.\nRequired Documents: Aadhaar Card, Identity Proof\nKeywords: nhm, free medicines, free tests, phc, నేషనల్ హెల్త్",
     "keywords": [
       "nhm",
       "free medicines",
-      "free diagnostic",
+      "free tests",
       "phc",
-      "esanjeevani",
       "నేషనల్ హెల్త్"
     ],
-    "updated_at": "2026-09-23T13:41:25.248Z"
+    "updated_at": "2026-09-23T18:07:53.171Z"
   },
   {
-    "id": "national_nikshay",
+    "id": "scheme_ni_kshay_poshan_yojana__tb_financial___nutritional_support_",
     "scheme_name": "Ni-kshay Poshan Yojana (TB Financial & Nutritional Support)",
     "telugu_name": "నిక్షయ్ పోషణ్ యోజన (టీబీ రోగుల పోషకాహార సహాయం)",
+    "level": "National",
     "category": "Nutritional Support & Disease Management",
-    "financial_limit": "₹500 / month direct transfer during treatment",
     "source_url": "https://nikshay.in",
-    "rag_text_chunk": "Scheme Name: Ni-kshay Poshan Yojana (TB Financial & Nutritional Support) (నిక్షయ్ పోషణ్ యోజన (టీబీ రోగుల పోషకాహార సహాయం))\nCategory: Nutritional Support & Disease Management\nCoverage Limit: ₹500 / month direct transfer during treatment\nEligibility: All notified Tuberculosis (TB) patients undergoing anti-TB treatment in government or private health facilities.\nBenefits: Monthly financial assistance of ₹500 transferred directly to patient bank account until treatment completion.\nHow to Apply: Register at nearest Government Health Centre or DOTS provider with Aadhaar card and active bank passbook.\nRequired Documents: Aadhaar Card, Bank Account details, TB Treatment Notification ID\nOfficial Portal: https://nikshay.in",
+    "rag_text_chunk": "Scheme Name: Ni-kshay Poshan Yojana (TB Financial & Nutritional Support) (నిక్షయ్ పోషణ్ యోజన (టీబీ రోగుల పోషకాహార సహాయం))\nLevel: National\nCategory: Nutritional Support & Disease Management\nOfficial Website: https://nikshay.in\nEligibility: All notified Tuberculosis (TB) patients undergoing anti-TB treatment in public or private sector.\nBenefits: Monthly financial assistance of ₹500 transferred directly to patient bank accounts for nutritional support.\nHow to Apply: Register at nearest Government Health Centre or DOTS provider with Aadhaar card and bank passbook.\nRequired Documents: Aadhaar Card, Identity Proof\nKeywords: nikshay, tb, tuberculosis, poshan, టీబీ",
     "keywords": [
       "nikshay",
       "tb",
       "tuberculosis",
       "poshan",
-      "nutrition",
       "టీబీ"
     ],
-    "updated_at": "2026-09-23T13:41:25.248Z"
+    "updated_at": "2026-09-23T18:07:53.171Z"
   },
   {
-    "id": "national_jsy",
-    "scheme_name": "Janani Suraksha Yojana (JSY)",
-    "telugu_name": "జనని సురక్ష యోజన",
-    "category": "Maternal & Institutional Delivery",
-    "financial_limit": "₹1,000 - ₹1,400 financial assistance",
-    "source_url": "https://nhm.gov.in/index1.php?sublink_id=841&level=3&lid=309&lang=1",
-    "rag_text_chunk": "Scheme Name: Janani Suraksha Yojana (JSY) (జనని సురక్ష యోజన)\nCategory: Maternal & Institutional Delivery\nCoverage Limit: ₹1,000 - ₹1,400 financial assistance\nEligibility: Pregnant women from BPL / SC / ST families delivering in public health institutions or accredited private hospitals.\nBenefits: Cash assistance upon institutional delivery to reduce maternal and infant mortality.\nHow to Apply: Contact your local ASHA worker or ANM at the Village Secretariat / PHC before delivery.\nRequired Documents: Aadhaar Card, BPL Card / Rice Card, MCP Card, Bank Passbook\nOfficial Portal: https://nhm.gov.in/index1.php?sublink_id=841&level=3&lid=309&lang=1",
+    "id": "scheme_ayushman_bharat_health_account__abha___national_",
+    "scheme_name": "Ayushman Bharat Health Account (ABHA) (National)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ హెల్త్ అకౌంట్ (ABHA)",
+    "level": "National",
+    "category": "Digital Health Services",
+    "source_url": "https://healthid.ndhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat Health Account (ABHA) (National) (ఆయుష్మాన్ భారత్ హెల్త్ అకౌంట్ (ABHA))\nLevel: National\nCategory: Digital Health Services\nOfficial Website: https://healthid.ndhm.gov.in/\nEligibility: All citizens of India.\nBenefits: A unique digital identity card, online storage for all medical records, prescriptions, and test results, enabling paperless hospital visits.\nHow to Apply: Register online at the ABHA portal, use the ABHA app, or register at any government hospital helper counter using Aadhaar OTP.\nRequired Documents: Aadhaar Card or Driving License linked to mobile number.\nKeywords: ABHA, digital health card, health ID, medical records, ABDM, health account",
     "keywords": [
-      "jsy",
-      "delivery",
-      "hospital delivery",
-      "pregnant",
-      "asha",
-      "జనని సురక్ష"
+      "ABHA",
+      "digital health card",
+      "health ID",
+      "medical records",
+      "ABDM",
+      "health account"
     ],
-    "updated_at": "2026-09-23T13:41:25.248Z"
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ayushman_bharat_digital_mission__abdm_",
+    "scheme_name": "Ayushman Bharat Digital Mission (ABDM)",
+    "telugu_name": "ఆయుష్మాన్ భారత్ డిజిటల్ మిషన్",
+    "level": "National",
+    "category": "Digital Health Services",
+    "source_url": "https://abdm.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ayushman Bharat Digital Mission (ABDM) (ఆయుష్మాన్ భారత్ డిజిటల్ మిషన్)\nLevel: National\nCategory: Digital Health Services\nOfficial Website: https://abdm.gov.in/\nEligibility: All citizens of India.\nBenefits: Digital Health ID (ABHA), healthcare professionals registry, health facility registry, and unified health records.\nHow to Apply: Register online via ABDM portal or ABHA mobile app.\nRequired Documents: Aadhaar Card linked to mobile number.\nKeywords: ABDM, digital health, health records, telemedicine, ABHA",
+    "keywords": [
+      "ABDM",
+      "digital health",
+      "health records",
+      "telemedicine",
+      "ABHA"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pm_ayushman_bharat_health_infrastructure_mission__pm_abhim_",
+    "scheme_name": "PM Ayushman Bharat Health Infrastructure Mission (PM-ABHIM)",
+    "telugu_name": "పీఎం ఆయుష్మాన్ భారత్ ఆరోగ్య మౌలిక సదుపాయాల మిషన్",
+    "level": "National",
+    "category": "Critical Healthcare Infrastructure",
+    "source_url": "https://pmabhim.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: PM Ayushman Bharat Health Infrastructure Mission (PM-ABHIM) (పీఎం ఆయుష్మాన్ భారత్ ఆరోగ్య మౌలిక సదుపాయాల మిషన్)\nLevel: National\nCategory: Critical Healthcare Infrastructure\nOfficial Website: https://pmabhim.mohfw.gov.in/\nEligibility: Public healthcare facilities and citizens across urban and rural India.\nBenefits: Strengthens urban & rural health centres, establishes critical care hospital blocks and diagnostic network labs.\nHow to Apply: Avail enhanced critical care services at government district hospitals.\nRequired Documents: Not applicable (infrastructure scheme).\nKeywords: PM-ABHIM, health infrastructure, critical care, labs, wellness",
+    "keywords": [
+      "PM-ABHIM",
+      "health infrastructure",
+      "critical care",
+      "labs",
+      "wellness"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_ayush_mission__nam_",
+    "scheme_name": "National Ayush Mission (NAM)",
+    "telugu_name": "జాతీయ ఆయుష్ మిషన్",
+    "level": "National",
+    "category": "Traditional Medicine & Wellness",
+    "source_url": "https://ayush.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Ayush Mission (NAM) (జాతీయ ఆయుష్ మిషన్)\nLevel: National\nCategory: Traditional Medicine & Wellness\nOfficial Website: https://ayush.gov.in/\nEligibility: All citizens seeking traditional medicine and holistic healthcare.\nBenefits: Free Ayurveda, Homeopathy, and Yoga consultations, free herbal medicines at AYUSH hospitals.\nHow to Apply: Visit the nearest AYUSH dispensary, government Ayurveda hospital, or wellness centre.\nRequired Documents: OPD registration card.\nKeywords: ayush, ayurveda, yoga, unani, siddha, homeopathy",
+    "keywords": [
+      "ayush",
+      "ayurveda",
+      "yoga",
+      "unani",
+      "siddha",
+      "homeopathy"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_ysr_aarogya_asara_post_op_wage_support",
+    "scheme_name": "AP YSR Aarogya Asara Post-Op Wage Support",
+    "telugu_name": "వైఎస్ఆర్ ఆరోగ్య ఆసరా పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Post-Operative Financial Support",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP YSR Aarogya Asara Post-Op Wage Support (వైఎస్ఆర్ ఆరోగ్య ఆసరా పథకం)\nLevel: Andhra Pradesh\nCategory: Post-Operative Financial Support\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Patients undergoing surgeries under Aarogyasri in Andhra Pradesh during post-treatment rest period.\nBenefits: Financial allowance of Rs. 225 per day (up to Rs. 5,000 per month) transferred directly to bank account.\nHow to Apply: Aarogya Mithra at network hospital completes the post-discharge Asara request.\nRequired Documents: Aarogyasri Health Card, Aadhaar, discharge summary, bank account details.\nKeywords: aarogya asara, post operative, wage support, recovery allowance, ap health",
+    "keywords": [
+      "aarogya asara",
+      "post operative",
+      "wage support",
+      "recovery allowance",
+      "ap health"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_dr__ysr_kanti_velugu_free_eye_screening",
+    "scheme_name": "AP Dr. YSR Kanti Velugu Free Eye Screening",
+    "telugu_name": "డా. వైఎస్ఆర్ కాంతి వెలుగు పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Eye Care & Vision Services",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Dr. YSR Kanti Velugu Free Eye Screening (డా. వైఎస్ఆర్ కాంతి వెలుగు పథకం)\nLevel: Andhra Pradesh\nCategory: Eye Care & Vision Services\nOfficial Website: https://hmfw.ap.gov.in/\nEligibility: All residents of Andhra Pradesh including school children, adults, and senior citizens.\nBenefits: Universal free eye screening, free prescription spectacles, and free cataract surgeries at government hospitals.\nHow to Apply: Participate in local village/school Kanti Velugu eye screening camps.\nRequired Documents: Aadhaar Card / School ID.\nKeywords: kanti velugu, eye screening, cataract surgery, free spectacles, ap vision",
+    "keywords": [
+      "kanti velugu",
+      "eye screening",
+      "cataract surgery",
+      "free spectacles",
+      "ap vision"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_ysr_talli_bidda_express_free_transport",
+    "scheme_name": "AP YSR Talli Bidda Express Free Transport",
+    "telugu_name": "వైఎస్ఆర్ తల్లి బిడ్డ ఎక్స్‌ప్రెస్",
+    "level": "Andhra Pradesh",
+    "category": "Maternal & Child Health",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP YSR Talli Bidda Express Free Transport (వైఎస్ఆర్ తల్లి బిడ్డ ఎక్స్‌ప్రెస్)\nLevel: Andhra Pradesh\nCategory: Maternal & Child Health\nOfficial Website: https://hmfw.ap.gov.in/\nEligibility: Post-natal mothers and newborns discharged from government hospitals after delivery in AP.\nBenefits: Free, comfortable transport from government hospital back to their home with mother and infant kit.\nHow to Apply: Call 102 or inform hospital staff at the time of discharge.\nRequired Documents: Hospital Discharge Slip, Mother Card.\nKeywords: talli bidda, 102 ambulance, pregnant transport, free drop home, ap delivery",
+    "keywords": [
+      "talli bidda",
+      "102 ambulance",
+      "pregnant transport",
+      "free drop home",
+      "ap delivery"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_central_government_health_scheme__cghs_",
+    "scheme_name": "Central Government Health Scheme (CGHS)",
+    "telugu_name": "కేంద్ర ప్రభుత్వ ఆరోగ్య పథకం (CGHS)",
+    "level": "National",
+    "category": "Cashless Govt Employee & Pensioner Healthcare",
+    "source_url": "https://cghs.nic.in/",
+    "rag_text_chunk": "Scheme Name: Central Government Health Scheme (CGHS) (కేంద్ర ప్రభుత్వ ఆరోగ్య పథకం (CGHS))\nLevel: National\nCategory: Cashless Govt Employee & Pensioner Healthcare\nOfficial Website: https://cghs.nic.in/\nEligibility: Central government employees, pensioners, MPs, freedom fighters, and their dependents.\nBenefits: OPD care, free medicines at CGHS wellness centres, cashless hospitalization in empanelled private hospitals.\nHow to Apply: Present CGHS card at CGHS Wellness Centres or empanelled hospitals for cashless consultation.\nRequired Documents: CGHS Plastic Card, Employee PPO number.\nKeywords: CGHS, central govt employees, pensioners, wellness centre, cashless treatment",
+    "keywords": [
+      "CGHS",
+      "central govt employees",
+      "pensioners",
+      "wellness centre",
+      "cashless treatment"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ex_servicemen_contributory_health_scheme__echs_",
+    "scheme_name": "Ex-Servicemen Contributory Health Scheme (ECHS)",
+    "telugu_name": "మాజీ సైనిక ఉద్యోగుల ఆరోగ్య పథకం (ECHS)",
+    "level": "National",
+    "category": "Defense Personnel Healthcare",
+    "source_url": "https://echs.gov.in/",
+    "rag_text_chunk": "Scheme Name: Ex-Servicemen Contributory Health Scheme (ECHS) (మాజీ సైనిక ఉద్యోగుల ఆరోగ్య పథకం (ECHS))\nLevel: National\nCategory: Defense Personnel Healthcare\nOfficial Website: https://echs.gov.in/\nEligibility: Ex-Servicemen pensioners from Army, Navy, Air Force, Coast Guard, and their legal dependents.\nBenefits: Cashless medical treatment, consultations, diagnostic tests, surgeries, and free medicines across ECHS polyclinics.\nHow to Apply: Visit the nearest ECHS Polyclinic for referral and treatment at empanelled military or private hospitals.\nRequired Documents: ECHS Smart Card, Defence Service Discharge Book.\nKeywords: ECHS, ex-servicemen, defense pensioners, military health, cashless hospital",
+    "keywords": [
+      "ECHS",
+      "ex-servicemen",
+      "defense pensioners",
+      "military health",
+      "cashless hospital"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_employees__state_insurance_scheme__esis_",
+    "scheme_name": "Employees' State Insurance Scheme (ESIS)",
+    "telugu_name": "కర్మచారి రాజ్య బీమా యోజన (ESI)",
+    "level": "National",
+    "category": "Industrial Workers Healthcare",
+    "source_url": "https://www.esic.gov.in/",
+    "rag_text_chunk": "Scheme Name: Employees' State Insurance Scheme (ESIS) (కర్మచారి రాజ్య బీమా యోజన (ESI))\nLevel: National\nCategory: Industrial Workers Healthcare\nOfficial Website: https://www.esic.gov.in/\nEligibility: Factory and organized sector employees earning wages up to Rs. 21,000 per month.\nBenefits: Full medical care for self and family, sickness cash benefits, maternity benefit, and disability pension.\nHow to Apply: Visit the nearest ESIC Hospital or ESI Dispensary with your Pehchan card.\nRequired Documents: e-Pehchan ESI Card, Salary Slip, Identity Proof.\nKeywords: ESI, ESIC, factory workers, industrial employees, sickness benefit, maternity benefit",
+    "keywords": [
+      "ESI",
+      "ESIC",
+      "factory workers",
+      "industrial employees",
+      "sickness benefit",
+      "maternity benefit"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_tele_mental_health_programme__tele_manas_",
+    "scheme_name": "National Tele Mental Health Programme (Tele-MANAS)",
+    "telugu_name": "టెలి-మానస్ ఉచిత మానసిక ఆరోగ్య హెల్ప్‌లైన్",
+    "level": "National",
+    "category": "Mental Health & Counseling",
+    "source_url": "https://telemanas.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Tele Mental Health Programme (Tele-MANAS) (టెలి-మానస్ ఉచిత మానసిక ఆరోగ్య హెల్ప్‌లైన్)\nLevel: National\nCategory: Mental Health & Counseling\nOfficial Website: https://telemanas.mohfw.gov.in/\nEligibility: 24/7 free service open to all citizens experiencing mental stress, depression, or emotional distress.\nBenefits: Free, confidential 24/7 phone counseling by trained psychologists in local languages (14416 / 1800-891-4416).\nHow to Apply: Dial toll-free 14416 from any phone for instant confidential mental health counseling.\nRequired Documents: None required.\nKeywords: tele-manas, mental health helpline, 14416, counseling, depression help",
+    "keywords": [
+      "tele-manas",
+      "mental health helpline",
+      "14416",
+      "counseling",
+      "depression help"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_free_diagnostics_service_initiative",
+    "scheme_name": "National Free Diagnostics Service Initiative",
+    "telugu_name": "జాతీయ ఉచిత వ్యాధి నిర్ధారణ పరీక్షల పథకం",
+    "level": "National",
+    "category": "Free Diagnostics & Lab Tests",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Free Diagnostics Service Initiative (జాతీయ ఉచిత వ్యాధి నిర్ధారణ పరీక్షల పథకం)\nLevel: National\nCategory: Free Diagnostics & Lab Tests\nOfficial Website: https://nhm.gov.in/\nEligibility: All patients visiting government public health facilities (PHCs, CHCs, District Hospitals).\nBenefits: Free essential lab tests (blood, urine), X-rays, ECG, and ultrasounds at public hospitals.\nHow to Apply: Take doctor order slip to the hospital laboratory counter for free testing.\nRequired Documents: Doctor requisition slip from government hospital OPD.\nKeywords: free diagnostics, blood tests, x-ray, ultrasound, free lab test, nhm",
+    "keywords": [
+      "free diagnostics",
+      "blood tests",
+      "x-ray",
+      "ultrasound",
+      "free lab test",
+      "nhm"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_free_drugs_service_initiative",
+    "scheme_name": "National Free Drugs Service Initiative",
+    "telugu_name": "జాతీయ ఉచిత మందుల పంపిణీ పథకం",
+    "level": "National",
+    "category": "Affordable Medicines & Pharmacy",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Free Drugs Service Initiative (జాతీయ ఉచిత మందుల పంపిణీ పథకం)\nLevel: National\nCategory: Affordable Medicines & Pharmacy\nOfficial Website: https://nhm.gov.in/\nEligibility: All patients presenting valid prescriptions at government health facilities.\nBenefits: 100% free distribution of essential generic medicines, antibiotics, and chronic disease drugs.\nHow to Apply: Collect free prescribed medicines at the hospital pharmacy counter.\nRequired Documents: Government OPD Doctor Prescription.\nKeywords: free drugs, essential medicines, free pharmacy, nhm drugs",
+    "keywords": [
+      "free drugs",
+      "essential medicines",
+      "free pharmacy",
+      "nhm drugs"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_swasthya_suraksha_yojana__pmssy_",
+    "scheme_name": "Pradhan Mantri Swasthya Suraksha Yojana (PMSSY)",
+    "telugu_name": "ప్రధానమంత్రి స్వాస్థ్య సురక్ష యోజన (AIIMS)",
+    "level": "National",
+    "category": "Tertiary Hospital Healthcare",
+    "source_url": "https://pmssy.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri Swasthya Suraksha Yojana (PMSSY) (ప్రధానమంత్రి స్వాస్థ్య సురక్ష యోజన (AIIMS))\nLevel: National\nCategory: Tertiary Hospital Healthcare\nOfficial Website: https://pmssy.mohfw.gov.in/\nEligibility: All citizens needing advanced tertiary medical care and super-specialty surgeries.\nBenefits: Establishes new AIIMS institutes (e.g. AIIMS Mangalagiri in AP) and upgrades government medical colleges for affordable super-specialty treatment.\nHow to Apply: Book OPD appointment online or visit AIIMS / upgraded government medical college directly.\nRequired Documents: Patient OPD Card.\nKeywords: PMSSY, AIIMS, super specialty, tertiary care, medical college",
+    "keywords": [
+      "PMSSY",
+      "AIIMS",
+      "super specialty",
+      "tertiary care",
+      "medical college"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_ysr_aarogya_raksha_health_insurance",
+    "scheme_name": "AP YSR Aarogya Raksha Health Insurance",
+    "telugu_name": "వైఎస్ఆర్ ఆరోగ్య రక్ష పథకం",
+    "level": "Andhra Pradesh",
+    "category": "Universal Health Protection",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP YSR Aarogya Raksha Health Insurance (వైఎస్ఆర్ ఆరోగ్య రక్ష పథకం)\nLevel: Andhra Pradesh\nCategory: Universal Health Protection\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: Above Poverty Line (APL) families in Andhra Pradesh not covered by BPL schemes upon payment of nominal premium.\nBenefits: Health insurance cover up to Rs. 2 lakh per individual per annum in Aarogyasri network hospitals.\nHow to Apply: Enroll online through the Aarogyasri portal or MeeSeva centre by paying annual premium.\nRequired Documents: Aadhaar Card, APL Ration Card / Residence Proof.\nKeywords: aarogya raksha, above poverty line, ap insurance, health cover",
+    "keywords": [
+      "aarogya raksha",
+      "above poverty line",
+      "ap insurance",
+      "health cover"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pmmvy_scheme_second_child_financial_assistance",
+    "scheme_name": "PMMVY Scheme Second Child Financial Assistance",
+    "telugu_name": "పీఎంఎంవీవై రెండవ సంతానం (ఆడపిల్ల) ఆర్థిక సాయం",
+    "level": "National",
+    "category": "Maternal Welfare & Nutrition Financial Aid",
+    "source_url": "https://pmmvy.wcd.gov.in/",
+    "rag_text_chunk": "Scheme Name: PMMVY Scheme Second Child Financial Assistance (పీఎంఎంవీవై రెండవ సంతానం (ఆడపిల్ల) ఆర్థిక సాయం)\nLevel: National\nCategory: Maternal Welfare & Nutrition Financial Aid\nOfficial Website: https://pmmvy.wcd.gov.in/\nEligibility: Pregnant mothers upon birth of a second girl child in eligible socio-economic categories.\nBenefits: One-time financial assistance of Rs. 6,000 transferred directly to mother's bank account.\nHow to Apply: Register details at the local Anganwadi Centre after birth of the second girl child.\nRequired Documents: Birth Certificate (Girl Child), Aadhaar linked Bank Account, MCP Card.\nKeywords: pmmvy second child, girl child incentive, rs 6000, maternal aid",
+    "keywords": [
+      "pmmvy second child",
+      "girl child incentive",
+      "rs 6000",
+      "maternal aid"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_programme_for_prevention___control_of_cancer__diabetes__cvds___stroke__",
+    "scheme_name": "National Programme for Prevention & Control of Cancer, Diabetes, CVDs & Stroke (NPCDCS)",
+    "telugu_name": "జాతీయ బిపి, షుగర్, క్యాన్సర్ మరియు పక్షపాతం నివారణ పథకం",
+    "level": "National",
+    "category": "Preventive Health & Chronic Care",
+    "source_url": "https://main.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Programme for Prevention & Control of Cancer, Diabetes, CVDs & Stroke (NPCDCS) (జాతీయ బిపి, షుగర్, క్యాన్సర్ మరియు పక్షపాతం నివారణ పథకం)\nLevel: National\nCategory: Preventive Health & Chronic Care\nOfficial Website: https://main.mohfw.gov.in/\nEligibility: All adults aged 30 years and above for routine non-communicable disease screening.\nBenefits: Free population-based screening for hypertension, diabetes, oral/breast/cervical cancers, free NCD medicines, and lifestyle counseling.\nHow to Apply: Get screened by the ANM / MLHP at your local YSR Village Health Clinic or Ayushman Arogya Mandir.\nRequired Documents: Aadhaar Card.\nKeywords: NPCDCS, diabetes, hypertension, cancer screening, stroke",
+    "keywords": [
+      "NPCDCS",
+      "diabetes",
+      "hypertension",
+      "cancer screening",
+      "stroke"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_national_dialysis_programme___hemodialysis",
+    "scheme_name": "Pradhan Mantri National Dialysis Programme - Hemodialysis",
+    "telugu_name": "పీఎం జాతీయ ఉచిత హీమోడయాలసిస్ సేవలు",
+    "level": "National",
+    "category": "Nephrology & Renal Failure Care",
+    "source_url": "https://pmndp.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri National Dialysis Programme - Hemodialysis (పీఎం జాతీయ ఉచిత హీమోడయాలసిస్ సేవలు)\nLevel: National\nCategory: Nephrology & Renal Failure Care\nOfficial Website: https://pmndp.mohfw.gov.in/\nEligibility: BPL and poor patients with end-stage renal disease (ESRD) certified by nephrologists.\nBenefits: 100% free hemodialysis sessions, dialyzer kits, and heparin injections at district hospital dialysis centres.\nHow to Apply: Enroll at the District Hospital Dialysis Unit for regular weekly sessions.\nRequired Documents: Aadhaar, BPL Ration Card, Nephrologist Referral Slip.\nKeywords: hemodialysis, kidney failure, free dialysis, renal care",
+    "keywords": [
+      "hemodialysis",
+      "kidney failure",
+      "free dialysis",
+      "renal care"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_national_dialysis_programme___peritoneal_dialysis",
+    "scheme_name": "Pradhan Mantri National Dialysis Programme - Peritoneal Dialysis",
+    "telugu_name": "పీఎం జాతీయ పెరిటోనియల్ డయాలిసిస్ సేవలు (ఇంటివద్ద డయాలిసిస్)",
+    "level": "National",
+    "category": "Nephrology & Renal Failure Care",
+    "source_url": "https://pmndp.mohfw.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri National Dialysis Programme - Peritoneal Dialysis (పీఎం జాతీయ పెరిటోనియల్ డయాలిసిస్ సేవలు (ఇంటివద్ద డయాలిసిస్))\nLevel: National\nCategory: Nephrology & Renal Failure Care\nOfficial Website: https://pmndp.mohfw.gov.in/\nEligibility: Chronic kidney disease patients needing continuous peritoneal dialysis at home.\nBenefits: Free monthly supply of peritoneal dialysis solution bags and catheter care kits at home.\nHow to Apply: Collect free peritoneal solution fluid bags monthly from the district hospital nephrology ward.\nRequired Documents: Aadhaar, BPL Ration Card, Hospital Medical Certificate.\nKeywords: peritoneal dialysis, home dialysis, CAPD, renal support",
+    "keywords": [
+      "peritoneal dialysis",
+      "home dialysis",
+      "CAPD",
+      "renal support"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_national_free_diagnostic_initiative___advanced_scans___ct_scan",
+    "scheme_name": "National Free Diagnostic Initiative - Advanced Scans & CT Scan",
+    "telugu_name": "జాతీయ ఉచిత సీటీ స్కాన్ మరియు స్కానింగ్ సేవలు",
+    "level": "National",
+    "category": "Free Diagnostics & Lab Tests",
+    "source_url": "https://nhm.gov.in/",
+    "rag_text_chunk": "Scheme Name: National Free Diagnostic Initiative - Advanced Scans & CT Scan (జాతీయ ఉచిత సీటీ స్కాన్ మరియు స్కానింగ్ సేవలు)\nLevel: National\nCategory: Free Diagnostics & Lab Tests\nOfficial Website: https://nhm.gov.in/\nEligibility: Emergency, trauma, and hospitalized patients at government teaching hospitals.\nBenefits: 100% free high-resolution CT scans, ultrasounds, and digital X-rays.\nHow to Apply: Visit the Radiology / Imaging department in the government hospital.\nRequired Documents: Government Hospital Doctor Referral Order.\nKeywords: ct scan, mri, free scan, advanced diagnostics",
+    "keywords": [
+      "ct scan",
+      "mri",
+      "free scan",
+      "advanced diagnostics"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_ysr_aarogyasri_super_specialty_tertiary_procedures",
+    "scheme_name": "AP YSR Aarogyasri Super-Specialty Tertiary Procedures",
+    "telugu_name": "వైఎస్ఆర్ ఆరోగ్యశ్రీ సూపర్‌స్పెషాలిటీ చికిత్సలు",
+    "level": "Andhra Pradesh",
+    "category": "Universal Health Coverage & Tertiary Care",
+    "source_url": "https://aarogyasri.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP YSR Aarogyasri Super-Specialty Tertiary Procedures (వైఎస్ఆర్ ఆరోగ్యశ్రీ సూపర్‌స్పెషాలిటీ చికిత్సలు)\nLevel: Andhra Pradesh\nCategory: Universal Health Coverage & Tertiary Care\nOfficial Website: https://aarogyasri.ap.gov.in/\nEligibility: BPL and eligible income group families in AP covering 3,257+ medical procedures.\nBenefits: Complete cashless coverage up to Rs. 25 lakh per family per year for open heart surgeries, neurosurgeries, oncology treatments, and joint replacements.\nHow to Apply: Report to the Aarogya Mithra desk at any empanelled network hospital.\nRequired Documents: Aadhaar Card, BPL Ration Card / Rice Card.\nKeywords: aarogyasri super specialty, cardiac surgery, cancer care, organ transplant, 3257 procedures",
+    "keywords": [
+      "aarogyasri super specialty",
+      "cardiac surgery",
+      "cancer care",
+      "organ transplant",
+      "3257 procedures"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_ap_dr__ysr_tele_consultation_hubs",
+    "scheme_name": "AP Dr. YSR Tele-Consultation Hubs",
+    "telugu_name": "డా. వైఎస్ఆర్ టెలి-కన్సల్టేషన్ కేంద్రాలు",
+    "level": "Andhra Pradesh",
+    "category": "Digital Teleconsultation & Specialist Care",
+    "source_url": "https://hmfw.ap.gov.in/",
+    "rag_text_chunk": "Scheme Name: AP Dr. YSR Tele-Consultation Hubs (డా. వైఎస్ఆర్ టెలి-కన్సల్టేషన్ కేంద్రాలు)\nLevel: Andhra Pradesh\nCategory: Digital Teleconsultation & Specialist Care\nOfficial Website: https://hmfw.ap.gov.in/\nEligibility: All rural patients visiting YSR Village Health Clinics across AP.\nBenefits: Real-time HD video consultation with specialist doctors (MD General Medicine, Gynecologist, Pediatrician) from village clinics.\nHow to Apply: Visit YSR Village Health Clinic; the MLHP connects video call with hub specialists.\nRequired Documents: None (recorded at village clinic).\nKeywords: tele consultation hub, specialist doctor, village teleconsultation, ap digital health",
+    "keywords": [
+      "tele consultation hub",
+      "specialist doctor",
+      "village teleconsultation",
+      "ap digital health"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
+  },
+  {
+    "id": "scheme_pradhan_mantri_national_health_protection_mission___senior_citizen_cover",
+    "scheme_name": "Pradhan Mantri National Health Protection Mission - Senior Citizen Cover",
+    "telugu_name": "పీఎం ఆయుష్మాన్ భారత్ వయోవందన పథకం (70+ వృద్ధులకు రూ. 5 లక్షలు)",
+    "level": "National",
+    "category": "Hospitalization & Cashless Coverage",
+    "source_url": "https://nha.gov.in/",
+    "rag_text_chunk": "Scheme Name: Pradhan Mantri National Health Protection Mission - Senior Citizen Cover (పీఎం ఆయుష్మాన్ భారత్ వయోవందన పథకం (70+ వృద్ధులకు రూ. 5 లక్షలు))\nLevel: National\nCategory: Hospitalization & Cashless Coverage\nOfficial Website: https://nha.gov.in/\nEligibility: All senior citizens aged 70 years and above regardless of family income.\nBenefits: Dedicated top-up health insurance coverage of Rs. 5 lakh per year for hospitalization.\nHow to Apply: Apply for Ayushman Vayo Vandana Card via NHA portal or Ayushman App.\nRequired Documents: Aadhaar Card (70+ Age Proof).\nKeywords: vayo vandana, senior citizen 70+, ayushman 70 plus, free 5 lakh cover",
+    "keywords": [
+      "vayo vandana",
+      "senior citizen 70+",
+      "ayushman 70 plus",
+      "free 5 lakh cover"
+    ],
+    "updated_at": "2026-09-23T18:07:53.171Z"
   }
 ]

@@ -17,7 +17,7 @@ SmartGovAI is an offline-resilient, Telugu-first public health welfare advisor d
 | **Interactive Charts** | Recharts (React) | Visualizing hospital coverage, scheme popularity, and eligibility statistics. |
 | **Interactive Maps** | Leaflet.js (`leaflet.js` & OpenStreetMap) | Locating nearby empanelled hospitals, Primary Health Centres (PHCs), and Grama Sachivalayams. |
 | **Speech Recognition** | Browser Web Speech API (`webkitSpeechRecognition`) | Voice-to-Text search in Telugu (`te-IN`) and English (`en-IN`). |
-| **Speech Synthesis** | Web Speech Synthesis API (`window.speechSynthesis`) | Text-to-Speech audio playback of scheme summaries and AI responses. |
+| **Speech Synthesis** | Microsoft Edge Neural TTS via Backend (`/api/tts`) | Server-synthesized natural MP3 voice playback for Telugu (`te-IN-ShrutiNeural`) and English (`en-IN-NeerjaNeural`). |
 | **Localization & i18n** | Custom Client-side i18n Engine (`public/js/i18n.js`) | Dynamic bilingual toggle between Telugu (తెలుగు) and English. |
 | **PWA & Offline** | Service Worker (`service-worker.js`), Web App Manifest | Caching static assets and offline search functionality. |
 | **Styling** | Custom CSS3 with CSS Variables (`public/css/theme.css`) & Tailwind CSS | Responsive design, glassmorphism, dark mode toggle, and accessible typography. |
@@ -107,7 +107,7 @@ SmartGovAI-2026/
 * **Purpose**: Client-side event orchestrator.
 * **Key Features**:
   - Handles modal openings/closings (`chatModal`, `schemeDetailModal`, `hospitalMapModal`).
-  - Binds Text-to-Speech audio triggers (`window.speechSynthesis`).
+  - Binds Text-to-Speech audio triggers with unified AudioController and `/api/tts`.
   - Manages WhatsApp sharing deep-links with formatted scheme summaries.
   - Handles PWA install prompts and Service Worker registration logs.
 

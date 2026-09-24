@@ -46,6 +46,47 @@
     --radius-lg: 14px;
     --radius-xl: 18px;
     --radius-full: 9999px;
+
+    /* Spacing Scale */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 24px;
+    --space-2xl: 32px;
+    --space-3xl: 48px;
+
+    /* Search Bar Design Tokens */
+    --search-bg: var(--surface);
+    --search-border: var(--border);
+    --search-border-focus: var(--primary);
+    --search-padding: 14px;
+    --search-radius: var(--radius-md);
+
+    /* Scheme Card Design Tokens */
+    --card-bg: var(--surface);
+    --card-border: var(--border);
+    --card-border-hover: var(--primary);
+    --card-padding: var(--space-xl);
+    --card-gap: var(--space-lg);
+    --card-radius: var(--radius-lg);
+    --card-shadow: var(--shadow-xs);
+    --card-shadow-hover: var(--shadow-md);
+
+    /* In-App Portal Modal Overlay Tokens */
+    --portal-modal-bg: #0f172a;
+    --portal-header-bg: #0f172a;
+    --portal-header-color: #f8fafc;
+    --portal-header-border: var(--primary);
+    --portal-btn-bg: #2563eb;
+    --portal-btn-bg-hover: #1d4ed8;
+    --portal-btn-color: #ffffff;
+    --portal-btn-radius: var(--radius-sm);
+    --portal-frame-bg: #ffffff;
+
+    /* Interactive Link & Hover Tokens */
+    --link-hover-color: #ea580c;
+    --link-active-color: #7c3aed;
     
     --app-font-size: 16px;
     --transition-fast: 0.15s ease;
@@ -73,6 +114,15 @@ body.dark-mode {
     --muted: #8faea2;
     --border: #284439;
     --border-focus: #2dd4bf;
+
+    /* Dark Mode Component Overrides */
+    --search-bg: var(--surface);
+    --search-border: var(--border);
+    --search-border-focus: var(--primary);
+    --card-bg: var(--surface);
+    --card-border: var(--border);
+    --card-border-hover: var(--primary);
+    --portal-frame-bg: #14201b;
 
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -271,24 +321,26 @@ body.dark-mode .hero h1 {
 .header-controls {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 .lang-toggle-wrap, .font-size-toggle-wrap {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background: var(--surface-soft);
-    padding: 4px 8px;
+    padding: 3px 6px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    white-space: nowrap;
 }
 
 .lang-label, .font-label {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--muted);
+    white-space: nowrap;
 }
 
 .lang-buttons, .font-buttons {
@@ -302,13 +354,14 @@ body.dark-mode .hero h1 {
 .lang-btn, .font-btn {
     background: none;
     border: none;
-    padding: 6px 14px;
-    font-size: 0.85rem;
+    padding: 5px 11px;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--ink);
     cursor: pointer;
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
+    white-space: nowrap;
 }
 
 .lang-btn.active, .font-btn.active {
@@ -325,23 +378,24 @@ body.dark-mode .font-btn.active {
 .header-right-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
 }
 
 .contrast-btn, .install-app-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     background: var(--surface-soft);
     border: 1px solid var(--border);
     color: var(--ink);
-    padding: 8px 14px;
-    font-size: 0.85rem;
+    padding: 6px 11px;
+    font-size: 0.82rem;
     font-weight: 700;
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all var(--transition-fast);
+    white-space: nowrap;
 }
 
 .contrast-btn:hover, .install-app-btn:hover {
@@ -418,8 +472,15 @@ body.dark-mode .font-btn.active {
 
 .assistant-bar-inner {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 12px;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .assistant-bar-inner {
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
 }
 
 .assistant-trigger-btn {
@@ -673,19 +734,25 @@ body.dark-mode .category-card:hover {
    Toolbar, Search & Filters
    ========================================================================== */
 .toolbar, .search-panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 24px;
+    background: linear-gradient(180deg, var(--surface, #ffffff) 0%, rgba(241, 245, 249, 0.6) 100%);
+    border: 1px solid rgba(2, 132, 199, 0.18);
+    border-radius: 24px;
+    padding: 28px 32px;
     margin-top: 20px;
-    margin-bottom: 24px;
-    box-shadow: var(--shadow-sm);
+    margin-bottom: 36px;
+    box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+body.dark-mode .search-panel {
+    background: var(--surface);
+    border-color: rgba(96, 165, 250, 0.25);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
 }
 
 .search-panel-header {
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed rgba(2, 132, 199, 0.18);
 }
 
 .search-panel-title {
@@ -709,26 +776,30 @@ body.dark-mode .search-panel-title {
     display: flex;
     position: relative;
     align-items: center;
-    border: 2px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
-    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid var(--search-border);
+    border-radius: 28px;
+    background: var(--search-bg);
+    transition: all var(--transition-normal);
     width: 100%;
-    max-width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
+    padding: 2px 8px 2px var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    flex-wrap: nowrap;
 }
 
 .search-row:focus-within, .search-wrap:focus-within {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(10, 77, 60, 0.15);
+    border-color: var(--search-border-focus);
+    box-shadow: var(--shadow-md);
 }
 
 .search-prefix-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding-left: 14px;
+    padding-left: var(--space-md);
     font-size: 1.1rem;
     color: var(--muted);
     pointer-events: none;
@@ -739,7 +810,7 @@ body.dark-mode .search-panel-title {
 .search-input, #searchInput {
     flex: 1;
     border: none;
-    padding: 14px 14px;
+    padding: var(--search-padding) var(--search-padding);
     font-size: 1.05rem;
     background: transparent;
     color: var(--ink);
@@ -998,29 +1069,28 @@ body.dark-mode .search-wrap.is-searching {
 }
 
 .search-submit-btn {
-    background: var(--primary);
-    color: #ffffff;
+    background: transparent;
+    color: var(--primary, #0284c7);
     border: none;
-    border-radius: var(--radius-sm);
-    padding: 0 16px;
-    height: 42px;
-    margin: 4px 6px 4px 0;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    margin: 0 0 0 4px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-    font-weight: 700;
+    justify-content: center;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all var(--transition-fast);
     flex-shrink: 0;
-    white-space: nowrap;
     user-select: none;
 }
 
 .search-submit-btn:hover {
-    background: var(--primary-light, #2563eb);
-    box-shadow: 0 2px 8px rgba(15, 74, 124, 0.25);
-    transform: translateY(-1px);
+    background: rgba(2, 132, 199, 0.1);
+    color: var(--primary-dark, #0369a1);
+    transform: scale(1.05);
 }
 
 .search-submit-btn:active {
@@ -1552,10 +1622,13 @@ body.dark-mode .recent-search-term-btn:hover {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: var(--surface, #ffffff);
+    border: 1px solid rgba(2, 132, 199, 0.15);
+    border-radius: 16px;
     flex-wrap: wrap;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .filter-label {
@@ -1647,7 +1720,9 @@ body.dark-mode .recently-viewed-section h2 {
    Scheme Grid & Cards
    ========================================================================== */
 .schemes-grid-section {
-    margin-top: 20px;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border, #e2e8f0);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -1657,8 +1732,17 @@ body.dark-mode .recently-viewed-section h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+}
+
+.grid-header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .grid-header h2 {
@@ -1666,6 +1750,7 @@ body.dark-mode .recently-viewed-section h2 {
     font-size: 1.25rem;
     font-weight: 800;
     color: var(--primary-dark);
+    line-height: 1.3;
 }
 
 body.dark-mode .grid-header h2 {
@@ -1673,14 +1758,49 @@ body.dark-mode .grid-header h2 {
 }
 
 .count-badge {
-    background: var(--primary-subtle);
-    color: var(--primary);
+    background: rgba(2, 132, 199, 0.12);
+    color: var(--primary, #0284c7);
     font-size: 0.85rem;
-    font-weight: 800;
-    padding: 4px 10px;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--border);
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(2, 132, 199, 0.25);
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+}
+
+.grid-header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.compare-schemes-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.compare-schemes-btn:hover {
+    background: var(--primary-subtle);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .scheme-grid, .schemes-grid {
@@ -1693,15 +1813,15 @@ body.dark-mode .grid-header h2 {
 }
 
 .scheme-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    padding: var(--card-padding);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 16px;
-    box-shadow: var(--shadow-xs);
+    gap: var(--card-gap);
+    box-shadow: var(--card-shadow);
     transition: all var(--transition-normal);
     cursor: pointer;
     outline: none;
@@ -1714,8 +1834,8 @@ body.dark-mode .grid-header h2 {
 
 .scheme-card:hover, .scheme-card:focus-visible {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--primary);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--card-border-hover);
 }
 
 .scheme-card-header {
@@ -5107,10 +5227,28 @@ img, video, iframe, canvas, svg, table {
         gap: 8px;
     }
 
-    .primary-btn, .secondary-btn, .action-btn, .search-submit-btn {
+    .primary-btn, .secondary-btn, .action-btn {
         width: 100%;
         min-height: 46px; /* Accessible touch target */
         justify-content: center;
+    }
+
+    @media (max-width: 640px) {
+        .search-submit-text, .search-kbd-badge {
+            display: none !important;
+        }
+        .search-submit-btn {
+            width: 38px !important;
+            min-width: 38px !important;
+            height: 38px !important;
+            padding: 0 !important;
+            border-radius: 50% !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+            margin: 0 0 0 4px !important;
+        }
     }
 
     /* Search input group flex wrap */
@@ -5174,6 +5312,398 @@ img, video, iframe, canvas, svg, table {
     letter-spacing: -0.01em;
     box-shadow: 0 1px 2px rgba(6, 95, 70, 0.08);
 }
+
+/* ==========================================================================
+   Enhanced Scheme Link Smooth Hover & Touch Active Colors (Orange / Purple)
+   ========================================================================== */
+a.source-link, 
+.trust-info a,
+a.official-portal-link,
+.chat-bubble a,
+.scheme-card a,
+.result-card a {
+    color: var(--primary, #0f766e);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: var(--surface-soft, rgba(0, 0, 0, 0.03));
+}
+
+/* Mouse Hover & Focus State (Desktop / Laptop): Vibrant Purple (#7c3aed) with smooth glow */
+a.source-link:hover, 
+.trust-info a:hover,
+a.official-portal-link:hover,
+.chat-bubble a:hover,
+a.source-link:focus,
+.trust-info a:focus {
+    color: var(--link-active-color) !important;
+    background-color: #f3e8ff !important;
+    text-decoration: underline;
+    box-shadow: 0 0 0 2px #d8b4fe;
+    transform: translateY(-1px);
+}
+
+/* Touch Active State (Mobile & Desktop Click): Warm Energetic Orange */
+a.source-link:active,
+.trust-info a:active,
+a.official-portal-link:active,
+.chat-bubble a:active {
+    color: var(--link-hover-color) !important;
+    background-color: #ffedd5 !important;
+    box-shadow: 0 0 0 2px #fdba74;
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   In-App Government Portal Viewer Overlay (Mobile & Desktop Friendly)
+   ========================================================================== */
+#inAppPortalOverlay {
+    position: fixed;
+    inset: 0;
+    background: var(--portal-modal-bg);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    animation: fadeIn var(--transition-normal);
+}
+
+.portal-overlay-header {
+    background: var(--portal-header-bg);
+    color: var(--portal-header-color);
+    padding: var(--space-sm) var(--space-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    border-bottom: 2px solid var(--portal-header-border);
+    box-shadow: var(--shadow-md);
+}
+
+.portal-overlay-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--portal-header-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 380px;
+}
+
+.portal-return-btn {
+    background: #0d5c4d !important;
+    color: #ffffff !important;
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: all var(--transition-fast);
+}
+
+.portal-return-btn:hover,
+.portal-return-btn:active {
+    background: #094438 !important;
+    transform: scale(1.02);
+}
+
+.portal-ctrl-btn {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all var(--transition-fast);
+}
+
+.portal-ctrl-btn:hover,
+.portal-ctrl-btn:active {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.portal-overlay-frame {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: var(--portal-frame-bg);
+}
+
+/* ==========================================================================
+   Offline Network Status Banner & Auto-Sync Styles
+   ========================================================================== */
+.offline-status-banner {
+    margin: 0.75rem 0;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #fff7ed;
+    border: 1.5px solid #fdba74;
+    color: #9a3412;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.12);
+    animation: slideDown 0.3s ease-out;
+    font-size: 0.9rem;
+}
+
+.offline-status-banner.online-restored {
+    background: #f0fdf4;
+    border-color: #86efac;
+    color: #166534;
+    box-shadow: 0 4px 12px rgba(22, 101, 52, 0.12);
+}
+
+.offline-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.offline-banner-icon {
+    font-size: 1.25rem;
+}
+
+.offline-retry-btn {
+    background: #ea580c;
+    color: #ffffff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+}
+
+.offline-retry-btn:hover {
+    background: #c2410c;
+    transform: scale(1.02);
+}
+
+.online-restored .offline-retry-btn {
+    background: #16a34a;
+}
+
+.online-restored .offline-retry-btn:hover {
+    background: #15803d;
+}
+
+/* ==========================================================================
+   SmartGovAI Unified Audio Controller Bar & Section Audio Styles
+   ========================================================================== */
+.smartgov-audio-bar {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 620px;
+    background: var(--surface, #ffffff);
+    color: var(--ink, #0f172a);
+    border: 2px solid var(--primary, #0f4a7c);
+    border-radius: var(--radius-xl, 18px);
+    box-shadow: 0 12px 36px rgba(15, 74, 124, 0.22), 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 12px 20px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+}
+
+.smartgov-audio-bar.hidden {
+    display: none !important;
+}
+
+.audio-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.audio-bar-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.audio-bar-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink, #0f172a);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 320px;
+}
+
+.audio-bar-progress {
+    background: var(--primary-subtle, #dbeafe);
+    color: var(--primary, #0f4a7c);
+    font-size: 0.82rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.audio-bar-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.audio-control-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    min-height: 46px;
+    border-radius: var(--radius-md, 10px);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.audio-control-btn .btn-icon {
+    font-size: 1.15rem;
+}
+
+.audio-control-btn.btn-playpause {
+    background: var(--primary, #0f4a7c);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(15, 74, 124, 0.25);
+}
+
+.audio-control-btn.btn-playpause:hover {
+    background: var(--primary-dark, #092c4a);
+    transform: translateY(-1px);
+}
+
+.audio-control-btn.btn-playpause:active {
+    transform: translateY(1px);
+}
+
+.audio-control-btn.btn-stop {
+    background: var(--surface-soft, #f1f5f9);
+    color: var(--danger, #b91c1c);
+    border: 1px solid var(--border, #cbd5e1);
+}
+
+.audio-control-btn.btn-stop:hover {
+    background: var(--danger-subtle, #fee2e2);
+    border-color: var(--danger, #b91c1c);
+}
+
+.audio-control-btn.btn-stop:active {
+    transform: translateY(1px);
+}
+
+/* Section Audio Button */
+.section-audio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary-subtle, #dbeafe);
+    color: var(--primary, #0f4a7c);
+    border: 1px solid rgba(15, 74, 124, 0.2);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.section-audio-btn:hover {
+    background: var(--primary, #0f4a7c);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.section-audio-btn.active-playing {
+    background: var(--primary, #0f4a7c);
+    color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(15, 74, 124, 0.25);
+    animation: audioPulse 1.5s infinite;
+}
+
+@keyframes audioPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+.info-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 640px) {
+    .smartgov-audio-bar {
+        bottom: 12px;
+        width: calc(100% - 20px);
+        padding: 10px 14px;
+    }
+    .audio-bar-info {
+        min-width: 140px;
+    }
+    .audio-bar-title {
+        font-size: 0.88rem;
+        max-width: 200px;
+    }
+    .audio-control-btn {
+        padding: 8px 12px;
+        min-height: 42px;
+        font-size: 0.88rem;
+    }
+}
+
+
 
 
 

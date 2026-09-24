@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description" content="Andhra Pradesh government health schemes lookup, AI assistant, and document simplification platform.">
     <meta name="csrf-token" content="<%= csrf_token %>">
-    <title>SmartGov Health | Andhra Pradesh Schemes</title>
+    <title>SmartGovAI | Andhra Pradesh Government Health Schemes</title>
     
     <!-- PWA Manifest & Icons -->
     <link rel="manifest" href="/manifest.webmanifest">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="header-right-actions">
                         <div class="font-size-toggle-wrap" title="అక్షరాల పరిమాణం / Text Size" aria-label="Adjust font size">
-                            <span class="font-label" data-i18n="fontSizeLabel">అక్షరాలు:</span>
+                            <span class="font-label" data-i18n="fontSizeLabel">పరిమాణం:</span>
                             <div class="font-buttons" role="group" aria-label="Font size controls">
                                 <button type="button" class="font-btn" id="fontDecBtn" data-action="decrease-font" title="చిన్న అక్షరాలు (A-) / Small text" aria-label="Small text">A-</button>
                                 <button type="button" class="font-btn active" id="fontResetBtn" data-action="reset-font" title="సాధారణ అక్షరాలు (A) / Normal text" aria-label="Normal text">A</button>
@@ -93,8 +93,8 @@
                 <button type="button" class="assistant-trigger-btn dashboard-btn" data-action="toggle-dashboard" style="border-left: 3px solid #3b82f6;">
                     <span class="assistant-icon" aria-hidden="true">📊</span>
                     <span class="assistant-text">
-                        <strong>పథకాల విశ్లేషణ (Analytics)</strong>
-                        <small>వర్గాలు, వయస్సు & అర్హతల చార్ట్‌లు</small>
+                        <strong data-i18n="analyticsTitle">పథకాల విశ్లేషణ (Analytics)</strong>
+                        <small data-i18n="analyticsSub">వర్గాలు, వయస్సు & అర్హతల చార్ట్‌లు</small>
                     </span>
                 </button>
                 <button type="button" class="assistant-trigger-btn emergency-btn" data-action="open-emergency">
@@ -107,6 +107,19 @@
             </div>
         </section>
 
+        <!-- Offline Network Status Banner -->
+        <div id="offlineStatusBanner" class="offline-status-banner" style="display:none;" role="alert" aria-live="polite">
+            <div class="offline-banner-content">
+                <span class="offline-banner-icon">📡</span>
+                <span class="offline-banner-text" id="offlineBannerText">
+                    <strong>మీరు ప్రస్తుతం ఆఫ్‌లైన్‌లో ఉన్నారు.</strong> కాష్ చేసిన స్థానిక సమాచారాన్ని చూపిస్తున్నాం.
+                </span>
+            </div>
+            <button type="button" class="offline-retry-btn" id="offlineRefreshBtn" onclick="forceSyncOfflineCache()" title="నెట్‌వర్క్ వచ్చినప్పుడు సింక్ చేయండి">
+                🔄 రీఫ్రెష్ & సింక్
+            </button>
+        </div>
+
         <!-- Batch Sync Status Banner -->
         <div id="batchSyncStatusBanner" style="display:none; margin-top: 1rem; padding: 10px 16px; border-radius: 8px; background: #f0fdf4; border: 1px solid #bbf7d0; font-size: 0.9rem; color: #166534; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.3s ease;"></div>
 
@@ -117,8 +130,8 @@
                     <div style="display:flex; align-items:center; gap: 10px;">
                         <span style="font-size: 1.3rem;">📊</span>
                         <div>
-                            <h2 id="dashboardModalHeading" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--ink, #0f172a);">ఆరోగ్య పథకాల విశ్లేషణ డాష్‌బోర్డ్ (Schemes Analytics Dashboard)</h2>
-                            <small style="color: var(--muted, #64748b); font-size: 0.78rem;">లైవ్ వర్గీకరణ, బడ్జెట్ పరిమితులు & జనాభా విశ్లేషణ</small>
+                            <h2 id="dashboardModalHeading" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--ink, #0f172a);" data-i18n="dashboardModalHeading">ఆరోగ్య పథకాల విశ్లేషణ డాష్‌బోర్డ్ (Schemes Analytics Dashboard)</h2>
+                            <small style="color: var(--muted, #64748b); font-size: 0.78rem;" data-i18n="dashboardModalSub">లైవ్ వర్గీకరణ, బడ్జెట్ పరిమితులు & జనాభా విశ్లేషణ</small>
                         </div>
                     </div>
                     <button type="button" class="dialog-close-btn" data-action="close-dashboard" aria-label="Close" style="background:#e2e8f0; border:none; width:30px; height:30px; border-radius:50%; cursor:pointer; font-weight:bold; font-size:1rem; color:#475569; display:flex; align-items:center; justify-content:center;">✕</button>
@@ -287,14 +300,12 @@
                     id="searchSubmitBtn"
                     class="search-submit-btn"
                     type="button"
-                    title="వెతకండి లేదా Enter నొక్కండి"
+                    title="వెతకండి"
                     aria-label="వెతకండి"
                     data-i18n-title="searchBtnTitle"
                     data-i18n-aria="searchBtn"
                 >
                     <span class="search-submit-icon" aria-hidden="true">🔍</span>
-                    <span class="search-submit-text" data-i18n="searchBtn">వెతకండి</span>
-                    <kbd class="search-kbd-badge" title="Enter నొక్కి వెతకండి" aria-hidden="true" data-i18n="searchKbdHint">↵ Enter</kbd>
                 </button>
             </div>
             <!-- Live Search Status & Feedback Strip -->
@@ -378,13 +389,16 @@
             <!-- Schemes Cards Grid View -->
             <div id="schemesGridSection" class="schemes-grid-section">
                 <div class="grid-header">
-                    <div style="display:flex; align-items:center; gap: 8px;">
+                    <div class="grid-header-title-group">
                         <h2 data-i18n="availableSchemesTitle">అందుబాటులో ఉన్న ఆరోగ్య పథకాలు</h2>
                         <span id="schemeCountBadge" class="count-badge">0</span>
                     </div>
-                    <button type="button" class="secondary-btn compare-schemes-btn" data-action="open-compare" style="display:flex; align-items:center; gap:6px; font-size: 0.9rem; padding: 6px 12px; margin-left: auto;">
-                        <span aria-hidden="true">⚖️</span> <span data-i18n="compareSchemes">Compare</span>
-                    </button>
+                    <div class="grid-header-actions">
+                        <button type="button" class="secondary-btn compare-schemes-btn" data-action="open-compare">
+                            <span aria-hidden="true">⚖️</span>
+                            <span data-i18n="compareSchemes">Compare Schemes</span>
+                        </button>
+                    </div>
                 </div>
                 <div id="schemesGrid" class="schemes-grid" role="region" aria-label="Schemes Grid">
                     <!-- Dynamic Scheme Cards Injected Here -->
@@ -599,19 +613,19 @@
         <form id="feedbackForm" class="feedback-form">
             <div id="feedbackFormError" class="feedback-error hidden" style="color: var(--danger); font-size: 0.9rem; font-weight: 600; padding: 8px; background: var(--danger-subtle); border-radius: 6px; display: none;"></div>
             <div class="field">
-                <label for="feedbackType">రకం / Category:</label>
+                <label for="feedbackType" data-i18n="feedbackCategoryLabel">వర్గం / రకం:</label>
                 <select id="feedbackType">
-                    <option value="wrong_info">తప్పుడు సమాచారం (Incorrect Info)</option>
-                    <option value="audio_issue">ఆడియో సమస్య (Audio Issue)</option>
-                    <option value="missing_scheme">పథకం దొరకలేదు (Missing Scheme)</option>
-                    <option value="suggestion">సలహా (Suggestion)</option>
+                    <option value="wrong_info" data-i18n="feedbackOptionWrongInfo">తప్పుడు సమాచారం (Incorrect Info)</option>
+                    <option value="audio_issue" data-i18n="feedbackOptionAudio">ఆడియో సమస్య (Audio Issue)</option>
+                    <option value="missing_scheme" data-i18n="feedbackOptionMissing">పథకం దొరకలేదు (Missing Scheme)</option>
+                    <option value="suggestion" data-i18n="feedbackOptionSuggestion">సలహా (Suggestion)</option>
                 </select>
             </div>
             <div class="field">
-                <label for="feedbackMessage">వివరణ / Description:</label>
-                <textarea id="feedbackMessage" rows="4" placeholder="సమస్యను క్లుప్తంగా వివరించండి..." required></textarea>
+                <label for="feedbackMessage" data-i18n="feedbackDescLabel">వివరణ:</label>
+                <textarea id="feedbackMessage" rows="4" data-i18n-placeholder="feedbackPlaceholder" placeholder="సమస్యను క్లుప్తంగా వివరించండి..." required></textarea>
             </div>
-            <button type="submit" class="primary-btn" style="width:100%; margin-top:12px;">సమర్పించండి (Submit)</button>
+            <button type="submit" class="primary-btn" data-i18n="feedbackSubmitBtn" style="width:100%; margin-top:12px;">సమర్పించండి</button>
         </form>
     </div>
 </dialog>
@@ -639,6 +653,7 @@
 <!-- Scripts Loading -->
 <script src="/public/assets/leaflet/leaflet.js"></script>
 <script src="/public/js/i18n.js"></script>
+<script src="/public/js/audio-controller.js"></script>
 <script src="/public/js/app-client.js"></script>
 <script src="/public/js/scheme-chatbot.js"></script>
 <script src="/public/js/scheme-nlp-search.js"></script>
@@ -1200,7 +1215,10 @@
     function resultCard(title, text) {
         return `
             <article class="info-card">
-                <h3>${window.escapeHtml(title)}</h3>
+                <div class="info-card-header">
+                    <h3>${window.escapeHtml(title)}</h3>
+                    <button type="button" class="section-audio-btn action-icon-btn" data-action="speak-section" data-title="${window.escapeHtml(title)}" data-text="${window.escapeHtml(text)}" title="Listen to ${window.escapeHtml(title)}" aria-label="Listen to ${window.escapeHtml(title)}">🔊</button>
+                </div>
                 <p>${window.escapeHtml(text)}</p>
             </article>
         `;
@@ -1211,6 +1229,23 @@
             showError(data.error);
             return;
         }
+
+        // Cache recently searched scheme summary for offline access
+        try {
+            if (data && data.scheme_name) {
+                let recentMap = {};
+                try { recentMap = JSON.parse(localStorage.getItem('smartgov_recent_schemes') || '{}'); } catch(e){}
+                recentMap[data.scheme_name] = data;
+                localStorage.setItem('smartgov_recent_schemes', JSON.stringify(recentMap));
+
+                if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({
+                        type: 'CACHE_SCHEME_SUMMARY',
+                        scheme: data
+                    });
+                }
+            }
+        } catch(e) {}
 
         currentRequestId = data.request_id;
         currentSchemeName = data.scheme_name;
@@ -1255,22 +1290,19 @@
         const audioTitle = window.t ? window.t('audioTitle') : '🎙️ ఆడియో గైడ్';
         const audioNotAvail = window.t ? window.t('audioNotAvailable') : 'ఆడియో అందుబాటులో లేదు';
 
-        const audioHtml = data.voice_url && !isEn
-            ? `<div class="audio-wrap">
-                <strong>${audioTitle}</strong>
-                <button type="button" class="speak-page-btn primary-btn" data-audio-src="${window.escapeHtml(data.voice_url)}" style="width:100%;margin-top:8px;padding:8px;display:flex;justify-content:center;align-items:center;gap:8px;">▶️ ప్లే ఆడియో (Play Native Audio)</button>
-            </div>`
-            : `<div class="audio-wrap">
-                <strong>${isEn ? audioTitle : audioNotAvail}</strong>
-                <button type="button" class="speak-page-btn primary-btn" style="width:100%;margin-top:8px;padding:8px;background:var(--secondary);color:#000;">${isEn ? '🔊 Read Aloud (Browser Voice)' : '⚠️ 🔊 ఈ పేజీ చదవండి (Browser Fallback)'}</button>
-               </div>`;
+        const audioHtml = `<div class="audio-wrap">
+            <strong>${audioTitle}</strong>
+            <button type="button" class="speak-page-btn primary-btn" ${data.voice_url && !isEn ? `data-audio-src="${window.escapeHtml(data.voice_url)}"` : ''} style="width:100%;margin-top:8px;padding:8px;display:flex;justify-content:center;align-items:center;gap:8px;">
+                🔊 ${isEn ? 'Listen in English (Neural Voice)' : 'పథకం వివరాలు వినండి (తెలుగు వాయిస్)'}
+            </button>
+        </div>`;
 
         const sourceLabel = window.t ? window.t('sourceLabel') : 'మూలం:';
         const officialSource = window.t ? window.t('officialSource') : 'అధికారిక మూలం';
         const uploadedSource = window.t ? window.t('uploadedSource') : 'అప్‌లోడ్ చేసిన పత్రం';
 
         const sourceHtml = data.source_url
-            ? `<a class="source-link" href="${window.escapeHtml(data.source_url)}" target="_blank" rel="noopener noreferrer">🌐 ${window.escapeHtml(data.source_name || officialSource)}</a>`
+            ? `<a class="source-link" href="${window.escapeHtml(data.source_url)}">🌐 ${window.escapeHtml(data.source_name || officialSource)}</a>`
             : `<span>📄 ${window.escapeHtml(data.source_name || uploadedSource)}</span>`;
 
         const aiBadge = data.is_ai_generated ? `<span class="ai-badge" style="background:#e8f0fe; color:#1a73e8; padding:2px 8px; border-radius:12px; font-size:0.8rem; margin-left:8px; display:inline-block; vertical-align:middle;" title="This information is generated by AI from the uploaded document">✨ AI-Generated</span>` : '';
@@ -1487,9 +1519,16 @@
     window.fetchScheme = async function fetchScheme(schemeName, preventScroll = false) {
         if (!schemeName) return;
 
-        // 1. Instant local render if available in catalog (0ms latency)
+        let recentCached = null;
+        try {
+            const storedRecent = JSON.parse(localStorage.getItem('smartgov_recent_schemes') || '{}');
+            recentCached = storedRecent[schemeName];
+        } catch(e){}
+
+        // 1. Instant local render if available in catalog or local cache (0ms latency)
         const localData = (schemesCatalog && schemesCatalog[schemeName]) ||
-                          (window.SmartGovEnhanced?.loadOfflineData()?.schemes_list?.[schemeName]);
+                          (window.SmartGovEnhanced?.loadOfflineData()?.schemes_list?.[schemeName]) ||
+                          recentCached;
 
         if (localData) {
             displayResult(localData, preventScroll);
@@ -1830,21 +1869,67 @@
     };
 
     async function handleUpload() {
+        const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
         if (!navigator.onLine) {
-            showError(window.t ? window.t('pdfOfflineAlert') : '🌐 ఇంటర్నెట్ కనెక్షన్ అవసరం: కొత్త PDF / ఇమేజ్ పత్రాలను AI ద్వారా విశ్లేషించడానికి ఇంటర్నెట్ కనెక్షన్ అవసరం. మిగతా అన్ని పథకాల వివరాలు, ఆడియో మరియు అర్హత పరీక్షలు ఆఫ్‌లైన్‌లో పూర్తిగా పనిచేస్తాయి.');
+            const offlineMsg = isEn 
+                ? '🌐 Internet Connection Required: AI document simplification requires an active network connection. Other scheme details and guides work offline.' 
+                : '🌐 ఇంటర్నెట్ కనెక్షన్ అవసరం: కొత్త PDF / ఇమేజ్ పత్రాలను AI ద్వారా విశ్లేషించడానికి ఇంటర్నెట్ కనెక్షన్ అవసరం. మిగతా అన్ని పథకాల వివరాలు, ఆడియో మరియు అర్హత పరీక్షలు ఆఫ్‌లైన్‌లో పూర్తిగా పనిచేస్తాయి.';
+            if (window.showToast) {
+                window.showToast(offlineMsg, 'warning');
+            } else {
+                alert(offlineMsg);
+            }
             return;
         }
 
         const fileInput = document.getElementById('pdfUpload');
         const file = fileInput?.files?.[0];
         if (!file) {
-            showError(window.t ? window.t('selectPdfError') : 'దయచేసి PDF లేదా ఇమేజ్ ఫైల్ ఎంచుకోండి.');
+            const selectMsg = isEn 
+                ? '⚠️ Please select a PDF or image file first.' 
+                : '⚠️ దయచేసి ముందుగా PDF లేదా ఇమేజ్ ఫైల్‌ను ఎంచుకోండి.';
+
+            // Highlight the file input area smoothly without touching or clearing resultArea
+            const inputContainer = fileInput?.closest('.field') || fileInput?.parentElement;
+            if (inputContainer) {
+                inputContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                inputContainer.style.transition = 'all 0.3s ease';
+                inputContainer.style.outline = '2px dashed #2563eb';
+                inputContainer.style.borderRadius = '8px';
+                inputContainer.style.background = '#eff6ff';
+                setTimeout(() => {
+                    inputContainer.style.outline = 'none';
+                    inputContainer.style.background = 'transparent';
+                }, 3500);
+            }
+
+            // Focus and pop up the native file selector dialog so the user can immediately choose a file
+            if (fileInput) {
+                try {
+                    fileInput.focus();
+                    fileInput.click();
+                } catch (err) {}
+            }
+
+            // Show friendly notification popup / toast
+            if (window.showToast) {
+                window.showToast(selectMsg, 'warning');
+            } else {
+                alert(selectMsg);
+            }
             return;
         }
 
         const MAX_FILE_SIZE = 20 * 1024 * 1024;
         if (file.size > MAX_FILE_SIZE) {
-            showError(window.t ? window.t('fileTooLargeError') : 'ఫైల్ పరిమాణం 20MB కంటే ఎక్కువగా ఉంది. దయచేసి 20MB లోపు ఉన్న PDF లేదా ఇమేజ్ ఫైల్‌ను ఎంచుకోండి.');
+            const sizeMsg = isEn 
+                ? '⚠️ File size exceeds 20MB limit. Please select a document under 20MB.' 
+                : '⚠️ ఫైల్ పరిమాణం 20MB కంటే ఎక్కువగా ఉంది. దయచేసి 20MB లోపు ఉన్న PDF లేదా ఇమేజ్ ఫైల్‌ను ఎంచుకోండి.';
+            if (window.showToast) {
+                window.showToast(sizeMsg, 'error');
+            } else {
+                alert(sizeMsg);
+            }
             return;
         }
 
@@ -1866,10 +1951,14 @@
             }
             if (consentCheckbox) consentCheckbox.focus();
 
-            const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
-            showError(isEn 
+            const consentMsg = isEn 
                 ? '⚠️ Please check "I confirm this document contains no personal data / PII and consent to processing" before uploading.' 
-                : '⚠️ దయచేసి పత్రం అప్‌లోడ్ చేయడానికి ముందు గోప్యతా అంగీకారం చెక్‌బాక్స్ (Consent) ను టిక్ చేయండి.');
+                : '⚠️ దయచేసి పత్రం అప్‌లోడ్ చేయడానికి ముందు గోప్యతా అంగీకారం చెక్‌బాక్స్ (Consent) ను టిక్ చేయండి.';
+            if (window.showToast) {
+                window.showToast(consentMsg, 'warning');
+            } else {
+                alert(consentMsg);
+            }
             return;
         }
 
@@ -2123,25 +2212,17 @@
 
         searchInput.addEventListener('input', syncClearButton);
 
-        function speakTts(text, lang = 'te') {
-            if (!('speechSynthesis' in window) || !text) return;
-            try {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = lang === 'en' ? 'en-IN' : 'te-IN';
-                utterance.rate = 1.0;
-                utterance.pitch = 1.0;
-                const voices = window.speechSynthesis.getVoices();
-                const matchVoice = voices.find(v => lang === 'en' ? (v.lang === 'en-IN' || v.lang.startsWith('en')) : (v.lang === 'te-IN' || v.lang.startsWith('te')));
-                if (matchVoice) utterance.voice = matchVoice;
-                window.speechSynthesis.speak(utterance);
-            } catch (e) {
-                console.warn('SpeechSynthesis error:', e);
+        function speakText(text, lang = 'te') {
+            if (!text || !text.trim()) return;
+            if (window.AudioController && typeof window.AudioController.play === 'function') {
+                return window.AudioController.play(text, { lang: lang });
             }
         }
-        window.speakTts = speakTts;
 
-        function announceSearchResults(query, count, firstSchemeName) {
+        window.speakText = speakText;
+        window.speakTts = speakText;
+
+        function announceSearchResults(query, count, firstSchemeName, speakAloud = false) {
             if (!query) return;
             const currentLang = window.getLang ? window.getLang() : 'te';
             const isEn = currentLang === 'en';
@@ -2161,7 +2242,10 @@
                     summaryText = `"${query}" కోసం పథకాలు లభించలేదు. దయచేసి వేరే పదంతో ప్రయత్నించండి.`;
                 }
             }
-            speakTts(summaryText, isEn ? 'en' : 'te');
+            // Only speak aloud if explicitly requested by voice search mode
+            if (speakAloud) {
+                speakText(summaryText, isEn ? 'en' : 'te');
+            }
         }
         window.announceSearchResults = announceSearchResults;
 
@@ -2230,15 +2314,15 @@
                     }
 
                     status.innerHTML = `💡 <strong>"${window.escapeHtml(cleanQuery)}"</strong> &bull; ${matchedCards} ${isEn ? 'near/related schemes found' : 'సమీప పథకాలు లభించాయి'}${recHtml}`;
-                    announceSearchResults(cleanQuery, matchedCards, topSchemeName || '');
+                    announceSearchResults(cleanQuery, matchedCards, topSchemeName || '', true);
                 } else if (matchedCards > 0) {
                     status.innerHTML = `🔍 <strong>"${window.escapeHtml(cleanQuery)}"</strong> &bull; ${matchedCards} ${isEn ? 'schemes found' : 'పథకాలు లభించాయి'}`;
                     const topCard = document.querySelector('.scheme-card[data-scheme]');
                     const topSchemeName = topCard ? topCard.getAttribute('data-scheme') : '';
-                    announceSearchResults(cleanQuery, matchedCards, topSchemeName);
+                    announceSearchResults(cleanQuery, matchedCards, topSchemeName, true);
                 } else {
                     status.innerHTML = `⚠️ <strong>"${window.escapeHtml(cleanQuery)}"</strong> &bull; ${isEn ? 'No schemes found. Try keywords like "Aarogyasri", "Eye Care", "Dialysis", "108".' : 'పథకాలు లభించలేదు. "ఆరోగ్యశ్రీ", "కంటి వెలుగు", "డయాలసిస్", "108" వంటి పదాలతో ప్రయత్నించండి.'}`;
-                    announceSearchResults(cleanQuery, 0, '');
+                    announceSearchResults(cleanQuery, 0, '', true);
                 }
 
                 const grid = document.getElementById('schemesGrid');
@@ -2400,6 +2484,10 @@
             renderSchemeCards(true);
         } else if (action === 'set-lang') {
             const lang = actionTarget.dataset.lang || 'te';
+            // Stop active audio and clear audio queue immediately upon language switch
+            if (window.AudioController && typeof window.AudioController.onLanguageChange === 'function') {
+                window.AudioController.onLanguageChange(lang);
+            }
             if (window.SmartGovI18n && typeof window.SmartGovI18n.setLanguage === 'function') {
                 window.SmartGovI18n.setLanguage(lang);
             } else if (window.SmartGovI18n && typeof window.SmartGovI18n.setLang === 'function') {
@@ -2556,8 +2644,37 @@
                 const isEn = window.getLang && window.getLang() === 'en';
                 const title = isEn ? sName : (sData.telugu_name || sName);
                 const desc = isEn ? (sData.english_description || sData.simplified?.benefits || '') : (sData.telugu_description || sData.telugu?.benefits || '');
-                if (window.speakText) {
-                    window.speakText(`${title}. ${desc}`, isEn ? 'en' : 'te');
+                if (window.AudioController) {
+                    window.AudioController.play(`${title}. ${desc}`, {
+                        lang: isEn ? 'en' : 'te',
+                        title: title,
+                        triggerBtn: actionTarget
+                    });
+                }
+            }
+        } else if (action === 'speak-section') {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const secTitle = actionTarget.dataset.title || '';
+            const secText = actionTarget.dataset.text || '';
+            if (window.AudioController && secText) {
+                const isEn = window.getLang && window.getLang() === 'en';
+                // Toggle play/pause if this section is currently active
+                const snap = window.AudioController.getState();
+                if (snap.currentSection && snap.currentSection.title === secTitle && (snap.isPlaying || snap.isPaused)) {
+                    if (snap.isPlaying) {
+                        window.AudioController.pause();
+                    } else {
+                        window.AudioController.resume();
+                    }
+                } else {
+                    window.AudioController.play(`${secTitle}: ${secText}`, {
+                        lang: isEn ? 'en' : 'te',
+                        title: secTitle,
+                        triggerBtn: actionTarget
+                    });
                 }
             }
         } else if (action === 'open-guided' || action === 'start-guided-mode') {
@@ -2577,9 +2694,15 @@
             }
         } else if (action === 'guided-speak') {
             const bodyEl = document.getElementById('guidedBody');
-            if (bodyEl && window.speakText) {
+            if (bodyEl && window.AudioController) {
                 const isEn = window.getLang && window.getLang() === 'en';
-                window.speakText(bodyEl.textContent, isEn ? 'en' : 'te');
+                const stepText = bodyEl.textContent.trim();
+                const stepTitle = document.getElementById('guidedProgressText')?.textContent || (isEn ? 'Guided Step' : 'దశల వివరణ');
+                window.AudioController.play(stepText, {
+                    lang: isEn ? 'en' : 'te',
+                    title: stepTitle,
+                    triggerBtn: actionTarget
+                });
             }
         } else if (action === 'close-feedback') {
             const dialog = document.getElementById('feedbackModal');
@@ -2618,8 +2741,12 @@
                     .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
                     .replace(/\n+/g, '. ');
                 const activeLang = window.getLang ? window.getLang() : 'te';
-                if (window.speakText) {
-                    window.speakText(cleanForSpeech, activeLang);
+                if (window.AudioController) {
+                    window.AudioController.play(cleanForSpeech, {
+                        lang: activeLang,
+                        title: activeLang === 'en' ? 'AI Response' : 'AI సమాధానం',
+                        triggerBtn: actionTarget
+                    });
                 }
             }
         } else if (action === 'copy-chat-msg') {
@@ -2703,6 +2830,9 @@
         };
 
         searchInputEl.addEventListener('input', () => {
+            if (typeof stopListening === 'function') {
+                stopListening(false);
+            }
             const raw = searchInputEl.value.trim();
             if (raw.length > 0) {
                 updateSearchFeedback(raw, 0, false, true);
@@ -3365,36 +3495,39 @@
                 scrollY: window.scrollY
             };
             try {
-                const targetHash = currentSchemeName ? ('#scheme=' + encodeURIComponent(currentSchemeName)) : (window.location.hash || '');
+                const isValidScheme = currentSchemeName && currentSchemeName !== 'undefined';
+                const targetHash = isValidScheme ? ('#scheme=' + encodeURIComponent(currentSchemeName)) : (window.location.hash && !window.location.hash.includes('undefined') ? window.location.hash : '');
                 history.replaceState(navState, '', targetHash || window.location.pathname);
                 sessionStorage.setItem('smartgov_visit_website_state', JSON.stringify(navState));
             } catch (e) {}
         }, 150);
     }
+    window.restoreStateFromNavigation = restoreStateFromNavigation;
     window.addEventListener('scroll', syncHistoryState, { passive: true });
 
-    // Capture state when user clicks on "Visit Website" or any external link
+    // Capture click on external links / official portal links to open in present-tab iframe
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a');
-        if (link && (link.classList.contains('source-link') || link.target === '_blank' || (link.href && !link.href.startsWith(window.location.origin) && !link.href.startsWith('javascript:')))) {
-            const currentQuery = document.getElementById('searchInput')?.value || '';
-            const saveState = {
-                schemeName: currentSchemeName,
-                activeFilter: activeFilter || 'all',
-                searchQuery: currentQuery,
-                scrollY: window.scrollY,
-                timestamp: Date.now()
-            };
-            try {
-                sessionStorage.setItem('smartgov_visit_website_state', JSON.stringify(saveState));
-                const targetHash = currentSchemeName ? ('#scheme=' + encodeURIComponent(currentSchemeName)) : (window.location.hash || '');
-                history.replaceState(saveState, '', targetHash || window.location.pathname);
-            } catch (err) {}
+        if (link && (link.classList.contains('source-link') || (link.href && link.href.startsWith('http') && !link.href.includes(window.location.host)))) {
+            // Do not intercept if clicked inside the portal overlay header itself
+            if (link.closest('#inAppPortalOverlay')) return;
+            e.preventDefault();
+            const linkUrl = link.getAttribute('data-portal-url') || link.href;
+            const linkTitle = link.getAttribute('data-portal-title') || link.textContent.trim() || 'Official Government Portal';
+            if (typeof window.openInAppPortal === 'function') {
+                window.openInAppPortal(linkUrl, linkTitle);
+            }
         }
     });
 
     // Handle Browser Back & Forward Navigation (popstate)
     window.addEventListener('popstate', (e) => {
+        if (window._isPortalFrameOpen) {
+            if (typeof window.closeInAppPortal === 'function') {
+                window.closeInAppPortal();
+                return;
+            }
+        }
         if (e.state && (e.state.schemeName || e.state.activeFilter || e.state.searchQuery !== undefined || typeof e.state.scrollY === 'number')) {
             restoreStateFromNavigation(e.state);
         } else if (window.location.hash.startsWith('#scheme=')) {
@@ -3403,6 +3536,18 @@
                 displayResult(schemesCatalog[sName], false);
             }
         } else {
+            // Restore from session storage if available so we never clear scheme unexpectedly on back
+            try {
+                const saved = sessionStorage.getItem('smartgov_visit_website_state');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (parsed && parsed.schemeName && schemesCatalog[parsed.schemeName]) {
+                        restoreStateFromNavigation(parsed);
+                        return;
+                    }
+                }
+            } catch (err) {}
+
             currentSchemeName = null;
             currentSchemeData = null;
             const resultArea = document.getElementById('resultArea');
@@ -3523,29 +3668,89 @@
             .catch(() => {});
     }
 
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            restoreEligibilityAnswers();
-            restoreDocumentChecks();
-        }, 300);
-    });
+    // Network Connectivity Monitoring & Automatic Background Cache Sync
+    function updateNetworkBanner() {
+        const banner = document.getElementById('offlineStatusBanner');
+        const bannerText = document.getElementById('offlineBannerText');
+        if (!banner || !bannerText) return;
+
+        const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+
+        if (!navigator.onLine) {
+            banner.className = 'offline-status-banner';
+            bannerText.innerHTML = isEn 
+                ? '<strong>You are currently offline.</strong> Displaying cached health scheme data from Service Worker local memory.' 
+                : '<strong>మీరు ప్రస్తుతం ఆఫ్‌లైన్‌లో ఉన్నారు.</strong> స్థానికంగా భద్రపరిచిన పథకాల సమాచారాన్ని చూపిస్తున్నాం.';
+            banner.style.display = 'flex';
+        } else {
+            banner.style.display = 'none';
+        }
+    }
+
+    async function forceSyncOfflineCache() {
+        const banner = document.getElementById('offlineStatusBanner');
+        const bannerText = document.getElementById('offlineBannerText');
+        const refreshBtn = document.getElementById('offlineRefreshBtn');
+        const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+
+        if (refreshBtn) {
+            refreshBtn.disabled = true;
+            refreshBtn.innerHTML = `⏳ ${isEn ? 'Syncing...' : 'సింక్ అవుతోంది...'}`;
+        }
+
+        try {
+            // Force fetch latest scheme dataset from server and sync with Firestore local cache
+            const resp = await fetch('/offline-cache?force_sync=' + Date.now(), { cache: 'no-store' });
+            if (resp.ok) {
+                const data = await resp.json();
+                if (data && data.schemes_list) {
+                    if (window.SmartGovEnhanced) {
+                        window.SmartGovEnhanced.saveOfflineData(data);
+                    }
+                    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+                        navigator.serviceWorker.controller.postMessage({ type: 'CACHE_ALL_AUDIO' });
+                    }
+                }
+                if (banner && bannerText) {
+                    banner.className = 'offline-status-banner online-restored';
+                    bannerText.innerHTML = isEn
+                        ? '✅ <strong>Local cache synced with Firestore successfully!</strong> Fresh data loaded.'
+                        : '✅ <strong>సరికొత్త డేటాతో కాష్ సింక్ అయింది!</strong> నవీకరించిన సమాచారం లోడ్ అయింది.';
+                }
+                setTimeout(() => {
+                    if (banner) banner.style.display = 'none';
+                }, 3500);
+            } else {
+                throw new Error('Sync failed');
+            }
+        } catch (err) {
+            if (bannerText) {
+                bannerText.innerHTML = isEn
+                    ? '⚠️ <strong>Unable to sync with Firestore.</strong> Please check your internet connection and try again.'
+                    : '⚠️ <strong>సింక్ చేయడం వీలుకాలేదు.</strong> దయచేసి మీ ఇంటర్నెట్ కనెక్షన్ సరిచూసుకుని మళ్లీ ప్రయత్నించండి.';
+            }
+        } finally {
+            if (refreshBtn) {
+                refreshBtn.disabled = false;
+                refreshBtn.innerHTML = `🔄 ${isEn ? 'Sync Now' : 'రీఫ్రెష్ & సింక్'}`;
+            }
+        }
+    }
+
+    async function checkNetworkAndSync() {
+        if (navigator.onLine) {
+            await forceSyncOfflineCache();
+        } else {
+            updateNetworkBanner();
+        }
+    }
+
+    window.forceSyncOfflineCache = forceSyncOfflineCache;
+    window.checkNetworkAndSync = checkNetworkAndSync;
+    window.addEventListener('online', checkNetworkAndSync);
+    window.addEventListener('offline', updateNetworkBanner);
 </script>
-    <!-- Floating Audio Player for TTS -->
-    <div id="floatingAudioPlayer" class="floating-audio-player hidden">
-        <div class="audio-controls">
-            <button id="audioRewindBtn" title="-10s">⏪</button>
-            <button id="audioPlayPauseBtn" title="Play/Pause">⏸️</button>
-            <button id="audioForwardBtn" title="+10s">⏩</button>
-            <button id="audioStopBtn" title="Stop">⏹️</button>
-        </div>
-        <div class="audio-progress">
-            <span id="audioTime">0:00</span>
-            <input type="range" id="audioScrubber" value="0" min="0" max="100" step="1">
-        </div>
-        <div class="audio-volume" style="display: flex; align-items: center; gap: 4px; margin-left: 8px;">
-            <span style="font-size: 1.1rem; color: var(--ink);">🔊</span>
-            <input type="range" id="audioVolume" value="1" min="0" max="1" step="0.05" style="width: 60px; accent-color: var(--primary);">
-        </div>
-    </div>
+    <script src="/public/js/portal-overlay.js"></script>
+    <script src="/public/js/offline-sync.js"></script>
 </body>
 </html>

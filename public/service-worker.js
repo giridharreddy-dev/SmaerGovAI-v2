@@ -1,15 +1,22 @@
-const CACHE_NAME = 'smartgov-health-v7';
+const CACHE_NAME = 'smartgov-health-v8';
+const SCHEME_CACHE = 'smartgov-schemes-v1';
 const OFFLINE_URL = '/offline.html';
 
-// Files to cache on install — all app-shell assets
+// Files to cache on install — all app-shell assets and offline scheme catalog
 const STATIC_CACHE_FILES = [
   '/',
   '/offline.html',
+  '/offline-cache',
   '/public/css/theme.css',
   '/public/manifest.webmanifest',
   '/public/assets/icon.svg',
   '/public/js/i18n.js',
   '/public/js/app-client.js',
+  '/public/js/scheme-chatbot.js',
+  '/public/js/scheme-nlp-search.js',
+  '/public/js/recharts-dashboard.bundle.js',
+  '/public/js/portal-overlay.js',
+  '/public/js/offline-sync.js',
   '/public/assets/leaflet/leaflet.js',
   '/public/assets/leaflet/leaflet.css',
   '/api/facilities',
@@ -72,15 +79,63 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      keys.filter(key => key !== CACHE_NAME && key !== SCHEME_CACHE).map(key => caches.delete(key))
     )).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-
   const url = new URL(event.request.url);
+
+  // Special Handling for POST /simplify requests (Scheme Summaries)
+  if (event.request.method === 'POST' && url.pathname === '/simplify') {
+    event.respondWith(
+      fetch(event.request.clone())
+        .then(async response => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            const data = await clone.json();
+            if (data && data.scheme_name) {
+              const cache = await caches.open(SCHEME_CACHE);
+              const cacheKey = new Request(`/scheme-summary/${encodeURIComponent(data.scheme_name)}`);
+              cache.put(cacheKey, new Response(JSON.stringify(data), {
+                headers: { 'Content-Type': 'application/json' }
+              }));
+            }
+          }
+          return response;
+        })
+        .catch(async () => {
+          // Network failed — try to extract scheme_name from cloned body
+          try {
+            const bodyText = await event.request.clone().text();
+            const body = JSON.parse(bodyText);
+            if (body && body.scheme_name) {
+              const cache = await caches.open(SCHEME_CACHE);
+              const cacheKey = new Request(`/scheme-summary/${encodeURIComponent(body.scheme_name)}`);
+              const cachedResp = await cache.match(cacheKey);
+              if (cachedResp) return cachedResp;
+            }
+          } catch (e) {}
+
+          // Fallback to offline catalog
+          const mainCache = await caches.open(CACHE_NAME);
+          const offlineResp = await mainCache.match('/offline-cache');
+          if (offlineResp) {
+            const offlineData = await offlineResp.json();
+            return new Response(JSON.stringify({
+              status: 'offline_cached',
+              schemes_list: offlineData.schemes_list || {}
+            }), { headers: { 'Content-Type': 'application/json' } });
+          }
+
+          return new Response(JSON.stringify({ error: 'Offline - Scheme not cached yet' }), { status: 503, headers: { 'Content-Type': 'application/json' } });
+        })
+    );
+    return;
+  }
+
+  if (event.request.method !== 'GET') return;
   
   // Handle HTML pages, JSON APIs, and static assets
   if (event.request.destination === 'document' || 
@@ -93,7 +148,6 @@ self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request).then(cached => {
         const fetchPromise = fetch(event.request).then(response => {
-          // Only cache successful responses
           if (response && response.status === 200) {
             const responseClone = response.clone();
             caches.open(CACHE_NAME).then(cache => {
@@ -103,15 +157,18 @@ self.addEventListener('fetch', event => {
           return response;
         });
 
-        // Return cached immediately, or fetch if not cached
         return cached || fetchPromise;
       })
       .catch(() => {
-        // Offline fallback
         if (event.request.destination === 'document') {
           return caches.match(OFFLINE_URL);
         }
-        // Return a default response for other asset types
+        if (event.request.destination === 'script' || url.pathname.endsWith('.js')) {
+          return new Response('/* Service Worker Offline Script Fallback */', {
+            status: 200,
+            headers: { 'Content-Type': 'application/javascript' }
+          });
+        }
         return new Response('Offline - Resource not available', {
           status: 503,
           statusText: 'Service Unavailable'
@@ -119,7 +176,7 @@ self.addEventListener('fetch', event => {
       })
     );
   } else {
-    // For API and other requests: Network First, then exact cache, then fallback to base cache (for /api/)
+    // For API and other GET requests: Network First, then exact cache, then fallback
     event.respondWith(
       fetch(event.request)
         .then(response => {
@@ -134,7 +191,6 @@ self.addEventListener('fetch', event => {
         .catch(() => {
             return caches.match(event.request).then(cached => {
                 if (cached) return cached;
-                // Fallback to base API URL if offline and exact query isn't cached
                 if (url.pathname.startsWith('/api/')) {
                     return caches.match(url.pathname);
                 }
@@ -146,9 +202,22 @@ self.addEventListener('fetch', event => {
 });
 
 // Handle messages from clients
-self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'CACHE_ALL_AUDIO') {
+self.addEventListener('message', async event => {
+  if (!event.data) return;
+
+  if (event.data.type === 'CACHE_ALL_AUDIO') {
     cacheAllAudio();
+  } else if (event.data.type === 'CACHE_SCHEME_SUMMARY' && event.data.scheme) {
+    try {
+      const scheme = event.data.scheme;
+      if (scheme && scheme.scheme_name) {
+        const cache = await caches.open(SCHEME_CACHE);
+        const cacheKey = new Request(`/scheme-summary/${encodeURIComponent(scheme.scheme_name)}`);
+        await cache.put(cacheKey, new Response(JSON.stringify(scheme), {
+          headers: { 'Content-Type': 'application/json' }
+        }));
+      }
+    } catch(e) {}
   }
 });
 
@@ -170,7 +239,7 @@ async function cacheAllAudio() {
         try {
           await cache.add(scheme.voice_url);
         } catch (e) {
-          // Skip audio files that fail to cache (not yet generated, etc.)
+          // Skip audio files that fail to cache
         }
       }
     }

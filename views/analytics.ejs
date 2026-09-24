@@ -308,40 +308,382 @@
             </section>
             <% } %>
 
-            <section class="dashboard-section">
-                <h2>➕ పథకం జోడించండి / నవీకరించండి (Add / Update Scheme)</h2>
-                <form action="/admin/schemes" method="POST" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
-                    <input type="hidden" name="csrf_token" value="<%= csrf_token %>">
-                    
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <label for="scheme_name" style="font-weight: 700;">Scheme Name (English)</label>
-                        <input type="text" id="scheme_name" name="scheme_name" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="e.g. YSR Aarogyasri">
+            <!-- Firestore Scheme Catalog Manager (Direct CRUD) -->
+            <section class="dashboard-section" id="firestoreManagerSection">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px;">
+                    <div>
+                        <h2 style="margin: 0; border: none; padding: 0; display: flex; align-items: center; gap: 8px;">
+                            🔥 ఫైర్‌స్టోర్ పథకాల నిర్వహణ <small>(Firestore Schemes Direct CRUD)</small>
+                        </h2>
+                        <span style="font-size: 0.85rem; color: var(--muted); margin-top: 4px; display: block;">
+                            View, edit, or delete scheme data directly in the Firestore collection.
+                        </span>
                     </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+                        <button type="button" class="btn primary-btn" onclick="openSchemeModal()" style="font-size: 0.88rem; padding: 8px 16px;">
+                            ➕ Add Scheme
+                        </button>
+                        <button type="button" class="btn secondary" onclick="loadFirestoreSchemes()" style="font-size: 0.88rem; padding: 8px 16px;">
+                            🔄 Refresh
+                        </button>
+                        <button type="button" class="btn secondary" onclick="seedFirestoreCatalog()" style="font-size: 0.88rem; padding: 8px 16px; background: var(--surface-soft);" title="Upload all local schemes to Firestore collection">
+                            🌱 Seed Catalog
+                        </button>
+                    </div>
+                </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <label for="category" style="font-weight: 700;">Category</label>
-                        <select id="category" name="category" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);">
+                <!-- Filters & Search Toolbar -->
+                <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; background: var(--surface-soft); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border);">
+                    <div style="flex: 1; min-width: 200px;">
+                        <input type="text" id="fsSearchInput" placeholder="🔍 Search scheme by name or Telugu title..." oninput="filterFsTable()" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; box-sizing: border-box;">
+                    </div>
+                    <div style="min-width: 180px;">
+                        <select id="fsCategorySelect" onchange="filterFsTable()" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; box-sizing: border-box;">
+                            <option value="all">All Categories (అన్ని వర్గాలు)</option>
                             <option value="Health Insurance & Financial Assistance">Health Insurance & Financial Assistance</option>
                             <option value="Maternal & Child Health">Maternal & Child Health</option>
                             <option value="Nutrition & Sanitation">Nutrition & Sanitation</option>
                             <option value="Disease Control & Prevention">Disease Control & Prevention</option>
                         </select>
                     </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <label for="simplified" style="font-weight: 700;">Description (English)</label>
-                        <textarea id="simplified" name="simplified" rows="4" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="Brief details about the scheme in English..."></textarea>
+                    <div>
+                        <span id="fsSchemeCountBadge" class="stat-pill" style="font-size: 0.88rem; background: var(--primary-light); color: var(--primary-dark);">
+                            Loading Firestore Schemes...
+                        </span>
                     </div>
+                </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <label for="telugu" style="font-weight: 700;">Description (Telugu)</label>
-                        <textarea id="telugu" name="telugu" rows="4" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="తెలుగులో పథకం వివరాలు..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn primary-btn" style="align-self: flex-start; padding: 12px 24px;">Save Scheme</button>
-                </form>
+                <!-- Scheme Data Table -->
+                <div class="feedback-table-wrap">
+                    <table class="admin-table" id="fsSchemesTable">
+                        <thead>
+                            <tr>
+                                <th>Scheme & ID</th>
+                                <th>Telugu Name</th>
+                                <th>Category & Level</th>
+                                <th>Official Portal</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fsSchemesTbody">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 30px; color: var(--muted);">
+                                    ⏳ Loading schemes directly from Firestore database...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </main>
     </div>
+
+    <!-- Edit / Add Scheme Modal Dialog -->
+    <div id="schemeEditModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center; padding: 16px; overflow-y: auto;">
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); width: 100%; max-width: 680px; max-height: 90vh; overflow-y: auto; padding: 24px; box-shadow: var(--shadow-lg); box-sizing: border-box;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 18px;">
+                <h3 id="modalTitle" style="margin: 0; color: var(--primary-dark); font-size: 1.2rem;">
+                    📝 Edit Scheme in Firestore
+                </h3>
+                <button type="button" onclick="closeSchemeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted);">&times;</button>
+            </div>
+
+            <form id="schemeModalForm" onsubmit="saveSchemeModal(event)" style="display: flex; flex-direction: column; gap: 14px;">
+                <input type="hidden" id="modal_id" name="id">
+
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label style="font-weight: 700; font-size: 0.88rem;">Scheme Name (English) *</label>
+                    <input type="text" id="modal_scheme_name" name="scheme_name" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="e.g. YSR Aarogyasri Scheme">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label style="font-weight: 700; font-size: 0.88rem;">Telugu Name (తెలుగు ಹೆಸರು)</label>
+                    <input type="text" id="modal_telugu_name" name="telugu_name" style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="ఉదా. వైఎస్సార్ ఆరోగ్యశ్రీ పథకం">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-weight: 700; font-size: 0.88rem;">Category *</label>
+                        <select id="modal_category" name="category" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);">
+                            <option value="Health Insurance & Financial Assistance">Health Insurance & Financial Assistance</option>
+                            <option value="Maternal & Child Health">Maternal & Child Health</option>
+                            <option value="Nutrition & Sanitation">Nutrition & Sanitation</option>
+                            <option value="Disease Control & Prevention">Disease Control & Prevention</option>
+                            <option value="Emergency Healthcare">Emergency Healthcare</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-weight: 700; font-size: 0.88rem;">Government Level</label>
+                        <select id="modal_level" name="level" style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);">
+                            <option value="State Government (Andhra Pradesh)">State Government (Andhra Pradesh)</option>
+                            <option value="Central Government (India)">Central Government (India)</option>
+                            <option value="Joint State & Central">Joint State & Central</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-weight: 700; font-size: 0.88rem;">Benefit Amount (English)</label>
+                        <input type="text" id="modal_benefit_amount" name="benefit_amount" style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="e.g. Free treatment up to Rs. 25 Lakhs">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-weight: 700; font-size: 0.88rem;">Official Website URL</label>
+                        <input type="url" id="modal_official_website" name="official_website" style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="https://aarogyasri.ap.gov.in">
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label style="font-weight: 700; font-size: 0.88rem;">Description (English) *</label>
+                    <textarea id="modal_simplified" name="simplified" rows="3" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="Detailed eligibility and benefit explanation..."></textarea>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label style="font-weight: 700; font-size: 0.88rem;">Description (Telugu) *</label>
+                    <textarea id="modal_telugu" name="telugu" rows="3" required style="padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-md); font-family: inherit;" placeholder="తెలుగులో వివరాలు..."></textarea>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; border-top: 1px solid var(--border); padding-top: 14px;">
+                    <button type="button" class="btn secondary" onclick="closeSchemeModal()">Cancel</button>
+                    <button type="submit" class="btn primary-btn" id="modalSaveBtn">💾 Save to Firestore</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Client-side Firestore Manager Script -->
+    <script>
+        let allFsSchemes = [];
+
+        function showAdminToast(msg, isError = false) {
+            let toast = document.getElementById('adminToast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'adminToast';
+                toast.style.cssText = 'position:fixed; bottom:24px; right:24px; background:#1e293b; color:#fff; padding:12px 20px; border-radius:8px; z-index:99999; box-shadow:0 10px 25px rgba(0,0,0,0.3); font-weight:600; font-size:0.9rem; transition:all 0.3s ease;';
+                document.body.appendChild(toast);
+            }
+            toast.style.background = isError ? '#dc2626' : '#16a34a';
+            toast.textContent = msg;
+            toast.style.opacity = '1';
+            setTimeout(() => { toast.style.opacity = '0'; }, 3500);
+        }
+
+        async function loadFirestoreSchemes() {
+            const tbody = document.getElementById('fsSchemesTbody');
+            const badge = document.getElementById('fsSchemeCountBadge');
+            if (tbody) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:24px; color:var(--muted);">⏳ Loading schemes from Firestore...</td></tr>`;
+            }
+
+            try {
+                const res = await fetch('/api/admin/firestore/schemes');
+                if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+                const data = await res.json();
+                if (data.success && Array.isArray(data.schemes)) {
+                    allFsSchemes = data.schemes;
+                    if (badge) badge.textContent = `${allFsSchemes.length} Schemes in Firestore`;
+                    filterFsTable();
+                } else {
+                    throw new Error(data.error || 'Failed to parse response');
+                }
+            } catch (err) {
+                if (tbody) {
+                    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:24px; color:#dc2626;">❌ Failed to load Firestore schemes: ${err.message}</td></tr>`;
+                }
+                if (badge) badge.textContent = 'Error loading';
+            }
+        }
+
+        function filterFsTable() {
+            const tbody = document.getElementById('fsSchemesTbody');
+            if (!tbody) return;
+
+            const q = (document.getElementById('fsSearchInput')?.value || '').toLowerCase().trim();
+            const cat = document.getElementById('fsCategorySelect')?.value || 'all';
+
+            const filtered = allFsSchemes.filter(s => {
+                const matchQ = !q || (s.scheme_name && s.scheme_name.toLowerCase().includes(q)) || (s.telugu_name && s.telugu_name.toLowerCase().includes(q)) || (s.id && s.id.toLowerCase().includes(q));
+                const matchCat = (cat === 'all') || (s.category === cat);
+                return matchQ && matchCat;
+            });
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:24px; color:var(--muted);">No schemes found matching search criteria.</td></tr>`;
+                return;
+            }
+
+            let html = '';
+            filtered.forEach(s => {
+                const docId = s.id || s._firestore_id || '';
+                const titleEn = s.scheme_name || 'Unnamed Scheme';
+                const titleTe = s.telugu_name || titleEn;
+                const category = s.category || 'General';
+                const level = s.level || 'State Government';
+                const webUrl = s.official_website || s.source_url || '';
+
+                html += `
+                    <tr>
+                        <td>
+                            <strong>${escapeHtml(titleEn)}</strong><br>
+                            <small style="color:var(--muted); font-family:monospace;">ID: ${escapeHtml(docId)}</small>
+                        </td>
+                        <td>${escapeHtml(titleTe)}</td>
+                        <td>
+                            <span class="stat-pill">${escapeHtml(category)}</span><br>
+                            <small style="color:var(--muted);">${escapeHtml(level)}</small>
+                        </td>
+                        <td>
+                            ${webUrl && webUrl.startsWith('http') ? `<a href="${escapeHtml(webUrl)}" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600;">Visit Portal ↗</a>` : '<span style="color:var(--muted);">-</span>'}
+                        </td>
+                        <td>
+                            <div style="display:flex; gap:6px;">
+                                <button type="button" class="btn secondary" style="padding:4px 10px; font-size:0.8rem;" onclick="editSchemeByDocId('${escapeHtml(docId)}')">✏️ Edit</button>
+                                <button type="button" class="btn" style="padding:4px 10px; font-size:0.8rem; background:#fee2e2; color:#dc2626; border-color:#fca5a5;" onclick="deleteSchemeByDocId('${escapeHtml(docId)}', '${escapeHtml(titleEn)}')">🗑️ Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+            tbody.innerHTML = html;
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function openSchemeModal(scheme = null) {
+            const modal = document.getElementById('schemeEditModal');
+            const title = document.getElementById('modalTitle');
+            if (!modal) return;
+
+            if (scheme) {
+                title.textContent = '✏️ Edit Scheme in Firestore';
+                document.getElementById('modal_id').value = scheme.id || scheme._firestore_id || '';
+                document.getElementById('modal_scheme_name').value = scheme.scheme_name || '';
+                document.getElementById('modal_telugu_name').value = scheme.telugu_name || '';
+                document.getElementById('modal_category').value = scheme.category || 'Health Insurance & Financial Assistance';
+                document.getElementById('modal_level').value = scheme.level || 'State Government (Andhra Pradesh)';
+                document.getElementById('modal_benefit_amount').value = scheme.benefit_amount || '';
+                document.getElementById('modal_official_website').value = scheme.official_website || scheme.source_url || '';
+                document.getElementById('modal_simplified').value = typeof scheme.simplified === 'string' ? scheme.simplified : JSON.stringify(scheme.simplified || '');
+                document.getElementById('modal_telugu').value = typeof scheme.telugu === 'string' ? scheme.telugu : (scheme.telugu?.details || JSON.stringify(scheme.telugu || ''));
+            } else {
+                title.textContent = '➕ Add New Scheme to Firestore';
+                document.getElementById('schemeModalForm').reset();
+                document.getElementById('modal_id').value = '';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeSchemeModal() {
+            const modal = document.getElementById('schemeEditModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function editSchemeByDocId(docId) {
+            const found = allFsSchemes.find(s => (s.id === docId || s._firestore_id === docId));
+            if (found) {
+                openSchemeModal(found);
+            } else {
+                showAdminToast('Scheme not found in cache', true);
+            }
+        }
+
+        async function saveSchemeModal(e) {
+            e.preventDefault();
+            const btn = document.getElementById('modalSaveBtn');
+            btn.disabled = true;
+            btn.textContent = '⏳ Saving to Firestore...';
+
+            const payload = {
+                id: document.getElementById('modal_id').value,
+                scheme_name: document.getElementById('modal_scheme_name').value,
+                telugu_name: document.getElementById('modal_telugu_name').value,
+                category: document.getElementById('modal_category').value,
+                level: document.getElementById('modal_level').value,
+                benefit_amount: document.getElementById('modal_benefit_amount').value,
+                official_website: document.getElementById('modal_official_website').value,
+                source_url: document.getElementById('modal_official_website').value,
+                simplified: document.getElementById('modal_simplified').value,
+                telugu: document.getElementById('modal_telugu').value
+            };
+
+            try {
+                const res = await fetch('/api/admin/firestore/schemes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showAdminToast(data.message || 'Scheme saved successfully!');
+                    closeSchemeModal();
+                    await loadFirestoreSchemes();
+                } else {
+                    throw new Error(data.error || 'Save failed');
+                }
+            } catch (err) {
+                showAdminToast(`Failed to save scheme: ${err.message}`, true);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '💾 Save to Firestore';
+            }
+        }
+
+        async function deleteSchemeByDocId(docId, schemeName) {
+            if (!confirm(`Are you sure you want to permanently delete scheme "${schemeName}" from Firestore database?`)) {
+                return;
+            }
+
+            try {
+                const res = await fetch(`/api/admin/firestore/schemes/${encodeURIComponent(docId)}`, {
+                    method: 'DELETE'
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showAdminToast(`Scheme "${schemeName}" deleted from Firestore.`);
+                    await loadFirestoreSchemes();
+                } else {
+                    throw new Error(data.error || 'Delete failed');
+                }
+            } catch (err) {
+                showAdminToast(`Failed to delete scheme: ${err.message}`, true);
+            }
+        }
+
+        async function seedFirestoreCatalog() {
+            if (!confirm("This will batch sync all active schemes from application memory into the Firestore 'schemes' collection. Continue?")) {
+                return;
+            }
+
+            try {
+                showAdminToast('Seeding schemes to Firestore...');
+                const res = await fetch('/api/admin/firestore/schemes/seed', { method: 'POST' });
+                const data = await res.json();
+                if (data.success) {
+                    showAdminToast(data.message);
+                    await loadFirestoreSchemes();
+                } else {
+                    throw new Error(data.error || 'Seed failed');
+                }
+            } catch (err) {
+                showAdminToast(`Failed to seed: ${err.message}`, true);
+            }
+        }
+
+        // Auto-load schemes on dashboard boot
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFirestoreSchemes();
+        });
+    </script>
 </body>
 </html>

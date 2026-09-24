@@ -8,6 +8,17 @@ window.showToast = function(message, type = 'success') {
         document.body.appendChild(container);
     }
     
+    // Deduplicate: avoid showing identical message if already visible
+    const existing = Array.from(container.children).find(t => t.textContent === message && !t.classList.contains('hiding'));
+    if (existing) {
+        return;
+    }
+
+    // Limit maximum visible toasts to 2 so they do not cover screen content
+    while (container.children.length >= 2) {
+        container.removeChild(container.firstChild);
+    }
+    
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
     toast.textContent = message;
@@ -43,192 +54,39 @@ function getCsrfHeader() {
     return meta ? { 'X-CSRFToken': meta.getAttribute('content') } : {};
 }
 
-// ==================== Voice/Speech Features (Edge Shruthi Neural) ====================
+// ==================== Unified Audio Orchestrator ====================
+// Uses window.AudioController as the single source of truth for all audio
 
-let globalAudioPlayer = null;
-
-// --- Floating Audio UI Controller ---
-function showFloatingAudioPlayer(btn) {
-    const player = document.getElementById('floatingAudioPlayer');
-    if (player) {
-        if (btn && btn.parentElement) {
-            btn.parentElement.appendChild(player);
-        }
-        player.classList.remove('hidden');
-    }
-}
-function hideFloatingAudioPlayer() {
-    const player = document.getElementById('floatingAudioPlayer');
-    if (player) player.classList.add('hidden');
-}
-function setupFloatingAudioUI(audioElement, btn) {
-    const playPauseBtn = document.getElementById('audioPlayPauseBtn');
-    const stopBtn = document.getElementById('audioStopBtn');
-    const rewindBtn = document.getElementById('audioRewindBtn');
-    const forwardBtn = document.getElementById('audioForwardBtn');
-    const timeDisplay = document.getElementById('audioTime');
-    const scrubber = document.getElementById('audioScrubber');
-    const volumeSlider = document.getElementById('audioVolume');
-    if (!playPauseBtn || !audioElement) return;
-
-    showFloatingAudioPlayer(btn);
-
-    // Reset
-    playPauseBtn.textContent = '⏸️';
-    scrubber.value = 0;
-    timeDisplay.textContent = '0:00';
-    if (volumeSlider) {
-        audioElement.volume = volumeSlider.value;
-        volumeSlider.oninput = () => {
-            audioElement.volume = volumeSlider.value;
-        };
-    }
-
-    const updateTime = () => {
-        if (!audioElement.duration) return;
-        const current = audioElement.currentTime;
-        const mins = Math.floor(current / 60);
-        const secs = Math.floor(current % 60).toString().padStart(2, '0');
-        timeDisplay.textContent = `${mins}:${secs}`;
-        scrubber.value = (current / audioElement.duration) * 100;
-    };
-
-    audioElement.addEventListener('timeupdate', updateTime);
-    audioElement.addEventListener('ended', hideFloatingAudioPlayer);
-
-    playPauseBtn.onclick = () => {
-        if (audioElement.paused) {
-            audioElement.play();
-            playPauseBtn.textContent = '⏸️';
-        } else {
-            audioElement.pause();
-            playPauseBtn.textContent = '▶️';
-        }
-    };
-    
-    if (rewindBtn) {
-        rewindBtn.onclick = () => {
-            audioElement.currentTime = Math.max(0, audioElement.currentTime - 10);
-        };
-    }
-    
-    if (forwardBtn) {
-        forwardBtn.onclick = () => {
-            if (audioElement.duration) {
-                audioElement.currentTime = Math.min(audioElement.duration, audioElement.currentTime + 10);
-            }
-        };
-    }
-
-    stopBtn.onclick = () => {
-        audioElement.pause();
-        audioElement.currentTime = 0;
-        hideFloatingAudioPlayer();
-    };
-
-    scrubber.oninput = () => {
-        if (audioElement.duration) {
-            audioElement.currentTime = (scrubber.value / 100) * audioElement.duration;
-        }
-    };
-}
-
-
-/**
- * Speak text aloud using high-fidelity Microsoft Edge Neural TTS (te-IN-ShrutiNeural)
- */
 function speakText(text, lang, btn) {
     if (!text || !text.trim()) return;
-    const currentLang = lang || (window.getLang ? window.getLang() : 'te');
-
-    // Stop any existing audio
-    if (globalAudioPlayer) {
-        globalAudioPlayer.pause();
-        globalAudioPlayer = null;
+    if (window.AudioController && typeof window.AudioController.play === 'function') {
+        return window.AudioController.play(text, { lang: lang, triggerBtn: btn });
     }
-    if ('speechSynthesis' in window) {
-        speechSynthesis.cancel();
-    }
-
-    const ttsUrl = `/api/tts?text=${encodeURIComponent(text.trim())}&lang=${encodeURIComponent(currentLang)}`;
-    const audio = new Audio(ttsUrl);
-    globalAudioPlayer = audio;
-
-    audio.play().then(() => {
-        setupFloatingAudioUI(audio, btn);
-    }).catch(err => {
-        console.warn('Direct audio stream failed, attempting Web Speech fallback:', err);
-        if ('speechSynthesis' in window) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = currentLang === 'en' ? 'en-IN' : 'te-IN';
-            utterance.rate = 0.85;
-            speechSynthesis.speak(utterance);
-        }
-    });
 }
 
-/**
- * Speak page aloud using Microsoft Edge Shruthi Neural voice
- */
 function speakPageAloud(btn) {
-    if (!window.currentSchemeName) {
-        window.showToast(window.t ? window.t('selectSchemeError') : 'దయచేసి ముందుగా పథకం ఎంచుకోండి.', 'error');
-        return;
+    if (window.AudioController && typeof window.AudioController.speakPageAloud === 'function') {
+        if (window.AudioController.isPlaying()) {
+            window.AudioController.pause();
+            return;
+        }
+        if (window.AudioController.isPaused()) {
+            window.AudioController.resume();
+            return;
+        }
+        return window.AudioController.speakPageAloud(btn);
     }
-
-    const currentLang = window.getLang ? window.getLang() : 'te';
-    const isEn = currentLang === 'en';
-
-    if (globalAudioPlayer) {
-        globalAudioPlayer.pause();
-        hideFloatingAudioPlayer();
-    }
-    if ('speechSynthesis' in window) {
-        speechSynthesis.cancel();
-    }
-
-    // If the button has a specific data-audio-src (native pre-recorded) and not in English
-    if (btn && btn.dataset && btn.dataset.audioSrc && !isEn) {
-        const audioSrc = btn.dataset.audioSrc;
-        const audio = new Audio(audioSrc);
-        globalAudioPlayer = audio;
-        audio.play().then(() => {
-            setupFloatingAudioUI(audio, btn);
-        }).catch(err => {
-            console.warn('Cached audio playback failed, generating on-the-fly:', err);
-            generateAndPlayDetailSpeech(isEn, btn);
-        });
-        return;
-    }
-
-    // Otherwise, generate and play dynamic browser speech
-    generateAndPlayDetailSpeech(isEn, btn);
 }
 
-function generateAndPlayDetailSpeech(isEn, btn) {
-    const schemeTitle = document.querySelector('.result-head h2')?.textContent || window.currentSchemeName || '';
-    const infoCards = Array.from(document.querySelectorAll('.info-card')).map(card => {
-        const title = card.querySelector('h3')?.textContent || '';
-        const text = card.querySelector('p')?.textContent || '';
-        return `${title}. ${text}`;
-    }).join('. ');
-
-    const fullText = `${schemeTitle}. ${infoCards}`.slice(0, 1000);
-    speakText(fullText, isEn ? 'en' : 'te', btn);
-}
-
-/**
- * Stop any ongoing audio playback
- */
 function stopSpeech() {
-    if (globalAudioPlayer) {
-        globalAudioPlayer.pause();
-        globalAudioPlayer = null;
-    }
-    if ('speechSynthesis' in window) {
-        speechSynthesis.cancel();
+    if (window.AudioController && typeof window.AudioController.stop === 'function') {
+        return window.AudioController.stop();
     }
 }
+
+window.speakText = speakText;
+window.speakPageAloud = speakPageAloud;
+window.stopSpeech = stopSpeech;
 
 // ==================== Eligibility Checker ====================
 
@@ -869,17 +727,30 @@ function buildTrustInfo(scheme) {
     const title = isEn ? '🔒 Trust & Transparency' : '🔒 విశ్వాస సమాచారం';
     const updatedLabel = isEn ? '📅 Last Updated:' : '📅 చివరిగా నవీకరించిన:';
     const verifyLabel = isEn ? '✔️ Verifying Authority:' : '✔️ సరిచేస్తారు:';
-    const siteLabel = isEn ? '🌐 Official Portal:' : '🌐 అధికారిక సంచిక:';
-    const visitText = isEn ? 'Visit Website' : 'సందర్శించండి';
+    const siteLabel = isEn ? '🌐 Official Portal:' : '🌐 అధికారిక వెబ్‌సైట్:';
 
-    const hasValidWebsite = officialWebsite && officialWebsite !== '#' && officialWebsite.startsWith('http');
+    let displayLinkText = '';
+    let isValidWebsite = false;
+
+    if (officialWebsite && officialWebsite !== '#' && officialWebsite !== 'undefined' && officialWebsite.startsWith('http')) {
+        try {
+            const urlObj = new URL(officialWebsite);
+            displayLinkText = urlObj.hostname.replace(/^www\./, '');
+            isValidWebsite = true;
+        } catch (e) {
+            if (officialWebsite.length > 8) {
+                displayLinkText = isEn ? 'Official Website' : 'అధికారిక వెబ్‌సైట్';
+                isValidWebsite = true;
+            }
+        }
+    }
 
     return `
         <div class="trust-info">
             <strong>${title}</strong><br>
             ${updatedLabel} ${window.escapeHtml(lastUpdated)}<br>
             ${verifyLabel} ${window.escapeHtml(confirmationSource)}
-            ${hasValidWebsite ? `<br>${siteLabel} <a class="source-link" href="${window.escapeHtml(officialWebsite)}" target="_blank" rel="noopener noreferrer">${visitText}</a>` : ''}
+            ${isValidWebsite ? `<br>${siteLabel} <a class="source-link" href="${window.escapeHtml(officialWebsite)}" data-portal-url="${window.escapeHtml(officialWebsite)}" data-portal-title="${window.escapeHtml(scheme.scheme_name || 'Official Portal')}" style="color: var(--primary); font-weight: 700;">${window.escapeHtml(displayLinkText)} 🌐</a>` : ''}
         </div>
     `;
 }
@@ -1056,6 +927,37 @@ function closeChat() {
 let currentRating = 0;
 let previousFocusFeedback = null;
 
+function updateFeedbackModalTranslations() {
+    const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
+    const titleEl = document.querySelector('#feedbackModal [data-i18n="reportModalTitle"]');
+    if (titleEl) titleEl.textContent = isEn ? 'Report Issue / Feedback' : 'సమస్య నివేదిక / అభిప్రాయం';
+
+    const catLabel = document.querySelector('#feedbackModal label[for="feedbackType"]');
+    if (catLabel) catLabel.textContent = isEn ? 'Category:' : 'వర్గం / రకం:';
+
+    const descLabel = document.querySelector('#feedbackModal label[for="feedbackMessage"]');
+    if (descLabel) descLabel.textContent = isEn ? 'Description:' : 'వివరణ:';
+
+    const msgInput = document.getElementById('feedbackMessage');
+    if (msgInput) msgInput.placeholder = isEn ? 'Briefly describe the issue...' : 'సమస్యను క్లుప్తంగా వివరించండి...';
+
+    const submitBtn = document.querySelector('#feedbackForm button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = isEn ? 'Submit Feedback' : 'సమర్పించండి';
+
+    // Update select options
+    const optWrong = document.querySelector('#feedbackType option[value="wrong_info"]');
+    if (optWrong) optWrong.textContent = isEn ? 'Incorrect Information' : 'తప్పుడు సమాచారం (Incorrect Info)';
+
+    const optAudio = document.querySelector('#feedbackType option[value="audio_issue"]');
+    if (optAudio) optAudio.textContent = isEn ? 'Audio Issue' : 'ఆడియో సమస్య (Audio Issue)';
+
+    const optMissing = document.querySelector('#feedbackType option[value="missing_scheme"]');
+    if (optMissing) optMissing.textContent = isEn ? 'Missing Scheme' : 'పథకం దొరకలేదు (Missing Scheme)';
+
+    const optSug = document.querySelector('#feedbackType option[value="suggestion"]');
+    if (optSug) optSug.textContent = isEn ? 'Suggestion' : 'సలహా (Suggestion)';
+}
+
 function openFeedbackModal(triggerBtn, schemeName = null) {
     if (schemeName) {
         window.currentSchemeName = schemeName;
@@ -1064,9 +966,10 @@ function openFeedbackModal(triggerBtn, schemeName = null) {
     const modal = document.getElementById('feedbackModal');
     if (!modal) return;
     
-    // Reset form
+    // Reset form & update translations for active language
     const form = document.getElementById('feedbackForm');
     if (form) form.reset();
+    updateFeedbackModalTranslations();
     
     // Setup submit listener if not already there
     if (form && !form.dataset.listenerAttached) {
@@ -1097,6 +1000,7 @@ function closeFeedbackModal() {
 
 async function submitFeedback(e) {
     if (e) e.preventDefault();
+    const isEn = (window.getLang ? window.getLang() : 'te') === 'en';
     
     const messageInput = document.getElementById('feedbackMessage');
     const typeInput = document.getElementById('feedbackType');
@@ -1119,13 +1023,13 @@ async function submitFeedback(e) {
 
     // Client-Side Validation
     if (!message) {
-        showError(window.t ? window.t('pleaseEnterFeedback') : 'దయచేసి మీ అభిప్రాయాన్ని నమోదు చేయండి.');
+        showError(isEn ? 'Please enter your feedback or description.' : (window.t ? window.t('pleaseEnterFeedback') : 'దయచేసి మీ అభిప్రాయాన్ని నమోదు చేయండి.'));
         if (messageInput) messageInput.focus();
         return;
     }
     
     if (message.length < 5) {
-        showError(window.t ? window.t('feedbackTooShort') : 'మీ అభిప్రాయం మరీ చిన్నదిగా ఉంది. దయచేసి మరికొన్ని వివరాలు ఇవ్వండి.');
+        showError(isEn ? 'Description is too short. Please provide a little more detail.' : (window.t ? window.t('feedbackTooShort') : 'మీ అభిప్రాయం మరీ చిన్నదిగా ఉంది. దయచేసి మరికొన్ని వివరాలు ఇవ్వండి.'));
         if (messageInput) messageInput.focus();
         return;
     }
@@ -1139,7 +1043,7 @@ async function submitFeedback(e) {
 
     if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'పంపుతున్నాం (Submitting)...';
+        submitBtn.textContent = isEn ? 'Submitting...' : 'పంపుతున్నాం...';
     }
 
     try {
@@ -1154,18 +1058,18 @@ async function submitFeedback(e) {
 
         const data = await response.json();
         if (response.ok) {
-            window.showToast(window.t ? window.t('feedbackSuccess') : '✅ ధన్యవాదాలు! మీ అభిప్రాయం నమోదు చేయబడింది.', 'success');
+            window.showToast(isEn ? '✅ Thank you! Your feedback has been recorded.' : (window.t ? window.t('feedbackSuccess') : '✅ ధన్యవాదాలు! మీ అభిప్రాయం నమోదు చేయబడింది.'), 'success');
             closeFeedbackModal();
         } else {
             throw new Error(data.error || 'Server error');
         }
     } catch (error) {
-        window.showToast(window.t ? window.t('feedbackError') : '❌ అభిప్రాయం పంపలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.', 'error');
+        window.showToast(isEn ? '❌ Could not submit feedback. Please try again.' : (window.t ? window.t('feedbackError') : '❌ అభిప్రాయం పంపలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.'), 'error');
         console.error('Feedback submission error:', error);
     } finally {
         if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'సమర్పించండి (Submit)';
+            submitBtn.textContent = isEn ? 'Submit Feedback' : 'సమర్పించండి';
         }
     }
 }
@@ -2147,7 +2051,7 @@ const SmartGovUX = (function() {
 
                     <div style="background:var(--surface-soft); border:1px solid var(--border); border-radius:6px; padding:10px 14px; margin-bottom:12px; font-size:0.9rem;">
                         <strong>🏛️ ${isEn ? 'Official Desk:' : 'అధికారిక కేంద్రం:'}</strong> ${window.escapeHtml(contactInfo)}<br>
-                        <strong style="margin-top:4px; display:inline-block;">🌐 ${isEn ? 'Official Portal:' : 'పోర్టల్:'}</strong> <a href="${window.escapeHtml(websiteUrl)}" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:700;">${window.escapeHtml(websiteUrl)}</a>
+                        <strong style="margin-top:4px; display:inline-block;">🌐 ${isEn ? 'Official Portal:' : 'పోర్టల్:'}</strong> <a href="${window.escapeHtml(websiteUrl)}" class="source-link" data-portal-url="${window.escapeHtml(websiteUrl)}" data-portal-title="${window.escapeHtml(scheme.scheme_name || 'Official Portal')}" style="color:var(--primary); font-weight:700;">${window.escapeHtml(websiteUrl)}</a>
                     </div>
 
                     <div class="inline-map-container" id="inlineMapContainer" style="margin-top: 8px;">

@@ -40,52 +40,30 @@ function speakPageAloud() {
         return;
     }
 
-    if ('speechSynthesis' in window) {
-        // Cancel any ongoing speech
-        speechSynthesis.cancel();
-
-        // Collect all Telugu text from the page
-        const schemeTitle = document.querySelector('.result-head h2')?.textContent || window.currentSchemeName;
-        const infoCards = Array.from(document.querySelectorAll('.info-card')).map(card => {
-            const title = card.querySelector('h3')?.textContent || '';
-            const text = card.querySelector('p')?.textContent || '';
-            return `${title}. ${text}`;
-        }).join('. ');
-
-        const fullText = `${schemeTitle}. ${infoCards}`;
-
-        const utterance = new SpeechSynthesisUtterance(fullText);
-        utterance.lang = 'te-IN';
-        utterance.rate = 0.8; // Slower for rural users
-        utterance.pitch = 1.0;
-        utterance.volume = 1.0;
-
-        utterance.onstart = () => {
-            console.log('🔊 పేజీ చదువుతున్నాం...');
-        };
-
-        utterance.onerror = (event) => {
-            console.error('Speech error:', event.error);
-            showBrowserTTSFallback(schemeTitle, infoCards);
-        };
-
-        utterance.onend = () => {
-            console.log('✅ చదవడం పూర్తయింది');
-        };
-
-        speechSynthesis.speak(utterance);
-    } else {
-        showBrowserTTSFallback(window.currentSchemeName, '');
+    if (window.AudioController) {
+        window.AudioController.speakPageAloud(btn);
+        return;
     }
+
+    const schemeTitle = document.querySelector('.result-head h2')?.textContent || window.currentSchemeName;
+    const infoCards = Array.from(document.querySelectorAll('.info-card')).map(card => {
+        const title = card.querySelector('h3')?.textContent || '';
+        const text = card.querySelector('p')?.textContent || '';
+        return `${title}. ${text}`;
+    }).join('. ');
+
+    const fullText = `${schemeTitle}. ${infoCards}`.slice(0, 1000);
+    const audio = new Audio(`/api/tts?text=${encodeURIComponent(fullText)}&lang=te`);
+    audio.play().catch(err => console.warn('Audio playback error:', err));
 }
 
 /**
- * Show fallback TTS button if Web Speech API fails
+ * Show fallback TTS button if audio fails
  */
 function showBrowserTTSFallback(title, text) {
     const feedbackStatus = document.getElementById('feedbackStatus');
     if (feedbackStatus) {
-        feedbackStatus.textContent = '⚠️ ఆడియో సమర్థన లేదు. అందుబాటులో ఉన్న ఆడియో ఫైలు వాయించండి.';
+        feedbackStatus.textContent = '⚠️ ఆడియో అందుబాటులో లేదు.';
         feedbackStatus.style.color = 'var(--red)';
     }
 }
@@ -94,13 +72,12 @@ function showBrowserTTSFallback(title, text) {
  * Legacy function for speaking text
  */
 function speakText(text) {
-    if ('speechSynthesis' in window) {
-        speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'te-IN';
-        utterance.rate = 0.8;
-        speechSynthesis.speak(utterance);
+    if (window.AudioController) {
+        window.AudioController.play(text, { lang: 'te' });
+        return;
     }
+    const audio = new Audio(`/api/tts?text=${encodeURIComponent(text)}&lang=te`);
+    audio.play().catch(err => console.warn('Audio playback error:', err));
 }
 
 // ==================== Eligibility Checker ====================

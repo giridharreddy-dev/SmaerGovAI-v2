@@ -6,7 +6,12 @@
     "dev": "node server.js",
     "start": "node server.js",
     "build": "esbuild src/dashboard/index.jsx --bundle --minify --format=iife --outfile=public/js/recharts-dashboard.bundle.js",
-    "lint": "node -c server.js"
+    "lint": "node -c server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --passWithNoTests"
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["/node_modules/", "/backup/"],
+    "modulePathIgnorePatterns": ["/backup/"]
   },
   "dependencies": {
     "@andresaya/edge-tts": "^1.8.0",
@@ -28,6 +33,7 @@
     "tesseract.js": "^7.0.0"
   },
   "devDependencies": {
-    "esbuild": "^0.28.2"
+    "esbuild": "^0.28.2",
+    "jest": "^30.5.2"
   }
 }
