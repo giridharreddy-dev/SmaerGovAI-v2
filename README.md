@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/platform-Web%20%7C%20PWA%20%7C%20Mobile-lightgrey.svg)](#)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-success.svg)](#)
-[![React](https://img.shields.io/badge/React-18.x-61dafb.svg)](#)
+[![React](https://img.shields.io/badge/React-19.x-61dafb.svg)](#)
 [![Gemini API](https://img.shields.io/badge/Gemini%20API-%40google%2Fgenai-8e44ad.svg)](#)
 [![Firebase](https://img.shields.io/badge/Firebase-Firestore%20%26%20Auth-ffca28.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -14,7 +14,7 @@
 ## 📖 Overview
 **SmartGovAI** is an offline-resilient, bilingual (**Telugu-first** & English) civic technology portal engineered to make healthcare welfare schemes accessible to every citizen in Andhra Pradesh. 
 
-By integrating state healthcare provisions (such as **Dr. YSR Aarogyasri ₹25 Lakhs free hospital coverage**, **YSR Aarogya Asara**, maternal aid, free medicines, and dialysis pensions) with multimodal **Gemini AI**, interactive **React / Recharts** analytics, **Firebase Firestore & Auth**, and **PWA offline caching**, SmartGovAI ensures citizens receive instant, verified, and simplified guidance—even in low-bandwidth rural regions.
+By integrating state healthcare provisions (such as **Dr. YSR Aarogyasri ₹25 Lakhs free hospital coverage**, **YSR Aarogya Asara**, maternal aid, free medicines, and dialysis pensions) with multimodal **Gemini AI**, interactive **React / Recharts** analytics, **Firebase Firestore & Auth**, and **PWA offline caching**, SmartGovAI aims to make scheme information easier to navigate and understand, including in low-bandwidth settings. AI-generated guidance can be inaccurate and should be checked against official sources.
 
 > 🏛️ **Deep Architectural Directory**: Need detailed documentation on every file in the codebase? Read **[PROJECT_ARCHITECTURE.md](PROJECT_ARCHITECTURE.md)**.
 
@@ -39,7 +39,7 @@ By integrating state healthcare provisions (such as **Dr. YSR Aarogyasri ₹25 L
 
 ### 1. 🤖 Gemini AI Healthcare Specialist (`SchemeChatbot`)
 - **Multi-Turn Intelligence**: Interactive AI assistant offering model speed controls (**Fast / Flash Lite**, **General / 3.5 Flash**, **In-Depth / Pro Preview**).
-- **Strict Domain Guardrails**: Trained as a dedicated AP Healthcare Specialist. Automatically refuses off-topic queries (e.g. movies, sports, weather) to deliver focused, hallucination-free guidance.
+- **Domain Guardrails**: AI assistance is scoped to AP healthcare and welfare questions. These guardrails do not guarantee correct or hallucination-free answers; verify scheme details and eligibility with official sources.
 - **Auto-Scroll & Typing Animations**: Real-time message streaming feedback with smooth DOM auto-scrolling.
 - **Transcript Export**: One-click download of the entire chat history as a formatted text summary (`.txt`) with official helpline numbers (108, 104, 102).
 
@@ -107,8 +107,8 @@ SmartGovAI-2026/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-org/SmartGovAI-2026.git
-   cd SmartGovAI-2026
+   git clone https://github.com/giridharreddy-dev/SmaerGovAI-v2.git
+   cd SmaerGovAI-v2
    ```
 
 2. **Install Dependencies**
@@ -153,3 +153,4 @@ SmartGovAI-2026/
 
 ## 📄 License
 Distributed under the **MIT License**. Built with ❤️ for civic empowerment and public healthcare accessibility in Andhra Pradesh.
+
