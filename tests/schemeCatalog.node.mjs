@@ -58,3 +58,9 @@ test('Firestore writes retry the same field merge against the latest snapshot', 
     required_documents: ['ID', 'Proof'], benefits: { cashless: false, amount: 0 }
   });
 });
+
+test('a new checklist entry is added without replacing existing entries', () => {
+  assert.deepEqual(mergeSchemeRecords({ required_documents: [{ name: 'ID' }] }, {
+    required_documents: [{ name: 'ID' }, { name: 'Referral' }]
+  }).required_documents, [{ name: 'ID' }, { name: 'Referral' }]);
+});

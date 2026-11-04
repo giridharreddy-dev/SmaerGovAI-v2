@@ -9,12 +9,12 @@ import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
 import { createClient } from 'redis';
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, collection, doc, runTransaction, setDoc,  addDoc, getDoc, getDocs, deleteDoc, getCountFromServer, query, orderBy, limit as fsLimit } from 'firebase/firestore';
+import { collection, doc, runTransaction, setDoc, addDoc, getDoc, getDocs, deleteDoc, getCountFromServer, query, orderBy, limit as fsLimit } from 'firebase/firestore';
 import { scrapeAndSyncIndiaGovSchemes } from './scripts/scrape_india_gov_schemes.js';
 import { extractTextFromPdf, extractKeyDetailsForAI, processSchemeDocumentPdf } from './services/pdfProcessingService.js';
 import { generate_text_audio, sanitizeTeluguSpeechText } from './services/audioService.js';
 import { loadLocalSchemeCatalog, mergeSchemeRecords, writeSchemePatch } from './services/schemeCatalog.js';
+import { connectServerFirestore } from './services/serverFirestore.js';
 
 let firebaseConfig = {};
 try {
@@ -24,13 +24,7 @@ try {
   console.log("Firebase config not found.");
 }
 
-let dbAdmin = null;
-if (firebaseConfig.projectId && getApps().length === 0) {
-  const app = initializeApp(firebaseConfig);
-  dbAdmin = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
-} else if (getApps().length > 0) {
-  dbAdmin = getFirestore(getApp(), firebaseConfig.firestoreDatabaseId || '(default)');
-}
+const dbAdmin = await connectServerFirestore(firebaseConfig);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -160,7 +154,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 app.use(
   session({
-    secret: process.env.SECRET_KEY || 'smartgov-session-secret-key-2026',
+    secret: process.env.SECRET_KEY?.length >= 32 ? process.env.SECRET_KEY : crypto.randomBytes(32).toString('hex'),
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -2980,17 +2974,10 @@ function isValidAdminToken(inputToken) {
   const token = inputToken.trim();
   const envToken = process.env.ADMIN_TOKEN ? process.env.ADMIN_TOKEN.trim() : '';
 
-  // 1. Check against ADMIN_TOKEN environment variable if configured
-  if (envToken && !envToken.startsWith('#') && token === envToken) {
-    return true;
-  }
-
-  // 2. Accept developer / deployment defaults: admin123, 12345678, admin
-  if (token === 'admin123' || token === '12345678' || token === 'admin') {
-    return true;
-  }
-
-  return false;
+  const expected = Buffer.from(envToken);
+  const supplied = Buffer.from(token);
+  return expected.length >= 16 && expected.length === supplied.length
+    && crypto.timingSafeEqual(expected, supplied);
 }
 
 // Admin Auth Middleware
@@ -3088,7 +3075,7 @@ app.post('/admin/login', (req, res) => {
     return res.redirect(`${nextUrl}${sep}token=${encodeURIComponent(cleanToken)}`);
   }
 
-  req.session.messages = [{ category: 'error', text: 'చెల్లని అడ్మిన్ టోకెన్ (Invalid admin token. Default: admin123 or 12345678).' }];
+  req.session.messages = [{ category: 'error', text: 'చెల్లని అడ్మిన్ టోకెన్ (Invalid admin token).' }];
   res.redirect('/admin/login' + (req.query.next ? `?next=${encodeURIComponent(req.query.next)}` : ''));
 });
 
@@ -3471,7 +3458,7 @@ function setupAutomatedScraperInterval() {
 }
 
 // Endpoint to trigger India.gov.in / MyScheme.gov.in scheme scraper and sync catalog
-app.post('/api/admin/sync-india-gov-schemes', async (req, res) => {
+app.post('/api/admin/sync-india-gov-schemes', requireAdmin, async (req, res) => {
   try {
     console.log('🔄 Triggering India.gov.in scheme scraper and synchronization...');
     const result = await runScraperSyncSafely();

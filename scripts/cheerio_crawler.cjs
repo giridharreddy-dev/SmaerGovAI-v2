@@ -480,13 +480,13 @@ async function syncToFirestore(schemesMap) {
 
   try {
     console.log('\n[*] Syncing extracted schemes into Firestore database...');
-    const { initializeApp } = await import('firebase/app');
-    const { getFirestore, doc, runTransaction, terminate } = await import('firebase/firestore');
+    const { connectServerFirestore } = await import('../services/serverFirestore.js');
+    const { doc, runTransaction, terminate } = await import('firebase/firestore');
     const { writeSchemePatch } = await import('../services/schemeCatalog.js');
 
     const cfg = JSON.parse(fs.readFileSync(firebaseConfigPath, 'utf8'));
-    const app = initializeApp(cfg);
-    const db = getFirestore(app, cfg.firestoreDatabaseId || '(default)');
+    const db = await connectServerFirestore(cfg);
+    if (!db) throw new Error('Configure an authorized Firestore service login first.');
 
     let syncedCount = 0;
     for (const [name, data] of Object.entries(schemesMap)) {

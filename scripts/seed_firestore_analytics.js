@@ -1,13 +1,13 @@
 import fs from 'fs';
 import path from 'path';
-import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore, collection, doc, setDoc, getDocs, deleteDoc } from 'firebase/firestore';
+import { connectServerFirestore } from '../services/serverFirestore.js';
+import { collection, doc, setDoc, getDocs, deleteDoc } from 'firebase/firestore';
 
 const configContent = fs.readFileSync(path.resolve('./firebase-applet-config.json'), 'utf8');
 const firebaseConfig = JSON.parse(configContent);
 
-const app = initializeApp(firebaseConfig);
-const dbAdmin = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
+const dbAdmin = await connectServerFirestore(firebaseConfig);
+if (!dbAdmin) throw new Error('Configure an authorized Firestore service login first.');
 
 const dummyRaw = fs.readFileSync(path.resolve('./data/dummy_feedback.json'), 'utf8');
 const dummyData = JSON.parse(dummyRaw);

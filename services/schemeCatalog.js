@@ -1,9 +1,17 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { isDeepStrictEqual } from 'node:util';
 
 const isRecord = value => value != null && [Object.prototype, null].includes(Object.getPrototypeOf(value));
 
-function mergeField(existing, incoming) {
+function mergeField(key, existing, incoming) {
+  if (key === 'required_documents' && Array.isArray(existing) && Array.isArray(incoming)) {
+    const checklist = [...existing];
+    for (const entry of incoming) {
+      if (!checklist.some(previous => isDeepStrictEqual(previous, entry))) checklist.push(entry);
+    }
+    return checklist;
+  }
   if (incoming == null || (typeof incoming === 'string' && !incoming.trim())) return existing;
   if (Array.isArray(existing) && !Array.isArray(incoming)) return existing;
   if (isRecord(existing) && !isRecord(incoming)) return existing;
@@ -16,7 +24,7 @@ export function mergeSchemeRecords(existing, incoming) {
   return {
     ...existing,
     ...Object.fromEntries(Object.entries(incoming).map(([key, value]) => [
-      key, mergeField(Object.hasOwn(existing, key) ? existing[key] : undefined, value)
+      key, mergeField(key, Object.hasOwn(existing, key) ? existing[key] : undefined, value)
     ]).filter(([, value]) => value !== undefined))
   };
 }

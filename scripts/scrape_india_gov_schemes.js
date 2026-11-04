@@ -13,8 +13,8 @@ import * as cheerio from 'cheerio';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, doc, runTransaction } from 'firebase/firestore';
+import { connectServerFirestore } from '../services/serverFirestore.js';
+import { doc, runTransaction } from 'firebase/firestore';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,22 +23,10 @@ const DATA_OUTPUT_PATH = path.join(__dirname, '../data/scraped_india_gov_schemes
 const MASTER_CATALOG_PATH = path.join(__dirname, '../data/national_and_ap_schemes.json');
 const CONFIG_PATH = path.join(__dirname, '../firebase-applet-config.json');
 
-// Initialize Firebase Firestore Client for DB Sync
-let db = null;
-let firestoreDbId = '(default)';
-
-try {
-  if (fs.existsSync(CONFIG_PATH)) {
-    const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
-    if (config.projectId) {
-      const app = getApps().length === 0 ? initializeApp(config) : getApp();
-      firestoreDbId = config.firestoreDatabaseId || '(default)';
-      db = getFirestore(app, firestoreDbId);
-      console.log(`🔥 Firebase Firestore connected (Database ID: ${firestoreDbId}) for Scheme Chatbot synchronization.`);
-    }
-  }
-} catch (err) {
-  console.warn('⚠️ Could not connect to Firebase Firestore:', err.message);
+async function cloudDatabase() {
+  if (!fs.existsSync(CONFIG_PATH)) return null;
+  const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
+  return connectServerFirestore(config);
 }
 
 /**
@@ -208,6 +196,7 @@ Keywords: ${(sData.keywords || []).join(', ')}`;
  * 3. Push Verified Health Scheme Data to Firestore Collection (`/schemes`)
  */
 export async function pushSchemesToFirestore(schemesDict) {
+  const db = await cloudDatabase();
   if (!db) {
     console.warn('⚠️ Firestore is not connected. Skipping Firestore push.');
     return { success: false, reason: 'Firestore client not initialized' };
@@ -250,7 +239,7 @@ export async function pushSchemesToFirestore(schemesDict) {
   }
 
   console.log(`🎉 Successfully mapped & pushed ${pushedCount} schemes into Firestore collection '/schemes'.`);
-  return { success: true, count: pushedCount };
+  return { success: pushedCount === total, count: pushedCount };
 }
 
 /**

@@ -27,12 +27,12 @@ async function syncSchemes() {
   const cfg = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
 
   console.log(`[*] Connecting to Firestore database: ${cfg.firestoreDatabaseId || '(default)'}`);
-  const { initializeApp } = await import('firebase/app');
-  const { getFirestore, doc, runTransaction, terminate } = await import('firebase/firestore');
+  const { connectServerFirestore } = await import('../services/serverFirestore.js');
+  const { doc, runTransaction, terminate } = await import('firebase/firestore');
   const { writeSchemePatch } = await import('../services/schemeCatalog.js');
 
-  const app = initializeApp(cfg);
-  const db = getFirestore(app, cfg.firestoreDatabaseId || '(default)');
+  const db = await connectServerFirestore(cfg);
+  if (!db) throw new Error('Configure an authorized Firestore service login first.');
 
   let synced = 0;
   for (const [name, data] of Object.entries(schemes)) {

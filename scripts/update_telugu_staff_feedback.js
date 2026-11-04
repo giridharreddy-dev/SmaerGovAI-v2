@@ -1,12 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, doc, setDoc, deleteDoc, getDocs } from 'firebase/firestore';
+import { connectServerFirestore } from '../services/serverFirestore.js';
+import { collection, doc, setDoc, deleteDoc, getDocs } from 'firebase/firestore';
 
 const configContent = fs.readFileSync(path.resolve('./firebase-applet-config.json'), 'utf8');
 const firebaseConfig = JSON.parse(configContent);
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
+const db = await connectServerFirestore(firebaseConfig);
+if (!db) throw new Error('Configure an authorized Firestore service login first.');
 
 export const newTeluguFeedbackReports = [
   {

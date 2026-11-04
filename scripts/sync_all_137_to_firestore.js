@@ -1,4 +1,6 @@
 import { writeSchemePatch } from '../services/schemeCatalog.js';
+import { connectServerFirestore } from '../services/serverFirestore.js';
+import { doc, runTransaction, terminate } from 'firebase/firestore';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -13,24 +15,15 @@ console.log(`Loaded ${Object.keys(catalogData).length} unique schemes for Firest
 
 async function syncToFirestore() {
   try {
-    const { initializeApp, cert, getApps } = await import('firebase-admin/app');
-    const { getFirestore } = await import('firebase-admin/firestore');
-
-    let app;
-    if (getApps().length === 0) {
-      app = initializeApp();
-    } else {
-      app = getApps()[0];
-    }
-
-    const db = getFirestore(app);
-    const collectionRef = db.collection('schemes');
+    const configPath = path.join(__dirname, '../firebase-applet-config.json');
+    const db = await connectServerFirestore(JSON.parse(fs.readFileSync(configPath, 'utf8')));
+    if (!db) throw new Error('Configure an authorized Firestore service login first.');
 
     let count = 0;
 
     for (const [sName, sData] of Object.entries(catalogData)) {
       const docId = sName.toLowerCase().replace(/[^\w\s-]/g, '').trim().replace(/[\s_-]+/g, '_');
-      const docRef = collectionRef.doc(docId);
+      const docRef = doc(db, 'schemes', docId);
 
       const payload = {
         name: sName,
@@ -50,10 +43,11 @@ async function syncToFirestore() {
         updated_at: new Date().toISOString()
       };
 
-      await writeSchemePatch(docRef, payload, callback => db.runTransaction(callback));
+      await writeSchemePatch(docRef, payload, callback => runTransaction(db, callback));
       count++;
     }
 
+    await terminate(db);
     console.log(`Successfully synced all ${count} schemes to Firestore collection '/schemes'!`);
   } catch (err) {
     console.error('Firestore sync error:', err.message);

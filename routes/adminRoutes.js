@@ -3,14 +3,14 @@ import express from 'express';
 import crypto from 'crypto';
 import path from 'path';
 import fs from 'fs';
-import { getDocs, collection, doc, runTransaction,  deleteDoc, query, orderBy, limit as fsLimit } from 'firebase/firestore';
+import { getDocs, collection, doc, runTransaction, deleteDoc, query, orderBy, limit as fsLimit } from 'firebase/firestore';
 
 export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNames, generateSlug, invalidateSchemesCache, DATA_DIR, runScraperSyncSafely, getDashboardMetrics, getSchemeStats }) {
   const router = express.Router();
 
   // Admin Auth Middleware
   function requireAdmin(req, res, next) {
-    const adminToken = process.env.ADMIN_TOKEN || '12345678';
+    const adminToken = process.env.ADMIN_TOKEN?.trim();
     if (req.session && req.session.admin_authenticated) {
       return next();
     }
@@ -18,7 +18,7 @@ export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNa
     const authHeader = req.headers.authorization || '';
     if (authHeader.startsWith('Bearer ')) {
       const token = authHeader.slice(7).trim();
-      if (token === adminToken) {
+      if (adminToken?.length >= 16 && token === adminToken) {
         return next();
       }
     }
@@ -55,7 +55,7 @@ export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNa
   // Admin Login POST
   router.post('/admin/login', (req, res) => {
     const { token } = req.body;
-    const adminToken = process.env.ADMIN_TOKEN || '12345678';
+    const adminToken = process.env.ADMIN_TOKEN?.trim();
 
     if (token && token.trim() === adminToken) {
       req.session.admin_authenticated = true;
@@ -292,7 +292,7 @@ export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNa
   });
 
   // Trigger scraper sync
-  router.post('/api/admin/sync-india-gov-schemes', async (req, res) => {
+  router.post('/api/admin/sync-india-gov-schemes', requireAdmin, async (req, res) => {
     try {
       console.log('🔄 Triggering India.gov.in scheme scraper and synchronization...');
       const result = await runScraperSyncSafely();

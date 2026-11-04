@@ -1,8 +1,33 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if true;
+    function isAdmin() {
+      return request.auth != null && request.auth.token.get('admin', false) == true;
+    }
+
+    function validChecklist(data) {
+      return data.get('required_documents', []) is list;
+    }
+
+    function preservesChecklist() {
+      let prior = resource.data.get('required_documents', []);
+      let next = request.resource.data.get('required_documents', []);
+      return validChecklist(request.resource.data)
+        && (prior is list
+          ? next.size() >= prior.size() && next.hasAll(prior)
+          : request.resource.data.keys().hasAll(['required_documents']));
+    }
+
+    match /schemes/{schemeId} {
+      allow read: if true;
+      allow create: if isAdmin() && validChecklist(request.resource.data);
+      allow update: if isAdmin() && preservesChecklist();
+      allow delete: if isAdmin() && resource.data.get('required_documents', []) == [];
+    }
+
+    match /{collection}/{document} {
+      allow read, write: if collection in ['requests', 'feedback', 'staffFeedback', 'whatsappShares']
+        && isAdmin();
     }
   }
 }
