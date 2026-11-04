@@ -10,11 +10,11 @@ import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
 import { createClient } from 'redis';
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, collection, doc, setDoc, addDoc, getDoc, getDocs, deleteDoc, getCountFromServer, query, orderBy, limit as fsLimit } from 'firebase/firestore';
+import { getFirestore, collection, doc, runTransaction, setDoc,  addDoc, getDoc, getDocs, deleteDoc, getCountFromServer, query, orderBy, limit as fsLimit } from 'firebase/firestore';
 import { scrapeAndSyncIndiaGovSchemes } from './scripts/scrape_india_gov_schemes.js';
 import { extractTextFromPdf, extractKeyDetailsForAI, processSchemeDocumentPdf } from './services/pdfProcessingService.js';
 import { generate_text_audio, sanitizeTeluguSpeechText } from './services/audioService.js';
-import { loadLocalSchemeCatalog, mergeSchemeRecords } from './services/schemeCatalog.js';
+import { loadLocalSchemeCatalog, mergeSchemeRecords, writeSchemePatch } from './services/schemeCatalog.js';
 
 let firebaseConfig = {};
 try {
@@ -3242,7 +3242,7 @@ app.post('/api/admin/firestore/schemes', requireAdmin, express.json(), express.u
     };
 
     if (dbAdmin) {
-      await setDoc(doc(dbAdmin, 'schemes', docId), docData, { merge: true });
+      await writeSchemePatch(doc(dbAdmin, 'schemes', docId), docData, callback => runTransaction(dbAdmin, callback));
     }
 
     // Sync in-memory catalog
@@ -3348,7 +3348,7 @@ app.post('/api/admin/firestore/schemes/seed', requireAdmin, async (req, res) => 
         updated_at: new Date().toISOString()
       };
 
-      await setDoc(doc(dbAdmin, 'schemes', docId), docData, { merge: true });
+      await writeSchemePatch(doc(dbAdmin, 'schemes', docId), docData, callback => runTransaction(dbAdmin, callback));
       batchCount++;
     }
 

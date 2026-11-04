@@ -36,3 +36,25 @@ test('a scraper export cannot enter the catalog or shadow an administrator patch
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('Firestore writes retry the same field merge against the latest snapshot', async () => {
+  const { writeSchemePatch } = await import('../services/schemeCatalog.js');
+  const ref = {};
+  const states = [
+    { required_documents: ['ID'], benefits: { cashless: true } },
+    { required_documents: ['ID', 'Proof'], benefits: { cashless: false } }
+  ];
+  const transact = async callback => {
+    let written;
+    for (const data of states) {
+      await callback({
+        get: async reference => { assert.equal(reference, ref); return { data: () => data }; },
+        set: (reference, value) => { assert.equal(reference, ref); written = value; }
+      });
+    }
+    return written;
+  };
+  assert.deepEqual(await writeSchemePatch(ref, { required_documents: [], benefits: { amount: 0 }, unused: null }, transact), {
+    required_documents: ['ID', 'Proof'], benefits: { cashless: false, amount: 0 }
+  });
+});

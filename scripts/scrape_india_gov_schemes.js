@@ -1,3 +1,4 @@
+import { writeSchemePatch } from '../services/schemeCatalog.js';
 /**
  * 🕸️ SmartGovAI - India.gov.in & MyScheme.gov.in Multi-Page Health Scheme Scraper & RAG Ingestion Utility
  * 
@@ -13,7 +14,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, runTransaction } from 'firebase/firestore';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -238,7 +239,7 @@ export async function pushSchemesToFirestore(schemesDict) {
         updated_at: new Date().toISOString()
       };
 
-      await setDoc(schemeRef, firestorePayload, { merge: true });
+      await writeSchemePatch(schemeRef, firestorePayload, callback => runTransaction(db, callback));
       pushedCount++;
       if (pushedCount % 25 === 0 || pushedCount === total) {
         console.log(`  ✅ Upserted ${pushedCount}/${total} Firestore documents into '/schemes'`);

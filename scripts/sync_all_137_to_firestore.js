@@ -1,3 +1,4 @@
+import { writeSchemePatch } from '../services/schemeCatalog.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -26,8 +27,6 @@ async function syncToFirestore() {
     const collectionRef = db.collection('schemes');
 
     let count = 0;
-    const batchSize = 40;
-    let batch = db.batch();
 
     for (const [sName, sData] of Object.entries(catalogData)) {
       const docId = sName.toLowerCase().replace(/[^\w\s-]/g, '').trim().replace(/[\s_-]+/g, '_');
@@ -35,6 +34,8 @@ async function syncToFirestore() {
 
       const payload = {
         name: sName,
+        scheme_name: sName,
+        required_documents: sData.required_documents || [],
         level: sData.level || 'National',
         category: sData.category || 'Health Care',
         telugu_name: sData.telugu_name || sName,
@@ -49,18 +50,8 @@ async function syncToFirestore() {
         updated_at: new Date().toISOString()
       };
 
-      batch.set(docRef, payload, { merge: true });
+      await writeSchemePatch(docRef, payload, callback => db.runTransaction(callback));
       count++;
-
-      if (count % batchSize === 0) {
-        await batch.commit();
-        batch = db.batch();
-        console.log(`Committed batch up to ${count} schemes.`);
-      }
-    }
-
-    if (count % batchSize !== 0) {
-      await batch.commit();
     }
 
     console.log(`Successfully synced all ${count} schemes to Firestore collection '/schemes'!`);

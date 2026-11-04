@@ -1,8 +1,9 @@
+import { writeSchemePatch } from '../services/schemeCatalog.js';
 import express from 'express';
 import crypto from 'crypto';
 import path from 'path';
 import fs from 'fs';
-import { getDocs, collection, doc, setDoc, deleteDoc, query, orderBy, limit as fsLimit } from 'firebase/firestore';
+import { getDocs, collection, doc, runTransaction,  deleteDoc, query, orderBy, limit as fsLimit } from 'firebase/firestore';
 
 export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNames, generateSlug, invalidateSchemesCache, DATA_DIR, runScraperSyncSafely, getDashboardMetrics, getSchemeStats }) {
   const router = express.Router();
@@ -169,7 +170,7 @@ export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNa
       };
 
       if (dbAdmin) {
-        await setDoc(doc(dbAdmin, 'schemes', docId), docData, { merge: true });
+        await writeSchemePatch(doc(dbAdmin, 'schemes', docId), docData, callback => runTransaction(dbAdmin, callback));
       }
 
       // Sync in-memory catalog
@@ -275,7 +276,7 @@ export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNa
           updated_at: new Date().toISOString()
         };
 
-        await setDoc(doc(dbAdmin, 'schemes', docId), docData, { merge: true });
+        await writeSchemePatch(doc(dbAdmin, 'schemes', docId), docData, callback => runTransaction(dbAdmin, callback));
         batchCount++;
       }
 

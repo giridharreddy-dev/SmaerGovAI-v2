@@ -481,7 +481,8 @@ async function syncToFirestore(schemesMap) {
   try {
     console.log('\n[*] Syncing extracted schemes into Firestore database...');
     const { initializeApp } = await import('firebase/app');
-    const { getFirestore, doc, setDoc, terminate } = await import('firebase/firestore');
+    const { getFirestore, doc, runTransaction, terminate } = await import('firebase/firestore');
+    const { writeSchemePatch } = await import('../services/schemeCatalog.js');
 
     const cfg = JSON.parse(fs.readFileSync(firebaseConfigPath, 'utf8'));
     const app = initializeApp(cfg);
@@ -492,7 +493,7 @@ async function syncToFirestore(schemesMap) {
       // Create a deterministic safe document ID
       const safeId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 48).replace(/^-|-$/g, '');
       const docRef = doc(db, 'schemes', safeId);
-      await setDoc(docRef, {
+      await writeSchemePatch(docRef, {
         id: safeId,
         scheme_name: name,
         telugu_name: data.telugu_name || name,
@@ -509,7 +510,7 @@ async function syncToFirestore(schemesMap) {
         key_treatments: data.key_treatments || [],
         key_treatments_te: data.key_treatments_te || [],
         updated_at: new Date().toISOString()
-      }, { merge: true });
+      }, callback => runTransaction(db, callback));
       syncedCount++;
     }
 

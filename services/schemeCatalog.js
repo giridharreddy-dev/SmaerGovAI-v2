@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const isRecord = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+const isRecord = value => value != null && [Object.prototype, null].includes(Object.getPrototypeOf(value));
 
 function mergeField(existing, incoming) {
   if (incoming == null || (typeof incoming === 'string' && !incoming.trim())) return existing;
@@ -17,8 +17,18 @@ export function mergeSchemeRecords(existing, incoming) {
     ...existing,
     ...Object.fromEntries(Object.entries(incoming).map(([key, value]) => [
       key, mergeField(Object.hasOwn(existing, key) ? existing[key] : undefined, value)
-    ]))
+    ]).filter(([, value]) => value !== undefined))
   };
+}
+
+// Read and merge inside the transaction so a concurrent edit is included on retry.
+export function writeSchemePatch(reference, patch, transact) {
+  return transact(async transaction => {
+    const snapshot = await transaction.get(reference);
+    const merged = mergeSchemeRecords(snapshot.data() || {}, patch);
+    transaction.set(reference, merged, { merge: true });
+    return merged;
+  });
 }
 
 export function loadLocalSchemeCatalog(dataDir) {
