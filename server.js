@@ -14,6 +14,7 @@ import { getFirestore, collection, doc, setDoc, addDoc, getDoc, getDocs, deleteD
 import { scrapeAndSyncIndiaGovSchemes } from './scripts/scrape_india_gov_schemes.js';
 import { extractTextFromPdf, extractKeyDetailsForAI, processSchemeDocumentPdf } from './services/pdfProcessingService.js';
 import { generate_text_audio, sanitizeTeluguSpeechText } from './services/audioService.js';
+import { loadLocalSchemeCatalog, mergeSchemeRecords } from './services/schemeCatalog.js';
 
 let firebaseConfig = {};
 try {
@@ -262,31 +263,11 @@ function findScheme(identifier) {
 
 function loadSchemesData() {
   try {
-    if (!fs.existsSync(DATA_DIR)) {
-      console.warn(`Data directory '${DATA_DIR}' does not exist.`);
-      return;
-    }
-
-    const files = fs.readdirSync(DATA_DIR).sort();
-    for (const file of files) {
-      if (file.endsWith('.json') && file !== 'scheme_schema.json' && file !== 'facilities.json') {
-        const filePath = path.join(DATA_DIR, file);
-        try {
-          const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-          if (typeof content === 'object' && content !== null) {
-            for (const [sName, sData] of Object.entries(content)) {
-              if (sData && sData.category && (sData.simplified || sData.telugu)) {
-                sData.slug = generateSlug(sName);
-                sData.voice_url = '/public/audio/' + sData.slug + '.mp3';
-                schemes[sName] = sData;
-                slugToScheme[sData.slug] = sName;
-              }
-            }
-          }
-        } catch (err) {
-          console.error(`Error loading scheme file ${file}:`, err.message);
-        }
-      }
+    for (const [name, record] of Object.entries(loadLocalSchemeCatalog(DATA_DIR))) {
+      record.slug = generateSlug(name);
+      record.voice_url = '/public/audio/' + record.slug + '.mp3';
+      schemes[name] = record;
+      slugToScheme[record.slug] = name;
     }
     schemeNames = Object.keys(schemes).sort();
     console.log(`Loaded ${schemeNames.length} valid schemes.`);
@@ -3265,11 +3246,11 @@ app.post('/api/admin/firestore/schemes', requireAdmin, express.json(), express.u
     }
 
     // Sync in-memory catalog
-    schemes[scheme_name] = {
+    schemes[scheme_name] = mergeSchemeRecords(schemes[scheme_name] || {}, {
       ...docData,
       slug: docId,
       voice_url: '/public/audio/' + docId + '.mp3'
-    };
+    });
     slugToScheme[docId] = scheme_name;
     if (!schemeNames.includes(scheme_name)) {
       schemeNames.push(scheme_name);
@@ -3443,12 +3424,12 @@ app.post('/admin/schemes', requireAdmin, express.urlencoded({ extended: true }),
   }
 
   // Add/Update scheme in memory
-  schemes[scheme_name] = {
+  schemes[scheme_name] = mergeSchemeRecords(schemes[scheme_name] || {}, {
     category,
     simplified,
     telugu,
     slug: generateSlug(scheme_name),
-  };
+  });
   slugToScheme[schemes[scheme_name].slug] = scheme_name;
 
   // Persist to custom JSON
