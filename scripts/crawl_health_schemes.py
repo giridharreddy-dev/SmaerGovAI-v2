@@ -208,7 +208,8 @@ def main():
     print("=" * 75)
 
     success = False
-    if not args.skip_cheerio and not args.target_india_gov:
+    python_admin = args.sync_firestore and os.environ.get("SMARTGOV_FIRESTORE_PYTHON_ADMIN") == "1"
+    if not args.skip_cheerio and not args.target_india_gov and not python_admin:
         success = run_cheerio_crawler(sync_firestore=args.sync_firestore, output_file=output_path)
 
     if not success or args.target_india_gov:

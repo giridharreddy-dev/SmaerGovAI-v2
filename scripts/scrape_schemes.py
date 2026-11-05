@@ -1577,16 +1577,20 @@ def run_scraping_pipeline(target_india_gov=False, categorize_state=True, categor
         json.dump(india_gov_extracted, f, ensure_ascii=False, indent=2)
     print(f"[+] Dedicated india.gov.in health schemes catalog saved to {INDIA_GOV_OUTPUT_FILE} ({len(india_gov_extracted)} schemes)")
 
-    # Synchronize to Firestore if requested
     if sync_firestore:
-        try:
+        if os.environ.get("SMARTGOV_FIRESTORE_PYTHON_ADMIN") == "1":
+            sys.path.insert(0, str(ROOT_DIR))
+            from services.firestore_repository import sync_catalog
+
+            config_path = ROOT_DIR / "firebase-applet-config.json"
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            count = sync_catalog(config, enriched_catalog)
+            print(f"[+] Synchronized {count} schemes to Firestore using guarded Python transactions.")
+        else:
+            import subprocess
+
             sync_script = ROOT_DIR / "scripts" / "sync_firestore_schemes.cjs"
-            if sync_script.exists():
-                import subprocess
-                print("\n[*] Synchronizing schemes to cloud Firestore database...")
-                subprocess.run(["node", str(sync_script)], cwd=str(ROOT_DIR), check=False)
-        except Exception as e:
-            print(f"[-] Note during Firestore sync: {e}")
+            subprocess.run(["node", str(sync_script), str(out_target.resolve())], cwd=ROOT_DIR, check=True)
 
     print("=" * 70)
     print("Web Scraping & Scheme Synthesis Pipeline Complete!")

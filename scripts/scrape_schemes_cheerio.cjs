@@ -26,7 +26,7 @@ const { crawlHealthSchemes } = require('./cheerio_crawler.cjs');
 
 async function runCheerioScraper() {
   const args = process.argv.slice(2);
-  const syncFirestore = args.includes('--sync-firestore') || true;
+  const syncFirestore = args.includes('--sync-firestore');
   await crawlHealthSchemes({ syncFirestore });
 }
 

@@ -11,7 +11,7 @@ const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const CONFIG_FILE = path.join(ROOT_DIR, 'firebase-applet-config.json');
-const SCHEMES_FILE = path.join(ROOT_DIR, 'data', 'scraped_ap_schemes.json');
+const SCHEMES_FILE = process.argv[2] ? path.resolve(process.argv[2]) : path.join(ROOT_DIR, 'data', 'scraped_ap_schemes.json');
 
 async function syncSchemes() {
   if (!fs.existsSync(CONFIG_FILE)) {
@@ -19,8 +19,7 @@ async function syncSchemes() {
     return;
   }
   if (!fs.existsSync(SCHEMES_FILE)) {
-    console.log('[-] data/scraped_ap_schemes.json not found, nothing to sync.');
-    return;
+    throw new Error('Scheme input JSON file not found.');
   }
 
   const schemes = JSON.parse(fs.readFileSync(SCHEMES_FILE, 'utf8'));
