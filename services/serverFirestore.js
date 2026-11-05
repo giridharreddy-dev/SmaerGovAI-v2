@@ -9,7 +9,12 @@ export function connectServerFirestore(config, env = process.env) {
   if (!config?.projectId || !env.FIRESTORE_SERVICE_EMAIL || !env.FIRESTORE_SERVICE_PASSWORD) {
     return Promise.resolve(null);
   }
-  connection ??= signIn(config, env);
+  const apiKey = env.FIREBASE_WEB_API_KEY?.trim() || config.apiKey;
+  if (!apiKey) {
+    console.warn('Firestore service login needs FIREBASE_WEB_API_KEY.');
+    return Promise.resolve(null);
+  }
+  connection ??= signIn({ ...config, apiKey }, env);
   return connection;
 }
 

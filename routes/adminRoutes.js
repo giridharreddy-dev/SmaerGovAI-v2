@@ -5,7 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import { getDocs, collection, doc, runTransaction, deleteDoc, query, orderBy, limit as fsLimit } from 'firebase/firestore';
 
-export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNames, generateSlug, invalidateSchemesCache, DATA_DIR, runScraperSyncSafely, getDashboardMetrics, getSchemeStats }) {
+export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNames, generateSlug, invalidateSchemesCache, DATA_DIR, firebaseConfig = {}, runScraperSyncSafely, getDashboardMetrics, getSchemeStats }) {
   const router = express.Router();
 
   // Admin Auth Middleware
@@ -95,7 +95,9 @@ export function createAdminRouter({ dbAdmin, db, schemes, slugToScheme, schemeNa
 
     const csrfToken = req.session.csrf_token || crypto.randomBytes(16).toString('hex');
     req.session.csrf_token = csrfToken;
-    res.render('analytics', { metrics, stats, recentFeedback, grievances, csrf_token: csrfToken });
+    res.render('analytics', {
+      metrics, stats, recentFeedback, grievances, csrf_token: csrfToken, firebaseConfig, firestoreAuthenticated: Boolean(dbAdmin)
+    });
   });
 
   // GET all schemes from Firestore

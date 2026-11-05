@@ -1,12 +1,8 @@
 {
-  "projectId": "concise-archway-txhgq",
-  "appId": "1:607771695597:web:70d5e319fbbe101927afe4",
-  "apiKey": "AIzaSyDOkGLaXwh21DzeQvBFE3LswaUlWN9PAYo",
-  "authDomain": "concise-archway-txhgq.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09",
-  "storageBucket": "concise-archway-txhgq.firebasestorage.app",
-  "messagingSenderId": "607771695597",
-  "measurementId": "",
-  "oAuthClientId": "607771695597-jvrtplbaddcffttukdf4oltp8tcfuc6s.apps.googleusercontent.com",
-  "recaptchaSiteKey": ""
+  "projectId": "gen-lang-client-0256394743",
+  "appId": "1:655396962532:web:4c0f99d6636c54afa42cf1",
+  "authDomain": "gen-lang-client-0256394743.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "gen-lang-client-0256394743.firebasestorage.app",
+  "messagingSenderId": "655396962532"
 }

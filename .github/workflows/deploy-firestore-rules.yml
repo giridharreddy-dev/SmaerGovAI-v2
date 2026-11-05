@@ -12,7 +12,7 @@ concurrency:
 
 env:
   FIREBASE_CLI_DISABLE_USAGE: '1'
-  FIREBASE_PROJECT: concise-archway-txhgq
+  FIREBASE_PROJECT: gen-lang-client-0256394743
 
 jobs:
   validate:
@@ -31,7 +31,7 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.12'
-      - name: Confirm the named database target
+      - name: Confirm the production database target
         run: |
           node --input-type=module -e '
             import { readFileSync } from "node:fs";
@@ -39,7 +39,7 @@ jobs:
             const read = path => JSON.parse(readFileSync(path, "utf8"));
             const app = read("firebase-applet-config.json");
             assert.equal(app.projectId, process.env.FIREBASE_PROJECT);
-            assert.equal(app.firestoreDatabaseId, "ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09");
+            assert.equal(app.firestoreDatabaseId, "(default)");
             assert.deepEqual(read("firebase.json").firestore, [{ database: app.firestoreDatabaseId, rules: "firestore.rules" }]);
           '
       - name: Test Firestore rules and checklist merges

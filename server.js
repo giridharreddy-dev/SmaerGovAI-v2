@@ -3146,7 +3146,9 @@ async function renderAdminDashboard(req, res) {
 
   const csrfToken = req.session.csrf_token || crypto.randomBytes(16).toString('hex');
   req.session.csrf_token = csrfToken;
-  res.render('analytics', { metrics, stats, recentFeedback, grievances, csrf_token: csrfToken });
+  res.render('analytics', {
+    metrics, stats, recentFeedback, grievances, csrf_token: csrfToken, firebaseConfig, firestoreAuthenticated: Boolean(dbAdmin)
+  });
 }
 
 // Admin Dashboard Routes: /admin, /admin/dashboard, and legacy /analytics
@@ -3391,8 +3393,8 @@ app.get('/api/admin/firestore/collection/:name', requireAdmin, async (req, res) 
       success: true,
       collection: collectionName,
       count: documents.length,
-      databaseId: firebaseConfig.firestoreDatabaseId || 'ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09',
-      projectId: firebaseConfig.projectId || 'concise-archway-txhgq',
+      databaseId: firebaseConfig.firestoreDatabaseId || '(default)',
+      projectId: firebaseConfig.projectId || null,
       documents
     });
   } catch (err) {

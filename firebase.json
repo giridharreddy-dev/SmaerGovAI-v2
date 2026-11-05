@@ -1,7 +1,7 @@
 {
   "firestore": [
     {
-      "database": "ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09",
+      "database": "(default)",
       "rules": "firestore.rules"
     }
   ]

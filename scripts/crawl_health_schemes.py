@@ -162,7 +162,7 @@ def sync_schemes_to_firestore(schemes_map: dict):
 
         project_id = cfg.get("projectId")
         db_id = cfg.get("firestoreDatabaseId", "(default)")
-        api_key = cfg.get("apiKey")
+        api_key = os.environ.get("FIREBASE_WEB_API_KEY") or cfg.get("apiKey")
 
         if not project_id or not api_key:
             print("ℹ Firebase config lacks projectId or apiKey. Skipping Firestore REST sync.")

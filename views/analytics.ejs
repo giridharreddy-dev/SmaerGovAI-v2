@@ -326,6 +326,8 @@
 
             <!-- 2. Database & Dataset Management (Image, Overview & Live Explorer) -->
             <section class="dashboard-section" id="datasetManagementSection">
+                <% const firestoreProject = firebaseConfig.projectId;
+                   const firestoreDatabase = firebaseConfig.firestoreDatabaseId || '(default)'; %>
                 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px;">
                     <div>
                         <h2 style="margin: 0; border: none; padding: 0;">🗄️ Firestore Database & Dataset Management</h2>
@@ -333,36 +335,38 @@
                             Inspect collections, document trees, and browse live records stored in Google Cloud Firestore.
                         </span>
                     </div>
+                    <% if (firestoreProject) { %>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <a href="https://console.firebase.google.com/project/concise-archway-txhgq/firestore" target="_blank" rel="noopener noreferrer" class="btn secondary" style="font-size: 0.82rem; padding: 6px 12px;">
+                        <a href="https://console.firebase.google.com/project/<%= encodeURIComponent(firestoreProject) %>/firestore" target="_blank" rel="noopener noreferrer" class="btn secondary" style="font-size: 0.82rem; padding: 6px 12px;">
                             🔗 Firebase Console ↗
                         </a>
-                        <a href="https://console.cloud.google.com/firestore/databases/ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09/data/panel?project=concise-archway-txhgq" target="_blank" rel="noopener noreferrer" class="btn secondary" style="font-size: 0.82rem; padding: 6px 12px;">
+                        <a href="https://console.cloud.google.com/firestore/databases/<%= encodeURIComponent(firestoreDatabase) %>/data/panel?project=<%= encodeURIComponent(firestoreProject) %>" target="_blank" rel="noopener noreferrer" class="btn secondary" style="font-size: 0.82rem; padding: 6px 12px;">
                             ☁️ Google Cloud Console ↗
                         </a>
                     </div>
+                    <% } %>
                 </div>
 
                 <!-- Database Metadata Chips -->
                 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; font-size: 0.85rem;">
                     <div style="background: var(--surface-soft); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--radius-sm);">
-                        <strong style="color: var(--muted);">Project ID:</strong> <code>concise-archway-txhgq</code>
+                        <strong style="color: var(--muted);">Project ID:</strong> <code><%= firestoreProject || 'Not configured' %></code>
                     </div>
                     <div style="background: var(--surface-soft); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--radius-sm);">
-                        <strong style="color: var(--muted);">Database ID:</strong> <code>ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09</code>
+                        <strong style="color: var(--muted);">Database ID:</strong> <code><%= firestoreDatabase %></code>
                     </div>
                     <div style="background: var(--surface-soft); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--radius-sm);">
-                        <strong style="color: var(--muted);">Engine:</strong> <span>Cloud Firestore Enterprise (Multi-Region)</span>
+                        <strong style="color: var(--muted);">Engine:</strong> <span>Cloud Firestore</span>
                     </div>
                     <div style="background: #ecfdf5; border: 1px solid #6ee7b7; color: #047857; padding: 8px 14px; border-radius: var(--radius-sm); font-weight: 700;">
-                        ● Connected & Live
+                        ● <%= firestoreAuthenticated ? 'Service signed in' : 'Local catalog mode' %>
                     </div>
                 </div>
 
                 <!-- Navigation Help Banner -->
                 <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 18px; font-size: 0.86rem; color: #1e40af; line-height: 1.5;">
                     <strong>💡 How to navigate in Firebase / Cloud Console:</strong>
-                    Firebase projects often default to <code>(default)</code>. Our application uses the dedicated database <code>ai-studio-smartgovai2026-93b64a46-63b2-47d3-9650-466398838a09</code>.
+                    The application is configured for database <code><%= firestoreDatabase %></code>.
                     In the Firebase Console, click the dropdown next to <em>Cloud Firestore</em> at the top to select this database. Or use the <strong>Google Cloud Console ↗</strong> button above to open the exact data panel directly.
                 </div>
 

@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { connectServerFirestore } from './serverFirestore.js';
 
 let firebaseConfig = {};
 try {
@@ -11,12 +10,6 @@ try {
   console.log("Firebase config not found.");
 }
 
-let dbAdmin = null;
-if (firebaseConfig.projectId && getApps().length === 0) {
-  const app = initializeApp(firebaseConfig);
-  dbAdmin = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
-} else if (getApps().length > 0) {
-  dbAdmin = getFirestore(getApp(), firebaseConfig.firestoreDatabaseId || '(default)');
-}
+const dbAdmin = await connectServerFirestore(firebaseConfig);
 
 export { dbAdmin, firebaseConfig };
